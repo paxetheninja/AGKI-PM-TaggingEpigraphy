@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="de">
 <head>
   <meta charset="utf-8">
@@ -7,14 +7,74 @@
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
-  <header>
-    <h1>AGKI PM Tagging Epigraphy</h1>
-    <p>Static Site Scaffold fuer GitHub Pages.</p>
+  <header class="site-header">
+    <div class="brand">
+      <p class="eyebrow">Forschungsblog</p>
+      <h1>AGKI PM Tagging Epigraphy</h1>
+      <p class="lead">Forschungsprojekt, Fragen, Datenaufbereitung und exemplarischer Arbeitsweg.</p>
+    </div>
+    <nav class="site-nav">
+      <a class="nav-link active" href="index.html">Projekt</a>
+      <a class="nav-link" href="tagebuch.html">LLM-Tagebuch</a>
+      <a class="nav-link" href="meilensteine.html">Meilensteine</a>
+    </nav>
   </header>
-  <main>
-    <section class="intro">
-      <h2>Willkommen</h2>
-      <p>Ergaenze hier deinen Inhalt.</p>
+
+  <main class="page">
+    <section class="card status-card">
+      <div>
+        <p class="eyebrow">Projektstatus</p>
+        <h3>AGKI PM Tagging Epigraphy</h3>
+      </div>
+      <div class="meta-grid">
+        <div>
+          <p class="label">Status</p>
+          <span class="badge warn">In Arbeit</span>
+        </div>
+        <div>
+          <p class="label">Letzte Aktualisierung</p>
+          <p class="muted">23.11.2025</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <p class="eyebrow">Beschreibung & Forschungsfragen</p>
+      <h2>Projektbeschreibung und Forschungsfragen</h2>
+      <p>Das Projekt setzt bei einem zentralen Problem der digitalen Epigraphik an: Der PHI-Korpus bietet zwar einen großen Bestand griechischer Inschriften mit grundlegenden Metadaten (Fundort, Datierung), doch ihre inhaltliche und formale Vielfalt ist nur unzureichend strukturiert erschließbar. Für viele Fragestellungen, etwa zur räumlich-zeitlichen Verteilung bestimmter Inschriftentypen oder Themen, sind Forschende weiterhin auf manuelle Lektüre und informelle Kenntnis angewiesen. Damit bleiben systematische Vergleiche, Reproduzierbarkeit und umfassende Suchbarkeit auf Korpusebene stark eingeschränkt.</p>
+      <p>Die geplante mehrstufige Taxonomie schafft hier einen vermittelnden Layer zwischen unstrukturiertem Text und komplexen historischen Fragestellungen. Durch kontrollierte thematische Kategorien (z. B. „religiös > Kult > Weihung“) und formale Typen (z. B. „Dekret > Ehrendekret“) werden die Inschriften nicht nur auffindbar, sondern in ein konsistentes begriffliches Modell eingebettet.</p>
+      <p>Vor diesem Hintergrund lässt sich die Forschungsagenda des Projekts in einer Hauptfrage und drei Unterfragen bündeln:</p>
+      <p><strong>Hauptforschungsfrage:</strong><br>Wie lassen sich griechische Inschriften des PHI-Korpus mithilfe von Large Language Models automatisch thematisch und formal verschlagworten, um eine semantisch strukturierte und explorative Nutzung der Texte zu ermöglichen?</p>
+      <p><strong>Unterfragen:</strong></p>
+      <ol>
+        <li>Welche thematischen Kategorien (z. B. religiös, politisch, juristisch, militärisch) und Unterkategorien lassen sich aus dem Textinhalt ableiten und in einer kontrollierten, mehrstufigen Taxonomie abbilden?</li>
+        <li>In welchem Maße können LLMs inhaltliche Entitäten (Personen, Orte, Handlungen) identifizieren und korrekt in den historischen Kontext einordnen, sodass sie mit bestehenden Wissensinfrastrukturen (z. B. Orts- und Personenregister) verknüpft werden können?</li>
+        <li>Lassen sich formale Typen (z. B. Vertrag, Stiftung, Grabinschrift) zuverlässig erkennen und in einer hierarchischen Typologie verorten, sodass diplomatisch-textkritische Kategorien algorithmisch reproduzierbar werden?</li>
+      </ol>
+      <p>Aus informationswissenschaftlicher Perspektive erhöht eine solche semantische Annotation die Such- und Findbarkeit des Korpus fundamental. Forschende können gezielt nach Kombinationen von Themen, Typen, Regionen und Zeiträumen suchen (z. B. alle „juristischen Verträge aus Kleinasien im 2. Jh. v. Chr.“) und diese quantifizierend vergleichen. Gleichzeitig schaffen die hierarchischen Pfade der Taxonomie die Grundlage für explorative Analysen: Visualisierungen können etwa von Aggregationen auf der Ebene „religiös“ bis zu spezifischen Unterkategorien „Kult > Weihung“ herabzoomen. Die strukturierte Ausgabe in JSON macht die Daten zudem maschinenlesbar und damit anschlussfähig für weitere Anwendungen im Sinne der FAIR-Prinzipien.</p>
+      <p>Der Einsatz von LLMs ist in diesem Narrativ nicht lediglich ein Effizienzgewinn, sondern Gegenstand eigener methodischer Reflexion. LLMs ermöglichen es erstmals, semantische und formale Muster in großen, historisch spezialisierten Textkorpora automatisch zu erkennen und mit einer wissenschaftlich entwickelten Taxonomie zu verknüpfen. Die Kombination aus kuratierter Taxonomie, Mehrfach-Label-Hierarchien und LLM-gestützter Annotation erlaubt es, die Grenzen und Potenziale solcher Verfahren für die historische Forschung systematisch zu untersuchen. Die entstehende Plattform ist daher zugleich Forschungsinfrastruktur und Experimentierfeld, auf dem epigraphische Expertise, digitale Methoden und informationswissenschaftliche Modelle produktiv zusammengeführt werden.</p>
+    </section>
+
+    <section class="card">
+      <p class="eyebrow">Von Daten zu Output</p>
+      <h2>Datenaufbereitung: Von Input- zu Outputdaten</h2>
+      <p>Ausgangspunkt des Projekts sind gescrapte PHI-JSON-Dateien mit den transkribierten griechischen Inschriften (jeweils mit mehr als 1000 Zeichen), PHI-ID, Datierung und Herkunftsangaben. Diese Inputdaten werden zunächst bereinigt und vereinheitlicht: fehlende oder fehlerhafte Metadaten werden identifiziert, polytonisches Griechisch wird konsistent normalisiert, Zeilenumbrüche, Markierungen von Ergänzungen und Beschädigungen sowie eine grobe Segmentierung in Sätze und Tokens werden so aufbereitet, dass sie sowohl für die Anzeige als auch für die maschinelle Verarbeitung nutzbar sind. Diese normalisierte Fassung bildet die Grundlage aller weiteren Verarbeitungsschritte.</p>
+      <p>Im ersten Verarbeitungsschritt wird eine mehrstufige Taxonomie für thematische Kategorien und formale Inschriftentypen kombiniert top-down (auf Basis epigraphischer und altertumswissenschaftlicher Standardkategorien) und bottom-up (mit LLM-Unterstützung aus einem repräsentativen Subkorpus) entwickelt. LLMs dienen hier dazu, wiederkehrende Muster und potenzielle Unterkategorien vorzuschlagen, die dann fachlich konsolidiert, hierarchisch geordnet und als kontrolliertes Vokabular mit stabilen IDs und klaren Definitionen fixiert werden. Die zentrale Herausforderung besteht darin, eine sinnvolle Granularität zu finden, Mischformen historisch angemessen zu behandeln und LLM-bedingte Verzerrungen durch kritische fachliche Kuratierung auszugleichen.</p>
+      <p>Im zweiten Schritt werden alle Inschriften mithilfe eines LLMs automatisch verschlagwortet. Das Modell erhält Text und ausgewählte Metadaten plus Ausschnitte der Taxonomie als Kontext und ordnet jeder Inschrift thematische Pfade (z. B. „religiös > Kult > Weihung“), formale Typen (z. B. „Dekret > Ehrendekret“) sowie Entitäten (Personen, Orte, Institutionen) zu. Die Ergebnisse werden in standardisierten JSON-Objekten abgelegt, die Mehrfach-Labels und vollständige Pfade innerhalb der Hierarchie explizit speichern und durch Konfidenzwerte und ggf. kurze Begründungen ergänzt werden. Automatisierte Schema- und Konsistenzprüfungen stellen sicher, dass die Outputdaten formal valide und mit der Taxonomie kompatibel sind, bleiben aber anfällig für Ambiguitäten, unsichere Fälle und Schema-Verletzungen, die nachträgliche Korrekturen erfordern können.</p>
+      <p>Im dritten Schritt wird ein randomisiert ausgewählter, fachlich sinnvoll stratifizierter Validierungsdatensatz von einer:einem Domänenexpert:in der Alten Geschichte bzw. Epigraphik manuell nach derselben Taxonomie annotiert. Diese manuellen Kodierungen werden mit den LLM-Outputs verglichen, um Übereinstimmungsmaße zu berechnen und typische Fehler- und Konfusionsmuster zu identifizieren. Auf dieser Basis können Taxonomie, Prompts und Post-Processing gezielt nachgeschärft werden. Dadurch wird sichergestellt, dass die erzeugten JSON-Outputdaten nicht nur technisch konsistent, sondern auch fachlich belastbar sind und die Grenzen der automatischen Verschlagwortung transparent reflektiert werden.</p>
+    </section>
+
+    <section class="card">
+      <p class="eyebrow">Beispielhafter Arbeitsweg</p>
+      <h2>Beispielhafter Arbeitsweg</h2>
+      <p>Im Folgenden ist der beispielhafte Arbeitsprozess für die Inschrift mit der <code>id: 62838</code> als zusammenhängender Fließtext dargestellt. Er umfasst (1) die Eingabedaten, (2) das erwartete Output-Schema für die automatische Verschlagwortung sowie (3) den resultierenden, mehrstufig verschlagworteten Output mit mehreren hierarchischen Tags.</p>
+      <p>Zunächst werden die <strong>Inputdaten</strong> direkt aus dem vorhandenen PHI-JSON übernommen. Sie enthalten den griechischen Text (mit über 1000 Zeichen), Regionen- und Datierungsinformationen und dienen als unmittelbare Grundlage für die LLM-gestützte Analyse:</p>
+      <pre><code>{   "id": 62838,   "text": "... sehr langer griechischer Text (Werkverträge, ἐργολαβήσαντι, ἀρχιτέκτων, Zahlungen, Materiallisten, etc.) ...",   "text_joined_sentences": "...",   "metadata": "Delos — 207 BC",   "region_main_id": "1701",   "region_main": "Aegean Islands, incl. Crete (IG XI-[XIII])",   "region_sub_id": "1671",   "region_sub": "Delos (IG XI and ID)",   "date_str": "207 BC",   "date_min": -207,   "date_max": -207,   "date_circa": false }</code></pre>
+      <p>Auf dieser Basis wird das Large Language Model mit einem <strong>Output-Schema</strong> angesprochen, das die Struktur der gewünschten Annotation vorgibt. Zentral ist, dass mehrere thematische Tags vergeben werden können, von denen jeder in eine explizit hierarchische Struktur eingebettet ist (Domain, Subdomain, Kategorie, Subkategorie). Zusätzlich sollen für die weitere Erschließung relevante Personen- und Ortsentitäten extrahiert werden:</p>
+      <pre><code>{   "output_schema": {     "phi_id": "integer",     "themes": [       {         "label": "string",         "hierarchy": {           "domain": "string",           "subdomain": "string",           "category": "string",           "subcategory": "string"         },         "rationale": "string"       }     ],     "entities": {       "persons": [         {           "name": "string",           "role": "string"         }       ],       "places": [         {           "name": "string",           "type": "string"         }       ]     }   } }</code></pre>
+      <p>Das Modell analysiert den Inschriftentext im Licht dieses Schemas und einer im Hintergrund definierten, ökonomisch-administrativen Taxonomie und vergibt mehrere, für diese Inschrift passende Tags. Im <strong>konkreten Output</strong> werden drei thematische Labels erzeugt, die jeweils in eine mehrstufige Hierarchie eingeordnet sind: (1) Bau- und Instandhaltungsabrechnung an einem Heiligtum, (2) Verwaltung des Heiligtumsschatzes und der Kultgeräte sowie (3) Pacht- und Einnahmenverwaltung heiliger Immobilien. Ergänzend werden zentrale Akteure (Architekt, Unternehmer) und der Ort Delos als Entitäten erfasst. Der resultierende, für die Einsortierung relevante Output sieht dann exemplarisch wie folgt aus:</p>
+      <pre><code>{   "phi_id": 62838,   "themes": [     {       "label": "Bau- und Instandhaltungsabrechnung an einem Heiligtum",       "hierarchy": {         "domain": "ökonomisch",         "subdomain": "administrativ",         "category": "öffentliche_Finanzen",         "subcategory": "Bau_und_Instandhaltung_von_Heiligtümern"       },       "rationale": "Werkverträge, Architekt als Aufsicht, Zahlungs- und Materialangaben für Bau- und Reparaturarbeiten an Heiligtumsbauten auf Delos (207 v. Chr.)."     },     {       "label": "Verwaltung des Heiligtumsschatzes und der Kultgeräte",       "hierarchy": {         "domain": "ökonomisch",         "subdomain": "administrativ",         "category": "Heiligtumsschatz_und_Inventare",         "subcategory": "Verwaltung_von_Weihegaben_und_Gefäßen"       },       "rationale": "Auflistung und buchhalterische Erfassung von Gefäßen, Kultgeräten und Silberobjekten, die dem Heiligtum gehören und verwaltet bzw. übergeben werden."     },     {       "label": "Pacht- und Einnahmenverwaltung heiliger Immobilien",       "hierarchy": {         "domain": "ökonomisch",         "subdomain": "administrativ",         "category": "Pacht_und_Erträge",         "subcategory": "Vermietung_und_Einnahmen_heiliger_Immobilien"       },       "rationale": "Passagen zur Verpachtung heiliger Häuser und Grundstücke, zur Rolle von Bürgen (γγυοί) und zur Verbuchung der daraus erzielten Einnahmen."     }   ],   "entities": {     "persons": [       {         "name": "Γέργος",         "role": "ἀρχιτέκτων"       },       {         "name": "Δεξίθος",         "role": "ἐργολάβος"       }     ],     "places": [       {         "name": "Δῆλος",         "type": "Insel"       }     ]   } }</code></pre>
+      <p>In dieser Form bildet der Workflow die Kette von der ursprünglichen Inschrift über ein klar definiertes Ausgabeschema bis hin zur konkreten, hierarchisch und multi-label strukturierten Verschlagwortung ab, die anschließend für Suche, Filterung und Visualisierung im Korpus genutzt werden kann.</p>
     </section>
   </main>
 </body>

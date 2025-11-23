@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Meilensteine | AGKI PM Tagging Epigraphy</title>
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <p class="eyebrow">Forschungsblog</p>
+      <h1>Meilensteine</h1>
+      <p class="lead">Checkliste und Fortschritt des Projekts.</p>
+    </div>
+    <nav class="site-nav">
+      <a class="nav-link" href="index.html">Projekt</a>
+      <a class="nav-link" href="tagebuch.html">LLM-Tagebuch</a>
+      <a class="nav-link active" href="meilensteine.html">Meilensteine</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="card status-card">
+      <div>
+        <p class="eyebrow">Projektstatus</p>
+        <h3>Meilensteine</h3>
+      </div>
+      <div class="meta-grid">
+        <div>
+          <p class="label">Status</p>
+          <span class="badge warn">Laufend</span>
+        </div>
+        <div>
+          <p class="label">Letzte Aktualisierung</p>
+          <p class="muted">23.11.2025</p>
+        </div>
+      </div>
+    </section>
+    <section class="card">
+      <p class="eyebrow">Checkliste</p>
+      <h3>Meilensteine</h3>
+      <ul class="checklist">
+        <li>
+          <label>
+            <input type="checkbox">
+            M1 – Datenbasis & Pipeline (KW X–Y)
+          </label>
+          <div class="item-meta">
+            <span class="badge warn">Laufend</span>
+            <span class="muted">Fällig: KW X–Y</span>
+          </div>
+          <p class="note">PHI-JSON-Daten sichten, Feldvollständigkeit prüfen; Filter auf Inschriften &gt; 1000 Zeichen und gewünschte Regionen/Zeiten.</p>
+        </li>
+        <li>
+          <label>
+            <input type="checkbox">
+            M2 – Taxonomie & Annotation-Schema (KW X–Y)
+          </label>
+          <div class="item-meta">
+            <span class="badge warn">Laufend</span>
+            <span class="muted">Fällig: KW X–Y</span>
+          </div>
+          <p class="note">Entwurf der mehrstufigen Taxonomie (z. B. „ökonomisch → administrativ → …“); Definition des JSON-Outputs (themes, hierarchy, entities).</p>
+        </li>
+        <li>
+          <label>
+            <input type="checkbox">
+            M3 – LLM-Pipeline & Prototyp-Tagging (KW X–Y)
+          </label>
+          <div class="item-meta">
+            <span class="badge info">Geplant</span>
+            <span class="muted">Fällig: KW X–Y</span>
+          </div>
+          <p class="note">Prompt-Design für hierarchische Mehrfach-Labels und Entitäten; Implementierung der LLM-Call-Pipeline (Batching, Output-Validierung, Logging).</p>
+        </li>
+        <li>
+          <label>
+            <input type="checkbox">
+            M4 – Web-Prototyp für Exploration (KW X–Y)
+          </label>
+          <div class="item-meta">
+            <span class="badge info">Geplant</span>
+            <span class="muted">Fällig: KW X–Y</span>
+          </div>
+          <p class="note">Backend-API (Suche nach Themes, Hierarchie, Region, Zeit). Einfaches Frontend mit Listen- und Detailansicht (Text + Tags + Entitäten) und Filtern nach hierarchischen Themes.</p>
+        </li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
