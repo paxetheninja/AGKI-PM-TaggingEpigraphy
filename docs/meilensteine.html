@@ -9,7 +9,7 @@
 <body>
   <header class="site-header">
     <div class="brand">
-      <p class="eyebrow">Forschungsblog</p>
+  
       <h1>Meilensteine</h1>
       <p class="lead">Checkliste und Fortschritt des Projekts.</p>
     </div>
@@ -23,7 +23,7 @@
   <main class="page">
     <section class="card status-card">
       <div>
-        <p class="eyebrow">Projektstatus</p>
+        <p class="eyebrow">Status</p>
         <h3>Meilensteine</h3>
       </div>
       <div class="meta-grid">
@@ -37,51 +37,49 @@
         </div>
       </div>
     </section>
+
     <section class="card">
       <p class="eyebrow">Checkliste</p>
-      <h3>Meilensteine</h3>
+
       <ul class="checklist">
         <li>
-          <label>
-            <input type="checkbox">
-            M1 – Datenbasis & Pipeline (KW X–Y)
-          </label>
+          <div class="check-row">
+            
+            <strong>M1 – Datenbasis & Pipeline (KW 48–50)</strong>
+          </div>
           <div class="item-meta">
-            <span class="badge warn">Laufend</span>
-            <span class="muted">Fällig: KW X–Y</span>
+            <span class="badge review">In Review</span>
+            <span class="muted">Fällig: 13.12.2025</span>
           </div>
           <p class="note">PHI-JSON-Daten sichten, Feldvollständigkeit prüfen; Filter auf Inschriften &gt; 1000 Zeichen und gewünschte Regionen/Zeiten.</p>
         </li>
         <li>
-          <label>
-            <input type="checkbox">
-            M2 – Taxonomie & Annotation-Schema (KW X–Y)
-          </label>
+          <div class="check-row">
+            <strong>M2 – Taxonomie & Annotation-Schema (KW 50–52)</strong>
+          </div>
           <div class="item-meta">
             <span class="badge warn">Laufend</span>
-            <span class="muted">Fällig: KW X–Y</span>
+            <span class="muted">Fällig: 27.12.2025</span>
           </div>
           <p class="note">Entwurf der mehrstufigen Taxonomie (z. B. „ökonomisch → administrativ → …“); Definition des JSON-Outputs (themes, hierarchy, entities).</p>
         </li>
         <li>
-          <label>
-            <input type="checkbox">
-            M3 – LLM-Pipeline & Prototyp-Tagging (KW X–Y)
-          </label>
+          <div class="check-row">
+            <strong>M3 – LLM-Pipeline & Prototyp-Tagging (KW 01–02)</strong>
+          </div>
           <div class="item-meta">
             <span class="badge info">Geplant</span>
-            <span class="muted">Fällig: KW X–Y</span>
+            <span class="muted">Fällig: 10.01.2026</span>
           </div>
           <p class="note">Prompt-Design für hierarchische Mehrfach-Labels und Entitäten; Implementierung der LLM-Call-Pipeline (Batching, Output-Validierung, Logging).</p>
         </li>
         <li>
-          <label>
-            <input type="checkbox">
-            M4 – Web-Prototyp für Exploration (KW X–Y)
-          </label>
+          <div class="check-row">
+            <strong>M4 – Web-Prototyp für Exploration (KW 02–03)</strong>
+          </div>
           <div class="item-meta">
             <span class="badge info">Geplant</span>
-            <span class="muted">Fällig: KW X–Y</span>
+            <span class="muted">Fällig: 20.01.2026</span>
           </div>
           <p class="note">Backend-API (Suche nach Themes, Hierarchie, Region, Zeit). Einfaches Frontend mit Listen- und Detailansicht (Text + Tags + Entitäten) und Filtern nach hierarchischen Themes.</p>
         </li>

@@ -1,17 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@600;700&family=Source+Sans+3:wght@400;600&family=Fira+Code:wght@400;500&display=swap");
+
 :root {
   color-scheme: light;
-  font-family: "Segoe UI", Tahoma, sans-serif;
-  --bg: #fdfbf7;
-  --panel: #ffffff;
-  --border: #e2e8f0;
-  --text: #1f2933;
-  --muted: #52606d;
-  --primary: #0f172a;
-  --accent: #2563eb;
-  --success: #16a34a;
-  --warn: #f59e0b;
-  --info: #0ea5e9;
-  --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  font-family: "Source Sans 3", "Segoe UI", Tahoma, sans-serif;
+  --bg: #f7f1e8;
+  --panel: #fffaf3;
+  --border: #e5d8c8;
+  --text: #2c2c34;
+  --muted: #5a5a64;
+  --primary: #c1683c;    /* terracotta */
+  --accent: #0c8c88;     /* kräftiger türkis */
+  --accent-2: #d97b3d;   /* ocker */
+  --success: #2f8f5d;
+  --warn: #d97b3d;
+  --info: #1fa7a3;
+  --shadow: 0 14px 40px rgba(44, 44, 52, 0.12);
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
@@ -22,37 +25,44 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background: var(--bg);
+  background:
+    radial-gradient(circle at 20% 20%, rgba(201, 104, 60, 0.06), transparent 26%),
+    radial-gradient(circle at 80% 0%, rgba(31, 167, 163, 0.05), transparent 22%),
+    linear-gradient(135deg, rgba(44, 44, 52, 0.04) 0%, rgba(44, 44, 52, 0.02) 40%, transparent 40%),
+    var(--bg);
   color: var(--text);
 }
 
 a {
-  color: var(--primary);
+  color: var(--accent);
   text-decoration: none;
   transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
 }
 
-a:hover { color: var(--accent); }
+a:hover { color: var(--accent-2); text-decoration: underline; }
 
 .site-header {
-  background: linear-gradient(120deg, var(--primary), #1d2a44);
-  color: #f1f5f9;
-  padding: 3rem 1.5rem 2rem;
+  background: linear-gradient(120deg, rgba(201, 104, 60, 0.92), rgba(44, 44, 52, 0.94));
+  color: #fdf8f1;
+  padding: 3.2rem 1.5rem 2.4rem;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1.25rem;
+  border-bottom: 1px solid rgba(229, 216, 200, 0.35);
+  box-shadow: 0 16px 40px rgba(44, 44, 52, 0.22);
 }
 
 .brand h1 {
   margin: 0.2rem 0 0.4rem;
-  font-size: 2.2rem;
+  font-size: 2.35rem;
+  font-family: "Merriweather", Georgia, serif;
 }
 
 .lead {
   margin: 0.2rem 0 0;
-  color: #cbd5e1;
+  color: #f4e6d6;
 }
 
 .site-nav {
@@ -64,26 +74,26 @@ a:hover { color: var(--accent); }
 
 .nav-link {
   padding: 0.6rem 1rem;
-  border: 1px solid rgba(241, 245, 249, 0.4);
-  border-radius: 10px;
-  color: #f1f5f9;
-  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(229, 216, 200, 0.5);
+  border-radius: 12px;
+  color: #fdf8f1;
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .nav-link:hover {
-  border-color: #f1f5f9;
-  background: rgba(255, 255, 255, 0.12);
+  border-color: #fdf8f1;
+  background: rgba(255, 255, 255, 0.16);
 }
 
 .nav-link.active {
-  background: #f1f5f9;
+  background: #fdf8f1;
   color: var(--primary);
 }
 
 .page {
   padding: 2rem 1.5rem 3rem;
   margin: 0 auto;
-  max-width: 1040px;
+  max-width: 1080px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -93,8 +103,8 @@ a:hover { color: var(--accent); }
 .card {
   background: var(--panel);
   border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 1.6rem;
+  border-radius: 16px;
+  padding: 1.75rem;
   box-shadow: var(--shadow);
 }
 
@@ -140,18 +150,21 @@ a:hover { color: var(--accent); }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.65rem 1rem;
-  border-radius: 10px;
+  padding: 0.68rem 1.05rem;
+  border-radius: 12px;
   border: 1px solid var(--accent);
   background: var(--accent);
-  color: #f8fafc;
+  color: #fdf8f1;
   font-weight: 600;
   margin-top: 0.6rem;
+  box-shadow: 0 10px 24px rgba(31, 167, 163, 0.18);
 }
 
 .button.secondary {
-  background: #ffffff;
-  color: var(--accent);
+  background: #fffdf9;
+  color: var(--primary);
+  border-color: var(--primary);
+  box-shadow: 0 10px 24px rgba(201, 104, 60, 0.16);
 }
 
 .bullets {
@@ -179,9 +192,15 @@ a:hover { color: var(--accent); }
 }
 
 .badge.warn {
-  background: rgba(245, 158, 11, 0.14);
+  background: rgba(217, 123, 61, 0.15);
   color: var(--warn);
-  border: 1px solid rgba(245, 158, 11, 0.5);
+  border: 1px solid rgba(217, 123, 61, 0.5);
+}
+
+.badge.review {
+  background: rgba(59, 84, 128, 0.15);
+  color: #3b5480;
+  border: 1px solid rgba(59, 84, 128, 0.5);
 }
 
 .badge.info {
@@ -216,17 +235,12 @@ a:hover { color: var(--accent); }
   background: #fffdf9;
 }
 
-.checklist label {
-  font-weight: 600;
+.check-row {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-}
-
-.checklist input[type="checkbox"] {
-  width: 18px;
-  height: 18px;
-  accent-color: var(--accent);
+  gap: 0.4rem;
+  font-weight: 700;
+  color: var(--text);
 }
 
 .item-meta {
@@ -265,6 +279,13 @@ code {
 h3 { margin-top: 0; }
 h4 { margin-bottom: 0.4rem; }
 
+.section-title {
+  margin: 0 0 0.6rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
 .status-card {
   display: flex;
   justify-content: space-between;
@@ -280,6 +301,6 @@ h4 { margin-bottom: 0.4rem; }
 
 @media (max-width: 640px) {
   .site-header { padding: 2.5rem 1.25rem; }
-  .brand h1 { font-size: 1.8rem; }
+.brand h1 { font-size: 1.8rem; }
   .page { padding: 1.5rem 1.25rem 2.5rem; }
 }
