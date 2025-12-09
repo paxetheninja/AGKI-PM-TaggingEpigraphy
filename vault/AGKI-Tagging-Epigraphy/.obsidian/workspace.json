@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "negotionable",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -74,7 +74,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -183,16 +184,17 @@
       "bases:Create new base": false
     }
   },
-  "active": "737f79833dcdf98d",
+  "active": "d28fd7909dd76b20",
   "lastOpenFiles": [
-    "01_Planning/WorkPackages.md",
-    "01_Planning/Roadmap.md",
-    "01_Planning/Milestones.md",
-    "03_Data/Data.md",
+    "02_Design/UserStories.md",
+    "02_Design/UserPersonas.md",
     "00_Meta/ProjectIndex.md",
     "03_Data/Taxonomie.md",
     "03_Data/JSONSchema.md",
-    "02_Design/UserStories.md",
+    "03_Data/Data.md",
+    "01_Planning/WorkPackages.md",
+    "01_Planning/Roadmap.md",
+    "01_Planning/Milestones.md",
     "Welcome.md",
     "03_Data",
     "02_Design",
