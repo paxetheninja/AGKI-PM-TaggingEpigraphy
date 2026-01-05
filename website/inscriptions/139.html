@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PHI-139 - AGKI</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <style>
+    .page-container { max-width: 1100px; margin: 0 auto; padding: 2rem; }
+    .back-link { display: inline-block; margin-bottom: 1rem; color: var(--primary); font-weight: 600; }
+    .text-viewer { display: grid; grid-template-columns: 40px 1fr; gap: 1rem; font-family: "New Athena Unicode", "Gentium Plus", "Times New Roman", serif; font-size: 1.2rem; line-height: 1.8; background: var(--panel); padding: 2rem; border: 1px solid var(--border); border-radius: 4px; margin-bottom: 2rem; color: var(--text); }
+    .line-numbers { text-align: right; color: var(--muted); font-size: 0.9rem; user-select: none; opacity: 0.6; font-family: sans-serif; }
+    .greek-content { white-space: pre-wrap; }
+    .highlight { background-color: rgba(255, 255, 0, 0.3); border-radius: 2px; transition: background-color 0.2s; }
+    .theme-card { background: var(--panel); padding: 1.5rem; border-left: 4px solid var(--primary); margin-bottom: 1rem; border: 1px solid var(--border); border-left-width: 4px; transition: transform 0.2s; }
+    .theme-card:hover { transform: translateX(4px); box-shadow: var(--shadow); }
+    .ai-rationale-box { background: rgba(31, 167, 163, 0.08); padding: 0.75rem; border-radius: 6px; font-size: 0.9rem; color: var(--muted); max-width: 400px; }
+    .evidence-quote { border-left: 2px solid var(--accent); padding-left: 0.5rem; margin-top: 0.5rem; font-style: italic; color: var(--text); }
+    .badge.green { background: #e6f4ea; color: #137333; border-color: #137333; }
+    .badge.orange { background: #fef7e0; color: #b06000; border-color: #b06000; }
+    .badge.red { background: #fce8e6; color: #c5221f; border-color: #c5221f; }
+    .entity-tag { background: rgba(217, 123, 61, 0.1); color: var(--accent-2); margin-right: 0.5rem; margin-bottom: 0.5rem; display: inline-block; padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.9rem; border: 1px solid rgba(217, 123, 61, 0.2); text-decoration: none; }
+  </style>
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    function highlightQuote(quote) {
+        if(!quote) return;
+        const content = document.getElementById('greekText');
+        const innerHTML = content.innerHTML;
+        const safeQuote = quote.replace(/[.*+?^${}()|[\]/g, '\$&');
+        const re = new RegExp('(' + safeQuote + ')', 'gi');
+        content.innerHTML = innerHTML.replace(re, '<span class="highlight">$1</span>');
+    }
+    function clearHighlight() {
+        const content = document.getElementById('greekText');
+        content.innerHTML = content.textContent; 
+    }
+    function copyCitation() {
+        const citation = "AGKI Project. (2026). Inscription PHI-139. Retrieved from " + window.location.href;
+        navigator.clipboard.writeText(citation);
+        alert("Citation copied to clipboard!");
+    }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <h1><a href="../index.html" style="color:white;text-decoration:none;">AGKI Tagging Tool</a></h1>
+    </div>
+  </header>
+  <main class="page-container">
+    <a href="../index.html" class="back-link">← Back to Dashboard</a>
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+        <h2>Inscription PHI-139</h2>
+        <div style="display:flex; gap:0.5rem;">
+            <button onclick="copyCitation()" class="button secondary" style="font-size:0.9rem; padding:0.5rem 1rem;">📜 Cite</button>
+            <a href="https://epigraphy.packhum.org/text/139" target="_blank" class="button">View on PHI</a>
+        </div>
+    </div>
+    <div class="meta-grid">
+        <div><small class="eyebrow">Region</small><br><strong>Attica (IG I-III)</strong> <a href="https://pleiades.stoa.org/places/579888" target="_blank" title="View Region in Pleiades">🔗</a></div>
+        <div><small class="eyebrow">Date</small><br><strong> 413/2? a.</strong></div>
+        <div><small class="eyebrow">Completeness</small><br><span class="badge info">intact</span></div>
+    </div>
+    <h3>Original Text</h3>
+    <div class="text-viewer">
+        <div class="line-numbers">1<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>5<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>10<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>15<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>20<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>25<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>30<br>&nbsp;<br>&nbsp;<br>&nbsp;</div>
+        <div class="greek-content" id="greekText">ασιφον φρε ρ[ριος γραμμ τευε] δοχσεν τει βολει κα [τοι δ μοι -------- πρυτ νευε πασιφον γρα]μμ τευε [---]
+κλες πεστ τε κλε[ κριτος ε ρχε -------- ε πε ---------------]σασθαι διαπομπαιον π τες π λε[ος ----------------------------------- σ]τρατος. μετ δ 
+τα τα ε χσασ[θαι -------------------------------------] τες φυλες κ στες [θ] σεν ν [----------------------------------------]ται τον πολεμ ον κα[---]αυ[-]ρ[---------------------------------------- κα] τ λλα παραινε 
+[------------------------------------------- τει βενδ] δι κα τ γαλμα ε[----------------------------------------------------]ον κα τ ν στ λε[ν --------------------------------------------------- πι]μελεθ σονται
+[-----------------------------------------------------]σθαι τ ν δεμον
+[-----------------------------------------------------] πρ ς δ το το τ[----------------------------------------------------]ι τει βενδ δι [--]
+[-----------------------------------------------------] α ε κατερ[--]
+[-------------------------------------------------------] θραιττα[---]
+[-------------------------------------------------------]σθαι δ[----]
+[------------------------------------------------------]δεοι [------]
+[-------------------------------]ερα[-------------------------------]
+[-----------------------------]ι νν α [-----------------------------]
+[----------------------------]ος κα πα[ρχε --------------------------]
+[-------------------------- τ] γ γενομ [νεν ---------------------------]
+[------------------------ τε]ς παρχες ς [-----------------------------]
+[--------------------------]αν σο δ ν πρ[αθει -------------------------]
+[--------------------- κα ο π ρ]εδροι τ ς δ α[-----------------------------]
+[--------------------- ς κ] λλιστα. θ εν δ ε[-----------------------------]
+[---------------- βο]λ κα λλος στις ν [-----------------------------]
+[---------------- τ] ν παννυχ δα ποεν ς [κ λλιστα -----------------------]
+[----------------]ς μεν ς τει νδεκ τει [-------------------------------]
+[-------------] ε τε χρ γυνα κα ερεος [------------------------------]
+[-------- θενα] ον π ντον πεμφσ ντον [--------------------------------]
+[-------------] ς τ χιστα τι δ ν ν λε[ι -------------------------------]
+[-----------] λαμβ νεν τον δεμοσ αι θυο[μ νον ---------------------------]
+[------- π] δ κα ερε ον τ δ λλα δ ρματ[α ----------------------------]
+[----- τ λο]ιπ ν κλερον περ το τον τ ς ερο[ποι ς -----------------------]
+[---------]κ στοτε τει βενδ δι π πεντ κο[ντα -------------------------]
+[-------- πρ]υτανε ας ο δ κολακρ ται διδ ν[τον τ ργ ριον ---------------]
+[----------]α τ ν βολ ν α τοκρ τορα ε ναι [---------------------- τ δ φσ φισμα τ δε να]γρ φσας γραμματε ς τ[ες βολες ν στ λει λιθ νει καταθ το ν τοι]
+[βενδιδ οι ο] δ πολετα πομισθοσ[ ντον ο δ κολακρ ται δ ντον τ ργ ριον].
+[-------- ε π]ε τ [μ ν λλα καθ περ -------------------------------------]
+---------------------------------------</div>
+    </div>
+    <h3>Thematic Analysis</h3>
+    <p class="muted" style="margin-bottom:1rem;">Hover over cards to see evidence in text.</p>
+    
+        <div class="theme-card" onmouseover="highlightQuote('λλος στις ν [-----------------------------] [----------------')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:start;">
+                <div>
+                    <span class="tag domain-tag">Content</span>
+                    <span class="badge orange" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">67% Conf.</span>
+                    <div class="theme-path">Content > Religious and Dedicatory Texts > Prayers and Invocations</div>
+                    <div class="theme-label">Prayers and Invocations</div>
+                </div>
+                <div class="ai-rationale-box">
+                    <strong>🤖 AI Rationale:</strong>
+                    <p>Generated rationale for Prayers and Invocations</p>
+                    <p class="evidence-quote">Evidence: "λλος στις ν [-----------------------------] [----------------"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('θραιττα[---] [-------------------------------------------------------]σθαι δ[----] [------------------------------------------------------]δεοι [------] [-------------------------------]ερα[-------------------------------] [-----------------------------]ι')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:start;">
+                <div>
+                    <span class="tag domain-tag">Type</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">90% Conf.</span>
+                    <div class="theme-path">Type > Material > Organic Materials > Wood</div>
+                    <div class="theme-label">Wood</div>
+                </div>
+                <div class="ai-rationale-box">
+                    <strong>🤖 AI Rationale:</strong>
+                    <p>Generated rationale for Wood</p>
+                    <p class="evidence-quote">Evidence: "θραιττα[---] [-------------------------------------------------------]σθαι δ[----] [------------------------------------------------------]δεοι [------] [-------------------------------]ερα[-------------------------------] [-----------------------------]ι"</p>
+                </div>
+            </div>
+        </div>
+        
+    <h3>Entities</h3>
+    <div><span class="tag entity-tag">👤 Theemos <small>(Archon)</small></span><span class="tag entity-tag">📍 Athen <small>(Polis)</small></span></div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PHI-107 - AGKI</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <style>
+    .page-container { max-width: 1100px; margin: 0 auto; padding: 2rem; }
+    .back-link { display: inline-block; margin-bottom: 1rem; color: var(--primary); font-weight: 600; }
+    .text-viewer { display: grid; grid-template-columns: 40px 1fr; gap: 1rem; font-family: "New Athena Unicode", "Gentium Plus", "Times New Roman", serif; font-size: 1.2rem; line-height: 1.8; background: var(--panel); padding: 2rem; border: 1px solid var(--border); border-radius: 4px; margin-bottom: 2rem; color: var(--text); }
+    .line-numbers { text-align: right; color: var(--muted); font-size: 0.9rem; user-select: none; opacity: 0.6; font-family: sans-serif; }
+    .greek-content { white-space: pre-wrap; }
+    .highlight { background-color: rgba(255, 255, 0, 0.3); border-radius: 2px; transition: background-color 0.2s; }
+    .theme-card { background: var(--panel); padding: 1.5rem; border-left: 4px solid var(--primary); margin-bottom: 1rem; border: 1px solid var(--border); border-left-width: 4px; transition: transform 0.2s; }
+    .theme-card:hover { transform: translateX(4px); box-shadow: var(--shadow); }
+    .ai-rationale-box { background: rgba(31, 167, 163, 0.08); padding: 0.75rem; border-radius: 6px; font-size: 0.9rem; color: var(--muted); max-width: 400px; }
+    .evidence-quote { border-left: 2px solid var(--accent); padding-left: 0.5rem; margin-top: 0.5rem; font-style: italic; color: var(--text); }
+    .badge.green { background: #e6f4ea; color: #137333; border-color: #137333; }
+    .badge.orange { background: #fef7e0; color: #b06000; border-color: #b06000; }
+    .badge.red { background: #fce8e6; color: #c5221f; border-color: #c5221f; }
+    .entity-tag { background: rgba(217, 123, 61, 0.1); color: var(--accent-2); margin-right: 0.5rem; margin-bottom: 0.5rem; display: inline-block; padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.9rem; border: 1px solid rgba(217, 123, 61, 0.2); text-decoration: none; }
+  </style>
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    function highlightQuote(quote) {
+        if(!quote) return;
+        const content = document.getElementById('greekText');
+        const innerHTML = content.innerHTML;
+        const safeQuote = quote.replace(/[.*+?^${}()|[\]/g, '\$&');
+        const re = new RegExp('(' + safeQuote + ')', 'gi');
+        content.innerHTML = innerHTML.replace(re, '<span class="highlight">$1</span>');
+    }
+    function clearHighlight() {
+        const content = document.getElementById('greekText');
+        content.innerHTML = content.textContent; 
+    }
+    function copyCitation() {
+        const citation = "AGKI Project. (2026). Inscription PHI-107. Retrieved from " + window.location.href;
+        navigator.clipboard.writeText(citation);
+        alert("Citation copied to clipboard!");
+    }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <h1><a href="../index.html" style="color:white;text-decoration:none;">AGKI Tagging Tool</a></h1>
+    </div>
+  </header>
+  <main class="page-container">
+    <a href="../index.html" class="back-link">← Back to Dashboard</a>
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+        <h2>Inscription PHI-107</h2>
+        <div style="display:flex; gap:0.5rem;">
+            <button onclick="copyCitation()" class="button secondary" style="font-size:0.9rem; padding:0.5rem 1rem;">📜 Cite</button>
+            <a href="https://epigraphy.packhum.org/text/107" target="_blank" class="button">View on PHI</a>
+        </div>
+    </div>
+    <div class="meta-grid">
+        <div><small class="eyebrow">Region</small><br><strong>Attica (IG I-III)</strong> <a href="https://pleiades.stoa.org/places/579888" target="_blank" title="View Region in Pleiades">🔗</a></div>
+        <div><small class="eyebrow">Date</small><br><strong> c. 409 a.</strong></div>
+        <div><small class="eyebrow">Completeness</small><br><span class="badge info">intact</span></div>
+    </div>
+    <h3>Original Text</h3>
+    <div class="text-viewer">
+        <div class="line-numbers">1<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>5<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>10<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>15<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>20<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>25<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>30<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>35<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>40<br>&nbsp;<br>&nbsp;</div>
+        <div class="greek-content" id="greekText">[--------------------] --------------------------
+[--------------------] ο --------------------------
+[--------------------]ιο ----------------------------------------------------------------
+[--------------------]σεεπ[--]ο -----------------------
+[---------------------]ιλ --------------------------
+[----------------------]μ[-]0[--- ο δ δ σο θενα ον ο δ να ς ν γγυετ ς τρες καθιστει τ α τ τ]λος τ[ελον]τ[ας πλ ν ν τις π προδοσ αι τες π λεος π καταλ σει το δ μο χσυνι] ν [ λοι τ λος πρι μενος γγυεσ μενος κλ γον μ καταβ λει -----------] ας[---------------------------------------------]
+[-----------------]οι[--]ο[--------------------------------------------]
+[---------------------] [--------------------------------------------]
+[--------------------]ιο[--------------------------------------------]
+[------------------]λ[-]νο[--------------------------------------------]
+[-----------------] πολεμιον [-----------------------------------------]
+[-----------------] δεμος [-------------------------------------------]
+[---------- τ ν δεμον] τ ν θ[εν]αο[ν -------------------------------------]
+[--------------- το δ] μο το [ θενα ον -----------------------------------]
+[------------------]βρειον [------------------------------------------]
+[-------------- πεντ]ακοσ ον ----λ[------------------------------------]
+[----------------]ν[-]ι το ς θ[ενα]ο[ις] ο[-] [---------------------------]ολ[-]
+[----------------] κα τοι δ μ[οι --]ο[--------------------------------]νεμε
+[----------------]ο ζεμ αν [ν -------]α[--------------------------]μ μ κ[------------------]ι κεκλεμνο[--]σ[---------------------------------]αι μ[ετ το δ μο το θενα ον] πλεθ ο[ν]το[ς] ε[----------------------------------]λα
+[-------------------]ι ο κ β[--]ο[-------------------------------------]ι
+[----------- ο κ πιφσ]εφιο μ [β]ολει. ο [τ] [ν]κ[κλεσ αι] α[----------------] ι[-]ι[--]
+[--------- ν δ πιφσ]εφ ζο τ[--]μοσ[---]ο[-------------------------] οσιον[--]
+[------------ μ τε δεμ]οσ ον μ τε [ δ] ον [---------------------------] ο[-]π[---]
+[-------------------] βολε εν [τ] [ς] πεντακ[οσ]ο[ς ---------------------] [----]
+[----------------- πε]ντακοσι[--] δραχμ[------]το[------------------] λ[-] [----]
+[----- μ χρι πεντακοσ]ον δρ[α]χμ[ον] πλ ον δ μ ε ναι π[ιβ λλεν --------] [-]ο[-----]
+[--------------------]ον ν τοι βολευτερ οι τ ν βο[λ ν -----------] ο [-----]
+[----------------------]ν. τ δε δοχσεν λ λυκε ο τοι δ[ μοι τοι]θε[να] ον [ νευ το δ μο το θενα ον πλεθ] ο[ντ]ος μ ε ναι π λεμον ρασθαι [μ τε καταλ] [σ]α[ι] μ τε ε[---- νευ το δ μο το θενα ον πλε]θ οντος μ ε ναι θαντοι ζεμι]ο[σαι -----] θενα[ ---------------------- νευ το δ] μο το θενα ον πλεθ[ ο]ντος [---] ο [-]0[-]
+[-----------------]ν [---] οενβο [--] [--] [-] σοι [-]ν πος [ν] β λεται μ ε ν[αι --------- ντ] ς τρι κοντα μερον πειδ[ ν δ χσει τ ν δ] δεμον μ ε ναι αμ[----]
+[------- θενα] ον μεδ ν μ [τε] βολει μ τε [------ νευ το δ] μο το θεναο[ν] πλε[θ ο]ντος μ ε ναι θο ν πιβαλεν [ θε]να ον μεδ [ ν -------------------------]
+[---] β λεσιν. νευ το δ μο το θ[εν]α ον πλεθ ο[ντος -------------------------]
+[---] πος ν δοκει. δ μοι τοι θενα ον πλε[θ οντι -----------------------]
+[----]ον κατ τα τ ιρεσθαι. τ χρ ματα τ δε[μ σια πολογ σασθαι ν τει κκλεσ αι τ] ς πεντακοσ ος πρ ν πα εσθαι τες ρχε[ς ------------------------ τοι δ μοι το]ι θενα ον πλεθ οντι τι ν β λετα[ι ------------------------- τον χρεμ το]ν τον δεμοσ ον π ναγκες ε ν[α]ι τ[ε]ι βολ[ει -------------------- προτον μ ν ερ] δε τερον πρεσβε αν τρ τον δεμ σ[ια χρ ματα -----------------------]
+[------]ς πρ ς τ ς πρυτ νες κα βολε εν [----------------------------------]
+[----- κ]α το πολ μο π ρι κα τον ετ[--------------------------------------]
+[------]να τοι δ μοι ντ ς χσ [κοντα μερον -----------------------------]
+[--- χσυ]μβ λλεσθαι τ ν βολ ν [------------------------------------------]
+[-------] κκλεσ αι κα ε[----------------------------------------------]
+ει ν τε[ι] κκλεσ αι τες [δ ------------------------------------------- δ]ο δρ [α -------------------------------------------------------- φσε]φ ζεσ[θαι -------------------------------------------------------- βο]λες π[-------------------------------------------------------------]
+ λλο δ [------------------------------------------------------------]
+ος τ ς π[ρυτ νες ---------------------------------------------- δραχμεσ]ιν ε θ[υν ---------------------------------]
+---------------------------------------</div>
+    </div>
+    <h3>Thematic Analysis</h3>
+    <p class="muted" style="margin-bottom:1rem;">Hover over cards to see evidence in text.</p>
+    
+        <div class="theme-card" onmouseover="highlightQuote('τ ν θ[εν]αο[ν -------------------------------------]')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:start;">
+                <div>
+                    <span class="tag domain-tag">Content</span>
+                    <span class="badge orange" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">62% Conf.</span>
+                    <div class="theme-path">Content > Administrative Records and Lists > Accounts and Financial Records</div>
+                    <div class="theme-label">Accounts and Financial Records</div>
+                </div>
+                <div class="ai-rationale-box">
+                    <strong>🤖 AI Rationale:</strong>
+                    <p>Generated rationale for Accounts and Financial Records</p>
+                    <p class="evidence-quote">Evidence: "τ ν θ[εν]αο[ν -------------------------------------]"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('[α -------------------------------------------------------- φσε]φ')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:start;">
+                <div>
+                    <span class="tag domain-tag">Type</span>
+                    <span class="badge orange" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">69% Conf.</span>
+                    <div class="theme-path">Type > Material > Other Materials > Glass</div>
+                    <div class="theme-label">Glass</div>
+                </div>
+                <div class="ai-rationale-box">
+                    <strong>🤖 AI Rationale:</strong>
+                    <p>Generated rationale for Glass</p>
+                    <p class="evidence-quote">Evidence: "[α -------------------------------------------------------- φσε]φ"</p>
+                </div>
+            </div>
+        </div>
+        
+    <h3>Entities</h3>
+    <div><span class="tag entity-tag">👤 Theemos <small>(Archon)</small></span><span class="tag entity-tag">📍 Athen <small>(Polis)</small></span></div>
+  </main>
+</body>
+</html>

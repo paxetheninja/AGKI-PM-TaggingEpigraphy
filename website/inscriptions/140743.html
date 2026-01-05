@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PHI-140743 - AGKI</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <style>
+    .page-container { max-width: 1100px; margin: 0 auto; padding: 2rem; }
+    .back-link { display: inline-block; margin-bottom: 1rem; color: var(--primary); font-weight: 600; }
+    .text-viewer { display: grid; grid-template-columns: 40px 1fr; gap: 1rem; font-family: "New Athena Unicode", "Gentium Plus", "Times New Roman", serif; font-size: 1.2rem; line-height: 1.8; background: var(--panel); padding: 2rem; border: 1px solid var(--border); border-radius: 4px; margin-bottom: 2rem; color: var(--text); }
+    .line-numbers { text-align: right; color: var(--muted); font-size: 0.9rem; user-select: none; opacity: 0.6; font-family: sans-serif; }
+    .greek-content { white-space: pre-wrap; }
+    .highlight { background-color: rgba(255, 255, 0, 0.3); border-radius: 2px; transition: background-color 0.2s; }
+    .theme-card { background: var(--panel); padding: 1.5rem; border-left: 4px solid var(--primary); margin-bottom: 1rem; border: 1px solid var(--border); border-left-width: 4px; transition: transform 0.2s; }
+    .theme-card:hover { transform: translateX(4px); box-shadow: var(--shadow); }
+    .ai-rationale-box { background: rgba(31, 167, 163, 0.08); padding: 0.75rem; border-radius: 6px; font-size: 0.9rem; color: var(--muted); max-width: 400px; }
+    .evidence-quote { border-left: 2px solid var(--accent); padding-left: 0.5rem; margin-top: 0.5rem; font-style: italic; color: var(--text); }
+    .badge.green { background: #e6f4ea; color: #137333; border-color: #137333; }
+    .badge.orange { background: #fef7e0; color: #b06000; border-color: #b06000; }
+    .badge.red { background: #fce8e6; color: #c5221f; border-color: #c5221f; }
+    .entity-tag { background: rgba(217, 123, 61, 0.1); color: var(--accent-2); margin-right: 0.5rem; margin-bottom: 0.5rem; display: inline-block; padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.9rem; border: 1px solid rgba(217, 123, 61, 0.2); text-decoration: none; }
+  </style>
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    function highlightQuote(quote) {
+        if(!quote) return;
+        const content = document.getElementById('greekText');
+        const innerHTML = content.innerHTML;
+        const safeQuote = quote.replace(/[.*+?^${}()|[\]/g, '\$&');
+        const re = new RegExp('(' + safeQuote + ')', 'gi');
+        content.innerHTML = innerHTML.replace(re, '<span class="highlight">$1</span>');
+    }
+    function clearHighlight() {
+        const content = document.getElementById('greekText');
+        content.innerHTML = content.textContent; 
+    }
+    function copyCitation() {
+        const citation = "AGKI Project. (2026). Inscription PHI-140743. Retrieved from " + window.location.href;
+        navigator.clipboard.writeText(citation);
+        alert("Citation copied to clipboard!");
+    }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <h1><a href="../index.html" style="color:white;text-decoration:none;">AGKI Tagging Tool</a></h1>
+    </div>
+  </header>
+  <main class="page-container">
+    <a href="../index.html" class="back-link">← Back to Dashboard</a>
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+        <h2>Inscription PHI-140743</h2>
+        <div style="display:flex; gap:0.5rem;">
+            <button onclick="copyCitation()" class="button secondary" style="font-size:0.9rem; padding:0.5rem 1rem;">📜 Cite</button>
+            <a href="https://epigraphy.packhum.org/text/140743" target="_blank" class="button">View on PHI</a>
+        </div>
+    </div>
+    <div class="meta-grid">
+        <div><small class="eyebrow">Region</small><br><strong>Sicily, Italy, and the West (IG XIV)</strong> <a href="https://pleiades.stoa.org/places/462492" target="_blank" title="View Region in Pleiades">🔗</a></div>
+        <div><small class="eyebrow">Date</small><br><strong></strong></div>
+        <div><small class="eyebrow">Completeness</small><br><span class="badge info">intact</span></div>
+    </div>
+    <h3>Original Text</h3>
+    <div class="text-viewer">
+        <div class="line-numbers">1<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>5<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>10<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>15<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>20<br>&nbsp;<br>&nbsp;<br>&nbsp;</div>
+        <div class="greek-content" id="greekText">[-------- σιτων παρ τ ν παγγειλαμ νων χρημ των]
+[λοιπ ν τεσσαρ κοντα λ]τραι τρ α δ κα τρισχ λια [τ λαντα].
+[κα παρ γ ρταις] σ του κοσι πεντακ σια τ λαντα.
+[ε κλε ου πρ -- φιλι]στ ωνος σπαρ. ερομναμ νοις σο[δος ------ λ]τραι π ντε τρι κοντα τρισχ λια τ [λαντα ξοδος --] λ τραι π ντε νεν κοντα τριακ σια
+[--- τ λαντα λοιπ]ν κτ τεσσαρ κοντα λ τραι νν α τρι [κο--- τ λαντα. ταμ]αις σοδος νν α δ κα κατ ν λ τραι 
+[----------κ]σια μ ρια τ λαντα ξοδος μ α τρι [κοντα λ τραι ---]νακ σια κτακισχ λια τ λαντα. λοι[π ν ---- λ τραι] π ντε κτακ σια πεντακισχ λια τ [λαντα ------χ]λια τ λαντα παρ γυμνασι ρχοις
+[-----------]τα λ τραι ξ ξ κοντα ξακ σια χ λια τ [λαντα -------] γορασθ μειν σιτοφυλ κοις χαλκο σοδος
+[---------- τρ]ι κοντα τ λαντα ξοδος τ σον κυ [μων σοδος ----κ σ]ιοι μ διμνοι ξοδος μ διμνος ν δ [κα --- μ διμνοι λοι]π ν δ ω μ εκτα ξ δ κα κτακ σιοι
+[μ διμνοι. σιτων φρ] νιος λοιπ ν τεσσαρ κοντα λ τραι 
+[τρ α τρι κοντα τριακ σια τρισχ]λια μ ρια τ λαντα. σιτων ωι ε κλε [δα λοιπ ν δ κα κατ ν λ τραι τ σσ]αρα βδομ κοντα πτακ σια
+[χ λια δισμ ρια τ λαντα το του ν]ργυρωμ τοις γ ρταις τρι κον[τα ------ τ λαντα. σιτων παρ] τ ν παγγειλαμ νων χρημ [των λοιπ ν τεσσαρ κοντα λ τρ]αι τρ α δ κα τρισχ λια τ λαν[τα. κα παρ γ ρταις σ του κοσ]ι πεντακ σια τ λαντα γο[ρ ν δι πωλημ των ------- λ] τραι νν α γδο κοντα δια[κ σια --- τ λαντα].
+[δυωδεκατ ος πρ --- λ]μπιος ταυ. ερομναμ νοις σοδος κοσι λ τραι νν α δ κα
+[------ τ λαντα ξοδος] πτ κοσι λ τραι τ σσαρα ξ κοντα κατ ν χ λια τ λαντα λοι[π ν ----------κο]ντα λ τραι τ σσαρα τεσσαρ κοντα κατ ν τ λαντα. ταμ αις σοδος
+[----]κον[τα] λτρα[ι]πτ τεσσαρ κοντα διακ σια τρισχ λια τ λαντα ξοδος δ κα λ τρ[αι -- τρ]ι κοντα πεντακ σια χ λια τ λαντα λοιπ ν μ α τεσσαρ κοντα λ τραι τ σσαρα γδο κοντα νακ σια χ λια τ λαντα. σιτοφυλ κοις κυ μων ξοδος ν δ κα μ εκτα νν α τρι κοντα διακ σιοι μ διμνοι λοιπ ν πτ μ εκτα πτ χ λιοι μ διμνοι. σιτων φρ νιος
+λοιπ ν τ σον. σιτων ε κλε δα λοιπ ν τ σον. σιτων παρ τ ν παγγειλαμ νων λοιπ ν τ σον.
+ε κλε ου πρ μμ νιος σαραπ ωνος ρεθ. ερομναμ νοις σοδος τρε ς γδο κοντα λ τραι 
+π ντε βδομ κοντα πτακ σια πεντακισχ λια μ ρια τ λαντα ξοδος ξ βδομ κοντα λ τραι κτ βδομ κοντα πτακ σια τετρακισχ λια τ λαντα λοιπ ν μ α
+ γδο κοντα λ τραι ν τεσσαρ κοντα κατ ν χ λια μ ρια τ λαντα το του δι ς μ ρια
+τ λαντα κα διον σου τρι κοντα λ τραι πτ βδομ κοντα χ λια τ λαντα. ταμ αις
+ σοδος ξ τρι κοντα λ τραι κτ τεσσαρ κοντα πτακ σια πεντακισχ λια τετρακισμ ρια τ λαντα ξοδος π ντε ξ κοντα λ τραι πτ νεν κοντα κατ ν τρισχ λια
+δισμ ρια τ λαντα λοιπ ν δ ω δ κα λ τραι π ντε τρι κοντα πεντακ σια τετρακισχ λια δισμ ρια τ λαντα. σιτοφυλ κοις κυ μων σοδος γδο κοντα τριακ σιοι μ διμνοι ξοδος δ κα μ εκτα τρε ς κοσι κατ ν μ διμνοι λοιπ ν νν α μ εκτα 
+τρε ς ξ κοντα διακ σιοι χ λιοι μ διμνοι. σιτων φρ νιος λοιπ ν τεσσαρ κοντα λ τραι τρ α τρι κοντα τριακ σια τρισχ λια μ ρια τ λαντα. σιτων ε κλε δα
+λοιπ ν δ κα κατ ν λ τραι τ σσαρα βδομ κοντα πτακ σια χ λια δισμ ρια τ λαντα. σιτων παρ τ ν παγγειλαμ νων λοιπ ν τεσσαρ κοντα λ τραι τρ α τρι κοντα πεντακ σια τρισχ λια τ λαντα. γορ ν δι πωλημ των τ σσαρα ξ κοντα διακ σια χ λια τ λαντα.</div>
+    </div>
+    <h3>Thematic Analysis</h3>
+    <p class="muted" style="margin-bottom:1rem;">Hover over cards to see evidence in text.</p>
+    
+        <div class="theme-card" onmouseover="highlightQuote('παρ τ ν παγγειλαμ νων λοιπ ν')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:start;">
+                <div>
+                    <span class="tag domain-tag">Content</span>
+                    <span class="badge orange" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">74% Conf.</span>
+                    <div class="theme-path">Content > Didactic and School Texts > Didascalic Epigrams</div>
+                    <div class="theme-label">Didascalic Epigrams</div>
+                </div>
+                <div class="ai-rationale-box">
+                    <strong>🤖 AI Rationale:</strong>
+                    <p>Generated rationale for Didascalic Epigrams</p>
+                    <p class="evidence-quote">Evidence: "παρ τ ν παγγειλαμ νων λοιπ ν"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('κα κτακ σιοι [μ')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:start;">
+                <div>
+                    <span class="tag domain-tag">Type</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">99% Conf.</span>
+                    <div class="theme-path">Type > Material > Clay and Ceramic > Ceramic Tiles / Bricks</div>
+                    <div class="theme-label">Ceramic Tiles / Bricks</div>
+                </div>
+                <div class="ai-rationale-box">
+                    <strong>🤖 AI Rationale:</strong>
+                    <p>Generated rationale for Ceramic Tiles / Bricks</p>
+                    <p class="evidence-quote">Evidence: "κα κτακ σιοι [μ"</p>
+                </div>
+            </div>
+        </div>
+        
+    <h3>Entities</h3>
+    <div><span class="tag entity-tag">👤 Theemos <small>(Archon)</small></span><span class="tag entity-tag">📍 Athen <small>(Polis)</small></span></div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PHI-140734 - AGKI</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <style>
+    .page-container { max-width: 1100px; margin: 0 auto; padding: 2rem; }
+    .back-link { display: inline-block; margin-bottom: 1rem; color: var(--primary); font-weight: 600; }
+    .text-viewer { display: grid; grid-template-columns: 40px 1fr; gap: 1rem; font-family: "New Athena Unicode", "Gentium Plus", "Times New Roman", serif; font-size: 1.2rem; line-height: 1.8; background: var(--panel); padding: 2rem; border: 1px solid var(--border); border-radius: 4px; margin-bottom: 2rem; color: var(--text); }
+    .line-numbers { text-align: right; color: var(--muted); font-size: 0.9rem; user-select: none; opacity: 0.6; font-family: sans-serif; }
+    .greek-content { white-space: pre-wrap; }
+    .highlight { background-color: rgba(255, 255, 0, 0.3); border-radius: 2px; transition: background-color 0.2s; }
+    .theme-card { background: var(--panel); padding: 1.5rem; border-left: 4px solid var(--primary); margin-bottom: 1rem; border: 1px solid var(--border); border-left-width: 4px; transition: transform 0.2s; }
+    .theme-card:hover { transform: translateX(4px); box-shadow: var(--shadow); }
+    .ai-rationale-box { background: rgba(31, 167, 163, 0.08); padding: 0.75rem; border-radius: 6px; font-size: 0.9rem; color: var(--muted); max-width: 400px; }
+    .evidence-quote { border-left: 2px solid var(--accent); padding-left: 0.5rem; margin-top: 0.5rem; font-style: italic; color: var(--text); }
+    .badge.green { background: #e6f4ea; color: #137333; border-color: #137333; }
+    .badge.orange { background: #fef7e0; color: #b06000; border-color: #b06000; }
+    .badge.red { background: #fce8e6; color: #c5221f; border-color: #c5221f; }
+    .entity-tag { background: rgba(217, 123, 61, 0.1); color: var(--accent-2); margin-right: 0.5rem; margin-bottom: 0.5rem; display: inline-block; padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.9rem; border: 1px solid rgba(217, 123, 61, 0.2); text-decoration: none; }
+  </style>
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    function highlightQuote(quote) {
+        if(!quote) return;
+        const content = document.getElementById('greekText');
+        const innerHTML = content.innerHTML;
+        const safeQuote = quote.replace(/[.*+?^${}()|[\]/g, '\$&');
+        const re = new RegExp('(' + safeQuote + ')', 'gi');
+        content.innerHTML = innerHTML.replace(re, '<span class="highlight">$1</span>');
+    }
+    function clearHighlight() {
+        const content = document.getElementById('greekText');
+        content.innerHTML = content.textContent; 
+    }
+    function copyCitation() {
+        const citation = "AGKI Project. (2026). Inscription PHI-140734. Retrieved from " + window.location.href;
+        navigator.clipboard.writeText(citation);
+        alert("Citation copied to clipboard!");
+    }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <h1><a href="../index.html" style="color:white;text-decoration:none;">AGKI Tagging Tool</a></h1>
+    </div>
+  </header>
+  <main class="page-container">
+    <a href="../index.html" class="back-link">← Back to Dashboard</a>
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+        <h2>Inscription PHI-140734</h2>
+        <div style="display:flex; gap:0.5rem;">
+            <button onclick="copyCitation()" class="button secondary" style="font-size:0.9rem; padding:0.5rem 1rem;">📜 Cite</button>
+            <a href="https://epigraphy.packhum.org/text/140734" target="_blank" class="button">View on PHI</a>
+        </div>
+    </div>
+    <div class="meta-grid">
+        <div><small class="eyebrow">Region</small><br><strong>Sicily, Italy, and the West (IG XIV)</strong> <a href="https://pleiades.stoa.org/places/462492" target="_blank" title="View Region in Pleiades">🔗</a></div>
+        <div><small class="eyebrow">Date</small><br><strong></strong></div>
+        <div><small class="eyebrow">Completeness</small><br><span class="badge info">intact</span></div>
+    </div>
+    <h3>Original Text</h3>
+    <div class="text-viewer">
+        <div class="line-numbers">1<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>5<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>10<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>15<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>20<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>25<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>30<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>35<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>40<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>45<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>50<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>55<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>60<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>65<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>70<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>75<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>80<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>85<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>90<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>95<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>100<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>105<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>110<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>115<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>120<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>125<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>130<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>135<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>140<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>145<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>150<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>155<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>160<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>165<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>170<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>175<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>180<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>185<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>190<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>195<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>200<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>205<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>210<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>215<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>220<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>225<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>230<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>235<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>240<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>245<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>250<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>255<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>260<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>265<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>270<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>275<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>280<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>285<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>290<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>295<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>300<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>305<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>310<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>315<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>320<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>325<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>330<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>335<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>340<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>345<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>350<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>355<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>360<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>365<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>370<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>375<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>380<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;</div>
+        <div class="greek-content" id="greekText">α
+στραταγο δι π ντε τ ων
+ π στιε ου
+νυμφ δωρος σιμ σκου
+φιλιστ ων θαρρ α.
+ π δαματρ ου
+ ριστ ας ρτεμιδ ρου
+ γ θαρχος ε νδρου.
+ π ριστ ος
+ε π λεμος ε νδρου
+ ρ κλητος γων ππου.
+ π φρ νιος
+δαμ τριος νυμφοδ ρου
+ γ θων ρεσ νδρου.
+ π ρακλε δα
+μ σχος μμωνοδ του
+ ρτεμ δωρος θ νιος.
+ π νυμφοδ ρου
+ λυμπις σωκρ τεος
+ ρ των πολλοδ ρου.
+ π ρθωνος
+ ντ μαχο[ς θ]ρασυμ [χ]ου
+νικ δαμος παιαν ου.
+ π γ θωνος
+διον σιος ρτεμιδ ρου
+φιλιστ ων θ νιος.
+ π πολλ α
+ε π λεμος ε νδρου 
+νεμ νιος μμωνοδ του.
+ π σ νωνος
+φρ νις διονυσ ου
+σα λαος νυμφοδ ρου.
+ π σωπ τρου
+θε δωρος ντιπ τρου
+λ σανδρος σοδ κου.
+ π νδρωνος
+ γ θ[ω]ν ρεσ νδρου 
+ ρμων φιλ α.
+ π λυσ νδρου
+φιλ δαμος πολλων δα
+ ριστ λας ριστ λα.
+ π νικοδ μου
+φιλιστ ων θ νιος 
+ζω λος μεν νδρου.
+ π ε λκου
+φιλιστ ων θαρρ α 
+ νδρ σκος νυμφοδ ρου.
+ π σωκρ τεος
+ νδρων λυκ νου
+ε φορος πυθοδ ρου.
+ π θεοδ ρου
+ ρχιππος ε νδρου
+φιλιστ ων ξ νωνος.
+ π νυμφοδ ρου
+θε μναστος καλλ ππου
+νικ μαχος μν σιος.
+ π σωκρ τεος
+ζ πυρος λ μπιος
+θε δωρος φιλ σκου.
+ π θρασυμ χου
+δι δωρος νδρων[ο]ς
+α νησις μεν νδρου.
+ π δαματρ ου
+λ σανδρος σοδ κου 
+ε αλκος νυμφοδ ρου.
+ π φιλων δα
+ζωπυρ σκος ε θ μου
+ γ ας μ νωνος.
+ π ε κλε δα
+ ρ σταρχος ε θ μου
+φιλ ξενος φιλων δα.
+ π πολλοδ ρου
+ γ θων ρεσ νδρου 
+[----] δ ωνος.
+ π ν κωνος
+ γ θαρχος ε νδρου 
+θε δωρος σωσιπ τρου.
+ π στρο θου
+ε φορος πυθοδ ρου 
+φ λιστος ξ νιος.
+ π θεοκρ του
+λ σανδρος σοδ κου 
+σωσ στρατος σιλανο.
+ π λυκ σκου
+φιλιστ ων θ νιος 
+ ρ κλητος κλειν ππου.
+ π πολλοδ ρου
+ ρμων φιλ α 
+τιμ λας ξ νωνος.
+ π λ μπιος
+ ρθων θεοκρ του
+φιλων δας καλλιμ χου.
+ π νομ στου
+ ρτεμ δωρος θ νιος 
+ γ ας μ νωνος.
+ π ριστ α
+ πιγ νης ριστοκρ τεος
+ πιγ νης ε δαμ δα.
+ π φιλιστ ωνος
+ π ρβολος νασικρ τεος
+λ ων θεοδ ρου.
+ π πολεμ ρχου
+νικ μαχος μν σιος 
+ πολλ δωρος σωσιφ νεος.
+ π ξ νωνος
+ε αλκος νυμφοδ ρου 
+στρ των κλεοδ ρου.
+ π φιλα ου
+θε δωρος φιλ σκου β 
+ε φρα ος καλλ α.
+ π λ μπιος
+φιλ ξενος φιλων δα 
+νυμφ δωρος φιλων δα.
+ π ρτεμιδ ρου
+ γαθ ας πολλων ου
+ ρ σανδρος γ θωνος.
+ π σ μου
+λ σανδρος σοδ κου 
+ λυμπις δαμαρ του.
+ π πολλοδ ρου
+ ρ κλητος κλειν ππου 
+ζωπυρ σκος ν κωνος.
+ π ρτεμιδ ρου
+σωσ στρατος σιλανο 
+διον σιος σωσιφ νεος.
+ π λ κωνος
+φιλων δας καλλιμ χου 
+φιλιστ ων φιλιστ ωνος.
+ π γοργ α
+ γ ας μ νωνος 
+ λυμπις φρ νιος.
+ π ξ νωνος
+λ ων θε[οδ ρου] 
+ πολλ δ[ωρος] νυμφοδ ρου.
+ π φιλ[---]
+στρ των κλεοδ ρου 
+περικλ ς ριστοπ λιος.
+[ π] φιλιστ ωνος
+γ θαρχος κλεοδ ρου
+[θ ρ]ριππος γεστρ του.
+[ π]ρτεμιδ ρου
+θε δωρος σωσιπ τρου 
+αι νιος νικοδ μου.
+ π σιμ λου
+κλ ων σωσ νδρου
+σωφρον δας φιλιστ ωνος.
+ π φαλ κρου
+πολ μαρχος πολλοδ ρου
+νικ στρατος νικοστρ του.
+ π φρ νιος
+φιλιστ ων
+σ πολις σωπ λιος.
+ π ριστοκρ τεος
+διον σιος σωσιφ νεος 
+φιλιστ ων φιλιστ ωνος.
+ π πανφ λου
+ θανις ρτεμιδ ρου
+σ μος πιξ νου.
+ π νυμφοδ ρου
+ε κλε δας ριστομ δοντο[ς]
+γοργ ας λυσ νδρου.
+ π νικοδ μου
+φιλιστ ων φιλιστ ωνος 
+ε δαμ δας πιγ νεος.
+ π ρ α
+ λυμπις δαμαρ του 
+ξ νων φιλιστ ωνος.
+ π νικοδ μου
+ ντ μαχος νικοστρ του
+θε χρηστος [πιγ] νεος.
+ π φιντ α
+ πολλ δωρος ρ τωνος
+θε χρηστος θεοφ λου.
+ π ριστοπ λιος
+λ ων θεοδ ρου 
+μ νων θεοφ λου.
+ π ντιμ χου
+νικ στρατος νικοστρ του 
+ πολλ δωρος ρτεμιδ ρου.
+ π ζωπ ρου
+θ ρριππος γεστρ του 
+φρ νις πο[λλ]οδ ρου.
+ π ζωπ ρου
+α-- ωρος ε β[ο] λου
+ νασικρ της περβ λου.
+[ π] διονυσ ου
+διον σιος σωσιφ νεος 
+σωσ πατρος θεοδ ρου.
+ π πιγ νου
+νυμφ δωρος νδ[ρ σ]κου
+κρ θων ρτεμιδ ρου.
+ π ρακλε δα 
+ θανις ρτεμιδ ρου 
+φιλιστ ων γ α.
+ π φιλων δα
+θε κριτος ρθωνος
+νυμφ δωρος ε λκου.
+ π περικλ ος
+θε χρηστος πισθ νεος
+φιλ ξενος πειθαγ ρα.
+ π δαματρ ου
+φ λακρος ντ λλου
+ζ πυρος φιλιστ ωνος.
+ π νδρ σκου
+νεμ νιος ρτεμιδ ρου
+νυμφ δωρος ε κλε δα.
+ π θρασυμ χου
+θε χρησ[το]ς θεοφ λου 
+ γ θαρχος διονυσ ου.
+ π δειν α
+φρ νις φρ νιος
+ στιε ος στρ τωνος.
+ π ρακλ του
+ ρ ας νομ στου
+ζω λος θαρρ ππου.
+ π ξεν ου
+ ρτεμ δωρος πολλοδ ρου
+φιλιστ ων φιλιστ ωνος δαμ.
+ π νεμην ου
+φ λιστος θεοφ λου
+ ρ στων ν σου.
+ π ζω λου
+φιλιστ ων γ α 
+νικ στρατος νικοστρ του.
+ π φιλων δα
+γοργ ας λυσ νδρου 
+φιλιστ ων φιλιστ ω[νο]ς ε δ[ο]μ 
+ τελε τασε
+τιμ ναξ ξ νωνος.
+ π μ σχου
+ ρχ γαθος ρτε[μ]ιδ ρου
+ζ πυρος στρο θου.
+ π νικομ χου
+νυμφ δωρος ε λκου 
+ ρτεμ δωρος θ νιος.
+ π ε δ μου
+δαμ ρετος λ μπιος
+σ πατρος πολλοδ ρου.
+ π μενεκρ τεος
+ γ θαρχος διονυσ ου 
+ ρ κλητ[ος] διονυσ ου.
+ π λ μπιος
+φρ νις πολλοδ ρου 
+δειν ας λ ριος.
+ π ε κλ ος
+φ λακρος ντ λλου 
+ νδρ σκος φιλιστ ωνος.
+ π α σχ λου
+νυμφ δωρος ε κλε δα 
+κλε νιππος ρακλ του.
+ π σ σιος
+ ρ σταρχος θεοκρ του
+λ σανδρος γοργ α.
+ π φιλων δα
+φιλιστ ων φιλιστ ωνος δαμ 
+ξ νιος πιδ ρου.
+ π φιλοδ μου
+ζω λος θαρρ ππου 
+ πιγ νης ε δαμ δα.
+ π γαθ ρχου
+ ρ σταρχος ρακλ του
+νικ μαχος μν σιος.
+ π ζω λου
+ ρτεμ δωρος θ νιος 
+ πολλ δωρος ρτεμιδ ρου.
+ π τιμ λα
+διον σιος θεοκρ του
+ γ θαρχος γαθ ρχου.
+ π ρωνος
+ ρακλε δας φιλ στου
+ ρ των πολλοδ ρου.
+ π ζωπ ρου
+ ριστ πολις δαματρ ου
+ πολλ δωρος φρ νιος
+ π ρχα
+δειν ας λ ριος 
+σ σις νυμφοδ ρου.
+ π ρακλ του
+σωσιφ νης διονυσ ου
+καλλ μαχος φ λωνος.
+ π γοργ α
+ ρ σταρχος θεοκρ του
+φρ νις φρ νιος.
+ π δαματρ ου
+ξ νιος πιδ ρου 
+φιλιστ ων φιλιστ ωνος σπαρ.
+ π ριστοκρ τεος
+ζω λος θαρρ ππου 
+μ σχος ριστ α.
+ π ρτεμιδ ρου
+λ σανδρος γοργ α 
+ ρ σταρχος θεοκρ του.
+ π ρτ μωνος
+νυμφ δωρος ε κλε δα 
+νικ στρατος γ θωνος.
+ π ρτεμιδ ρου
+τιμ λας ξ νωνος
+ λυμπις θεοδ ρου.
+ π ρθωνος
+νικ μαχος 0[ν] σ[ι]ος 
+φιλων δας κρ θωνος.
+ π πολλων ου
+δειν ας λ ριος 
+ ρων [ζωπ] ρου
+ π ξανθππου
+ πολλ δωρος ρτεμιδ ρου 
+ ρτ[ε]μ δωρ[ος ε]φρου.
+π θανοδ [ρου ---]ιιο
+νικ στρατ[ος φ λωνος] πελ 
+ πα νετος [-----] δαμ.
+[ π --------ο]υ το 
+[--------]ου
+[------ φι]λ[ι] ρχου 
+[------ φιλ] στου 
+ π[ ε κλε] δα το 
+μεγ[ι]στ α
+[--]ικ[-]σιι[--]
+δ[----]ανιι[---] 0[----] ος[---]
+[-------]γ[--]
+[-----]ατο[---]
+ 
+[ π -----------]
+γλα κος λ μπιος χαι 
+ ριστ πολις φιλοδμου λκ
+γρ πιγ νης θ νιος σπαρ.
+[ π -----------]
+ ριστομ νης ριστοκρ τεος
+θε κριτος λ μπιος.
+ π πολλοδ ρου το 
+νεμην ου
+ ριστοκλ ς ριστοκλ ος
+φρ νις φρ νιος δαμ.
+[ π] λ μπιος το λ μπιος
+ ρτεμ δωρος ρτεμιδ ρου
+[ζ]ω λος θαρρ ππου.
+ π πολλων ου το 
+ πολλων ου
+ζ πυρος ρτεμιδ ρου καλ
+ νδρ μαχος πολλων δα δεξ
+[γρ] γ ας φιλιστ ωνος σπ[αρ].
+ π δαματρ ου το φ λωνος
+σωτ λης γ θωνος σπαρτ
+γλα κος λ μπιος χαιο
+[γρ] πολλ δωρος πολλοδ ρου ρ[εθ].
+[ π] ε κλε δα το νυμφοδ ρου
+ρ[ισ]τοκρ της ριστομ νεος χα[λ]
+[-------]ος [ξ]ανθ ππου ππ.
+[ π νικοστρ του] το φ λωνος
+[---------]οδ ρου δαμ
+[---------]ωνος δεξ
+[γρ --] πεα.
+[ π φιλ στου] το ππωνος
+[-----] ρακλ του χαι
+[-----]ος φ λωνος πεα 
+[γρ φι]λ δαμος θεοφ λου ταν.
+[ π] ε δ ξου το σ σιος
+[δα]μ φιλος παιν του δαμ
+ρτεμ δωρος ν σου ο τ
+[γρ]πα νετος μμεν δα δαμ.
+[ π ρι]στοπ λιος το 
+[φι]λοδ μου
+[ζ πυρο]ς ρτεμιδ ρου 
+[-----]τος φ λωνος πελ
+γρ ξ νθιππος λεξ νδρου ππ.
+[ π ρχα] το ρ στωνος
+διον σιος πολλοδ ρου ρε[θ]
+ε κλε δας γ θωνος δ[ομ].
+ π ξεν του το γ θωνος
+ ρτεμ δωρος ριστομ νεος ο ν
+ε ανδρος φιλι ρχου σακ.
+ π παιν του το δαμοφ λου
+ γ θαρχος διονυσ ου χαλκ
+ ρτεμ δωρος πολλοδ ρου ρεθ.
+ π ε κλε δα το ρωνος
+ πολλ δωρος μενεκρ τεος λκ
+δαμ τριος φ λωνος πελ
+φιλιστ ων γ α σπαρτ
+τ ν πρ ταν τετρ μηνον
+κα τελε τασε
+γρ γ θων ε κλε δα ε δ.
+ π νικοκλ ος το νικοκλ ος
+ζω λος θαρρ ππου καλ 
+ ρ σταρχος ζωπ ρου δεξ
+γρ ρτεμ δωρος θ νιος σπαρ.</div>
+    </div>
+    <h3>Thematic Analysis</h3>
+    <p class="muted" style="margin-bottom:1rem;">Hover over cards to see evidence in text.</p>
+    
+        <div class="theme-card" onmouseover="highlightQuote('ρου μ νων θεοφ λου. π ντιμ χου νικ στρατος')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:start;">
+                <div>
+                    <span class="tag domain-tag">Content</span>
+                    <span class="badge orange" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">73% Conf.</span>
+                    <div class="theme-path">Content > Administrative Records and Lists > Inventories</div>
+                    <div class="theme-label">Inventories</div>
+                </div>
+                <div class="ai-rationale-box">
+                    <strong>🤖 AI Rationale:</strong>
+                    <p>Generated rationale for Inventories</p>
+                    <p class="evidence-quote">Evidence: "ρου μ νων θεοφ λου. π ντιμ χου νικ στρατος"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('νυμφ δωρος φιλων')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:start;">
+                <div>
+                    <span class="tag domain-tag">Type</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">85% Conf.</span>
+                    <div class="theme-path">Type > Object Type > Portable Objects > Lead or Metal Tablets</div>
+                    <div class="theme-label">Bronze Tablets</div>
+                </div>
+                <div class="ai-rationale-box">
+                    <strong>🤖 AI Rationale:</strong>
+                    <p>Generated rationale for Bronze Tablets</p>
+                    <p class="evidence-quote">Evidence: "νυμφ δωρος φιλων"</p>
+                </div>
+            </div>
+        </div>
+        
+    <h3>Entities</h3>
+    <div><span class="tag entity-tag">👤 Theemos <small>(Archon)</small></span><span class="tag entity-tag">📍 Athen <small>(Polis)</small></span></div>
+  </main>
+</body>
+</html>

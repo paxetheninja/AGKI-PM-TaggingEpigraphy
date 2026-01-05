@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PHI-138538 - AGKI</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <style>
+    .page-container { max-width: 1100px; margin: 0 auto; padding: 2rem; }
+    .back-link { display: inline-block; margin-bottom: 1rem; color: var(--primary); font-weight: 600; }
+    .text-viewer { display: grid; grid-template-columns: 40px 1fr; gap: 1rem; font-family: "New Athena Unicode", "Gentium Plus", "Times New Roman", serif; font-size: 1.2rem; line-height: 1.8; background: var(--panel); padding: 2rem; border: 1px solid var(--border); border-radius: 4px; margin-bottom: 2rem; color: var(--text); }
+    .line-numbers { text-align: right; color: var(--muted); font-size: 0.9rem; user-select: none; opacity: 0.6; font-family: sans-serif; }
+    .greek-content { white-space: pre-wrap; }
+    .highlight { background-color: rgba(255, 255, 0, 0.3); border-radius: 2px; transition: background-color 0.2s; }
+    .theme-card { background: var(--panel); padding: 1.5rem; border-left: 4px solid var(--primary); margin-bottom: 1rem; border: 1px solid var(--border); border-left-width: 4px; transition: transform 0.2s; }
+    .theme-card:hover { transform: translateX(4px); box-shadow: var(--shadow); }
+    .ai-rationale-box { background: rgba(31, 167, 163, 0.08); padding: 0.75rem; border-radius: 6px; font-size: 0.9rem; color: var(--muted); max-width: 400px; }
+    .evidence-quote { border-left: 2px solid var(--accent); padding-left: 0.5rem; margin-top: 0.5rem; font-style: italic; color: var(--text); }
+    .badge.green { background: #e6f4ea; color: #137333; border-color: #137333; }
+    .badge.orange { background: #fef7e0; color: #b06000; border-color: #b06000; }
+    .badge.red { background: #fce8e6; color: #c5221f; border-color: #c5221f; }
+    .entity-tag { background: rgba(217, 123, 61, 0.1); color: var(--accent-2); margin-right: 0.5rem; margin-bottom: 0.5rem; display: inline-block; padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.9rem; border: 1px solid rgba(217, 123, 61, 0.2); text-decoration: none; }
+  </style>
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    function highlightQuote(quote) {
+        if(!quote) return;
+        const content = document.getElementById('greekText');
+        const innerHTML = content.innerHTML;
+        const safeQuote = quote.replace(/[.*+?^${}()|[\]/g, '\$&');
+        const re = new RegExp('(' + safeQuote + ')', 'gi');
+        content.innerHTML = innerHTML.replace(re, '<span class="highlight">$1</span>');
+    }
+    function clearHighlight() {
+        const content = document.getElementById('greekText');
+        content.innerHTML = content.textContent; 
+    }
+    function copyCitation() {
+        const citation = "AGKI Project. (2026). Inscription PHI-138538. Retrieved from " + window.location.href;
+        navigator.clipboard.writeText(citation);
+        alert("Citation copied to clipboard!");
+    }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <h1><a href="../index.html" style="color:white;text-decoration:none;">AGKI Tagging Tool</a></h1>
+    </div>
+  </header>
+  <main class="page-container">
+    <a href="../index.html" class="back-link">← Back to Dashboard</a>
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+        <h2>Inscription PHI-138538</h2>
+        <div style="display:flex; gap:0.5rem;">
+            <button onclick="copyCitation()" class="button secondary" style="font-size:0.9rem; padding:0.5rem 1rem;">📜 Cite</button>
+            <a href="https://epigraphy.packhum.org/text/138538" target="_blank" class="button">View on PHI</a>
+        </div>
+    </div>
+    <div class="meta-grid">
+        <div><small class="eyebrow">Region</small><br><strong>Aegean Islands, incl. Crete (IG XI-[XIII])</strong> <a href="https://pleiades.stoa.org/places/589748" target="_blank" title="View Region in Pleiades">🔗</a></div>
+        <div><small class="eyebrow">Date</small><br><strong> after 69 AD</strong></div>
+        <div><small class="eyebrow">Completeness</small><br><span class="badge info">fragmentary</span></div>
+    </div>
+    <h3>Original Text</h3>
+    <div class="text-viewer">
+        <div class="line-numbers">1<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>5<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>10<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>15<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>20<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>25<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>30<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>35<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>40<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>45<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>50<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>55<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>60<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>65<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>70<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>75<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>80<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>85<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>90<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>95<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>100<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>105<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>110<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>115<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>120<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>125<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>130<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>135<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>140<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>145<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>150<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>155<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>160<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>165<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>170<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>175<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>180<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>185<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>190<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>195<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>200<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>205<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>210<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>215<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>220<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>225<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>230<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>235<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>240<br>&nbsp;<br>&nbsp;</div>
+        <div class="greek-content" id="greekText">[--]υ 
+[--]
+[---]θους.
+[--]ιιιιι[-----------------]
+τ[ρ] διον σιος [καθ θ ωνος]
+ γρ ο λιος φαινλ[ας μοιων δευς]
+ ριστ βουλος δ[------]
+ ο ηρ νιος ε φη[μος ----]
+ διον σιος γ καθ [θ ωνος]
+ μενεκλ ς δ
+ κλα διος κλιν μβ[ροτος μελαν θ]ου καθ ι[---]
+[ φλα ιος]ψικλ ς [λυσιστρ του]
+[------------------]
+[------]ευς
+[------]-
+[------]
+[------]υ
+[------]ς
+[-----]ων ου
+[-----]
+[-----]λου
+[-----]
+[-----]του
+[-----]υς
+[------]ευς
+[------]
+[------]
+[------]
+[------]ατου
+[------]ατου
+[------]νος
+[------]
+[------]ρ του
+[-------]ευς
+[---- γα]θαγ του 
+[------]
+[------]
+[------] λα 
+[------]
+[-------]ς κλαρο
+[-------]που 
+[-------]ευς
+[-------]
+[-------]του
+[-------]
+[-------]
+[-------]
+[---- καρπα]θιοπο
+[---- ποσι]δων ου 
+[----- κλ]αρο 
+[-------]ου
+[-------]
+[-------]
+[ --------------]
+[ --------------]
+[ --------------]
+[ --------------]
+[ --------------]
+[ --------------]
+[ --------------]
+[ --------------]
+[ -------------]
+[ --------------]
+[ --------------] φ σκιος
+[ --------------]σιδου
+[ -------------]
+[ κλα διος ντ πατρος 0]ρ κοντος
+[ ----------]σ ου
+[ φλα ιος ψικ]λ ς λυσιστρ του
+[ ---]---οκρατ α στιοδ ρου
+[ ---]αρχος λλαν κου
+[ κλα διος]ψικλ ς β καθ ποσιδων ου
+[ ο]λιος φαιν λας μοιων δευς
+ κλα διος ψικλ ς β καθ ποσιδων ου
+πρ φλα ιος μοιραγ νης τιμοδ κου
+τρ γ λοχος ριστ ως
+σμ ο λιος φαιν λας μοιων δευς
+ φιλ σκος λεξ νδρου
+ π θων β μν στιος
+ π θων γ του μν στιος
+ φλα ιος ριστογ νης π που
+ σωμ νης κ μωνος
+ φλα ιος γλ χαρτος φιλοκρ του
+ ψικλ ς δ ωνος καθ [----]
+ κλα διος ππ λυτος π θωνος
+ ο λιος φαιν λας μοιων δευς
+ π θων γ του μν στιος
+ φλα ιος ε φρ νωρ
+ κλα διος φαν στρατος
+ γ ιος σαβ διος λα
+ φλα ιος μοιραγ νης τιμοδ κου
+ ο λιος ντ πατρος ρτεμιδ ρου
+ ο λιος μοιραγ νης ζ νωνος
+ φλα ιος μην δοτος ρατοφ νευς
+ φλα ιος πολλ νιος ρμοκρ τευς
+ δαμ χαρις γοργ α
+ φλα ιος ριστ δας ριστ ππου
+ φλαυ α ρτεμισ α καλλικρ τευς
+ ο λιος φαιν λας μοιων δευς
+ εροφ ν δωσιθ ου τλ ος
+ κλ[α] διος ψικλ ς β καθ ποσιδων ου
+ ο λιος φαιν λας μοιων δευς
+ ο ηραν α νικ σσα κλευκρ τευς
+ κλα διος μνασαγ ρας καλλιστρ του
+τρ σων πυθαγ ρα
+ ρτ κλαυδ α δαμο[-] κρατ δευ[ς] 
+ ε κρ της ντιλ οντος ς
+ φλα ιος μελ νθιος ε νδρου ο
+ κλα διος ψικλ ς β καθ ποσιδων ου
+ κλα διος φιλοκρ της γλωκρ του
+ ο ηραν α νικ σσα κλευκρ τευς
+ φλαυ ου δρ κοντος πολλ[ω]ν
+ δημητρ ου κασσι τα κλαρο
+ κλα διος ντ πατρος δρ κοντος
+ ρ στιππος β βυ
+ι διον σιος γ καθ θ ωνος
+[ -----------]
+[ -----------]
+[ ---------]νο[--]
+[ --------]-γ[-]ατ[--]
+[ γ ργος δι]ονυσ ου
+[ κλα διος κλι]ν μβροτος μελαν[θ ου]
+[ ο λιος] φαιν λας μοιων δ[ευς]
+[ φλα ιος] ψικλ ς λυσιστρ του
+[ φ]λα ιος θ βρων ψικλε ς σιβ
+ δαμ χαρις γοργ α
+[κ] φλα ιος γητος κλισιμβρ του
+ γλ χαρτος τιμασ ρχου
+ ο λιος διον σιος ρτεμιδ ρου
+ φλα ιος θρασυμ δης λυσιστρ του
+ ρμοκρ της πραξ ωνος κρυ
+ κλα διος μνασαγ ρας καλλιστρ
+ κλα διος φαρν κης καλλιστρ του
+τρ κλα διος κλευκρ της τειμοδ κου
+ α δαμαγ ρας διονυσ ου ο
+ ο λιος φαιν λας μοιων δευ[ς]
+ φλα ιος γλ χαρτος νεικασιμ χο[υ]
+ φλαυ εροκλε ς υ ο μεικυλα ου λ
+ γ ργος διονυσ ου καρπα
+ σων πυθαγ ρα βου
+ φλαυ α ρτεμεισ α
+ φλαυ εροκλε ς μεικυλα ου κλα
+ φλαυ σατ ρα εροκλε ς κα θυ φ ν[ευς] 
+ φλαυ ρτεμεισ α [-----]
+ φλαυ α ρτεμεισ α
+ δαμ χαρις γοργ α
+ κλα διος ντ πατρος δρ κοντος στυπα
+ φλαυ α ρτεμεισ α
+ φλα ιος εροκλ ς λα
+ φλα ιος ριστε δας ριστ ππου
+ φλαυ α ρτεμε[ισ] α
+ γ σαρχος ε κλε ς φαγα
+ τειμ ναξ τιμοπ λεως φαγα
+ ο λιος φαιν λας μοιων δευς
+ ο λιος φαιν λας μοιων δευς
+ μ νανδρος δωσιθ ου τλ ος
+ γησ δαμος διοδ του ρχ
+ φλα ιος μοιραγ νης τιμοδ κου
+ φλα ιος μελ νθιος ε νδρου
+ φλα ιος διον σιος βου καθ ριστομ νευς
+ λιβουσκ διος δημητρ ου σερμι
+ κλα διος μνασαγ ρας καλλιστρ του
+προ κλα διος μνασαγ ρας καλλιστρ του
+τρ φλα ιος μοιραγ νης τιμοδ κου
+π φιλ σκος λεξ νδρου
+ κρατ δας ναυσ κου λα
+ κλα διος ντ πατρος δρ κοντος
+ κ μων μενεκρ τευς
+ δαμαγ ρας διονυσ ου ο
+ ο λιος μοιραγ νης ζ νωνος καρπα
+ φλα ιος ψικλ ς λυσιστρ του
+ ο λιος φαιν λας μοιων δευς
+ δαμαγ ρας διονυσ ου ο
+ φλα ιος γητος κλισιμβρ του
+ φλα ιος λ ξανδρος κ μωνος
+ δαμαγ ρας διονυσ ου ο
+ διον σιος γ καθ [θ]ωνος κρυ
+ σωμ νης κ μωνος βρ σιος
+ μοσχ ων θ ωνος καθ σσου
+ κλα διος κλευκρ της τιμοδ κου
+ [--]γ[-----------]
+[ -------------]
+[ -------------]
+[ ----------]
+[ ----------]
+[ ----------]
+[ ----------]
+[ ----------]
+[ ---------]
+[ ----------]
+[ ----------]
+[ ----------]
+[ ----------]
+[ ---------]
+[ ---------]
+[ ---------]
+[ ---------]
+[ ---------]
+[ ---------]
+[ ---------]
+[ ---------]
+[ ---------]
+[ ----------]
+[ ---------]
+[ ---------]
+[ ---------]
+[ ---------]
+[ ---------]
+ λη-[--------]
+ γη[-------]
+ γ[--------]
+τρ ρτ[----]
+π κλ[α διος ---]
+ κλα διος [---------]
+ γορ[-----------]
+ ε κρ[ της ντιλ οντος μιος]
+ γ ργ[ος διονυσ ου καρπα]
+ δα[μαγ ρας διονυσ ου ο]
+ γλ[ χαρτος τιμασ ρχου]
+ ο [λιος -------]
+ φ[λα ιος ------]
+ μο [---------]
+ κλε[---------]
+ φιλ [σκος λεξ νδρου]
+ φλα ιος [-----]
+ ρισ[--------]
+ ο λ[ιος ------]
+ κλα διος [----]
+ φλα ιος [-----]
+ κλα διος [ψικλ ς καθ ποσιδων ου]
+ κλα δ[ιος ------]
+ διον [σιος ------]
+ τ τος [-------]
+ διον[ σιος -----]
+ κλα [διος ------]
+ σωσ[---------]
+ κρατ[ δας ναυσ κου λα]
+κε πυ [--------]
+[ ----------]
+[ ----------]
+[προτρ ------]
+[τρ -------]</div>
+    </div>
+    <h3>Thematic Analysis</h3>
+    <p class="muted" style="margin-bottom:1rem;">Hover over cards to see evidence in text.</p>
+    
+        <div class="theme-card" onmouseover="highlightQuote('κου λα] κε πυ [--------] [')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:start;">
+                <div>
+                    <span class="tag domain-tag">Content</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">97% Conf.</span>
+                    <div class="theme-path">Content > Graffiti and Personal Expressions > Acclamations and Slogans</div>
+                    <div class="theme-label">Acclamations and Slogans</div>
+                </div>
+                <div class="ai-rationale-box">
+                    <strong>🤖 AI Rationale:</strong>
+                    <p>Generated rationale for Acclamations and Slogans</p>
+                    <p class="evidence-quote">Evidence: "κου λα] κε πυ [--------] ["</p>
+                </div>
+            </div>
+        </div>
+        
+    <h3>Entities</h3>
+    <div><span class="tag entity-tag">👤 Theemos <small>(Archon)</small></span><span class="tag entity-tag">📍 Athen <small>(Polis)</small></span></div>
+  </main>
+</body>
+</html>

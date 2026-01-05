@@ -1,0 +1,624 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PHI-138581 - AGKI</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <style>
+    .page-container { max-width: 1100px; margin: 0 auto; padding: 2rem; }
+    .back-link { display: inline-block; margin-bottom: 1rem; color: var(--primary); font-weight: 600; }
+    .text-viewer { display: grid; grid-template-columns: 40px 1fr; gap: 1rem; font-family: "New Athena Unicode", "Gentium Plus", "Times New Roman", serif; font-size: 1.2rem; line-height: 1.8; background: var(--panel); padding: 2rem; border: 1px solid var(--border); border-radius: 4px; margin-bottom: 2rem; color: var(--text); }
+    .line-numbers { text-align: right; color: var(--muted); font-size: 0.9rem; user-select: none; opacity: 0.6; font-family: sans-serif; }
+    .greek-content { white-space: pre-wrap; }
+    .highlight { background-color: rgba(255, 255, 0, 0.3); border-radius: 2px; transition: background-color 0.2s; }
+    .theme-card { background: var(--panel); padding: 1.5rem; border-left: 4px solid var(--primary); margin-bottom: 1rem; border: 1px solid var(--border); border-left-width: 4px; transition: transform 0.2s; }
+    .theme-card:hover { transform: translateX(4px); box-shadow: var(--shadow); }
+    .ai-rationale-box { background: rgba(31, 167, 163, 0.08); padding: 0.75rem; border-radius: 6px; font-size: 0.9rem; color: var(--muted); max-width: 400px; }
+    .evidence-quote { border-left: 2px solid var(--accent); padding-left: 0.5rem; margin-top: 0.5rem; font-style: italic; color: var(--text); }
+    .badge.green { background: #e6f4ea; color: #137333; border-color: #137333; }
+    .badge.orange { background: #fef7e0; color: #b06000; border-color: #b06000; }
+    .badge.red { background: #fce8e6; color: #c5221f; border-color: #c5221f; }
+    .entity-tag { background: rgba(217, 123, 61, 0.1); color: var(--accent-2); margin-right: 0.5rem; margin-bottom: 0.5rem; display: inline-block; padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.9rem; border: 1px solid rgba(217, 123, 61, 0.2); text-decoration: none; }
+  </style>
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    function highlightQuote(quote) {
+        if(!quote) return;
+        const content = document.getElementById('greekText');
+        const innerHTML = content.innerHTML;
+        const safeQuote = quote.replace(/[.*+?^${}()|[\]/g, '\$&');
+        const re = new RegExp('(' + safeQuote + ')', 'gi');
+        content.innerHTML = innerHTML.replace(re, '<span class="highlight">$1</span>');
+    }
+    function clearHighlight() {
+        const content = document.getElementById('greekText');
+        content.innerHTML = content.textContent; 
+    }
+    function copyCitation() {
+        const citation = "AGKI Project. (2026). Inscription PHI-138581. Retrieved from " + window.location.href;
+        navigator.clipboard.writeText(citation);
+        alert("Citation copied to clipboard!");
+    }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <h1><a href="../index.html" style="color:white;text-decoration:none;">AGKI Tagging Tool</a></h1>
+    </div>
+  </header>
+  <main class="page-container">
+    <a href="../index.html" class="back-link">← Back to Dashboard</a>
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+        <h2>Inscription PHI-138581</h2>
+        <div style="display:flex; gap:0.5rem;">
+            <button onclick="copyCitation()" class="button secondary" style="font-size:0.9rem; padding:0.5rem 1rem;">📜 Cite</button>
+            <a href="https://epigraphy.packhum.org/text/138581" target="_blank" class="button">View on PHI</a>
+        </div>
+    </div>
+    <div class="meta-grid">
+        <div><small class="eyebrow">Region</small><br><strong>Aegean Islands, incl. Crete (IG XI-[XIII])</strong> <a href="https://pleiades.stoa.org/places/589748" target="_blank" title="View Region in Pleiades">🔗</a></div>
+        <div><small class="eyebrow">Date</small><br><strong> ca. 68 BC</strong></div>
+        <div><small class="eyebrow">Completeness</small><br><span class="badge info">fragmentary</span></div>
+    </div>
+    <h3>Original Text</h3>
+    <div class="text-viewer">
+        <div class="line-numbers">1<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>5<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>10<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>15<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>20<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>25<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>30<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>35<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>40<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>45<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>50<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>55<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>60<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>65<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>70<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>75<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>80<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>85<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>90<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>95<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>100<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>105<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>110<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>115<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>120<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>125<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>130<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>135<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>140<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>145<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>150<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>155<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>160<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>165<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>170<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>175<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>180<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>185<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>190<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>195<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>200<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>205<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>210<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>215<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>220<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>225<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>230<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>235<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>240<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>245<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>250<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>255<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>260<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>265<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>270<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>275<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>280<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>285<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>290<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>295<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>300<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>305<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>310<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>315<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>320<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>325<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>330<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>335<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>340<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>345<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>350<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>355<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>360<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>365<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>370<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>375<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>380<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>385<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>390<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>395<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>400<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>405<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>410<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>415<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>420<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>425<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>430<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>435<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>440<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>445<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>450<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>455<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>460<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>465<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>470<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>475<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>480<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>485<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>490<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>495<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>500<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>505<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>510<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>515</div>
+        <div class="greek-content" id="greekText">[ σκλαπι] δαν νδρον κο[υ]
+[γυμ]να[σ αρχο]ν πρεσβ τερον κατ ωμα α
+[ ριστε] δας νδρ[ον κου]
+[ νδρ] νικος κ[α]
+[ ριστ]οφ νης ρισ[τε δα]
+[ ριστ]ε δας ριστ[ε δα]
+[το]ριστε δα
+[το] ριστε δα
+[ νδρ]νικος ριστε[ δα]
+[καθ] διονυσ ου
+[ πολλ] νιος ρτ μων[ος]
+[ νδρ]νικος ρων[ος]
+[ ρχικ ρ] της ριστο[---]ου
+[ ντ π]ατρος ντ[ιπ τ]ρου
+[α σχ]νας λε[οντ δ]α
+[ ριστ]οφ νης φι[λοκ]λε ς
+[ νδ]ραγ ρας μην[οδ]ρου
+[ γ σ]ανδρος γησνδρου
+[το] θανοδρο[υ]
+[ γησικ]λ ς γ ργου
+[ ----]ν ριστ νακτος
+[ νδρ μ]αχος πικρ τευς
+[καθ] τελ στα
+[ γησικ]λ ς παυσαν α
+[ ρισ]τε δας τιμαρ του
+[ ντ] γονος σ σου
+[ ρισ]τ πολις ε φ[α]ν σκου
+[ ρισ]τε ς μεν [ν]δρου
+[κα]θ ερο[κ]λ[ε]ς
+[ γ] σανδρος χα[ρ]μ λου
+[ ρ]χ στρατος ρχ[ε]στρ του
+[ ρισ]τ φυλος ρισ[τ]οφ λου
+το ριστοφ λου
+[α]ν τωρ α ν τορος
+[α ν]ησ τιμος πειθι δα
+[ ν]αξαγ ρας δαμαιν του
+[κ]αθ δα[μ] νακτος
+[ ν]τιλ ων νδ[ρ]ωνος
+[α ν] ας μενε[----]
+[ ν]δρ νι[κ]ος [--]
+[ κ] στωρ λεω[ν δα]
+[κ]αθ δαματρ[ ου]
+[ ρ]ιστ [βι]ος δι[ονυσ ου]
+[το 0]ιονυ[σ ου]
+[ ------]ος ρχ[---]
+[----]φιλο[-----]
+[----]ωκλ[-----]
+[----]αγ[------]
+[----]σμι[-----]
+[----]τει[-----]
+[----]ς α [-----]
+[----]ιστ[-----]
+[----]μυν[-----]
+[----] γ[-------]ου
+[----]-εν[-------]ς
+[ ---]ν κ[ τωνο]ς
+[----] γη[σ ρ]χου
+[-----]λι[---]
+[ ---]ς ν[α]ξ ππου
+[----] δι[ομ]δευς
+[----] πο[λ]λων ου
+[ ---]ος φροδισ ου
+[ ---]ος ρ[ι]στοφ λου
+[ ---]ος ε [π]ολ μου
+[ ---]ιος σ[τ]ρατ ρχου
+[----] μενε[κ]ρ τευς
+[ ---]ιιος ερσ α
+[ ---]ιμος ρχικρ τευς
+[----] πολ μωνος
+[ ---γ] ρας νασικρ τευς
+[ ---κ]ρατ δας σωπ τρου
+[ ---]τος λεξιμ χου
+[ ---]ιιος παντα νου
+[ ---]νος ριστ ρχου
+[ ---] ρης αμοκρ νευς
+[ ριστα ν]ετο[ς]ερομβρ του
+[ ριστα ν]ετο[ς] ρισταιν του
+[-----]λ[- θρ]ασυμ δευς
+[------]γαθοκλε ς
+εν νδρου
+[ ---]ρη[ς κ]αλλικρ τευς
+[-------]νων[ο]ς
+[------]ριστ νδρου
+[----- πρα]ξιτ λευς
+[----- δρ]κοντος
+[-----]στυμ δευς
+[ -------] κα 
+[ --- πο]λλων δευς
+[-----] κ θωνος
+[---- κ]λευτ μου
+[--- ρ]ιστ νακτος
+[ ---]οσι[ς]διος
+[----] α δοκρ[ τ]ου
+[--- κ]λευφντος
+ασικρ τευς
+[ ---ω]ν νδρ α
+[ ----]ς πατοκλ[ε ς]
+[ ναξ τιμος] ναξιτ μου
+[το ναξι]τ μου
+[-------]ιλι[-]ου
+[-------] γλουχ ρου
+[-------] φαιν α
+[-------] [σ]τυκρατ δα
+[------ τι]μακρ τευς
+[------] γελ χου
+[----- κ]λευκρ τευς
+[----- κ]λευκρ τευς
+[-----]ριστ ου
+[ -----]ς ριστ δα
+[ -----]ης συμμ χου
+[ ----]ς τιμασ ρχου
+[-----] νικομ χου
+[-----] μενεκλε ς
+[-----] ρμολ χου
+[-----]- νωνος
+[ ----]ς μεν νδρου
+[-----] ριστομ νευς
+[ ----] δας παυσ ππου
+[-----] παυσαν α
+[ ----]ς ριστοτ λευς
+[-----] ριστογ νευς
+[-----] νακτος
+[ ----]δας ε κλε δα
+[ ----]ατροκλε ς
+[το -ατρ]οκλε ς
+[----]γεστρ του
+[-----κ]ρ τευς
+[-------γ] ρα
+[ ρχ]δαμος φιλ του
+[ λκ]α ος ξακεστ ωνος
+[ ρισ]τολ δας φιλοκρ τευς
+[ γ]ησ τιμος νδροτ μου
+ριστοφ ν ριστοφ ντος
+ γ σαρχος στυκρ τευς
+ γλ χαρτος σατ ρου
+ ντ οχος σελε κου
+ θαναγ ρας ε φρ νορος
+ ρ στιππος μ γωνος
+ ρ στων νικομ χου
+ ριστ ς γησιδ μου
+ ριστε δας λυσιμ χου
+καθ ε αρχ δα
+ γ σανδρος ριστοβο λου
+ ριστοκρ της ριστοκρ τευς
+ κ στωρ καλλ α
+ ρχ πολις εροφ ντος
+καθ ρχιπ λιος
+ γαθ γητος ναξιτ μου
+ λι δωρος πολυκρ το[υ]
+ ναξικρ της ρι[σ]τ δ[α]
+β κχιος ρμωνος
+βουλαγ ρας φιλων δα
+γ ργων ριστε δα
+γοργ δας θευδ ρου
+γ ργων γ ργωνος
+δαμοκρ της τιμ νακτος
+δαμαγ ρας ε φρ νορος
+διον σιος [ε πολ μ]ου
+το ε π[ολ μ]ου
+καθ ε νο[ρ]ος
+αμοκρ της τιμακρ τευς
+δαμ γητος κλευκρ τευς
+διον σι[ο]ς νικολ ου
+δωρ θ[εο]ς στυμ δευς
+διον σ[ι]ος βασιλε δευς
+καθ [-------]ου
+δι γν[ητος --]α[----] ος
+διαγ[ ρα]ς σ [-----]
+[δι γν]ητος [καλ]λικρ τε[υς]
+[δαμ]ρατος κ[λευ]σθ νευς
+[διον σ]ιος 0[ιοδ] του
+[το διο]νυσ ου
+[0]αμαγ ρα
+[0-]β-[--------]ομ νευς
+καθ [ --]
+δ μων διονυσ ου
+διαγ ρας θευφ λου
+δρ κων ο λι δευς
+διον σιος εροκλε ς
+διογ νης λ[ιο]δ ρου
+δαμοκρ της φιλοκλε ς
+δειν στρατος θαρσ τα
+διφιλ δας ρα[---]
+δ μων δα[-----]
+δαμ σιππος σωκρ τευς
+δαμ ας νασι[---]
+καθ κλευφ νευς
+δ οννος δι ννου
+το δι ννου το δι ννου
+δημ τριος τιμοπ λιος
+διον σιος ξ νωνος
+δαμ γητος δορκ λου
+διον σιος ρχ α
+διοκλ ς 0[α]λ ωνος
+δαμ νικος θευφ λου
+διον σιος κ τωνος
+δεινοκλ ς ριστομ χου
+διον σιος θευπρ που
+το θευξεν δα
+διον σιος δωροθ ου
+καθ διονυσ ου
+δαμοκρ της βασ λωνος
+δαμαρχ δας ριστομ δ[ε]υς
+δορ μαχος ε φρ νορος
+δαμ τριος ριστομ νευς
+ τ αρχος καλλι νακτος
+καθ ριστομ χου
+ε ρηνδας διονυσ ου
+καθ λκιστρ του
+ ρμοκρ ων συμμ χου
+ε κλε δας λεων δα
+ ρμιππος λεξιμ χου
+ε φρ νωρ βασιλε δευς
+ ρμανδρ δας ρμανδρ δα
+το ρμανδρ δα
+ π γ[ο]νος [---]ακλε ς
+ π γονος πιγ νου
+ ρμοκρ της ζ νωνος
+ ρμοκρ ν ρμοδ κου
+ ρμα ος ρμα ου
+το ρμα ου
+ ρατο[κ]λ ς ρατοκλε ς
+ε κλ ς ξενοφ νευς
+ κ των φαιν λα
+ε κρ της φιλτ του
+ κ των ριστ ως
+ λπικρ της λπικρ τευς
+το λπικρ τευς
+ε μηλος εμ [λ]ου
+ κ των θ[ευ]δ ρου
+ε κλ ς [κ]υδ α
+ ργ χαρις ργοχ ριος
+ε αγ ρας νι[κο]τ μου
+ε ρ λοχος πυθοκλε ς
+ ρμ ας πολλοθ μιος
+ε φ νης κληνοστρ του
+ κατ μνως ριστ [ω]ς
+ε[ κ]λ ς τιμακρ τευς
+ ρμ δοκος ρμοδ κου
+καθ ε αρχ δα
+ ρμοκρ ων ρμοκρ οντος
+ε ξιππος νικασ ωνος
+ ρμ δοκος ριστοφ λου
+ε κρ της ξενοφ ντος
+ε κλ ς ε κλε ς
+καθ δαμαρ του
+ε κλε δας κριτοβο λου
+ε κρ της ριστομ δευς
+ πα νετος διος
+ε βουλος ρασιμβρ του
+ε κρ της ντιπ τρου
+ε φρ νωρ τιμασιξ νου
+ πικρ της πυργ α
+ε κρ της ριστοκρ τευς
+καθ γησιστρ του
+ε φραντ δας γησι νακτος
+ κατ μνως κατ μνω
+ε κλ ν στρ τωνος
+ πικρ της διοδ [ρ]ου
+ε φραστ δας ρ στωνος
+ε ρηνα ος γησιστρ του
+ζην δοτος διο[φ] ντου
+το ζηνοδ του
+ζ νων σατ ρου
+καθ νικολ ου
+ζ νων καλλ α
+ζ νων ζ νωνος
+ζ νων πρ ξωνος
+ζ νων σωμ χου
+ζωπ[ ς] γιδος
+ζην [δ]οτος φιλοκρ τευς
+ ρδοτος θευδ του
+ [θ]ηρ ς νικασιμ χου
+καθ θρασυμ δευς
+ ρ δας φιλοστεφ νου
+[ ρ]αγ ρας παυσαν α
+[θα]ρσικρ της θαρσικρ τευς
+[θρα]σ μαχος πολλων ου
+[το] θρασυμ χου
+θ[ευγ] νης δ μωνος
+θ[----]-ος δ ωνος
+θε[ φαντ]ος ριστομ χου
+[καθ -----] ντου
+θευφ[ νης]γεμ χου
+θεμ σ[τιος θε]μιστοκλε ς
+θαρσ [τας β κ]χωνος
+το [-----]ου
+θε φαν[τος θευ]φ ντου
+θε προ[πος ε κ]λε δα
+θε δ[ωρος --]απτ δα
+ σων με[νε]κρ τευς
+[ σ]ανδρος γ [ρ]γωνος
+ σων ρμο[κ]ρ τευς
+κ[α]θ ερομ νευς
+[ ε]ροκλ ς [ ερο]κλε ς
+[κ]αθ [-------]ου
+ρων [------]ν γου
+ εροκλ ς [------]νος
+καθ παυ[----]
+ σ δοτος [------]δα
+ σων μεν[εκρ τ]ευς
+καθ σ[ονος]
+ ε[---]-εου[----]
+ ατροκλ ς λε[-----]ου
+ [φ]ιμ δης -α-α-[----]
+ [ ρ]ω[ν] ρωνος
+[-----] δωρι ως
+κλ ων γησιμβρ[ του]
+καλλι ναξ τ α
+καλλ ξενος ριστομ χου
+κ μων κ μωνος
+το κ μωνος
+κλ ων θεσπεσι νακτο[ς]
+καλλ ας φαιστ ωνος
+κλεισ τιμος ρχεστρ του
+καλλικρ της ριστ νδρου
+κλειτ νωρ κλειτ νορος
+καθ γαθ νορος
+κ λλιππος γαθαγ του
+κλ αρχος τιμ νακτος
+κλε στρατος καλλικρ τευ[ς]
+κλ ων γε νακτος
+καλλικρ της ε κλε του
+καλλικλ ς διοκλε ς
+κλε τιμος κλεων μου
+καλλ στρατος τριτ λλου
+καλλ ξεινος στρ τωνος
+καλλ στρατος κλεων μου
+κληνανδρ δας τηλεφ νευς
+κριτ δαμος βουλαγ ρα
+καλλιστ ων φιλοκλε ς
+κλευμ νης κλευμ νευς
+κρατ δαμος ε ξ ππου
+καλλ ξεινος ριστομ χου
+καλλικρ της καλλικρ τευς
+καλλικρ της καλλικρ τευς
+κλ ων νικ[ο]μ χου
+κλευμ νης δαμαρ του
+κρατησ μαχος πολυαρ του
+κ[------]ης τιμ[ολ]οντος
+κλ[ευμ] ν[ης -]δ-[κρ] τευς
+κυδα νων στρατοκλε ς
+καλλικρ της ε λθωνος
+καλλικρ της καλλιστρ του
+καθ ριστ λα
+καλλικ[λ] ς καλλικρ τευς
+καθ λεξιμ χου
+λυσ στρατος μοιραγ νευς
+λ ων νδρ α
+λεοντ δας κεστορ δα
+καθ λεοντ δα
+λε[ον]τε ς [ν]δρ α
+λεων δας δρ κοντος
+λυσ μαχος ρχιδ μου
+μενεκρ της μελανθ ου
+μενεκρ της διονυσ ου
+μνασ ας πολυξ νου
+μεν στρατος λεοντ δα
+καθ γησιχ ριος
+μεν στρατος μενεστρ του
+καθ νικοστρ του
+μενεσθε ς συμμ χου
+μνασ ας θρασυμ δευς
+μην δωρος μηνοδ ρου
+μικ ων διονυσ ου
+καθ μικ ωνος
+μυων δης ριστοκλε ς
+μελ νωπος μελαν που
+μελ νιππος κα 
+μεν στρατος ο λ α
+μνασ ας πολεμ ρχου
+μενεκλ ς α [ν]α
+μελ νιππος ρχικρ τευς
+μαρσ ας παντα νου
+μελ νιππος σωπ τρου
+μενεκρ της μενεκρ τευς
+μικ ων γησιβο λου
+μεν δαμος παιν του
+μαρσ ας μητροβ ου
+μ ντωρ μ ντορος
+νικοφ ν τριτ λλου
+ν στωρ κεστορ δα
+καθ λεοντ δα
+νικοκλ ς διοδ ρου
+νουμ νιος διοκλε [ς]
+νικ πολις κασ[---]
+νικ μαχο[ς ----]
+νικ μαχ[ος ----]
+καθ [--]
+ναυσι[-------]
+νικ μ[αχος ----]
+νικ μαχο[ς ----]
+καθ ρ[--]
+να σιππος [----]
+το α ν[----]
+νικοφ ν [----]
+νικ σιππ[ος ---]
+το νικ[ασ ππου]
+να σιππο[ς ---]
+το ρισ[----]
+νικ μαχος [---]
+το νικ[ομ χου]
+ν κασις κα[---]
+ν ων ν ων[ος]
+νικ βουλος ν [του]
+νικασικρ της ρισ[--]
+νικ μαχος ξακ σ[του]
+ξεν στρατος σωσθ [νευς]
+ξενοφ ν πρ ξωνος
+ξεναγ ρας παρμεν σκο[υ]
+ξεν φαντος ριστε δα
+ξεν χαρις στυκρατ δ[α]
+ο λι δης ο λι δευς
+ο λιδη[ς] μελαν ππου
+ο λι δης διονυσ ου
+ νασιφ ν νασιφ ντος
+το νασιφ ντος
+παμφιλ δας γησ νδ[ρο]υ
+παυσαν ας ριστε δα
+παι νιος γησ νδρο[υ]
+πολ μων ντιπ τρου
+πανταλ ων ερων μο[υ]
+πυθ κριτος μνασαγ ρα
+π θων πυθοδ ρου
+πολ νικος ντι χου
+π νταινος μελαν που
+πολ αρχος τιμοκρ ντο[ς]
+πολυ ρατος κλειτοφ ντος
+πασικρ της πασικρ τευς
+πεισικλ ς γ ργου
+πυργ ας πυργ α
+παρμ νων ρ του
+πρ ξων κλειναγ ρα
+πεισικλ ς σ[ιμ] α
+καθ πεισικλε ς
+πολ ξενος ργι δευς
+παυσ μαχος παυσιμ χ[ου]
+καθ ε κρ τευς
+παυσ στρατος σονο[ς]
+παυσ στρατος ριστ 
+πε θων ντιγ νου
+παυσαν ας κρινοδ μου
+ οδ[ο]ος μελαν ππου
+το νθεσ λα
+ οδο ος μελαν ππου
+σωσθ νης σωσθ νευ[ς]
+[σ]ωσ νικος φιλ γρου
+[σ]ωσιγ νης ε νδρο[υ]
+[σω]σικρ της σωσιν κ[ου]
+[σωσ]θ νης καλλικρ τε[υς]
+καθ νικαγ ρα
+σω[σι]γ νης πεισικρ τε[υς]
+στρτων στ[ρ] των[ος]
+σωσιμ νης στρατ ππου
+σ φρω[ν σ]φρονος
+σ πατ[ρο]ς σωπ τρου
+σωσικρ [τ]ης γησιβ ου
+σ πατρ[ο]ς κ τωνος
+σιμ ας δαμοκρ τευ[ς]
+σωμ ν[η]ς ριστ ππο[υ]
+σ μος σ μου
+σωσ νι[κος] σωσιν κ[ου]
+σωσικλ[ ς] διονυσ ο[υ]
+στρατο[κλ]ς ρωνος
+τιμ ναξ τιμ νακτο[ς]
+τιμασ πολις τιμασ ρ[χου]
+τιμοκλ[ε]δας τιμαγ ρ[α]
+τιμαγ ρας τιμαγ ρα
+τ μων ριστον κου
+τιμασ ξ[ε]νος τιμασιξ [νου]
+τελ σω[ν] τιμ γρο[υ] 
+τιμ στρ[α]τος θρασ λλ[ου]
+τελεσικρ της επο[λ] [μου]
+[0-------]ης γ τορο[ς]
+[-]-λλ[--]σια[-]ιο[--]
+τιμ στ[ρατο]ς στυμ[ δευς]
+τιμ κριτ[ο]ς ντιλ[ οντος]
+τιμοκρ ων σ[----]
+τ μαρχ[ος] τι[----]
+τιμασ θ[εος] ο[---]
+τιμ δα[μος] --[---]
+τιμ θε[ος ----]
+ ψικλ ς [----]
+καθ 0[--]
+φιλ σκο[ς ----]
+φαρν κ[ης ----]
+καθ 0[--]
+φιλ σκος [----]
+φα νιππος [----]
+φα νις [----]
+καθ νικ[--]
+φ λτων φ[ λτωνος]
+το φ[ λτωνος]
+φ [λ]τις ρ[----]
+φιλ στρατο[ς ----]
+φιλιστ δας 0[----]
+φειδαγ ρας 0[----]
+φιλτογ νης 0[----]
+φιλ στρατος [----]
+φιλ στρατος [----]
+χ ρμειος ξενι[----]
+χρυσ στρατος θε[---]
+χ ρμιππος ρχικρ [τευς]
+καθ ε δ ρου
+χαιρεφ ν πυθοδ ρ[ου]
+χρυ[σ] στρατος χρυσοστ[ρ του]
+χρυσ ωρ λεων δα
+χρ σιππος ζ νωνος
+χρ σιππος στρ τωνος
+χαρ δαμος λ οντος
+χαρμ νικος στυκρ τευ[ς]
+χαρμοκλ ς οδ ππου
+χαρ μβροτος γελ χο[υ]
+χαρ ξενος φ λωνος
+θεο ς.</div>
+    </div>
+    <h3>Thematic Analysis</h3>
+    <p class="muted" style="margin-bottom:1rem;">Hover over cards to see evidence in text.</p>
+    
+        <div class="theme-card" onmouseover="highlightQuote('καλλ στρατος κλεων μου κληνανδρ δας τηλεφ')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:start;">
+                <div>
+                    <span class="tag domain-tag">Content</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">98% Conf.</span>
+                    <div class="theme-path">Content > Graffiti and Personal Expressions > Humor, Insults, and Competitive Graffiti</div>
+                    <div class="theme-label">Humor, Insults, and Competitive Graffiti</div>
+                </div>
+                <div class="ai-rationale-box">
+                    <strong>🤖 AI Rationale:</strong>
+                    <p>Generated rationale for Humor, Insults, and Competitive Graffiti</p>
+                    <p class="evidence-quote">Evidence: "καλλ στρατος κλεων μου κληνανδρ δας τηλεφ"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('μου [το ναξι]τ μου [-------]ιλι[-]ου')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:start;">
+                <div>
+                    <span class="tag domain-tag">Type</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">92% Conf.</span>
+                    <div class="theme-path">Type > Object Type > Portable Objects > Lead or Metal Tablets</div>
+                    <div class="theme-label">Lead Tablets</div>
+                </div>
+                <div class="ai-rationale-box">
+                    <strong>🤖 AI Rationale:</strong>
+                    <p>Generated rationale for Lead Tablets</p>
+                    <p class="evidence-quote">Evidence: "μου [το ναξι]τ μου [-------]ιλι[-]ου"</p>
+                </div>
+            </div>
+        </div>
+        
+    <h3>Entities</h3>
+    <div><span class="tag entity-tag">👤 Theemos <small>(Archon)</small></span><span class="tag entity-tag">📍 Athen <small>(Polis)</small></span></div>
+  </main>
+</body>
+</html>

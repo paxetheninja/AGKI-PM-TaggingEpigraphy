@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PHI-138693 - AGKI</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <style>
+    .page-container { max-width: 1100px; margin: 0 auto; padding: 2rem; }
+    .back-link { display: inline-block; margin-bottom: 1rem; color: var(--primary); font-weight: 600; }
+    .text-viewer { display: grid; grid-template-columns: 40px 1fr; gap: 1rem; font-family: "New Athena Unicode", "Gentium Plus", "Times New Roman", serif; font-size: 1.2rem; line-height: 1.8; background: var(--panel); padding: 2rem; border: 1px solid var(--border); border-radius: 4px; margin-bottom: 2rem; color: var(--text); }
+    .line-numbers { text-align: right; color: var(--muted); font-size: 0.9rem; user-select: none; opacity: 0.6; font-family: sans-serif; }
+    .greek-content { white-space: pre-wrap; }
+    .highlight { background-color: rgba(255, 255, 0, 0.3); border-radius: 2px; transition: background-color 0.2s; }
+    .theme-card { background: var(--panel); padding: 1.5rem; border-left: 4px solid var(--primary); margin-bottom: 1rem; border: 1px solid var(--border); border-left-width: 4px; transition: transform 0.2s; }
+    .theme-card:hover { transform: translateX(4px); box-shadow: var(--shadow); }
+    .ai-rationale-box { background: rgba(31, 167, 163, 0.08); padding: 0.75rem; border-radius: 6px; font-size: 0.9rem; color: var(--muted); max-width: 400px; }
+    .evidence-quote { border-left: 2px solid var(--accent); padding-left: 0.5rem; margin-top: 0.5rem; font-style: italic; color: var(--text); }
+    .badge.green { background: #e6f4ea; color: #137333; border-color: #137333; }
+    .badge.orange { background: #fef7e0; color: #b06000; border-color: #b06000; }
+    .badge.red { background: #fce8e6; color: #c5221f; border-color: #c5221f; }
+    .entity-tag { background: rgba(217, 123, 61, 0.1); color: var(--accent-2); margin-right: 0.5rem; margin-bottom: 0.5rem; display: inline-block; padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.9rem; border: 1px solid rgba(217, 123, 61, 0.2); text-decoration: none; }
+  </style>
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    function highlightQuote(quote) {
+        if(!quote) return;
+        const content = document.getElementById('greekText');
+        const innerHTML = content.innerHTML;
+        const safeQuote = quote.replace(/[.*+?^${}()|[\]/g, '\$&');
+        const re = new RegExp('(' + safeQuote + ')', 'gi');
+        content.innerHTML = innerHTML.replace(re, '<span class="highlight">$1</span>');
+    }
+    function clearHighlight() {
+        const content = document.getElementById('greekText');
+        content.innerHTML = content.textContent; 
+    }
+    function copyCitation() {
+        const citation = "AGKI Project. (2026). Inscription PHI-138693. Retrieved from " + window.location.href;
+        navigator.clipboard.writeText(citation);
+        alert("Citation copied to clipboard!");
+    }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <h1><a href="../index.html" style="color:white;text-decoration:none;">AGKI Tagging Tool</a></h1>
+    </div>
+  </header>
+  <main class="page-container">
+    <a href="../index.html" class="back-link">← Back to Dashboard</a>
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+        <h2>Inscription PHI-138693</h2>
+        <div style="display:flex; gap:0.5rem;">
+            <button onclick="copyCitation()" class="button secondary" style="font-size:0.9rem; padding:0.5rem 1rem;">📜 Cite</button>
+            <a href="https://epigraphy.packhum.org/text/138693" target="_blank" class="button">View on PHI</a>
+        </div>
+    </div>
+    <div class="meta-grid">
+        <div><small class="eyebrow">Region</small><br><strong>Aegean Islands, incl. Crete (IG XI-[XIII])</strong> <a href="https://pleiades.stoa.org/places/589748" target="_blank" title="View Region in Pleiades">🔗</a></div>
+        <div><small class="eyebrow">Date</small><br><strong> 2nd c. BC </strong></div>
+        <div><small class="eyebrow">Completeness</small><br><span class="badge info">intact</span></div>
+    </div>
+    <h3>Original Text</h3>
+    <div class="text-viewer">
+        <div class="line-numbers">1<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>5<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>10<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>15<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>20<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>25<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>30<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>35<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>40<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>45<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>50<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>55<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>60<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>65<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>70<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>75<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>80<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>85<br>&nbsp;</div>
+        <div class="greek-content" id="greekText">ρχερανιστ ς λιαστ ν κα λιαδ ν
+ιονυσ δωρος λεξανδρε ς ε εργ τας παινεθε ς κα στεφανωθε ς
+ π το κοινο το διονυσιαστ ν
+π ρετ ι χρυσ ωι στεφ νωι
+κα τιμαθε ς ε εργεσ αι κα τελε αι
+π ντων κα στεφανωθε ς π τ ν συν[ε]ρανιστ ν τ ν ε εργετηθ ντων
+ π α το χρυσ οις στεφ νοις
+δυσ ν τ ι τ ν βακχε ων ποδοχ ι κατ τριετηρ δα ν θηκε
+τριετηρ σι κα τ ι κοιν ι.
+ 
+κα παινεθε ς κα στεφανωθε ς
+ π το κοινο το πανιαστ ν
+θαλλο στεφ νωι κα στεφανωθε ς
+ π ρετ ι χρυσ ωι στεφ νωι π 
+χρυσ ν δ κα κα στεφανωθε ς
+πρ τος λευκα ας στεφ νωι κα τιμ[α]θε ς ε εργεσ αι κα τελε αις δυσ 
+π ντων κα ναγορε σει τ ν τιμ ν
+ π τ ν τ πων ε ς τ ν ε χρ νον
+κα ρχερανιστ σας τη δ κα κτ 
+ πα ξησε τ ν ρανον.
+ 
+ ρχερανιστ ς
+διονυσ δωρος λεξανδρε ς ε εργ τας 
+ ρχερανιστ σας λιαστ ν κα 
+ λιαδ ν τη ξ ν κα παυξ σας
+τ ν ρανον παιν θη κα στεφαν θη
+ π το κοινο το λιαστ ν κα λιαδ ν
+πρ τος θαλλο στεφ νωι κα 
+στεφανωθε ς π ρετ ι χρυσ ωι
+στεφ νωι κα τιμαθε ς ε εργεσ αι
+κα τελε αι π ντων ν θηκε
+[διο]ν σωι βακχε ωι κα τ ι κοιν ι.
+π ερ ως δαμαιν του διοσθ ου δωδεκ ται βουλαγ ρας διος ε πε πειδ 
+ιονυσ δωρος λεξανδρε ς ε εργ τ[ας]
+το κοινο ραν ζων τη τρι κοντα
+π ντε ν ρ γαθ ς ν διατελε περ τ
+πλ θος τ λιαδ ν κα [ λια]στ ν κα πο[λ]λ ς κα μεγ λας χρε ας παρε σχηται τ ι κ[οι]ν ι πως ο ν κα λι δαι κα λιαστα το [ς]
+ γαθο ς νδρας κα ζ ντας κα μεταλλξαντας τ ν β ον φα νωνται τιμο ντες κ[α]
+καταξ ας χ ριτας ποδιδ ντες το ς προα[ι]ρουμ νοις ε εργετε ν τ ν ρανον κα καλ[ ν]
+π δειξιν μ π σι πεποιημ νοις τ χαι
+γαθ ι δεδ χθαι τ ι κοιν ι τ ι λιαδ ν καλιαστ ν κυρωθεισ ν τ νδε τ ν τιμ ν πα[ιν]σαι κα στεφαν σαι διονυσ δωρον λεξα[ν]δρ ε εργ ταν το κοινο ε ς τ ν ε χρ ν[ον]
+χρυσ ωι στεφ νωι τ ι κ το ν μου μεγ στω[ι] κα γραμματε ς ναγραψ τω τ δ ξαντα 
+ δ ρχερανιστ ς κα το ρχοντες ο τε ν[ε]στακ τες κα ο μετ τα τα ε α ρο μενοι π[ι]μ λειαν ποιε σθωσαν πως ξαιρ ται α τ [ι]
+ε ς στ φανον καθ κ σταν σ νοδον τρι βολο[ν] παρχ τω δ α τ ι τ τ μια κα μεταλλ ξα[ν]τι τ ν β ον. κα πως καστα γ νηται κατ τ δ[ε]
+τ ψ φισμα κα κατ το ς ν μους κα ναγο[ρ]ε ηται στεφ νωσις α το ν τα ς συν δοις τ ι δε τερον μ ραι μετ τ ερ πιμ λει[α]ν ποιε σθων τε ρχερανιστ ς κα το ρχοντες ε το ν ρχ ι ντες. κα πιστ τας το 
+κοινο εροκ ρυξ ναγορευ τω τ κ ρυγμα τ δε τ κοιν ν τ λιαδ ν κα λιαστ ν
+ τ μασε ε ς τ ν ε χρ νον διονυσ δωρον
+ λεξανδρ ε εργ ταν το κοινο πα νωι 
+χρυσ ωι στεφ νωι δ δωτι δ α τ ι τ ς τιμ ς κα ζ ντι κα μεταλλ ξαντι τ ν β ον
+ ρετ ς νεκα κα ε νο ας ν χων διατελε 
+ε ς τε τ κοιν κα το ς α το ρανιστ ς. πε
+δ κα μεταλλ ξ τ ν β ον τ ξαιρο μενον
+α τ ι ε ς τ ν στ φανον ε ς τ ν ε χρ νον λανβαν ντω τε ρχερανιστ ς κα το λογιστα κα πιστ τας ο κα ε ν ρχ ι ωντι κα 
+πρι σθων στ φανον κα διλ μνιον
+κα ναγορε σαντες τ ι δε τερον
+ μ ραι τ ν συν δων ποδ σθων κα
+[τ] ε ρ ν καταβαλ τω ε ς τ κοιν ν
+ πιστ τας ν τ ι συλλ γωι ν τ ι
+ χομ νωι μην τ ν συν δων κα 
+γραμματε ς ναγραψ τω ε ς το ς
+ πολ γους διονυσοδ ρου ε εργ τα στεφανωθ ντος χρυσ ωι στεφ νωι ε ς τ ν ε χρ νον στεφ νου
+το πραθ ντος. π ρχειν δ α τ ι
+τ ν ναγ ρευσιν κα στεφ νωσιν
+κα π τ ν τ φων μ μην ακινθ ωι κα μεταλλ ξαντι τ ν β ον κα 
+ποε σθων τ ν πιμ λειαν μο ως
+ τε ρχερανιστ ς κα το ρχοντες
+ο μετ τα τα ε α ρο μενοι τ δ ξαιρο μενον α τ ι ν τ ι μην 
+τ ι ακινθ ωι ε ς στ φανον ε ς τ ν ε χρ νον
+καταχρε σθων το ρχοντες καθ καστον
+ νιαυτ ν ε ς τ ν στ φανον τ ν ναγορευ μενον π τ φοις μεταλλ ξαντος α το 
+τ ν β ον κα στεφανο ντω α το τ μναμε ον.
+ τι δ κα μ ποι σωντι κατ τ δε τ ψ φισμα ο ς
+ καστα ποτιτ τακται φειλ τω τ ι κοιν ι μ 
+πρ ξας τι τ ν γεγραμμ νων δραχμ ς κατ ν 
+ νοχος δ στω κα τ ι ν μωι ς κε ται ε τ ς κα
+κοιν ν δικ κα ξ στω τ ι χρ ζοντι τ ν ρανιστ ν πογρ ψαι α τ ν τ πιτ μιον. τ
+δ ψ φισμα τ δ[ε κ] ριον στω ε ς τ ν ε χρ νον κα μ ξ στω μ τε ρχοντι μ τε δι ται μ τε κινε ν μ τε γν μαν γρ ψασθαι
+μ τε το ς ρχουσι προτιθ μειν ς δε τ ς δ[ε]δομ νας τιμ ς διονυσοδ ρωι κ ρους ε μμειν γρ ψας προθε ς ποτεισ τω τ γεγραμμ νον πιτ μιον δραχμ ς κατ ν κα γν μ[α]
+[α] το κυρος στω κα νοχος στω τ ι ν μωι τ ι κιν τωι.
+κα τιμαθε ς ε ς τ ν ε χρ νον
+ πα νωι χρυσ ωι στεφ νωι
+[κ]α λευκα ας στεφ νωι κα
+ ναγορε σει τ ν τιμ ν
+ ν τα ς συν δοις κα τα ς
+ πιχ σεσι π τ ν τ πων
+ε ς τ ν ε χρ νον.</div>
+    </div>
+    <h3>Thematic Analysis</h3>
+    <p class="muted" style="margin-bottom:1rem;">Hover over cards to see evidence in text.</p>
+    
+        <div class="theme-card" onmouseover="highlightQuote('νωι δ δωτι δ α τ')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:start;">
+                <div>
+                    <span class="tag domain-tag">Content</span>
+                    <span class="badge orange" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">77% Conf.</span>
+                    <div class="theme-path">Content > Administrative Records and Lists > Registers and Catalogues</div>
+                    <div class="theme-label">Registers and Catalogues</div>
+                </div>
+                <div class="ai-rationale-box">
+                    <strong>🤖 AI Rationale:</strong>
+                    <p>Generated rationale for Registers and Catalogues</p>
+                    <p class="evidence-quote">Evidence: "νωι δ δωτι δ α τ"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('μεταλλ ξ τ ν β ον')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:start;">
+                <div>
+                    <span class="tag domain-tag">Type</span>
+                    <span class="badge orange" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">70% Conf.</span>
+                    <div class="theme-path">Type > Material > Stone > Basalt</div>
+                    <div class="theme-label">Basalt</div>
+                </div>
+                <div class="ai-rationale-box">
+                    <strong>🤖 AI Rationale:</strong>
+                    <p>Generated rationale for Basalt</p>
+                    <p class="evidence-quote">Evidence: "μεταλλ ξ τ ν β ον"</p>
+                </div>
+            </div>
+        </div>
+        
+    <h3>Entities</h3>
+    <div><span class="tag entity-tag">👤 Theemos <small>(Archon)</small></span><span class="tag entity-tag">📍 Athen <small>(Polis)</small></span></div>
+  </main>
+</body>
+</html>

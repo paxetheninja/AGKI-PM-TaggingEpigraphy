@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PHI-1305 - AGKI</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <style>
+    .page-container { max-width: 1100px; margin: 0 auto; padding: 2rem; }
+    .back-link { display: inline-block; margin-bottom: 1rem; color: var(--primary); font-weight: 600; }
+    .text-viewer { display: grid; grid-template-columns: 40px 1fr; gap: 1rem; font-family: "New Athena Unicode", "Gentium Plus", "Times New Roman", serif; font-size: 1.2rem; line-height: 1.8; background: var(--panel); padding: 2rem; border: 1px solid var(--border); border-radius: 4px; margin-bottom: 2rem; color: var(--text); }
+    .line-numbers { text-align: right; color: var(--muted); font-size: 0.9rem; user-select: none; opacity: 0.6; font-family: sans-serif; }
+    .greek-content { white-space: pre-wrap; }
+    .highlight { background-color: rgba(255, 255, 0, 0.3); border-radius: 2px; transition: background-color 0.2s; }
+    .theme-card { background: var(--panel); padding: 1.5rem; border-left: 4px solid var(--primary); margin-bottom: 1rem; border: 1px solid var(--border); border-left-width: 4px; transition: transform 0.2s; }
+    .theme-card:hover { transform: translateX(4px); box-shadow: var(--shadow); }
+    .ai-rationale-box { background: rgba(31, 167, 163, 0.08); padding: 0.75rem; border-radius: 6px; font-size: 0.9rem; color: var(--muted); max-width: 400px; }
+    .evidence-quote { border-left: 2px solid var(--accent); padding-left: 0.5rem; margin-top: 0.5rem; font-style: italic; color: var(--text); }
+    .badge.green { background: #e6f4ea; color: #137333; border-color: #137333; }
+    .badge.orange { background: #fef7e0; color: #b06000; border-color: #b06000; }
+    .badge.red { background: #fce8e6; color: #c5221f; border-color: #c5221f; }
+    .entity-tag { background: rgba(217, 123, 61, 0.1); color: var(--accent-2); margin-right: 0.5rem; margin-bottom: 0.5rem; display: inline-block; padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.9rem; border: 1px solid rgba(217, 123, 61, 0.2); text-decoration: none; }
+  </style>
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    function highlightQuote(quote) {
+        if(!quote) return;
+        const content = document.getElementById('greekText');
+        const innerHTML = content.innerHTML;
+        const safeQuote = quote.replace(/[.*+?^${}()|[\]/g, '\$&');
+        const re = new RegExp('(' + safeQuote + ')', 'gi');
+        content.innerHTML = innerHTML.replace(re, '<span class="highlight">$1</span>');
+    }
+    function clearHighlight() {
+        const content = document.getElementById('greekText');
+        content.innerHTML = content.textContent; 
+    }
+    function copyCitation() {
+        const citation = "AGKI Project. (2026). Inscription PHI-1305. Retrieved from " + window.location.href;
+        navigator.clipboard.writeText(citation);
+        alert("Citation copied to clipboard!");
+    }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <h1><a href="../index.html" style="color:white;text-decoration:none;">AGKI Tagging Tool</a></h1>
+    </div>
+  </header>
+  <main class="page-container">
+    <a href="../index.html" class="back-link">← Back to Dashboard</a>
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+        <h2>Inscription PHI-1305</h2>
+        <div style="display:flex; gap:0.5rem;">
+            <button onclick="copyCitation()" class="button secondary" style="font-size:0.9rem; padding:0.5rem 1rem;">📜 Cite</button>
+            <a href="https://epigraphy.packhum.org/text/1305" target="_blank" class="button">View on PHI</a>
+        </div>
+    </div>
+    <div class="meta-grid">
+        <div><small class="eyebrow">Region</small><br><strong>Attica (IG I-III)</strong> <a href="https://pleiades.stoa.org/places/579888" target="_blank" title="View Region in Pleiades">🔗</a></div>
+        <div><small class="eyebrow">Date</small><br><strong> 460? a. </strong></div>
+        <div><small class="eyebrow">Completeness</small><br><span class="badge info">intact</span></div>
+    </div>
+    <h3>Original Text</h3>
+    <div class="text-viewer">
+        <div class="line-numbers">1<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>5<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>10<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>15<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>20<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>25<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>30<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>35<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>40<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>45<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>50<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>55<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>60<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>65<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>70<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>75<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>80<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>85<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>90<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>95<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>100<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>105<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>110<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>115<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>120<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>125<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>130<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>135<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>140<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>145<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>150<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>155<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>160<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>165<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>170<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>175</div>
+        <div class="greek-content" id="greekText">ρεχθε δος
+ δε ν τοι πολ μοι π θανον ν κ προι ν α γπτοι ν φοιν κει ν λιε σιν ν α γ νει μεγαρο
+το α το νιαυτο στ[ρα]τεγον
+φ[----]χος 0[αντ]αλ ον
+πολ στρατος
+[δρ]ακοντ δες
+[--]μ στ[ρ]ατος
+[--]μ ας
+[--]κλε δες
+[--]κρ τες
+[χα]ιρ δεμος
+[κ]τεσ ας
+[--] σανδρος
+[λ]υκ φρον
+πολλ δορος
+ ριστοτ λες
+προτ ας
+δρ καλος
+μεχαν ον
+φιλιστ δες
+τιμογ νες
+χαρ σανδρος
+ενεκλες
+ελ νοπος
+κλε νβροτος
+ ριστοκλε δες
+θοκυδ δες
+ε θ δεμος
+[κ]αλλικρ τες
+ φσ φες
+ριστε δες
+[φ]ιλ δεμος
+[κ]εφισ δοτος
+[σ] φιλος
+ντιμ νες
+πα νετος
+ ργα ος
+διογ νες
+φρ νος
+[κ]τεσι δες
+[κ] ροιβος
+[κ]ρ τυλλος
+[σ]υνφ ρμιος
+νικ ας
+λυσικλε δες
+φρο ραρχος
+χαρ σανδρος
+ [λυμ]πι ρατος
+σ[----]ος
+μν[εσ] φιλος
+σοσ ας
+ ρχ νος
+λυκ νος
+καλλ ας
+μνεσιγ νες
+σ κον
+ μφικ δες
+στρατεγ ς πποδ μας
+ε θ μαχος 0
+ε μελος 0
+ νδροσθ νες
+τοχσ ται φρ νος
+τα ρος
+θε δορος
+ λεχσ μαχος
+φ νυλλος 0[--]νιος
+εγε τον
+ λκιππος
+λυσικλες
+κ [λ]ευσος
+ε [θ] δεμος
+δ καιος
+φιλ νος
+καλλικλες
+ναυσικλες
+τιμεσ θεος
+νεσιγ νες 0[ο]λυκλες
+ λ[ε]χσ ας
+ μ δριππος
+ πολλ δορος
+γοργ ας
+ν θαρχος
+παρμονδες
+β κον
+π θον
+λυσ ας
+σ στρατος
+φιλ νος
+φ λαιθος
+φιλ ταιρος
+σοτ λες
+λυσ ας
+ ριστογ νες
+φιλ νος
+δι τιμος
+καλλον δες
+καλλ χσενος
+δειν ας
+σμ κυθος
+τιμ δεμος
+λ σις
+ κεσ ας
+ πιχ ρες
+ ερ νυμος
+ ναχσ λας
+χαιρ ας
+ ρακλε δες
+ γασικλες
+ λκας
+κεφισ δοτος
+καλλικλες
+κεφισ δορος
+νομ νιος
+χσεν φιλος
+ π ρβιος
+ γνον
+πολ χσενος
+ ρχσιμ νες
+ν κον
+ ν α γ πτοι τελ νικος
+μ ντις.
+ κρυπτος
+τιμοκρ τε[ς]
+ ρχ λας
+ε θυκρ τες
+πατροκλε δε[ς]
+ λκμεον δες
+γλα κον
+δεμ νικος
+ ναχσ δορος
+γλα κον
+προκλες
+ ντιφον
+ ναχσ λα[ς]
+ ρχ πολι[ς]
+καλλ ας
+θαλ αρχο[ς]
+φιλ νιχο[ς]
+ε κλε δε[ς]
+δι δορος
+ν καρχος
+ πιτ λες
+κ βον 0[α]ιρ ας
+δεμ τριο[ς]
+ ρκεσ λας
+ε θοινος
+δεμ τριος
+γ ργον
+στρ [το]ν
+ ρισ[τ]οφ νες
+γλακον
+φυσ[ον] δες
+ γ[ν] δεμος
+διο[κ]λες
+φαν στρατο[ς]
+ε μ νιος
+θεδορος
+[ε ρ] λεος
+[κ]ρδον
+[ π]ιχ ρες
+εδοχσος 0[ο]λ ζελος
+γ[λ]αυκ ας
+ ριγ νες
+ ντιχ ρες
+φιλιστ δε[ς]
+ μφικλε δ[ες]
+φρο ρος
+τ τον
+ε βιος
+καλλ βι[ος]
+σμ κρο[ς]
+νεα ος
+ ργοτ [λες]
+φοκ ον
+ ραιθ[ος]</div>
+    </div>
+    <h3>Thematic Analysis</h3>
+    <p class="muted" style="margin-bottom:1rem;">Hover over cards to see evidence in text.</p>
+    
+        <div class="theme-card" onmouseover="highlightQuote('δρ καλος μεχαν ον')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:start;">
+                <div>
+                    <span class="tag domain-tag">Content</span>
+                    <span class="badge orange" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">64% Conf.</span>
+                    <div class="theme-path">Content > Graffiti and Personal Expressions > Humor, Insults, and Competitive Graffiti</div>
+                    <div class="theme-label">Humor, Insults, and Competitive Graffiti</div>
+                </div>
+                <div class="ai-rationale-box">
+                    <strong>🤖 AI Rationale:</strong>
+                    <p>Generated rationale for Humor, Insults, and Competitive Graffiti</p>
+                    <p class="evidence-quote">Evidence: "δρ καλος μεχαν ον"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('ρμιος νικ ας λυσικλε δες φρο ραρχος χαρ')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:start;">
+                <div>
+                    <span class="tag domain-tag">Type</span>
+                    <span class="badge orange" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">73% Conf.</span>
+                    <div class="theme-path">Type > Object Type > Monumental Stone Objects > Wall or Building Surface</div>
+                    <div class="theme-label">Rock-cut / Rupestral Inscriptions</div>
+                </div>
+                <div class="ai-rationale-box">
+                    <strong>🤖 AI Rationale:</strong>
+                    <p>Generated rationale for Rock-cut / Rupestral Inscriptions</p>
+                    <p class="evidence-quote">Evidence: "ρμιος νικ ας λυσικλε δες φρο ραρχος χαρ"</p>
+                </div>
+            </div>
+        </div>
+        
+    <h3>Entities</h3>
+    <div><span class="tag entity-tag">👤 Theemos <small>(Archon)</small></span><span class="tag entity-tag">📍 Athen <small>(Polis)</small></span></div>
+  </main>
+</body>
+</html>
