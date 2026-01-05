@@ -18,7 +18,7 @@
 **"I need clear, representative examples for my seminar, and I need them quickly."**
 - **Role:** University Lecturer
 - **Age:** 35
-- **Domain Focus:** Teaching (Military Hisotry & Administration)
+- **Domain Focus:** Teaching (Military History & Administration)
 - **Tech Literacy:** Medium. Uses digital tools to prepare slides and handouts.
 - **Background:** Matthias teaches "Introduction to Greek Epigraphy." He needs to find "study-friendly" inscriptions—texts that are well-preserved, have clear context, and illustrate specific historical concepts for his students.
 - **Goals:**
@@ -33,7 +33,7 @@
 ## 3. Stephan-Felix – The Ancient History Student
 **"I need to understand what this text is about so I can cite it in my paper."**
 - **Role:** Master's Student
-- **Age:** 23-26
+- **Age:** 24-27
 - **Domain Focus:** General Ancient History
 - **Tech Literacy:** Digital Native, but relies on Google/Wikipedia for context.
 - **Background:** Stephan-Felix is writing a paper on "Honors for Foreigners." He can read Greek but struggles with the technical jargon of epigraphy. He needs the tool to guide him toward relevant sources and explain _why_ they are relevant.

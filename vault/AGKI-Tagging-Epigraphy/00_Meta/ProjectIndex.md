@@ -12,9 +12,9 @@ _Conceptual design and user requirements._
     - Definitions of user needs and functional requirements for the frontend.   
 ## 03_Data
 _Technical documentation regarding inputs, outputs, and classification._
-- **[[03_Data/Data|Data]]**
+- **[[InputData|InputData]]**
     - Documentation of the input source (PHI-Korpus), data cleaning steps, and normalization rules. 
-- **[[03_Data/JSONSchema|JSONSchema]]**
+- **[[OutputData|OutputData]]**
     - Definition of the target output format (JSON), including the structure for hierarchical themes and entities.    
 - **[[03_Data/Taxonomie|Taxonomie]]**
     - The conceptual model for classification.

@@ -15,7 +15,7 @@ User Stories, filtered into categories based on the [[UserPersonas]] needs.
 ## Visualization & Exploration (The "Macro" Layer)
 - **Geospatial Heatmap:** As **Gregor**, I want to see a map showing the density of "Military" inscriptions to visualize conflict zones in the Hellenistic period.
 - **Temporal Histogram:** As **Gregor**, I want a timeline bar chart showing the frequency of the tag "Manumission" over centuries to see when the practice peaked.
-- **Sunburst Diagram:** As **Stephan-Felix** (the Student), I want to interact with a sunburst chart of the taxonomy to visually understand how "Religious" texts are divided into sub-topics like "Sacrifice" or "Dedication."
+- **Sunburst Diagram:** As **Stephan-Felix**, I want to interact with a sunburst chart of the taxonomy to visually understand how "Religious" texts are divided into sub-topics like "Sacrifice" or "Dedication."
 - **Network Graph (Prosopography):** As **Gregor**, I want to view a node-link diagram connecting people mentioned in the same texts to identify social networks of elites.
 - **Tag Co-occurrence Matrix:** As **Florian**, I want a visual matrix showing which tags appear together most often to verify if the model is learning logical correlations.
 - **Regional Comparison:** As **Gregor**, I want to view two regions side-by-side (e.g., Athens vs. Delphi) comparing their thematic distribution charts for a comparative study.
