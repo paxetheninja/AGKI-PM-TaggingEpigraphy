@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Explore - AGKI Epigraphy Tool</title>
+  <link rel="stylesheet" href="assets/css/main.css">
+  
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <style>
+    /* Reuse main styles */
+    .dashboard-container {
+        display: grid;
+        grid-template-columns: 320px 1fr;
+        gap: 1.5rem;
+        margin-top: 2rem;
+        align-items: start;
+    }
+    .sidebar { padding: 1.5rem; border-radius: 8px; position: sticky; top: 20px; max-height: 90vh; overflow-y: auto; }
+    .filter-group { margin-bottom: 2rem; }
+    .eyebrow { font-size: 0.8rem; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem; font-weight: 700; }
+    .search-box, .select-box, .range-input { width: 100%; padding: 0.6rem; border: 1px solid var(--border); background: var(--bg); color: var(--text); border-radius: 4px; }
+    .range-inputs { display: flex; gap: 0.5rem; align-items: center; }
+
+    /* Viz Grid specific to Explore Page */
+    .viz-layout {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .viz-row {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    .viz-card {
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 1.5rem;
+        box-shadow: var(--shadow);
+        min-height: 400px;
+    }
+    
+    .viz-card.full-width { min-height: 500px; }
+    
+    .viz-title { margin: 0 0 1rem; font-size: 1rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+
+    #map { height: 450px; width: 100%; border-radius: 4px; z-index: 1; }
+
+    /* Tree Filter */
+    .tree-root { list-style: none; padding-left: 0; margin: 0; font-size: 0.9rem; }
+    .tree-item { margin: 0.2rem 0; }
+    .tree-group { padding-left: 1.2rem; display: none; border-left: 1px solid var(--border); margin-left: 0.3rem; }
+    .tree-group.open { display: block; }
+    .tree-label-row { display: flex; align-items: center; cursor: pointer; padding: 2px 0; }
+    .tree-label-row:hover { color: var(--primary); }
+    .caret { width: 16px; text-align: center; margin-right: 4px; color: var(--muted); font-size: 0.7em; transition: transform 0.2s; }
+    .caret.open { transform: rotate(90deg); }
+    .caret.empty { visibility: hidden; }
+    .filter-checkbox { margin-right: 8px; accent-color: var(--primary); }
+
+    /* Nav & Theme */
+    .nav-links { display: flex; gap: 1.5rem; margin-right: 2rem; }
+    .nav-item { color: rgba(255,255,255,0.8); font-weight: 600; font-size: 0.95rem; text-decoration: none; padding: 0.5rem 0; border-bottom: 2px solid transparent; }
+    .nav-item:hover, .nav-item.active { color: white; border-bottom-color: white; }
+    
+    .theme-toggle-btn { background: none; border: 1px solid rgba(255,255,255,0.3); color: white; padding: 0.4rem 0.8rem; border-radius: 20px; cursor: pointer; font-size: 0.9rem; }
+    .theme-toggle-btn:hover { background: rgba(255,255,255,0.1); }
+  </style>
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <h1>AGKI Tagging Tool</h1>
+    </div>
+    <nav class="nav-links">
+        <a href="index.html" class="nav-item">Search</a>
+        <a href="explore.html" class="nav-item active">Explore</a>
+    </nav>
+    <div class="header-controls">
+        <button class="theme-toggle-btn" onclick="toggleTheme()" id="themeBtn">
+            {savedTheme === 'light' ? '🌙 Dark Mode' : '☀️ Light Mode'}
+        </button>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="filter-group">
+                <h4 class="eyebrow">Search Context</h4>
+                <input type="text" id="searchInput" class="search-box" placeholder="Filter Map by keyword...">
+            </div>
+            
+            <div class="filter-group">
+                <h4 class="eyebrow">Taxonomy Filter</h4>
+                <div id="taxonomyTreeContainer"></div>
+            </div>
+
+            <div class="filter-group">
+                <h4 class="eyebrow">Time Period</h4>
+                <div class="range-inputs">
+                    <input type="number" id="minDate" class="range-input" placeholder="Min">
+                    <span>-</span>
+                    <input type="number" id="maxDate" class="range-input" placeholder="Max">
+                </div>
+            </div>
+            
+            <div class="meta-grid">
+                <div>
+                    <p class="label">Analyzing</p>
+                    <strong id="countDisplay">0</strong> Inscriptions
+                </div>
+            </div>
+        </aside>
+
+        <!-- Visualization Area -->
+        <div class="viz-layout">
+            <div class="viz-card full-width">
+                <h3 class="viz-title">Geospatial Distribution</h3>
+                <div id="map"></div>
+            </div>
+            
+            <div class="viz-row">
+                <div class="viz-card">
+                    <h3 class="viz-title">Time Distribution (Centuries)</h3>
+                    <canvas id="timeChart"></canvas>
+                </div>
+                <div class="viz-card">
+                    <h3 class="viz-title">Thematic Breakdown</h3>
+                    <canvas id="themeChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+  </main>
+
+  <script src="assets/js/data.js"></script>
+  <script>
+    // --- Utils & Theme ---
+    const themeBtn = document.getElementById('themeBtn');
+    function updateThemeBtn() {
+        const current = document.documentElement.getAttribute('data-theme');
+        themeBtn.textContent = current === 'light' ? '🌙 Dark Mode' : '☀️ Light Mode';
+        if(window.mapInstance) setTimeout(() => window.mapInstance.invalidateSize(), 300);
+    }
+    updateThemeBtn();
+
+    window.toggleTheme = function() {
+        const current = document.documentElement.getAttribute('data-theme');
+        const next = current === 'light' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        updateThemeBtn();
+    }
+
+    // --- State ---
+    let activeFilters = new Set();
+    let chartInstances = {};
+    let mapInstance = null;
+    let markersLayer = null;
+
+    // --- Init ---
+    function init() {
+        buildTree(APP_DATA.taxonomy, '', document.getElementById('taxonomyTreeContainer'));
+
+        const inputs = ['searchInput', 'minDate', 'maxDate'];
+        inputs.forEach(id => document.getElementById(id).addEventListener('input', filterData));
+
+        initCharts();
+        initMap();
+        filterData();
+    }
+
+    // --- Filter ---
+    function filterData() {
+        const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+        const minDate = parseInt(document.getElementById('minDate').value);
+        const maxDate = parseInt(document.getElementById('maxDate').value);
+
+        const filtered = APP_DATA.inscriptions.filter(item => {
+            const matchesSearch = item.id.toString().includes(searchTerm) || 
+                                  (item.preview_text && item.preview_text.toLowerCase().includes(searchTerm));
+            
+            let matchesDate = true;
+            if (!isNaN(minDate) || !isNaN(maxDate)) {
+                if (item.date_min === undefined || item.date_min === null) matchesDate = false;
+                else {
+                    const itemMin = item.date_min;
+                    const itemMax = item.date_max || itemMin;
+                    if (!isNaN(minDate) && itemMax < minDate) matchesDate = false;
+                    if (!isNaN(maxDate) && itemMin > maxDate) matchesDate = false;
+                }
+            }
+
+            let matchesTaxonomy = true;
+            if (activeFilters.size > 0) {
+                matchesTaxonomy = false;
+                for (let h of item.hierarchy_paths) {
+                    const pathParts = [h.domain, h.subdomain, h.category, h.subcategory].filter(Boolean);
+                    const themePathStr = pathParts.join('/');
+                    for (let filterPath of activeFilters) {
+                        if (themePathStr.startsWith(filterPath)) {
+                            matchesTaxonomy = true; break;
+                        }
+                    }
+                    if (matchesTaxonomy) break;
+                }
+            }
+
+            return matchesSearch && matchesDate && matchesTaxonomy;
+        });
+
+        document.getElementById('countDisplay').textContent = filtered.length;
+        updateCharts(filtered);
+        updateMap(filtered);
+    }
+
+    // --- Tree Builder ---
+    function buildTree(node, parentPath, container) {
+        const ul = document.createElement('ul');
+        ul.className = parentPath ? 'tree-group' : 'tree-root';
+        Object.keys(node).sort().forEach(key => {
+            const currentPath = parentPath ? `${parentPath}/${key}` : key;
+            const children = node[key];
+            const hasChildren = children && Object.keys(children).length > 0;
+            const li = document.createElement('li');
+            li.className = 'tree-item';
+            const row = document.createElement('div');
+            row.className = 'tree-label-row';
+            const caret = document.createElement('span');
+            caret.className = `caret ${hasChildren ? '' : 'empty'}`;
+            caret.textContent = '▶';
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.className = 'filter-checkbox';
+            checkbox.onclick = (e) => e.stopPropagation();
+            checkbox.onchange = (e) => {
+                if (e.target.checked) activeFilters.add(currentPath);
+                else activeFilters.delete(currentPath);
+                filterData();
+            };
+            const label = document.createElement('span');
+            label.textContent = key;
+            const toggle = () => {
+                if(!hasChildren) return;
+                caret.classList.toggle('open');
+                const group = li.querySelector('.tree-group');
+                if(group) group.classList.toggle('open');
+            };
+            caret.onclick = (e) => { e.stopPropagation(); toggle(); };
+            row.onclick = toggle;
+            row.appendChild(caret); row.appendChild(checkbox); row.appendChild(label);
+            li.appendChild(row);
+            if (hasChildren) buildTree(children, currentPath, li);
+            ul.appendChild(li);
+        });
+        container.appendChild(ul);
+    }
+
+    // --- Charts & Map ---
+    function initCharts() {
+        const ctxTime = document.getElementById('timeChart').getContext('2d');
+        chartInstances.time = new Chart(ctxTime, {
+            type: 'bar',
+            data: { labels: [], datasets: [{ label: 'Inscriptions', data: [], backgroundColor: '#c1683c' }] },
+            options: { responsive: true, plugins: { legend: { display: false } } }
+        });
+
+        const ctxTheme = document.getElementById('themeChart').getContext('2d');
+        chartInstances.theme = new Chart(ctxTheme, {
+            type: 'doughnut',
+            data: { labels: [], datasets: [{ data: [], backgroundColor: ['#0c8c88', '#d97b3d', '#2f8f5d', '#1fa7a3', '#c1683c'] }] },
+            options: { responsive: true, plugins: { legend: { position: 'right' } } }
+        });
+    }
+
+    function initMap() {
+        mapInstance = L.map('map').setView([38.0, 25.0], 6);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OSM' }).addTo(mapInstance);
+        markersLayer = L.layerGroup().addTo(mapInstance);
+    }
+
+    function updateCharts(data) {
+        const bins = {};
+        data.forEach(item => {
+            if (item.date_min !== undefined && item.date_min !== null) {
+                const century = Math.floor(item.date_min / 100) * 100;
+                const label = century < 0 ? `${Math.abs(century)} BC` : `${century} AD`;
+                bins[label] = (bins[label] || 0) + 1;
+            }
+        });
+        const sortedLabels = Object.keys(bins).sort((a,b) => {
+             // Basic century sort (naive)
+             const yearA = parseInt(a.match(/\d+/)[0]) * (a.includes('BC') ? -1 : 1);
+             const yearB = parseInt(b.match(/\d+/)[0]) * (b.includes('BC') ? -1 : 1);
+             return yearA - yearB;
+        });
+        
+        chartInstances.time.data.labels = sortedLabels;
+        chartInstances.time.data.datasets[0].data = sortedLabels.map(l => bins[l]);
+        chartInstances.time.update();
+
+        const domains = {};
+        data.forEach(item => {
+            item.hierarchy_paths.forEach(h => { if(h.domain) domains[h.domain] = (domains[h.domain] || 0) + 1; });
+        });
+        chartInstances.theme.data.labels = Object.keys(domains);
+        chartInstances.theme.data.datasets[0].data = Object.values(domains);
+        chartInstances.theme.update();
+    }
+
+    function updateMap(data) {
+        markersLayer.clearLayers();
+        data.forEach(item => {
+            if(item.coordinates) {
+                L.circleMarker(item.coordinates, {
+                    radius: 6, fillColor: "#c1683c", color: "#fff", weight: 1, opacity: 1, fillOpacity: 0.8
+                })
+                .bindPopup(`<b>PHI-${item.id}</b><br>${item.region}<br><a href="inscriptions/${item.id}.html">View Details</a>`)
+                .addTo(markersLayer);
+            }
+        });
+    }
+
+    init();
+  </script>
+</body>
+</html>
