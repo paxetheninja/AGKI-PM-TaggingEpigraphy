@@ -28,9 +28,16 @@ class Entities(BaseModel):
     persons: List[PersonEntity] = Field(default_factory=list)
     places: List[PlaceEntity] = Field(default_factory=list)
 
+class GeoLocation(BaseModel):
+    name: str
+    type: Optional[str] = Field(None, description="e.g. Region, Polis, Sanctuary")
+    uri: Optional[str] = Field(None, description="Pleiades URI")
+    role: Optional[str] = Field(None, description="provenance")
+
 class TaggedInscription(BaseModel):
     phi_id: int
     themes: List[Theme] = Field(default_factory=list)
     entities: Entities = Field(default_factory=Entities)
     completeness: str = Field(default="fragmentary", description="intact or fragmentary")
-    region_uri: Optional[str] = Field(None, description="Pleiades URI for the main region")
+    provenance: List[GeoLocation] = Field(default_factory=list, description="Ordered hierarchy: [Macro -> Micro]")
+    model: Optional[str] = Field(None, description="The name of the model used for generation")
