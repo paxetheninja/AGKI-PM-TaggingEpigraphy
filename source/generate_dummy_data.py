@@ -1,51 +1,80 @@
 import json
 import random
 from pathlib import Path
-from .config import INPUT_DIR, OUTPUT_DIR, TAXONOMY_DIR
+from .config import INPUT_DIR, OUTPUT_DUMMY_DIR, TAXONOMY_DIR
 from .data_loader import load_inscriptions
-from .schema import TaggedInscription, Theme, Hierarchy, Entities, PersonEntity, PlaceEntity
+from .schema import TaggedInscription, Theme, Hierarchy, Entities, PersonEntity, PlaceEntity, GeoLocation
 
 def load_taxonomy():
     with open(TAXONOMY_DIR / "taxonomy.json", 'r', encoding='utf-8') as f:
         return json.load(f)
 
-# --- Region Mapping (PHI -> Pleiades URI & Coordinates) ---
-REGION_DATA = {
-    "Attica": {"uri": "https://pleiades.stoa.org/places/579888", "coords": [38.0, 23.8]},
-    "Peloponnese": {"uri": "https://pleiades.stoa.org/places/570599", "coords": [37.5, 22.4]},
-    "Boeotia": {"uri": "https://pleiades.stoa.org/places/540677", "coords": [38.3, 23.1]},
-    "Thessaly": {"uri": "https://pleiades.stoa.org/places/541136", "coords": [39.5, 22.2]},
-    "Epirus": {"uri": "https://pleiades.stoa.org/places/540776", "coords": [39.6, 20.8]},
-    "Macedonia": {"uri": "https://pleiades.stoa.org/places/491656", "coords": [40.7, 22.5]},
-    "Thrace": {"uri": "https://pleiades.stoa.org/places/501616", "coords": [41.5, 25.5]},
-    "Illyria": {"uri": "https://pleiades.stoa.org/places/481865", "coords": [40.5, 19.8]},
-    "Crete": {"uri": "https://pleiades.stoa.org/places/589748", "coords": [35.2, 24.9]},
-    "Aegean Islands": {"uri": "https://pleiades.stoa.org/places/579885", "coords": [37.0, 25.5]}, # General Aegean center
-    "Delos": {"uri": "https://pleiades.stoa.org/places/599588", "coords": [37.39, 25.26]},
-    "Asia Minor": {"uri": "https://pleiades.stoa.org/places/638753", "coords": [39.0, 32.0]}, # Asia
-    "Caria": {"uri": "https://pleiades.stoa.org/places/638803", "coords": [37.5, 28.0]},
-    "Ionia": {"uri": "https://pleiades.stoa.org/places/550597", "coords": [38.5, 27.5]},
-    "Sicily": {"uri": "https://pleiades.stoa.org/places/462492", "coords": [37.5, 14.0]},
-    "Italy": {"uri": "https://pleiades.stoa.org/places/1052", "coords": [42.0, 12.5]}
+# --- Expanded Mock Hierarchy ---
+# Key = Region, Value = List of (City, URI, Coords)
+HIERARCHY_DATA = {
+    "Attica": [
+        ("Athen", "https://pleiades.stoa.org/places/579885", [37.97, 23.72]),
+        ("Eleusis", "https://pleiades.stoa.org/places/579920", [38.04, 23.54]),
+        ("Brauron", "https://pleiades.stoa.org/places/579880", [37.92, 23.99])
+    ],
+    "Peloponnese": [
+        ("Sparta", "https://pleiades.stoa.org/places/570685", [37.07, 22.43]),
+        ("Korinth", "https://pleiades.stoa.org/places/570182", [37.90, 22.88]),
+        ("Olympia", "https://pleiades.stoa.org/places/570531", [37.63, 21.63])
+    ],
+    "Boeotia": [
+        ("Theben", "https://pleiades.stoa.org/places/541138", [38.32, 23.32]),
+        ("Tanagra", "https://pleiades.stoa.org/places/541132", [38.31, 23.53])
+    ],
+    "Delos": [
+        ("Delos (City)", "https://pleiades.stoa.org/places/599588", [37.39, 25.26]),
+        ("Sanctuary of Apollo", "https://pleiades.stoa.org/places/599588", [37.40, 25.27])
+    ],
+    # Fallback for regions with no specific city logic in this dummy script
+    "Macedonia": [("Pella", "https://pleiades.stoa.org/places/491687", [40.76, 22.52])],
+    "Asia Minor": [("Ephesos", "https://pleiades.stoa.org/places/599612", [37.94, 27.36])],
+    "Crete": [("Knossos", "https://pleiades.stoa.org/places/589852", [35.29, 25.16])]
 }
 
-def get_region_info(region_name):
-    """
-    Fuzzy match PHI region name to our dataset.
-    Returns (uri, coords) or (None, None)
-    """
-    if not region_name: return None, None
+REGION_URIS = {
+    "Attica": "https://pleiades.stoa.org/places/579888",
+    "Peloponnese": "https://pleiades.stoa.org/places/570599",
+    "Boeotia": "https://pleiades.stoa.org/places/540677",
+    "Thessaly": "https://pleiades.stoa.org/places/541136",
+    "Epirus": "https://pleiades.stoa.org/places/540776",
+    "Macedonia": "https://pleiades.stoa.org/places/491656",
+    "Thrace": "https://pleiades.stoa.org/places/501616",
+    "Illyria": "https://pleiades.stoa.org/places/481865",
+    "Crete": "https://pleiades.stoa.org/places/589748",
+    "Aegean Islands": "https://pleiades.stoa.org/places/579885",
+    "Delos": "https://pleiades.stoa.org/places/599588",
+    "Asia Minor": "https://pleiades.stoa.org/places/638753"
+}
+
+def get_random_provenance(region_name):
+    """Generates a hierarchical list: [Region, City?] based on knowledge."""
+    prov = []
     
-    # Try exact match
-    if region_name in REGION_DATA:
-        return REGION_DATA[region_name]["uri"], REGION_DATA[region_name]["coords"]
-    
-    # Try substring match
-    for key, data in REGION_DATA.items():
-        if key in region_name or region_name in key:
-            return data["uri"], data["coords"]
+    # 1. Macro Region
+    # Try to match PHI region to our keys
+    matched_key = None
+    for k in REGION_URIS:
+        if k in region_name:
+            matched_key = k
+            break
             
-    return None, None
+    if matched_key:
+        prov.append(GeoLocation(name=matched_key, type="Region", uri=REGION_URIS[matched_key]))
+        
+        # 2. Subregion/City (Randomly pick one if available for this region)
+        if matched_key in HIERARCHY_DATA and random.random() > 0.3:
+            city_name, city_uri, _ = random.choice(HIERARCHY_DATA[matched_key])
+            prov.append(GeoLocation(name=city_name, type="Polis", uri=city_uri))
+    else:
+        # Fallback
+        prov.append(GeoLocation(name=region_name, type="Region"))
+        
+    return prov
 
 def get_random_path(taxonomy_subset, current_path=None):
     if current_path is None: current_path = []
@@ -59,10 +88,8 @@ def generate_theme_from_path(path, text):
     category = path[2] if len(path) > 2 else None
     subcategory = path[3] if len(path) > 3 else None
     label = path[-1]
-    
     words = text.split()
     quote = " ".join(words[random.randint(0, max(0,len(words)-10)):][:random.randint(3,10)]) if len(words) > 5 else text
-
     return Theme(
         label=label,
         hierarchy=Hierarchy(domain=domain, subdomain=subdomain, category=category, subcategory=subcategory),
@@ -74,8 +101,7 @@ def generate_theme_from_path(path, text):
 def generate_dummy_data(limit=50):
     inscriptions = load_inscriptions(INPUT_DIR, limit=limit)
     taxonomy = load_taxonomy()
-    
-    print(f"Generating LOD-linked data for {len(inscriptions)} inscriptions...")
+    print(f"Generating hierarchical dummy data for {len(inscriptions)} inscriptions...")
     
     for inscription in inscriptions:
         themes = []
@@ -84,10 +110,6 @@ def generate_dummy_data(limit=50):
         if "Type" in taxonomy and random.random() > 0.3:
             themes.append(generate_theme_from_path(["Type"] + get_random_path(taxonomy["Type"]), inscription.text))
 
-        # Get Region Info
-        reg_uri, _ = get_region_info(inscription.region_main)
-
-        # Entities
         persons = [PersonEntity(name="Theemos", role="Archon", uri="http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theemos")]
         places = [PlaceEntity(name="Athen", type="Polis", uri="https://pleiades.stoa.org/places/579885")]
 
@@ -96,13 +118,14 @@ def generate_dummy_data(limit=50):
             themes=themes,
             entities=Entities(persons=persons, places=places),
             completeness=random.choice(["intact", "fragmentary"]),
-            region_uri=reg_uri
+            provenance=get_random_provenance(inscription.region_main),
+            model="dummy-generator-v2"
         )
         
-        with open(OUTPUT_DIR / f"{inscription.id}.json", 'w', encoding='utf-8') as f:
+        with open(OUTPUT_DUMMY_DIR / f"{inscription.id}.json", 'w', encoding='utf-8') as f:
             f.write(tagged.model_dump_json(indent=2))
             
-    print("Data generation complete.")
+    print("Generation complete.")
 
 if __name__ == "__main__":
     generate_dummy_data()

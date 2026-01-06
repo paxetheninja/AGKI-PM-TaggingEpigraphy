@@ -10,11 +10,13 @@ BASE_DIR = Path(__file__).parent.parent
 DATA_DIR = BASE_DIR / "data"
 INPUT_DIR = DATA_DIR / "input"
 OUTPUT_DIR = DATA_DIR / "output"
+OUTPUT_DUMMY_DIR = DATA_DIR / "output_dummy"
 TAXONOMY_DIR = DATA_DIR / "taxonomy"
 
 # Ensure directories exist
 INPUT_DIR.mkdir(parents=True, exist_ok=True)
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+OUTPUT_DUMMY_DIR.mkdir(parents=True, exist_ok=True)
 TAXONOMY_DIR.mkdir(parents=True, exist_ok=True)
 
 # Configuration
