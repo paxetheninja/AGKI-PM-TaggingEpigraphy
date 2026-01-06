@@ -83,8 +83,11 @@
         <a href="explore.html" class="nav-item">Explore</a>
     </nav>
     <div class="header-controls">
+        <button class="theme-toggle-btn" onclick="toggleDataMode()" id="dataModeBtn" style="margin-right:0.5rem; background: var(--accent); border:none;">
+            Data: Dummy
+        </button>
         <button class="theme-toggle-btn" onclick="toggleTheme()" id="themeBtn">
-            {savedTheme === 'light' ? '🌙 Dark Mode' : '☀️ Light Mode'}
+            🌙 Dark Mode
         </button>
     </div>
   </header>
@@ -148,8 +151,29 @@
     </div>
   </main>
 
-  <script src="assets/js/data.js"></script>
   <script>
+    // --- Data Mode Handling ---
+    let currentDataMode = localStorage.getItem('dataMode') || 'dummy';
+    
+    function updateDataModeBtn() {
+        const btn = document.getElementById('dataModeBtn');
+        btn.textContent = `Data: ${currentDataMode.charAt(0).toUpperCase() + currentDataMode.slice(1)}`;
+        btn.style.background = currentDataMode === 'real' ? '#c1683c' : '#0c8c88';
+    }
+
+    window.toggleDataMode = function() {
+        currentDataMode = currentDataMode === 'dummy' ? 'real' : 'dummy';
+        localStorage.setItem('dataMode', currentDataMode);
+        location.reload(); 
+    }
+
+    updateDataModeBtn();
+
+    const script = document.createElement('script');
+    script.src = `assets/js/data_${currentDataMode}.js`;
+    script.onload = () => init();
+    document.body.appendChild(script);
+
     // --- Utils & Theme ---
     const themeBtn = document.getElementById('themeBtn');
     function updateThemeBtn() {
