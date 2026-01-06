@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PHI-31826 - AGKI</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <style>
+    .page-container { max-width: 1100px; margin: 0 auto; padding: 2rem; }
+    .back-link { display: inline-block; margin-bottom: 1rem; color: var(--primary); font-weight: 600; }
+    .text-viewer { display: grid; grid-template-columns: 40px 1fr; gap: 1rem; font-family: "New Athena Unicode", "Gentium Plus", "Times New Roman", serif; font-size: 1.2rem; line-height: 1.8; background: var(--panel); padding: 2rem; border: 1px solid var(--border); border-radius: 4px; margin-bottom: 2rem; color: var(--text); }
+    .line-numbers { text-align: right; color: var(--muted); font-size: 0.9rem; user-select: none; opacity: 0.6; font-family: sans-serif; }
+    .greek-content { white-space: pre-wrap; }
+    .highlight { background-color: rgba(255, 255, 0, 0.3); border-radius: 2px; transition: background-color 0.2s; }
+    .theme-card { background: var(--panel); padding: 1.5rem; border-left: 4px solid var(--primary); margin-bottom: 1rem; border: 1px solid var(--border); border-left-width: 4px; transition: transform 0.2s; }
+    .theme-card:hover { transform: translateX(4px); box-shadow: var(--shadow); }
+    .ai-rationale-box { background: rgba(31, 167, 163, 0.08); padding: 0.75rem; border-radius: 6px; font-size: 0.9rem; color: var(--muted); max-width: 400px; }
+    .evidence-quote { border-left: 2px solid var(--accent); padding-left: 0.5rem; margin-top: 0.5rem; font-style: italic; color: var(--text); }
+    .badge.green { background: #e6f4ea; color: #137333; border-color: #137333; }
+    .badge.orange { background: #fef7e0; color: #b06000; border-color: #b06000; }
+    .badge.red { background: #fce8e6; color: #c5221f; border-color: #c5221f; }
+    .entity-tag { background: rgba(217, 123, 61, 0.1); color: var(--accent-2); margin-right: 0.5rem; margin-bottom: 0.5rem; display: inline-block; padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.9rem; border: 1px solid rgba(217, 123, 61, 0.2); text-decoration: none; }
+    .entity-tag.linked:hover { background: rgba(217, 123, 61, 0.2); text-decoration: underline; cursor: pointer; }
+  </style>
+  
+    <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+
+    function highlightQuote(quote) {
+        if(!quote) return;
+        const content = document.getElementById('greekText');
+        const innerHTML = content.innerHTML;
+        const safeQuote = quote.replace(/[.*+?^${{}}()|[\\]/g, '\\$&');
+        const re = new RegExp('(' + safeQuote + ')', 'gi');
+        content.innerHTML = innerHTML.replace(re, '<span class="highlight">$1</span>');
+    }
+
+    function clearHighlight() {
+        const content = document.getElementById('greekText');
+        content.innerHTML = content.textContent; 
+    }
+
+    function copyCitation() {
+        const citation = "AGKI Project. (2026). Inscription PHI-" + str(phi_id) + r". Retrieved from " + window.location.href;
+        navigator.clipboard.writeText(citation);
+        alert("Citation copied to clipboard!");
+    }
+    </script>
+    
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <h1><a href="../index.html" style="color:white;text-decoration:none;">AGKI Tagging Tool</a></h1>
+    </div>
+  </header>
+  <main class="page-container">
+    <a href="../index.html" class="back-link">← Back to Dashboard</a>
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+        <h2>Inscription PHI-31826</h2>
+        <div style="display:flex; gap:0.5rem;">
+            <button onclick="copyCitation()" class="button secondary" style="font-size:0.9rem; padding:0.5rem 1rem;">📜 Cite</button>
+            <a href="https://epigraphy.packhum.org/text/31826" target="_blank" class="button">View on PHI</a>
+        </div>
+    </div>
+    <div class="meta-grid">
+        <div><small class="eyebrow">Provenance</small><br><strong>Peloponnesos (IG IV-[VI])</strong></div>
+        <div><small class="eyebrow">Date</small><br><strong> 92/91 BC</strong></div>
+        <div><small class="eyebrow">Completeness</small><br><span class="badge info">fragmentary</span></div>
+    </div>
+    <h3>Original Text</h3>
+    <div class="text-viewer">
+        <div class="line-numbers">1<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>5<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>10<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>15<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>20<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>25<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>30<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>35<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>40<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>45<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>50<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>55<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>60<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>65<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>70<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>75<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>80<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>85<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;</div>
+        <div class="greek-content" id="greekText">[περ]ερ ν κα ερ ν. γραμματε ς τ ν συν δρων το ς γενηθ ντας ερο ς ρκιξ τω παραχρ μα μ μ τις ρρωσ[τε] 
+[ ερ]ν καιομ νων α μα κα ο νον σπ νδοντας τ ν ρκον τ ν πογεγραμμ νον μν ω το ς θεο ς ο ς τ μυστ ρια πιτ[ελε] ται πιμ λειαν ξειν πως γ νηται τ κατ τ ν τελετ ν θεοπρεπ ς κα π παντ ς το δικα ου κα μ τε α [τ] ς μηθ ν σχημον μηδ δικον ποι σειν π καταλ σει τ ν μυστηρ ων μηδ λλωι πιτρ ψειν λλ κατακολουθ σειν το ς γεγραμμ νοις ξορκ σειν δ κα τ ς ερ ς κα τ ν ερ κατ τ δι γραμμα. ε ορκο ντι μ ν μοι ε η το ς ε σεβ οις φιορκο ντι δ τ ναντ α. ν δ τις μ θ λει μν ειν ζαμιο τω δραχμα ς χιλ αις κα λλον ντ το του κλαρωσ τω κ τ ς α τ ς φυλ ς. τ ς δ ερ ς ρκιζ τω ερε ς κα ο ερο ν τ ι ερ ι το καρνε ου τ ι πρ τερον μ ραι τ ν μυστηρ ων τ ν α τ ν ρκον κα ποτεξορκιζ ντω πεπο ημαι δ κα ποτ τ ν νδρα τ ν συμβ ωσιν σ ως κα δικα ως. τ ν δ μ
+θ λουσαν μν ειν ζαμιο ντω ο ερο δραχμα ς χιλ αις κα μ πιτρεπ ντω πιτελε ν τ κατ τ ς θυσ ας μηδ μετχειν τ ν μυστηρ ων α δ μ σασαι πιτελο ντω. ----- ο δ γεγενημ νοι ερο κα ερα ν τ ι π μπτωι κα πεντηκοστ ι
+ τει μοσ ντω τ ν α τ ν ρκον ν τ ι νδεκ τωι μην πρ τ ν μυστηρ ων. παραδ σιος. τ ν δ κ μπτραν κα τ 
+βιβλ α δ δωκε μνασ στρατος παραδιδ ντω ο ερο το ς πικατασταθ ντοις παραδιδ ντω δ κα τ λοιπ σα
+ ν κατασκευασθε χ ριν τ ν μυστηρ ων. στεφ νων. στεφ νους δ χ ντω ο μ ν ερο κα α ερα π λον λευκ ν 
+τ ν δ τελουμ νων ο πρωτομ σται στλεγγ δα. ταν δ ο ερο παραγγε λωντι τ μ μ ν στλεγγ δα ποθ σθωσαν 
+στεφανο σθωσαν δ π ντες δ φναι. ε ματισμο. ο τελο μενοι τ μυστ ρια νυπ δετοι στωσαν κα χ ντω τ ν
+ε ματισμ ν λευκ ν α δ γυνα κες μ διαφαν μηδ τ σαμε α ν το ς ε ματ οις πλατ τερα μιδακτυλ ου κα α 
+μ ν δι τιες χ ντω χιτ να λ νεον κα ε μ τιον μ πλε ονος ξια δραχμ ν κατ ν α δ πα δες καλ σηριν σινδον ταν κα ε μ τιον μ πλε ονος ξια μν ς α δ δο λαι καλ σηριν σινδον ταν κα ε μ τιον μ πλε ονος ξια δραχμ ν πεντ κοντα. ----- α δ ερα α μ ν γυνα κες καλ σηριν π δυμα μ χον σκι ς κα ε μ τιον μ πλ ονος ξια δ ο
+μν ν α δ [πα δε]ς καλ σηριν ε μ τιον μ πλε ονος ξια δραχμ ν κατ ν. ----- ν δ τ ι πομπ ι α μ ν ερα γυνα κες ποδ ταν κα ε μ τιον γυναικε ον ο λον σαμε α χον μ πλατ τερα μιδακτυλ ου α δ πα δες καλ σηριν κα ε μ τιον μ διαφαν ς μ χ τω δ μηδεμ α χρυσ α μηδ φ κος μηδ ψιμ θιον μηδ ν δεμα μηδ τ ς τρ χας νπεπλεγμ νας μηδ ποδ ματα ε μ π λινα δερμ τινα ερ θυτα. δ φρους δ χ ντω α ερα ε συ νους στρογγ λους κα π α τ ν ποτικεφ λαια
+ σπ ραν λευκ μ χοντα μ τε σκι ν μητ πορφ ραν. σας δ δε διασκευ ζεσθαι ε ς θε ν δι θεσιν χ ντω τ ν ε ματισμ ν 
+καθ ν ο ερο διατ ξωντι. ----- ν δ τις λλως χει τ ν ε ματισμ ν παρ τ δι γραμμα λλο τι τ ν κεκωλυμ νων μ πιτρπ τω γυναικον μος κα ξουσ αν χ τω λυμα νεσθαι κα στω ερ τ ν θε ν. ρκος γυναικον μου. ο δ ερο ταν κα α το μ σωντι ρκιζ ντω τ ν γυναικον μον π τ ν α τ ν ερ ν ε μ ν ξειν πιμ λειαν περ τε το ε ματισμο κα τ ν λοιπ ν τ ν
+ πιτεταγμ νων μοι ν τ ι διαγρ μματι. πομπ ς. ν δ τ ι πομπ ι γε στω μνασ στρατος πειτεν ερε ς τ ν θε ν ο ς
+τ μυστ ρια γ νεται μετ τ ς ερ ας πειτα γωνοθ τας εροθ ται ο α λητα μετ δ τα τα α παρθ νοι α ερα καθ ς ν λ χωντι γουσαι τ ρματα πικε μενα κ στας χο σας ερ μυστικ ε τεν θοιναρμ στρια ε ς δ ματρος κα α ποθοιναρμ στριαι α μβεβακυ αι ε τεν ρεα τ ς δ ματρος τ ς φ πποδρ μωι ε τεν τ ς ν α γ λ πειτεν α ερα κατ μ αν καθ ς κα λ χωντι πειτεν ο ερο καθ ς κα ο δ κα διατ ξωντι. δ γυναικον μος κλαρο τω τ ς τε ερ ς κα παρθ νους κα πιμ λειαν
+ χ τω πως πομπε ωντι καθ ς κα λ χωντι. γ σθω δ ν τ ι πομπ ι κα τ θ ματα κα θυσ ντω τ ι μ ν δ ματρι σ ν π τοκα ρμ νι κρι ν μεγ λοις θεο ς δ μαλιν σ ν π λλωνι καρνε ωι κ προν γναι ο ν. σκαν ν. σκαν ν δ μ πιτρεπ ντω ο ερο μηθ να χειν ν
+τετραγ νωι με ζω ποδ ν τρι κοντα μηδ περιτιθ μεν τα ς σκανα ς μ τε δ ρρεις μ τε α λε ας μηδ ν ι ν τ πωι περιστεμματ σωντι ο ερο μηθ να τ ν μ ντων ερ ν χειν σκαν ν. μηδ παρερπ τω μηθε ς μ ητος ε ς τ ν τ πον ν κα περιστεμματ σωντι. χωραξ ντω δ κα δρανας. ναγραψ ντω δ κα φ ν δε καθαρ ζειν κα μ δε χοντας ε σπορε εσθαι. [μ] δε χειν
+ ν τα ς σκανα ς. μηθε ς κλ νας χ τω ν τ ι σκαν ι μηδ ργυρ ματα πλε ονος ξια δραχμ ν τριακοσι ν ε δ μ μ πιτρεπ ντω ο ερο κα τ πλειον ζοντα ερ στω τ ν θε ν. κοσμο ντων. ταν δ α θυσ αι κα τ μυστ ρια συντελε ται ε φαμε ν π ντας κα κο ειν τ ν παραγγελλομ νων τ ν δ πειθο ντα πρεπ ς ναστρεφ μενον ε ς τ θε ον μαστιγο ντω ο ερο 
+κα ποκωλυ ντω τ ν μυστηρ ων. αβδοφ ρων. αβδοφ ροι δ στωσαν κ τ ν ερ ν ε κοσι κα πειθαρχο ντω το ς πιτελο ντοις τ μυστ ρια κα πιμ λειαν χ ντω πως ε σχημ νως κα ε τ κτως π τ ν παραγεγενημ νων π ντα γ νηται καθ ς ν
+παραγγ λλωντι ο π το των τεταγμ νοι το ς δ πειθο ντας πρεπ ς ναστρεφομ νους μαστιγο ντω. ν δ τις τ ν αβδοφ ρων μ ποιε καθ ς γ γραπται λλο τι δικο ποιο π καταλ σει τ ν μυστηρ ων κριθε ς π τ ν ερ ν ν κατακριθε μ 
+μετεχ τω τ ν μυστηρ ων. περ τ ν διαφ ρων. τ δ π πτοντα δι φορα κ τ ν μυστηρ ων γλεγ ντω ο κατασταθ ντες π 
+το δ μου π ντε ε σφερ ντω δ ο ρχοντες ν νκαι π ντες μ δ ς το ς α το ς τ μαμα χοντα καστον μ λασσον ταλ ντου κα τ ν κατασταθ ντων παραγραψ τω γερουσ α τ τ μαμα σα τως δ κα τ τ ν ε σενεγκ ντων. το ς δ γλογευ ντοις
+τ δι φορα λειτουργε τω ργυροσκ πος. ταν δ πιτελεσθε τ μυστ ρια πολογισ σθωσαν μ π ντοις ν τ ι πρ ται συνν μωι συναγωγ ι τ ν συν δρων κα γραφ ν ποδ ντω τ ι πιμελητα παραχρ μα γρ φοντες π ν ματος τ πεπτωκ τα διφορα π το καθαρμο κα π τ ν πρωτομυστ ν τ ποστατικ ν κα ν τι λλο π σει κα τ ν γεγενημ ναν ξοδον κα τι ν ε 
+λοιπ ν κα ριθμησ ντω παραχρ μα τ ι ταμ αι κα στωσαν π μαστροι ν τι ε ρ σκωνται δικο ντες διπλασ ου κα πιτιμ ου
+[δραχ]μ ν χ[ι]λι ν κα ο δικαστ[α] μ φαιρο ντω μηθ ν ο δ ν τ ι π μπτωι κα πεντηκοστ ι τει κατεσταμ νοι ξοδιασ ντω κα μνα[σισ]τρ τωι τ διδ μενο[ν α τ ι] δι φορον ε ς τ ν στ φανον π τ ς [π]λεος δραχμ ς ξακισχιλ ας ποδ ντω δ τ ι ταμ αι κα σα κα ε 
+[πρ]οεξωδιασμ να δι φορα [ π] το ταμ ου [ν τ ι π μπτωι κα πεντηκοστ ι] τε[ι ε ς] τ κ[α]τασκευαζ μ[εν]α ν [τ]ι καρνειασ ωι δαπανο μενα χ ριν τ ν μυστηρ ων. τ δ [λοιπ ν κ τ ν διαφ ρων το του το τους] ξοδιαζ ντ[ω ο π ντε ε ς τ] πισκε[υα]ζ μενα ν τ ι καρνειασ ωι κα ν τινος τι χρε α ε [παρ τα τας τ ς] ποθ δους φερ ντω γρ φοντες η[τ ς ε] ς ν χρε α ε κα ο ρχοντες κα ο σ νεδροι δογματοποιε σθωσαν τι δε τ ν ταμ αν [διδ μ]εν τ δι φορα. π δ τ ν πιπτ ντων κ τ ν μυστηρ ων ποκαθιστ σθω τ ι ταμ αι τ δι φορα κα ποδ ντω γραφ ν τ ι πιμελητ ι περ ν κα διοικ σωντι κα στωσαν π μαστροι ν τι δικ σωντι καθ ς π νω γ γραπται. δ ταμ ας σον κα παραλ βει δι φορον λοιπ ν κ το των γραφ τω ν πεχθ ματι ε ς τ ν πισκευ ν τ ν ν τ ι
+καρνειασ ωι κα μ ναχρησ σθω ε ς λλο μηθ ν μ χρι ν πιτελεσθε σων χρε α στ ποτ τ ν τ ν μυστηρ ων συντ λειαν μηδ γραψ τω μηθε ς δ γμα τι δε τα τα τ δι φορα ε ς λλο τι καταχρ σασθαι ε δ μ τ τε γραφ ν τελ ς στω κα γρ ψας ποτεισ τω δραχμ ς δισχιλ ας μο ως δ κα ταμ ας τ κα ξοδι σει διπλο ν κα δραχμ ς δισχιλ ας κα ο δικαστα μ φαιρο ντω μηθ ν κα τ π πτοντα
+ κ ταυτ ν τ ν κρισ ων δι φορα παρχ τω ε ς τ ν πισκευ ν τ ν ν τ ι καρνειασ ωι. ταν δ πιτελεσθε σων χρε α στ ποτ τ συντελε ν τ μυστ ρια παρχ τω τ π πτοντα δι φορα τ ν μυστηρ ων ε ς τ ς τ ς π λεος σ δους. θυμ των παροχ ς. ο ερο μετ τ κατασταθ μεν προκαρ ξαντες γδ ντω τ ν παροχ ν τ ν θυμ των ν δε θ εσθαι κα παρ στασθαι ν το ς μυστηρ οις κα τ ε ς το ς
+καθαρμο ς γδιδ ντες ν τε δοκε συνφ ρον ε μεν π τ α τ π ντα τ θ ματα ν τε κατ μ ρος τ ι τ λ χιστον φισταμ νωι
+λ μψεσθαι δι φορον. στι δ δε παρ χειν πρ το ρχεσθαι τ ν μυστηρ ων ρνας δ ο λευκο ς π το καθαρμο κρ ον ε χρουν κα ταν
+ ν τ ι θε τρωι καθα ρει χοιρ σκους τρε ς π ρ το ς πρωτομ στας ρνας κατ ν ν δ τ ι πομπ ι δ ματρι σ ν π τοκα το ς δ μεγ λοις
+θεο ς δ μαλιν διετ σ ν ρμ νι κρι ν π λλωνι καρνε ωι κ προν γναι ο ν. δ γδεξ μενος κατεγγυε σας ποτ το ς ερο ς λαβ τω τ δι φορα κα παριστ τω τ θ ματα ε ερα καθαρ λ κλαρα κα πιδειξ τω το ς ερο ς πρ μερ ν δ κα τ ν μυστηρ ων το ς
+δ δοκιμασθ ντοις σαμε ον πιβαλ ντω ο ερο κα τ σαμειωθ ντα παριστ τω γδεξ μενος ν δ μ παριστ ι π τ ν δοκιμασ αν πρασσ ντω ο ερο το ς γγ ους α τ κα τ μισυ τ δ θ ματα α το παρεχ ντω κα π τ ν πραχθ ντων διαφ ρων κομισ σθωσαν
+τ ν γενομ ναν δαπ ναν ε ς τ θ ματα. τεχνιτ ν ε ς τ ς χοριτε ας. ο ερο προγραφ ντω κατ νιαυτ ν το ς λειτουργ σοντας ν
+τε τα ς θυσ αις κα μυστηρ οις α λητ ς κα κιθαριστ ς σους κα ε ρ σκωντι ε θ τους π ρχοντας κα ο προγραφ ντες λειτουργο ντω
+το ς θεο ς. δικημ των. ν δ τις ν τα ς μ ραις ν α ς α τε θυσ αι κα τ μυστ ρια γ νονται λ ι ε τε κεκλεβ ς ε τε λλο τι δ κημα πεποιηκ ς γ σθω π το ς ερο ς κα μ ν λε θερος ν κατακριθε ποτιν τω διπλο ν δ δο λος μαστιγο σθω κα ποτεισ τω διπλο ν τ κλ μμα τ ν δ λλων δικημ των πιτ μιον δραχμ ς ε κοσι ν δ μ κτ νει παραχρ μα παραδ τω κ ριος τ ν ο κ ταν τ ι δικηθ ντι ε ς περγασ αν ε δ μ π δικος στω ποτ διπλο ν. περ τ ν κοπτ ντων ν τ ι ερ ι. μηδε ς κοπτ τω κ το ερο τ που ν δ τις λ ι μ ν δο λος μαστιγο σθω π τ ν ερ ν δ λε θερος ποτεισ τω σον κα ο ερο πικρ νωντι δ πιτυχ ν γ τω
+α το ς π το ς ερο ς κα λαμβαν τω τ μισυ. φ γιμον ε μεν το ς δο λοις. το ς δο λοις φ γιμον στω τ ερ ν καθ ς ν ο ερο 
+ ποδε ξωντι τ ν τ πον κα μηθε ς ποδεχ σθω το ς δραπ τας μηδ σιτοδοτε τω μηδ ργα παρεχ τω δ ποι ν παρ τ γεγραμμ να π δικος στω τ ι κυρ ωι τ ς το σ ματος ξ ας διπλασ ας κα πιτιμ ου δραχμ ν πεντακοσι ν δ ερε ς πικριν τω περ τ ν δραπετικ ν σοι κα νται κ τ ς μετ ρας π λεος κα σους κα κατακρ νει παραδ τω το ς κυρ οις ν δ μ παραδιδ ι ξ στω τ ι κυρ ωι ποτρ χειν χοντι. περ τ ς κρ νας. τ ς δ κρ νας τ ς νομασμ νας δι τ ν ρχα ων γγρ φων γνας κα το γε[γε]νημ νου ποτ τ ι κρ ναι γ λματος τ ν πιμ λειαν χ τω μνασ στρατος ως ν ζε κα μετεχ τω μετ τ ν ερ ν τ ν τε θυσι ν κα τ ν μυστηρ ων κα σα κα ο θ οντες ποτ τ ι κρ ναι τραπεζ ντι κα τ ν θυμ των τ δ ρματα λαμβαν τω μνασ στρατος 
+τ ν τε διαφ ρων σα κα ο θ οντες ποτ τ ι κρ ναι προτιθ ντι ε ς τ ν θησαυρ ν ταν κατασκευασθε μβ λωντι λαμβαν τω μνασ στρατος τ τρ τον μ ρος τ δ δ ο μ ρη κα ν τι ν θεμα π τ ν θυσιαζ ντων νατιθ ται ερ στω τ ν θε ν. δ ερε ς κα ο ερο πιμ λειαν χ ντω πως π τ ν διαφ ρων ναθ ματα κατασκευ ζηται το ς θεο ς ν το ς συν δροις δ ξει. θησαυρ ν κατασκευς. ο ερο ο κατεσταμ νοι ν τ ι π μπτωι κα πεντηκοστ ι τει πιμ λειαν χ ντω μετ το ρχιτ κτονος πως κατασκευασ[θ] ντι θησαυρο λ θινοι δ ο κλαικτο κα χωραξ ντω τ ν μ ν να ε ς τ ν να ν τ ν μεγ λων θε ν τ ν δ λλον ποτ τ ι κρ ναι ν ι ν τ πωι δοκε α το ς σφαλ ς ξειν κα πιθ ντω κλ κας κα το μ ν παρ τ ι κρ ναι χ τω τ ν τ ραν κλ κα μνασ στρατος τ ν δ λλαν ο ερο το δ ν τ ι να ι χ ντω τ ν κλ κα ο ερο κα νοιγ ντω κατ νιαυτ ν το ς μυστηρ οις κα τ ξαριθμηθ ν δι φορον [ξ]
+ κατ ρου το θησαυρο χωρ ς γρ ψαντες νενεγκ ντω ποδ ντω δ κα μνασιστρ τωι τ γιν μενον α [τ ι] δι φορον καθ ς ν τ[ ι]
+διαγρ μματι γ γραπται. ερο δε πνου. ο ερο π τ ν θυμ των τ ν γομ νων ν τ ι πομπ ι φελ ντες φ κ στου τ ν μι[μα]
+το ς θεο ς [τ λοι]π κρ α καταχρησ σθωσαν ε ς τ ερ ν δε πνον μετ τ ν ερ ν κα παρθ νων κα παραλαβ ντω τ ν τε ερ 
+[κα τ]ν ρεαν κ[α τ]ν ρεαν το καρνε ου κα μνασ στρατον κα τ ν γυνα κα τε κα τ ς γενε ς α το κα τ ν τεχνιτ ν το ς λει[το]υ[ργ]σαντας [ ν τα] ς χορε αις κα τ ν πηρεσι ν το ς λειτουργο ντας α το ς κα ε ς τ λοιπ δαπαν ματα μ πλε ον ν λωμα
+[π]οιο ντες δραχμ ν ---------- γορ ς. ο ερο τ πον ποδειξ ντω ν πραθ σεται π ντα δ γοραν μος π π λεος [επι]
+ πιμ λειαν χ τω πως ο πωλο ντες δολα κα καθαρ πωλο ντι κα χρ νται σταθμο ς κα μ τροις συμφ νοις ποτ τ δαμ σια κα 
+μ τασσ τω μ [τ]ε π σου δε πωλε ν μηδ καιρ ν τασσ τω μηδ πρασσ τω μηθε ς το ς πωλο ντας το τ που μηθ ν το ς δ μ πωλο ντας καθ ς γ γραπται το ς μ ν δο λους μαστιγο τω το ς δ λευθ ρους ζαμιο τω ε κοσι δραχμα ς κα τ κρ μα στω π τ ν ε[ρ ν]. δατος. χ τω δ πιμ λειαν γοραν μος κα περ το δατος πως κατ τ ν τ ς παναγ ριος χρ νον μηθε ς κακοποιε μ τε
+[τ β] λημα μ τε το ς χετο ς μ τε ν τι λλο κατασκευασθε ν τ ι ερ ι χ ριν το δατος κα πως καθ ς ν μερισθε ε τ δωρ κα μη[θ]ε[ ς]ποκωλ ει το ς χρωμ νους ν δ τινα λαμβ νει ποιο ντ τι τ ν κεκωλυμ νων τ ν μ ν δο λον μαστιγο τω τ ν δ λε θερον
+[ζαμιο τω] ε κοσι δραχμα ς κα τ κρ μα στω π τ ν ερ ν. λε μματος κα λουτρο. γοραν μος πιμ λειαν χ τω πως ο θ λοντες
+[βαλανε ε]ιν ν τ ι ερ ι μ πλε ον πρ σσωντι το ς λουομ νους δ ο χαλκ ν κα παρ χωντι π ρ κα μ κραν ε κρατον κα το ς κατακλυ[ζομ νοις]δωρ ε κρατον κα πως γδεξ μενος τ ν ξ λων τ ν παροχ ν ε ς τ λειπτ ριον παρ χει ξ λα ξηρ κα καν το ς λει[φομ νοις] κατ μ ραν π τετ ρτας ρας ως βδ μας. δο λος δ μηθε ς λειφ σθω. ο δ ερο γδιδ ντω τ ν παροχ ν τ ν ξ λ[ω]ν
+[τ ν ε ς τ] λειπτ ριον ν δ τις τ ν γδεξαμ νων τ ν βαλαν ων μ ποιε καθ ς γ γραπται τ ν μ ν δο λον μαστιγο τω γοραν [μος τ] ν δ λε θερον ζαμιο τω καθ καστον δ κημα ε κοσι δραχμα ς κα τ κρ μα στω π τ ν ερ ν. συν σιος ναφορ ς. ο ε[ρο]σα κα διοικ σωντι ν τ ι παναγ ρει κατακρ νωντ τινας σ νεσιν νενεγκ ντω ε ς τ πρυτανε ον ναγραψ ντω δ κα 
+[ε ς τ] ν ο κον τ ν ν τ ι ερ ι ο ς ν κατακρ νωντι κα π πο ωι δικ ματι. ντ γραφον χειν το διαγρ μματος. ο κατεσταμ [νοι]στε γρ ψαι τ δι γραμμα καθ ς ν δοκιμασθε δ ντω το ς νομοδε κταις ντ γραφον. ο δ λαβ ντες πιδεικνυ ντω τ ι
+[χρε] αν χοντι. κα ν το ς μυστηρ οις συνλειτουργο ντω το ς ερο ς κα κ ρυξ κα α λητ ς κα μ ντις κα ρχιτ κτων.
+[τ ς κατα]στ σιος τ ν δ κα. ο δαμιοργο το κτου μην ς τ ι δωδεκ ται πρ το τ ν κλ ρον τ ν ερ ν
+[κ]α τ ν ερ ν γ νεσθαι ποδ ντ[ω]
+τ ι δ μωι χειροτον αν πως καταστ σει κ π ντων τ ν
+πολιτ ν δ κα μ 
+νεωτ ρους τ ν
+τεσσαρ κοντα μη[δ] δ ς το ς α το ς τν γ ν νιαυτ ν. π[οτ]εισφερ ντω δ ο τε
+ ρχοντες κα τ ν
+ λλων θ λων ε σφ ροντες ξ ν γ γραπται το ς ερο ς
+κλαρο σθαι το ς δ 
+κατασταθ ντας [ρ]κιξ τω γραμματε ς
+τ ν συν δρων τ ν
+ ρκον ν ο ερο μνοντι. χ ντω δ ο κατασταθ ντες πιμ λειαν περ π ντων ν δε ν το ς μυστηρ οις συντελε σθαι κα φροντιζ ντω 
+ σων χρε α στ ε ς
+τ πιτελε σθαι τ 
+μυστ ρια. προγραφ ντω δ κ τ ν ερ ν κα αβδοφ ρους
+το ς ε θετωτ τους 
+ μο ως δ κα μυσταγωγο ς. το ς δ συνλειτουργ σοντας
+μετ μνασιστρ [τ]ου προγραφ ντω ν
+[τ]ινας ε ρ σκωντι ε θ τους π ρχοντας
+κα τ ν μ ντων ερ ν κα ο προγραφ ντες πειθαρχο ντω
+κα πιτελο ντω ν
+προγραφ ντι τ ν δ 
+μ ποιο ντα κατακριν ντω ε κοσι δρα[χ]μα ς κα γγραψ ντω ε ς το ς πολεμ ρχους. ο δ αβδοφ ροι
+μαστιγο ντω ο ς κα
+ο δ κα κελε ωντι ο δ κατασταθ ντες δ κα κριν ντω
+[τ] κ[ρ μα]τα [π ντα].
+ [ν δ χρε α ε πε]ρ τινος διαβο λιον [γ]νεσθαι συναγ ντω
+ο δ κα π ντες το ς ερο ς κα καθ ς το ς
+πλει νοις δ ξαι πιτελε σθω. φορο ντω δ ο 
+δ κα ν το ς μυστηρ οις στρ φιον πορφ ριον.
+ γρ φων. ε δ τινα
+ γραφ στι ν τ διαγρ μματι ποτ τ ν
+τ ν μυστηρ ων κα 
+τ ν θυσι ν συντ λειαν βουλευ σθωσαν ο 
+σ νεδροι μ μετακινο ντες π καταλσει τ ν μυστηρ ων μ[η]θ ν τ ν κατ τ δι γραμμα ε δ μ τ 
+γραφ ν τελ ς στω τ δ δι γραμμα κ ριον στω ε ς π ντα τ ν
+χρ νον.</div>
+    </div>
+    <h3>Thematic Analysis</h3>
+    <p class="muted" style="margin-bottom:1rem;">Hover over cards to see evidence in text.</p>
+    
+        <div class="theme-card" onmouseover="highlightQuote('τ μυστ ρια πιτ[ελε] ται πιμ λειαν ξειν πως γ νηται τ κατ τ ν τελετ ν θεοπρεπ ς')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:start;">
+                <div>
+                    <span class="tag domain-tag">Religious and Dedicatory Texts</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    <div class="theme-path">Religious and Dedicatory Texts > Sacred Laws and Rules</div>
+                    <div class="theme-label">Sacred Laws and Rules</div>
+                </div>
+                <div class="ai-rationale-box">
+                    <strong>🤖 AI Rationale:</strong>
+                    <p>Es handelt sich um das berühmte Mysteriengesetz von Andania, das detaillierte Vorschriften für die Durchführung der Mysterien, einschließlich Eide, Kleidung, Opfer und Prozessionen, festlegt.</p>
+                    <p class="evidence-quote">Evidence: "τ μυστ ρια πιτ[ελε] ται πιμ λειαν ξειν πως γ νηται τ κατ τ ν τελετ ν θεοπρεπ ς"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('τ δ δι γραμμα κ ριον στω ε ς π ντα τ ν χρ νον')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:start;">
+                <div>
+                    <span class="tag domain-tag">Official and Legal Documents</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    <div class="theme-path">Official and Legal Documents > Laws and Regulations</div>
+                    <div class="theme-label">Laws and Regulations</div>
+                </div>
+                <div class="ai-rationale-box">
+                    <strong>🤖 AI Rationale:</strong>
+                    <p>Der Text ist als 'Diagramma' (Verordnung) bezeichnet und enthält rechtlich bindende Anweisungen, Strafen (Geldstrafen, Auspeitschung) und administrative Verfahren.</p>
+                    <p class="evidence-quote">Evidence: "τ δ δι γραμμα κ ριον στω ε ς π ντα τ ν χρ νον"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('τ δ π πτοντα δι φορα κ τ ν μυστηρ ων γλεγ ντω ο κατασταθ ντες')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:start;">
+                <div>
+                    <span class="tag domain-tag">Administrative Records and Lists</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">90% Conf.</span>
+                    <div class="theme-path">Administrative Records and Lists > Accounts and Financial Records</div>
+                    <div class="theme-label">Accounts and Financial Records</div>
+                </div>
+                <div class="ai-rationale-box">
+                    <strong>🤖 AI Rationale:</strong>
+                    <p>Ein erheblicher Teil der Inschrift widmet sich der Verwaltung der Einnahmen (diaphora) aus den Mysterien, der Rolle des Schatzmeisters (Tamias) und der Finanzierung von Reparaturen.</p>
+                    <p class="evidence-quote">Evidence: "τ δ π πτοντα δι φορα κ τ ν μυστηρ ων γλεγ ντω ο κατασταθ ντες"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('ο ερο ... γυναικον μος ... ρχοντες ... αβδοφ ροι')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:start;">
+                <div>
+                    <span class="tag domain-tag">Administrative Records and Lists</span>
+                    <span class="badge orange" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">80% Conf.</span>
+                    <div class="theme-path">Administrative Records and Lists > Lists of Officials or Citizens</div>
+                    <div class="theme-label">Lists of Officials or Citizens</div>
+                </div>
+                <div class="ai-rationale-box">
+                    <strong>🤖 AI Rationale:</strong>
+                    <p>Der Text listet verschiedene Beamte und ihre Rollen auf, darunter Priester, den Gynaikonomos, Rhabdophoren und spezifisch Mnasistratos.</p>
+                    <p class="evidence-quote">Evidence: "ο ερο ... γυναικον μος ... ρχοντες ... αβδοφ ροι"</p>
+                </div>
+            </div>
+        </div>
+        
+    <h3>Entities</h3>
+    <div><span class="tag entity-tag">👤 Μνασ στρατος <small>(Benefactor / Official)</small></span><span class="tag entity-tag">📍 Andania <small>(Polis)</small></span><span class="tag entity-tag">📍 Karneiasion <small>(Sanctuary)</small></span></div>
+  </main>
+</body>
+</html>

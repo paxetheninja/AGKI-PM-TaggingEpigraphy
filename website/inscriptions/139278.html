@@ -20,28 +20,34 @@
     .badge.orange { background: #fef7e0; color: #b06000; border-color: #b06000; }
     .badge.red { background: #fce8e6; color: #c5221f; border-color: #c5221f; }
     .entity-tag { background: rgba(217, 123, 61, 0.1); color: var(--accent-2); margin-right: 0.5rem; margin-bottom: 0.5rem; display: inline-block; padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.9rem; border: 1px solid rgba(217, 123, 61, 0.2); text-decoration: none; }
+    .entity-tag.linked:hover { background: rgba(217, 123, 61, 0.2); text-decoration: underline; cursor: pointer; }
   </style>
-  <script>
+  
+    <script>
     const savedTheme = localStorage.getItem('theme') || 'light';
     document.documentElement.setAttribute('data-theme', savedTheme);
+
     function highlightQuote(quote) {
         if(!quote) return;
         const content = document.getElementById('greekText');
         const innerHTML = content.innerHTML;
-        const safeQuote = quote.replace(/[.*+?^${}()|[\]/g, '\$&');
+        const safeQuote = quote.replace(/[.*+?^${{}}()|[\\]/g, '\\$&');
         const re = new RegExp('(' + safeQuote + ')', 'gi');
         content.innerHTML = innerHTML.replace(re, '<span class="highlight">$1</span>');
     }
+
     function clearHighlight() {
         const content = document.getElementById('greekText');
         content.innerHTML = content.textContent; 
     }
+
     function copyCitation() {
-        const citation = "AGKI Project. (2026). Inscription PHI-139278. Retrieved from " + window.location.href;
+        const citation = "AGKI Project. (2026). Inscription PHI-" + str(phi_id) + r". Retrieved from " + window.location.href;
         navigator.clipboard.writeText(citation);
         alert("Citation copied to clipboard!");
     }
-  </script>
+    </script>
+    
 </head>
 <body>
   <header class="site-header">
@@ -59,7 +65,7 @@
         </div>
     </div>
     <div class="meta-grid">
-        <div><small class="eyebrow">Region</small><br><strong>Aegean Islands, incl. Crete (IG XI-[XIII])</strong> <a href="https://pleiades.stoa.org/places/589748" target="_blank" title="View Region in Pleiades">🔗</a></div>
+        <div><small class="eyebrow">Provenance</small><br><a href="https://pleiades.stoa.org/places/589748" target="_blank" title="View in Pleiades">Crete</a> &gt; <a href="https://pleiades.stoa.org/places/589852" target="_blank" title="View in Pleiades">Knossos</a></div>
         <div><small class="eyebrow">Date</small><br><strong> 1st c. BC</strong></div>
         <div><small class="eyebrow">Completeness</small><br><span class="badge info">intact</span></div>
     </div>
@@ -121,34 +127,34 @@
     <h3>Thematic Analysis</h3>
     <p class="muted" style="margin-bottom:1rem;">Hover over cards to see evidence in text.</p>
     
-        <div class="theme-card" onmouseover="highlightQuote('τεισαγ ρας τεισαγ ρα')" onmouseout="clearHighlight()">
+        <div class="theme-card" onmouseover="highlightQuote('τριετηρ ς φιλ τιμος φιλοτ μου')" onmouseout="clearHighlight()">
             <div style="display:flex; justify-content:space-between; align-items:start;">
                 <div>
                     <span class="tag domain-tag">Content</span>
-                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">83% Conf.</span>
-                    <div class="theme-path">Content > Honorific and Commemorative Inscriptions > Agonistic / Victory Inscriptions</div>
-                    <div class="theme-label">Agonistic / Victory Inscriptions</div>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">94% Conf.</span>
+                    <div class="theme-path">Content > Honorific and Commemorative Inscriptions > Building Commemoration</div>
+                    <div class="theme-label">Building Commemoration</div>
                 </div>
                 <div class="ai-rationale-box">
                     <strong>🤖 AI Rationale:</strong>
-                    <p>Generated rationale for Agonistic / Victory Inscriptions</p>
-                    <p class="evidence-quote">Evidence: "τεισαγ ρας τεισαγ ρα"</p>
+                    <p>Generated rationale for Building Commemoration</p>
+                    <p class="evidence-quote">Evidence: "τριετηρ ς φιλ τιμος φιλοτ μου"</p>
                 </div>
             </div>
         </div>
         
-        <div class="theme-card" onmouseover="highlightQuote('τευς βρυγινδ ριος')" onmouseout="clearHighlight()">
+        <div class="theme-card" onmouseover="highlightQuote('μμαχος συμμ χου στ νιος')" onmouseout="clearHighlight()">
             <div style="display:flex; justify-content:space-between; align-items:start;">
                 <div>
                     <span class="tag domain-tag">Type</span>
-                    <span class="badge orange" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">65% Conf.</span>
-                    <div class="theme-path">Type > Object Type > Monumental Stone Objects > Stele</div>
-                    <div class="theme-label">Stele</div>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">83% Conf.</span>
+                    <div class="theme-path">Type > Material > Clay and Ceramic > Ceramic Tiles / Bricks</div>
+                    <div class="theme-label">Ceramic Tiles / Bricks</div>
                 </div>
                 <div class="ai-rationale-box">
                     <strong>🤖 AI Rationale:</strong>
-                    <p>Generated rationale for Stele</p>
-                    <p class="evidence-quote">Evidence: "τευς βρυγινδ ριος"</p>
+                    <p>Generated rationale for Ceramic Tiles / Bricks</p>
+                    <p class="evidence-quote">Evidence: "μμαχος συμμ χου στ νιος"</p>
                 </div>
             </div>
         </div>

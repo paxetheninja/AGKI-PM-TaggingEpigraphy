@@ -20,28 +20,34 @@
     .badge.orange { background: #fef7e0; color: #b06000; border-color: #b06000; }
     .badge.red { background: #fce8e6; color: #c5221f; border-color: #c5221f; }
     .entity-tag { background: rgba(217, 123, 61, 0.1); color: var(--accent-2); margin-right: 0.5rem; margin-bottom: 0.5rem; display: inline-block; padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.9rem; border: 1px solid rgba(217, 123, 61, 0.2); text-decoration: none; }
+    .entity-tag.linked:hover { background: rgba(217, 123, 61, 0.2); text-decoration: underline; cursor: pointer; }
   </style>
-  <script>
+  
+    <script>
     const savedTheme = localStorage.getItem('theme') || 'light';
     document.documentElement.setAttribute('data-theme', savedTheme);
+
     function highlightQuote(quote) {
         if(!quote) return;
         const content = document.getElementById('greekText');
         const innerHTML = content.innerHTML;
-        const safeQuote = quote.replace(/[.*+?^${}()|[\]/g, '\$&');
+        const safeQuote = quote.replace(/[.*+?^${{}}()|[\\]/g, '\\$&');
         const re = new RegExp('(' + safeQuote + ')', 'gi');
         content.innerHTML = innerHTML.replace(re, '<span class="highlight">$1</span>');
     }
+
     function clearHighlight() {
         const content = document.getElementById('greekText');
         content.innerHTML = content.textContent; 
     }
+
     function copyCitation() {
-        const citation = "AGKI Project. (2026). Inscription PHI-138217. Retrieved from " + window.location.href;
+        const citation = "AGKI Project. (2026). Inscription PHI-" + str(phi_id) + r". Retrieved from " + window.location.href;
         navigator.clipboard.writeText(citation);
         alert("Citation copied to clipboard!");
     }
-  </script>
+    </script>
+    
 </head>
 <body>
   <header class="site-header">
@@ -59,9 +65,9 @@
         </div>
     </div>
     <div class="meta-grid">
-        <div><small class="eyebrow">Region</small><br><strong>Northern Greece (IG X)</strong></div>
+        <div><small class="eyebrow">Provenance</small><br>Northern Greece (IG X)</div>
         <div><small class="eyebrow">Date</small><br><strong> ca. 230 BC </strong></div>
-        <div><small class="eyebrow">Completeness</small><br><span class="badge info">intact</span></div>
+        <div><small class="eyebrow">Completeness</small><br><span class="badge info">fragmentary</span></div>
     </div>
     <h3>Original Text</h3>
     <div class="text-viewer">
@@ -91,34 +97,34 @@
     <h3>Thematic Analysis</h3>
     <p class="muted" style="margin-bottom:1rem;">Hover over cards to see evidence in text.</p>
     
-        <div class="theme-card" onmouseover="highlightQuote('α τ ν')" onmouseout="clearHighlight()">
+        <div class="theme-card" onmouseover="highlightQuote('πρ ς τ ν π λιν τ τε ψηφ')" onmouseout="clearHighlight()">
             <div style="display:flex; justify-content:space-between; align-items:start;">
                 <div>
                     <span class="tag domain-tag">Content</span>
                     <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">98% Conf.</span>
-                    <div class="theme-path">Content > Religious and Dedicatory Texts > Orations and Praise of Gods</div>
-                    <div class="theme-label">Orations and Praise of Gods</div>
+                    <div class="theme-path">Content > Honorific and Commemorative Inscriptions > Agonistic / Victory Inscriptions</div>
+                    <div class="theme-label">Agonistic / Victory Inscriptions</div>
                 </div>
                 <div class="ai-rationale-box">
                     <strong>🤖 AI Rationale:</strong>
-                    <p>Generated rationale for Orations and Praise of Gods</p>
-                    <p class="evidence-quote">Evidence: "α τ ν"</p>
+                    <p>Generated rationale for Agonistic / Victory Inscriptions</p>
+                    <p class="evidence-quote">Evidence: "πρ ς τ ν π λιν τ τε ψηφ"</p>
                 </div>
             </div>
         </div>
         
-        <div class="theme-card" onmouseover="highlightQuote('τ ν δηλ ων τι κα θεσσαλονικε')" onmouseout="clearHighlight()">
+        <div class="theme-card" onmouseover="highlightQuote('ς τ ν κκλησ αν κα διαλεγ ντος κολο')" onmouseout="clearHighlight()">
             <div style="display:flex; justify-content:space-between; align-items:start;">
                 <div>
                     <span class="tag domain-tag">Type</span>
-                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">86% Conf.</span>
-                    <div class="theme-path">Type > Material > Stone > Basalt</div>
-                    <div class="theme-label">Basalt</div>
+                    <span class="badge orange" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">69% Conf.</span>
+                    <div class="theme-path">Type > Material > Organic Materials > Papyrus / Parchment</div>
+                    <div class="theme-label">Papyrus / Parchment</div>
                 </div>
                 <div class="ai-rationale-box">
                     <strong>🤖 AI Rationale:</strong>
-                    <p>Generated rationale for Basalt</p>
-                    <p class="evidence-quote">Evidence: "τ ν δηλ ων τι κα θεσσαλονικε"</p>
+                    <p>Generated rationale for Papyrus / Parchment</p>
+                    <p class="evidence-quote">Evidence: "ς τ ν κκλησ αν κα διαλεγ ντος κολο"</p>
                 </div>
             </div>
         </div>

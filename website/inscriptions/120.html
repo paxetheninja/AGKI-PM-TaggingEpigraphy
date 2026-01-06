@@ -20,28 +20,34 @@
     .badge.orange { background: #fef7e0; color: #b06000; border-color: #b06000; }
     .badge.red { background: #fce8e6; color: #c5221f; border-color: #c5221f; }
     .entity-tag { background: rgba(217, 123, 61, 0.1); color: var(--accent-2); margin-right: 0.5rem; margin-bottom: 0.5rem; display: inline-block; padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.9rem; border: 1px solid rgba(217, 123, 61, 0.2); text-decoration: none; }
+    .entity-tag.linked:hover { background: rgba(217, 123, 61, 0.2); text-decoration: underline; cursor: pointer; }
   </style>
-  <script>
+  
+    <script>
     const savedTheme = localStorage.getItem('theme') || 'light';
     document.documentElement.setAttribute('data-theme', savedTheme);
+
     function highlightQuote(quote) {
         if(!quote) return;
         const content = document.getElementById('greekText');
         const innerHTML = content.innerHTML;
-        const safeQuote = quote.replace(/[.*+?^${}()|[\]/g, '\$&');
+        const safeQuote = quote.replace(/[.*+?^${{}}()|[\\]/g, '\\$&');
         const re = new RegExp('(' + safeQuote + ')', 'gi');
         content.innerHTML = innerHTML.replace(re, '<span class="highlight">$1</span>');
     }
+
     function clearHighlight() {
         const content = document.getElementById('greekText');
         content.innerHTML = content.textContent; 
     }
+
     function copyCitation() {
-        const citation = "AGKI Project. (2026). Inscription PHI-120. Retrieved from " + window.location.href;
+        const citation = "AGKI Project. (2026). Inscription PHI-" + str(phi_id) + r". Retrieved from " + window.location.href;
         navigator.clipboard.writeText(citation);
         alert("Citation copied to clipboard!");
     }
-  </script>
+    </script>
+    
 </head>
 <body>
   <header class="site-header">
@@ -59,9 +65,9 @@
         </div>
     </div>
     <div class="meta-grid">
-        <div><small class="eyebrow">Region</small><br><strong>Attica (IG I-III)</strong> <a href="https://pleiades.stoa.org/places/579888" target="_blank" title="View Region in Pleiades">🔗</a></div>
+        <div><small class="eyebrow">Provenance</small><br><a href="https://pleiades.stoa.org/places/579888" target="_blank" title="View in Pleiades">Attica</a> &gt; <a href="https://pleiades.stoa.org/places/579880" target="_blank" title="View in Pleiades">Brauron</a></div>
         <div><small class="eyebrow">Date</small><br><strong> 407/6 a.</strong></div>
-        <div><small class="eyebrow">Completeness</small><br><span class="badge info">intact</span></div>
+        <div><small class="eyebrow">Completeness</small><br><span class="badge info">fragmentary</span></div>
     </div>
     <h3>Original Text</h3>
     <div class="text-viewer">
@@ -80,18 +86,34 @@
     <h3>Thematic Analysis</h3>
     <p class="muted" style="margin-bottom:1rem;">Hover over cards to see evidence in text.</p>
     
-        <div class="theme-card" onmouseover="highlightQuote('χρ] νοι σ[τ ν ν ρ γαθ ς περ θενα]ος')" onmouseout="clearHighlight()">
+        <div class="theme-card" onmouseover="highlightQuote('α το] ς π')" onmouseout="clearHighlight()">
             <div style="display:flex; justify-content:space-between; align-items:start;">
                 <div>
                     <span class="tag domain-tag">Content</span>
-                    <span class="badge orange" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">80% Conf.</span>
-                    <div class="theme-path">Content > Didactic and School Texts > Literary Quotations and Excerpts</div>
-                    <div class="theme-label">Literary Quotations and Excerpts</div>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">85% Conf.</span>
+                    <div class="theme-path">Content > Identification and Ownership Marks > Ownership Marks</div>
+                    <div class="theme-label">Ownership Marks</div>
                 </div>
                 <div class="ai-rationale-box">
                     <strong>🤖 AI Rationale:</strong>
-                    <p>Generated rationale for Literary Quotations and Excerpts</p>
-                    <p class="evidence-quote">Evidence: "χρ] νοι σ[τ ν ν ρ γαθ ς περ θενα]ος"</p>
+                    <p>Generated rationale for Ownership Marks</p>
+                    <p class="evidence-quote">Evidence: "α το] ς π"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('ας δραχμ ς α τ]ν ερ')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:start;">
+                <div>
+                    <span class="tag domain-tag">Type</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">93% Conf.</span>
+                    <div class="theme-path">Type > Material > Clay and Ceramic > Terracotta / Pottery</div>
+                    <div class="theme-label">Terracotta / Pottery</div>
+                </div>
+                <div class="ai-rationale-box">
+                    <strong>🤖 AI Rationale:</strong>
+                    <p>Generated rationale for Terracotta / Pottery</p>
+                    <p class="evidence-quote">Evidence: "ας δραχμ ς α τ]ν ερ"</p>
                 </div>
             </div>
         </div>
