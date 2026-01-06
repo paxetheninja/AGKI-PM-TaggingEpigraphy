@@ -1,45 +1,29 @@
-# Entity Linking Policy (LGPN, Pleiades)
+# Entity Linking Strategy
 
-This file defines how to link extracted entities from the JSON output to external authority resources.
+This document defines how entities extracted from inscriptions are linked to external Linked Open Data (LOD) authorities.
 
-## 1. Scope
-- Persons link to LGPN (Lexicon of Greek Personal Names).
-- Places link to Pleiades.
-- Linking is optional and should not block core tagging.
+## 1. Places (Pleiades)
+We use **Pleiades** (https://pleiades.stoa.org) as the authority for ancient places.
 
-## 2. Inputs used for linking
-- Entity surface form (`name`).
-- Local context: `region_main`, `region_sub`, and date range (`date_min`, `date_max`, `date_circa`).
-- Optional role/context hints: `persons[].role`, `themes[]`.
+### Strategy
+1.  **Region Mapping:** The `region_main` field from PHI is mapped to a Pleiades URI at the dataset level (e.g., "Attica" -> `579888`). This allows for geospatial visualization.
+2.  **Extracted Places:** Places mentioned *within* the text (e.g., "The sanctuary of Apollo") are extracted by the LLM.
+    *   **Prompting:** The LLM is instructed to provide a Pleiades URI if confident.
+    *   **Post-Processing:** A fuzzy matching lookup against a local Pleiades dump can be used to validate or fill missing links.
 
-## 3. Candidate generation
-- Normalize the surface form: strip brackets, normalize spacing, keep diacritics if present.
-- Generate candidates from authority search by name and known variants.
-- If the corpus already stores region IDs, use them as a coarse geographic filter.
+### URI Format
+`https://pleiades.stoa.org/places/{ID}`
 
-## 4. Scoring and disambiguation
-Each candidate receives a score in [0, 1], based on:
-- Name match strength (exact > variant > fuzzy).
-- Geographic compatibility (region or nearby place).
-- Date compatibility (overlapping historical range if provided).
-- Role or contextual match (e.g., priestess for cultic contexts).
+## 2. Persons (LGPN)
+We use the **Lexicon of Greek Personal Names (LGPN)** as the authority for individuals.
 
-Disambiguation policy:
-- If best score >= 0.80 and margin to next candidate >= 0.10, link automatically.
-- If best score is in [0.60, 0.80) or margin < 0.10, mark as ambiguous and keep a single best link with lower confidence.
-- If best score < 0.60, do not link.
+### Strategy
+Since linking to a specific individual ID is difficult without detailed prosopography, we generate **Search URIs**. This directs the user to the LGPN search results for that name, facilitating further research.
 
-## 5. Confidence calibration
-Calibrate scores on a small gold sample:
-- Split a curated set of inscriptions with verified links.
-- Fit thresholds to keep precision >= 0.90 for auto-links.
-- Track recall separately for reporting.
+### URI Format
+`http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name={NAME}`
 
-## 6. Storage in schema
-- Store the best match in `persons[].lgpn` or `places[].pleiades`.
-- `confidence` is the calibrated score.
-- If needed later, add `lgpn_candidates` or `pleiades_candidates` arrays with the same shape.
-
-## 7. Logging and audit
-- Record unresolved and ambiguous cases with context for manual review.
-- Keep a log of authority queries for reproducibility.
+## 3. Implementation Status
+*   **Schema:** Updated to include `uri` fields for `PersonEntity` and `PlaceEntity`.
+*   **Tagger:** The System Prompt now explicitly requests URIs.
+*   **Frontend:** The web interface renders these URIs as clickable `🔗` icons in the detail view.

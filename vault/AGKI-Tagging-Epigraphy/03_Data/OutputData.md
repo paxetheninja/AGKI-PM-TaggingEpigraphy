@@ -1,59 +1,75 @@
-```
+# Output Data Specification
+
+The tagging pipeline generates one JSON file per inscription. The structure follows the Pydantic schema defined in `source/schema.py`.
+
+## JSON Schema
+
+```json
 {
-  "output_schema": {
-    "phi_id": "integer",
-    "themes": [
+  "phi_id": 12345,
+  "themes": [
+    {
+      "label": "Ehrendekret",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": "Honorific Decrees"
+      },
+      "rationale": "Der Text erwähnt die Verleihung eines Kranzes (stephanos).",
+      "confidence": 0.95,
+      "quote": "στεφανῶσαι χρυσῷ στεφάνῳ"
+    }
+  ],
+  "entities": {
+    "persons": [
       {
-        "label": "string",
-        "hierarchy": {
-          "domain": "string",
-          "subdomain": "string",
-          "category": "string | null",
-          "subcategory": "string | null"
-        },
-        "rationale": "string"
+        "name": "Theemos",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theemos"
       }
     ],
-    "entities": {
-      "persons": [
-        {
-          "name": "string",
-          "role": "string | null",
-          "lgpn": {
-            "id": "string",
-            "name": "string | null",
-            "uri": "string | null",
-            "confidence": "number | null"
-          }
-        }
-      ],
-      "places": [
-        {
-          "name": "string",
-          "type": "string | null",
-          "pleiades": {
-            "id": "string",
-            "name": "string | null",
-            "uri": "string | null",
-            "confidence": "number | null"
-          }
-        }
-      ],
-      "deities": [
-        {
-          "name": "string",
-          "epithet": "string | null",
-          "role": "string | null"
-        }
-      ]
-    }
-  }
+    "places": [
+      {
+        "name": "Athen",
+        "type": "Polis",
+        "uri": "https://pleiades.stoa.org/places/579885"
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "region_uri": "https://pleiades.stoa.org/places/579888"
 }
 ```
-This describes the JSON output schema. `phi_id` is required. It must have at least one theme, with a label and a hierarchy that maps to the taxonomy in `vault/AGKI-Tagging-Epigraphy/03_Data/Taxonomie.md` (see `vault/AGKI-Tagging-Epigraphy/03_Data/TaxonomieSchemaMapping.md`). `category` and `subcategory` can be `null` for shallow paths.
-Entities are optional. If present, `persons`, `places`, and `deities` hold extracted items.
 
-Linked data integration notes:
-- `persons[].lgpn` stores the best LGPN match for a person; `confidence` is a numeric score from the linker.
-- `places[].pleiades` stores the best Pleiades match for a place; `uri` can point to the canonical resource.
-- If you later want multiple candidates, add `lgpn_candidates` or `pleiades_candidates` as arrays of the same shape.
+## Field Definitions
+
+### Root Object
+| Field | Type | Description |
+|---|---|---|
+| `phi_id` | Integer | The unique ID from the PHI corpus. |
+| `themes` | Array | List of thematic classifications. |
+| `entities` | Object | Dictionary containing lists of extracted `persons` and `places`. |
+| `completeness` | String | Physical state: `intact`, `fragmentary`, or `mutilated`. |
+| `region_uri` | String | Pleiades URI for the main region of the inscription. |
+| `model` | String | The name of the LLM used for generation (e.g. `gpt-4o`, `gemini-1.5-pro`). |
+
+### Theme Object
+| Field | Type | Description |
+|---|---|---|
+| `label` | String | The most specific term from the taxonomy. |
+| `hierarchy` | Object | The full path: `domain` > `subdomain` > `category` > `subcategory`. |
+| `rationale` | String | A brief natural language explanation (German) for the tag. |
+| `confidence` | Float | A score between 0.0 and 1.0 indicating the model's certainty. |
+| `quote` | String | The **exact Greek text segment** that serves as evidence for this tag. |
+
+### Entity Objects
+**Person:**
+*   `name`: Name as it appears or standardized.
+*   `role`: Function (e.g., "Archon", "Priest").
+*   `uri`: Link to LGPN (Lexicon of Greek Personal Names).
+
+**Place:**
+*   `name`: Toponym.
+*   `type`: Classification (e.g., "Polis", "Sanctuary").
+*   `uri`: Link to Pleiades Gazetteer.

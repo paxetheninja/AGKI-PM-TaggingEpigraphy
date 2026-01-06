@@ -1,4 +1,4 @@
-# Hierarchical Taxonomy for Ancient Greek Inscriptions
+	# Hierarchical Taxonomy for Ancient Greek Inscriptions
 
 This taxonomy is organized into three facets:
 
