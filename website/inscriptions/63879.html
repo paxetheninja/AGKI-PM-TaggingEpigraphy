@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PHI-63879 - AGKI</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <style>
+    .page-container { max-width: 1400px; margin: 0 auto; padding: 2rem; } /* Wider for side-by-side */
+    .back-link { display: inline-block; margin-bottom: 1rem; color: var(--primary); font-weight: 600; }
+    
+    .text-viewer { 
+        display: grid; 
+        grid-template-columns: 40px 1fr; /* Default single column */
+        gap: 2rem; 
+        font-family: "New Athena Unicode", "Gentium Plus", "Times New Roman", serif; 
+        font-size: 1.25rem; 
+        line-height: 1.6; 
+        background: var(--panel); 
+        padding: 2rem; 
+        border: 1px solid var(--border); 
+        border-radius: 4px; 
+        margin-bottom: 2rem; 
+        color: var(--text);
+        transition: all 0.3s ease;
+    }
+
+              .line-numbers { 
+
+                  text-align: right; 
+
+                  color: var(--muted); 
+
+                  font-size: 1.25rem; 
+
+                  line-height: 1.6; 
+
+                  user-select: none; 
+
+                  opacity: 0.5; 
+
+                  font-family: inherit; 
+
+                  white-space: pre; 
+
+                  padding-right: 1rem;
+
+                  border-right: 1px solid var(--border);
+
+              }
+
+              .greek-content { white-space: pre; overflow-x: auto; padding-left: 1rem; }
+
+          
+
+    
+
+          /* Tokens */
+
+          .token { cursor: pointer; border-radius: 3px; padding: 0 2px; transition: background 0.1s; white-space: pre; }
+
+          .token:hover, .token.active { background-color: rgba(193, 104, 60, 0.25); color: var(--primary); }
+
+    
+
+          /* Translation Column */
+
+          .trans-col { display: none; border-left: 1px solid var(--border); padding-left: 2rem; white-space: pre; font-style: italic; overflow-x: auto; }
+
+    
+    .trans-controls { margin-bottom: 1rem; display: flex; gap: 0.5rem; justify-content: flex-end; align-items: center; }
+    .trans-btn { background: var(--bg); border: 1px solid var(--border); padding: 0.4rem 0.8rem; cursor: pointer; color: var(--muted); font-size: 0.85rem; border-radius: 4px; }
+    .trans-btn:hover { border-color: var(--primary); color: var(--text); }
+    .trans-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
+
+    .theme-card { background: var(--panel); padding: 1.5rem; border-left: 4px solid var(--primary); margin-bottom: 1rem; border: 1px solid var(--border); border-left-width: 4px; transition: transform 0.2s; }
+    .theme-card:hover { transform: translateX(4px); box-shadow: var(--shadow); }
+    .ai-rationale-box { background: rgba(31, 167, 163, 0.08); padding: 0.75rem; border-radius: 6px; font-size: 0.9rem; color: var(--muted); max-width: 400px; }
+    .evidence-quote { border-left: 2px solid var(--accent); padding-left: 0.5rem; margin-top: 0.5rem; font-style: italic; color: var(--text); }
+    .badge.green { background: #e6f4ea; color: #137333; border-color: #137333; }
+    .badge.orange { background: #fef7e0; color: #b06000; border-color: #b06000; }
+    .badge.red { background: #fce8e6; color: #c5221f; border-color: #c5221f; }
+    .entity-tag { background: rgba(217, 123, 61, 0.1); color: var(--accent-2); margin-right: 0.5rem; margin-bottom: 0.5rem; display: inline-block; padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.9rem; border: 1px solid rgba(217, 123, 61, 0.2); text-decoration: none; }
+    .entity-tag.linked:hover { background: rgba(217, 123, 61, 0.2); text-decoration: underline; cursor: pointer; }
+  </style>
+  
+    <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    
+    const TRANSLATIONS = {"en": "<span class=\"token trans-token\" data-idx=\"0\" onmouseover=\"highlightToken(0)\" onmouseout=\"clearTokenHighlight()\">...another caryota-vessel in a case, dedication of Kion, and the [weight]... another smooth [phiale] in a case, dedication of Theotimes...\n</span><span class=\"token trans-token\" data-idx=\"1\" onmouseover=\"highlightToken(1)\" onmouseout=\"clearTokenHighlight()\">...and the [weight]... six [other phialai] in a case, dedication of Karyos the Mykonian; another caryota-vessel in a case having five figures, inscribed...\n</span><span class=\"token trans-token\" data-idx=\"2\" onmouseover=\"highlightToken(2)\" onmouseout=\"clearTokenHighlight()\">...and the [weight]... the emblem has fallen out; two other caryota-vessels in a case... having three figures, dedication of Melito...\n</span><span class=\"token trans-token\" data-idx=\"3\" onmouseover=\"highlightToken(3)\" onmouseout=\"clearTokenHighlight()\">...and the [weight]... the emblems have fallen out; another smooth [phiale] in a case having an omphalos, dedication of Philotas...\n</span><span class=\"token trans-token\" data-idx=\"4\" onmouseover=\"highlightToken(4)\" onmouseout=\"clearTokenHighlight()\">...another... gold-washed... in a case, weight... and the [weight]; another caryota-vessel in a case having the face of Apollo, dedication of Nysios...\n</span><span class=\"token trans-token\" data-idx=\"5\" onmouseover=\"highlightToken(5)\" onmouseout=\"clearTokenHighlight()\">...two others in a case, one smooth... the other shell-shaped, dedication of Kion...\n</span><span class=\"token trans-token\" data-idx=\"6\" onmouseover=\"highlightToken(6)\" onmouseout=\"clearTokenHighlight()\">...another smooth [phiale] in a case on which is the inscription &#x27;of Artemis&#x27;, and the [weight]; another caryota-vessel in a case having twelve faces...\n</span><span class=\"token trans-token\" data-idx=\"7\" onmouseover=\"highlightToken(7)\" onmouseout=\"clearTokenHighlight()\">...and in the middle three figures, dedication of Xenikes; another caryota-vessel in a case having three figures, dedication of Themistos...\n</span><span class=\"token trans-token\" data-idx=\"8\" onmouseover=\"highlightToken(8)\" onmouseout=\"clearTokenHighlight()\">...and the [weight]; another caryota-vessel having a female face, dedication of Hieroklea, weight: 102 drachmas...\n</span><span class=\"token trans-token\" data-idx=\"9\" onmouseover=\"highlightToken(9)\" onmouseout=\"clearTokenHighlight()\">...and Archides and [others] handed over these additional items in the Artemision...\n</span><span class=\"token trans-token\" data-idx=\"10\" onmouseover=\"highlightToken(10)\" onmouseout=\"clearTokenHighlight()\">...from the revenues, under the Epimeletes Deimantos and the officials for the sanctuary Euthydemos and Ektemon...\n</span><span class=\"token trans-token\" data-idx=\"11\" onmouseover=\"highlightToken(11)\" onmouseout=\"clearTokenHighlight()\">...in the year when Diokles was Archon...\n</span><span class=\"token trans-token unaligned\" data-idx=\"12\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"13\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"14\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"15\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"16\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"17\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"18\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"19\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"20\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"21\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"22\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"23\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"24\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"25\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"26\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"27\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"28\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"29\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"30\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"31\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"32\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"33\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"34\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"35\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"36\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"37\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"38\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"39\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"40\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"41\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"42\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"43\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"44\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"45\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"46\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"47\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"48\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"49\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"50\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"51\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"52\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"53\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"54\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"55\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"56\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"57\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"58\"></span>", "de": "<span class=\"token trans-token\" data-idx=\"0\" onmouseover=\"highlightToken(0)\" onmouseout=\"clearTokenHighlight()\">...eine weitere Karyote in einem Rahmen, Weihgeschenk von Kion, und das [Gewicht]... eine weitere glatte [Schale] in einem Rahmen, Weihgeschenk von Theotimes...\n</span><span class=\"token trans-token\" data-idx=\"1\" onmouseover=\"highlightToken(1)\" onmouseout=\"clearTokenHighlight()\">...und das [Gewicht]... sechs [andere Schalen] in einem Rahmen, Weihgeschenk des Karyos aus Mykonos; eine weitere Karyote in einem Rahmen mit fünf Figuren, beschriftet...\n</span><span class=\"token trans-token\" data-idx=\"2\" onmouseover=\"highlightToken(2)\" onmouseout=\"clearTokenHighlight()\">...und das [Gewicht]... das Emblem ist herausgefallen; zwei weitere Karyoten in einem Rahmen... mit drei Figuren, Weihgeschenk von Melito...\n</span><span class=\"token trans-token\" data-idx=\"3\" onmouseover=\"highlightToken(3)\" onmouseout=\"clearTokenHighlight()\">...und das [Gewicht]... die Embleme sind herausgefallen; eine weitere glatte [Schale] in einem Rahmen mit einem Omphalos, Weihgeschenk von Philotas...\n</span><span class=\"token trans-token\" data-idx=\"4\" onmouseover=\"highlightToken(4)\" onmouseout=\"clearTokenHighlight()\">...eine weitere... goldüberzogen... in einem Rahmen, Gewicht... und das [Gewicht]; eine weitere Karyote in einem Rahmen mit dem Gesicht des Apollon, Weihgeschenk von Nysios...\n</span><span class=\"token trans-token\" data-idx=\"5\" onmouseover=\"highlightToken(5)\" onmouseout=\"clearTokenHighlight()\">...zwei andere in einem Rahmen, eine glatte... die andere muschelförmig, Weihgeschenk von Kion...\n</span><span class=\"token trans-token\" data-idx=\"6\" onmouseover=\"highlightToken(6)\" onmouseout=\"clearTokenHighlight()\">...eine weitere glatte [Schale] in einem Rahmen, auf der die Inschrift &#x27;der Artemis&#x27; steht, und das [Gewicht]; eine weitere Karyote in einem Rahmen mit zwölf Gesichtern...\n</span><span class=\"token trans-token\" data-idx=\"7\" onmouseover=\"highlightToken(7)\" onmouseout=\"clearTokenHighlight()\">...und in der Mitte drei Figuren, Weihgeschenk von Xenikes; eine weitere Karyote in einem Rahmen mit drei Figuren, Weihgeschenk von Themistos...\n</span><span class=\"token trans-token\" data-idx=\"8\" onmouseover=\"highlightToken(8)\" onmouseout=\"clearTokenHighlight()\">...und das [Gewicht]; eine weitere Karyote mit einem weiblichen Gesicht, Weihgeschenk von Hieroklea, Gewicht: 102 Drachmen...\n</span><span class=\"token trans-token\" data-idx=\"9\" onmouseover=\"highlightToken(9)\" onmouseout=\"clearTokenHighlight()\">...und dies übergaben zusätzlich im Artemision Archides und [andere]...\n</span><span class=\"token trans-token\" data-idx=\"10\" onmouseover=\"highlightToken(10)\" onmouseout=\"clearTokenHighlight()\">...aus den Einkünften, unter dem Epimeleten Deimantos und den Beamten für das Heiligtum Euthydemos und Ektemon...\n</span><span class=\"token trans-token\" data-idx=\"11\" onmouseover=\"highlightToken(11)\" onmouseout=\"clearTokenHighlight()\">...in dem Jahr, als Diokles Archon war...\n</span><span class=\"token trans-token unaligned\" data-idx=\"12\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"13\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"14\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"15\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"16\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"17\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"18\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"19\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"20\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"21\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"22\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"23\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"24\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"25\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"26\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"27\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"28\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"29\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"30\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"31\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"32\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"33\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"34\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"35\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"36\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"37\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"38\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"39\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"40\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"41\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"42\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"43\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"44\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"45\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"46\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"47\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"48\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"49\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"50\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"51\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"52\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"53\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"54\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"55\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"56\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"57\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"58\"></span>"};
+
+    function setTranslation(lang) {
+        const container = document.getElementById('translationCol');
+        const content = document.getElementById('translationContent');
+        const viewer = document.getElementById('textViewer');
+        const btnEn = document.getElementById('btnEn');
+        const btnDe = document.getElementById('btnDe');
+        const btnOff = document.getElementById('btnOff');
+
+        // Reset Buttons
+        [btnEn, btnDe, btnOff].forEach(b => b.classList.remove('active'));
+
+        if(lang === 'none') {
+            container.style.display = 'none';
+            viewer.style.gridTemplateColumns = '40px 1fr';
+            btnOff.classList.add('active');
+        } else {
+            container.style.display = 'block';
+            viewer.style.gridTemplateColumns = '40px 1fr 1fr';
+            content.innerHTML = TRANSLATIONS[lang];
+            if(lang === 'en') btnEn.classList.add('active');
+            if(lang === 'de') btnDe.classList.add('active');
+        }
+    }
+
+    function highlightToken(idx) {
+        document.querySelectorAll(`.token[data-idx="${idx}"]`).forEach(el => el.classList.add('active'));
+    }
+
+    function clearTokenHighlight() {
+        document.querySelectorAll('.token').forEach(el => el.classList.remove('active'));
+    }
+
+    function highlightQuote(quote) {
+        // Legacy highlight for themes - might need adjustment if using tokens
+        // For now, simple find text in container if tokens not sufficient
+        if(!quote) return;
+    }
+
+    function clearHighlight() {}
+
+    function copyCitation() {
+        const citation = "AGKI Project. (2026). Inscription PHI-" + "63879" + ". Retrieved from " + window.location.href;
+        navigator.clipboard.writeText(citation);
+        alert("Citation copied to clipboard!");
+    }
+    </script>
+    
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <h1><a href="../index.html" style="color:white;text-decoration:none;">AGKI Tagging Tool</a></h1>
+    </div>
+  </header>
+  <main class="page-container">
+    <a href="../index.html" class="back-link">← Back to Dashboard</a>
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+        <h2>Inscription PHI-63879</h2>
+        <div style="display:flex; gap:0.5rem;">
+            <button onclick="copyCitation()" class="button secondary" style="font-size:0.9rem; padding:0.5rem 1rem;">📜 Cite</button>
+            <a href="https://epigraphy.packhum.org/text/63879" target="_blank" class="button">View on PHI</a>
+        </div>
+    </div>
+    
+    <div class="meta-grid">
+        <div><small class="eyebrow">Provenance</small><br><a href="https://pleiades.stoa.org/places/579885" target="_blank" title="View in Pleiades">Aegean Islands</a> &gt; <a href="https://pleiades.stoa.org/places/599588" target="_blank" title="View in Pleiades">Delos</a> &gt; Sanctuary of Apollo / Artemision</div>
+        <div><small class="eyebrow">Date</small><br><strong> 141/0 BC</strong></div>
+        <div><small class="eyebrow">Completeness</small><br><span class="badge info">fragmentary</span></div>
+    </div>
+
+    <div style="display:flex; justify-content:space-between; align-items:end; margin-bottom:0.5rem;">
+        <h3>Original Text & Translation</h3>
+        <div class="trans-controls">
+            <span class="eyebrow" style="margin:0; margin-right:0.5rem;">Translation:</span>
+            <button id="btnOff" class="trans-btn active" onclick="setTranslation('none')">Off</button>
+            <button id="btnEn" class="trans-btn" onclick="setTranslation('en')">English</button>
+            <button id="btnDe" class="trans-btn" onclick="setTranslation('de')">German</button>
+        </div>
+    </div>
+
+    <div id="textViewer" class="text-viewer">
+        <div class="line-numbers">1
+
+
+
+5
+
+
+
+
+10
+
+
+
+
+15
+
+
+
+
+20
+
+
+
+
+25
+
+
+
+
+30
+
+
+
+
+35
+
+
+
+
+40
+
+
+
+
+45
+
+
+
+
+50
+
+
+
+
+55
+
+
+
+</div>
+        <div class="greek-content" id="greekText"><span class="token greek-token" data-idx="0" onmouseover="highlightToken(0)" onmouseout="clearTokenHighlight()">λλην καρυωτ ν μ πλινθε ωι ν θημα κ ιων κ τω λλην λε αν μ πλινθε ωι ν θημα θεοτ μ[ης]
+</span><span class="token greek-token" data-idx="1" onmouseover="highlightToken(1)" onmouseout="clearTokenHighlight()">κ τω [ λλας φι]λας ξ μ πλινθε ωι ν θ[η]μα καρ ου μυκον ου λλην καρυωτ ν μ πλινθε ωι ζωιδ ρια χουσαν π ντε νεπ γραφον
+</span><span class="token greek-token" data-idx="2" onmouseover="highlightToken(2)" onmouseout="clearTokenHighlight()">κ [τω ----] τ [δ]νβλημα κπ πτει λλας δ ο καρυωτ ς μ πλινθε ωι κατ ρας ζωιδ ρια τρ α ν θημα μελιτο ς
+</span><span class="token greek-token" data-idx="3" onmouseover="highlightToken(3)" onmouseout="clearTokenHighlight()">κ τω ν τ μβλ [ματα]κπ π[τει] λλην λε αν μ πλινθε ωι μφαλ ν χουσαν ν θημα φιλ το[υ ---]ατου
+</span><span class="token greek-token" data-idx="4" onmouseover="highlightToken(4)" onmouseout="clearTokenHighlight()">λλην κιδωτ ν χρυσ κλ[υ]στ[ο]ν μ πλ[ινθε]ωι λκ [κ] τ[ω] λλην καρυωτ ν μ πλινθε ωι πρ σωπον χουσαν π [λλω]νος ν θημα νυσ ου
+</span><span class="token greek-token" data-idx="5" onmouseover="highlightToken(5)" onmouseout="clearTokenHighlight()">νω λλας [δ]ο μ πλινθε ωι ν μ α λε[ α] ο κ ντελ ς τ ι τυι δ λλη κογχωτ ν θημα κ ιων
+</span><span class="token greek-token" data-idx="6" onmouseover="highlightToken(6)" onmouseout="clearTokenHighlight()">λλη λ[ε α] μ πλινθε ωι φ ς πιγραφ [ε]ρρτ μιδος κ τω λλην καρυωτ ν μ πλινθε ωι πρ σωπα χουσαν δ κ[α δ] ο
+</span><span class="token greek-token" data-idx="7" onmouseover="highlightToken(7)" onmouseout="clearTokenHighlight()">κα μ μ σωι ζωιδ ρια [τρ α ν] θημα χεν κης λλην καρυωτ ν μ πλινθε ωι ζωιδ ρια χουσαν τρ α ν θημα θεμιστο ς
+</span><span class="token greek-token" data-idx="8" onmouseover="highlightToken(8)" onmouseout="clearTokenHighlight()">κ τω λλη[ν κ]αρυωτ ν πρ σωπον [ χουσαν] γυναικε ον ν θημα εροκλε [ας] ς λκ η δδ
+</span><span class="token greek-token" data-idx="9" onmouseover="highlightToken(9)" onmouseout="clearTokenHighlight()">κα τ δε προσ[παρ] δωκεν ν τ ι [ρ]τ[εμ]ισ ωι ρχι δη[ς] κα- -------------
+</span><span class="token greek-token" data-idx="10" onmouseover="highlightToken(10)" onmouseout="clearTokenHighlight()">[------------ π τ]ν προσ δων π πιμελητο δειμ ντου κα τ ν π τ ερ ε θυδ μου κα ε κτ μονος
+</span><span class="token greek-token" data-idx="11" onmouseover="highlightToken(11)" onmouseout="clearTokenHighlight()">[-------- ν τ]ι π διοκλ ους ρχοντος νιαυτ ι
+</span><span class="token greek-token unaligned" data-idx="12">-----ν ------τον ν τ ι πη---- κα ο λοιπο σ[α τ]ως κα καττιτ ρωι κα ο λοιπο σα τως ηηηη δε τερος υμ ς
+</span><span class="token greek-token unaligned" data-idx="13">[χχχ τρ τος χχχχ τ ταρτος χχχχ π μπ]τος υμ ς χ κτος χχχχ βδομος χχχ γδοος νατος δ κ[ατος 0 --- νδ κατος ---- δωδ κατο]ς η τρεισκαιδ κατος ηηηη τετταρεσκαιδ κατος πεντε[καιδ κατος ----------------]ιδ κκαιδ κατος ηηηη πτακαιδ κατος ηηηη γ[δοος κα δ κατος σ ν τα ς λακ ταις κα τε ο νοχ ει φ ς πιγρ]αφ π λλωνος δηλ ου [ λ]κ δ ς πιγραφ χει ηη [0--]
+</span><span class="token greek-token unaligned" data-idx="14">ιοτ
+</span><span class="token greek-token unaligned" data-idx="15">- καθετηρ[ διον] --ια ο λκ 0 --------τιδι λαττον ιιι δ ις -- [λιθ] ριον χον ν λκ ιιιιι 
+</span><span class="token greek-token unaligned" data-idx="16">- [ ν τ ι κιβ]ωτ ωι τ πια μικρ κα κ ρκον ν [ λκ] ιι ν τ ι κιβωτ ωι ---------
+</span><span class="token greek-token unaligned" data-idx="17">- α περιδ ραια ---- ν λκ σ [ν] μν----ωι ιι ν τε κοιτ δι σπ διον χρυσο[ ν ----]
+</span><span class="token greek-token unaligned" data-idx="18">- [ ρ]γυρ ν τ[ε] κιβωτ ι [κ]εφ λιον ο λκ σ ν τ ι λιναρ ωι ι ν τ ι κιβωτ[ ωι ----]
+</span><span class="token greek-token unaligned" data-idx="19">- [σ ν τε] προσο σει απολιτει ιι δδδδ ν τ ι κιβωτ ωι κνησ νας τρε ς ν λκ ν ---
+</span><span class="token greek-token unaligned" data-idx="20">- λκ σ ν τ ι λιθαρ ωι ιι χιτ να ν θε ς ε χε ν ν δ χει δι νυσος φιλι----
+</span><span class="token greek-token unaligned" data-idx="21">- ον ν θημα λεξ νδρου θηνα ου στ φανον χρυσο ν π ταινιδ ου ν θημ[α]
+</span><span class="token greek-token unaligned" data-idx="22">-ιινλλ-- ν λκ 0 λλ[ε πε]ι ιιι δακτ λιον σιδηρο ν π χρυσον κα λλο -λοα-
+</span><span class="token greek-token unaligned" data-idx="23">-ν λκ δδδ τρ πεζαν ργυρ ν φ ς πιγραφ δ μος λκ κατ τ [ν]
+</span><span class="token greek-token unaligned" data-idx="24">[ πιγραφ ν -------- στεφ νιον] χρυσο ν περι[ει]λημ νον λημν σκωι χον τρ φυλλα δ κα ο λκ σ ν τ ι χα
+</span><span class="token greek-token unaligned" data-idx="25">-α δ ο κα δ δραχμον φιλ ππειον ν θηκεν ργοπ τρα στεφ νιον χρυσο ν
+</span><span class="token greek-token unaligned" data-idx="26">- λεφ ντινον ν θ κηι φ ο πιγραφ διον σιος σονα [φι]λοκλ ους τ ν προφ[ την -------] ν ν θηκε τημ λλατος γερρα ος λκ κατ τ ν πιγραφ ν σ ν το ς λ θο[ις]
+</span><span class="token greek-token unaligned" data-idx="27">--------- νον ργυρο ν π β σεως λεφαντ νης στατον σθ τα τ ς θεο ν χει φι[-- πιγραφ δ μος θηνα ων κλε δα] κλειδουχικ ν σιδηρ ν χουσαν προτ μην λ οντος ργυ[ρ] ν [ φ ς]πιγραφ [----- στρατον κη ντιφ ντος γ μυρρινο τ]της φι ρεια γενομ νη στατον [δι] τ καθηλ σθαι φ αλιον φ ο πι[γραφ ---- χαριστ ρια ρτ μιδι] στατον κα [τ] δε προσ[παρ] δωκεν ν τ ι [ρ]τ[εμ]ισ ωι ρχι δη[ς] κα-
+</span><span class="token greek-token unaligned" data-idx="28">------------- στεφ νην χρυσ ν ντελ ν ναιδ ωι π β σεως λιθ νης χουσαν ζ ι[δια ---------- φ ι λιος ν θημα τημαλλ του γερρα ου ο λκ κατ τ ν πιγραφ ν 0[----- π] β σεως η δ κα τ δε προσπαρεδ καμεν το ς μεθ αυτο ς [μν σι]δι ποταμ ωι κα σωσ[ιγ νει σημαχ δηι ---------- κ]α δ δραχμον ο παρεδ θη κυλ κιον ργυ[ρο] ν ν θημα μινι------ στ --------
+</span><span class="token greek-token unaligned" data-idx="29">[------ φι]λας ργυρ ς 0 φη δ περ τας παρειληφ[ να]ι 0 ς ---------
+</span><span class="token greek-token unaligned" data-idx="30">[------------ π τ]ν προσ δων π πιμελητο δειμ ντου κα τ ν π τ ερ ε θυδ μου κα ε κτ μονος
+</span><span class="token greek-token unaligned" data-idx="31">---------------ων π τ ν τ κων π λλωνι ρτ μιδι κεχειροτονημ νων π τ ν φυλακ ν τ ν ερ ν
+</span><span class="token greek-token unaligned" data-idx="32">[χρημ των κα τ ς λλας ε σ δους ε θυ]δ μου το ε τυχ δου θμον ως ε κτ μονος το ε κτ μονος μελιτ ως πιμελητο 
+</span><span class="token greek-token unaligned" data-idx="33">[δ τ ς ν σου δειμ ντου το ----]καρι ως φι λας ργυρ ς τ τταρας μ [πλι]νθε ωι ν θ[ε]μα θεοδ ρου το ππωνος
+</span><span class="token greek-token unaligned" data-idx="34">-----------τιος [γεν] μενος [-------- ν τ]ι π διοκλ ους ρχοντος νιαυτ ι
+</span><span class="token greek-token unaligned" data-idx="35">-ον χει λ ων κα λους ργυρο [ς]
+</span><span class="token greek-token unaligned" data-idx="36">- [προσπαρεδ] καμεν ο τ πτ τιν δ 
+</span><span class="token greek-token unaligned" data-idx="37">- π σιν π γαγεν δρα [παρ τ] ν περ μητρ δωρον κα ραγ ραν
+</span><span class="token greek-token unaligned" data-idx="38">-ν πρ ς ταινιδ ωι ν θημ[α]
+</span><span class="token greek-token unaligned" data-idx="39">-[ο]υ γαθ νο[υ]
+</span><span class="token greek-token unaligned" data-idx="40">δλγτι--
+</span><span class="token greek-token unaligned" data-idx="41">[κα τ] δε στατα ργυρ δ δα κατ τ ν πιγραφ ν η δ λλην κατ τ ν πιγραφ ν ηδδδδ ιι δα ς ς πηχυ[α]α [μ]
+</span><span class="token greek-token unaligned" data-idx="42">[πλ]αισ ωι ν θημα ρωτ ου φθαλμο π σανιδ ου λλοι λ ττονες π σανιδ ου κανο ν ργυρο ν μ νωτον ο [λκ] 
+</span><span class="token greek-token unaligned" data-idx="43">ηηδ περ χειρα στρεπτ τ τταρα τ ν κατεαγ ς ν λκ δδδιιι σκ φον φ ο πιγραφ δηλι δες δ μητρι κα κ ρει 
+</span><span class="token greek-token unaligned" data-idx="44">ο λκ δδδδ ιιιιι λλο σκ φιον ο λκ δδδδ ιιιιι κ ρκον π χρυσον ο λκ ιι φι λιον στατον μ πλινθ[ε ωι]
+</span><span class="token greek-token unaligned" data-idx="45"> ς τρι ν δακτ λων ν θημα στια ας δαδ α ργυρ δ ο π β σεως ξυλ νης στατα περικεχρυσωμ να ς τριπ λ[αστ]α φι λην ζ ια χουσαν ς λκ η λλην λε αν ς λκ δδδδιιι λλη λε α ς λκ δδδδιιι λλη λε α ς λκ δδδδιιι [λ]λη λε α ς λκ δδδδ ιιιιι λλη λε α ς λκ δδδδιιι λλη λε α ς λκ δδδ ιιιιι θυμιατ ριον βωμ σκον ο λκ 
+</span><span class="token greek-token unaligned" data-idx="46"> ιιι λιβανωτ ς χουσα π δας τρε ς κα πρ σωπον δ μητρος ς λκ δρ διον ο λκ δ ιι λλο ο λκ δ ιιι [σ]κ φιον λε ον ο λκ δδδδ ιιι περισκελ διον κεχρυσωμ νον ο λκ σκ λος π σανιδ ου στατον ν θημα σωσ νδρας πλακο ντα περιηργυρωμ νον στατον π σανιδ ου ν θημα ε τ κτου φθαλμο π σανιδ ου ν θημα κτησ ππου λλ[α]φθ λμια π σανιδ ου νεπ γραφα πλακο ς π σανιδ ου νεπ γραφος. κα τ δε χρυσ φθαλμ ς χρυσο ς κα δαδ ον [ν]
+</span><span class="token greek-token unaligned" data-idx="47">λκ 0. κα τ δε προσπαρ δωκεν ρεια δαδ α ργυρ μικρ δ κα νν α ν λκ σ ν τ ι τ πωι δδιιι δαδ ον πηχυα ον
+</span><span class="token greek-token unaligned" data-idx="48">ο λκ ιιιι δαδ α λεπτ κα τ πια ν λκ δακτ λιοι κρυστ λλινοι δ ο. κα τ δε προσπαρ δωκεν ρεια μοσχ νη δημ ου
+</span><span class="token greek-token unaligned" data-idx="49"> λαι ως θυγ τηρ τ φ αυτ ς νατεθ ντα δαδ α κα τ πια ν λκ ηδ δ δα πηχυα αν ς λκ διιι λλας δ ο νν χης ν λκ λλας δ ο θεοδ της ν λκ λλας δ ο ξενο ς ν λκ λλην ζωπ ρας ς λκ λλην ς πηχυ[α αν ς]
+</span><span class="token greek-token unaligned" data-idx="50"> λκ φι λιον ν θημα μεγ στης ο λκ ιιιιι τ πος ργυρο ς ο λκ 0. κα τ δε στατα π σανιδ ου φθαλμο[ κα τ]πια δ ο λλο τ πιον ν σανιδ ωι ο πιγραφ διογν του φθαλμο π σανιδ ου σωστρ της. κα τ δε χρυσ δαδ α τρ α κ[α ---]
+</span><span class="token greek-token unaligned" data-idx="51">κα φθαλμ ν τ πια τ τταρα τ πιον ν θημα ε νου ν σανιδ ωι.
+</span><span class="token greek-token unaligned" data-idx="52"> ν τ ι το σκληπιο δακτ λιον π ταινιδ ου λ θον χοντα ν θημα λυσιδ κης τ ς [ πημ ντου ----- τ πια χρυσ κα]τεαγ τα κα ν ντα μ πυξ δι ξυλ νει ν λκ ιιι χει περ τας. ργυρ στατ[α φι λην ---]
+</span><span class="token greek-token unaligned" data-idx="53">[ο κ] ν συνιδε ν τ ν πιγραφ ν καθ ς παρ δοσις ε χεν πρ τε[ρο]ν φιλλ -
+</span><span class="token greek-token unaligned" data-idx="54">[--- σ]κ φιον λε ον ς δακτ λων ξ ν θεμα ζηλομ[ νου] φι λι[ον μ]ικ[ρ ν ------------ ν θημα]
+</span><span class="token greek-token unaligned" data-idx="55">[ ριστοθ]λου [λλ]ο φολ[ιδ]ωτ ν ς δακτ λων δ κα -- [ ς π]αλαστ [ν] --ου φι λην -- [ νεπ] γραφος λλη[ν] -- [ μ π]λινθε ωι ν θεμ[α] -- [ ς δακ]τ λων κτ ν θημ[α] --ου λλο καρυωτ ν [ς] -- [ ς π]αλαστ ν τεττ ρων μ π[λινθε ωι] -- [ ν θημα] δημητρ ου λλο φι λιιον κα[ρυωτ ν] -- ς π[αλασ]τ ν τρι ν --λλλ--λολ-- [ ς δακ]τ λων κτ μ πλι[νθε ωι] -- [ ν θημα κλ]εοκρ του τ-- [ ν]θημα θεοδ [του] 0
+</span><span class="token greek-token unaligned" data-idx="56"> λ
+</span><span class="token greek-token unaligned" data-idx="57">---- ν [θη]μα -- [ π λλωνα χο]ντ[α φ]αρ τρ[αν --------] κα φι λην α -- [βο διον π] β σεως λ[ιθ νης ν θημα νου ου] ωμα ου θυμιατ [ριον] -- πποκ ντ[αυρον χοντα δαιδ α π] β σεως λιθ ν[ης] ν [θημα γερ λλου] -- ενον χ[ον]τ[α] φ λλα τ ν λιθιν -- ε κοσι τ τταρα [ζ] [ια τρ α παιδικ -- π νακ]ας ε κονικο ς 0[δδδδ ιι] -- [ ν]θεμα ν -- [κλε ν] ν παι[σ]τ[ο]ν χου[σα]ν [λαβ]ν ξυλ νην. ν τ ι ο κωι ρ[ιστερ ς] -- [τρ πεζαν λιθ]νην κατεαγε αν [----- π λλωνα λ θ]ινον. κα ν τ ι να [ι] -- [ ν θημα πασ]ιτ μου ψ γματα --------------- τα τα χει περ τα[ς] -- [κυμ]β ον --------------------υν----- ναν σ ν -- ν κιβωτ ωι --------------- πεντα -- ον λ θινον [----------- ν κιβω]τ ωι -- [π]αρεδ [καμεν --------------]φιλ--νε-- χρυσο ν ----------------- στεφαν---κην0 τ-- σιδηρου -- στεφανηφο[ρ] -- [ λεξ ν]δρειον ν φ[ιλ ππειον] --χειον ν πο-διωι-πλ-- δακτυλ διον -- [δακτυλ]διον χρυσο ν -- στεφανηφ ρα --οκη [ μ]ιρ δια --ιλλλο--συν--ιχ----------μεν--εχ--εφ--λλ--ιιε-- [ν κη] πτ ρυγ[α μ αν χουσα] -- [κυν ριον ---] κολοβ ν -- [ ν θημα ---κ]λε δου -- [ πο]λλων σ[κον] -- [ ν θημα γ] θωνος [νδριαντ διον χον ν τε μ ν χειρ] -- ν δ τε ριστ[ερα] -- [ ρτεμ σιον χον ν κατ ρα]ι τ ν χειρ ν -- προσπαρ δω[κεν] --ιων κα λλα -
+</span><span class="token greek-token unaligned" data-idx="58">πλε- ξ λον α-- [ ν θη]μα γερ λλου -- [κυν] ριον τρ πεζαν -- [ξ] λινον α-τοπε--α κολοβ λωται πρ ς τ ι π να[κι] --ωι πρ σωπον χον -- [στ]φανον ν θε ς χ[ει] -- [ λ. σ ν το ς ποθρα μασιν] κα λ νωι δδ -- [ λ.] δ ιιι ν κας ς [ χει θε ς] -- [δακτ]λιον χοντα [τ ν σφενδ νην] -- ο λκ σ ν -- γαλ[μα] --ν διαπεπ[τωκ ς] -- [στλ]εγγ διον ----</span></div>
+        <div id="translationCol" class="trans-col">
+            <div id="translationContent"></div>
+        </div>
+    </div>
+
+    <h3>Thematic Analysis</h3>
+    <p class="muted" style="margin-bottom:1rem;">Hover over cards to see evidence in text.</p>
+    
+        <div class="theme-card" onmouseover="highlightQuote('τάδε παρέδομεν... ἀνάθημα... ὁλκή')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:start;">
+                <div>
+                    <span class="tag domain-tag">Administrative Records and Lists</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    <div class="theme-path">Administrative Records and Lists > Inventories</div>
+                    <div class="theme-label">Inventories</div>
+                </div>
+                <div class="ai-rationale-box">
+                    <strong>🤖 AI Rationale:</strong>
+                    <p>Der Text ist eine detaillierte Bestandsaufnahme von Tempelschätzen (Weihgeschenken), die Gewichte (ὁλκή), Beschreibungen der Objekte (z.B. Phialen, Karyotai) und die Namen der Stifter auflistet. Solche Listen wurden typischerweise bei der Amtsübergabe von Beamten erstellt.</p>
+                    <p class="evidence-quote">Evidence: "τάδε παρέδομεν... ἀνάθημα... ὁλκή"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('ν θημα')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:start;">
+                <div>
+                    <span class="tag domain-tag">Religious and Dedicatory Texts</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">90% Conf.</span>
+                    <div class="theme-path">Religious and Dedicatory Texts > Votive Dedications</div>
+                    <div class="theme-label">Votive Dedications</div>
+                </div>
+                <div class="ai-rationale-box">
+                    <strong>🤖 AI Rationale:</strong>
+                    <p>Obwohl es sich formal um ein Inventar handelt, besteht der Inhalt fast ausschließlich aus einer Liste von Weihgeschenken (anathemata) an Gottheiten wie Apollo und Artemis.</p>
+                    <p class="evidence-quote">Evidence: "ν θημα"</p>
+                </div>
+            </div>
+        </div>
+        
+    <h3>Entities</h3>
+    <div><span class="tag entity-tag">👤 Diokles <small>(Archon)</small></span><span class="tag entity-tag">👤 Deimantos <small>(Epimeletes (Official))</small></span><span class="tag entity-tag">👤 Euthydemos <small>(Official)</small></span><span class="tag entity-tag">👤 Ektemon <small>(Official)</small></span><span class="tag entity-tag">👤 Theotimes <small>(Donor)</small></span><span class="tag entity-tag">👤 Kraton <small>(Donor (Syracusan))</small></span><span class="tag entity-tag">👤 Gorgopas <small>(Donor)</small></span><span class="tag entity-tag">👤 Temallatos <small>(Donor)</small></span><span class="tag entity-tag">👤 Kleidas <small>(Donor)</small></span><span class="tag entity-tag">👤 Archides <small>(Official/Donor)</small></span><span class="tag entity-tag">👤 Theodoros <small>(Donor)</small></span><span class="tag entity-tag">📍 Delos <small>(Polis)</small></span><span class="tag entity-tag">📍 Artemision <small>(Sanctuary)</small></span><span class="tag entity-tag">📍 Athens <small>(Polis)</small></span><span class="tag entity-tag">📍 Syracuse <small>(Polis)</small></span></div>
+  </main>
+</body>
+</html>

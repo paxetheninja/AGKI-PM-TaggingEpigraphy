@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PHI-247724 - AGKI</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <style>
+    .page-container { max-width: 1400px; margin: 0 auto; padding: 2rem; } /* Wider for side-by-side */
+    .back-link { display: inline-block; margin-bottom: 1rem; color: var(--primary); font-weight: 600; }
+    
+    .text-viewer { 
+        display: grid; 
+        grid-template-columns: 40px 1fr; /* Default single column */
+        gap: 2rem; 
+        font-family: "New Athena Unicode", "Gentium Plus", "Times New Roman", serif; 
+        font-size: 1.25rem; 
+        line-height: 1.6; 
+        background: var(--panel); 
+        padding: 2rem; 
+        border: 1px solid var(--border); 
+        border-radius: 4px; 
+        margin-bottom: 2rem; 
+        color: var(--text);
+        transition: all 0.3s ease;
+    }
+
+              .line-numbers { 
+
+                  text-align: right; 
+
+                  color: var(--muted); 
+
+                  font-size: 1.25rem; 
+
+                  line-height: 1.6; 
+
+                  user-select: none; 
+
+                  opacity: 0.5; 
+
+                  font-family: inherit; 
+
+                  white-space: pre; 
+
+                  padding-right: 1rem;
+
+                  border-right: 1px solid var(--border);
+
+              }
+
+              .greek-content { white-space: pre; overflow-x: auto; padding-left: 1rem; }
+
+          
+
+    
+
+          /* Tokens */
+
+          .token { cursor: pointer; border-radius: 3px; padding: 0 2px; transition: background 0.1s; white-space: pre; }
+
+          .token:hover, .token.active { background-color: rgba(193, 104, 60, 0.25); color: var(--primary); }
+
+    
+
+          /* Translation Column */
+
+          .trans-col { display: none; border-left: 1px solid var(--border); padding-left: 2rem; white-space: pre; font-style: italic; overflow-x: auto; }
+
+    
+    .trans-controls { margin-bottom: 1rem; display: flex; gap: 0.5rem; justify-content: flex-end; align-items: center; }
+    .trans-btn { background: var(--bg); border: 1px solid var(--border); padding: 0.4rem 0.8rem; cursor: pointer; color: var(--muted); font-size: 0.85rem; border-radius: 4px; }
+    .trans-btn:hover { border-color: var(--primary); color: var(--text); }
+    .trans-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
+
+    .theme-card { background: var(--panel); padding: 1.5rem; border-left: 4px solid var(--primary); margin-bottom: 1rem; border: 1px solid var(--border); border-left-width: 4px; transition: transform 0.2s; }
+    .theme-card:hover { transform: translateX(4px); box-shadow: var(--shadow); }
+    .ai-rationale-box { background: rgba(31, 167, 163, 0.08); padding: 0.75rem; border-radius: 6px; font-size: 0.9rem; color: var(--muted); max-width: 400px; }
+    .evidence-quote { border-left: 2px solid var(--accent); padding-left: 0.5rem; margin-top: 0.5rem; font-style: italic; color: var(--text); }
+    .badge.green { background: #e6f4ea; color: #137333; border-color: #137333; }
+    .badge.orange { background: #fef7e0; color: #b06000; border-color: #b06000; }
+    .badge.red { background: #fce8e6; color: #c5221f; border-color: #c5221f; }
+    .entity-tag { background: rgba(217, 123, 61, 0.1); color: var(--accent-2); margin-right: 0.5rem; margin-bottom: 0.5rem; display: inline-block; padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.9rem; border: 1px solid rgba(217, 123, 61, 0.2); text-decoration: none; }
+    .entity-tag.linked:hover { background: rgba(217, 123, 61, 0.2); text-decoration: underline; cursor: pointer; }
+  </style>
+  
+    <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    
+    const TRANSLATIONS = {"en": "<span class=\"token trans-token\" data-idx=\"0\" onmouseover=\"highlightToken(0)\" onmouseout=\"clearTokenHighlight()\">Resolved by the Council and the People. Orogeton moved: Concerning the matters about which the Neopoioi and the Kouretes, having been appointed, spoke to the Council and brought the decree of the Gerousia and the Epikletoi regarding the citizenship of Euphronios; Resolved by the Council: Since Euphronios, son of Hegemon, of Akarnania, was formerly well-disposed and eager towards the People of the Ephesians, and now, an embassy having been sent to Prepelaos by the Gerousia and the Epikletoi regarding the weight of the sacred objects and the exemption for the goddess, he assisted in the management with the embassy so that the revenues belong to the goddess, and for the future he continues to be useful at all times both to the common people and privately to those of the citizens who meet him; [It is resolved] to praise Euphronios on account of the goodwill he has regarding the sanctuary and the city, and to give him citizenship on equal and similar terms, to him and his descendants, and to inscribe the citizenship in the sanctuary of Artemis where the other citizenships are inscribed, and to allot him into a tribe and a thousand; so that all may know that the People of the Ephesians honor those who benefit the sanctuary and the city with appropriate gifts. He obtained the tribe Epheseus and the thousand Argadeis.\n</span><span class=\"token trans-token unaligned\" data-idx=\"1\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"2\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"3\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"4\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"5\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"6\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"7\"></span>", "de": "<span class=\"token trans-token\" data-idx=\"0\" onmouseover=\"highlightToken(0)\" onmouseout=\"clearTokenHighlight()\">Beschlossen von Rat und Volk. Orogeton stellte den Antrag: Bezüglich der Dinge, über die die Neopoioi und die Kouretes nach ihrer Einsetzung vor dem Rat sprachen und den Beschluss der Gerousia und der Epikletoi bezüglich der Bürgerschaft des Euphronios überbrachten; Beschlossen vom Rat: Da Euphronios, Sohn des Hegemon, aus Akarnanien, sich früher wohlwollend und eifrig gegenüber dem Volk der Ephesier zeigte, und nun, als eine Gesandtschaft von der Gerousia und den Epikletoi zu Prepelaos gesandt wurde wegen des Gewichts (der Abgaben?) des Heiligtums und der Steuerfreiheit für die Göttin, er die Gesandtschaft unterstützte, damit die Einkünfte der Göttin verbleiben, und er auch in Zukunft zu jeder Zeit nützlich bleibt, sowohl für die Allgemeinheit als auch privat für jene Bürger, die ihn treffen; (wurde beschlossen,) den Euphronios zu loben wegen des Wohlwollens, das er gegenüber dem Heiligtum und der Stadt hegt, und ihm das Bürgerrecht zu geben zu gleichen und ähnlichen Bedingungen, ihm und seinen Nachkommen, und das Bürgerrecht im Heiligtum der Artemis aufzuschreiben, wo auch die anderen Bürgerrechte aufgeschrieben sind, und ihn in eine Phyle und eine Chiliastys einzulosen; damit alle wissen, dass das Volk der Ephesier diejenigen, die dem Heiligtum und der Stadt Wohltaten erweisen, mit angemessenen Gaben ehrt. Er erhielt die Phyle Epheseus und die Chiliastys Argadeis.\n</span><span class=\"token trans-token unaligned\" data-idx=\"1\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"2\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"3\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"4\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"5\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"6\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"7\"></span>"};
+
+    function setTranslation(lang) {
+        const container = document.getElementById('translationCol');
+        const content = document.getElementById('translationContent');
+        const viewer = document.getElementById('textViewer');
+        const btnEn = document.getElementById('btnEn');
+        const btnDe = document.getElementById('btnDe');
+        const btnOff = document.getElementById('btnOff');
+
+        // Reset Buttons
+        [btnEn, btnDe, btnOff].forEach(b => b.classList.remove('active'));
+
+        if(lang === 'none') {
+            container.style.display = 'none';
+            viewer.style.gridTemplateColumns = '40px 1fr';
+            btnOff.classList.add('active');
+        } else {
+            container.style.display = 'block';
+            viewer.style.gridTemplateColumns = '40px 1fr 1fr';
+            content.innerHTML = TRANSLATIONS[lang];
+            if(lang === 'en') btnEn.classList.add('active');
+            if(lang === 'de') btnDe.classList.add('active');
+        }
+    }
+
+    function highlightToken(idx) {
+        document.querySelectorAll(`.token[data-idx="${idx}"]`).forEach(el => el.classList.add('active'));
+    }
+
+    function clearTokenHighlight() {
+        document.querySelectorAll('.token').forEach(el => el.classList.remove('active'));
+    }
+
+    function highlightQuote(quote) {
+        // Legacy highlight for themes - might need adjustment if using tokens
+        // For now, simple find text in container if tokens not sufficient
+        if(!quote) return;
+    }
+
+    function clearHighlight() {}
+
+    function copyCitation() {
+        const citation = "AGKI Project. (2026). Inscription PHI-" + "247724" + ". Retrieved from " + window.location.href;
+        navigator.clipboard.writeText(citation);
+        alert("Citation copied to clipboard!");
+    }
+    </script>
+    
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <h1><a href="../index.html" style="color:white;text-decoration:none;">AGKI Tagging Tool</a></h1>
+    </div>
+  </header>
+  <main class="page-container">
+    <a href="../index.html" class="back-link">← Back to Dashboard</a>
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+        <h2>Inscription PHI-247724</h2>
+        <div style="display:flex; gap:0.5rem;">
+            <button onclick="copyCitation()" class="button secondary" style="font-size:0.9rem; padding:0.5rem 1rem;">📜 Cite</button>
+            <a href="https://epigraphy.packhum.org/text/247724" target="_blank" class="button">View on PHI</a>
+        </div>
+    </div>
+    
+    <div class="meta-grid">
+        <div><small class="eyebrow">Provenance</small><br><a href="https://pleiades.stoa.org/places/837" target="_blank" title="View in Pleiades">Asia Minor</a> &gt; <a href="https://pleiades.stoa.org/places/599612" target="_blank" title="View in Pleiades">Ephesos</a> &gt; <a href="https://pleiades.stoa.org/places/599612/artemision" target="_blank" title="View in Pleiades">Artemision</a></div>
+        <div><small class="eyebrow">Date</small><br><strong></strong></div>
+        <div><small class="eyebrow">Completeness</small><br><span class="badge info">intact</span></div>
+    </div>
+
+    <div style="display:flex; justify-content:space-between; align-items:end; margin-bottom:0.5rem;">
+        <h3>Original Text & Translation</h3>
+        <div class="trans-controls">
+            <span class="eyebrow" style="margin:0; margin-right:0.5rem;">Translation:</span>
+            <button id="btnOff" class="trans-btn active" onclick="setTranslation('none')">Off</button>
+            <button id="btnEn" class="trans-btn" onclick="setTranslation('en')">English</button>
+            <button id="btnDe" class="trans-btn" onclick="setTranslation('de')">German</button>
+        </div>
+    </div>
+
+    <div id="textViewer" class="text-viewer">
+        <div class="line-numbers">1
+
+
+
+5
+
+
+</div>
+        <div class="greek-content" id="greekText"><span class="token greek-token" data-idx="0" onmouseover="highlightToken(0)" onmouseout="clearTokenHighlight()">δοξεν τ ι βουλ ι κα τ ι δ μωι ρογε των ε πεν περ ν ο νεωπο αι κα ο κουρ τες κατασταθ ντες διελ χθησαν τ ι βουλ ι κα τ ψ φισμα νεγκαν τ ς γερουσ ας κα τ ν πικλ των π ρ ε φρον ου πολιτε ας δεδ χθαι τ ι βουλ ι πειδ ε φρ νιος γ μονος καρν ν πρ τερ ν τε ε νους ν κα πρ θυμος διετ λει περ τ ν δ μον τ ν φεσ ων κα ν ν ποσταλε σης πρεσβε ας πρ ς πρεπ λαον π τ ς γερουσ ης κα τ ν πικλ των π ρ το σταθμο το ερο κα τ ς τελε ας τ ι θε ι συνδιο κησεν μετ τ ς πρεσβε ας πως ν τ λ[ει]α π ρχηι τ ι θε ι κα τ λοιπ ν πασι καιρο ς διατελε χρ σιμος ν κα κοιν ι τ ι δ μωι κα δ αι το ς ντυγχ νουσι τμ πολιτ ν γν σθαι παιν σαι τε ε φρ νιον ε νο ας νεκεν ν χει περ τε τ ερ ν κα τ μ π λιν κα δο ναι α τ ι πολιτε[ α]ν φ σηι κα μο ηι α τ ι κα κγ νοις ναγρ ψαι δ α τ ι τ μ πολιτε αν ε ς τ ερ ν τ ς ρτ μιδος ο κα α λοιπα πολιτε[ αι]ναγεγραμμ ναι ε σ ν πικληρ σαι δ α τ ν κα ε ς φυλ ν κα ε ς χιλιαστ ν πως ν ε δ σι π ντες τι δ μος φεσ ων το ς ε εργ[ετο]ντας τ τε ερ ν κα τ μ π λιν τιμ ι δωρεα ς τα ς προσηκο σαις. λαχε φυλ ν φεσε ς χιλιαστ ν ργαδε ς.
+</span><span class="token greek-token unaligned" data-idx="1">τ ι βουλ ι κα τ ψ φισμα νεγκαν τ ς γερουσ ας κα τ ν πικλ των π ρ ε φρον ου πολιτε ας δεδ χθαι τ ι βουλ ι πειδ ε φρ νιος γ μονος καρν ν πρ τερ ν τε ε νους ν κα πρ θυμος διετ λει περ τ ν δ μον τ ν φεσ ων κα ν ν
+</span><span class="token greek-token unaligned" data-idx="2"> ποσταλε σης πρεσβε ας πρ ς πρεπ λαον π τ ς γερουσ ης κα τ ν πικλ των π ρ το σταθμο το ερο κα τ ς τελε ας τ ι θε ι συνδιο κησεν μετ τ ς πρεσβε ας πως ν τ λ[ει]α π ρχηι τ ι θε ι κα τ λοιπ ν πασι καιρο ς διατελε 
+</span><span class="token greek-token unaligned" data-idx="3">χρ σιμος ν κα κοιν ι τ ι δ μωι κα δ αι το ς ντυγχ νουσι τμ πολιτ ν γν σθαι παιν σαι τε ε φρ νιον ε νο ας νεκεν
+</span><span class="token greek-token unaligned" data-idx="4"> ν χει περ τε τ ερ ν κα τ μ π λιν κα δο ναι α τ ι πολιτε[ α]ν φ σηι κα μο ηι α τ ι κα κγ νοις ναγρ ψαι δ α τ ι τ μ
+</span><span class="token greek-token unaligned" data-idx="5">πολιτε αν ε ς τ ερ ν τ ς ρτ μιδος ο κα α λοιπα πολιτε[ αι]ναγεγραμμ ναι ε σ ν πικληρ σαι δ α τ ν κα ε ς φυλ ν κα ε ς
+</span><span class="token greek-token unaligned" data-idx="6">χιλιαστ ν πως ν ε δ σι π ντες τι δ μος φεσ ων το ς ε εργ[ετο]ντας τ τε ερ ν κα τ μ π λιν τιμ ι δωρεα ς τα ς προσηκο σαις.
+</span><span class="token greek-token unaligned" data-idx="7"> λαχε φυλ ν φεσε ς χιλιαστ ν ργαδε ς.</span></div>
+        <div id="translationCol" class="trans-col">
+            <div id="translationContent"></div>
+        </div>
+    </div>
+
+    <h3>Thematic Analysis</h3>
+    <p class="muted" style="margin-bottom:1rem;">Hover over cards to see evidence in text.</p>
+    
+        <div class="theme-card" onmouseover="highlightQuote('δοξεν τ ι βουλ ι κα τ ι δ μωι')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:start;">
+                <div>
+                    <span class="tag domain-tag">Content</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    <div class="theme-path">Content > Official and Legal Documents > Decrees</div>
+                    <div class="theme-label">Decrees</div>
+                </div>
+                <div class="ai-rationale-box">
+                    <strong>🤖 AI Rationale:</strong>
+                    <p>Der Text beginnt mit der klassischen Beschlussformel 'δοξεν τ ι βουλ ι κα τ ι δ μωι' (Es wurde beschlossen von Rat und Volk) und dokumentiert einen offiziellen Beschluss der Stadt Ephesos.</p>
+                    <p class="evidence-quote">Evidence: "δοξεν τ ι βουλ ι κα τ ι δ μωι"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('παιν σαι τε ε φρ νιον ε νο ας νεκεν')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:start;">
+                <div>
+                    <span class="tag domain-tag">Content</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    <div class="theme-path">Content > Honorific and Commemorative Inscriptions > Honorific Inscriptions</div>
+                    <div class="theme-label">Honorific Inscriptions</div>
+                </div>
+                <div class="ai-rationale-box">
+                    <strong>🤖 AI Rationale:</strong>
+                    <p>Der Beschluss dient dazu, Euphronios für sein Wohlwollen ('ε νο ας') zu loben ('παιν σαι') und ihm als Ehre das Bürgerrecht zu verleihen.</p>
+                    <p class="evidence-quote">Evidence: "παιν σαι τε ε φρ νιον ε νο ας νεκεν"</p>
+                </div>
+            </div>
+        </div>
+        
+    <h3>Entities</h3>
+    <div><span class="tag entity-tag">👤 Euphronios <small>(Honoree)</small></span><span class="tag entity-tag">👤 Hegemon <small>(Father of Honoree)</small></span><span class="tag entity-tag">👤 Prepelaos <small>(General/Official)</small></span><span class="tag entity-tag">👤 Orogeton <small>(Proposer)</small></span><span class="tag entity-tag">📍 Ephesos <small>(Polis)</small></span><span class="tag entity-tag">📍 Akarnania <small>(Region)</small></span><span class="tag entity-tag">📍 Sanctuary of Artemis <small>(Sanctuary)</small></span></div>
+  </main>
+</body>
+</html>

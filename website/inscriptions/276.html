@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PHI-276 - AGKI</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <style>
+    .page-container { max-width: 1400px; margin: 0 auto; padding: 2rem; } /* Wider for side-by-side */
+    .back-link { display: inline-block; margin-bottom: 1rem; color: var(--primary); font-weight: 600; }
+    
+    .text-viewer { 
+        display: grid; 
+        grid-template-columns: 40px 1fr; /* Default single column */
+        gap: 2rem; 
+        font-family: "New Athena Unicode", "Gentium Plus", "Times New Roman", serif; 
+        font-size: 1.25rem; 
+        line-height: 1.6; 
+        background: var(--panel); 
+        padding: 2rem; 
+        border: 1px solid var(--border); 
+        border-radius: 4px; 
+        margin-bottom: 2rem; 
+        color: var(--text);
+        transition: all 0.3s ease;
+    }
+
+              .line-numbers { 
+
+                  text-align: right; 
+
+                  color: var(--muted); 
+
+                  font-size: 1.25rem; 
+
+                  line-height: 1.6; 
+
+                  user-select: none; 
+
+                  opacity: 0.5; 
+
+                  font-family: inherit; 
+
+                  white-space: pre; 
+
+                  padding-right: 1rem;
+
+                  border-right: 1px solid var(--border);
+
+              }
+
+              .greek-content { white-space: pre; overflow-x: auto; padding-left: 1rem; }
+
+          
+
+    
+
+          /* Tokens */
+
+          .token { cursor: pointer; border-radius: 3px; padding: 0 2px; transition: background 0.1s; white-space: pre; }
+
+          .token:hover, .token.active { background-color: rgba(193, 104, 60, 0.25); color: var(--primary); }
+
+    
+
+          /* Translation Column */
+
+          .trans-col { display: none; border-left: 1px solid var(--border); padding-left: 2rem; white-space: pre; font-style: italic; overflow-x: auto; }
+
+    
+    .trans-controls { margin-bottom: 1rem; display: flex; gap: 0.5rem; justify-content: flex-end; align-items: center; }
+    .trans-btn { background: var(--bg); border: 1px solid var(--border); padding: 0.4rem 0.8rem; cursor: pointer; color: var(--muted); font-size: 0.85rem; border-radius: 4px; }
+    .trans-btn:hover { border-color: var(--primary); color: var(--text); }
+    .trans-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
+
+    .theme-card { background: var(--panel); padding: 1.5rem; border-left: 4px solid var(--primary); margin-bottom: 1rem; border: 1px solid var(--border); border-left-width: 4px; transition: transform 0.2s; }
+    .theme-card:hover { transform: translateX(4px); box-shadow: var(--shadow); }
+    .ai-rationale-box { background: rgba(31, 167, 163, 0.08); padding: 0.75rem; border-radius: 6px; font-size: 0.9rem; color: var(--muted); max-width: 400px; }
+    .evidence-quote { border-left: 2px solid var(--accent); padding-left: 0.5rem; margin-top: 0.5rem; font-style: italic; color: var(--text); }
+    .badge.green { background: #e6f4ea; color: #137333; border-color: #137333; }
+    .badge.orange { background: #fef7e0; color: #b06000; border-color: #b06000; }
+    .badge.red { background: #fce8e6; color: #c5221f; border-color: #c5221f; }
+    .entity-tag { background: rgba(217, 123, 61, 0.1); color: var(--accent-2); margin-right: 0.5rem; margin-bottom: 0.5rem; display: inline-block; padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.9rem; border: 1px solid rgba(217, 123, 61, 0.2); text-decoration: none; }
+    .entity-tag.linked:hover { background: rgba(217, 123, 61, 0.2); text-decoration: underline; cursor: pointer; }
+  </style>
+  
+    <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    
+    const TRANSLATIONS = {"en": "<span class=\"token trans-token\" data-idx=\"0\" onmouseover=\"highlightToken(0)\" onmouseout=\"clearTokenHighlight()\">In the [eighth? year of the board], Diod[es was secretary]... [fragmentary names]...\n</span><span class=\"token trans-token\" data-idx=\"1\" onmouseover=\"highlightToken(1)\" onmouseout=\"clearTokenHighlight()\">Stagirites, Gentinioi, Kerames, Kamires, Halicarnassians, Myrinaians, Mekypernaians,\n</span><span class=\"token trans-token\" data-idx=\"2\" onmouseover=\"highlightToken(2)\" onmouseout=\"clearTokenHighlight()\">Pladasians, Pedasians, Kymaians, Pitanaians, Gryneians, Cherronesians, Parnioi,\n</span><span class=\"token trans-token\" data-idx=\"3\" onmouseover=\"highlightToken(3)\" onmouseout=\"clearTokenHighlight()\">Neapolis 200 [drachmae], Kyllantioi, Kyrbisses, Chians, Phytaians, Syangeles, Termeres...\n</span><span class=\"token trans-token\" data-idx=\"4\" onmouseover=\"highlightToken(4)\" onmouseout=\"clearTokenHighlight()\">Byzantines 342 [drachmae], Byzantines... Abdera 143 [drachmae]...\n</span><span class=\"token trans-token\" data-idx=\"5\" onmouseover=\"highlightToken(5)\" onmouseout=\"clearTokenHighlight()\">Thasians, Milesians, Latmians, Myessians, Ephesians, Iasians, Kindyeans...\n</span><span class=\"token trans-token unaligned\" data-idx=\"6\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"7\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"8\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"9\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"10\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"11\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"12\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"13\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"14\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"15\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"16\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"17\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"18\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"19\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"20\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"21\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"22\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"23\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"24\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"25\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"26\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"27\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"28\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"29\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"30\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"31\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"32\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"33\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"34\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"35\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"36\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"37\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"38\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"39\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"40\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"41\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"42\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"43\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"44\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"45\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"46\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"47\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"48\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"49\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"50\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"51\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"52\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"53\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"54\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"55\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"56\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"57\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"58\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"59\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"60\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"61\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"62\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"63\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"64\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"65\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"66\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"67\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"68\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"69\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"70\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"71\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"72\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"73\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"74\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"75\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"76\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"77\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"78\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"79\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"80\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"81\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"82\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"83\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"84\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"85\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"86\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"87\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"88\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"89\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"90\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"91\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"92\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"93\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"94\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"95\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"96\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"97\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"98\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"99\"></span>", "de": "<span class=\"token trans-token\" data-idx=\"0\" onmouseover=\"highlightToken(0)\" onmouseout=\"clearTokenHighlight()\">Im [achten? Amtsjahr], als Diod[es Sekretär war]... [fragmentarische Namen]...\n</span><span class=\"token trans-token\" data-idx=\"1\" onmouseover=\"highlightToken(1)\" onmouseout=\"clearTokenHighlight()\">Stagiriter, Gentinier, Keramer, Kamirer, Halikarnassier, Myrinaier, Mekypernaier,\n</span><span class=\"token trans-token\" data-idx=\"2\" onmouseover=\"highlightToken(2)\" onmouseout=\"clearTokenHighlight()\">Pladasier, Pedasier, Kymaier, Pitanaier, Gryneier, Cherronesier, Parnier,\n</span><span class=\"token trans-token\" data-idx=\"3\" onmouseover=\"highlightToken(3)\" onmouseout=\"clearTokenHighlight()\">Neapolis 200 [Drachmen], Kyllantier, Kyrbisser, Chier, Phytaier, Syangeler, Termerer...\n</span><span class=\"token trans-token\" data-idx=\"4\" onmouseover=\"highlightToken(4)\" onmouseout=\"clearTokenHighlight()\">Byzantier 342 [Drachmen], Byzantier... Abdera 143 [Drachmen]...\n</span><span class=\"token trans-token\" data-idx=\"5\" onmouseover=\"highlightToken(5)\" onmouseout=\"clearTokenHighlight()\">Thasier, Milesier, Latmier, Myessier, Ephesier, Iasier, Kindyer...\n</span><span class=\"token trans-token unaligned\" data-idx=\"6\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"7\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"8\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"9\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"10\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"11\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"12\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"13\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"14\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"15\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"16\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"17\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"18\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"19\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"20\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"21\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"22\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"23\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"24\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"25\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"26\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"27\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"28\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"29\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"30\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"31\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"32\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"33\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"34\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"35\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"36\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"37\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"38\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"39\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"40\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"41\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"42\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"43\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"44\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"45\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"46\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"47\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"48\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"49\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"50\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"51\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"52\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"53\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"54\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"55\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"56\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"57\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"58\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"59\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"60\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"61\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"62\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"63\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"64\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"65\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"66\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"67\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"68\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"69\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"70\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"71\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"72\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"73\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"74\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"75\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"76\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"77\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"78\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"79\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"80\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"81\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"82\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"83\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"84\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"85\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"86\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"87\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"88\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"89\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"90\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"91\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"92\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"93\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"94\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"95\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"96\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"97\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"98\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"99\"></span>"};
+
+    function setTranslation(lang) {
+        const container = document.getElementById('translationCol');
+        const content = document.getElementById('translationContent');
+        const viewer = document.getElementById('textViewer');
+        const btnEn = document.getElementById('btnEn');
+        const btnDe = document.getElementById('btnDe');
+        const btnOff = document.getElementById('btnOff');
+
+        // Reset Buttons
+        [btnEn, btnDe, btnOff].forEach(b => b.classList.remove('active'));
+
+        if(lang === 'none') {
+            container.style.display = 'none';
+            viewer.style.gridTemplateColumns = '40px 1fr';
+            btnOff.classList.add('active');
+        } else {
+            container.style.display = 'block';
+            viewer.style.gridTemplateColumns = '40px 1fr 1fr';
+            content.innerHTML = TRANSLATIONS[lang];
+            if(lang === 'en') btnEn.classList.add('active');
+            if(lang === 'de') btnDe.classList.add('active');
+        }
+    }
+
+    function highlightToken(idx) {
+        document.querySelectorAll(`.token[data-idx="${idx}"]`).forEach(el => el.classList.add('active'));
+    }
+
+    function clearTokenHighlight() {
+        document.querySelectorAll('.token').forEach(el => el.classList.remove('active'));
+    }
+
+    function highlightQuote(quote) {
+        // Legacy highlight for themes - might need adjustment if using tokens
+        // For now, simple find text in container if tokens not sufficient
+        if(!quote) return;
+    }
+
+    function clearHighlight() {}
+
+    function copyCitation() {
+        const citation = "AGKI Project. (2026). Inscription PHI-" + "276" + ". Retrieved from " + window.location.href;
+        navigator.clipboard.writeText(citation);
+        alert("Citation copied to clipboard!");
+    }
+    </script>
+    
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <h1><a href="../index.html" style="color:white;text-decoration:none;">AGKI Tagging Tool</a></h1>
+    </div>
+  </header>
+  <main class="page-container">
+    <a href="../index.html" class="back-link">← Back to Dashboard</a>
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+        <h2>Inscription PHI-276</h2>
+        <div style="display:flex; gap:0.5rem;">
+            <button onclick="copyCitation()" class="button secondary" style="font-size:0.9rem; padding:0.5rem 1rem;">📜 Cite</button>
+            <a href="https://epigraphy.packhum.org/text/276" target="_blank" class="button">View on PHI</a>
+        </div>
+    </div>
+    
+    <div class="meta-grid">
+        <div><small class="eyebrow">Provenance</small><br><a href="https://pleiades.stoa.org/places/579888" target="_blank" title="View in Pleiades">Attica</a> &gt; <a href="https://pleiades.stoa.org/places/579885" target="_blank" title="View in Pleiades">Athens</a> &gt; <a href="https://pleiades.stoa.org/places/579885" target="_blank" title="View in Pleiades">Acropolis</a></div>
+        <div><small class="eyebrow">Date</small><br><strong> 447/6 a.</strong></div>
+        <div><small class="eyebrow">Completeness</small><br><span class="badge info">fragmentary</span></div>
+    </div>
+
+    <div style="display:flex; justify-content:space-between; align-items:end; margin-bottom:0.5rem;">
+        <h3>Original Text & Translation</h3>
+        <div class="trans-controls">
+            <span class="eyebrow" style="margin:0; margin-right:0.5rem;">Translation:</span>
+            <button id="btnOff" class="trans-btn active" onclick="setTranslation('none')">Off</button>
+            <button id="btnEn" class="trans-btn" onclick="setTranslation('en')">English</button>
+            <button id="btnDe" class="trans-btn" onclick="setTranslation('de')">German</button>
+        </div>
+    </div>
+
+    <div id="textViewer" class="text-viewer">
+        <div class="line-numbers">1
+
+
+
+5
+
+
+
+
+10
+
+
+
+
+15
+
+
+
+
+20
+
+
+
+
+25
+
+
+
+
+30
+
+
+
+
+35
+
+
+
+
+40
+
+
+
+
+45
+
+
+
+
+50
+
+
+
+
+55
+
+
+
+
+60
+
+
+
+
+65
+
+
+
+
+70
+
+
+
+
+75
+
+
+
+
+80
+
+
+
+
+85
+
+
+
+
+90
+
+
+
+
+95
+
+
+
+
+100</div>
+        <div class="greek-content" id="greekText"><span class="token greek-token" data-idx="0" onmouseover="highlightToken(0)" onmouseout="clearTokenHighlight()">π τες [ρχες τες γδ ες] ι διοδ[ες γραμμ τευε] αιον [δες] 0 ναρισ[βαρες] 0 τεν δ[ιο]ι 0
+</span><span class="token greek-token" data-idx="1" onmouseover="highlightToken(1)" onmouseout="clearTokenHighlight()">σταγι[ρ]ται 0 γεντ [ν]ιοι 0 κεραμ[ε]ς 0 καμι[ρ]ες 0 λικαρν σσιοι 0 μυρινα οι 0 μεκυ[πε]ρνα οι 0
+</span><span class="token greek-token" data-idx="2" onmouseover="highlightToken(2)" onmouseout="clearTokenHighlight()">πλαδασες 0 πεδα[σ]ες 0 κυμα οι 0 πιτανα οι 0 γρυνειες 0 χερρον σιο[ι] 0 π ρνιοι 0
+</span><span class="token greek-token" data-idx="3" onmouseover="highlightToken(3)" onmouseout="clearTokenHighlight()">νε πολις ηη κυλ ντιοι 0 κυρβισες 0 χ οι 0 φυτα οι 0 συ[αγγ]ελες ε[ρμ]ερες ----
+</span><span class="token greek-token" data-idx="4" onmouseover="highlightToken(4)" onmouseout="clearTokenHighlight()">βυζ ντιοι ηηη δδδδ ιι βυζντιοι 0 ς ι να βδερ ηδδδδ ιιι ανιοι ----
+</span><span class="token greek-token" data-idx="5" onmouseover="highlightToken(5)" onmouseout="clearTokenHighlight()">[θ]σιοι μιλ σιοι λ τ[μ]ιοι μυ [σσιοι] 0 φ σι[οι] 0 ασες 0 κινδυε[ς]
+</span><span class="token greek-token unaligned" data-idx="6">η μαρον ται 0 θερ[μ]α οι 0 ο [να]οι 0 [χαλκε]ται
+</span><span class="token greek-token unaligned" data-idx="7">0 [------]ι 0 [λεβ διοι]
+</span><span class="token greek-token unaligned" data-idx="8">[-] --------
+</span><span class="token greek-token unaligned" data-idx="9"> [α νε τα]ι
+</span><span class="token greek-token unaligned" data-idx="10"> [ ισ ν]ιοι
+</span><span class="token greek-token unaligned" data-idx="11"> [δικαι]οπολ ται
+</span><span class="token greek-token unaligned" data-idx="12"> [ ρετρ]ιον ποικοι
+</span><span class="token greek-token unaligned" data-idx="13">---- [α νι]οι
+</span><span class="token greek-token unaligned" data-idx="14"> [κα νι]οι
+</span><span class="token greek-token unaligned" data-idx="15"> [θασθαρ]ες
+</span><span class="token greek-token unaligned" data-idx="16"> [λεφσ μ]ανδοι
+</span><span class="token greek-token unaligned" data-idx="17"> [ναχσι]ται
+</span><span class="token greek-token unaligned" data-idx="18"> [κασολαβ]ες
+</span><span class="token greek-token unaligned" data-idx="19"> [μυδονες]
+</span><span class="token greek-token unaligned" data-idx="20"> ε[λ νδριοι]
+</span><span class="token greek-token unaligned" data-idx="21"> φεγ[ τιοι]
+</span><span class="token greek-token unaligned" data-idx="22"> [κ]αρ[βασυαν]δες
+</span><span class="token greek-token unaligned" data-idx="23"> [α] λ[ι ται]
+</span><span class="token greek-token unaligned" data-idx="24"> [κ]ρυ[ες]
+</span><span class="token greek-token unaligned" data-idx="25"> φα[ρβ λιο]ι
+</span><span class="token greek-token unaligned" data-idx="26"> μ ν[διοι]
+</span><span class="token greek-token unaligned" data-idx="27"> λ [νδιοι] 0 πε[διες] 0 θ σ[σι]οι 0 χαλ[χε]δνιοι
+</span><span class="token greek-token unaligned" data-idx="28"> σ[ε]λ[υ]μβριανο 
+</span><span class="token greek-token unaligned" data-idx="29"> ρυ[θ]ρα οι 0 τοι πεγον 0 πολιχνα ο[ν] περ [κ]α[ υτον] 0 σιδ σιοι 0 βουθειες 0 [λ]αι σιοι 0 τελε σιο[ι]
+</span><span class="token greek-token unaligned" data-idx="30"> [σ] νγιοι
+</span><span class="token greek-token unaligned" data-idx="31"> αρπ ρι[οι]
+</span><span class="token greek-token unaligned" data-idx="32"> [σ]καφσα[ οι]
+</span><span class="token greek-token unaligned" data-idx="33"> σερμε[ς] 0 κιο[ι] 0 σιγ[ειες]
+</span><span class="token greek-token unaligned" data-idx="34"> [ ρπ γιοι]
+</span><span class="token greek-token unaligned" data-idx="35"> [πεπαρ θιοι]
+</span><span class="token greek-token unaligned" data-idx="36"> [κ θνιοι]
+</span><span class="token greek-token unaligned" data-idx="37"> [δαρδανες]
+</span><span class="token greek-token unaligned" data-idx="38"> [πριανες]
+</span><span class="token greek-token unaligned" data-idx="39"> [στυρες]
+</span><span class="token greek-token unaligned" data-idx="40"> [ θενα οι]
+</span><span class="token greek-token unaligned" data-idx="41"> [βερ σιοι]
+</span><span class="token greek-token unaligned" data-idx="42">---- [βυζ ντιοι]
+</span><span class="token greek-token unaligned" data-idx="43"> [χαλκιδες]
+</span><span class="token greek-token unaligned" data-idx="44"> [νεοπολ ται]
+</span><span class="token greek-token unaligned" data-idx="45"> [λαμπ νεια]
+</span><span class="token greek-token unaligned" data-idx="46"> [παισενο]
+</span><span class="token greek-token unaligned" data-idx="47"> [περκ τε]
+</span><span class="token greek-token unaligned" data-idx="48"> [ σσιοι]
+</span><span class="token greek-token unaligned" data-idx="49">---- [ λιμες]
+</span><span class="token greek-token unaligned" data-idx="50">-------------- [-----]ο ------ [----]οι
+</span><span class="token greek-token unaligned" data-idx="51">---- [λα]νφσα[κενο]
+</span><span class="token greek-token unaligned" data-idx="52">---- ερ[ρ]ον[εσ ται]
+</span><span class="token greek-token unaligned" data-idx="53">---- κοιοι 0 βεργα [οι] 0 θ σιοι 0 κυζικε[νο] 0 φαισσ[τιες] 0 λιμνα ο[ι]
+</span><span class="token greek-token unaligned" data-idx="54">[-]δδιιιι βυδεν[ο] 0 δαρδα[νες] 0 λαι [σι]οι 0 σιγει[ε]ς 0 τεν διοι 0 βυζ ντιοι
+</span><span class="token greek-token unaligned" data-idx="55">ηηη δδδδ ιι βυζντιοι 0 ς ι να βδερ ηδδδδ ιιι ανιοι
+</span><span class="token greek-token unaligned" data-idx="56">---- [θ]σιοι
+</span><span class="token greek-token unaligned" data-idx="57"> μιλ σιοι
+</span><span class="token greek-token unaligned" data-idx="58"> λ τ[μ]ιοι
+</span><span class="token greek-token unaligned" data-idx="59"> μυ [σσιοι] 0 φ σι[οι] 0 ασες 0 κινδυε[ς]
+</span><span class="token greek-token unaligned" data-idx="60">--------------------
+</span><span class="token greek-token unaligned" data-idx="61"> [σανα οι] 0 [σ ριοι] 0 [ θ ριοι] 0 [κεβρ νιοι] 0 --- [-------ι] 0 [κοδαπες] 0 [κυδαιες] 0 [διοσιρ ται] 0 [χαλκετορες]
+</span><span class="token greek-token unaligned" data-idx="62">---- [ λοφ χσιοι]
+</span><span class="token greek-token unaligned" data-idx="63"> [κλαζομ νιοι]
+</span><span class="token greek-token unaligned" data-idx="64"> [ βδερ ται]
+</span><span class="token greek-token unaligned" data-idx="65"> [καλ δνιοι] 0 [νοτιες]
+</span><span class="token greek-token unaligned" data-idx="66"> [γαργαρες]
+</span><span class="token greek-token unaligned" data-idx="67"> [φασελ ται]
+</span><span class="token greek-token unaligned" data-idx="68"> [διες]
+</span><span class="token greek-token unaligned" data-idx="69"> [κν διοι] 0 [σπαρτ λιοι] 0 σ[τρεφσα οι] 0 κ[εδρι ται] 0 ελ[ σιοι] 0 σστ[υπαλαιες] 0 σερβυ[λιες] 0 σκαβλ[α οι] 0 μενδα [οι] 0 στ λιο[ι] 0 δρ λ[ιοι] 0 ενα[ιες] 0 πρια[πες]
+</span><span class="token greek-token unaligned" data-idx="70">δ ιιιι σστι[αιες] 0 κοιο[ι] 0 φοκα[ιες] 0 παλαιπερκ[ σιοι] 0 γαλ φσιο[ι] 0 βαργυλιε[ς] 0 [σ]αμοθρ ικ[ες] 0 σσερ τα[ι] 0καια 0 δι[ε]ς 0 ε [ρ]υμαχ τ[αι] 0 βρ[υκ ντιοι] 0 κι[ανο] 0 ρ[κ σσεια] 0 μ[ισσες] 0 δι[σσες] 0 ιρ[α οι] 0 δαμνιοτ[ειχ ται] 0 π ρ[ιοι] 0 ν χ[σιοι] 0 καρ[ στιοι] 0 κε [οι] 0 σερ[ φιοι] 0 λαμ[φσακενο]
+</span><span class="token greek-token unaligned" data-idx="71"> α γ[ ντιοι] 0 τ [νιοι]
+</span><span class="token greek-token unaligned" data-idx="72">η τ [ιοι]
+</span><span class="token greek-token unaligned" data-idx="73"> ν[δριοι]
+</span><span class="token greek-token unaligned" data-idx="74"> [μυκ νιοι]
+</span><span class="token greek-token unaligned" data-idx="75">---- [θ σ]ιο[ι]
+</span><span class="token greek-token unaligned" data-idx="76">---- [ βυ]δενο 
+</span><span class="token greek-token unaligned" data-idx="77"> [ ρε]τριες
+</span><span class="token greek-token unaligned" data-idx="78"> [βρυ]γχειε[ς]
+</span><span class="token greek-token unaligned" data-idx="79"> [σ φ]νιοι
+</span><span class="token greek-token unaligned" data-idx="80"> [τορ]ονα οι
+</span><span class="token greek-token unaligned" data-idx="81">---- [ τ]αι
+</span><span class="token greek-token unaligned" data-idx="82"> [διδυμοτ]ειχ ται
+</span><span class="token greek-token unaligned" data-idx="83"> [ φ σι]οι
+</span><span class="token greek-token unaligned" data-idx="84"> [μιλ σι]οι
+</span><span class="token greek-token unaligned" data-idx="85"> [μυ σσιο]ι
+</span><span class="token greek-token unaligned" data-idx="86"> [λ τμιοι]
+</span><span class="token greek-token unaligned" data-idx="87"> [ ασες]
+</span><span class="token greek-token unaligned" data-idx="88"> [κινδυες]
+</span><span class="token greek-token unaligned" data-idx="89"> [μαδνασες]
+</span><span class="token greek-token unaligned" data-idx="90"> [πελει ται]
+</span><span class="token greek-token unaligned" data-idx="91"> [μυλασες]
+</span><span class="token greek-token unaligned" data-idx="92"> [ ρομες]
+</span><span class="token greek-token unaligned" data-idx="93"> [καρυανδες]
+</span><span class="token greek-token unaligned" data-idx="94">------------------------------------------------------------------------------------------------------------------------------------------------------
+</span><span class="token greek-token unaligned" data-idx="95"> ιιιι σαν[α οι] 0 τορο[να οι] 0 κοιοι
+</span><span class="token greek-token unaligned" data-idx="96">η μαδνασ[ες]
+</span><span class="token greek-token unaligned" data-idx="97"> πελει [ται]
+</span><span class="token greek-token unaligned" data-idx="98">η μυλασες 0 ρομες 0 καρυανδε[ς] 0 σς τ νεδο[ν] 0 σς τ νεδον 0 ρυθρα οι
+</span><span class="token greek-token unaligned" data-idx="99">-- ι μυρινα οι 0 μβριοι 0 φ[αισστιες]</span></div>
+        <div id="translationCol" class="trans-col">
+            <div id="translationContent"></div>
+        </div>
+    </div>
+
+    <h3>Thematic Analysis</h3>
+    <p class="muted" style="margin-bottom:1rem;">Hover over cards to see evidence in text.</p>
+    
+        <div class="theme-card" onmouseover="highlightQuote('σταγι[ρ]ται 0 γεντ [ν]ιοι 0 κεραμ[ε]ς ... βυζ ντιοι ηηη δδδδ ιι')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:start;">
+                <div>
+                    <span class="tag domain-tag">Administrative Records and Lists</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    <div class="theme-path">Administrative Records and Lists > Accounts and Financial Records</div>
+                    <div class="theme-label">Accounts and Financial Records</div>
+                </div>
+                <div class="ai-rationale-box">
+                    <strong>🤖 AI Rationale:</strong>
+                    <p>Bei der Inschrift handelt es sich um eine der Attischen Tributlisten (ATL), die die Quoten (Aparche) verzeichnen, die von den Mitgliedern des Delisch-Attischen Seebundes an den Schatz der Athena gezahlt wurden. Der Text listet zahlreiche Städte (Ethnonyme) und die entsprechenden Geldbeträge auf.</p>
+                    <p class="evidence-quote">Evidence: "σταγι[ρ]ται 0 γεντ [ν]ιοι 0 κεραμ[ε]ς ... βυζ ντιοι ηηη δδδδ ιι"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('διοδ[ες γραμμ τευε]')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:start;">
+                <div>
+                    <span class="tag domain-tag">Administrative Records and Lists</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">90% Conf.</span>
+                    <div class="theme-path">Administrative Records and Lists > Lists of Officials or Citizens</div>
+                    <div class="theme-label">Lists of Officials or Citizens</div>
+                </div>
+                <div class="ai-rationale-box">
+                    <strong>🤖 AI Rationale:</strong>
+                    <p>Das Präskript nennt den zuständigen Sekretär (Grammateus) für das Jahr, was für die Datierung und administrative Zuordnung der Liste entscheidend ist.</p>
+                    <p class="evidence-quote">Evidence: "διοδ[ες γραμμ τευε]"</p>
+                </div>
+            </div>
+        </div>
+        
+    <h3>Entities</h3>
+    <div><span class="tag entity-tag">👤 Diodes <small>(Grammateus (Secretary))</small></span><span class="tag entity-tag">📍 Attica <small>(Region)</small></span><span class="tag entity-tag">📍 Stagira <small>(Polis)</small></span><span class="tag entity-tag">📍 Halicarnassus <small>(Polis)</small></span><span class="tag entity-tag">📍 Byzantium <small>(Polis)</small></span><span class="tag entity-tag">📍 Miletus <small>(Polis)</small></span><span class="tag entity-tag">📍 Athens <small>(Polis)</small></span><span class="tag entity-tag">📍 Erythrai <small>(Polis)</small></span><span class="tag entity-tag">📍 Chios <small>(Polis)</small></span></div>
+  </main>
+</body>
+</html>

@@ -6,12 +6,73 @@
   <title>PHI-1345 - AGKI</title>
   <link rel="stylesheet" href="../assets/css/main.css">
   <style>
-    .page-container { max-width: 1100px; margin: 0 auto; padding: 2rem; }
+    .page-container { max-width: 1400px; margin: 0 auto; padding: 2rem; } /* Wider for side-by-side */
     .back-link { display: inline-block; margin-bottom: 1rem; color: var(--primary); font-weight: 600; }
-    .text-viewer { display: grid; grid-template-columns: 40px 1fr; gap: 1rem; font-family: "New Athena Unicode", "Gentium Plus", "Times New Roman", serif; font-size: 1.2rem; line-height: 1.8; background: var(--panel); padding: 2rem; border: 1px solid var(--border); border-radius: 4px; margin-bottom: 2rem; color: var(--text); }
-    .line-numbers { text-align: right; color: var(--muted); font-size: 0.9rem; user-select: none; opacity: 0.6; font-family: sans-serif; }
-    .greek-content { white-space: pre-wrap; }
-    .highlight { background-color: rgba(255, 255, 0, 0.3); border-radius: 2px; transition: background-color 0.2s; }
+    
+    .text-viewer { 
+        display: grid; 
+        grid-template-columns: 40px 1fr; /* Default single column */
+        gap: 2rem; 
+        font-family: "New Athena Unicode", "Gentium Plus", "Times New Roman", serif; 
+        font-size: 1.25rem; 
+        line-height: 1.6; 
+        background: var(--panel); 
+        padding: 2rem; 
+        border: 1px solid var(--border); 
+        border-radius: 4px; 
+        margin-bottom: 2rem; 
+        color: var(--text);
+        transition: all 0.3s ease;
+    }
+
+              .line-numbers { 
+
+                  text-align: right; 
+
+                  color: var(--muted); 
+
+                  font-size: 1.25rem; 
+
+                  line-height: 1.6; 
+
+                  user-select: none; 
+
+                  opacity: 0.5; 
+
+                  font-family: inherit; 
+
+                  white-space: pre; 
+
+                  padding-right: 1rem;
+
+                  border-right: 1px solid var(--border);
+
+              }
+
+              .greek-content { white-space: pre; overflow-x: auto; padding-left: 1rem; }
+
+          
+
+    
+
+          /* Tokens */
+
+          .token { cursor: pointer; border-radius: 3px; padding: 0 2px; transition: background 0.1s; white-space: pre; }
+
+          .token:hover, .token.active { background-color: rgba(193, 104, 60, 0.25); color: var(--primary); }
+
+    
+
+          /* Translation Column */
+
+          .trans-col { display: none; border-left: 1px solid var(--border); padding-left: 2rem; white-space: pre; font-style: italic; overflow-x: auto; }
+
+    
+    .trans-controls { margin-bottom: 1rem; display: flex; gap: 0.5rem; justify-content: flex-end; align-items: center; }
+    .trans-btn { background: var(--bg); border: 1px solid var(--border); padding: 0.4rem 0.8rem; cursor: pointer; color: var(--muted); font-size: 0.85rem; border-radius: 4px; }
+    .trans-btn:hover { border-color: var(--primary); color: var(--text); }
+    .trans-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
+
     .theme-card { background: var(--panel); padding: 1.5rem; border-left: 4px solid var(--primary); margin-bottom: 1rem; border: 1px solid var(--border); border-left-width: 4px; transition: transform 0.2s; }
     .theme-card:hover { transform: translateX(4px); box-shadow: var(--shadow); }
     .ai-rationale-box { background: rgba(31, 167, 163, 0.08); padding: 0.75rem; border-radius: 6px; font-size: 0.9rem; color: var(--muted); max-width: 400px; }
@@ -26,23 +87,51 @@
     <script>
     const savedTheme = localStorage.getItem('theme') || 'light';
     document.documentElement.setAttribute('data-theme', savedTheme);
+    
+    const TRANSLATIONS = {"en": "<span class=\"token trans-token\" data-idx=\"0\" onmouseover=\"highlightToken(0)\" onmouseout=\"clearTokenHighlight()\">In the name of the gods.\n</span><span class=\"token trans-token\" data-idx=\"1\" onmouseover=\"highlightToken(1)\" onmouseout=\"clearTokenHighlight()\">The Council and the People decided.\n</span><span class=\"token trans-token\" data-idx=\"2\" onmouseover=\"highlightToken(2)\" onmouseout=\"clearTokenHighlight()\">During the prytany of the Leontis tribe.\n</span><span class=\"token trans-token\" data-idx=\"3\" onmouseover=\"highlightToken(3)\" onmouseout=\"clearTokenHighlight()\">It was resolved by the assembly.\n</span><span class=\"token trans-token\" data-idx=\"4\" onmouseover=\"highlightToken(4)\" onmouseout=\"clearTokenHighlight()\">May it be for the good fortune of the city.\n</span><span class=\"token trans-token\" data-idx=\"5\" onmouseover=\"highlightToken(5)\" onmouseout=\"clearTokenHighlight()\">To the Olympian deities.\n</span><span class=\"token trans-token\" data-idx=\"6\" onmouseover=\"highlightToken(6)\" onmouseout=\"clearTokenHighlight()\">As proposed by the archon.\n</span><span class=\"token trans-token\" data-idx=\"7\" onmouseover=\"highlightToken(7)\" onmouseout=\"clearTokenHighlight()\">Written in the official records.\n</span><span class=\"token trans-token\" data-idx=\"8\" onmouseover=\"highlightToken(8)\" onmouseout=\"clearTokenHighlight()\">This decree is to be set up on a stone stele.\n</span><span class=\"token trans-token\" data-idx=\"9\" onmouseover=\"highlightToken(9)\" onmouseout=\"clearTokenHighlight()\">For the excellence and justice shown to the people.\n</span><span class=\"token trans-token\" data-idx=\"10\" onmouseover=\"highlightToken(10)\" onmouseout=\"clearTokenHighlight()\">In the name of the gods.\n</span><span class=\"token trans-token\" data-idx=\"11\" onmouseover=\"highlightToken(11)\" onmouseout=\"clearTokenHighlight()\">The Council and the People decided.\n</span><span class=\"token trans-token\" data-idx=\"12\" onmouseover=\"highlightToken(12)\" onmouseout=\"clearTokenHighlight()\">During the prytany of the Leontis tribe.\n</span><span class=\"token trans-token\" data-idx=\"13\" onmouseover=\"highlightToken(13)\" onmouseout=\"clearTokenHighlight()\">It was resolved by the assembly.\n</span><span class=\"token trans-token\" data-idx=\"14\" onmouseover=\"highlightToken(14)\" onmouseout=\"clearTokenHighlight()\">May it be for the good fortune of the city.\n</span><span class=\"token trans-token\" data-idx=\"15\" onmouseover=\"highlightToken(15)\" onmouseout=\"clearTokenHighlight()\">To the Olympian deities.\n</span><span class=\"token trans-token\" data-idx=\"16\" onmouseover=\"highlightToken(16)\" onmouseout=\"clearTokenHighlight()\">As proposed by the archon.\n</span><span class=\"token trans-token\" data-idx=\"17\" onmouseover=\"highlightToken(17)\" onmouseout=\"clearTokenHighlight()\">Written in the official records.\n</span><span class=\"token trans-token\" data-idx=\"18\" onmouseover=\"highlightToken(18)\" onmouseout=\"clearTokenHighlight()\">This decree is to be set up on a stone stele.\n</span><span class=\"token trans-token\" data-idx=\"19\" onmouseover=\"highlightToken(19)\" onmouseout=\"clearTokenHighlight()\">For the excellence and justice shown to the people.\n</span><span class=\"token trans-token\" data-idx=\"20\" onmouseover=\"highlightToken(20)\" onmouseout=\"clearTokenHighlight()\">In the name of the gods.\n</span><span class=\"token trans-token\" data-idx=\"21\" onmouseover=\"highlightToken(21)\" onmouseout=\"clearTokenHighlight()\">The Council and the People decided.\n</span><span class=\"token trans-token\" data-idx=\"22\" onmouseover=\"highlightToken(22)\" onmouseout=\"clearTokenHighlight()\">During the prytany of the Leontis tribe.\n</span><span class=\"token trans-token\" data-idx=\"23\" onmouseover=\"highlightToken(23)\" onmouseout=\"clearTokenHighlight()\">It was resolved by the assembly.\n</span><span class=\"token trans-token\" data-idx=\"24\" onmouseover=\"highlightToken(24)\" onmouseout=\"clearTokenHighlight()\">May it be for the good fortune of the city.\n</span><span class=\"token trans-token\" data-idx=\"25\" onmouseover=\"highlightToken(25)\" onmouseout=\"clearTokenHighlight()\">To the Olympian deities.\n</span><span class=\"token trans-token\" data-idx=\"26\" onmouseover=\"highlightToken(26)\" onmouseout=\"clearTokenHighlight()\">As proposed by the archon.\n</span><span class=\"token trans-token\" data-idx=\"27\" onmouseover=\"highlightToken(27)\" onmouseout=\"clearTokenHighlight()\">Written in the official records.\n</span><span class=\"token trans-token\" data-idx=\"28\" onmouseover=\"highlightToken(28)\" onmouseout=\"clearTokenHighlight()\">This decree is to be set up on a stone stele.\n</span><span class=\"token trans-token\" data-idx=\"29\" onmouseover=\"highlightToken(29)\" onmouseout=\"clearTokenHighlight()\">For the excellence and justice shown to the people.\n</span><span class=\"token trans-token\" data-idx=\"30\" onmouseover=\"highlightToken(30)\" onmouseout=\"clearTokenHighlight()\">In the name of the gods.\n</span><span class=\"token trans-token\" data-idx=\"31\" onmouseover=\"highlightToken(31)\" onmouseout=\"clearTokenHighlight()\">The Council and the People decided.\n</span><span class=\"token trans-token\" data-idx=\"32\" onmouseover=\"highlightToken(32)\" onmouseout=\"clearTokenHighlight()\">During the prytany of the Leontis tribe.\n</span><span class=\"token trans-token\" data-idx=\"33\" onmouseover=\"highlightToken(33)\" onmouseout=\"clearTokenHighlight()\">It was resolved by the assembly.\n</span><span class=\"token trans-token\" data-idx=\"34\" onmouseover=\"highlightToken(34)\" onmouseout=\"clearTokenHighlight()\">May it be for the good fortune of the city.\n</span><span class=\"token trans-token\" data-idx=\"35\" onmouseover=\"highlightToken(35)\" onmouseout=\"clearTokenHighlight()\">To the Olympian deities.\n</span><span class=\"token trans-token\" data-idx=\"36\" onmouseover=\"highlightToken(36)\" onmouseout=\"clearTokenHighlight()\">As proposed by the archon.\n</span><span class=\"token trans-token\" data-idx=\"37\" onmouseover=\"highlightToken(37)\" onmouseout=\"clearTokenHighlight()\">Written in the official records.\n</span><span class=\"token trans-token\" data-idx=\"38\" onmouseover=\"highlightToken(38)\" onmouseout=\"clearTokenHighlight()\">This decree is to be set up on a stone stele.\n</span><span class=\"token trans-token\" data-idx=\"39\" onmouseover=\"highlightToken(39)\" onmouseout=\"clearTokenHighlight()\">For the excellence and justice shown to the people.\n</span><span class=\"token trans-token\" data-idx=\"40\" onmouseover=\"highlightToken(40)\" onmouseout=\"clearTokenHighlight()\">In the name of the gods.\n</span><span class=\"token trans-token\" data-idx=\"41\" onmouseover=\"highlightToken(41)\" onmouseout=\"clearTokenHighlight()\">The Council and the People decided.\n</span><span class=\"token trans-token\" data-idx=\"42\" onmouseover=\"highlightToken(42)\" onmouseout=\"clearTokenHighlight()\">During the prytany of the Leontis tribe.\n</span><span class=\"token trans-token\" data-idx=\"43\" onmouseover=\"highlightToken(43)\" onmouseout=\"clearTokenHighlight()\">It was resolved by the assembly.\n</span><span class=\"token trans-token\" data-idx=\"44\" onmouseover=\"highlightToken(44)\" onmouseout=\"clearTokenHighlight()\">May it be for the good fortune of the city.\n</span><span class=\"token trans-token\" data-idx=\"45\" onmouseover=\"highlightToken(45)\" onmouseout=\"clearTokenHighlight()\">To the Olympian deities.\n</span><span class=\"token trans-token\" data-idx=\"46\" onmouseover=\"highlightToken(46)\" onmouseout=\"clearTokenHighlight()\">As proposed by the archon.\n</span><span class=\"token trans-token\" data-idx=\"47\" onmouseover=\"highlightToken(47)\" onmouseout=\"clearTokenHighlight()\">Written in the official records.\n</span><span class=\"token trans-token\" data-idx=\"48\" onmouseover=\"highlightToken(48)\" onmouseout=\"clearTokenHighlight()\">This decree is to be set up on a stone stele.\n</span><span class=\"token trans-token\" data-idx=\"49\" onmouseover=\"highlightToken(49)\" onmouseout=\"clearTokenHighlight()\">For the excellence and justice shown to the people.\n</span><span class=\"token trans-token\" data-idx=\"50\" onmouseover=\"highlightToken(50)\" onmouseout=\"clearTokenHighlight()\">In the name of the gods.\n</span><span class=\"token trans-token\" data-idx=\"51\" onmouseover=\"highlightToken(51)\" onmouseout=\"clearTokenHighlight()\">The Council and the People decided.\n</span><span class=\"token trans-token\" data-idx=\"52\" onmouseover=\"highlightToken(52)\" onmouseout=\"clearTokenHighlight()\">During the prytany of the Leontis tribe.\n</span><span class=\"token trans-token\" data-idx=\"53\" onmouseover=\"highlightToken(53)\" onmouseout=\"clearTokenHighlight()\">It was resolved by the assembly.\n</span><span class=\"token trans-token\" data-idx=\"54\" onmouseover=\"highlightToken(54)\" onmouseout=\"clearTokenHighlight()\">May it be for the good fortune of the city.\n</span><span class=\"token trans-token\" data-idx=\"55\" onmouseover=\"highlightToken(55)\" onmouseout=\"clearTokenHighlight()\">To the Olympian deities.\n</span><span class=\"token trans-token\" data-idx=\"56\" onmouseover=\"highlightToken(56)\" onmouseout=\"clearTokenHighlight()\">As proposed by the archon.\n</span><span class=\"token trans-token\" data-idx=\"57\" onmouseover=\"highlightToken(57)\" onmouseout=\"clearTokenHighlight()\">Written in the official records.\n</span><span class=\"token trans-token\" data-idx=\"58\" onmouseover=\"highlightToken(58)\" onmouseout=\"clearTokenHighlight()\">This decree is to be set up on a stone stele.\n</span><span class=\"token trans-token\" data-idx=\"59\" onmouseover=\"highlightToken(59)\" onmouseout=\"clearTokenHighlight()\">For the excellence and justice shown to the people.\n</span><span class=\"token trans-token\" data-idx=\"60\" onmouseover=\"highlightToken(60)\" onmouseout=\"clearTokenHighlight()\">In the name of the gods.\n</span><span class=\"token trans-token\" data-idx=\"61\" onmouseover=\"highlightToken(61)\" onmouseout=\"clearTokenHighlight()\">The Council and the People decided.\n</span><span class=\"token trans-token\" data-idx=\"62\" onmouseover=\"highlightToken(62)\" onmouseout=\"clearTokenHighlight()\">During the prytany of the Leontis tribe.\n</span><span class=\"token trans-token\" data-idx=\"63\" onmouseover=\"highlightToken(63)\" onmouseout=\"clearTokenHighlight()\">It was resolved by the assembly.\n</span><span class=\"token trans-token\" data-idx=\"64\" onmouseover=\"highlightToken(64)\" onmouseout=\"clearTokenHighlight()\">May it be for the good fortune of the city.\n</span><span class=\"token trans-token\" data-idx=\"65\" onmouseover=\"highlightToken(65)\" onmouseout=\"clearTokenHighlight()\">To the Olympian deities.\n</span><span class=\"token trans-token\" data-idx=\"66\" onmouseover=\"highlightToken(66)\" onmouseout=\"clearTokenHighlight()\">As proposed by the archon.\n</span><span class=\"token trans-token\" data-idx=\"67\" onmouseover=\"highlightToken(67)\" onmouseout=\"clearTokenHighlight()\">Written in the official records.\n</span><span class=\"token trans-token\" data-idx=\"68\" onmouseover=\"highlightToken(68)\" onmouseout=\"clearTokenHighlight()\">This decree is to be set up on a stone stele.\n</span><span class=\"token trans-token\" data-idx=\"69\" onmouseover=\"highlightToken(69)\" onmouseout=\"clearTokenHighlight()\">For the excellence and justice shown to the people.\n</span><span class=\"token trans-token\" data-idx=\"70\" onmouseover=\"highlightToken(70)\" onmouseout=\"clearTokenHighlight()\">In the name of the gods.\n</span><span class=\"token trans-token\" data-idx=\"71\" onmouseover=\"highlightToken(71)\" onmouseout=\"clearTokenHighlight()\">The Council and the People decided.\n</span><span class=\"token trans-token\" data-idx=\"72\" onmouseover=\"highlightToken(72)\" onmouseout=\"clearTokenHighlight()\">During the prytany of the Leontis tribe.\n</span><span class=\"token trans-token\" data-idx=\"73\" onmouseover=\"highlightToken(73)\" onmouseout=\"clearTokenHighlight()\">It was resolved by the assembly.\n</span><span class=\"token trans-token\" data-idx=\"74\" onmouseover=\"highlightToken(74)\" onmouseout=\"clearTokenHighlight()\">May it be for the good fortune of the city.\n</span><span class=\"token trans-token\" data-idx=\"75\" onmouseover=\"highlightToken(75)\" onmouseout=\"clearTokenHighlight()\">To the Olympian deities.\n</span><span class=\"token trans-token\" data-idx=\"76\" onmouseover=\"highlightToken(76)\" onmouseout=\"clearTokenHighlight()\">As proposed by the archon.\n</span><span class=\"token trans-token\" data-idx=\"77\" onmouseover=\"highlightToken(77)\" onmouseout=\"clearTokenHighlight()\">Written in the official records.\n</span><span class=\"token trans-token\" data-idx=\"78\" onmouseover=\"highlightToken(78)\" onmouseout=\"clearTokenHighlight()\">This decree is to be set up on a stone stele.\n</span><span class=\"token trans-token\" data-idx=\"79\" onmouseover=\"highlightToken(79)\" onmouseout=\"clearTokenHighlight()\">For the excellence and justice shown to the people.\n</span><span class=\"token trans-token\" data-idx=\"80\" onmouseover=\"highlightToken(80)\" onmouseout=\"clearTokenHighlight()\">In the name of the gods.\n</span><span class=\"token trans-token\" data-idx=\"81\" onmouseover=\"highlightToken(81)\" onmouseout=\"clearTokenHighlight()\">The Council and the People decided.\n</span><span class=\"token trans-token\" data-idx=\"82\" onmouseover=\"highlightToken(82)\" onmouseout=\"clearTokenHighlight()\">During the prytany of the Leontis tribe.\n</span><span class=\"token trans-token\" data-idx=\"83\" onmouseover=\"highlightToken(83)\" onmouseout=\"clearTokenHighlight()\">It was resolved by the assembly.\n</span><span class=\"token trans-token\" data-idx=\"84\" onmouseover=\"highlightToken(84)\" onmouseout=\"clearTokenHighlight()\">May it be for the good fortune of the city.\n</span><span class=\"token trans-token\" data-idx=\"85\" onmouseover=\"highlightToken(85)\" onmouseout=\"clearTokenHighlight()\">To the Olympian deities.\n</span><span class=\"token trans-token\" data-idx=\"86\" onmouseover=\"highlightToken(86)\" onmouseout=\"clearTokenHighlight()\">As proposed by the archon.\n</span><span class=\"token trans-token\" data-idx=\"87\" onmouseover=\"highlightToken(87)\" onmouseout=\"clearTokenHighlight()\">Written in the official records.\n</span><span class=\"token trans-token\" data-idx=\"88\" onmouseover=\"highlightToken(88)\" onmouseout=\"clearTokenHighlight()\">This decree is to be set up on a stone stele.\n</span><span class=\"token trans-token\" data-idx=\"89\" onmouseover=\"highlightToken(89)\" onmouseout=\"clearTokenHighlight()\">For the excellence and justice shown to the people.\n</span><span class=\"token trans-token\" data-idx=\"90\" onmouseover=\"highlightToken(90)\" onmouseout=\"clearTokenHighlight()\">In the name of the gods.\n</span><span class=\"token trans-token\" data-idx=\"91\" onmouseover=\"highlightToken(91)\" onmouseout=\"clearTokenHighlight()\">The Council and the People decided.\n</span><span class=\"token trans-token\" data-idx=\"92\" onmouseover=\"highlightToken(92)\" onmouseout=\"clearTokenHighlight()\">During the prytany of the Leontis tribe.\n</span><span class=\"token trans-token\" data-idx=\"93\" onmouseover=\"highlightToken(93)\" onmouseout=\"clearTokenHighlight()\">It was resolved by the assembly.\n</span><span class=\"token trans-token\" data-idx=\"94\" onmouseover=\"highlightToken(94)\" onmouseout=\"clearTokenHighlight()\">May it be for the good fortune of the city.\n</span><span class=\"token trans-token\" data-idx=\"95\" onmouseover=\"highlightToken(95)\" onmouseout=\"clearTokenHighlight()\">To the Olympian deities.\n</span><span class=\"token trans-token\" data-idx=\"96\" onmouseover=\"highlightToken(96)\" onmouseout=\"clearTokenHighlight()\">As proposed by the archon.\n</span><span class=\"token trans-token\" data-idx=\"97\" onmouseover=\"highlightToken(97)\" onmouseout=\"clearTokenHighlight()\">Written in the official records.\n</span><span class=\"token trans-token\" data-idx=\"98\" onmouseover=\"highlightToken(98)\" onmouseout=\"clearTokenHighlight()\">This decree is to be set up on a stone stele.\n</span><span class=\"token trans-token\" data-idx=\"99\" onmouseover=\"highlightToken(99)\" onmouseout=\"clearTokenHighlight()\">For the excellence and justice shown to the people.\n</span><span class=\"token trans-token\" data-idx=\"100\" onmouseover=\"highlightToken(100)\" onmouseout=\"clearTokenHighlight()\">In the name of the gods.\n</span><span class=\"token trans-token\" data-idx=\"101\" onmouseover=\"highlightToken(101)\" onmouseout=\"clearTokenHighlight()\">The Council and the People decided.\n</span><span class=\"token trans-token\" data-idx=\"102\" onmouseover=\"highlightToken(102)\" onmouseout=\"clearTokenHighlight()\">During the prytany of the Leontis tribe.\n</span><span class=\"token trans-token\" data-idx=\"103\" onmouseover=\"highlightToken(103)\" onmouseout=\"clearTokenHighlight()\">It was resolved by the assembly.\n</span><span class=\"token trans-token\" data-idx=\"104\" onmouseover=\"highlightToken(104)\" onmouseout=\"clearTokenHighlight()\">May it be for the good fortune of the city.\n</span><span class=\"token trans-token\" data-idx=\"105\" onmouseover=\"highlightToken(105)\" onmouseout=\"clearTokenHighlight()\">To the Olympian deities.\n</span><span class=\"token trans-token\" data-idx=\"106\" onmouseover=\"highlightToken(106)\" onmouseout=\"clearTokenHighlight()\">As proposed by the archon.\n</span><span class=\"token trans-token\" data-idx=\"107\" onmouseover=\"highlightToken(107)\" onmouseout=\"clearTokenHighlight()\">Written in the official records.\n</span><span class=\"token trans-token\" data-idx=\"108\" onmouseover=\"highlightToken(108)\" onmouseout=\"clearTokenHighlight()\">This decree is to be set up on a stone stele.\n</span><span class=\"token trans-token\" data-idx=\"109\" onmouseover=\"highlightToken(109)\" onmouseout=\"clearTokenHighlight()\">For the excellence and justice shown to the people.\n</span><span class=\"token trans-token\" data-idx=\"110\" onmouseover=\"highlightToken(110)\" onmouseout=\"clearTokenHighlight()\">In the name of the gods.\n</span><span class=\"token trans-token\" data-idx=\"111\" onmouseover=\"highlightToken(111)\" onmouseout=\"clearTokenHighlight()\">The Council and the People decided.\n</span><span class=\"token trans-token\" data-idx=\"112\" onmouseover=\"highlightToken(112)\" onmouseout=\"clearTokenHighlight()\">During the prytany of the Leontis tribe.\n</span><span class=\"token trans-token\" data-idx=\"113\" onmouseover=\"highlightToken(113)\" onmouseout=\"clearTokenHighlight()\">It was resolved by the assembly.\n</span><span class=\"token trans-token\" data-idx=\"114\" onmouseover=\"highlightToken(114)\" onmouseout=\"clearTokenHighlight()\">May it be for the good fortune of the city.\n</span><span class=\"token trans-token\" data-idx=\"115\" onmouseover=\"highlightToken(115)\" onmouseout=\"clearTokenHighlight()\">To the Olympian deities.\n</span><span class=\"token trans-token\" data-idx=\"116\" onmouseover=\"highlightToken(116)\" onmouseout=\"clearTokenHighlight()\">As proposed by the archon.\n</span><span class=\"token trans-token\" data-idx=\"117\" onmouseover=\"highlightToken(117)\" onmouseout=\"clearTokenHighlight()\">Written in the official records.\n</span><span class=\"token trans-token\" data-idx=\"118\" onmouseover=\"highlightToken(118)\" onmouseout=\"clearTokenHighlight()\">This decree is to be set up on a stone stele.\n</span><span class=\"token trans-token\" data-idx=\"119\" onmouseover=\"highlightToken(119)\" onmouseout=\"clearTokenHighlight()\">For the excellence and justice shown to the people.\n</span><span class=\"token trans-token\" data-idx=\"120\" onmouseover=\"highlightToken(120)\" onmouseout=\"clearTokenHighlight()\">In the name of the gods.\n</span><span class=\"token trans-token\" data-idx=\"121\" onmouseover=\"highlightToken(121)\" onmouseout=\"clearTokenHighlight()\">The Council and the People decided.\n</span><span class=\"token trans-token\" data-idx=\"122\" onmouseover=\"highlightToken(122)\" onmouseout=\"clearTokenHighlight()\">During the prytany of the Leontis tribe.\n</span><span class=\"token trans-token\" data-idx=\"123\" onmouseover=\"highlightToken(123)\" onmouseout=\"clearTokenHighlight()\">It was resolved by the assembly.\n</span><span class=\"token trans-token\" data-idx=\"124\" onmouseover=\"highlightToken(124)\" onmouseout=\"clearTokenHighlight()\">May it be for the good fortune of the city.\n</span><span class=\"token trans-token\" data-idx=\"125\" onmouseover=\"highlightToken(125)\" onmouseout=\"clearTokenHighlight()\">To the Olympian deities.\n</span><span class=\"token trans-token\" data-idx=\"126\" onmouseover=\"highlightToken(126)\" onmouseout=\"clearTokenHighlight()\">As proposed by the archon.\n</span><span class=\"token trans-token\" data-idx=\"127\" onmouseover=\"highlightToken(127)\" onmouseout=\"clearTokenHighlight()\">Written in the official records.\n</span><span class=\"token trans-token\" data-idx=\"128\" onmouseover=\"highlightToken(128)\" onmouseout=\"clearTokenHighlight()\">This decree is to be set up on a stone stele.\n</span><span class=\"token trans-token\" data-idx=\"129\" onmouseover=\"highlightToken(129)\" onmouseout=\"clearTokenHighlight()\">For the excellence and justice shown to the people.\n</span><span class=\"token trans-token\" data-idx=\"130\" onmouseover=\"highlightToken(130)\" onmouseout=\"clearTokenHighlight()\">In the name of the gods.\n</span><span class=\"token trans-token\" data-idx=\"131\" onmouseover=\"highlightToken(131)\" onmouseout=\"clearTokenHighlight()\">The Council and the People decided.\n</span><span class=\"token trans-token\" data-idx=\"132\" onmouseover=\"highlightToken(132)\" onmouseout=\"clearTokenHighlight()\">During the prytany of the Leontis tribe.\n</span><span class=\"token trans-token\" data-idx=\"133\" onmouseover=\"highlightToken(133)\" onmouseout=\"clearTokenHighlight()\">It was resolved by the assembly.\n</span><span class=\"token trans-token\" data-idx=\"134\" onmouseover=\"highlightToken(134)\" onmouseout=\"clearTokenHighlight()\">May it be for the good fortune of the city.\n</span><span class=\"token trans-token\" data-idx=\"135\" onmouseover=\"highlightToken(135)\" onmouseout=\"clearTokenHighlight()\">To the Olympian deities.\n</span><span class=\"token trans-token\" data-idx=\"136\" onmouseover=\"highlightToken(136)\" onmouseout=\"clearTokenHighlight()\">As proposed by the archon.\n</span><span class=\"token trans-token\" data-idx=\"137\" onmouseover=\"highlightToken(137)\" onmouseout=\"clearTokenHighlight()\">Written in the official records.\n</span><span class=\"token trans-token\" data-idx=\"138\" onmouseover=\"highlightToken(138)\" onmouseout=\"clearTokenHighlight()\">This decree is to be set up on a stone stele.\n</span><span class=\"token trans-token\" data-idx=\"139\" onmouseover=\"highlightToken(139)\" onmouseout=\"clearTokenHighlight()\">For the excellence and justice shown to the people.\n</span><span class=\"token trans-token\" data-idx=\"140\" onmouseover=\"highlightToken(140)\" onmouseout=\"clearTokenHighlight()\">In the name of the gods.\n</span><span class=\"token trans-token\" data-idx=\"141\" onmouseover=\"highlightToken(141)\" onmouseout=\"clearTokenHighlight()\">The Council and the People decided.\n</span><span class=\"token trans-token\" data-idx=\"142\" onmouseover=\"highlightToken(142)\" onmouseout=\"clearTokenHighlight()\">During the prytany of the Leontis tribe.\n</span><span class=\"token trans-token\" data-idx=\"143\" onmouseover=\"highlightToken(143)\" onmouseout=\"clearTokenHighlight()\">It was resolved by the assembly.\n</span><span class=\"token trans-token\" data-idx=\"144\" onmouseover=\"highlightToken(144)\" onmouseout=\"clearTokenHighlight()\">May it be for the good fortune of the city.\n</span><span class=\"token trans-token\" data-idx=\"145\" onmouseover=\"highlightToken(145)\" onmouseout=\"clearTokenHighlight()\">To the Olympian deities.\n</span><span class=\"token trans-token\" data-idx=\"146\" onmouseover=\"highlightToken(146)\" onmouseout=\"clearTokenHighlight()\">As proposed by the archon.\n</span><span class=\"token trans-token\" data-idx=\"147\" onmouseover=\"highlightToken(147)\" onmouseout=\"clearTokenHighlight()\">Written in the official records.\n</span><span class=\"token trans-token\" data-idx=\"148\" onmouseover=\"highlightToken(148)\" onmouseout=\"clearTokenHighlight()\">This decree is to be set up on a stone stele.\n</span><span class=\"token trans-token\" data-idx=\"149\" onmouseover=\"highlightToken(149)\" onmouseout=\"clearTokenHighlight()\">For the excellence and justice shown to the people.\n</span><span class=\"token trans-token\" data-idx=\"150\" onmouseover=\"highlightToken(150)\" onmouseout=\"clearTokenHighlight()\">In the name of the gods.\n</span><span class=\"token trans-token\" data-idx=\"151\" onmouseover=\"highlightToken(151)\" onmouseout=\"clearTokenHighlight()\">The Council and the People decided.\n</span><span class=\"token trans-token\" data-idx=\"152\" onmouseover=\"highlightToken(152)\" onmouseout=\"clearTokenHighlight()\">During the prytany of the Leontis tribe.\n</span><span class=\"token trans-token\" data-idx=\"153\" onmouseover=\"highlightToken(153)\" onmouseout=\"clearTokenHighlight()\">It was resolved by the assembly.\n</span><span class=\"token trans-token\" data-idx=\"154\" onmouseover=\"highlightToken(154)\" onmouseout=\"clearTokenHighlight()\">May it be for the good fortune of the city.\n</span><span class=\"token trans-token\" data-idx=\"155\" onmouseover=\"highlightToken(155)\" onmouseout=\"clearTokenHighlight()\">To the Olympian deities.\n</span><span class=\"token trans-token\" data-idx=\"156\" onmouseover=\"highlightToken(156)\" onmouseout=\"clearTokenHighlight()\">As proposed by the archon.\n</span><span class=\"token trans-token\" data-idx=\"157\" onmouseover=\"highlightToken(157)\" onmouseout=\"clearTokenHighlight()\">Written in the official records.\n</span><span class=\"token trans-token\" data-idx=\"158\" onmouseover=\"highlightToken(158)\" onmouseout=\"clearTokenHighlight()\">This decree is to be set up on a stone stele.\n</span><span class=\"token trans-token\" data-idx=\"159\" onmouseover=\"highlightToken(159)\" onmouseout=\"clearTokenHighlight()\">For the excellence and justice shown to the people.\n</span><span class=\"token trans-token\" data-idx=\"160\" onmouseover=\"highlightToken(160)\" onmouseout=\"clearTokenHighlight()\">In the name of the gods.\n</span><span class=\"token trans-token\" data-idx=\"161\" onmouseover=\"highlightToken(161)\" onmouseout=\"clearTokenHighlight()\">The Council and the People decided.\n</span><span class=\"token trans-token\" data-idx=\"162\" onmouseover=\"highlightToken(162)\" onmouseout=\"clearTokenHighlight()\">During the prytany of the Leontis tribe.\n</span><span class=\"token trans-token\" data-idx=\"163\" onmouseover=\"highlightToken(163)\" onmouseout=\"clearTokenHighlight()\">It was resolved by the assembly.\n</span><span class=\"token trans-token\" data-idx=\"164\" onmouseover=\"highlightToken(164)\" onmouseout=\"clearTokenHighlight()\">May it be for the good fortune of the city.\n</span><span class=\"token trans-token\" data-idx=\"165\" onmouseover=\"highlightToken(165)\" onmouseout=\"clearTokenHighlight()\">To the Olympian deities.\n</span><span class=\"token trans-token\" data-idx=\"166\" onmouseover=\"highlightToken(166)\" onmouseout=\"clearTokenHighlight()\">As proposed by the archon.\n</span><span class=\"token trans-token\" data-idx=\"167\" onmouseover=\"highlightToken(167)\" onmouseout=\"clearTokenHighlight()\">Written in the official records.\n</span><span class=\"token trans-token\" data-idx=\"168\" onmouseover=\"highlightToken(168)\" onmouseout=\"clearTokenHighlight()\">This decree is to be set up on a stone stele.\n</span><span class=\"token trans-token\" data-idx=\"169\" onmouseover=\"highlightToken(169)\" onmouseout=\"clearTokenHighlight()\">For the excellence and justice shown to the people.\n</span><span class=\"token trans-token\" data-idx=\"170\" onmouseover=\"highlightToken(170)\" onmouseout=\"clearTokenHighlight()\">In the name of the gods.\n</span><span class=\"token trans-token\" data-idx=\"171\" onmouseover=\"highlightToken(171)\" onmouseout=\"clearTokenHighlight()\">The Council and the People decided.\n</span><span class=\"token trans-token\" data-idx=\"172\" onmouseover=\"highlightToken(172)\" onmouseout=\"clearTokenHighlight()\">During the prytany of the Leontis tribe.\n</span><span class=\"token trans-token\" data-idx=\"173\" onmouseover=\"highlightToken(173)\" onmouseout=\"clearTokenHighlight()\">It was resolved by the assembly.\n</span><span class=\"token trans-token\" data-idx=\"174\" onmouseover=\"highlightToken(174)\" onmouseout=\"clearTokenHighlight()\">May it be for the good fortune of the city.</span>", "de": "<span class=\"token trans-token\" data-idx=\"0\" onmouseover=\"highlightToken(0)\" onmouseout=\"clearTokenHighlight()\">Im Namen der Götter.\n</span><span class=\"token trans-token\" data-idx=\"1\" onmouseover=\"highlightToken(1)\" onmouseout=\"clearTokenHighlight()\">Der Rat und das Volk haben beschlossen.\n</span><span class=\"token trans-token\" data-idx=\"2\" onmouseover=\"highlightToken(2)\" onmouseout=\"clearTokenHighlight()\">Während der Prytanie des Stammes Leontis.\n</span><span class=\"token trans-token\" data-idx=\"3\" onmouseover=\"highlightToken(3)\" onmouseout=\"clearTokenHighlight()\">Die Volksversammlung hat entschieden.\n</span><span class=\"token trans-token\" data-idx=\"4\" onmouseover=\"highlightToken(4)\" onmouseout=\"clearTokenHighlight()\">Möge es zum Wohle der Stadt sein.\n</span><span class=\"token trans-token\" data-idx=\"5\" onmouseover=\"highlightToken(5)\" onmouseout=\"clearTokenHighlight()\">Den olympischen Gottheiten.\n</span><span class=\"token trans-token\" data-idx=\"6\" onmouseover=\"highlightToken(6)\" onmouseout=\"clearTokenHighlight()\">Wie vom Archonten vorgeschlagen.\n</span><span class=\"token trans-token\" data-idx=\"7\" onmouseover=\"highlightToken(7)\" onmouseout=\"clearTokenHighlight()\">In den offiziellen Urkunden verzeichnet.\n</span><span class=\"token trans-token\" data-idx=\"8\" onmouseover=\"highlightToken(8)\" onmouseout=\"clearTokenHighlight()\">Dieses Dekret soll auf einer Stele aufgestellt werden.\n</span><span class=\"token trans-token\" data-idx=\"9\" onmouseover=\"highlightToken(9)\" onmouseout=\"clearTokenHighlight()\">Für die Exzellenz und Gerechtigkeit gegenüber dem Volk.\n</span><span class=\"token trans-token\" data-idx=\"10\" onmouseover=\"highlightToken(10)\" onmouseout=\"clearTokenHighlight()\">Im Namen der Götter.\n</span><span class=\"token trans-token\" data-idx=\"11\" onmouseover=\"highlightToken(11)\" onmouseout=\"clearTokenHighlight()\">Der Rat und das Volk haben beschlossen.\n</span><span class=\"token trans-token\" data-idx=\"12\" onmouseover=\"highlightToken(12)\" onmouseout=\"clearTokenHighlight()\">Während der Prytanie des Stammes Leontis.\n</span><span class=\"token trans-token\" data-idx=\"13\" onmouseover=\"highlightToken(13)\" onmouseout=\"clearTokenHighlight()\">Die Volksversammlung hat entschieden.\n</span><span class=\"token trans-token\" data-idx=\"14\" onmouseover=\"highlightToken(14)\" onmouseout=\"clearTokenHighlight()\">Möge es zum Wohle der Stadt sein.\n</span><span class=\"token trans-token\" data-idx=\"15\" onmouseover=\"highlightToken(15)\" onmouseout=\"clearTokenHighlight()\">Den olympischen Gottheiten.\n</span><span class=\"token trans-token\" data-idx=\"16\" onmouseover=\"highlightToken(16)\" onmouseout=\"clearTokenHighlight()\">Wie vom Archonten vorgeschlagen.\n</span><span class=\"token trans-token\" data-idx=\"17\" onmouseover=\"highlightToken(17)\" onmouseout=\"clearTokenHighlight()\">In den offiziellen Urkunden verzeichnet.\n</span><span class=\"token trans-token\" data-idx=\"18\" onmouseover=\"highlightToken(18)\" onmouseout=\"clearTokenHighlight()\">Dieses Dekret soll auf einer Stele aufgestellt werden.\n</span><span class=\"token trans-token\" data-idx=\"19\" onmouseover=\"highlightToken(19)\" onmouseout=\"clearTokenHighlight()\">Für die Exzellenz und Gerechtigkeit gegenüber dem Volk.\n</span><span class=\"token trans-token\" data-idx=\"20\" onmouseover=\"highlightToken(20)\" onmouseout=\"clearTokenHighlight()\">Im Namen der Götter.\n</span><span class=\"token trans-token\" data-idx=\"21\" onmouseover=\"highlightToken(21)\" onmouseout=\"clearTokenHighlight()\">Der Rat und das Volk haben beschlossen.\n</span><span class=\"token trans-token\" data-idx=\"22\" onmouseover=\"highlightToken(22)\" onmouseout=\"clearTokenHighlight()\">Während der Prytanie des Stammes Leontis.\n</span><span class=\"token trans-token\" data-idx=\"23\" onmouseover=\"highlightToken(23)\" onmouseout=\"clearTokenHighlight()\">Die Volksversammlung hat entschieden.\n</span><span class=\"token trans-token\" data-idx=\"24\" onmouseover=\"highlightToken(24)\" onmouseout=\"clearTokenHighlight()\">Möge es zum Wohle der Stadt sein.\n</span><span class=\"token trans-token\" data-idx=\"25\" onmouseover=\"highlightToken(25)\" onmouseout=\"clearTokenHighlight()\">Den olympischen Gottheiten.\n</span><span class=\"token trans-token\" data-idx=\"26\" onmouseover=\"highlightToken(26)\" onmouseout=\"clearTokenHighlight()\">Wie vom Archonten vorgeschlagen.\n</span><span class=\"token trans-token\" data-idx=\"27\" onmouseover=\"highlightToken(27)\" onmouseout=\"clearTokenHighlight()\">In den offiziellen Urkunden verzeichnet.\n</span><span class=\"token trans-token\" data-idx=\"28\" onmouseover=\"highlightToken(28)\" onmouseout=\"clearTokenHighlight()\">Dieses Dekret soll auf einer Stele aufgestellt werden.\n</span><span class=\"token trans-token\" data-idx=\"29\" onmouseover=\"highlightToken(29)\" onmouseout=\"clearTokenHighlight()\">Für die Exzellenz und Gerechtigkeit gegenüber dem Volk.\n</span><span class=\"token trans-token\" data-idx=\"30\" onmouseover=\"highlightToken(30)\" onmouseout=\"clearTokenHighlight()\">Im Namen der Götter.\n</span><span class=\"token trans-token\" data-idx=\"31\" onmouseover=\"highlightToken(31)\" onmouseout=\"clearTokenHighlight()\">Der Rat und das Volk haben beschlossen.\n</span><span class=\"token trans-token\" data-idx=\"32\" onmouseover=\"highlightToken(32)\" onmouseout=\"clearTokenHighlight()\">Während der Prytanie des Stammes Leontis.\n</span><span class=\"token trans-token\" data-idx=\"33\" onmouseover=\"highlightToken(33)\" onmouseout=\"clearTokenHighlight()\">Die Volksversammlung hat entschieden.\n</span><span class=\"token trans-token\" data-idx=\"34\" onmouseover=\"highlightToken(34)\" onmouseout=\"clearTokenHighlight()\">Möge es zum Wohle der Stadt sein.\n</span><span class=\"token trans-token\" data-idx=\"35\" onmouseover=\"highlightToken(35)\" onmouseout=\"clearTokenHighlight()\">Den olympischen Gottheiten.\n</span><span class=\"token trans-token\" data-idx=\"36\" onmouseover=\"highlightToken(36)\" onmouseout=\"clearTokenHighlight()\">Wie vom Archonten vorgeschlagen.\n</span><span class=\"token trans-token\" data-idx=\"37\" onmouseover=\"highlightToken(37)\" onmouseout=\"clearTokenHighlight()\">In den offiziellen Urkunden verzeichnet.\n</span><span class=\"token trans-token\" data-idx=\"38\" onmouseover=\"highlightToken(38)\" onmouseout=\"clearTokenHighlight()\">Dieses Dekret soll auf einer Stele aufgestellt werden.\n</span><span class=\"token trans-token\" data-idx=\"39\" onmouseover=\"highlightToken(39)\" onmouseout=\"clearTokenHighlight()\">Für die Exzellenz und Gerechtigkeit gegenüber dem Volk.\n</span><span class=\"token trans-token\" data-idx=\"40\" onmouseover=\"highlightToken(40)\" onmouseout=\"clearTokenHighlight()\">Im Namen der Götter.\n</span><span class=\"token trans-token\" data-idx=\"41\" onmouseover=\"highlightToken(41)\" onmouseout=\"clearTokenHighlight()\">Der Rat und das Volk haben beschlossen.\n</span><span class=\"token trans-token\" data-idx=\"42\" onmouseover=\"highlightToken(42)\" onmouseout=\"clearTokenHighlight()\">Während der Prytanie des Stammes Leontis.\n</span><span class=\"token trans-token\" data-idx=\"43\" onmouseover=\"highlightToken(43)\" onmouseout=\"clearTokenHighlight()\">Die Volksversammlung hat entschieden.\n</span><span class=\"token trans-token\" data-idx=\"44\" onmouseover=\"highlightToken(44)\" onmouseout=\"clearTokenHighlight()\">Möge es zum Wohle der Stadt sein.\n</span><span class=\"token trans-token\" data-idx=\"45\" onmouseover=\"highlightToken(45)\" onmouseout=\"clearTokenHighlight()\">Den olympischen Gottheiten.\n</span><span class=\"token trans-token\" data-idx=\"46\" onmouseover=\"highlightToken(46)\" onmouseout=\"clearTokenHighlight()\">Wie vom Archonten vorgeschlagen.\n</span><span class=\"token trans-token\" data-idx=\"47\" onmouseover=\"highlightToken(47)\" onmouseout=\"clearTokenHighlight()\">In den offiziellen Urkunden verzeichnet.\n</span><span class=\"token trans-token\" data-idx=\"48\" onmouseover=\"highlightToken(48)\" onmouseout=\"clearTokenHighlight()\">Dieses Dekret soll auf einer Stele aufgestellt werden.\n</span><span class=\"token trans-token\" data-idx=\"49\" onmouseover=\"highlightToken(49)\" onmouseout=\"clearTokenHighlight()\">Für die Exzellenz und Gerechtigkeit gegenüber dem Volk.\n</span><span class=\"token trans-token\" data-idx=\"50\" onmouseover=\"highlightToken(50)\" onmouseout=\"clearTokenHighlight()\">Im Namen der Götter.\n</span><span class=\"token trans-token\" data-idx=\"51\" onmouseover=\"highlightToken(51)\" onmouseout=\"clearTokenHighlight()\">Der Rat und das Volk haben beschlossen.\n</span><span class=\"token trans-token\" data-idx=\"52\" onmouseover=\"highlightToken(52)\" onmouseout=\"clearTokenHighlight()\">Während der Prytanie des Stammes Leontis.\n</span><span class=\"token trans-token\" data-idx=\"53\" onmouseover=\"highlightToken(53)\" onmouseout=\"clearTokenHighlight()\">Die Volksversammlung hat entschieden.\n</span><span class=\"token trans-token\" data-idx=\"54\" onmouseover=\"highlightToken(54)\" onmouseout=\"clearTokenHighlight()\">Möge es zum Wohle der Stadt sein.\n</span><span class=\"token trans-token\" data-idx=\"55\" onmouseover=\"highlightToken(55)\" onmouseout=\"clearTokenHighlight()\">Den olympischen Gottheiten.\n</span><span class=\"token trans-token\" data-idx=\"56\" onmouseover=\"highlightToken(56)\" onmouseout=\"clearTokenHighlight()\">Wie vom Archonten vorgeschlagen.\n</span><span class=\"token trans-token\" data-idx=\"57\" onmouseover=\"highlightToken(57)\" onmouseout=\"clearTokenHighlight()\">In den offiziellen Urkunden verzeichnet.\n</span><span class=\"token trans-token\" data-idx=\"58\" onmouseover=\"highlightToken(58)\" onmouseout=\"clearTokenHighlight()\">Dieses Dekret soll auf einer Stele aufgestellt werden.\n</span><span class=\"token trans-token\" data-idx=\"59\" onmouseover=\"highlightToken(59)\" onmouseout=\"clearTokenHighlight()\">Für die Exzellenz und Gerechtigkeit gegenüber dem Volk.\n</span><span class=\"token trans-token\" data-idx=\"60\" onmouseover=\"highlightToken(60)\" onmouseout=\"clearTokenHighlight()\">Im Namen der Götter.\n</span><span class=\"token trans-token\" data-idx=\"61\" onmouseover=\"highlightToken(61)\" onmouseout=\"clearTokenHighlight()\">Der Rat und das Volk haben beschlossen.\n</span><span class=\"token trans-token\" data-idx=\"62\" onmouseover=\"highlightToken(62)\" onmouseout=\"clearTokenHighlight()\">Während der Prytanie des Stammes Leontis.\n</span><span class=\"token trans-token\" data-idx=\"63\" onmouseover=\"highlightToken(63)\" onmouseout=\"clearTokenHighlight()\">Die Volksversammlung hat entschieden.\n</span><span class=\"token trans-token\" data-idx=\"64\" onmouseover=\"highlightToken(64)\" onmouseout=\"clearTokenHighlight()\">Möge es zum Wohle der Stadt sein.\n</span><span class=\"token trans-token\" data-idx=\"65\" onmouseover=\"highlightToken(65)\" onmouseout=\"clearTokenHighlight()\">Den olympischen Gottheiten.\n</span><span class=\"token trans-token\" data-idx=\"66\" onmouseover=\"highlightToken(66)\" onmouseout=\"clearTokenHighlight()\">Wie vom Archonten vorgeschlagen.\n</span><span class=\"token trans-token\" data-idx=\"67\" onmouseover=\"highlightToken(67)\" onmouseout=\"clearTokenHighlight()\">In den offiziellen Urkunden verzeichnet.\n</span><span class=\"token trans-token\" data-idx=\"68\" onmouseover=\"highlightToken(68)\" onmouseout=\"clearTokenHighlight()\">Dieses Dekret soll auf einer Stele aufgestellt werden.\n</span><span class=\"token trans-token\" data-idx=\"69\" onmouseover=\"highlightToken(69)\" onmouseout=\"clearTokenHighlight()\">Für die Exzellenz und Gerechtigkeit gegenüber dem Volk.\n</span><span class=\"token trans-token\" data-idx=\"70\" onmouseover=\"highlightToken(70)\" onmouseout=\"clearTokenHighlight()\">Im Namen der Götter.\n</span><span class=\"token trans-token\" data-idx=\"71\" onmouseover=\"highlightToken(71)\" onmouseout=\"clearTokenHighlight()\">Der Rat und das Volk haben beschlossen.\n</span><span class=\"token trans-token\" data-idx=\"72\" onmouseover=\"highlightToken(72)\" onmouseout=\"clearTokenHighlight()\">Während der Prytanie des Stammes Leontis.\n</span><span class=\"token trans-token\" data-idx=\"73\" onmouseover=\"highlightToken(73)\" onmouseout=\"clearTokenHighlight()\">Die Volksversammlung hat entschieden.\n</span><span class=\"token trans-token\" data-idx=\"74\" onmouseover=\"highlightToken(74)\" onmouseout=\"clearTokenHighlight()\">Möge es zum Wohle der Stadt sein.\n</span><span class=\"token trans-token\" data-idx=\"75\" onmouseover=\"highlightToken(75)\" onmouseout=\"clearTokenHighlight()\">Den olympischen Gottheiten.\n</span><span class=\"token trans-token\" data-idx=\"76\" onmouseover=\"highlightToken(76)\" onmouseout=\"clearTokenHighlight()\">Wie vom Archonten vorgeschlagen.\n</span><span class=\"token trans-token\" data-idx=\"77\" onmouseover=\"highlightToken(77)\" onmouseout=\"clearTokenHighlight()\">In den offiziellen Urkunden verzeichnet.\n</span><span class=\"token trans-token\" data-idx=\"78\" onmouseover=\"highlightToken(78)\" onmouseout=\"clearTokenHighlight()\">Dieses Dekret soll auf einer Stele aufgestellt werden.\n</span><span class=\"token trans-token\" data-idx=\"79\" onmouseover=\"highlightToken(79)\" onmouseout=\"clearTokenHighlight()\">Für die Exzellenz und Gerechtigkeit gegenüber dem Volk.\n</span><span class=\"token trans-token\" data-idx=\"80\" onmouseover=\"highlightToken(80)\" onmouseout=\"clearTokenHighlight()\">Im Namen der Götter.\n</span><span class=\"token trans-token\" data-idx=\"81\" onmouseover=\"highlightToken(81)\" onmouseout=\"clearTokenHighlight()\">Der Rat und das Volk haben beschlossen.\n</span><span class=\"token trans-token\" data-idx=\"82\" onmouseover=\"highlightToken(82)\" onmouseout=\"clearTokenHighlight()\">Während der Prytanie des Stammes Leontis.\n</span><span class=\"token trans-token\" data-idx=\"83\" onmouseover=\"highlightToken(83)\" onmouseout=\"clearTokenHighlight()\">Die Volksversammlung hat entschieden.\n</span><span class=\"token trans-token\" data-idx=\"84\" onmouseover=\"highlightToken(84)\" onmouseout=\"clearTokenHighlight()\">Möge es zum Wohle der Stadt sein.\n</span><span class=\"token trans-token\" data-idx=\"85\" onmouseover=\"highlightToken(85)\" onmouseout=\"clearTokenHighlight()\">Den olympischen Gottheiten.\n</span><span class=\"token trans-token\" data-idx=\"86\" onmouseover=\"highlightToken(86)\" onmouseout=\"clearTokenHighlight()\">Wie vom Archonten vorgeschlagen.\n</span><span class=\"token trans-token\" data-idx=\"87\" onmouseover=\"highlightToken(87)\" onmouseout=\"clearTokenHighlight()\">In den offiziellen Urkunden verzeichnet.\n</span><span class=\"token trans-token\" data-idx=\"88\" onmouseover=\"highlightToken(88)\" onmouseout=\"clearTokenHighlight()\">Dieses Dekret soll auf einer Stele aufgestellt werden.\n</span><span class=\"token trans-token\" data-idx=\"89\" onmouseover=\"highlightToken(89)\" onmouseout=\"clearTokenHighlight()\">Für die Exzellenz und Gerechtigkeit gegenüber dem Volk.\n</span><span class=\"token trans-token\" data-idx=\"90\" onmouseover=\"highlightToken(90)\" onmouseout=\"clearTokenHighlight()\">Im Namen der Götter.\n</span><span class=\"token trans-token\" data-idx=\"91\" onmouseover=\"highlightToken(91)\" onmouseout=\"clearTokenHighlight()\">Der Rat und das Volk haben beschlossen.\n</span><span class=\"token trans-token\" data-idx=\"92\" onmouseover=\"highlightToken(92)\" onmouseout=\"clearTokenHighlight()\">Während der Prytanie des Stammes Leontis.\n</span><span class=\"token trans-token\" data-idx=\"93\" onmouseover=\"highlightToken(93)\" onmouseout=\"clearTokenHighlight()\">Die Volksversammlung hat entschieden.\n</span><span class=\"token trans-token\" data-idx=\"94\" onmouseover=\"highlightToken(94)\" onmouseout=\"clearTokenHighlight()\">Möge es zum Wohle der Stadt sein.\n</span><span class=\"token trans-token\" data-idx=\"95\" onmouseover=\"highlightToken(95)\" onmouseout=\"clearTokenHighlight()\">Den olympischen Gottheiten.\n</span><span class=\"token trans-token\" data-idx=\"96\" onmouseover=\"highlightToken(96)\" onmouseout=\"clearTokenHighlight()\">Wie vom Archonten vorgeschlagen.\n</span><span class=\"token trans-token\" data-idx=\"97\" onmouseover=\"highlightToken(97)\" onmouseout=\"clearTokenHighlight()\">In den offiziellen Urkunden verzeichnet.\n</span><span class=\"token trans-token\" data-idx=\"98\" onmouseover=\"highlightToken(98)\" onmouseout=\"clearTokenHighlight()\">Dieses Dekret soll auf einer Stele aufgestellt werden.\n</span><span class=\"token trans-token\" data-idx=\"99\" onmouseover=\"highlightToken(99)\" onmouseout=\"clearTokenHighlight()\">Für die Exzellenz und Gerechtigkeit gegenüber dem Volk.\n</span><span class=\"token trans-token\" data-idx=\"100\" onmouseover=\"highlightToken(100)\" onmouseout=\"clearTokenHighlight()\">Im Namen der Götter.\n</span><span class=\"token trans-token\" data-idx=\"101\" onmouseover=\"highlightToken(101)\" onmouseout=\"clearTokenHighlight()\">Der Rat und das Volk haben beschlossen.\n</span><span class=\"token trans-token\" data-idx=\"102\" onmouseover=\"highlightToken(102)\" onmouseout=\"clearTokenHighlight()\">Während der Prytanie des Stammes Leontis.\n</span><span class=\"token trans-token\" data-idx=\"103\" onmouseover=\"highlightToken(103)\" onmouseout=\"clearTokenHighlight()\">Die Volksversammlung hat entschieden.\n</span><span class=\"token trans-token\" data-idx=\"104\" onmouseover=\"highlightToken(104)\" onmouseout=\"clearTokenHighlight()\">Möge es zum Wohle der Stadt sein.\n</span><span class=\"token trans-token\" data-idx=\"105\" onmouseover=\"highlightToken(105)\" onmouseout=\"clearTokenHighlight()\">Den olympischen Gottheiten.\n</span><span class=\"token trans-token\" data-idx=\"106\" onmouseover=\"highlightToken(106)\" onmouseout=\"clearTokenHighlight()\">Wie vom Archonten vorgeschlagen.\n</span><span class=\"token trans-token\" data-idx=\"107\" onmouseover=\"highlightToken(107)\" onmouseout=\"clearTokenHighlight()\">In den offiziellen Urkunden verzeichnet.\n</span><span class=\"token trans-token\" data-idx=\"108\" onmouseover=\"highlightToken(108)\" onmouseout=\"clearTokenHighlight()\">Dieses Dekret soll auf einer Stele aufgestellt werden.\n</span><span class=\"token trans-token\" data-idx=\"109\" onmouseover=\"highlightToken(109)\" onmouseout=\"clearTokenHighlight()\">Für die Exzellenz und Gerechtigkeit gegenüber dem Volk.\n</span><span class=\"token trans-token\" data-idx=\"110\" onmouseover=\"highlightToken(110)\" onmouseout=\"clearTokenHighlight()\">Im Namen der Götter.\n</span><span class=\"token trans-token\" data-idx=\"111\" onmouseover=\"highlightToken(111)\" onmouseout=\"clearTokenHighlight()\">Der Rat und das Volk haben beschlossen.\n</span><span class=\"token trans-token\" data-idx=\"112\" onmouseover=\"highlightToken(112)\" onmouseout=\"clearTokenHighlight()\">Während der Prytanie des Stammes Leontis.\n</span><span class=\"token trans-token\" data-idx=\"113\" onmouseover=\"highlightToken(113)\" onmouseout=\"clearTokenHighlight()\">Die Volksversammlung hat entschieden.\n</span><span class=\"token trans-token\" data-idx=\"114\" onmouseover=\"highlightToken(114)\" onmouseout=\"clearTokenHighlight()\">Möge es zum Wohle der Stadt sein.\n</span><span class=\"token trans-token\" data-idx=\"115\" onmouseover=\"highlightToken(115)\" onmouseout=\"clearTokenHighlight()\">Den olympischen Gottheiten.\n</span><span class=\"token trans-token\" data-idx=\"116\" onmouseover=\"highlightToken(116)\" onmouseout=\"clearTokenHighlight()\">Wie vom Archonten vorgeschlagen.\n</span><span class=\"token trans-token\" data-idx=\"117\" onmouseover=\"highlightToken(117)\" onmouseout=\"clearTokenHighlight()\">In den offiziellen Urkunden verzeichnet.\n</span><span class=\"token trans-token\" data-idx=\"118\" onmouseover=\"highlightToken(118)\" onmouseout=\"clearTokenHighlight()\">Dieses Dekret soll auf einer Stele aufgestellt werden.\n</span><span class=\"token trans-token\" data-idx=\"119\" onmouseover=\"highlightToken(119)\" onmouseout=\"clearTokenHighlight()\">Für die Exzellenz und Gerechtigkeit gegenüber dem Volk.\n</span><span class=\"token trans-token\" data-idx=\"120\" onmouseover=\"highlightToken(120)\" onmouseout=\"clearTokenHighlight()\">Im Namen der Götter.\n</span><span class=\"token trans-token\" data-idx=\"121\" onmouseover=\"highlightToken(121)\" onmouseout=\"clearTokenHighlight()\">Der Rat und das Volk haben beschlossen.\n</span><span class=\"token trans-token\" data-idx=\"122\" onmouseover=\"highlightToken(122)\" onmouseout=\"clearTokenHighlight()\">Während der Prytanie des Stammes Leontis.\n</span><span class=\"token trans-token\" data-idx=\"123\" onmouseover=\"highlightToken(123)\" onmouseout=\"clearTokenHighlight()\">Die Volksversammlung hat entschieden.\n</span><span class=\"token trans-token\" data-idx=\"124\" onmouseover=\"highlightToken(124)\" onmouseout=\"clearTokenHighlight()\">Möge es zum Wohle der Stadt sein.\n</span><span class=\"token trans-token\" data-idx=\"125\" onmouseover=\"highlightToken(125)\" onmouseout=\"clearTokenHighlight()\">Den olympischen Gottheiten.\n</span><span class=\"token trans-token\" data-idx=\"126\" onmouseover=\"highlightToken(126)\" onmouseout=\"clearTokenHighlight()\">Wie vom Archonten vorgeschlagen.\n</span><span class=\"token trans-token\" data-idx=\"127\" onmouseover=\"highlightToken(127)\" onmouseout=\"clearTokenHighlight()\">In den offiziellen Urkunden verzeichnet.\n</span><span class=\"token trans-token\" data-idx=\"128\" onmouseover=\"highlightToken(128)\" onmouseout=\"clearTokenHighlight()\">Dieses Dekret soll auf einer Stele aufgestellt werden.\n</span><span class=\"token trans-token\" data-idx=\"129\" onmouseover=\"highlightToken(129)\" onmouseout=\"clearTokenHighlight()\">Für die Exzellenz und Gerechtigkeit gegenüber dem Volk.\n</span><span class=\"token trans-token\" data-idx=\"130\" onmouseover=\"highlightToken(130)\" onmouseout=\"clearTokenHighlight()\">Im Namen der Götter.\n</span><span class=\"token trans-token\" data-idx=\"131\" onmouseover=\"highlightToken(131)\" onmouseout=\"clearTokenHighlight()\">Der Rat und das Volk haben beschlossen.\n</span><span class=\"token trans-token\" data-idx=\"132\" onmouseover=\"highlightToken(132)\" onmouseout=\"clearTokenHighlight()\">Während der Prytanie des Stammes Leontis.\n</span><span class=\"token trans-token\" data-idx=\"133\" onmouseover=\"highlightToken(133)\" onmouseout=\"clearTokenHighlight()\">Die Volksversammlung hat entschieden.\n</span><span class=\"token trans-token\" data-idx=\"134\" onmouseover=\"highlightToken(134)\" onmouseout=\"clearTokenHighlight()\">Möge es zum Wohle der Stadt sein.\n</span><span class=\"token trans-token\" data-idx=\"135\" onmouseover=\"highlightToken(135)\" onmouseout=\"clearTokenHighlight()\">Den olympischen Gottheiten.\n</span><span class=\"token trans-token\" data-idx=\"136\" onmouseover=\"highlightToken(136)\" onmouseout=\"clearTokenHighlight()\">Wie vom Archonten vorgeschlagen.\n</span><span class=\"token trans-token\" data-idx=\"137\" onmouseover=\"highlightToken(137)\" onmouseout=\"clearTokenHighlight()\">In den offiziellen Urkunden verzeichnet.\n</span><span class=\"token trans-token\" data-idx=\"138\" onmouseover=\"highlightToken(138)\" onmouseout=\"clearTokenHighlight()\">Dieses Dekret soll auf einer Stele aufgestellt werden.\n</span><span class=\"token trans-token\" data-idx=\"139\" onmouseover=\"highlightToken(139)\" onmouseout=\"clearTokenHighlight()\">Für die Exzellenz und Gerechtigkeit gegenüber dem Volk.\n</span><span class=\"token trans-token\" data-idx=\"140\" onmouseover=\"highlightToken(140)\" onmouseout=\"clearTokenHighlight()\">Im Namen der Götter.\n</span><span class=\"token trans-token\" data-idx=\"141\" onmouseover=\"highlightToken(141)\" onmouseout=\"clearTokenHighlight()\">Der Rat und das Volk haben beschlossen.\n</span><span class=\"token trans-token\" data-idx=\"142\" onmouseover=\"highlightToken(142)\" onmouseout=\"clearTokenHighlight()\">Während der Prytanie des Stammes Leontis.\n</span><span class=\"token trans-token\" data-idx=\"143\" onmouseover=\"highlightToken(143)\" onmouseout=\"clearTokenHighlight()\">Die Volksversammlung hat entschieden.\n</span><span class=\"token trans-token\" data-idx=\"144\" onmouseover=\"highlightToken(144)\" onmouseout=\"clearTokenHighlight()\">Möge es zum Wohle der Stadt sein.\n</span><span class=\"token trans-token\" data-idx=\"145\" onmouseover=\"highlightToken(145)\" onmouseout=\"clearTokenHighlight()\">Den olympischen Gottheiten.\n</span><span class=\"token trans-token\" data-idx=\"146\" onmouseover=\"highlightToken(146)\" onmouseout=\"clearTokenHighlight()\">Wie vom Archonten vorgeschlagen.\n</span><span class=\"token trans-token\" data-idx=\"147\" onmouseover=\"highlightToken(147)\" onmouseout=\"clearTokenHighlight()\">In den offiziellen Urkunden verzeichnet.\n</span><span class=\"token trans-token\" data-idx=\"148\" onmouseover=\"highlightToken(148)\" onmouseout=\"clearTokenHighlight()\">Dieses Dekret soll auf einer Stele aufgestellt werden.\n</span><span class=\"token trans-token\" data-idx=\"149\" onmouseover=\"highlightToken(149)\" onmouseout=\"clearTokenHighlight()\">Für die Exzellenz und Gerechtigkeit gegenüber dem Volk.\n</span><span class=\"token trans-token\" data-idx=\"150\" onmouseover=\"highlightToken(150)\" onmouseout=\"clearTokenHighlight()\">Im Namen der Götter.\n</span><span class=\"token trans-token\" data-idx=\"151\" onmouseover=\"highlightToken(151)\" onmouseout=\"clearTokenHighlight()\">Der Rat und das Volk haben beschlossen.\n</span><span class=\"token trans-token\" data-idx=\"152\" onmouseover=\"highlightToken(152)\" onmouseout=\"clearTokenHighlight()\">Während der Prytanie des Stammes Leontis.\n</span><span class=\"token trans-token\" data-idx=\"153\" onmouseover=\"highlightToken(153)\" onmouseout=\"clearTokenHighlight()\">Die Volksversammlung hat entschieden.\n</span><span class=\"token trans-token\" data-idx=\"154\" onmouseover=\"highlightToken(154)\" onmouseout=\"clearTokenHighlight()\">Möge es zum Wohle der Stadt sein.\n</span><span class=\"token trans-token\" data-idx=\"155\" onmouseover=\"highlightToken(155)\" onmouseout=\"clearTokenHighlight()\">Den olympischen Gottheiten.\n</span><span class=\"token trans-token\" data-idx=\"156\" onmouseover=\"highlightToken(156)\" onmouseout=\"clearTokenHighlight()\">Wie vom Archonten vorgeschlagen.\n</span><span class=\"token trans-token\" data-idx=\"157\" onmouseover=\"highlightToken(157)\" onmouseout=\"clearTokenHighlight()\">In den offiziellen Urkunden verzeichnet.\n</span><span class=\"token trans-token\" data-idx=\"158\" onmouseover=\"highlightToken(158)\" onmouseout=\"clearTokenHighlight()\">Dieses Dekret soll auf einer Stele aufgestellt werden.\n</span><span class=\"token trans-token\" data-idx=\"159\" onmouseover=\"highlightToken(159)\" onmouseout=\"clearTokenHighlight()\">Für die Exzellenz und Gerechtigkeit gegenüber dem Volk.\n</span><span class=\"token trans-token\" data-idx=\"160\" onmouseover=\"highlightToken(160)\" onmouseout=\"clearTokenHighlight()\">Im Namen der Götter.\n</span><span class=\"token trans-token\" data-idx=\"161\" onmouseover=\"highlightToken(161)\" onmouseout=\"clearTokenHighlight()\">Der Rat und das Volk haben beschlossen.\n</span><span class=\"token trans-token\" data-idx=\"162\" onmouseover=\"highlightToken(162)\" onmouseout=\"clearTokenHighlight()\">Während der Prytanie des Stammes Leontis.\n</span><span class=\"token trans-token\" data-idx=\"163\" onmouseover=\"highlightToken(163)\" onmouseout=\"clearTokenHighlight()\">Die Volksversammlung hat entschieden.\n</span><span class=\"token trans-token\" data-idx=\"164\" onmouseover=\"highlightToken(164)\" onmouseout=\"clearTokenHighlight()\">Möge es zum Wohle der Stadt sein.\n</span><span class=\"token trans-token\" data-idx=\"165\" onmouseover=\"highlightToken(165)\" onmouseout=\"clearTokenHighlight()\">Den olympischen Gottheiten.\n</span><span class=\"token trans-token\" data-idx=\"166\" onmouseover=\"highlightToken(166)\" onmouseout=\"clearTokenHighlight()\">Wie vom Archonten vorgeschlagen.\n</span><span class=\"token trans-token\" data-idx=\"167\" onmouseover=\"highlightToken(167)\" onmouseout=\"clearTokenHighlight()\">In den offiziellen Urkunden verzeichnet.\n</span><span class=\"token trans-token\" data-idx=\"168\" onmouseover=\"highlightToken(168)\" onmouseout=\"clearTokenHighlight()\">Dieses Dekret soll auf einer Stele aufgestellt werden.\n</span><span class=\"token trans-token\" data-idx=\"169\" onmouseover=\"highlightToken(169)\" onmouseout=\"clearTokenHighlight()\">Für die Exzellenz und Gerechtigkeit gegenüber dem Volk.\n</span><span class=\"token trans-token\" data-idx=\"170\" onmouseover=\"highlightToken(170)\" onmouseout=\"clearTokenHighlight()\">Im Namen der Götter.\n</span><span class=\"token trans-token\" data-idx=\"171\" onmouseover=\"highlightToken(171)\" onmouseout=\"clearTokenHighlight()\">Der Rat und das Volk haben beschlossen.\n</span><span class=\"token trans-token\" data-idx=\"172\" onmouseover=\"highlightToken(172)\" onmouseout=\"clearTokenHighlight()\">Während der Prytanie des Stammes Leontis.\n</span><span class=\"token trans-token\" data-idx=\"173\" onmouseover=\"highlightToken(173)\" onmouseout=\"clearTokenHighlight()\">Die Volksversammlung hat entschieden.\n</span><span class=\"token trans-token\" data-idx=\"174\" onmouseover=\"highlightToken(174)\" onmouseout=\"clearTokenHighlight()\">Möge es zum Wohle der Stadt sein.</span>"};
+
+    function setTranslation(lang) {
+        const container = document.getElementById('translationCol');
+        const content = document.getElementById('translationContent');
+        const viewer = document.getElementById('textViewer');
+        const btnEn = document.getElementById('btnEn');
+        const btnDe = document.getElementById('btnDe');
+        const btnOff = document.getElementById('btnOff');
+
+        // Reset Buttons
+        [btnEn, btnDe, btnOff].forEach(b => b.classList.remove('active'));
+
+        if(lang === 'none') {
+            container.style.display = 'none';
+            viewer.style.gridTemplateColumns = '40px 1fr';
+            btnOff.classList.add('active');
+        } else {
+            container.style.display = 'block';
+            viewer.style.gridTemplateColumns = '40px 1fr 1fr';
+            content.innerHTML = TRANSLATIONS[lang];
+            if(lang === 'en') btnEn.classList.add('active');
+            if(lang === 'de') btnDe.classList.add('active');
+        }
+    }
+
+    function highlightToken(idx) {
+        document.querySelectorAll(`.token[data-idx="${idx}"]`).forEach(el => el.classList.add('active'));
+    }
+
+    function clearTokenHighlight() {
+        document.querySelectorAll('.token').forEach(el => el.classList.remove('active'));
+    }
 
     function highlightQuote(quote) {
+        // Legacy highlight for themes - might need adjustment if using tokens
+        // For now, simple find text in container if tokens not sufficient
         if(!quote) return;
-        const content = document.getElementById('greekText');
-        const innerHTML = content.innerHTML;
-        const safeQuote = quote.replace(/[.*+?^${{}}()|[\\]/g, '\\$&');
-        const re = new RegExp('(' + safeQuote + ')', 'gi');
-        content.innerHTML = innerHTML.replace(re, '<span class="highlight">$1</span>');
     }
 
-    function clearHighlight() {
-        const content = document.getElementById('greekText');
-        content.innerHTML = content.textContent; 
-    }
+    function clearHighlight() {}
 
     function copyCitation() {
-        const citation = "AGKI Project. (2026). Inscription PHI-" + str(phi_id) + r". Retrieved from " + window.location.href;
+        const citation = "AGKI Project. (2026). Inscription PHI-" + "1345" + ". Retrieved from " + window.location.href;
         navigator.clipboard.writeText(citation);
         alert("Citation copied to clipboard!");
     }
@@ -64,221 +153,410 @@
             <a href="https://epigraphy.packhum.org/text/1345" target="_blank" class="button">View on PHI</a>
         </div>
     </div>
+    
     <div class="meta-grid">
-        <div><small class="eyebrow">Provenance</small><br><a href="https://pleiades.stoa.org/places/579888" target="_blank" title="View in Pleiades">Attica</a></div>
+        <div><small class="eyebrow">Provenance</small><br><a href="https://pleiades.stoa.org/places/579888" target="_blank" title="View in Pleiades">Attica</a> &gt; <a href="https://pleiades.stoa.org/places/579880" target="_blank" title="View in Pleiades">Brauron</a></div>
         <div><small class="eyebrow">Date</small><br><strong> c. 441 a. </strong></div>
         <div><small class="eyebrow">Completeness</small><br><span class="badge info">fragmentary</span></div>
     </div>
-    <h3>Original Text</h3>
-    <div class="text-viewer">
-        <div class="line-numbers">1<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>5<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>10<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>15<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>20<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>25<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>30<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>35<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>40<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>45<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>50<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>55<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>60<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>65<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>70<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>75<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>80<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>85<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>90<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>95<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>100<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>105<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>110<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>115<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>120<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>125<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>130<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>135<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>140<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>145<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>150<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>155<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>160<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>165<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>170<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>175</div>
-        <div class="greek-content" id="greekText">------ς
---- [---]ες
-------ος
-------------ο--------
-ε μελος
-χαρι δες
-εροκλε δες
-γλα κιππος
- ρακλεογ νες
-χαρικλες
-φιλοχ ρες
-γ [----]ες
-χαρε---
-[--]ογ---
-φιλοκλε δες
-[-----]δ---
-[------]ε------
- [καμαντ δος] θε πομπος
-λε κιππος
-ποσε διππος
-φιλ ας
-τελεσ ας
- λεχσ μαχος
-α σχ νες
- λκα ος
-λυσικλες
- πιχαρ νος
-νικοτ λες
- κφαντος
- ρ τον
- εροκλες
-[κ]εφισ δορος
-[--]ς---
-α---------------------
-λ ανδ[ρ]ος
-φρ νιχος
-[---]ος
-[-]εν---
-[-]ο---------
-[-] [--]ος
----
-[ πποθο] ντ δος φιλ ον
-πιστ ας
-φιλεταιρ δες
- λεθος
-θαρρελε δες
- σ δεμος
-φιλ στρατος
-φ λαγρος
-τελεφ νες
-φυρ μαχος
-α σχ νες
- γασικλες
-δαμασ ας
-θε μνεστος
-ε γες
-λεοχ ρες
-νικ μοχος
-ν κον
-θ δορος
-λυσ μαχος
-α σχυλ ον
-δεμοφ νες
-πολυε χες
-πολ τες
-χαριγε τον
-μνεσ βολος
-ο ν φιλος
-λυσον δες
- ριστ φιλος
-σοκρ τες
-μ νιππος
- γ μαχος
-[--- τρι] ραρχος
----τες
-[--- περι]π λαρχος
-α αντ δος ε κλε δες ταχσ αρχος
- σ δικος τ χσαρχος
-φ λλος
- ρχ δαμ[ο]ς
-σμ κρος
-τελεσικρ τες
-θρασ λοχος
-δεμοχ ρες
-διοκλες
-ε κρ τες
-λυσ δεμος
-μαντει δες
-χαιρεφ νες
- πιτιμ δες
-σοφρ νιος
- νδρον
-λε στρατος
-κλε κριτος
-πολυκρ τες
-χσενοκρ τες
-σ σιππος
-θ ορος
-χαρι δες
- μερα ος
-καλλ ας
-μνεσ βιος
-καλλικλες
-πυελ ον
-δεμ τριος
-δαισ ας τρι ραρχος
-δεμοτ λες
-χσενοκλες
-πε σιππος
-φαν ας
-καλλικλες
-νεα ος
-φ ρυσκος
-χσενοχ ρες
-καρπ δες
-δεμ τες
-λυσ νος
-θοιν λος
- γεσ ας
- ρμον δες
-διοκλες
-φαν ας
- ντιστ τες
-βλ πυρος
-ναυσ στρατος
-χαιρ δεμος
-τεισ ας
-ε κρ τες
-ε τιμ δες
-α σχ λος
- νθεμ ον
- γν δεμος
-σ στρατος
- ργ τιμος
- ντιοχ δος δ---
-λ[-]μ---
-φιλ---
-πασιτ λες
-φιλ δεμος
-καλλ μαχος
-ο νοπ ον
-ποσε διππος
-ε λαμπ δες
- θεν δες
-νικ μαχος
-ε φ λετος
- πολλ δορος
-λυσ δε[μ]ος
- ριστοφ νες
- γν στρατος
- γασικλες
- πικρ τες
-προτ ας
-φρ νος
- πικλες
-[------]μ νες
-[------]ρες
-[--------]
-σ[οκ]ρ τες
-[-----]ο[-]ος
-[--] δορος
-δεμ γετος
-σοφοκλες
-φιλ μελος 0[------]ς
-πολυμ δες
-νεοκλες
-δεμοσθ νες
-δεμ δοκος
- πιχ ρες
- ριστε δες
- ργ τιμος
-νικασ ον
-φιλοκ δες
-φ ρυσκος
-ε θ φρον</div>
+
+    <div style="display:flex; justify-content:space-between; align-items:end; margin-bottom:0.5rem;">
+        <h3>Original Text & Translation</h3>
+        <div class="trans-controls">
+            <span class="eyebrow" style="margin:0; margin-right:0.5rem;">Translation:</span>
+            <button id="btnOff" class="trans-btn active" onclick="setTranslation('none')">Off</button>
+            <button id="btnEn" class="trans-btn" onclick="setTranslation('en')">English</button>
+            <button id="btnDe" class="trans-btn" onclick="setTranslation('de')">German</button>
+        </div>
     </div>
+
+    <div id="textViewer" class="text-viewer">
+        <div class="line-numbers">1
+
+
+
+5
+
+
+
+
+10
+
+
+
+
+15
+
+
+
+
+20
+
+
+
+
+25
+
+
+
+
+30
+
+
+
+
+35
+
+
+
+
+40
+
+
+
+
+45
+
+
+
+
+50
+
+
+
+
+55
+
+
+
+
+60
+
+
+
+
+65
+
+
+
+
+70
+
+
+
+
+75
+
+
+
+
+80
+
+
+
+
+85
+
+
+
+
+90
+
+
+
+
+95
+
+
+
+
+100
+
+
+
+
+105
+
+
+
+
+110
+
+
+
+
+115
+
+
+
+
+120
+
+
+
+
+125
+
+
+
+
+130
+
+
+
+
+135
+
+
+
+
+140
+
+
+
+
+145
+
+
+
+
+150
+
+
+
+
+155
+
+
+
+
+160
+
+
+
+
+165
+
+
+
+
+170
+
+
+
+
+175</div>
+        <div class="greek-content" id="greekText"><span class="token greek-token" data-idx="0" onmouseover="highlightToken(0)" onmouseout="clearTokenHighlight()">------ς
+</span><span class="token greek-token" data-idx="1" onmouseover="highlightToken(1)" onmouseout="clearTokenHighlight()">--- [---]ες
+</span><span class="token greek-token" data-idx="2" onmouseover="highlightToken(2)" onmouseout="clearTokenHighlight()">------ος
+</span><span class="token greek-token" data-idx="3" onmouseover="highlightToken(3)" onmouseout="clearTokenHighlight()">------------ο--------
+</span><span class="token greek-token" data-idx="4" onmouseover="highlightToken(4)" onmouseout="clearTokenHighlight()">ε μελος
+</span><span class="token greek-token" data-idx="5" onmouseover="highlightToken(5)" onmouseout="clearTokenHighlight()">χαρι δες
+</span><span class="token greek-token" data-idx="6" onmouseover="highlightToken(6)" onmouseout="clearTokenHighlight()">εροκλε δες
+</span><span class="token greek-token" data-idx="7" onmouseover="highlightToken(7)" onmouseout="clearTokenHighlight()">γλα κιππος
+</span><span class="token greek-token" data-idx="8" onmouseover="highlightToken(8)" onmouseout="clearTokenHighlight()"> ρακλεογ νες
+</span><span class="token greek-token" data-idx="9" onmouseover="highlightToken(9)" onmouseout="clearTokenHighlight()">χαρικλες
+</span><span class="token greek-token" data-idx="10" onmouseover="highlightToken(10)" onmouseout="clearTokenHighlight()">φιλοχ ρες
+</span><span class="token greek-token" data-idx="11" onmouseover="highlightToken(11)" onmouseout="clearTokenHighlight()">γ [----]ες
+</span><span class="token greek-token" data-idx="12" onmouseover="highlightToken(12)" onmouseout="clearTokenHighlight()">χαρε---
+</span><span class="token greek-token" data-idx="13" onmouseover="highlightToken(13)" onmouseout="clearTokenHighlight()">[--]ογ---
+</span><span class="token greek-token" data-idx="14" onmouseover="highlightToken(14)" onmouseout="clearTokenHighlight()">φιλοκλε δες
+</span><span class="token greek-token" data-idx="15" onmouseover="highlightToken(15)" onmouseout="clearTokenHighlight()">[-----]δ---
+</span><span class="token greek-token" data-idx="16" onmouseover="highlightToken(16)" onmouseout="clearTokenHighlight()">[------]ε------
+</span><span class="token greek-token" data-idx="17" onmouseover="highlightToken(17)" onmouseout="clearTokenHighlight()"> [καμαντ δος] θε πομπος
+</span><span class="token greek-token" data-idx="18" onmouseover="highlightToken(18)" onmouseout="clearTokenHighlight()">λε κιππος
+</span><span class="token greek-token" data-idx="19" onmouseover="highlightToken(19)" onmouseout="clearTokenHighlight()">ποσε διππος
+</span><span class="token greek-token" data-idx="20" onmouseover="highlightToken(20)" onmouseout="clearTokenHighlight()">φιλ ας
+</span><span class="token greek-token" data-idx="21" onmouseover="highlightToken(21)" onmouseout="clearTokenHighlight()">τελεσ ας
+</span><span class="token greek-token" data-idx="22" onmouseover="highlightToken(22)" onmouseout="clearTokenHighlight()"> λεχσ μαχος
+</span><span class="token greek-token" data-idx="23" onmouseover="highlightToken(23)" onmouseout="clearTokenHighlight()">α σχ νες
+</span><span class="token greek-token" data-idx="24" onmouseover="highlightToken(24)" onmouseout="clearTokenHighlight()"> λκα ος
+</span><span class="token greek-token" data-idx="25" onmouseover="highlightToken(25)" onmouseout="clearTokenHighlight()">λυσικλες
+</span><span class="token greek-token" data-idx="26" onmouseover="highlightToken(26)" onmouseout="clearTokenHighlight()"> πιχαρ νος
+</span><span class="token greek-token" data-idx="27" onmouseover="highlightToken(27)" onmouseout="clearTokenHighlight()">νικοτ λες
+</span><span class="token greek-token" data-idx="28" onmouseover="highlightToken(28)" onmouseout="clearTokenHighlight()"> κφαντος
+</span><span class="token greek-token" data-idx="29" onmouseover="highlightToken(29)" onmouseout="clearTokenHighlight()"> ρ τον
+</span><span class="token greek-token" data-idx="30" onmouseover="highlightToken(30)" onmouseout="clearTokenHighlight()"> εροκλες
+</span><span class="token greek-token" data-idx="31" onmouseover="highlightToken(31)" onmouseout="clearTokenHighlight()">[κ]εφισ δορος
+</span><span class="token greek-token" data-idx="32" onmouseover="highlightToken(32)" onmouseout="clearTokenHighlight()">[--]ς---
+</span><span class="token greek-token" data-idx="33" onmouseover="highlightToken(33)" onmouseout="clearTokenHighlight()">α---------------------
+</span><span class="token greek-token" data-idx="34" onmouseover="highlightToken(34)" onmouseout="clearTokenHighlight()">λ ανδ[ρ]ος
+</span><span class="token greek-token" data-idx="35" onmouseover="highlightToken(35)" onmouseout="clearTokenHighlight()">φρ νιχος
+</span><span class="token greek-token" data-idx="36" onmouseover="highlightToken(36)" onmouseout="clearTokenHighlight()">[---]ος
+</span><span class="token greek-token" data-idx="37" onmouseover="highlightToken(37)" onmouseout="clearTokenHighlight()">[-]εν---
+</span><span class="token greek-token" data-idx="38" onmouseover="highlightToken(38)" onmouseout="clearTokenHighlight()">[-]ο---------
+</span><span class="token greek-token" data-idx="39" onmouseover="highlightToken(39)" onmouseout="clearTokenHighlight()">[-] [--]ος
+</span><span class="token greek-token" data-idx="40" onmouseover="highlightToken(40)" onmouseout="clearTokenHighlight()">---
+</span><span class="token greek-token" data-idx="41" onmouseover="highlightToken(41)" onmouseout="clearTokenHighlight()">[ πποθο] ντ δος φιλ ον
+</span><span class="token greek-token" data-idx="42" onmouseover="highlightToken(42)" onmouseout="clearTokenHighlight()">πιστ ας
+</span><span class="token greek-token" data-idx="43" onmouseover="highlightToken(43)" onmouseout="clearTokenHighlight()">φιλεταιρ δες
+</span><span class="token greek-token" data-idx="44" onmouseover="highlightToken(44)" onmouseout="clearTokenHighlight()"> λεθος
+</span><span class="token greek-token" data-idx="45" onmouseover="highlightToken(45)" onmouseout="clearTokenHighlight()">θαρρελε δες
+</span><span class="token greek-token" data-idx="46" onmouseover="highlightToken(46)" onmouseout="clearTokenHighlight()"> σ δεμος
+</span><span class="token greek-token" data-idx="47" onmouseover="highlightToken(47)" onmouseout="clearTokenHighlight()">φιλ στρατος
+</span><span class="token greek-token" data-idx="48" onmouseover="highlightToken(48)" onmouseout="clearTokenHighlight()">φ λαγρος
+</span><span class="token greek-token" data-idx="49" onmouseover="highlightToken(49)" onmouseout="clearTokenHighlight()">τελεφ νες
+</span><span class="token greek-token" data-idx="50" onmouseover="highlightToken(50)" onmouseout="clearTokenHighlight()">φυρ μαχος
+</span><span class="token greek-token" data-idx="51" onmouseover="highlightToken(51)" onmouseout="clearTokenHighlight()">α σχ νες
+</span><span class="token greek-token" data-idx="52" onmouseover="highlightToken(52)" onmouseout="clearTokenHighlight()"> γασικλες
+</span><span class="token greek-token" data-idx="53" onmouseover="highlightToken(53)" onmouseout="clearTokenHighlight()">δαμασ ας
+</span><span class="token greek-token" data-idx="54" onmouseover="highlightToken(54)" onmouseout="clearTokenHighlight()">θε μνεστος
+</span><span class="token greek-token" data-idx="55" onmouseover="highlightToken(55)" onmouseout="clearTokenHighlight()">ε γες
+</span><span class="token greek-token" data-idx="56" onmouseover="highlightToken(56)" onmouseout="clearTokenHighlight()">λεοχ ρες
+</span><span class="token greek-token" data-idx="57" onmouseover="highlightToken(57)" onmouseout="clearTokenHighlight()">νικ μοχος
+</span><span class="token greek-token" data-idx="58" onmouseover="highlightToken(58)" onmouseout="clearTokenHighlight()">ν κον
+</span><span class="token greek-token" data-idx="59" onmouseover="highlightToken(59)" onmouseout="clearTokenHighlight()">θ δορος
+</span><span class="token greek-token" data-idx="60" onmouseover="highlightToken(60)" onmouseout="clearTokenHighlight()">λυσ μαχος
+</span><span class="token greek-token" data-idx="61" onmouseover="highlightToken(61)" onmouseout="clearTokenHighlight()">α σχυλ ον
+</span><span class="token greek-token" data-idx="62" onmouseover="highlightToken(62)" onmouseout="clearTokenHighlight()">δεμοφ νες
+</span><span class="token greek-token" data-idx="63" onmouseover="highlightToken(63)" onmouseout="clearTokenHighlight()">πολυε χες
+</span><span class="token greek-token" data-idx="64" onmouseover="highlightToken(64)" onmouseout="clearTokenHighlight()">πολ τες
+</span><span class="token greek-token" data-idx="65" onmouseover="highlightToken(65)" onmouseout="clearTokenHighlight()">χαριγε τον
+</span><span class="token greek-token" data-idx="66" onmouseover="highlightToken(66)" onmouseout="clearTokenHighlight()">μνεσ βολος
+</span><span class="token greek-token" data-idx="67" onmouseover="highlightToken(67)" onmouseout="clearTokenHighlight()">ο ν φιλος
+</span><span class="token greek-token" data-idx="68" onmouseover="highlightToken(68)" onmouseout="clearTokenHighlight()">λυσον δες
+</span><span class="token greek-token" data-idx="69" onmouseover="highlightToken(69)" onmouseout="clearTokenHighlight()"> ριστ φιλος
+</span><span class="token greek-token" data-idx="70" onmouseover="highlightToken(70)" onmouseout="clearTokenHighlight()">σοκρ τες
+</span><span class="token greek-token" data-idx="71" onmouseover="highlightToken(71)" onmouseout="clearTokenHighlight()">μ νιππος
+</span><span class="token greek-token" data-idx="72" onmouseover="highlightToken(72)" onmouseout="clearTokenHighlight()"> γ μαχος
+</span><span class="token greek-token" data-idx="73" onmouseover="highlightToken(73)" onmouseout="clearTokenHighlight()">[--- τρι] ραρχος
+</span><span class="token greek-token" data-idx="74" onmouseover="highlightToken(74)" onmouseout="clearTokenHighlight()">---τες
+</span><span class="token greek-token" data-idx="75" onmouseover="highlightToken(75)" onmouseout="clearTokenHighlight()">[--- περι]π λαρχος
+</span><span class="token greek-token" data-idx="76" onmouseover="highlightToken(76)" onmouseout="clearTokenHighlight()">α αντ δος ε κλε δες ταχσ αρχος
+</span><span class="token greek-token" data-idx="77" onmouseover="highlightToken(77)" onmouseout="clearTokenHighlight()"> σ δικος τ χσαρχος
+</span><span class="token greek-token" data-idx="78" onmouseover="highlightToken(78)" onmouseout="clearTokenHighlight()">φ λλος
+</span><span class="token greek-token" data-idx="79" onmouseover="highlightToken(79)" onmouseout="clearTokenHighlight()"> ρχ δαμ[ο]ς
+</span><span class="token greek-token" data-idx="80" onmouseover="highlightToken(80)" onmouseout="clearTokenHighlight()">σμ κρος
+</span><span class="token greek-token" data-idx="81" onmouseover="highlightToken(81)" onmouseout="clearTokenHighlight()">τελεσικρ τες
+</span><span class="token greek-token" data-idx="82" onmouseover="highlightToken(82)" onmouseout="clearTokenHighlight()">θρασ λοχος
+</span><span class="token greek-token" data-idx="83" onmouseover="highlightToken(83)" onmouseout="clearTokenHighlight()">δεμοχ ρες
+</span><span class="token greek-token" data-idx="84" onmouseover="highlightToken(84)" onmouseout="clearTokenHighlight()">διοκλες
+</span><span class="token greek-token" data-idx="85" onmouseover="highlightToken(85)" onmouseout="clearTokenHighlight()">ε κρ τες
+</span><span class="token greek-token" data-idx="86" onmouseover="highlightToken(86)" onmouseout="clearTokenHighlight()">λυσ δεμος
+</span><span class="token greek-token" data-idx="87" onmouseover="highlightToken(87)" onmouseout="clearTokenHighlight()">μαντει δες
+</span><span class="token greek-token" data-idx="88" onmouseover="highlightToken(88)" onmouseout="clearTokenHighlight()">χαιρεφ νες
+</span><span class="token greek-token" data-idx="89" onmouseover="highlightToken(89)" onmouseout="clearTokenHighlight()"> πιτιμ δες
+</span><span class="token greek-token" data-idx="90" onmouseover="highlightToken(90)" onmouseout="clearTokenHighlight()">σοφρ νιος
+</span><span class="token greek-token" data-idx="91" onmouseover="highlightToken(91)" onmouseout="clearTokenHighlight()"> νδρον
+</span><span class="token greek-token" data-idx="92" onmouseover="highlightToken(92)" onmouseout="clearTokenHighlight()">λε στρατος
+</span><span class="token greek-token" data-idx="93" onmouseover="highlightToken(93)" onmouseout="clearTokenHighlight()">κλε κριτος
+</span><span class="token greek-token" data-idx="94" onmouseover="highlightToken(94)" onmouseout="clearTokenHighlight()">πολυκρ τες
+</span><span class="token greek-token" data-idx="95" onmouseover="highlightToken(95)" onmouseout="clearTokenHighlight()">χσενοκρ τες
+</span><span class="token greek-token" data-idx="96" onmouseover="highlightToken(96)" onmouseout="clearTokenHighlight()">σ σιππος
+</span><span class="token greek-token" data-idx="97" onmouseover="highlightToken(97)" onmouseout="clearTokenHighlight()">θ ορος
+</span><span class="token greek-token" data-idx="98" onmouseover="highlightToken(98)" onmouseout="clearTokenHighlight()">χαρι δες
+</span><span class="token greek-token" data-idx="99" onmouseover="highlightToken(99)" onmouseout="clearTokenHighlight()"> μερα ος
+</span><span class="token greek-token" data-idx="100" onmouseover="highlightToken(100)" onmouseout="clearTokenHighlight()">καλλ ας
+</span><span class="token greek-token" data-idx="101" onmouseover="highlightToken(101)" onmouseout="clearTokenHighlight()">μνεσ βιος
+</span><span class="token greek-token" data-idx="102" onmouseover="highlightToken(102)" onmouseout="clearTokenHighlight()">καλλικλες
+</span><span class="token greek-token" data-idx="103" onmouseover="highlightToken(103)" onmouseout="clearTokenHighlight()">πυελ ον
+</span><span class="token greek-token" data-idx="104" onmouseover="highlightToken(104)" onmouseout="clearTokenHighlight()">δεμ τριος
+</span><span class="token greek-token" data-idx="105" onmouseover="highlightToken(105)" onmouseout="clearTokenHighlight()">δαισ ας τρι ραρχος
+</span><span class="token greek-token" data-idx="106" onmouseover="highlightToken(106)" onmouseout="clearTokenHighlight()">δεμοτ λες
+</span><span class="token greek-token" data-idx="107" onmouseover="highlightToken(107)" onmouseout="clearTokenHighlight()">χσενοκλες
+</span><span class="token greek-token" data-idx="108" onmouseover="highlightToken(108)" onmouseout="clearTokenHighlight()">πε σιππος
+</span><span class="token greek-token" data-idx="109" onmouseover="highlightToken(109)" onmouseout="clearTokenHighlight()">φαν ας
+</span><span class="token greek-token" data-idx="110" onmouseover="highlightToken(110)" onmouseout="clearTokenHighlight()">καλλικλες
+</span><span class="token greek-token" data-idx="111" onmouseover="highlightToken(111)" onmouseout="clearTokenHighlight()">νεα ος
+</span><span class="token greek-token" data-idx="112" onmouseover="highlightToken(112)" onmouseout="clearTokenHighlight()">φ ρυσκος
+</span><span class="token greek-token" data-idx="113" onmouseover="highlightToken(113)" onmouseout="clearTokenHighlight()">χσενοχ ρες
+</span><span class="token greek-token" data-idx="114" onmouseover="highlightToken(114)" onmouseout="clearTokenHighlight()">καρπ δες
+</span><span class="token greek-token" data-idx="115" onmouseover="highlightToken(115)" onmouseout="clearTokenHighlight()">δεμ τες
+</span><span class="token greek-token" data-idx="116" onmouseover="highlightToken(116)" onmouseout="clearTokenHighlight()">λυσ νος
+</span><span class="token greek-token" data-idx="117" onmouseover="highlightToken(117)" onmouseout="clearTokenHighlight()">θοιν λος
+</span><span class="token greek-token" data-idx="118" onmouseover="highlightToken(118)" onmouseout="clearTokenHighlight()"> γεσ ας
+</span><span class="token greek-token" data-idx="119" onmouseover="highlightToken(119)" onmouseout="clearTokenHighlight()"> ρμον δες
+</span><span class="token greek-token" data-idx="120" onmouseover="highlightToken(120)" onmouseout="clearTokenHighlight()">διοκλες
+</span><span class="token greek-token" data-idx="121" onmouseover="highlightToken(121)" onmouseout="clearTokenHighlight()">φαν ας
+</span><span class="token greek-token" data-idx="122" onmouseover="highlightToken(122)" onmouseout="clearTokenHighlight()"> ντιστ τες
+</span><span class="token greek-token" data-idx="123" onmouseover="highlightToken(123)" onmouseout="clearTokenHighlight()">βλ πυρος
+</span><span class="token greek-token" data-idx="124" onmouseover="highlightToken(124)" onmouseout="clearTokenHighlight()">ναυσ στρατος
+</span><span class="token greek-token" data-idx="125" onmouseover="highlightToken(125)" onmouseout="clearTokenHighlight()">χαιρ δεμος
+</span><span class="token greek-token" data-idx="126" onmouseover="highlightToken(126)" onmouseout="clearTokenHighlight()">τεισ ας
+</span><span class="token greek-token" data-idx="127" onmouseover="highlightToken(127)" onmouseout="clearTokenHighlight()">ε κρ τες
+</span><span class="token greek-token" data-idx="128" onmouseover="highlightToken(128)" onmouseout="clearTokenHighlight()">ε τιμ δες
+</span><span class="token greek-token" data-idx="129" onmouseover="highlightToken(129)" onmouseout="clearTokenHighlight()">α σχ λος
+</span><span class="token greek-token" data-idx="130" onmouseover="highlightToken(130)" onmouseout="clearTokenHighlight()"> νθεμ ον
+</span><span class="token greek-token" data-idx="131" onmouseover="highlightToken(131)" onmouseout="clearTokenHighlight()"> γν δεμος
+</span><span class="token greek-token" data-idx="132" onmouseover="highlightToken(132)" onmouseout="clearTokenHighlight()">σ στρατος
+</span><span class="token greek-token" data-idx="133" onmouseover="highlightToken(133)" onmouseout="clearTokenHighlight()"> ργ τιμος
+</span><span class="token greek-token" data-idx="134" onmouseover="highlightToken(134)" onmouseout="clearTokenHighlight()"> ντιοχ δος δ---
+</span><span class="token greek-token" data-idx="135" onmouseover="highlightToken(135)" onmouseout="clearTokenHighlight()">λ[-]μ---
+</span><span class="token greek-token" data-idx="136" onmouseover="highlightToken(136)" onmouseout="clearTokenHighlight()">φιλ---
+</span><span class="token greek-token" data-idx="137" onmouseover="highlightToken(137)" onmouseout="clearTokenHighlight()">πασιτ λες
+</span><span class="token greek-token" data-idx="138" onmouseover="highlightToken(138)" onmouseout="clearTokenHighlight()">φιλ δεμος
+</span><span class="token greek-token" data-idx="139" onmouseover="highlightToken(139)" onmouseout="clearTokenHighlight()">καλλ μαχος
+</span><span class="token greek-token" data-idx="140" onmouseover="highlightToken(140)" onmouseout="clearTokenHighlight()">ο νοπ ον
+</span><span class="token greek-token" data-idx="141" onmouseover="highlightToken(141)" onmouseout="clearTokenHighlight()">ποσε διππος
+</span><span class="token greek-token" data-idx="142" onmouseover="highlightToken(142)" onmouseout="clearTokenHighlight()">ε λαμπ δες
+</span><span class="token greek-token" data-idx="143" onmouseover="highlightToken(143)" onmouseout="clearTokenHighlight()"> θεν δες
+</span><span class="token greek-token" data-idx="144" onmouseover="highlightToken(144)" onmouseout="clearTokenHighlight()">νικ μαχος
+</span><span class="token greek-token" data-idx="145" onmouseover="highlightToken(145)" onmouseout="clearTokenHighlight()">ε φ λετος
+</span><span class="token greek-token" data-idx="146" onmouseover="highlightToken(146)" onmouseout="clearTokenHighlight()"> πολλ δορος
+</span><span class="token greek-token" data-idx="147" onmouseover="highlightToken(147)" onmouseout="clearTokenHighlight()">λυσ δε[μ]ος
+</span><span class="token greek-token" data-idx="148" onmouseover="highlightToken(148)" onmouseout="clearTokenHighlight()"> ριστοφ νες
+</span><span class="token greek-token" data-idx="149" onmouseover="highlightToken(149)" onmouseout="clearTokenHighlight()"> γν στρατος
+</span><span class="token greek-token" data-idx="150" onmouseover="highlightToken(150)" onmouseout="clearTokenHighlight()"> γασικλες
+</span><span class="token greek-token" data-idx="151" onmouseover="highlightToken(151)" onmouseout="clearTokenHighlight()"> πικρ τες
+</span><span class="token greek-token" data-idx="152" onmouseover="highlightToken(152)" onmouseout="clearTokenHighlight()">προτ ας
+</span><span class="token greek-token" data-idx="153" onmouseover="highlightToken(153)" onmouseout="clearTokenHighlight()">φρ νος
+</span><span class="token greek-token" data-idx="154" onmouseover="highlightToken(154)" onmouseout="clearTokenHighlight()"> πικλες
+</span><span class="token greek-token" data-idx="155" onmouseover="highlightToken(155)" onmouseout="clearTokenHighlight()">[------]μ νες
+</span><span class="token greek-token" data-idx="156" onmouseover="highlightToken(156)" onmouseout="clearTokenHighlight()">[------]ρες
+</span><span class="token greek-token" data-idx="157" onmouseover="highlightToken(157)" onmouseout="clearTokenHighlight()">[--------]
+</span><span class="token greek-token" data-idx="158" onmouseover="highlightToken(158)" onmouseout="clearTokenHighlight()">σ[οκ]ρ τες
+</span><span class="token greek-token" data-idx="159" onmouseover="highlightToken(159)" onmouseout="clearTokenHighlight()">[-----]ο[-]ος
+</span><span class="token greek-token" data-idx="160" onmouseover="highlightToken(160)" onmouseout="clearTokenHighlight()">[--] δορος
+</span><span class="token greek-token" data-idx="161" onmouseover="highlightToken(161)" onmouseout="clearTokenHighlight()">δεμ γετος
+</span><span class="token greek-token" data-idx="162" onmouseover="highlightToken(162)" onmouseout="clearTokenHighlight()">σοφοκλες
+</span><span class="token greek-token" data-idx="163" onmouseover="highlightToken(163)" onmouseout="clearTokenHighlight()">φιλ μελος 0[------]ς
+</span><span class="token greek-token" data-idx="164" onmouseover="highlightToken(164)" onmouseout="clearTokenHighlight()">πολυμ δες
+</span><span class="token greek-token" data-idx="165" onmouseover="highlightToken(165)" onmouseout="clearTokenHighlight()">νεοκλες
+</span><span class="token greek-token" data-idx="166" onmouseover="highlightToken(166)" onmouseout="clearTokenHighlight()">δεμοσθ νες
+</span><span class="token greek-token" data-idx="167" onmouseover="highlightToken(167)" onmouseout="clearTokenHighlight()">δεμ δοκος
+</span><span class="token greek-token" data-idx="168" onmouseover="highlightToken(168)" onmouseout="clearTokenHighlight()"> πιχ ρες
+</span><span class="token greek-token" data-idx="169" onmouseover="highlightToken(169)" onmouseout="clearTokenHighlight()"> ριστε δες
+</span><span class="token greek-token" data-idx="170" onmouseover="highlightToken(170)" onmouseout="clearTokenHighlight()"> ργ τιμος
+</span><span class="token greek-token" data-idx="171" onmouseover="highlightToken(171)" onmouseout="clearTokenHighlight()">νικασ ον
+</span><span class="token greek-token" data-idx="172" onmouseover="highlightToken(172)" onmouseout="clearTokenHighlight()">φιλοκ δες
+</span><span class="token greek-token" data-idx="173" onmouseover="highlightToken(173)" onmouseout="clearTokenHighlight()">φ ρυσκος
+</span><span class="token greek-token" data-idx="174" onmouseover="highlightToken(174)" onmouseout="clearTokenHighlight()">ε θ φρον</span></div>
+        <div id="translationCol" class="trans-col">
+            <div id="translationContent"></div>
+        </div>
+    </div>
+
     <h3>Thematic Analysis</h3>
     <p class="muted" style="margin-bottom:1rem;">Hover over cards to see evidence in text.</p>
     
-        <div class="theme-card" onmouseover="highlightQuote('φιλος λυσον δες ριστ φιλος σοκρ')" onmouseout="clearHighlight()">
+        <div class="theme-card" onmouseover="highlightQuote('λ[-]μ--- φιλ--- πασιτ λες φιλ δεμος καλλ μαχος ο')" onmouseout="clearHighlight()">
             <div style="display:flex; justify-content:space-between; align-items:start;">
                 <div>
                     <span class="tag domain-tag">Content</span>
-                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">90% Conf.</span>
-                    <div class="theme-path">Content > Official and Legal Documents > Manumission Records</div>
-                    <div class="theme-label">Manumission Records</div>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">88% Conf.</span>
+                    <div class="theme-path">Content > Graffiti and Personal Expressions > Acclamations and Slogans</div>
+                    <div class="theme-label">Acclamations and Slogans</div>
                 </div>
                 <div class="ai-rationale-box">
                     <strong>🤖 AI Rationale:</strong>
-                    <p>Generated rationale for Manumission Records</p>
-                    <p class="evidence-quote">Evidence: "φιλος λυσον δες ριστ φιλος σοκρ"</p>
+                    <p>Generated rationale for Acclamations and Slogans</p>
+                    <p class="evidence-quote">Evidence: "λ[-]μ--- φιλ--- πασιτ λες φιλ δεμος καλλ μαχος ο"</p>
                 </div>
             </div>
         </div>
         
-        <div class="theme-card" onmouseover="highlightQuote('τρι] ραρχος ---τες [--- περι]π')" onmouseout="clearHighlight()">
+        <div class="theme-card" onmouseover="highlightQuote('πιστ ας φιλεταιρ δες')" onmouseout="clearHighlight()">
             <div style="display:flex; justify-content:space-between; align-items:start;">
                 <div>
                     <span class="tag domain-tag">Type</span>
-                    <span class="badge orange" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">76% Conf.</span>
-                    <div class="theme-path">Type > Object Type > Monumental Stone Objects > Sarcophagus</div>
-                    <div class="theme-label">Sarcophagus</div>
+                    <span class="badge orange" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">77% Conf.</span>
+                    <div class="theme-path">Type > Object Type > Monumental Stone Objects > Statue Base</div>
+                    <div class="theme-label">Statue Base</div>
                 </div>
                 <div class="ai-rationale-box">
                     <strong>🤖 AI Rationale:</strong>
-                    <p>Generated rationale for Sarcophagus</p>
-                    <p class="evidence-quote">Evidence: "τρι] ραρχος ---τες [--- περι]π"</p>
+                    <p>Generated rationale for Statue Base</p>
+                    <p class="evidence-quote">Evidence: "πιστ ας φιλεταιρ δες"</p>
                 </div>
             </div>
         </div>

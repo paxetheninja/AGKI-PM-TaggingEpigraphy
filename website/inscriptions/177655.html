@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PHI-177655 - AGKI</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <style>
+    .page-container { max-width: 1400px; margin: 0 auto; padding: 2rem; } /* Wider for side-by-side */
+    .back-link { display: inline-block; margin-bottom: 1rem; color: var(--primary); font-weight: 600; }
+    
+    .text-viewer { 
+        display: grid; 
+        grid-template-columns: 40px 1fr; /* Default single column */
+        gap: 2rem; 
+        font-family: "New Athena Unicode", "Gentium Plus", "Times New Roman", serif; 
+        font-size: 1.25rem; 
+        line-height: 1.6; 
+        background: var(--panel); 
+        padding: 2rem; 
+        border: 1px solid var(--border); 
+        border-radius: 4px; 
+        margin-bottom: 2rem; 
+        color: var(--text);
+        transition: all 0.3s ease;
+    }
+
+              .line-numbers { 
+
+                  text-align: right; 
+
+                  color: var(--muted); 
+
+                  font-size: 1.25rem; 
+
+                  line-height: 1.6; 
+
+                  user-select: none; 
+
+                  opacity: 0.5; 
+
+                  font-family: inherit; 
+
+                  white-space: pre; 
+
+                  padding-right: 1rem;
+
+                  border-right: 1px solid var(--border);
+
+              }
+
+              .greek-content { white-space: pre; overflow-x: auto; padding-left: 1rem; }
+
+          
+
+    
+
+          /* Tokens */
+
+          .token { cursor: pointer; border-radius: 3px; padding: 0 2px; transition: background 0.1s; white-space: pre; }
+
+          .token:hover, .token.active { background-color: rgba(193, 104, 60, 0.25); color: var(--primary); }
+
+    
+
+          /* Translation Column */
+
+          .trans-col { display: none; border-left: 1px solid var(--border); padding-left: 2rem; white-space: pre; font-style: italic; overflow-x: auto; }
+
+    
+    .trans-controls { margin-bottom: 1rem; display: flex; gap: 0.5rem; justify-content: flex-end; align-items: center; }
+    .trans-btn { background: var(--bg); border: 1px solid var(--border); padding: 0.4rem 0.8rem; cursor: pointer; color: var(--muted); font-size: 0.85rem; border-radius: 4px; }
+    .trans-btn:hover { border-color: var(--primary); color: var(--text); }
+    .trans-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
+
+    .theme-card { background: var(--panel); padding: 1.5rem; border-left: 4px solid var(--primary); margin-bottom: 1rem; border: 1px solid var(--border); border-left-width: 4px; transition: transform 0.2s; }
+    .theme-card:hover { transform: translateX(4px); box-shadow: var(--shadow); }
+    .ai-rationale-box { background: rgba(31, 167, 163, 0.08); padding: 0.75rem; border-radius: 6px; font-size: 0.9rem; color: var(--muted); max-width: 400px; }
+    .evidence-quote { border-left: 2px solid var(--accent); padding-left: 0.5rem; margin-top: 0.5rem; font-style: italic; color: var(--text); }
+    .badge.green { background: #e6f4ea; color: #137333; border-color: #137333; }
+    .badge.orange { background: #fef7e0; color: #b06000; border-color: #b06000; }
+    .badge.red { background: #fce8e6; color: #c5221f; border-color: #c5221f; }
+    .entity-tag { background: rgba(217, 123, 61, 0.1); color: var(--accent-2); margin-right: 0.5rem; margin-bottom: 0.5rem; display: inline-block; padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.9rem; border: 1px solid rgba(217, 123, 61, 0.2); text-decoration: none; }
+    .entity-tag.linked:hover { background: rgba(217, 123, 61, 0.2); text-decoration: underline; cursor: pointer; }
+  </style>
+  
+    <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    
+    const TRANSLATIONS = {"en": "<span class=\"token trans-token\" data-idx=\"0\" onmouseover=\"highlightToken(0)\" onmouseout=\"clearTokenHighlight()\">[Of Ariston...] on behalf of Valeria Mousa his wife.\n</span><span class=\"token trans-token\" data-idx=\"1\" onmouseover=\"highlightToken(1)\" onmouseout=\"clearTokenHighlight()\">The phratriarch, the treasurers, the manager, the administrators, or anyone else of the Phratry of the Aristaioi shall not have the authority\n</span><span class=\"token trans-token\" data-idx=\"2\" onmouseover=\"highlightToken(2)\" onmouseout=\"clearTokenHighlight()\">to postpone the sacrifice and the banquet beyond the appointed days.\n</span><span class=\"token trans-token\" data-idx=\"3\" onmouseover=\"highlightToken(3)\" onmouseout=\"clearTokenHighlight()\">And let one thousand two hundred denarii be lent out, not more than two hundred and fifty denarii per name [borrower]...\n</span><span class=\"token trans-token\" data-idx=\"4\" onmouseover=\"highlightToken(4)\" onmouseout=\"clearTokenHighlight()\">Let neither the phratriarch, the treasurers, the manager, the administrators, nor anyone else of the Phratry of the Aristaioi have authority to accept a phrater contrary to these laws.\n</span><span class=\"token trans-token\" data-idx=\"5\" onmouseover=\"highlightToken(5)\" onmouseout=\"clearTokenHighlight()\">[Clauses regarding sureties and lending to members of other phratries if approved by the assembly...]\n</span><span class=\"token trans-token\" data-idx=\"6\" onmouseover=\"highlightToken(6)\" onmouseout=\"clearTokenHighlight()\">just as has been decreed by the phratriarch and treasurers, and let the administration of the aforementioned matters take place.\n</span><span class=\"token trans-token\" data-idx=\"7\" onmouseover=\"highlightToken(7)\" onmouseout=\"clearTokenHighlight()\">Let the borrowers bring the copper [interest/money] on the 7th of the month Pantheon to the full assembly.\n</span><span class=\"token trans-token\" data-idx=\"8\" onmouseover=\"highlightToken(8)\" onmouseout=\"clearTokenHighlight()\">And let the phratry vote on whom it wishes to lend to, and thus let the rest of the administration happen each year.\n</span><span class=\"token trans-token\" data-idx=\"9\" onmouseover=\"highlightToken(9)\" onmouseout=\"clearTokenHighlight()\">And on these two days on which they sacrifice and dine, let the customary things be given to Valeria Mousa [or for Valeria Mousa].\n</span><span class=\"token trans-token\" data-idx=\"10\" onmouseover=\"highlightToken(10)\" onmouseout=\"clearTokenHighlight()\">The phratriarch, treasurers, manager, and administrators must hand over the written [document] placed and nailed up to those appointed over the phratry.\n</span><span class=\"token trans-token\" data-idx=\"11\" onmouseover=\"highlightToken(11)\" onmouseout=\"clearTokenHighlight()\">If the phratriarch, treasurers, manager, administrators, borrowers, or anyone else does anything contrary to these things written above,\n</span><span class=\"token trans-token\" data-idx=\"12\" onmouseover=\"highlightToken(12)\" onmouseout=\"clearTokenHighlight()\">let him pay sacred to the gods of the phratries two hundred silver denarii...\n</span><span class=\"token trans-token unaligned\" data-idx=\"13\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"14\"></span>", "de": "<span class=\"token trans-token\" data-idx=\"0\" onmouseover=\"highlightToken(0)\" onmouseout=\"clearTokenHighlight()\">[Des Ariston...] für Valeria Mousa, seine Frau.\n</span><span class=\"token trans-token\" data-idx=\"1\" onmouseover=\"highlightToken(1)\" onmouseout=\"clearTokenHighlight()\">Weder der Phratriarch noch die Chalkologoi noch der Phrontistes noch die Dioiketai noch irgendein anderer der Phratrie der Aristaioi sollen die Befugnis haben,\n</span><span class=\"token trans-token\" data-idx=\"2\" onmouseover=\"highlightToken(2)\" onmouseout=\"clearTokenHighlight()\">das Opfer und das Mahl über die festgesetzten Tage hinaus zu verschieben.\n</span><span class=\"token trans-token\" data-idx=\"3\" onmouseover=\"highlightToken(3)\" onmouseout=\"clearTokenHighlight()\">Und es sollen eintausendzweihundert Denare verliehen werden, nicht mehr als zweihundertfünfzig Denare pro Name...\n</span><span class=\"token trans-token\" data-idx=\"4\" onmouseover=\"highlightToken(4)\" onmouseout=\"clearTokenHighlight()\">Weder der Phratriarch noch die Chalkologoi noch der Phrontistes noch die Dioiketai noch irgendein anderer der Phratrie der Aristaioi sollen die Befugnis haben, einen Phrater entgegen diesen Gesetzen aufzunehmen.\n</span><span class=\"token trans-token\" data-idx=\"5\" onmouseover=\"highlightToken(5)\" onmouseout=\"clearTokenHighlight()\">[Klauseln über Bürgschaften und das Verleihen an Mitglieder anderer Phratrien bei Zustimmung der Versammlung...]\n</span><span class=\"token trans-token\" data-idx=\"6\" onmouseover=\"highlightToken(6)\" onmouseout=\"clearTokenHighlight()\">wie es vom Phratriarchen und den Chalkologoi beschlossen wurde, und die Verwaltung der oben genannten Dinge soll stattfinden.\n</span><span class=\"token trans-token\" data-idx=\"7\" onmouseover=\"highlightToken(7)\" onmouseout=\"clearTokenHighlight()\">Die Kreditnehmer sollen das Kupfer [Zinsen/Geld] am 7. des Monats Pantheon zur Vollversammlung bringen.\n</span><span class=\"token trans-token\" data-idx=\"8\" onmouseover=\"highlightToken(8)\" onmouseout=\"clearTokenHighlight()\">Und die Phratrie soll darüber abstimmen, wem sie leihen will, und so soll die übrige Verwaltung jedes Jahr geschehen.\n</span><span class=\"token trans-token\" data-idx=\"9\" onmouseover=\"highlightToken(9)\" onmouseout=\"clearTokenHighlight()\">Und an diesen zwei Tagen, an denen sie opfern und speisen, soll der Valeria Mousa das Geschuldete gegeben werden.\n</span><span class=\"token trans-token\" data-idx=\"10\" onmouseover=\"highlightToken(10)\" onmouseout=\"clearTokenHighlight()\">Der Phratriarch, die Chalkologoi, der Phrontistes und die Dioiketai müssen das aufgestellte und angenagelte Schriftstück an die über die Phratrie Eingesetzten übergeben.\n</span><span class=\"token trans-token\" data-idx=\"11\" onmouseover=\"highlightToken(11)\" onmouseout=\"clearTokenHighlight()\">Wenn aber der Phratriarch, die Chalkologoi, der Phrontistes, die Dioiketai, die Kreditnehmer oder sonst jemand etwas gegen das oben Geschriebene tut,\n</span><span class=\"token trans-token\" data-idx=\"12\" onmouseover=\"highlightToken(12)\" onmouseout=\"clearTokenHighlight()\">soll er den Göttern der Phratrien zweihundert Silberdenare als Buße zahlen...\n</span><span class=\"token trans-token unaligned\" data-idx=\"13\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"14\"></span>"};
+
+    function setTranslation(lang) {
+        const container = document.getElementById('translationCol');
+        const content = document.getElementById('translationContent');
+        const viewer = document.getElementById('textViewer');
+        const btnEn = document.getElementById('btnEn');
+        const btnDe = document.getElementById('btnDe');
+        const btnOff = document.getElementById('btnOff');
+
+        // Reset Buttons
+        [btnEn, btnDe, btnOff].forEach(b => b.classList.remove('active'));
+
+        if(lang === 'none') {
+            container.style.display = 'none';
+            viewer.style.gridTemplateColumns = '40px 1fr';
+            btnOff.classList.add('active');
+        } else {
+            container.style.display = 'block';
+            viewer.style.gridTemplateColumns = '40px 1fr 1fr';
+            content.innerHTML = TRANSLATIONS[lang];
+            if(lang === 'en') btnEn.classList.add('active');
+            if(lang === 'de') btnDe.classList.add('active');
+        }
+    }
+
+    function highlightToken(idx) {
+        document.querySelectorAll(`.token[data-idx="${idx}"]`).forEach(el => el.classList.add('active'));
+    }
+
+    function clearTokenHighlight() {
+        document.querySelectorAll('.token').forEach(el => el.classList.remove('active'));
+    }
+
+    function highlightQuote(quote) {
+        // Legacy highlight for themes - might need adjustment if using tokens
+        // For now, simple find text in container if tokens not sufficient
+        if(!quote) return;
+    }
+
+    function clearHighlight() {}
+
+    function copyCitation() {
+        const citation = "AGKI Project. (2026). Inscription PHI-" + "177655" + ". Retrieved from " + window.location.href;
+        navigator.clipboard.writeText(citation);
+        alert("Citation copied to clipboard!");
+    }
+    </script>
+    
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <h1><a href="../index.html" style="color:white;text-decoration:none;">AGKI Tagging Tool</a></h1>
+    </div>
+  </header>
+  <main class="page-container">
+    <a href="../index.html" class="back-link">← Back to Dashboard</a>
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+        <h2>Inscription PHI-177655</h2>
+        <div style="display:flex; gap:0.5rem;">
+            <button onclick="copyCitation()" class="button secondary" style="font-size:0.9rem; padding:0.5rem 1rem;">📜 Cite</button>
+            <a href="https://epigraphy.packhum.org/text/177655" target="_blank" class="button">View on PHI</a>
+        </div>
+    </div>
+    
+    <div class="meta-grid">
+        <div><small class="eyebrow">Provenance</small><br><a href="https://pleiades.stoa.org/places/100192" target="_blank" title="View in Pleiades">Italia (Campania)</a> &gt; <a href="https://pleiades.stoa.org/places/432981" target="_blank" title="View in Pleiades">Neapolis</a></div>
+        <div><small class="eyebrow">Date</small><br><strong> late 1st c. BC/early 1st c. AD </strong></div>
+        <div><small class="eyebrow">Completeness</small><br><span class="badge info">fragmentary</span></div>
+    </div>
+
+    <div style="display:flex; justify-content:space-between; align-items:end; margin-bottom:0.5rem;">
+        <h3>Original Text & Translation</h3>
+        <div class="trans-controls">
+            <span class="eyebrow" style="margin:0; margin-right:0.5rem;">Translation:</span>
+            <button id="btnOff" class="trans-btn active" onclick="setTranslation('none')">Off</button>
+            <button id="btnEn" class="trans-btn" onclick="setTranslation('en')">English</button>
+            <button id="btnDe" class="trans-btn" onclick="setTranslation('de')">German</button>
+        </div>
+    </div>
+
+    <div id="textViewer" class="text-viewer">
+        <div class="line-numbers">1
+
+
+
+5
+
+
+
+
+10
+
+
+
+
+15</div>
+        <div class="greek-content" id="greekText"><span class="token greek-token" data-idx="0" onmouseover="highlightToken(0)" onmouseout="clearTokenHighlight()">ρ στωνος το [---------] τ [π ρ ο]αλερ ας μο σης τ ς αυτο γυναικ ς.
+</span><span class="token greek-token" data-idx="1" onmouseover="highlightToken(1)" onmouseout="clearTokenHighlight()">μ ξουσ αν δ χ τωσαν φρ ταρχος ο χαλκολ γοι φροντιστ ς ο διοικητα λλος τις τ ς φρητρ ας τ ς ριστα ων
+</span><span class="token greek-token" data-idx="2" onmouseover="highlightToken(2)" onmouseout="clearTokenHighlight()">τ ν θυσ αν τ δε πνον περτ θεσθαι παρ τ ς τεταγμ νας μ ρας
+</span><span class="token greek-token" data-idx="3" onmouseover="highlightToken(3)" onmouseout="clearTokenHighlight()">κα[ τ] χε λια κα διακ σια δειν ρια δανειζ σθω μ [πλ] ο[ν] [π ν] ματι δειν ρια διακ σια πεντ κοντα κα τ π[ λ]ει.
+</span><span class="token greek-token" data-idx="4" onmouseover="highlightToken(4)" onmouseout="clearTokenHighlight()">μ ξουσ αν χ τω φρ ταρχος ο χαλκολ γοι φροντιστ ς ο διοικητα λλος τις τ ς φρητρ ας τ ς ριστα ων φρ τορα π ρ το των τ ν νομ των λαμβ νειν
+</span><span class="token greek-token" data-idx="5" onmouseover="highlightToken(5)" onmouseout="clearTokenHighlight()">ο [δ] π στει δοθ σεται ν δ ν δανειζ μενος διδ λλοφρ τορα ν γ ρρει ε σδιδ σθω κα ν δ ξ τ γ ρρει
+</span><span class="token greek-token" data-idx="6" onmouseover="highlightToken(6)" onmouseout="clearTokenHighlight()">καθ ς κα π ρ φρητ ρχου κα χαλκολ γων δεδογμ τισται τ τε ο κονομ α π τ ν προγεγραμμ νων γειν σθ[ω].
+</span><span class="token greek-token" data-idx="7" onmouseover="highlightToken(7)" onmouseout="clearTokenHighlight()">το ς δ χαλκο ς ο δεδανεισμ νοι καταφερ τωσαν τ βδ μ το πανθε νος μην ς σταμ νου ε ς γαρρει[ν] πληθ ουσαν
+</span><span class="token greek-token" data-idx="8" onmouseover="highlightToken(8)" onmouseout="clearTokenHighlight()">κα πιψηφιζ τω φρητρ α ο ς θ λει δαν ζε[ιν] κα ο τως τ τε λλη ο κονομ α γειν σθω καθ καστον τος.
+</span><span class="token greek-token" data-idx="9" onmouseover="highlightToken(9)" onmouseout="clearTokenHighlight()">ν τε τα ς μ ραις τα ταις τα ς δυσ ν α ς θ οντες δ[ει]πνο σιν ο αλερ μο σ διδ σθω τ κατ χρεα.
+</span><span class="token greek-token" data-idx="10" onmouseover="highlightToken(10)" onmouseout="clearTokenHighlight()">τ δ γρ[α]π[τ ν τ] τεθ ν τ προσηλωθ ν φειλ τωσαν φρ ταρχος ο χαλκολ γοι φροντιστ ς ο διοικητα μετα[πα]ραδ[ι]δ ναι το ς ε π τ ς φρητρ ας καθισταμ νοις.
+</span><span class="token greek-token" data-idx="11" onmouseover="highlightToken(11)" onmouseout="clearTokenHighlight()">ν δ τι παρ τα τα τ περ νω γεγραμμ να φρ ταρχος ο χαλκολγοι φροντιστ ς ο διοικητα ο δεδανισμ νοι λλος τις ποι σ
+</span><span class="token greek-token" data-idx="12" onmouseover="highlightToken(12)" onmouseout="clearTokenHighlight()">ποτεισ τω ερ τ ν θε ν τ ν φρητρ ων ργυ[ρ ου δειν ρια δι]ακ σια
+</span><span class="token greek-token unaligned" data-idx="13"> ο χαλκολ γοι φροντιστ ς ο διοικητα μετα[πα]ραδ[ι]δ ναι το ς ε π τ ς φρητρ ας καθισταμ νοις. ν δ τι παρ τα τα τ περ νω γεγραμμ να φρ ταρχος ο χαλκολγοι φροντιστ ς ο διοικητα ο δεδανισμ νοι λλος
+</span><span class="token greek-token unaligned" data-idx="14">τις ποι σ ποτεισ τω ερ τ ν θε ν τ ν φρητρ ων ργυ[ρ ου δειν ρια δι]ακ σια [--------------- κ]α κπραξ ς στι [--]</span></div>
+        <div id="translationCol" class="trans-col">
+            <div id="translationContent"></div>
+        </div>
+    </div>
+
+    <h3>Thematic Analysis</h3>
+    <p class="muted" style="margin-bottom:1rem;">Hover over cards to see evidence in text.</p>
+    
+        <div class="theme-card" onmouseover="highlightQuote('μ ξουσ αν δ χ τωσαν φρ ταρχος ο χαλκολ γοι φροντιστ ς ο διοικητα λλος τις')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:start;">
+                <div>
+                    <span class="tag domain-tag">Content</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">90% Conf.</span>
+                    <div class="theme-path">Content > Official and Legal Documents > Laws and Regulations</div>
+                    <div class="theme-label">Laws and Regulations</div>
+                </div>
+                <div class="ai-rationale-box">
+                    <strong>🤖 AI Rationale:</strong>
+                    <p>Der Text legt detaillierte Vorschriften für die Beamten der Phratrie (Phratriarch, Chalkologoi, Phrontistes) fest, insbesondere bezüglich ihrer Befugnisse und Pflichten.</p>
+                    <p class="evidence-quote">Evidence: "μ ξουσ αν δ χ τωσαν φρ ταρχος ο χαλκολ γοι φροντιστ ς ο διοικητα λλος τις"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('τ ν θυσ αν τ δε πνον περτ θεσθαι παρ τ ς τεταγμ νας μ ρας')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:start;">
+                <div>
+                    <span class="tag domain-tag">Content</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">90% Conf.</span>
+                    <div class="theme-path">Content > Religious and Dedicatory Texts > Sacred Laws and Rules</div>
+                    <div class="theme-label">Sacred Laws and Rules</div>
+                </div>
+                <div class="ai-rationale-box">
+                    <strong>🤖 AI Rationale:</strong>
+                    <p>Die Inschrift regelt die Durchführung religiöser Zeremonien, namentlich des Opfers (thysia) und des rituellen Mahls (deipnon), die nicht verschoben werden dürfen.</p>
+                    <p class="evidence-quote">Evidence: "τ ν θυσ αν τ δε πνον περτ θεσθαι παρ τ ς τεταγμ νας μ ρας"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('δειν ρια δανειζ σθω μ [πλ] ο[ν] [π ν] ματι δειν ρια διακ σια πεντ κοντα')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:start;">
+                <div>
+                    <span class="tag domain-tag">Content</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">85% Conf.</span>
+                    <div class="theme-path">Content > Administrative Records and Lists > Accounts and Financial Records</div>
+                    <div class="theme-label">Accounts and Financial Records</div>
+                </div>
+                <div class="ai-rationale-box">
+                    <strong>🤖 AI Rationale:</strong>
+                    <p>Es werden spezifische finanzielle Anweisungen gegeben, einschließlich der Verleihung von Geldern (in Denaren), der Zinszahlung und der Verwaltung des Kapitals.</p>
+                    <p class="evidence-quote">Evidence: "δειν ρια δανειζ σθω μ [πλ] ο[ν] [π ν] ματι δειν ρια διακ σια πεντ κοντα"</p>
+                </div>
+            </div>
+        </div>
+        
+    <h3>Entities</h3>
+    <div><span class="tag entity-tag">👤 Ariston <small>(Relative/Benefactor)</small></span><span class="tag entity-tag">👤 Valeria Mousa <small>(Benefactor/Wife)</small></span><span class="tag entity-tag">📍 Neapolis <small>(Polis)</small></span></div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PHI-149231 - AGKI</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <style>
+    .page-container { max-width: 1400px; margin: 0 auto; padding: 2rem; } /* Wider for side-by-side */
+    .back-link { display: inline-block; margin-bottom: 1rem; color: var(--primary); font-weight: 600; }
+    
+    .text-viewer { 
+        display: grid; 
+        grid-template-columns: 40px 1fr; /* Default single column */
+        gap: 2rem; 
+        font-family: "New Athena Unicode", "Gentium Plus", "Times New Roman", serif; 
+        font-size: 1.25rem; 
+        line-height: 1.6; 
+        background: var(--panel); 
+        padding: 2rem; 
+        border: 1px solid var(--border); 
+        border-radius: 4px; 
+        margin-bottom: 2rem; 
+        color: var(--text);
+        transition: all 0.3s ease;
+    }
+
+              .line-numbers { 
+
+                  text-align: right; 
+
+                  color: var(--muted); 
+
+                  font-size: 1.25rem; 
+
+                  line-height: 1.6; 
+
+                  user-select: none; 
+
+                  opacity: 0.5; 
+
+                  font-family: inherit; 
+
+                  white-space: pre; 
+
+                  padding-right: 1rem;
+
+                  border-right: 1px solid var(--border);
+
+              }
+
+              .greek-content { white-space: pre; overflow-x: auto; padding-left: 1rem; }
+
+          
+
+    
+
+          /* Tokens */
+
+          .token { cursor: pointer; border-radius: 3px; padding: 0 2px; transition: background 0.1s; white-space: pre; }
+
+          .token:hover, .token.active { background-color: rgba(193, 104, 60, 0.25); color: var(--primary); }
+
+    
+
+          /* Translation Column */
+
+          .trans-col { display: none; border-left: 1px solid var(--border); padding-left: 2rem; white-space: pre; font-style: italic; overflow-x: auto; }
+
+    
+    .trans-controls { margin-bottom: 1rem; display: flex; gap: 0.5rem; justify-content: flex-end; align-items: center; }
+    .trans-btn { background: var(--bg); border: 1px solid var(--border); padding: 0.4rem 0.8rem; cursor: pointer; color: var(--muted); font-size: 0.85rem; border-radius: 4px; }
+    .trans-btn:hover { border-color: var(--primary); color: var(--text); }
+    .trans-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
+
+    .theme-card { background: var(--panel); padding: 1.5rem; border-left: 4px solid var(--primary); margin-bottom: 1rem; border: 1px solid var(--border); border-left-width: 4px; transition: transform 0.2s; }
+    .theme-card:hover { transform: translateX(4px); box-shadow: var(--shadow); }
+    .ai-rationale-box { background: rgba(31, 167, 163, 0.08); padding: 0.75rem; border-radius: 6px; font-size: 0.9rem; color: var(--muted); max-width: 400px; }
+    .evidence-quote { border-left: 2px solid var(--accent); padding-left: 0.5rem; margin-top: 0.5rem; font-style: italic; color: var(--text); }
+    .badge.green { background: #e6f4ea; color: #137333; border-color: #137333; }
+    .badge.orange { background: #fef7e0; color: #b06000; border-color: #b06000; }
+    .badge.red { background: #fce8e6; color: #c5221f; border-color: #c5221f; }
+    .entity-tag { background: rgba(217, 123, 61, 0.1); color: var(--accent-2); margin-right: 0.5rem; margin-bottom: 0.5rem; display: inline-block; padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.9rem; border: 1px solid rgba(217, 123, 61, 0.2); text-decoration: none; }
+    .entity-tag.linked:hover { background: rgba(217, 123, 61, 0.2); text-decoration: underline; cursor: pointer; }
+  </style>
+  
+    <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    
+    const TRANSLATIONS = {"en": "<span class=\"token trans-token\" data-idx=\"0\" onmouseover=\"highlightToken(0)\" onmouseout=\"clearTokenHighlight()\">Philon son of Philon, Parmenon son of Parmenon. Good Fortune.\n</span><span class=\"token trans-token\" data-idx=\"1\" onmouseover=\"highlightToken(1)\" onmouseout=\"clearTokenHighlight()\">While Antimachos son of Philoun was priest of Asklepios,\n</span><span class=\"token trans-token\" data-idx=\"2\" onmouseover=\"highlightToken(2)\" onmouseout=\"clearTokenHighlight()\">and while the Tagoi were Earchos son of Earchos, Krateros son of Pausanias,\n</span><span class=\"token trans-token\" data-idx=\"3\" onmouseover=\"highlightToken(3)\" onmouseout=\"clearTokenHighlight()\">Stratippos son of Lakratippos, Kleolaos son of Antikrates,\n</span><span class=\"token trans-token\" data-idx=\"4\" onmouseover=\"highlightToken(4)\" onmouseout=\"clearTokenHighlight()\">Nikias son of Herakleidas, Hippokrates son of Hippokles, Eurylochos son of Protagoras:\n</span><span class=\"token trans-token\" data-idx=\"5\" onmouseover=\"highlightToken(5)\" onmouseout=\"clearTokenHighlight()\">The city of the Phalannaians granted [citizenship] to the Perrhaibians, Dolopes, Ainianes,\n</span><span class=\"token trans-token\" data-idx=\"6\" onmouseover=\"highlightToken(6)\" onmouseout=\"clearTokenHighlight()\">Achaeans, Magnetes, and to those [admitted] into the Phalannaian citizenship,\n</span><span class=\"token trans-token\" data-idx=\"7\" onmouseover=\"highlightToken(7)\" onmouseout=\"clearTokenHighlight()\">who registered and were approved according to the law of Nikanor...\n</span><span class=\"token trans-token unaligned\" data-idx=\"8\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"9\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"10\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"11\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"12\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"13\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"14\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"15\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"16\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"17\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"18\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"19\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"20\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"21\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"22\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"23\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"24\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"25\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"26\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"27\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"28\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"29\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"30\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"31\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"32\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"33\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"34\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"35\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"36\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"37\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"38\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"39\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"40\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"41\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"42\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"43\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"44\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"45\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"46\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"47\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"48\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"49\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"50\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"51\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"52\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"53\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"54\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"55\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"56\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"57\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"58\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"59\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"60\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"61\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"62\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"63\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"64\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"65\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"66\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"67\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"68\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"69\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"70\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"71\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"72\"></span>", "de": "<span class=\"token trans-token\" data-idx=\"0\" onmouseover=\"highlightToken(0)\" onmouseout=\"clearTokenHighlight()\">Philon, Sohn des Philon, Parmenon, Sohn des Parmenon. Zu gutem Glück.\n</span><span class=\"token trans-token\" data-idx=\"1\" onmouseover=\"highlightToken(1)\" onmouseout=\"clearTokenHighlight()\">Als Antimachos, Sohn des Philoun, Priester des Asklepios war,\n</span><span class=\"token trans-token\" data-idx=\"2\" onmouseover=\"highlightToken(2)\" onmouseout=\"clearTokenHighlight()\">und als Tagoi amtierten: Earchos, Sohn des Earchos, Krateros, Sohn des Pausanias,\n</span><span class=\"token trans-token\" data-idx=\"3\" onmouseover=\"highlightToken(3)\" onmouseout=\"clearTokenHighlight()\">Stratippos, Sohn des Lakratippos, Kleolaos, Sohn des Antikrates,\n</span><span class=\"token trans-token\" data-idx=\"4\" onmouseover=\"highlightToken(4)\" onmouseout=\"clearTokenHighlight()\">Nikias, Sohn des Herakleidas, Hippokrates, Sohn des Hippokles, Eurylochos, Sohn des Protagoras:\n</span><span class=\"token trans-token\" data-idx=\"5\" onmouseover=\"highlightToken(5)\" onmouseout=\"clearTokenHighlight()\">Die Stadt der Phalannaier verlieh den Perrhaibern, Dolopern, Ainianen,\n</span><span class=\"token trans-token\" data-idx=\"6\" onmouseover=\"highlightToken(6)\" onmouseout=\"clearTokenHighlight()\">Achäern, Magneten und denjenigen [aufgenommen] in das phalannäische Bürgerrecht,\n</span><span class=\"token trans-token\" data-idx=\"7\" onmouseover=\"highlightToken(7)\" onmouseout=\"clearTokenHighlight()\">die sich eingeschrieben haben und nach dem Gesetz des Nikanor geprüft wurden...\n</span><span class=\"token trans-token unaligned\" data-idx=\"8\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"9\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"10\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"11\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"12\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"13\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"14\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"15\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"16\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"17\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"18\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"19\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"20\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"21\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"22\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"23\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"24\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"25\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"26\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"27\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"28\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"29\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"30\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"31\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"32\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"33\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"34\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"35\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"36\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"37\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"38\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"39\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"40\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"41\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"42\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"43\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"44\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"45\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"46\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"47\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"48\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"49\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"50\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"51\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"52\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"53\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"54\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"55\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"56\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"57\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"58\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"59\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"60\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"61\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"62\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"63\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"64\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"65\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"66\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"67\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"68\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"69\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"70\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"71\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"72\"></span>"};
+
+    function setTranslation(lang) {
+        const container = document.getElementById('translationCol');
+        const content = document.getElementById('translationContent');
+        const viewer = document.getElementById('textViewer');
+        const btnEn = document.getElementById('btnEn');
+        const btnDe = document.getElementById('btnDe');
+        const btnOff = document.getElementById('btnOff');
+
+        // Reset Buttons
+        [btnEn, btnDe, btnOff].forEach(b => b.classList.remove('active'));
+
+        if(lang === 'none') {
+            container.style.display = 'none';
+            viewer.style.gridTemplateColumns = '40px 1fr';
+            btnOff.classList.add('active');
+        } else {
+            container.style.display = 'block';
+            viewer.style.gridTemplateColumns = '40px 1fr 1fr';
+            content.innerHTML = TRANSLATIONS[lang];
+            if(lang === 'en') btnEn.classList.add('active');
+            if(lang === 'de') btnDe.classList.add('active');
+        }
+    }
+
+    function highlightToken(idx) {
+        document.querySelectorAll(`.token[data-idx="${idx}"]`).forEach(el => el.classList.add('active'));
+    }
+
+    function clearTokenHighlight() {
+        document.querySelectorAll('.token').forEach(el => el.classList.remove('active'));
+    }
+
+    function highlightQuote(quote) {
+        // Legacy highlight for themes - might need adjustment if using tokens
+        // For now, simple find text in container if tokens not sufficient
+        if(!quote) return;
+    }
+
+    function clearHighlight() {}
+
+    function copyCitation() {
+        const citation = "AGKI Project. (2026). Inscription PHI-" + "149231" + ". Retrieved from " + window.location.href;
+        navigator.clipboard.writeText(citation);
+        alert("Citation copied to clipboard!");
+    }
+    </script>
+    
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <h1><a href="../index.html" style="color:white;text-decoration:none;">AGKI Tagging Tool</a></h1>
+    </div>
+  </header>
+  <main class="page-container">
+    <a href="../index.html" class="back-link">← Back to Dashboard</a>
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+        <h2>Inscription PHI-149231</h2>
+        <div style="display:flex; gap:0.5rem;">
+            <button onclick="copyCitation()" class="button secondary" style="font-size:0.9rem; padding:0.5rem 1rem;">📜 Cite</button>
+            <a href="https://epigraphy.packhum.org/text/149231" target="_blank" class="button">View on PHI</a>
+        </div>
+    </div>
+    
+    <div class="meta-grid">
+        <div><small class="eyebrow">Provenance</small><br><a href="https://pleiades.stoa.org/places/541138" target="_blank" title="View in Pleiades">Thessaly</a> &gt; <a href="https://pleiades.stoa.org/places/541016" target="_blank" title="View in Pleiades">Phalanna</a> &gt; Ampelonas-Kazaklar</div>
+        <div><small class="eyebrow">Date</small><br><strong> cf. Corrigenda p. XVI</strong></div>
+        <div><small class="eyebrow">Completeness</small><br><span class="badge info">fragmentary</span></div>
+    </div>
+
+    <div style="display:flex; justify-content:space-between; align-items:end; margin-bottom:0.5rem;">
+        <h3>Original Text & Translation</h3>
+        <div class="trans-controls">
+            <span class="eyebrow" style="margin:0; margin-right:0.5rem;">Translation:</span>
+            <button id="btnOff" class="trans-btn active" onclick="setTranslation('none')">Off</button>
+            <button id="btnEn" class="trans-btn" onclick="setTranslation('en')">English</button>
+            <button id="btnDe" class="trans-btn" onclick="setTranslation('de')">German</button>
+        </div>
+    </div>
+
+    <div id="textViewer" class="text-viewer">
+        <div class="line-numbers">1
+
+
+
+5
+
+
+
+
+10
+
+
+
+
+15
+
+
+
+
+20
+
+
+
+
+25
+
+
+
+
+30
+
+
+
+
+35
+
+
+
+
+40
+
+
+
+
+45
+
+
+
+
+50
+
+
+
+
+55
+
+
+
+
+60
+
+
+
+
+65
+
+
+
+
+70
+
+
+</div>
+        <div class="greek-content" id="greekText"><span class="token greek-token" data-idx="0" onmouseover="highlightToken(0)" onmouseout="clearTokenHighlight()">φ λουν φ λουνος παρμεν ων παρμεν ωνος. γαθ τ χα
+</span><span class="token greek-token" data-idx="1" onmouseover="highlightToken(1)" onmouseout="clearTokenHighlight()">λειτορε οντος το σκλαπιο ντιμ χοι φιλιουνε οι
+</span><span class="token greek-token" data-idx="2" onmouseover="highlightToken(2)" onmouseout="clearTokenHighlight()">ταγευ ντουν ε ρχοι ε αρχε οι κρατερα οι παυσανια οι
+</span><span class="token greek-token" data-idx="3" onmouseover="highlightToken(3)" onmouseout="clearTokenHighlight()">στρατ πποι λακρατιππε οι κλεολ οι ντικρατε οι
+</span><span class="token greek-token" data-idx="4" onmouseover="highlightToken(4)" onmouseout="clearTokenHighlight()">νικ ας ρακλειδα οι πποκρ τεις πποκλεα οι ε ρυλ χοι προυταγορα οι
+</span><span class="token greek-token" data-idx="5" onmouseover="highlightToken(5)" onmouseout="clearTokenHighlight()">φαλαννα ουν π λις δουκε περραιβο ς κα δολ πεσσι κα α νι νεσσι
+</span><span class="token greek-token" data-idx="6" onmouseover="highlightToken(6)" onmouseout="clearTokenHighlight()">κα χαιο ς κα μαγνε τεσσι κα το ς ς τ ν φαλανναι ν πολιτε αν
+</span><span class="token greek-token" data-idx="7" onmouseover="highlightToken(7)" onmouseout="clearTokenHighlight()">το ς ποκγραψαμ νοις κα δοκιμασθ ντεσσι κ τ [τ] ν ν μον νικ νορος
+</span><span class="token greek-token unaligned" data-idx="8"> πποκρ τεις πποκλεα οι 
+</span><span class="token greek-token unaligned" data-idx="9">ε ρυλ χοι προυταγορα οι
+</span><span class="token greek-token unaligned" data-idx="10">φαλαννα ουν π λις δουκε περραιβο ς κα δολ πεσσι κα α νι νεσσι κα χαιο ς κα μαγνε τεσσι κα το ς
+</span><span class="token greek-token unaligned" data-idx="11"> ς τ ν φαλανναι ν πολιτε αν το ς ποκγραψαμ νοις
+</span><span class="token greek-token unaligned" data-idx="12">κα δοκιμασθ ντεσσι κ τ
+</span><span class="token greek-token unaligned" data-idx="13">[τ] ν ν μον νικ νορος χε μα σσ[τυ]χου χα ρουνος διοδο ρου
+</span><span class="token greek-token unaligned" data-idx="14">[ πολ]λοδο ροι ππον κου κα χα
+</span><span class="token greek-token unaligned" data-idx="15">[---] αι [--]ατρ χου πολλο[δο ροι] πιγ νου θερσιτα ου 
+</span><span class="token greek-token unaligned" data-idx="16">[---] χαδα οι δα ου σουσιστρα[ε] ου ντ σκουνι δαυχνα [οι --]α γγ λοι κλεοδ μου
+</span><span class="token greek-token unaligned" data-idx="17">[---]τα κα πολ μουνι σουπ [τροι φιλο]ξ νου ε ρχοι ξενοκλ α
+</span><span class="token greek-token unaligned" data-idx="18">[-- ρ]χοι σουπ τρου φιλουτα [ου] 
+</span><span class="token greek-token unaligned" data-idx="19">[---] πασιξ νοι πετθαλ[ο ---]
+</span><span class="token greek-token unaligned" data-idx="20">[- κλ] ουνι κλε ρχοι πυρρ[---]
+</span><span class="token greek-token unaligned" data-idx="21">[-- 0]οσειδ ππου παυσαν[ια ου] 
+</span><span class="token greek-token unaligned" data-idx="22">[-- π]ποκρατε ου ε ρυμ [χου]
+</span><span class="token greek-token unaligned" data-idx="23">[---] μελ ντα τιμοξε[ν---]
+</span><span class="token greek-token unaligned" data-idx="24">[-------]ου μελ [ντα --]
+</span><span class="token greek-token unaligned" data-idx="25">[σ τ]υρο[ς]
+</span><span class="token greek-token unaligned" data-idx="26">φιλ πποι 
+</span><span class="token greek-token unaligned" data-idx="27">ε δαμος χνα οι 
+</span><span class="token greek-token unaligned" data-idx="28"> στοκρ τεις [ν]τ πποι 
+</span><span class="token greek-token unaligned" data-idx="29">σ φουν
+</span><span class="token greek-token unaligned" data-idx="30">κλ ουνος 
+</span><span class="token greek-token unaligned" data-idx="31">μελοποι ς
+</span><span class="token greek-token unaligned" data-idx="32">πολυκλ αιος 
+</span><span class="token greek-token unaligned" data-idx="33"> πολλοδο ρου
+</span><span class="token greek-token unaligned" data-idx="34"> γ θουνος 
+</span><span class="token greek-token unaligned" data-idx="35">νικανδρδας νικ [α] 
+</span><span class="token greek-token unaligned" data-idx="36"> γ θ[ουν]
+</span><span class="token greek-token unaligned" data-idx="37"> γ θ[ουνος]
+</span><span class="token greek-token unaligned" data-idx="38">[-]δα [--]
+</span><span class="token greek-token unaligned" data-idx="39">[-]αο-[--] 0[----]
+</span><span class="token greek-token unaligned" data-idx="40">α [---] 0[----]
+</span><span class="token greek-token unaligned" data-idx="41">μιις[---]
+</span><span class="token greek-token unaligned" data-idx="42">ταρο λα 
+</span><span class="token greek-token unaligned" data-idx="43">τηλ φου 
+</span><span class="token greek-token unaligned" data-idx="44">δαμαρμ νου
+</span><span class="token greek-token unaligned" data-idx="45">κα ντιπ τρου
+</span><span class="token greek-token unaligned" data-idx="46"> ναυσικκα οις 
+</span><span class="token greek-token unaligned" data-idx="47"> στοκρ τει
+</span><span class="token greek-token unaligned" data-idx="48">πειθολ οι 
+</span><span class="token greek-token unaligned" data-idx="49"> ρμ α
+</span><span class="token greek-token unaligned" data-idx="50"> ρακλειδα ου 
+</span><span class="token greek-token unaligned" data-idx="51">χρισ μου
+</span><span class="token greek-token unaligned" data-idx="52">διονν σοι 
+</span><span class="token greek-token unaligned" data-idx="53">π μπτου
+</span><span class="token greek-token unaligned" data-idx="54"> κ οι 
+</span><span class="token greek-token unaligned" data-idx="55">θρασ λαος
+</span><span class="token greek-token unaligned" data-idx="56">σιμ λου 
+</span><span class="token greek-token unaligned" data-idx="57">λιμ ναρχος
+</span><span class="token greek-token unaligned" data-idx="58"> περβ οι 
+</span><span class="token greek-token unaligned" data-idx="59">ε δαμος
+</span><span class="token greek-token unaligned" data-idx="60">πολυστρ τοι 
+</span><span class="token greek-token unaligned" data-idx="61">ε ρ ας
+</span><span class="token greek-token unaligned" data-idx="62"> θαναγ ραιος 
+</span><span class="token greek-token unaligned" data-idx="63">[σ] τυρος
+</span><span class="token greek-token unaligned" data-idx="64">λουσ νδροι 
+</span><span class="token greek-token unaligned" data-idx="65">παρμεν ουν
+</span><span class="token greek-token unaligned" data-idx="66">ε ρχοι 
+</span><span class="token greek-token unaligned" data-idx="67"> ντ πατρος νικ δαιος 
+</span><span class="token greek-token unaligned" data-idx="68">νικ νουρ
+</span><span class="token greek-token unaligned" data-idx="69">ε τ μοι 
+</span><span class="token greek-token unaligned" data-idx="70">θ λουν
+</span><span class="token greek-token unaligned" data-idx="71">μεν πποι 
+</span><span class="token greek-token unaligned" data-idx="72"> ονιι [-]</span></div>
+        <div id="translationCol" class="trans-col">
+            <div id="translationContent"></div>
+        </div>
+    </div>
+
+    <h3>Thematic Analysis</h3>
+    <p class="muted" style="margin-bottom:1rem;">Hover over cards to see evidence in text.</p>
+    
+        <div class="theme-card" onmouseover="highlightQuote('φαλαννα ουν π λις δουκε ... πολιτε αν')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:start;">
+                <div>
+                    <span class="tag domain-tag">Official and Legal Documents</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    <div class="theme-path">Official and Legal Documents > Decrees</div>
+                    <div class="theme-label">Decrees</div>
+                </div>
+                <div class="ai-rationale-box">
+                    <strong>🤖 AI Rationale:</strong>
+                    <p>Der Text ist ein formeller Beschluss der Stadt Phalanna, der verschiedenen Gruppen und Einzelpersonen das Bürgerrecht (politeia) verleiht.</p>
+                    <p class="evidence-quote">Evidence: "φαλαννα ουν π λις δουκε ... πολιτε αν"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('ταγευ ντουν ... το ς ποκγραψαμ νοις')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:start;">
+                <div>
+                    <span class="tag domain-tag">Administrative Records and Lists</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">90% Conf.</span>
+                    <div class="theme-path">Administrative Records and Lists > Lists of Officials or Citizens</div>
+                    <div class="theme-label">Lists of Officials or Citizens</div>
+                </div>
+                <div class="ai-rationale-box">
+                    <strong>🤖 AI Rationale:</strong>
+                    <p>Die Inschrift listet namentlich die amtierenden Magistrate (Tagoi) sowie eine lange Liste von Personen auf, die das Bürgerrecht erhalten.</p>
+                    <p class="evidence-quote">Evidence: "ταγευ ντουν ... το ς ποκγραψαμ νοις"</p>
+                </div>
+            </div>
+        </div>
+        
+    <h3>Entities</h3>
+    <div><span class="tag entity-tag">👤 Antimachos Philouneios <small>(Priest of Asklepios)</small></span><span class="tag entity-tag">👤 Earchos Earcheios <small>(Tagos (Magistrate))</small></span><span class="tag entity-tag">👤 Krateros Pausaniaios <small>(Tagos (Magistrate))</small></span><span class="tag entity-tag">👤 Nikanor <small>(Legislator/Official)</small></span><span class="tag entity-tag">📍 Phalanna <small>(Polis)</small></span><span class="tag entity-tag">📍 Perrhaibia <small>(Region/Ethnos)</small></span><span class="tag entity-tag">📍 Thessaly <small>(Region)</small></span></div>
+  </main>
+</body>
+</html>

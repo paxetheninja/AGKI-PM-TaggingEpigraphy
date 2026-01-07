@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PHI-177697 - AGKI</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <style>
+    /* Custom Scrollbar Styling */
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+        background: rgba(0,0,0,0.05); 
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #ccc; 
+        border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #aaa; 
+    }
+
+    .page-container { max-width: 1400px; margin: 0 auto; padding: 2rem; }
+    .back-link { display: inline-block; margin-bottom: 1rem; color: var(--primary); font-weight: 600; }
+    
+    /* Original View Styles (Line by Line) */
+    .text-viewer-original { 
+        display: grid; 
+        grid-template-columns: 40px 1fr; 
+        gap: 2rem; 
+        font-family: "New Athena Unicode", "Gentium Plus", "Times New Roman", serif; 
+        font-size: 1.25rem; 
+        line-height: 1.6; 
+        background: var(--panel); 
+        padding: 2rem; 
+        border: 1px solid var(--border); 
+        border-radius: 4px; 
+        margin-bottom: 2rem; 
+        color: var(--text);
+    }
+
+    .line-numbers { 
+        text-align: right; 
+        color: var(--muted); 
+        font-size: 1.25rem; 
+        line-height: 1.6; 
+        user-select: none; 
+        opacity: 0.5; 
+        font-family: inherit; 
+        white-space: pre; 
+        padding-right: 1rem;
+        border-right: 1px solid var(--border);
+    }
+
+    .greek-content { 
+        white-space: pre-wrap; /* Better than scrollbar: wrap lines nicely */
+        word-break: break-word;
+        padding-left: 1rem; 
+    }
+
+    /* Fluent Comparison View Styles */
+    .comparison-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: 4px;
+        margin-bottom: 2rem;
+        padding: 2rem;
+    }
+    
+    .fluent-col {
+        line-height: 1.8;
+        font-size: 1.15rem;
+    }
+
+    .fluent-col-header {
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--muted);
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid var(--border);
+    }
+
+    .fluent-greek {
+        font-family: "New Athena Unicode", "Gentium Plus", "Times New Roman", serif; 
+        font-size: 1.25rem;
+        color: var(--text);
+    }
+
+    .fluent-trans {
+        font-family: system-ui, -apple-system, sans-serif;
+        color: var(--text);
+    }
+
+    .fluent-segment {
+        border-radius: 3px;
+        transition: background-color 0.2s, color 0.1s;
+        cursor: pointer;
+    }
+    
+    .fluent-segment:hover, .active-segment {
+        background-color: rgba(217, 123, 61, 0.15); /* Accent color tint */
+        color: var(--primary);
+    }
+
+    .trans-controls { margin-bottom: 1rem; display: flex; gap: 0.5rem; justify-content: flex-end; align-items: center; }
+    .trans-btn { background: var(--bg); border: 1px solid var(--border); padding: 0.4rem 0.8rem; cursor: pointer; color: var(--muted); font-size: 0.85rem; border-radius: 4px; }
+    .trans-btn:hover { border-color: var(--primary); color: var(--text); }
+    .trans-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
+
+    .theme-card { background: var(--panel); padding: 1rem 1.5rem; border-left: 4px solid var(--primary); margin-bottom: 0.75rem; border: 1px solid var(--border); border-left-width: 4px; }
+    .ai-analysis-box { background: rgba(31, 167, 163, 0.05); padding: 2rem; border-radius: 8px; border: 1px solid var(--border); margin-top: 2rem; }
+    .evidence-box { max-width: 500px; text-align: right; }
+    .evidence-quote { font-size: 0.85rem; font-style: italic; color: var(--muted); margin: 0; }
+    .badge.green { background: #e6f4ea; color: #137333; border-color: #137333; }
+    .badge.orange { background: #fef7e0; color: #b06000; border-color: #b06000; }
+    .badge.red { background: #fce8e6; color: #c5221f; border-color: #c5221f; }
+    .entity-tag { background: rgba(217, 123, 61, 0.1); color: var(--accent-2); margin-right: 0.5rem; margin-bottom: 0.5rem; display: inline-block; padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.9rem; border: 1px solid rgba(217, 123, 61, 0.2); }
+  </style>
+  
+    <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    
+    const ALIGNMENTS = {"en": [{"greek": "τεττ αι κ σται ερε αι τ[ο ------]\nτ ν γυναικ ν ο κου δι β ου ψηφ[ σματα].", "translation": "Decrees for Tettia Casta, priestess for life of the women's house [of the Emperors?]."}, {"greek": "\n π π των κα σαρος σεβαστο υ ο δομιτι[ανο κα γα ου]\nο αλερ ου φ στου ιδ ληναι νος γραφ[ομ νων παρ σαν]", "translation": "In the consulship of Caesar Augustus' son Domitian and Gaius Valerius Festus, on the Ides of Lenaion, at the drafting were present"}, {"greek": "\nλο κιος φρο γι κορν λιος κερι λις ο νιος [---] ", "translation": "Lucius Frugi Cornelius Cerialis Vunius [...]."}, {"greek": "\nπερ ο προσαν νενκεν το ς ν προσκλ τωι τρανκου λλιος ο φος ντ ρχων περ το [του το πρ γματος ο τως ε ηρ στησεν]", "translation": "Concerning the matter which Tranquillius Rufus, the vice-archon, reported to those in the convocation, regarding this matter he moved as follows:"}, {"greek": " τ ν γν μην π ντων μολογο ντας κοιν ν ε ναι λ πην τ ν πρ μοιρον τεττ ας κ [στας τελευτ ν γυναικ ς φιλοτιμησαμ]νης", "translation": "expressing the opinion of all, acknowledging that the premature death of Tettia Casta is a common grief—a woman who acted with munificence"}, {"greek": " ε ς τε τ ν τ ν π ντων ε σ βειαν κα ε ς τ ν τ ς πατρ δος ε νοιαν ργυρ ν νδρι ντων νε[κλε πτους ναστ σεις το ς θεο ς ποιη]σαμ νης", "translation": "regarding piety towards all and goodwill towards her fatherland, having made [perpetual dedications] of silver statues [to the gods],"}, {"greek": " πρ ς τ μεγαλοψ χως ε εργετ σαι τ ν π λιν τιμ ν νδρι ντι κα σπ δι γγ[εγραμμ νηι τεττ αν κ σταν κα θ πτειν α τ ν]", "translation": "in addition to her magnanimous benefaction of the city, to honor Tettia Casta with a statue and an inscribed shield, and to bury her"}, {"greek": "\nδαπ ν μ ν δημοσ αι πιμελε δ τ ν προσηκ ντων ο ς δυσχερ ς στιν παραμυθ σασθαι", "translation": "at public expense, under the care of her relatives for whom it is hard to find consolation;"}, {"greek": " λι[βανωτο λ τρας - κα τ]πον ε ς κηδε αν δ δοσθαι κα ε ς τα τα ξοδι ζειν.", "translation": "[and that X pounds of frankincense] and a place for burial be granted, and to make expenditures for these things."}, {"greek": " π π των κα σαρος σεβαστο [υ ο δομιτιανο κα γ ο αλερ ου φ στου - πρ καλ]\n ουλ ων", "translation": "In the consulship of Caesar Augustus Domitian and Gaius Valerius Festus, before the Kalends of July,"}, {"greek": " γραφομ νων παρ σαν γρ νιος ο φος λο κιος πο δης ποππα [ος σεου ρος] \n", "translation": "when the decree was being drafted, there were present Granius Rufus, Lucius Podes, Poppaeus Severus."}, {"greek": "περ ο προσαν νενκεν το ς ν προσκλ τωι φο λβιος πρ βος ρχων", "translation": "Concerning the matter which Fulvius Probus, the archon, referred to those in the summoned council,"}, {"greek": " περ το του το πρ[ γματος ο τως ε ηρ στησεν --- τ ν]\nδημοσ αν δαπ νην ν βουλ συμπαθο σα ψηφ σατο τεττ κ στ υ[---", "translation": "concerning this matter it was thus resolved: the Council, sympathizing, decreed the public expense [for the funeral of] Tettius Castus..."}, {"greek": " κα στεφαν σαι]\nχρυσ ι στεφ ν μαρτυρο ντας α τ ς τ ι β ωι δημοσ ωι πα [νωι ----]\n", "translation": "and to crown [him] with a golden crown, bearing witness to [his] life with public praise."}, {"greek": " π π των λουκ ου φλαου ου φιμβρ α κα τειλ ου βαρβ ρου [---", "translation": "In the consulship of Lucius Flavius Fimbria and Atilius Barbarus..."}, {"greek": " γραφομ νων παρ σαν]\n ρ στων β κκου ου λλιος ρριαν ς ο ρριος λειβ[ερ λις] \n", "translation": "[when the decree was being drafted, there were present] Ariston son of Bakkos, Vellius Arrianus, Valerius Liberalis."}, {"greek": "[περ] ο προσαν νενκεν το ς ν προσκλ τωι ο λιος λειουεια[ν] [ς ντ ρχων", "translation": "Concerning the matter which Julius Livianus, the vice-archon, referred to those in the summoned council,"}, {"greek": " περ το του το πρ γματος ο τως ε ηρ στησεν]", "translation": "[concerning this matter it was thus resolved:]"}, {"greek": " [τεττ] τ πον ε ς κηδε αν π το τε χους ν μετ πωι μ χρι [-----]\n[----]κοντα ξ ο κοδομε ν πιτρ πειν", "translation": "[to grant to Tettius] a place for burial by the wall in the frontage up to... sixty-six(?), to permit building,"}, {"greek": " κα π τ ς στ[ λης ε ς πανταχ σε λλωι μηδεν κηδε αν]\n[ π] τ ι α τ τ π δ δοσθαι.\n", "translation": "and from the stele in every direction to no one else shall a burial place be given in the same spot."}, {"greek": "[--] δομ τιοι λ πιδ[ος κα τ ι γλυκυτ]τηι μητρ κα λ δομ[ τιος τ ι αυτο γυναικ].", "translation": "[The] Domitii, Lepidus [and...], and to their sweetest mother, and Lucius Domitius [to his own wife]."}], "de": [{"greek": "τεττ αι κ σται ερε αι τ[ο ------]\nτ ν γυναικ ν ο κου δι β ου ψηφ[ σματα].", "translation": "Für Tettia Casta, die Priesterin des [Hauses?] der Frauen auf Lebenszeit, Beschlüsse."}, {"greek": "\n π π των κα σαρος σεβαστο υ ο δομιτι[ανο κα γα ου]\nο αλερ ου φ στου ιδ ληναι νος γραφ[ομ νων παρ σαν]", "translation": "Unter den Konsuln Caesar Augustus Domitianus [und Gaius] Valerius Festus, an den Iden des Lenaion, als geschrieben [wurden, waren anwesend:]"}, {"greek": "\nλο κιος φρο γι κορν λιος κερι λις ο νιος [---] ", "translation": "Lucius Frugi, Cornelius Cerialis, Vinius [...]."}, {"greek": "\nπερ ο προσαν νενκεν το ς ν προσκλ τωι τρανκου λλιος ο φος ντ ρχων περ το [του το πρ γματος ο τως ε ηρ στησεν] τ ν γν μην", "translation": "Bezüglich dessen, was Tranquillius Rufus, der Antiarchon, denen im Rat vortrug, [fragte er bezüglich dieser Sache so] nach der Meinung."}, {"greek": " π ντων μολογο ντας κοιν ν ε ναι λ πην τ ν πρ μοιρον τεττ ας κ [στας τελευτ ν γυναικ ς φιλοτιμησαμ]νης", "translation": "Da alle übereinstimmten, dass der vorzeitige [Tod] der Tettia Ca[sta] ein gemeinsamer Schmerz sei, [einer Frau, die sich eifrig zeigte]"}, {"greek": " ε ς τε τ ν τ ν π ντων ε σ βειαν κα ε ς τ ν τ ς πατρ δος ε νοιαν", "translation": "sowohl hinsichtlich der Frömmigkeit aller als auch hinsichtlich des Wohlwollens gegenüber dem Vaterland,"}, {"greek": " ργυρ ν νδρι ντων νε[κλε πτους ναστ σεις το ς θεο ς ποιη]σαμ νης πρ ς τ μεγαλοψ χως ε εργετ σαι τ ν π λιν", "translation": "[und die] un[vergängliche Aufstellungen] silberner Statuen [für die Götter mach]te, um die Stadt großherzig zu beglücken:"}, {"greek": " τιμ ν νδρι ντι κα σπ δι γγ[εγραμμ νηι τεττ αν κ σταν κα θ πτειν α τ ν]", "translation": "[Tettia Casta] mit einer Statue und einem [beschrifteten] Schild zu ehren [und sie zu bestatten]"}, {"greek": "\nδαπ ν μ ν δημοσ αι πιμελε δ τ ν προσηκ ντων ο ς δυσχερ ς στιν παραμυθ σασθαι", "translation": "auf öffentliche Kosten, unter der Fürsorge der Verwandten, für die es schwer ist, Trost zu finden,"}, {"greek": " λι[βανωτο λ τρας - κα τ]πον ε ς κηδε αν δ δοσθαι κα ε ς τα τα ξοδι ζειν.", "translation": "[X Pfund] Wei[hrauch und einen O]rt für das Begräbnis zu geben und für diese Dinge Geld auszugeben."}]};
+
+    function setTranslation(lang) {
+        const btnEn = document.getElementById('btnEn');
+        const btnDe = document.getElementById('btnDe');
+        const btnOff = document.getElementById('btnOff');
+        
+        const originalView = document.getElementById('original-view');
+        const comparisonView = document.getElementById('comparison-view');
+        
+        const greekCol = document.getElementById('fluent-greek');
+        const transCol = document.getElementById('fluent-trans');
+
+        // Reset Buttons
+        [btnEn, btnDe, btnOff].forEach(b => b.classList.remove('active'));
+
+        if(lang === 'none') {
+            // Show Original Line-by-Line View
+            originalView.style.display = 'grid';
+            comparisonView.style.display = 'none';
+            btnOff.classList.add('active');
+        } else {
+            // Show Comparison Side-by-Side View
+            originalView.style.display = 'none';
+            comparisonView.style.display = 'grid';
+            
+            if(lang === 'en') btnEn.classList.add('active');
+            if(lang === 'de') btnDe.classList.add('active');
+            
+            // Render Fluent Columns
+            const data = ALIGNMENTS[lang] || [];
+            let greekHtml = '';
+            let transHtml = '';
+            
+            if (data.length === 0) {
+                greekHtml = '<p class="muted">No alignment data.</p>';
+                transHtml = '<p class="muted">No alignment data.</p>';
+            } else {
+                data.forEach((row, index) => {
+                    // Create interactive spans for fluent reading
+                    greekHtml += `<span class="fluent-segment" data-seg-id="${index}" onmouseover="highlightSegment(${index})" onmouseout="clearHighlightSegment()">${row.greek} </span>`;
+                    transHtml += `<span class="fluent-segment" data-seg-id="${index}" onmouseover="highlightSegment(${index})" onmouseout="clearHighlightSegment()">${row.translation} </span>`;
+                });
+            }
+            greekCol.innerHTML = greekHtml;
+            transCol.innerHTML = transHtml;
+        }
+    }
+
+    function highlightSegment(id) {
+        document.querySelectorAll(`.fluent-segment[data-seg-id="${id}"]`).forEach(el => el.classList.add('active-segment'));
+    }
+
+    function clearHighlightSegment() {
+        document.querySelectorAll('.fluent-segment').forEach(el => el.classList.remove('active-segment'));
+    }
+
+    function copyCitation() {
+        const citation = "AGKI Project. (2026). Inscription PHI-" + "177697" + ". Retrieved from " + window.location.href;
+        navigator.clipboard.writeText(citation);
+        alert("Citation copied to clipboard!");
+    }
+    </script>
+    
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <h1><a href="../index.html" style="color:white;text-decoration:none;">AGKI Tagging Tool</a></h1>
+    </div>
+  </header>
+  <main class="page-container">
+    <a href="../index.html" class="back-link">← Back to Dashboard</a>
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+        <h2>Inscription PHI-177697</h2>
+        <div style="display:flex; gap:0.5rem;">
+            <button onclick="copyCitation()" class="button secondary" style="font-size:0.9rem; padding:0.5rem 1rem;">📜 Cite</button>
+            <a href="https://epigraphy.packhum.org/text/177697" target="_blank" class="button">View on PHI</a>
+        </div>
+    </div>
+    
+    <div class="meta-grid">
+        <div><small class="eyebrow">Provenance</small><br><a href="https://pleiades.stoa.org/places/432754" target="_blank" title="View in Pleiades">Italia (Campania)</a> &gt; <a href="https://pleiades.stoa.org/places/432981" target="_blank" title="View in Pleiades">Neapolis</a></div>
+        <div><small class="eyebrow">Date</small><br><strong> 71 AD </strong></div>
+        <div><small class="eyebrow">Completeness</small><br><span class="badge info">fragmentary</span></div>
+    </div>
+
+    <div style="display:flex; justify-content:space-between; align-items:end; margin-bottom:0.5rem;">
+        <h3>Original Text & Translation</h3>
+        <div class="trans-controls">
+            <span class="eyebrow" style="margin:0; margin-right:0.5rem;">Translation:</span>
+            <button id="btnOff" class="trans-btn active" onclick="setTranslation('none')">Original (Lines)</button>
+            <button id="btnEn" class="trans-btn" onclick="setTranslation('en')">English (Compare)</button>
+            <button id="btnDe" class="trans-btn" onclick="setTranslation('de')">German (Compare)</button>
+        </div>
+    </div>
+
+    <!-- Original Line-by-Line View -->
+    <div id="original-view" class="text-viewer-original">
+        <div class="line-numbers">1
+
+
+
+5
+
+
+
+
+10
+
+
+
+
+15
+
+</div>
+        <div class="greek-content">τεττ αι κ σται ερε αι τ[ο ------]
+τ ν γυναικ ν ο κου δι β ου ψηφ[ σματα].
+ π π των κα σαρος σεβαστο υ ο δομιτι[ανο κα γα ου]
+ο αλερ ου φ στου ιδ ληναι νος γραφ[ομ νων παρ σαν]
+λο κιος φρο γι κορν λιος κερι λις ο νιος [---] 
+περ ο προσαν νενκεν το ς ν προσκλ τωι τρανκου λλιος ο φος ντ ρχων περ το [του το πρ γματος ο τως ε ηρ στησεν] τ ν γν μην π ντων μολογο ντας κοιν ν ε ναι λ πην τ ν πρ μοιρον τεττ ας κ [στας τελευτ ν γυναικ ς φιλοτιμησαμ]νης ε ς τε τ ν τ ν π ντων ε σ βειαν κα ε ς τ ν τ ς πατρ δος ε νοιαν ργυρ ν νδρι ντων νε[κλε πτους ναστ σεις το ς θεο ς ποιη]σαμ νης πρ ς τ μεγαλοψ χως ε εργετ σαι τ ν π λιν τιμ ν νδρι ντι κα σπ δι γγ[εγραμμ νηι τεττ αν κ σταν κα θ πτειν α τ ν]
+δαπ ν μ ν δημοσ αι πιμελε δ τ ν προσηκ ντων ο ς δυσχερ ς στιν παραμυθ σασθαι λι[βανωτο λ τρας - κα τ]πον ε ς κηδε αν δ δοσθαι κα ε ς τα τα ξοδι ζειν. π π των κα σαρος σεβαστο [υ ο δομιτιανο κα γ ο αλερ ου φ στου - πρ καλ]
+ ουλ ων γραφομ νων παρ σαν γρ νιος ο φος λο κιος πο δης ποππα [ος σεου ρος] 
+περ ο προσαν νενκεν το ς ν προσκλ τωι φο λβιος πρ βος ρχων περ το του το πρ[ γματος ο τως ε ηρ στησεν --- τ ν]
+δημοσ αν δαπ νην ν βουλ συμπαθο σα ψηφ σατο τεττ κ στ υ[--- κα στεφαν σαι]
+χρυσ ι στεφ ν μαρτυρο ντας α τ ς τ ι β ωι δημοσ ωι πα [νωι ----]
+ π π των λουκ ου φλαου ου φιμβρ α κα τειλ ου βαρβ ρου [--- γραφομ νων παρ σαν]
+ ρ στων β κκου ου λλιος ρριαν ς ο ρριος λειβ[ερ λις] 
+[περ] ο προσαν νενκεν το ς ν προσκλ τωι ο λιος λειουεια[ν] [ς ντ ρχων περ το του το πρ γματος ο τως ε ηρ στησεν] [τεττ] τ πον ε ς κηδε αν π το τε χους ν μετ πωι μ χρι [-----]
+[----]κοντα ξ ο κοδομε ν πιτρ πειν κα π τ ς στ[ λης ε ς πανταχ σε λλωι μηδεν κηδε αν]
+[ π] τ ι α τ τ π δ δοσθαι.
+[--] δομ τιοι λ πιδ[ος κα τ ι γλυκυτ]τηι μητρ κα λ δομ[ τιος τ ι αυτο γυναικ].</div>
+    </div>
+
+    <!-- Fluent Comparison View -->
+    <div id="comparison-view" class="comparison-container" style="display:none;">
+        <div class="fluent-col">
+            <div class="fluent-col-header">Greek Text</div>
+            <div id="fluent-greek" class="fluent-greek"></div>
+        </div>
+        <div class="fluent-col">
+            <div class="fluent-col-header">Translation</div>
+            <div id="fluent-trans" class="fluent-trans"></div>
+        </div>
+    </div>
+
+    <h3>Thematic Analysis</h3>
+    
+        <div class="theme-card" onmouseover="highlightQuote('ψηφ[ σματα]')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <span class="tag domain-tag">Content</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    <div class="theme-path">Content > Official and Legal Documents > Decrees</div>
+                    <div class="theme-label">Decrees</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "ψηφ[ σματα]"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('τιμ ν νδρι ντι')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <span class="tag domain-tag">Content</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">95% Conf.</span>
+                    <div class="theme-path">Content > Honorific and Commemorative Inscriptions > Honorific Inscriptions</div>
+                    <div class="theme-label">Honorific Inscriptions</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "τιμ ν νδρι ντι"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('τ πον ε ς κηδε αν δ δοσθαι')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <span class="tag domain-tag">Content</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">90% Conf.</span>
+                    <div class="theme-path">Content > Honorific and Commemorative Inscriptions > Funerary Inscriptions (Epitaphs)</div>
+                    <div class="theme-label">Funerary Inscriptions (Epitaphs)</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "τ πον ε ς κηδε αν δ δοσθαι"</p>
+                </div>
+            </div>
+        </div>
+        
+    
+    <div style="margin-top:2rem;">
+        <h3>Entities</h3>
+        <div><span class="tag entity-tag">👤 Tettia Casta <small>(Priestess / Honoree)</small></span><span class="tag entity-tag">👤 Caesar Domitianus <small>(Consul / Emperor&#x27;s Son)</small></span><span class="tag entity-tag">👤 Gaius Valerius Festus <small>(Consul)</small></span><span class="tag entity-tag">👤 Lucius Frugi <small>(Official)</small></span><span class="tag entity-tag">👤 Cornelius Cerialis <small>(Official)</small></span><span class="tag entity-tag">👤 Tranquillius Rufus <small>(Antiarchon / Proposer)</small></span><span class="tag entity-tag">👤 Fulvius Probus <small>(Archon)</small></span><span class="tag entity-tag">👤 Lucius Flavius Fimbria <small>(Consul)</small></span><span class="tag entity-tag">👤 Atilius Barbarus <small>(Consul)</small></span><span class="tag entity-tag">👤 Domitius Lepidus <small>(Dedicator / Son)</small></span><span class="tag entity-tag">📍 Neapolis <small>(Polis)</small></span><span class="tag entity-tag">📍 Proskletos <small>(Council/Assembly)</small></span></div>
+    </div>
+
+    <div class="ai-analysis-box">
+        <h3>🤖 AI Analysis Summary</h3>
+        <p style="line-height:1.7;">This inscription (IG XIV 760) is a significant public document from Neapolis, dating to 71 AD (based on the consulships of Domitian, Valerius Festus, and the suffect consuls Fimbria and Barbarus). It records consolatory decrees passed by the local senate (proskletos) honoring Tettia Casta, a priestess of a specific house (oikou dia biou). The text details the legislative procedure: a proposal by the antiarchon Tranquillius Rufus, followed by a vote to grant a public funeral (dapane demosiai), a statue (andrianti), and a burial plot (topon eis kedeian). The inscription concludes with a private dedication by her sons, the Domitii Lepidi. The text is fragmentary, with several lacunae restored by editors.</p>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PHI-349824 - AGKI</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <style>
+    .page-container { max-width: 1400px; margin: 0 auto; padding: 2rem; } /* Wider for side-by-side */
+    .back-link { display: inline-block; margin-bottom: 1rem; color: var(--primary); font-weight: 600; }
+    
+    .text-viewer { 
+        display: grid; 
+        grid-template-columns: 40px 1fr; /* Default single column */
+        gap: 2rem; 
+        font-family: "New Athena Unicode", "Gentium Plus", "Times New Roman", serif; 
+        font-size: 1.25rem; 
+        line-height: 1.6; 
+        background: var(--panel); 
+        padding: 2rem; 
+        border: 1px solid var(--border); 
+        border-radius: 4px; 
+        margin-bottom: 2rem; 
+        color: var(--text);
+        transition: all 0.3s ease;
+    }
+
+              .line-numbers { 
+
+                  text-align: right; 
+
+                  color: var(--muted); 
+
+                  font-size: 1.25rem; 
+
+                  line-height: 1.6; 
+
+                  user-select: none; 
+
+                  opacity: 0.5; 
+
+                  font-family: inherit; 
+
+                  white-space: pre; 
+
+                  padding-right: 1rem;
+
+                  border-right: 1px solid var(--border);
+
+              }
+
+              .greek-content { white-space: pre; overflow-x: auto; padding-left: 1rem; }
+
+          
+
+    
+
+          /* Tokens */
+
+          .token { cursor: pointer; border-radius: 3px; padding: 0 2px; transition: background 0.1s; white-space: pre; }
+
+          .token:hover, .token.active { background-color: rgba(193, 104, 60, 0.25); color: var(--primary); }
+
+    
+
+          /* Translation Column */
+
+          .trans-col { display: none; border-left: 1px solid var(--border); padding-left: 2rem; white-space: pre; font-style: italic; overflow-x: auto; }
+
+    
+    .trans-controls { margin-bottom: 1rem; display: flex; gap: 0.5rem; justify-content: flex-end; align-items: center; }
+    .trans-btn { background: var(--bg); border: 1px solid var(--border); padding: 0.4rem 0.8rem; cursor: pointer; color: var(--muted); font-size: 0.85rem; border-radius: 4px; }
+    .trans-btn:hover { border-color: var(--primary); color: var(--text); }
+    .trans-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
+
+    .theme-card { background: var(--panel); padding: 1.5rem; border-left: 4px solid var(--primary); margin-bottom: 1rem; border: 1px solid var(--border); border-left-width: 4px; transition: transform 0.2s; }
+    .theme-card:hover { transform: translateX(4px); box-shadow: var(--shadow); }
+    .ai-rationale-box { background: rgba(31, 167, 163, 0.08); padding: 0.75rem; border-radius: 6px; font-size: 0.9rem; color: var(--muted); max-width: 400px; }
+    .evidence-quote { border-left: 2px solid var(--accent); padding-left: 0.5rem; margin-top: 0.5rem; font-style: italic; color: var(--text); }
+    .badge.green { background: #e6f4ea; color: #137333; border-color: #137333; }
+    .badge.orange { background: #fef7e0; color: #b06000; border-color: #b06000; }
+    .badge.red { background: #fce8e6; color: #c5221f; border-color: #c5221f; }
+    .entity-tag { background: rgba(217, 123, 61, 0.1); color: var(--accent-2); margin-right: 0.5rem; margin-bottom: 0.5rem; display: inline-block; padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.9rem; border: 1px solid rgba(217, 123, 61, 0.2); text-decoration: none; }
+    .entity-tag.linked:hover { background: rgba(217, 123, 61, 0.2); text-decoration: underline; cursor: pointer; }
+  </style>
+  
+    <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    
+    const TRANSLATIONS = {"en": "<span class=\"token trans-token\" data-idx=\"0\" onmouseover=\"highlightToken(0)\" onmouseout=\"clearTokenHighlight()\">[Tiberius Claudius Caesar Augustus] Germanicus, holding [tribunician power for the seve]nth time, [consul for the fourth time, imperator] for the fif[teenth time, father of the countr]y, censo[r, to the archons, council and peop]le of the Koans, greetings.\n</span><span class=\"token trans-token\" data-idx=\"1\" onmouseover=\"highlightToken(1)\" onmouseout=\"clearTokenHighlight()\">...[fragmentary context regarding honors and piety]... and on account of Stertinius [Xenophon], my physician and friend, [a man who] lacks no measure of piety towards me nor of foresight on my behalf, having met with the decree sent and recognizing through what was written in it the continuous disposition of the city towards myself...\n</span><span class=\"token trans-token\" data-idx=\"2\" onmouseover=\"highlightToken(2)\" onmouseout=\"clearTokenHighlight()\">I not only accepted the thanksgiving sacrifices you made to the local gods for my safety, rendering them publicly and privately wearing white and wearing wreaths, but also the [prayers/festivals] you made for the future... praising the unshaken permanence of our rule... worthily of the pre-existing gifts to the people...\n</span><span class=\"token trans-token\" data-idx=\"3\" onmouseover=\"highlightToken(3)\" onmouseout=\"clearTokenHighlight()\">Those serving as ambassadors with Stertinius Xenophon were Antimandros son of Theugenes [and] Gaius Julius Phileinos. [Farewell].\n</span><span class=\"token trans-token\" data-idx=\"4\" onmouseover=\"highlightToken(4)\" onmouseout=\"clearTokenHighlight()\">Tiberius Claudius Caesar Augustus Germanicus, High Priest, holding tribunician power for the eighth time, consul for the fourth time, imperator for the sixteenth time, father of the country, censor, to the archons, council and people of the Koans, greetings.\n</span><span class=\"token trans-token\" data-idx=\"5\" onmouseover=\"highlightToken(5)\" onmouseout=\"clearTokenHighlight()\">Since Stertinius Xenophon, my physician and friend, informed me regarding the Gerousia among you and asked that those sharing in this system be immune from the burden regarding the reception of guests and...\n</span><span class=\"token trans-token\" data-idx=\"6\" onmouseover=\"highlightToken(6)\" onmouseout=\"clearTokenHighlight()\">[Fragmentary lines regarding justice and regulations...]\n</span><span class=\"token trans-token\" data-idx=\"7\" onmouseover=\"highlightToken(7)\" onmouseout=\"clearTokenHighlight()\">Tiberius Claudius [Caesar Augustus Germa]nicus, High Priest, holding tri[bunician power for the eigh]th time, consul for the four[th time, imperator for the six]teenth time, father [of the country, censor, to the archons, council and peop]le of the Koans, [greetings...]\n</span><span class=\"token trans-token\" data-idx=\"8\" onmouseover=\"highlightToken(8)\" onmouseout=\"clearTokenHighlight()\">...having been appealed to by Stertinius Xenophon, [my physician and fri]end, who is always patriotic... fearing lest the civil strife (stasis) now especially flourishing in [your city] might become the cause of greater evil...\n</span><span class=\"token trans-token unaligned\" data-idx=\"9\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"10\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"11\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"12\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"13\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"14\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"15\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"16\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"17\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"18\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"19\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"20\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"21\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"22\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"23\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"24\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"25\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"26\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"27\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"28\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"29\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"30\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"31\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"32\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"33\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"34\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"35\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"36\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"37\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"38\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"39\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"40\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"41\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"42\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"43\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"44\"></span>", "de": "<span class=\"token trans-token\" data-idx=\"0\" onmouseover=\"highlightToken(0)\" onmouseout=\"clearTokenHighlight()\">[Tiberius Claudius Caesar Augustus] Germanicus, Inhaber der [tribunizischen Gewalt zum sieb]ten Mal, [Konsul zum vierten Mal, Imperator] zum fünf[zehnten Mal, Vater des Vaterland]es, Zenso[r, an die Archonten, den Rat und das Vol]k der Koer, Grüße.\n</span><span class=\"token trans-token\" data-idx=\"1\" onmouseover=\"highlightToken(1)\" onmouseout=\"clearTokenHighlight()\">...[fragmentarisch]... und wegen Stertinius [Xenophon], meinem Arzt und Freund, [einem Mann, der] kein Maß an Frömmigkeit mir gegenüber noch an Fürsorge für mich vermissen lässt, nachdem ich das gesandte Dekret erhalten habe und durch das darin Geschriebene die beständige Gesinnung der Stadt mir gegenüber erkenne...\n</span><span class=\"token trans-token\" data-idx=\"2\" onmouseover=\"highlightToken(2)\" onmouseout=\"clearTokenHighlight()\">Ich habe nicht nur die Dankopfer angenommen, die ihr den einheimischen Göttern für meine Rettung dargebracht habt, öffentlich und privat in weißen Gewändern und bekränzt, sondern auch die [Gebete/Feste], die ihr für die Zukunft veranstaltet habt... indem ihr den unerschütterlichen Bestand unserer Herrschaft preist... würdig der bereits existierenden Geschenke an das Volk...\n</span><span class=\"token trans-token\" data-idx=\"3\" onmouseover=\"highlightToken(3)\" onmouseout=\"clearTokenHighlight()\">Diejenigen, die zusammen mit Stertinius Xenophon als Gesandte dienten, waren Antimandros, Sohn des Theugenes, [und] Gaius Julius Phileinos. [Lebt wohl].\n</span><span class=\"token trans-token\" data-idx=\"4\" onmouseover=\"highlightToken(4)\" onmouseout=\"clearTokenHighlight()\">Tiberius Claudius Caesar Augustus Germanicus, Oberpriester, Inhaber der tribunizischen Gewalt zum achten Mal, Konsul zum vierten Mal, Imperator zum sechzehnten Mal, Vater des Vaterlandes, Zensor, an die Archonten, den Rat und das Volk der Koer, Grüße.\n</span><span class=\"token trans-token\" data-idx=\"5\" onmouseover=\"highlightToken(5)\" onmouseout=\"clearTokenHighlight()\">Da Stertinius Xenophon, mein Arzt und Freund, mich bezüglich der Gerousia bei euch informierte und bat, dass diejenigen, die an diesem System teilhaben, von der Last der Beherbergung von Gästen befreit sein sollen und...\n</span><span class=\"token trans-token\" data-idx=\"6\" onmouseover=\"highlightToken(6)\" onmouseout=\"clearTokenHighlight()\">[Fragmentarische Zeilen bezüglich Gerechtigkeit und Vorschriften...]\n</span><span class=\"token trans-token\" data-idx=\"7\" onmouseover=\"highlightToken(7)\" onmouseout=\"clearTokenHighlight()\">Tiberius Claudius [Caesar Augustus Germa]nicus, Oberpriester, Inhaber der tri[bunizischen Gewalt zum ach]ten Mal, Konsul zum vier[ten Mal, Imperator zum sechzehn]ten Mal, Vater [des Vaterlandes, Zensor, an die Archonten, den Rat und das Vol]k der Koer, [Grüße...]\n</span><span class=\"token trans-token\" data-idx=\"8\" onmouseover=\"highlightToken(8)\" onmouseout=\"clearTokenHighlight()\">...nachdem ich von Stertinius Xenophon, [meinem Arzt und Freu]nd, der stets patriotisch ist, gebeten wurde... aus Furcht, dass der Bürgerzwist (Stasis), der jetzt besonders in [eurer Stadt] blüht, Ursache für größeres Übel werden könnte...\n</span><span class=\"token trans-token unaligned\" data-idx=\"9\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"10\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"11\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"12\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"13\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"14\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"15\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"16\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"17\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"18\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"19\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"20\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"21\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"22\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"23\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"24\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"25\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"26\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"27\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"28\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"29\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"30\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"31\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"32\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"33\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"34\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"35\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"36\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"37\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"38\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"39\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"40\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"41\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"42\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"43\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"44\"></span>"};
+
+    function setTranslation(lang) {
+        const container = document.getElementById('translationCol');
+        const content = document.getElementById('translationContent');
+        const viewer = document.getElementById('textViewer');
+        const btnEn = document.getElementById('btnEn');
+        const btnDe = document.getElementById('btnDe');
+        const btnOff = document.getElementById('btnOff');
+
+        // Reset Buttons
+        [btnEn, btnDe, btnOff].forEach(b => b.classList.remove('active'));
+
+        if(lang === 'none') {
+            container.style.display = 'none';
+            viewer.style.gridTemplateColumns = '40px 1fr';
+            btnOff.classList.add('active');
+        } else {
+            container.style.display = 'block';
+            viewer.style.gridTemplateColumns = '40px 1fr 1fr';
+            content.innerHTML = TRANSLATIONS[lang];
+            if(lang === 'en') btnEn.classList.add('active');
+            if(lang === 'de') btnDe.classList.add('active');
+        }
+    }
+
+    function highlightToken(idx) {
+        document.querySelectorAll(`.token[data-idx="${idx}"]`).forEach(el => el.classList.add('active'));
+    }
+
+    function clearTokenHighlight() {
+        document.querySelectorAll('.token').forEach(el => el.classList.remove('active'));
+    }
+
+    function highlightQuote(quote) {
+        // Legacy highlight for themes - might need adjustment if using tokens
+        // For now, simple find text in container if tokens not sufficient
+        if(!quote) return;
+    }
+
+    function clearHighlight() {}
+
+    function copyCitation() {
+        const citation = "AGKI Project. (2026). Inscription PHI-" + "349824" + ". Retrieved from " + window.location.href;
+        navigator.clipboard.writeText(citation);
+        alert("Citation copied to clipboard!");
+    }
+    </script>
+    
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <h1><a href="../index.html" style="color:white;text-decoration:none;">AGKI Tagging Tool</a></h1>
+    </div>
+  </header>
+  <main class="page-container">
+    <a href="../index.html" class="back-link">← Back to Dashboard</a>
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+        <h2>Inscription PHI-349824</h2>
+        <div style="display:flex; gap:0.5rem;">
+            <button onclick="copyCitation()" class="button secondary" style="font-size:0.9rem; padding:0.5rem 1rem;">📜 Cite</button>
+            <a href="https://epigraphy.packhum.org/text/349824" target="_blank" class="button">View on PHI</a>
+        </div>
+    </div>
+    
+    <div class="meta-grid">
+        <div><small class="eyebrow">Provenance</small><br><a href="https://pleiades.stoa.org/places/579885" target="_blank" title="View in Pleiades">Aegean Islands</a> &gt; <a href="https://pleiades.stoa.org/places/599700" target="_blank" title="View in Pleiades">Kos</a> &gt; Kastro</div>
+        <div><small class="eyebrow">Date</small><br><strong> 47-48 AD </strong></div>
+        <div><small class="eyebrow">Completeness</small><br><span class="badge info">fragmentary</span></div>
+    </div>
+
+    <div style="display:flex; justify-content:space-between; align-items:end; margin-bottom:0.5rem;">
+        <h3>Original Text & Translation</h3>
+        <div class="trans-controls">
+            <span class="eyebrow" style="margin:0; margin-right:0.5rem;">Translation:</span>
+            <button id="btnOff" class="trans-btn active" onclick="setTranslation('none')">Off</button>
+            <button id="btnEn" class="trans-btn" onclick="setTranslation('en')">English</button>
+            <button id="btnDe" class="trans-btn" onclick="setTranslation('de')">German</button>
+        </div>
+    </div>
+
+    <div id="textViewer" class="text-viewer">
+        <div class="line-numbers">1
+
+
+
+5
+
+
+
+
+10
+
+
+
+
+15
+
+
+
+
+20
+
+
+
+
+25
+
+
+
+
+30
+
+
+
+
+35
+
+
+
+
+40
+
+
+
+
+45</div>
+        <div class="greek-content" id="greekText"><span class="token greek-token" data-idx="0" onmouseover="highlightToken(0)" onmouseout="clearTokenHighlight()">[----------------] [τιβ ριος κλα διος κα σαρ σεβαστ ς] γερμα[νικ ς δημαρχικ ς ξουσ ας τ βδ]ομον [πατος τ τ ταρτον α τοκρ τωρ] τ πεν[τεκαιδ κατον πατ ρ πατρ δ]ος τειμη[τ ς κ ιων ρχουσι βουλ ι δ μ]ωι χα ρειν
+</span><span class="token greek-token" data-idx="1" onmouseover="highlightToken(1)" onmouseout="clearTokenHighlight()">[----------- ν]θρ ποις κα[------------]καιον κε νην [------------] π πολλ ν [------------]ην διαπεφευ[-----------]κ λουθον πο[--------- τ ε ς] μ ε σεβε αι ν [------------] πολ δ πλ ον [------------ο]υ τ μ γιστα [------------]μετ ραν ε ναι [----------- δ]ι κειμαι δι τε [-----------] π ρχοντα α [τ----- ε ς τ ν μ ν ο]κον κα τ ν ω[μα ων δ μον ------ κ]α δι τ ν συ[ζ ντ μοι ατρ ν κα φ λον στ]ερτ νιον ν[δρα ο τε τ ν τ ς ε ς μ ε σ]εβε ας ρον πολε ποντ τινα ο τε τ ς π ρ μ ν [π]ρονο ας ντυχ ν τ ι πεμπθ ντι ψηφ σ[μ]ατι κα δι τ ν ν α τ ι γεγραμμ νων τ ν διηνεκ τ ς π λεως πιγνο ς πρ ς μαυτ ν δι θεσιν
+</span><span class="token greek-token" data-idx="2" onmouseover="highlightToken(2)" onmouseout="clearTokenHighlight()">ο μ νον φ ο ς θ σατε το ς πιχωρ οις θεο ς τ π ρ τ ς μ ς σωτηρ ας χαριστ ρια α το ς ποδ δοντες δημ σια κα δια λευχειμονο ντες κα στεφανηφορο ντες πεδεξ μην τε κα τ ς π τας ε ς το ς μ λλοντας παν[ηγ] ρε[ις]ς ποι σασθε μο μετ τ ν γ να τ ν θε ν τ ν τ ς μετ ρας γεμον ας σ λευτον διαμον ν παινο ντες [κ]ατα[ξ] ως τα ς προ παρχο σαις π[ρ]ς τ[ ν] δ [μον] δωρεα ς α ς παρ χομαι ε ς ε τ ς εεργεσ ας προσεξευρ σκων πρ[ ς τ κοιν ν] πιτ δειον π [σ]α[ι]ς τε π λε[σιν πανηγ ρεις ε]ρ ς μεν γο σαις
+</span><span class="token greek-token" data-idx="3" onmouseover="highlightToken(3)" onmouseout="clearTokenHighlight()">ο σ ν στερτιν ωι ξενοφ ντι πρεσβε οντες σαν ν μανδρος θευγ νους γ ος ο λιος φιλε νο[ς. ρρωσθε].
+</span><span class="token greek-token" data-idx="4" onmouseover="highlightToken(4)" onmouseout="clearTokenHighlight()">τιβ ριος κλα διος κα σαρ σεβαστ ς γερμανικ ς ρχιερε ς δημαρχικ ς ξουσ ας τ γδοον πατος τ τ ταρτον α τοκρ τωρ τ κκαιδ κατον πατ ρ πατρ δος τειμητ ς κ ιων ρχουσι βουλ ι δ μωι χα ρειν
+</span><span class="token greek-token" data-idx="5" onmouseover="highlightToken(5)" onmouseout="clearTokenHighlight()">νφαν σαντ ς μοι στερτιν ου ξενοφ ντος το ατρο μου κα φ λου περ τ ς παρ με ν γερουσ ας α τησαμ νου τε πως το ς το δε μετ χοντας το συστ ματος τ ς τε περ τ ς ξενοδοχ ας χλ σεως τελε ς κα [------------------]
+</span><span class="token greek-token" data-idx="6" onmouseover="highlightToken(6)" onmouseout="clearTokenHighlight()">[------------------] [------------------] νο[-----------------] τει[-----------------] μον[----------------] επις[----------------] βουλο[----------------] ταντα[---------------] ας κα τα[---------------] κομ νων [--------------] γε νεσθαι [--------------] χειων το ς [--------------] λομ νου τη[--------------] τ ς δικαιοτ τ[ας ---------- μ] λλως ο τως [------------]
+</span><span class="token greek-token" data-idx="7" onmouseover="highlightToken(7)" onmouseout="clearTokenHighlight()">τιβ ριος κλα διο[ς κα σαρ σεβαστ ς γερμα]νικ ς ρχιερε ς δη[μαρχικ ς ξουσ ας τ γδο]ον πατος τ τ ταρ[τον α τοκρ τωρ τ κ]καιδ κατον πατ ρ [πατρ δος τειμητ ς κ ι]ων ρχουσι βουλ ι δ [μωι χα ρειν ----]
+</span><span class="token greek-token" data-idx="8" onmouseover="highlightToken(8)" onmouseout="clearTokenHighlight()">λον με ν γραψα δι [---------] ας μ ν ρας ε νευ[---------] ην παρακληθε ς π[------- π στερ]τιν ου ξενοφ ντος [το ατρο μου κα φ]λου α ε φιλοπ τριδο[ς --------] δε σαντος μ ποτ[ε ---- ν ν μ λιστα]κμ ζουσα στ σις ν [τ ι π λει μ ν ----] με ζονος κακο α τ[ α γ νηται ------] π ρων π ντα ο[----------]
+</span><span class="token greek-token unaligned" data-idx="9">πολε ποντ τινα ο τε τ ς π ρ μ ν
+</span><span class="token greek-token unaligned" data-idx="10">[π]ρονο ας ντυχ ν τ ι πεμπθ ντι ψηφ σ[μ]ατι κα δι τ ν ν α τ ι γεγραμμ νων τ ν
+</span><span class="token greek-token unaligned" data-idx="11">διηνεκ τ ς π λεως πιγνο ς πρ ς μαυτ ν δι θεσιν ο μ νον φ ο ς θ σατε το ς
+</span><span class="token greek-token unaligned" data-idx="12"> πιχωρ οις θεο ς τ π ρ τ ς μ ς σωτηρ ας χαριστ ρια α το ς ποδ δοντες δημ σια κα δια λευχειμονο ντες κα στεφανηφορο ντες πεδεξ μην τε κα τ ς π τας ε ς το ς μ λλοντας παν[ηγ] ρε[ις]ς
+</span><span class="token greek-token unaligned" data-idx="13"> ποι σασθε μο μετ τ ν γ να τ ν
+</span><span class="token greek-token unaligned" data-idx="14">θε ν τ ν τ ς μετ ρας γεμον ας σ λευτον διαμον ν παινο ντες [κ]ατα[ξ] ως τα ς προ παρχο σαις π[ρ]ς τ[ ν] δ [μον]
+</span><span class="token greek-token unaligned" data-idx="15">δωρεα ς α ς παρ χομαι ε ς ε τ ς εεργεσ ας προσεξευρ σκων πρ[ ς τ κοιν ν] πιτ δειον π [σ]α[ι]ς τε π λε[σιν πανηγ ρεις ε]ρ ς μεν γο σαις ο σ ν στερτιν ωι ξενοφ ντι πρεσβε οντες σαν ν μανδρος
+</span><span class="token greek-token unaligned" data-idx="16">θευγ νους γ ος ο λιος φιλε νο[ς. ρρωσθε].
+</span><span class="token greek-token unaligned" data-idx="17">τιβ ριος κλα διος κα σαρ σεβαστ ς γερμανικ ς ρχιερε ς δημαρχικ ς ξουσ ας τ 
+</span><span class="token greek-token unaligned" data-idx="18"> γδοον πατος τ τ ταρτον α τοκρ τωρ
+</span><span class="token greek-token unaligned" data-idx="19">τ κκαιδ κατον πατ ρ πατρ δος τειμητ ς κ ιων ρχουσι βουλ ι δ μωι χα ρειν νφαν σαντ ς μοι στερτιν ου ξενοφ ντος
+</span><span class="token greek-token unaligned" data-idx="20">το ατρο μου κα φ λου περ τ ς παρ με ν γερουσ ας α τησαμ νου τε πως το ς το δε
+</span><span class="token greek-token unaligned" data-idx="21">μετ χοντας το συστ ματος τ ς τε περ τ ς ξενοδοχ ας χλ σεως τελε ς κα 
+</span><span class="token greek-token unaligned" data-idx="22">[------------------]
+</span><span class="token greek-token unaligned" data-idx="23">[------------------]
+</span><span class="token greek-token unaligned" data-idx="24">[------------------]
+</span><span class="token greek-token unaligned" data-idx="25">νο[-----------------]
+</span><span class="token greek-token unaligned" data-idx="26">τει[-----------------]
+</span><span class="token greek-token unaligned" data-idx="27">μον[----------------]
+</span><span class="token greek-token unaligned" data-idx="28">επις[----------------]
+</span><span class="token greek-token unaligned" data-idx="29">βουλο[----------------]
+</span><span class="token greek-token unaligned" data-idx="30">ταντα[---------------]
+</span><span class="token greek-token unaligned" data-idx="31">ας κα τα[---------------]
+</span><span class="token greek-token unaligned" data-idx="32">κομ νων [--------------]
+</span><span class="token greek-token unaligned" data-idx="33">γε νεσθαι [--------------]
+</span><span class="token greek-token unaligned" data-idx="34">χειων το ς [--------------]
+</span><span class="token greek-token unaligned" data-idx="35">λομ νου τη[--------------]
+</span><span class="token greek-token unaligned" data-idx="36">τ ς δικαιοτ τ[ας ---------- μ]
+</span><span class="token greek-token unaligned" data-idx="37"> λλως ο τως [------------]
+</span><span class="token greek-token unaligned" data-idx="38">τιβ ριος κλα διο[ς κα σαρ σεβαστ ς γερμα]νικ ς ρχιερε ς δη[μαρχικ ς ξουσ ας τ γδο]ον πατος τ τ ταρ[τον α τοκρ τωρ τ κ]καιδ κατον πατ ρ [πατρ δος τειμητ ς κ ι]ων ρχουσι βουλ ι δ [μωι χα ρειν ----]
+</span><span class="token greek-token unaligned" data-idx="39">λον με ν γραψα δι [---------]
+</span><span class="token greek-token unaligned" data-idx="40">ας μ ν ρας ε νευ[---------]
+</span><span class="token greek-token unaligned" data-idx="41">ην παρακληθε ς π[------- π στερ]τιν ου ξενοφ ντος [το ατρο μου κα φ]λου α ε φιλοπ τριδο[ς --------]
+</span><span class="token greek-token unaligned" data-idx="42">δε σαντος μ ποτ[ε ---- ν ν μ λιστα]κμ ζουσα στ σις ν [τ ι π λει μ ν ----]
+</span><span class="token greek-token unaligned" data-idx="43">με ζονος κακο α τ[ α γ νηται ------]
+</span><span class="token greek-token unaligned" data-idx="44"> π ρων π ντα ο[----------]</span></div>
+        <div id="translationCol" class="trans-col">
+            <div id="translationContent"></div>
+        </div>
+    </div>
+
+    <h3>Thematic Analysis</h3>
+    <p class="muted" style="margin-bottom:1rem;">Hover over cards to see evidence in text.</p>
+    
+        <div class="theme-card" onmouseover="highlightQuote('τιβ ριος κλα διος κα σαρ σεβαστ ς γερμανικ ς ... κ ιων ρχουσι βουλ ι δ μωι χα ρειν')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:start;">
+                <div>
+                    <span class="tag domain-tag">Content</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    <div class="theme-path">Content > Official and Legal Documents > Official Letters</div>
+                    <div class="theme-label">Official Letters</div>
+                </div>
+                <div class="ai-rationale-box">
+                    <strong>🤖 AI Rationale:</strong>
+                    <p>Der Text besteht aus einer Reihe von Briefen des Kaisers Claudius an die Stadt Kos (Archonten, Rat und Volk). Dies ist an der typischen epistolarischen Grußformel 'χαίρειν' und den ausführlichen kaiserlichen Titulaturen zu Beginn jedes Abschnitts erkennbar.</p>
+                    <p class="evidence-quote">Evidence: "τιβ ριος κλα διος κα σαρ σεβαστ ς γερμανικ ς ... κ ιων ρχουσι βουλ ι δ μωι χα ρειν"</p>
+                </div>
+            </div>
+        </div>
+        
+    <h3>Entities</h3>
+    <div><span class="tag entity-tag">👤 Tiberius Claudius Caesar Augustus Germanicus <small>(Emperor)</small></span><span class="tag entity-tag">👤 Stertinius Xenophon <small>(Physician / Friend of Emperor)</small></span><span class="tag entity-tag">👤 Antimandros son of Theugenes <small>(Ambassador)</small></span><span class="tag entity-tag">👤 Gaius Julius Phileinos <small>(Ambassador)</small></span><span class="tag entity-tag">📍 Kos <small>(Polis)</small></span></div>
+  </main>
+</body>
+</html>

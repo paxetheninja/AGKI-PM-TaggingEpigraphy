@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PHI-237813 - AGKI</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <style>
+    /* Custom Scrollbar Styling */
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+        background: rgba(0,0,0,0.05); 
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #ccc; 
+        border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #aaa; 
+    }
+
+    .page-container { max-width: 1400px; margin: 0 auto; padding: 2rem; }
+    .back-link { display: inline-block; margin-bottom: 1rem; color: var(--primary); font-weight: 600; }
+    
+    /* Original View Styles (Line by Line) */
+    .text-viewer-original { 
+        display: grid; 
+        grid-template-columns: 40px 1fr; 
+        gap: 2rem; 
+        font-family: "New Athena Unicode", "Gentium Plus", "Times New Roman", serif; 
+        font-size: 1.25rem; 
+        line-height: 1.6; 
+        background: var(--panel); 
+        padding: 2rem; 
+        border: 1px solid var(--border); 
+        border-radius: 4px; 
+        margin-bottom: 2rem; 
+        color: var(--text);
+    }
+
+    .line-numbers { 
+        text-align: right; 
+        color: var(--muted); 
+        font-size: 1.25rem; 
+        line-height: 1.6; 
+        user-select: none; 
+        opacity: 0.5; 
+        font-family: inherit; 
+        white-space: pre; 
+        padding-right: 1rem;
+        border-right: 1px solid var(--border);
+    }
+
+    .greek-content { 
+        white-space: pre-wrap; /* Better than scrollbar: wrap lines nicely */
+        word-break: break-word;
+        padding-left: 1rem; 
+    }
+
+    /* Fluent Comparison View Styles */
+    .comparison-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: 4px;
+        margin-bottom: 2rem;
+        padding: 2rem;
+    }
+    
+    .fluent-col {
+        line-height: 1.8;
+        font-size: 1.15rem;
+    }
+
+    .fluent-col-header {
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--muted);
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid var(--border);
+    }
+
+    .fluent-greek {
+        font-family: "New Athena Unicode", "Gentium Plus", "Times New Roman", serif; 
+        font-size: 1.25rem;
+        color: var(--text);
+    }
+
+    .fluent-trans {
+        font-family: system-ui, -apple-system, sans-serif;
+        color: var(--text);
+    }
+
+    .fluent-segment {
+        border-radius: 3px;
+        transition: background-color 0.2s, color 0.1s;
+        cursor: pointer;
+    }
+    
+    .fluent-segment:hover, .active-segment {
+        background-color: rgba(217, 123, 61, 0.15); /* Accent color tint */
+        color: var(--primary);
+    }
+
+    .trans-controls { margin-bottom: 1rem; display: flex; gap: 0.5rem; justify-content: flex-end; align-items: center; }
+    .trans-btn { background: var(--bg); border: 1px solid var(--border); padding: 0.4rem 0.8rem; cursor: pointer; color: var(--muted); font-size: 0.85rem; border-radius: 4px; }
+    .trans-btn:hover { border-color: var(--primary); color: var(--text); }
+    .trans-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
+
+    .theme-card { background: var(--panel); padding: 1rem 1.5rem; border-left: 4px solid var(--primary); margin-bottom: 0.75rem; border: 1px solid var(--border); border-left-width: 4px; }
+    .ai-analysis-box { background: rgba(31, 167, 163, 0.05); padding: 2rem; border-radius: 8px; border: 1px solid var(--border); margin-top: 2rem; }
+    .evidence-box { max-width: 500px; text-align: right; }
+    .evidence-quote { font-size: 0.85rem; font-style: italic; color: var(--muted); margin: 0; }
+    .badge.green { background: #e6f4ea; color: #137333; border-color: #137333; }
+    .badge.orange { background: #fef7e0; color: #b06000; border-color: #b06000; }
+    .badge.red { background: #fce8e6; color: #c5221f; border-color: #c5221f; }
+    .entity-tag { background: rgba(217, 123, 61, 0.1); color: var(--accent-2); margin-right: 0.5rem; margin-bottom: 0.5rem; display: inline-block; padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.9rem; border: 1px solid rgba(217, 123, 61, 0.2); }
+  </style>
+  
+    <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    
+    const ALIGNMENTS = {"en": [{"greek": " [ λ] [σθα]ι δ [α] το [ς] φυλ [ν] κα δ μον κα φρα[τρ αν ς]ν βο[ λων]ται ε ναι.", "translation": "...and let them choose whatever tribe, deme, and phratry they wish to belong to."}, {"greek": " παιν σαι δ κα το ς\n[ λλ]ο[υς]κ[α]ρ[ν νας τ]ο ς βο[ι]ηθ σαντας μετ φορμ ω[νος κ]α[ κα]ρφ[ να", "translation": "And praise the other Acarnanians who came to help with Phormion and Karphinas,"}, {"greek": " κα] ε ναι α [τ]ο ς ως ν κατ λθωσι[ν γκτησιν ν ν] ο[ κι] ν βο λωνται ο κο σιν θ νη[σι τελ σι το μετοι]κου", "translation": "and grant them, until they return home, the right to own a house wherever they wish while living in Athens, paying the metic tax,"}, {"greek": " κα διδ ναι α το ς δ κα[ς]\n[κα λαμβ νειν κα]θ[ πε]ρ θηνα ο[ι]", "translation": "and to give and receive justice just like Athenians,"}, {"greek": " κα τ ς ε σφορ ς\n[ ν τινες] γ[ γ]ν[ων]τ[αι μ]ετ θηνα ων ε σφ ρειν", "translation": "and to pay the eisphora, if any arise, along with the Athenians."}, {"greek": " κα \n[ πιμελε σθα]ι [α] [τ ν τ]ν βουλ [ν] τ ν ε βουλε ουσ[αν κ]α τος στρατηγος ο [ν] ε στρατηγ σιν πως\n[ ν μ]δι[κ ν]ται.", "translation": "And the Council currently in office and the generals currently serving shall take care of them so that they are not wronged."}, {"greek": " [ ναγρ]ψ[α]ι [δ] τ δε τ ψ φισμα ν στ[ ληι] λιθ ν[η]ι τ [ν γραμμ]ατ [α] τς βουλ ς κα στ σαι\n[ ν]κροπ [λε]ι.", "translation": "The secretary of the Council shall inscribe this decree on a stone stele and set it up on the Acropolis."}, {"greek": " ναγ[ρ ψ]αι δ κ[α] τ ν ματα τ ν καρ[ν ν]ων ε ς τ ν α τ [ν στ]λην πογρ ψαντα τ ς π λει[ς τ]ς καρναν[ ας ν ε ς]κ[ασ]τ ς στιν.", "translation": "He shall also inscribe the names of the Acarnanians on the same stele, listing the cities of Acarnania to which each belongs."}, {"greek": " ε ς δ τ ν ναγ[ρα]φν τ ς στ [λης δο να]ι τ ν ταμ αν το δ μου τ ι\nγ[ρ]αμματε τ[ ς βουλ ς τ]ρ[ι]κοντα δραχμ ς κ τ ν κατ[ ψ]ηφ σ[μα]τ[α ναλισ]κ[ομ νων τ ι δ μωι].", "translation": "For the inscription of the stele, the treasurer of the People shall give the secretary of the Council thirty drachmas from the funds expended by the People according to decrees."}, {"greek": "\n \nφορμ ωνα\n δ μος.", "translation": "The People [honor] Phormion."}, {"greek": "\n \nκαρφ ναν\n δ μος.", "translation": "The People [honor] Karphinas."}], "de": []};
+
+    function setTranslation(lang) {
+        const btnEn = document.getElementById('btnEn');
+        const btnDe = document.getElementById('btnDe');
+        const btnOff = document.getElementById('btnOff');
+        
+        const originalView = document.getElementById('original-view');
+        const comparisonView = document.getElementById('comparison-view');
+        
+        const greekCol = document.getElementById('fluent-greek');
+        const transCol = document.getElementById('fluent-trans');
+
+        // Reset Buttons
+        [btnEn, btnDe, btnOff].forEach(b => b.classList.remove('active'));
+
+        if(lang === 'none') {
+            // Show Original Line-by-Line View
+            originalView.style.display = 'grid';
+            comparisonView.style.display = 'none';
+            btnOff.classList.add('active');
+        } else {
+            // Show Comparison Side-by-Side View
+            originalView.style.display = 'none';
+            comparisonView.style.display = 'grid';
+            
+            if(lang === 'en') btnEn.classList.add('active');
+            if(lang === 'de') btnDe.classList.add('active');
+            
+            // Render Fluent Columns
+            const data = ALIGNMENTS[lang] || [];
+            let greekHtml = '';
+            let transHtml = '';
+            
+            if (data.length === 0) {
+                greekHtml = '<p class="muted">No alignment data.</p>';
+                transHtml = '<p class="muted">No alignment data.</p>';
+            } else {
+                data.forEach((row, index) => {
+                    // Create interactive spans for fluent reading
+                    greekHtml += `<span class="fluent-segment" data-seg-id="${index}" onmouseover="highlightSegment(${index})" onmouseout="clearHighlightSegment()">${row.greek} </span>`;
+                    transHtml += `<span class="fluent-segment" data-seg-id="${index}" onmouseover="highlightSegment(${index})" onmouseout="clearHighlightSegment()">${row.translation} </span>`;
+                });
+            }
+            greekCol.innerHTML = greekHtml;
+            transCol.innerHTML = transHtml;
+        }
+    }
+
+    function highlightSegment(id) {
+        document.querySelectorAll(`.fluent-segment[data-seg-id="${id}"]`).forEach(el => el.classList.add('active-segment'));
+    }
+
+    function clearHighlightSegment() {
+        document.querySelectorAll('.fluent-segment').forEach(el => el.classList.remove('active-segment'));
+    }
+
+    function copyCitation() {
+        const citation = "AGKI Project. (2026). Inscription PHI-" + "237813" + ". Retrieved from " + window.location.href;
+        navigator.clipboard.writeText(citation);
+        alert("Citation copied to clipboard!");
+    }
+    </script>
+    
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <h1><a href="../index.html" style="color:white;text-decoration:none;">AGKI Tagging Tool</a></h1>
+    </div>
+  </header>
+  <main class="page-container">
+    <a href="../index.html" class="back-link">← Back to Dashboard</a>
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+        <h2>Inscription PHI-237813</h2>
+        <div style="display:flex; gap:0.5rem;">
+            <button onclick="copyCitation()" class="button secondary" style="font-size:0.9rem; padding:0.5rem 1rem;">📜 Cite</button>
+            <a href="https://epigraphy.packhum.org/text/237813" target="_blank" class="button">View on PHI</a>
+        </div>
+    </div>
+    
+    <div class="meta-grid">
+        <div><small class="eyebrow">Provenance</small><br><a href="https://pleiades.stoa.org/places/579888" target="_blank" title="View in Pleiades">Attica</a> &gt; <a href="https://pleiades.stoa.org/places/579885" target="_blank" title="View in Pleiades">Athens</a></div>
+        <div><small class="eyebrow">Date</small><br><strong> 338/7 BC </strong></div>
+        <div><small class="eyebrow">Completeness</small><br><span class="badge info">fragmentary</span></div>
+    </div>
+
+    <div style="display:flex; justify-content:space-between; align-items:end; margin-bottom:0.5rem;">
+        <h3>Original Text & Translation</h3>
+        <div class="trans-controls">
+            <span class="eyebrow" style="margin:0; margin-right:0.5rem;">Translation:</span>
+            <button id="btnOff" class="trans-btn active" onclick="setTranslation('none')">Original (Lines)</button>
+            <button id="btnEn" class="trans-btn" onclick="setTranslation('en')">English (Compare)</button>
+            <button id="btnDe" class="trans-btn" onclick="setTranslation('de')">German (Compare)</button>
+        </div>
+    </div>
+
+    <!-- Original Line-by-Line View -->
+    <div id="original-view" class="text-viewer-original">
+        <div class="line-numbers">1
+
+
+
+5
+
+
+
+
+10
+
+
+
+
+15
+
+
+</div>
+        <div class="greek-content">[ π χαιρ ν]δου ρχο[ντος π τ ς παιδιον δος δεκ της] π[ρυτα]νε ας ι φ[ λιππος ντιφ μου ε ρεσ δης]
+[ γρ]αμ[μ]τευεν θαργηλ[ι νος δευτ ραι φθ νοντος κτη]ι [τ]ς πρυτανε ας τ [ν προ δρων]πεψ [φ]ιζεν [---]
+[-----] ρχιε ς δοξεν τι [δ μωι γ]σιππος [ γησ ου σουνι]ε ς ε πεν περ ν ο [καρν]νες λ γουσ[ιν φορμ]ων κα καρφ νας ο ν [ο]ν λ[θ ντ]ες δεδ χθαι [τ ι]
+[δ μ]ωι πειδ φορμ ων κα καρ[φ] νας ντες πατρ [θεν φ λ]οι το δ μου το θηνα ων διαφυλ ττουσιν [τ ν ε]νοιαν ν ο πρ γονοι α το ς παρ δοσαν πρ ς [τ ν δ] μον τ ν θηνα ων κα νυν βοηθ σαντ[ες μ]ετ δ[υν μ]εως συνκατετ ττοντο μετ θηνα ω[ν] κ[αθ] τι [στ]ρατηγ ς παραγγ [λ]λοι παιν σαι α το[ ς ρε]τ ς [ νεκα] κα στεφαν σαι κ τερον α τ ν χρυσ ι στεφ[ νω]ι πειδ δ φορ[μ] ωνα τ ν φορμ ωνος κα καρ[φ] ν[α]
+[π ππο]ν ποι σατο θηνα ον δ μος θηνα ων κ[α τ]ο [ς] κε νου κ[γ]νους κα τ ψ φισμα καθ [π]ο η[σι]ς γ νετο ναγ[ γρ]απται ν κροπ λει ε [ναι] φορ[μ] ων[ι κ]α καρφ [ναι] κα το ς κγ νοις α τ ν κυρ α[ν τ]ν [δωρει] ν ν [δωκ]εν δ [μ]ος φορμ ωνι τ ι π ππωι [α] [τ] ν. [ λ] [σθα]ι δ [α] το [ς] φυλ [ν] κα δ μον κα φρα[τρ αν ς]ν βο[ λων]ται ε ναι. παιν σαι δ κα το ς
+[ λλ]ο[υς]κ[α]ρ[ν νας τ]ο ς βο[ι]ηθ σαντας μετ φορμ ω[νος κ]α[ κα]ρφ[ να κα] ε ναι α [τ]ο ς ως ν κατ λθωσι[ν γκτησιν ν ν] ο[ κι] ν βο λωνται ο κο σιν θ νη[σι τελ σι το μετοι]κου κα διδ ναι α το ς δ κα[ς]
+[κα λαμβ νειν κα]θ[ πε]ρ θηνα ο[ι] κα τ ς ε σφορ ς
+[ ν τινες] γ[ γ]ν[ων]τ[αι μ]ετ θηνα ων ε σφ ρειν κα 
+[ πιμελε σθα]ι [α] [τ ν τ]ν βουλ [ν] τ ν ε βουλε ουσ[αν κ]α τος στρατηγος ο [ν] ε στρατηγ σιν πως
+[ ν μ]δι[κ ν]ται. [ ναγρ]ψ[α]ι [δ] τ δε τ ψ φισμα ν στ[ ληι] λιθ ν[η]ι τ [ν γραμμ]ατ [α] τς βουλ ς κα στ σαι
+[ ν]κροπ [λε]ι. ναγ[ρ ψ]αι δ κ[α] τ ν ματα τ ν καρ[ν ν]ων ε ς τ ν α τ [ν στ]λην πογρ ψαντα τ ς π λει[ς τ]ς καρναν[ ας ν ε ς]κ[ασ]τ ς στιν. ε ς δ τ ν ναγ[ρα]φν τ ς στ [λης δο να]ι τ ν ταμ αν το δ μου τ ι
+γ[ρ]αμματε τ[ ς βουλ ς τ]ρ[ι]κοντα δραχμ ς κ τ ν κατ[ ψ]ηφ σ[μα]τ[α ναλισ]κ[ομ νων τ ι δ μωι].
+ 
+φορμ ωνα
+ δ μος.
+ 
+καρφ ναν
+ δ μος.</div>
+    </div>
+
+    <!-- Fluent Comparison View -->
+    <div id="comparison-view" class="comparison-container" style="display:none;">
+        <div class="fluent-col">
+            <div class="fluent-col-header">Greek Text</div>
+            <div id="fluent-greek" class="fluent-greek"></div>
+        </div>
+        <div class="fluent-col">
+            <div class="fluent-col-header">Translation</div>
+            <div id="fluent-trans" class="fluent-trans"></div>
+        </div>
+    </div>
+
+    <h3>Thematic Analysis</h3>
+    
+        <div class="theme-card" onmouseover="highlightQuote('δοξεν τι [δ μωι')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <span class="tag domain-tag">Content</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    <div class="theme-path">Content > Official and Legal Documents > Decrees</div>
+                    <div class="theme-label">Decrees</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "δοξεν τι [δ μωι"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('παιν σαι α το[ ς ρε]τ ς [ νεκα] κα στεφαν σαι')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <span class="tag domain-tag">Content</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    <div class="theme-path">Content > Honorific and Commemorative Inscriptions > Honorific Inscriptions</div>
+                    <div class="theme-label">Honorific Inscriptions</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "παιν σαι α το[ ς ρε]τ ς [ νεκα] κα στεφαν σαι"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('ν στ[ ληι] λιθ ν[η]ι')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <span class="tag domain-tag">Type</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    <div class="theme-path">Type > Object Type > Monumental Stone Objects > Stele</div>
+                    <div class="theme-label">Stele</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "ν στ[ ληι] λιθ ν[η]ι"</p>
+                </div>
+            </div>
+        </div>
+        
+    
+    <div style="margin-top:2rem;">
+        <h3>Entities</h3>
+        <div><span class="tag entity-tag">👤 Chairondas <small>(Archon)</small></span><span class="tag entity-tag">👤 Phormion <small>(Honored Person (Akarnanian))</small></span><span class="tag entity-tag">👤 Karphinas <small>(Honored Person (Akarnanian))</small></span><span class="tag entity-tag">👤 Hegesippos <small>(Proposer)</small></span><span class="tag entity-tag">📍 Athens <small>(Polis)</small></span><span class="tag entity-tag">📍 Akropolis <small>(Sanctuary)</small></span><span class="tag entity-tag">📍 Akarnania <small>(Region)</small></span></div>
+    </div>
+
+    <div class="ai-analysis-box">
+        <h3>🤖 AI Analysis Summary</h3>
+        <p style="line-height:1.7;">This is an Athenian decree from the archonship of Chairondas (338/7 BC), immediately following the Battle of Chaeronea. It honors two Akarnanians, Phormion and Karphinas, granting them citizenship (indicated by the right to choose a tribe and deme) and confirming previous gifts. The decree recognizes their military assistance (&#x27;fought alongside with a force&#x27;) to Athens. The text is inscribed on a stone stele set up on the Acropolis. The text is fragmentary, requiring restoration of standard formulas and names based on the stoichedon pattern.</p>
+    </div>
+  </main>
+</body>
+</html>

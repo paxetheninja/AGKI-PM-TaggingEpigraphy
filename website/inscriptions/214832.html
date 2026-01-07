@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PHI-214832 - AGKI</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <style>
+    .page-container { max-width: 1400px; margin: 0 auto; padding: 2rem; } /* Wider for side-by-side */
+    .back-link { display: inline-block; margin-bottom: 1rem; color: var(--primary); font-weight: 600; }
+    
+    .text-viewer { 
+        display: grid; 
+        grid-template-columns: 40px 1fr; /* Default single column */
+        gap: 2rem; 
+        font-family: "New Athena Unicode", "Gentium Plus", "Times New Roman", serif; 
+        font-size: 1.25rem; 
+        line-height: 1.6; 
+        background: var(--panel); 
+        padding: 2rem; 
+        border: 1px solid var(--border); 
+        border-radius: 4px; 
+        margin-bottom: 2rem; 
+        color: var(--text);
+        transition: all 0.3s ease;
+    }
+
+              .line-numbers { 
+
+                  text-align: right; 
+
+                  color: var(--muted); 
+
+                  font-size: 1.25rem; 
+
+                  line-height: 1.6; 
+
+                  user-select: none; 
+
+                  opacity: 0.5; 
+
+                  font-family: inherit; 
+
+                  white-space: pre; 
+
+                  padding-right: 1rem;
+
+                  border-right: 1px solid var(--border);
+
+              }
+
+              .greek-content { white-space: pre; overflow-x: auto; padding-left: 1rem; }
+
+          
+
+    
+
+          /* Tokens */
+
+          .token { cursor: pointer; border-radius: 3px; padding: 0 2px; transition: background 0.1s; white-space: pre; }
+
+          .token:hover, .token.active { background-color: rgba(193, 104, 60, 0.25); color: var(--primary); }
+
+    
+
+          /* Translation Column */
+
+          .trans-col { display: none; border-left: 1px solid var(--border); padding-left: 2rem; white-space: pre; font-style: italic; overflow-x: auto; }
+
+    
+    .trans-controls { margin-bottom: 1rem; display: flex; gap: 0.5rem; justify-content: flex-end; align-items: center; }
+    .trans-btn { background: var(--bg); border: 1px solid var(--border); padding: 0.4rem 0.8rem; cursor: pointer; color: var(--muted); font-size: 0.85rem; border-radius: 4px; }
+    .trans-btn:hover { border-color: var(--primary); color: var(--text); }
+    .trans-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
+
+    .theme-card { background: var(--panel); padding: 1.5rem; border-left: 4px solid var(--primary); margin-bottom: 1rem; border: 1px solid var(--border); border-left-width: 4px; transition: transform 0.2s; }
+    .theme-card:hover { transform: translateX(4px); box-shadow: var(--shadow); }
+    .ai-rationale-box { background: rgba(31, 167, 163, 0.08); padding: 0.75rem; border-radius: 6px; font-size: 0.9rem; color: var(--muted); max-width: 400px; }
+    .evidence-quote { border-left: 2px solid var(--accent); padding-left: 0.5rem; margin-top: 0.5rem; font-style: italic; color: var(--text); }
+    .badge.green { background: #e6f4ea; color: #137333; border-color: #137333; }
+    .badge.orange { background: #fef7e0; color: #b06000; border-color: #b06000; }
+    .badge.red { background: #fce8e6; color: #c5221f; border-color: #c5221f; }
+    .entity-tag { background: rgba(217, 123, 61, 0.1); color: var(--accent-2); margin-right: 0.5rem; margin-bottom: 0.5rem; display: inline-block; padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.9rem; border: 1px solid rgba(217, 123, 61, 0.2); text-decoration: none; }
+    .entity-tag.linked:hover { background: rgba(217, 123, 61, 0.2); text-decoration: underline; cursor: pointer; }
+  </style>
+  
+    <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    
+    const TRANSLATIONS = {"en": "<span class=\"token trans-token\" data-idx=\"0\" onmouseover=\"highlightToken(0)\" onmouseout=\"clearTokenHighlight()\">[...King Alex]ander wrote the diagramma, the city corrected the objections to the diagramma.\n</span><span class=\"token trans-token\" data-idx=\"1\" onmouseover=\"highlightToken(1)\" onmouseout=\"clearTokenHighlight()\">The returning exiles shall recover their paternal property as they possessed it when they fled, and the maternal property, as many as are unmarried women possessing property and did not happen to have brothers possessing it.\n</span><span class=\"token trans-token\" data-idx=\"2\" onmouseover=\"highlightToken(2)\" onmouseout=\"clearTokenHighlight()\">But if it happened to any woman given in marriage that her brothers and herself and her family perished, the maternal property shall be hers, but otherwise not.\n</span><span class=\"token trans-token\" data-idx=\"3\" onmouseover=\"highlightToken(3)\" onmouseout=\"clearTokenHighlight()\">Regarding the houses, each shall have one according to the diagramma; but if anyone has a house and a garden right next to it, let him not take another.\n</span><span class=\"token trans-token\" data-idx=\"4\" onmouseover=\"highlightToken(4)\" onmouseout=\"clearTokenHighlight()\">The foreign court shall judge for sixty days; whoever does not settle their suit within the sixty days shall not be permitted to litigate.\n</span><span class=\"token trans-token\" data-idx=\"5\" onmouseover=\"highlightToken(5)\" onmouseout=\"clearTokenHighlight()\">Report the properties to the generals within sixty days... the court shall be in Mantinea.\n</span><span class=\"token trans-token\" data-idx=\"6\" onmouseover=\"highlightToken(6)\" onmouseout=\"clearTokenHighlight()\">I swear by Athena, Apollo, and Poseidon that I will be well-disposed to those who have returned, whom the city decided to receive back.\n</span><span class=\"token trans-token unaligned\" data-idx=\"7\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"8\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"9\"></span>", "de": "<span class=\"token trans-token\" data-idx=\"0\" onmouseover=\"highlightToken(0)\" onmouseout=\"clearTokenHighlight()\">[...König Alex]ander schrieb das Diagramma, die Stadt korrigierte die Einwände gegen das Diagramma.\n</span><span class=\"token trans-token\" data-idx=\"1\" onmouseover=\"highlightToken(1)\" onmouseout=\"clearTokenHighlight()\">Die zurückgekehrten Verbannten sollen das väterliche Eigentum zurückerhalten, wie sie es besaßen, als sie flohen, sowie das mütterliche Eigentum, soweit es unverheiratete Frauen sind, die Besitz haben und keine Brüder hatten, die ihn besaßen.\n</span><span class=\"token trans-token\" data-idx=\"2\" onmouseover=\"highlightToken(2)\" onmouseout=\"clearTokenHighlight()\">Wenn es aber einer verheirateten Frau geschah, dass ihre Brüder und sie selbst und ihr Geschlecht umkamen, soll das mütterliche Eigentum ihr gehören, sonst aber nicht.\n</span><span class=\"token trans-token\" data-idx=\"3\" onmouseover=\"highlightToken(3)\" onmouseout=\"clearTokenHighlight()\">Was die Häuser betrifft, soll jeder eines haben gemäß dem Diagramma; wenn aber jemand ein Haus und einen Garten direkt dabei hat, soll er kein anderes nehmen.\n</span><span class=\"token trans-token\" data-idx=\"4\" onmouseover=\"highlightToken(4)\" onmouseout=\"clearTokenHighlight()\">Das fremde Gericht soll sechzig Tage lang urteilen; wer aber innerhalb der sechzig Tage den Rechtsstreit nicht führt, dem soll es nicht mehr erlaubt sein zu prozessieren.\n</span><span class=\"token trans-token\" data-idx=\"5\" onmouseover=\"highlightToken(5)\" onmouseout=\"clearTokenHighlight()\">Meldet den Strategen die Besitztümer innerhalb von sechzig Tagen... das Gericht soll in Mantineia sein.\n</span><span class=\"token trans-token\" data-idx=\"6\" onmouseover=\"highlightToken(6)\" onmouseout=\"clearTokenHighlight()\">Ich schwöre bei Athena, Apollon und Poseidon, den Rückkehrern wohlgesinnt zu sein, welche die Stadt beschlossen hat wiederaufzunehmen.\n</span><span class=\"token trans-token unaligned\" data-idx=\"7\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"8\">\n</span><span class=\"token trans-token unaligned\" data-idx=\"9\"></span>"};
+
+    function setTranslation(lang) {
+        const container = document.getElementById('translationCol');
+        const content = document.getElementById('translationContent');
+        const viewer = document.getElementById('textViewer');
+        const btnEn = document.getElementById('btnEn');
+        const btnDe = document.getElementById('btnDe');
+        const btnOff = document.getElementById('btnOff');
+
+        // Reset Buttons
+        [btnEn, btnDe, btnOff].forEach(b => b.classList.remove('active'));
+
+        if(lang === 'none') {
+            container.style.display = 'none';
+            viewer.style.gridTemplateColumns = '40px 1fr';
+            btnOff.classList.add('active');
+        } else {
+            container.style.display = 'block';
+            viewer.style.gridTemplateColumns = '40px 1fr 1fr';
+            content.innerHTML = TRANSLATIONS[lang];
+            if(lang === 'en') btnEn.classList.add('active');
+            if(lang === 'de') btnDe.classList.add('active');
+        }
+    }
+
+    function highlightToken(idx) {
+        document.querySelectorAll(`.token[data-idx="${idx}"]`).forEach(el => el.classList.add('active'));
+    }
+
+    function clearTokenHighlight() {
+        document.querySelectorAll('.token').forEach(el => el.classList.remove('active'));
+    }
+
+    function highlightQuote(quote) {
+        // Legacy highlight for themes - might need adjustment if using tokens
+        // For now, simple find text in container if tokens not sufficient
+        if(!quote) return;
+    }
+
+    function clearHighlight() {}
+
+    function copyCitation() {
+        const citation = "AGKI Project. (2026). Inscription PHI-" + "214832" + ". Retrieved from " + window.location.href;
+        navigator.clipboard.writeText(citation);
+        alert("Citation copied to clipboard!");
+    }
+    </script>
+    
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <h1><a href="../index.html" style="color:white;text-decoration:none;">AGKI Tagging Tool</a></h1>
+    </div>
+  </header>
+  <main class="page-container">
+    <a href="../index.html" class="back-link">← Back to Dashboard</a>
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+        <h2>Inscription PHI-214832</h2>
+        <div style="display:flex; gap:0.5rem;">
+            <button onclick="copyCitation()" class="button secondary" style="font-size:0.9rem; padding:0.5rem 1rem;">📜 Cite</button>
+            <a href="https://epigraphy.packhum.org/text/214832" target="_blank" class="button">View on PHI</a>
+        </div>
+    </div>
+    
+    <div class="meta-grid">
+        <div><small class="eyebrow">Provenance</small><br><a href="https://pleiades.stoa.org/places/570599" target="_blank" title="View in Pleiades">Peloponnesos</a> &gt; <a href="https://pleiades.stoa.org/places/570100" target="_blank" title="View in Pleiades">Arkadia</a> &gt; <a href="https://pleiades.stoa.org/places/570726" target="_blank" title="View in Pleiades">Tegea</a></div>
+        <div><small class="eyebrow">Date</small><br><strong> IG V,2 p. xxxvi; SIG(3) 306</strong></div>
+        <div><small class="eyebrow">Completeness</small><br><span class="badge info">fragmentary</span></div>
+    </div>
+
+    <div style="display:flex; justify-content:space-between; align-items:end; margin-bottom:0.5rem;">
+        <h3>Original Text & Translation</h3>
+        <div class="trans-controls">
+            <span class="eyebrow" style="margin:0; margin-right:0.5rem;">Translation:</span>
+            <button id="btnOff" class="trans-btn active" onclick="setTranslation('none')">Off</button>
+            <button id="btnEn" class="trans-btn" onclick="setTranslation('en')">English</button>
+            <button id="btnDe" class="trans-btn" onclick="setTranslation('de')">German</button>
+        </div>
+    </div>
+
+    <div id="textViewer" class="text-viewer">
+        <div class="line-numbers">1
+
+
+
+5
+
+
+
+
+10</div>
+        <div class="greek-content" id="greekText"><span class="token greek-token" data-idx="0" onmouseover="highlightToken(0)" onmouseout="clearTokenHighlight()">--------------ση[-------- βασιλε ς λ ξ]ανδρος τ δι γρ[α]μμα γραφ ναι κατ τ [πανωρ]θ σατυ π λις τ ν το διαγρ μματι ντιλεγ μενα.
+</span><span class="token greek-token" data-idx="1" onmouseover="highlightToken(1)" onmouseout="clearTokenHighlight()">τ ς φυγ δας τ ς κατενθ ντας τ πατρ ια κομ ζεσθαι ς το ς φευγον κα τ ματρ ια σαι ν σδοτοι τ π ματα κατ χον κα ο κ τ νχανον δελφε ς πεπαμ ναι
+</span><span class="token greek-token" data-idx="2" onmouseover="highlightToken(2)" onmouseout="clearTokenHighlight()">ε δ τινι σδοθ νσαι συν πεσε τ ν δελφε ν κα α τ ν κα τ ν γενε ν πολ σθαι κα ταν ματρ ια ναι ν τερον δ μηκ τι ναι.
+</span><span class="token greek-token" data-idx="3" onmouseover="highlightToken(3)" onmouseout="clearTokenHighlight()">π ς δ τα ς ο κ αις μ αν καστον χεν κατ τ δι γραμμα ε δ τις χει ο κ α κ πον π ς α τ ι λλον μ λαμβαν τω
+</span><span class="token greek-token" data-idx="4" onmouseover="highlightToken(4)" onmouseout="clearTokenHighlight()">τ δ δικαστ ριον τ ξενικ ν δικ ζεν ξ κοντα μερ ν σοι δ ν ν τα ς ξ κοντα μ ραις μ διαδικ σωντοι μ ναι α το ς δικ σασθαι
+</span><span class="token greek-token" data-idx="5" onmouseover="highlightToken(5)" onmouseout="clearTokenHighlight()">π ς τ ς στραταγ ς τ π ματα ν μ ραις ξ κοντα κα ε κ ν τι α το ς [π]απ λογον ι δικαστ ριον ναι μαντιν αν
+</span><span class="token greek-token" data-idx="6" onmouseover="highlightToken(6)" onmouseout="clearTokenHighlight()">μν ω δ α θ ναν π λλωνα ποσειδ να ε νο σω το ς κατηνθηκ σι το ς δοξε τ ι π λι κατυδ χεσθαι
+</span><span class="token greek-token unaligned" data-idx="7">λ-σκλις--λι δι γραμμα -ιι-ι π ς τ ς κατηνθηκ [τ]ας λ-λλιλιιλ τ ι π λι 0-τισλσιλεκτι
+</span><span class="token greek-token unaligned" data-idx="8">-----ιιλ [τ] ν το διαγρ [μμ]ατι γεγραμμ να τλες
+</span><span class="token greek-token unaligned" data-idx="9">ιιρ-λιλιρλιιλ-λιλλ-- [ο] δ βωλε σω π ς ο δ να.</span></div>
+        <div id="translationCol" class="trans-col">
+            <div id="translationContent"></div>
+        </div>
+    </div>
+
+    <h3>Thematic Analysis</h3>
+    <p class="muted" style="margin-bottom:1rem;">Hover over cards to see evidence in text.</p>
+    
+        <div class="theme-card" onmouseover="highlightQuote('τ ς φυγ δας τ ς κατενθ ντας τ πατρ ια κομ ζεσθαι')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:start;">
+                <div>
+                    <span class="tag domain-tag">Official and Legal Documents</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">95% Conf.</span>
+                    <div class="theme-path">Official and Legal Documents > Laws and Regulations</div>
+                    <div class="theme-label">Laws and Regulations</div>
+                </div>
+                <div class="ai-rationale-box">
+                    <strong>🤖 AI Rationale:</strong>
+                    <p>Der Text enthält detaillierte gesetzliche Bestimmungen für die Rückkehr von Verbannten, einschließlich Regelungen zu Eigentum (Häuser, Gärten), Erbschaft und Gerichtsverfahren.</p>
+                    <p class="evidence-quote">Evidence: "τ ς φυγ δας τ ς κατενθ ντας τ πατρ ια κομ ζεσθαι"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('δι γρ[α]μμα γραφ ναι κατ τ [πανωρ]θ σατυ π λις')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:start;">
+                <div>
+                    <span class="tag domain-tag">Official and Legal Documents</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">90% Conf.</span>
+                    <div class="theme-path">Official and Legal Documents > Decrees</div>
+                    <div class="theme-label">Decrees</div>
+                </div>
+                <div class="ai-rationale-box">
+                    <strong>🤖 AI Rationale:</strong>
+                    <p>Es handelt sich um einen Beschluss der Stadt (Tegea), der auf ein königliches Edikt (Diagramma) reagiert und lokale Anpassungen vornimmt.</p>
+                    <p class="evidence-quote">Evidence: "δι γρ[α]μμα γραφ ναι κατ τ [πανωρ]θ σατυ π λις"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('μν ω δ α θ ναν π λλωνα ποσειδ να')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:start;">
+                <div>
+                    <span class="tag domain-tag">Religious and Dedicatory Texts</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">90% Conf.</span>
+                    <div class="theme-path">Religious and Dedicatory Texts > Sacred Laws and Rules</div>
+                    <div class="theme-label">Oaths</div>
+                </div>
+                <div class="ai-rationale-box">
+                    <strong>🤖 AI Rationale:</strong>
+                    <p>Der Text endet mit einer Eidesformel, die von den Bürgern und Rückkehrern geschworen werden muss, um den Frieden zu sichern.</p>
+                    <p class="evidence-quote">Evidence: "μν ω δ α θ ναν π λλωνα ποσειδ να"</p>
+                </div>
+            </div>
+        </div>
+        
+    <h3>Entities</h3>
+    <div><span class="tag entity-tag">👤 Alexander the Great <small>(King)</small></span><span class="tag entity-tag">📍 Tegea <small>(Polis)</small></span><span class="tag entity-tag">📍 Mantinea <small>(Polis)</small></span></div>
+  </main>
+</body>
+</html>
