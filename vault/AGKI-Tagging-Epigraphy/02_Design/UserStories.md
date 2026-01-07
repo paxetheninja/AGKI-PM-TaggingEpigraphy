@@ -28,6 +28,7 @@ User Stories, filtered into categories based on the [[UserPersonas]] needs.
 - **Entity Extraction:** As **Stephan-Felix**, I want names of people and places to be underlined, so I can distinguish them from regular vocabulary words.
 - **Line Numbering:** As **Herbert**, I need standard line numbering (5, 10, 15) to cite the text accurately in my forthcoming publication.
 - **Critical Signs:** As **Herbert**, I need the text to accurately render Leiden Conventions (brackets, dots) to understand the preservation state without consulting the book.
+- **Interactive Translation:** As **Stephan-Felix**, I want to see a fluent English or German translation side-by-side with the Greek text, and when I hover over a word in the translation, I want the corresponding Greek word to highlight so I can learn the vocabulary in context.
 - **Split View:** As **Matthias**, I want to see the Greek text on the left and the extracted Metadata/Tags on the right to project this view during my lecture.
 ## Data Management & Export (The "Fair" Layer)
 - **Citation Generator:** As **Stephan-Felix**, I want a button to copy a permanent citation for the current inscription, including the date accessed, for my bibliography.
