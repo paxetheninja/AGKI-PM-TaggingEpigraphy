@@ -15,7 +15,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 logger = logging.getLogger(__name__)
 
 def main():
-    logger.info("Starting Real API Test Run (10 Random Samples)")
+    logger.info("Starting Real API Test Run (5 Random Samples)")
 
     # 1. Load Data
     logger.info(f"Loading inscriptions from {INPUT_DIR}...")
@@ -25,9 +25,9 @@ def main():
         logger.error("No inscriptions found in input directory.")
         return
     
-    # Select 10 random inscriptions
+    # Select 5 random inscriptions
     # Use a fixed seed for reproducibility if needed, but random is fine for a test
-    selected_inscriptions = random.sample(all_inscriptions, min(10, len(all_inscriptions)))
+    selected_inscriptions = random.sample(all_inscriptions, min(5, len(all_inscriptions)))
     logger.info(f"Selected {len(selected_inscriptions)} inscriptions for testing.")
 
     # 2. Load Taxonomy

@@ -2,15 +2,26 @@ import json
 import logging
 from pathlib import Path
 from tqdm import tqdm
+import datetime
 
-from .config import INPUT_DIR, OUTPUT_DIR, TAXONOMY_DIR, DEFAULT_MODEL_NAME, LOG_LEVEL
+from .config import INPUT_DIR, OUTPUT_DIR, TAXONOMY_DIR, DEFAULT_MODEL_NAME, LOG_LEVEL, LOGS_DIR
 from .data_loader import load_inscriptions
 from .preprocessing import clean_metadata
 from .llm_client import get_llm_client
 from .tagger import tag_inscription
 
 # Setup Logging
-logging.basicConfig(level=LOG_LEVEL, format='%(asctime)s - %(levelname)s - %(message)s')
+timestamp = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+log_file = LOGS_DIR / f"pipeline_run_{timestamp}.log"
+
+logging.basicConfig(
+    level=LOG_LEVEL, 
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler(log_file, encoding='utf-8'),
+        logging.StreamHandler()
+    ]
+)
 logger = logging.getLogger(__name__)
 
 def load_taxonomy():
@@ -31,6 +42,10 @@ def main():
     if not inscriptions:
         logger.warning("No input files found. Please place JSON files in data/input/")
         return
+        
+    # Shuffle for random selection if limiting
+    import random
+    random.shuffle(inscriptions)
 
     # 2. Load Taxonomy
     try:
@@ -53,7 +68,16 @@ def main():
     skip_count = 0
     error_count = 0
     
+    import os
+    max_inscriptions = int(os.getenv("MAX_INSCRIPTIONS", -1))
+    processed_count = 0
+
     for inscription in tqdm(inscriptions, desc="Tagging Inscriptions"):
+        if max_inscriptions > 0 and processed_count >= max_inscriptions:
+            logger.info(f"Reached limit of {max_inscriptions} inscriptions. Stopping.")
+            break
+
+        processed_count += 1
         output_file = OUTPUT_DIR / f"{inscription.id}.json"
         
         # Cache check
@@ -62,6 +86,7 @@ def main():
             continue
             
         try:
+            logger.info(f"Processing Inscription ID: {inscription.id}")
             # Preprocess
             clean_inscription = clean_metadata(inscription)
             
