@@ -72,8 +72,9 @@ def load_taxonomy():
     with open(TAXONOMY_DIR / "taxonomy.json", 'r', encoding='utf-8') as f: return json.load(f)
 
 def generate_detail_page(merged_data):
+    import html
     phi_id = merged_data['id']
-    text_content = merged_data['input'].get('text', '')
+    text_content = merged_data['input'].get('text', '').replace('\r\n', '\n').replace('\r', '\n')
     
     # Provenance
     prov_list = merged_data['output'].get('provenance', [])
@@ -97,20 +98,18 @@ def generate_detail_page(merged_data):
         conf = t.get('confidence', 1.0)
         conf_color = "green" if conf > 0.8 else ("orange" if conf > 0.6 else "red")
         quote = t.get('quote', '') or ''
-        safe_quote = quote.replace('"', '&quot;')
+        safe_quote = html.escape(quote).replace('"', '&quot;')
 
         themes_html += """
         <div class="theme-card" onmouseover="highlightQuote('{quote}')" onmouseout="clearHighlight()">
-            <div style="display:flex; justify-content:space-between; align-items:start;">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
                 <div>
                     <span class="tag domain-tag">{domain}</span>
                     <span class="badge {conf_color}" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">{conf_pct}% Conf.</span>
                     <div class="theme-path">{path}</div>
                     <div class="theme-label">{label}</div>
                 </div>
-                <div class="ai-rationale-box">
-                    <strong>🤖 AI Rationale:</strong>
-                    <p>{rationale}</p>
+                <div class="evidence-box">
                     <p class="evidence-quote">Evidence: "{orig_quote}"</p>
                 </div>
             </div>
@@ -122,49 +121,111 @@ def generate_detail_page(merged_data):
             conf_pct=int(conf*100),
             path=path_str,
             label=t['label'],
-            rationale=t.get('rationale', 'No rationale provided.'),
-            orig_quote=quote
+            orig_quote=html.escape(quote)
         )
 
     # Entities
     entities = merged_data.get('output', {}).get('entities', {})
     persons_html = ""
     for p in entities.get('persons', []):
-        persons_html += '<span class="tag entity-tag">👤 {} <small>({})</small></span>'.format(p["name"], p.get("role", ""))
+        persons_html += '<span class="tag entity-tag">👤 {} <small>({})</small></span>'.format(html.escape(p["name"]), html.escape(p.get("role", "")))
     places_html = ""
     for p in entities.get('places', []):
-        places_html += '<span class="tag entity-tag">📍 {} <small>({})</small></span>'.format(p["name"], p.get("type", ""))
+        places_html += '<span class="tag entity-tag">📍 {} <small>({})</small></span>'.format(html.escape(p["name"]), html.escape(p.get("type", "")))
 
-    lines = text_content.splitlines()
-    line_nums_html = "<br>".join([str(i+1) if (i+1)%5==0 or i==0 else "&nbsp;" for i in range(len(lines))])
+    # Global Analysis Summary
+    global_rationale = merged_data.get('output', {}).get('rationale', 'No additional analysis provided.')
 
-    # Raw JS string to avoid format issues
+    # Prepare Tokenized Data
+    translations = merged_data.get('output', {}).get('translations', [])
+    
+    # We prepare a JS object containing the alignments for dynamic rendering
+    # format: { "en": [ {greek: "...", trans: "..."}, ... ], "de": ... }
+    alignment_js_data = {}
+    for tr in translations:
+        lang = tr['language']
+        alignment_js_data[lang] = tr.get('alignment', [])
+
+    alignment_json = json.dumps(alignment_js_data, ensure_ascii=False)
+    
+    # Original Text (Strict Line-by-Line)
+    # We just use the raw text content. The CSS white-space: pre will handle the newlines.
+    raw_greek_html = html.escape(text_content)
+    
+    lines = text_content.split('\n')
+    line_nums = [str(i+1) if (i+1)%5==0 or i==0 else "" for i in range(len(lines))]
+    line_nums_html = "\n".join(line_nums)
+
+    # Raw JS string
     js_raw = r"""
     <script>
     const savedTheme = localStorage.getItem('theme') || 'light';
     document.documentElement.setAttribute('data-theme', savedTheme);
+    
+    const ALIGNMENTS = %s;
 
-    function highlightQuote(quote) {
-        if(!quote) return;
-        const content = document.getElementById('greekText');
-        const innerHTML = content.innerHTML;
-        const safeQuote = quote.replace(/[.*+?^${{}}()|[\\]/g, '\\$&');
-        const re = new RegExp('(' + safeQuote + ')', 'gi');
-        content.innerHTML = innerHTML.replace(re, '<span class="highlight">$1</span>');
+    function setTranslation(lang) {
+        const btnEn = document.getElementById('btnEn');
+        const btnDe = document.getElementById('btnDe');
+        const btnOff = document.getElementById('btnOff');
+        
+        const originalView = document.getElementById('original-view');
+        const comparisonView = document.getElementById('comparison-view');
+        
+        const greekCol = document.getElementById('fluent-greek');
+        const transCol = document.getElementById('fluent-trans');
+
+        // Reset Buttons
+        [btnEn, btnDe, btnOff].forEach(b => b.classList.remove('active'));
+
+        if(lang === 'none') {
+            // Show Original Line-by-Line View
+            originalView.style.display = 'grid';
+            comparisonView.style.display = 'none';
+            btnOff.classList.add('active');
+        } else {
+            // Show Comparison Side-by-Side View
+            originalView.style.display = 'none';
+            comparisonView.style.display = 'grid';
+            
+            if(lang === 'en') btnEn.classList.add('active');
+            if(lang === 'de') btnDe.classList.add('active');
+            
+            // Render Fluent Columns
+            const data = ALIGNMENTS[lang] || [];
+            let greekHtml = '';
+            let transHtml = '';
+            
+            if (data.length === 0) {
+                greekHtml = '<p class="muted">No alignment data.</p>';
+                transHtml = '<p class="muted">No alignment data.</p>';
+            } else {
+                data.forEach((row, index) => {
+                    // Create interactive spans for fluent reading
+                    greekHtml += `<span class="fluent-segment" data-seg-id="${index}" onmouseover="highlightSegment(${index})" onmouseout="clearHighlightSegment()">${row.greek} </span>`;
+                    transHtml += `<span class="fluent-segment" data-seg-id="${index}" onmouseover="highlightSegment(${index})" onmouseout="clearHighlightSegment()">${row.translation} </span>`;
+                });
+            }
+            greekCol.innerHTML = greekHtml;
+            transCol.innerHTML = transHtml;
+        }
     }
 
-    function clearHighlight() {
-        const content = document.getElementById('greekText');
-        content.innerHTML = content.textContent; 
+    function highlightSegment(id) {
+        document.querySelectorAll(`.fluent-segment[data-seg-id="${id}"]`).forEach(el => el.classList.add('active-segment'));
+    }
+
+    function clearHighlightSegment() {
+        document.querySelectorAll('.fluent-segment').forEach(el => el.classList.remove('active-segment'));
     }
 
     function copyCitation() {
-        const citation = "AGKI Project. (2026). Inscription PHI-" + str(phi_id) + r". Retrieved from " + window.location.href;
+        const citation = "AGKI Project. (2026). Inscription PHI-" + "%s" + ". Retrieved from " + window.location.href;
         navigator.clipboard.writeText(citation);
         alert("Citation copied to clipboard!");
     }
     </script>
-    """
+    """ % (alignment_json, phi_id)
 
     # Assemble HTML
     html_head = """<!doctype html>
@@ -175,21 +236,123 @@ def generate_detail_page(merged_data):
   <title>PHI-{} - AGKI</title>
   <link rel="stylesheet" href="../assets/css/main.css">
   <style>
-    .page-container {{ max-width: 1100px; margin: 0 auto; padding: 2rem; }}
+    /* Custom Scrollbar Styling */
+    ::-webkit-scrollbar {{
+        width: 8px;
+        height: 8px;
+    }}
+    ::-webkit-scrollbar-track {{
+        background: rgba(0,0,0,0.05); 
+    }}
+    ::-webkit-scrollbar-thumb {{
+        background: #ccc; 
+        border-radius: 4px;
+    }}
+    ::-webkit-scrollbar-thumb:hover {{
+        background: #aaa; 
+    }}
+
+    .page-container {{ max-width: 1400px; margin: 0 auto; padding: 2rem; }}
     .back-link {{ display: inline-block; margin-bottom: 1rem; color: var(--primary); font-weight: 600; }}
-    .text-viewer {{ display: grid; grid-template-columns: 40px 1fr; gap: 1rem; font-family: "New Athena Unicode", "Gentium Plus", "Times New Roman", serif; font-size: 1.2rem; line-height: 1.8; background: var(--panel); padding: 2rem; border: 1px solid var(--border); border-radius: 4px; margin-bottom: 2rem; color: var(--text); }}
-    .line-numbers {{ text-align: right; color: var(--muted); font-size: 0.9rem; user-select: none; opacity: 0.6; font-family: sans-serif; }}
-    .greek-content {{ white-space: pre-wrap; }}
-    .highlight {{ background-color: rgba(255, 255, 0, 0.3); border-radius: 2px; transition: background-color 0.2s; }}
-    .theme-card {{ background: var(--panel); padding: 1.5rem; border-left: 4px solid var(--primary); margin-bottom: 1rem; border: 1px solid var(--border); border-left-width: 4px; transition: transform 0.2s; }}
-    .theme-card:hover {{ transform: translateX(4px); box-shadow: var(--shadow); }}
-    .ai-rationale-box {{ background: rgba(31, 167, 163, 0.08); padding: 0.75rem; border-radius: 6px; font-size: 0.9rem; color: var(--muted); max-width: 400px; }}
-    .evidence-quote {{ border-left: 2px solid var(--accent); padding-left: 0.5rem; margin-top: 0.5rem; font-style: italic; color: var(--text); }}
+    
+    /* Original View Styles (Line by Line) */
+    .text-viewer-original {{ 
+        display: grid; 
+        grid-template-columns: 40px 1fr; 
+        gap: 2rem; 
+        font-family: "New Athena Unicode", "Gentium Plus", "Times New Roman", serif; 
+        font-size: 1.25rem; 
+        line-height: 1.6; 
+        background: var(--panel); 
+        padding: 2rem; 
+        border: 1px solid var(--border); 
+        border-radius: 4px; 
+        margin-bottom: 2rem; 
+        color: var(--text);
+    }}
+
+    .line-numbers {{ 
+        text-align: right; 
+        color: var(--muted); 
+        font-size: 1.25rem; 
+        line-height: 1.6; 
+        user-select: none; 
+        opacity: 0.5; 
+        font-family: inherit; 
+        white-space: pre; 
+        padding-right: 1rem;
+        border-right: 1px solid var(--border);
+    }}
+
+    .greek-content {{ 
+        white-space: pre-wrap; /* Better than scrollbar: wrap lines nicely */
+        word-break: break-word;
+        padding-left: 1rem; 
+    }}
+
+    /* Fluent Comparison View Styles */
+    .comparison-container {{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: 4px;
+        margin-bottom: 2rem;
+        padding: 2rem;
+    }}
+    
+    .fluent-col {{
+        line-height: 1.8;
+        font-size: 1.15rem;
+    }}
+
+    .fluent-col-header {{
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--muted);
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid var(--border);
+    }}
+
+    .fluent-greek {{
+        font-family: "New Athena Unicode", "Gentium Plus", "Times New Roman", serif; 
+        font-size: 1.25rem;
+        color: var(--text);
+    }}
+
+    .fluent-trans {{
+        font-family: system-ui, -apple-system, sans-serif;
+        color: var(--text);
+    }}
+
+    .fluent-segment {{
+        border-radius: 3px;
+        transition: background-color 0.2s, color 0.1s;
+        cursor: pointer;
+    }}
+    
+    .fluent-segment:hover, .active-segment {{
+        background-color: rgba(217, 123, 61, 0.15); /* Accent color tint */
+        color: var(--primary);
+    }}
+
+    .trans-controls {{ margin-bottom: 1rem; display: flex; gap: 0.5rem; justify-content: flex-end; align-items: center; }}
+    .trans-btn {{ background: var(--bg); border: 1px solid var(--border); padding: 0.4rem 0.8rem; cursor: pointer; color: var(--muted); font-size: 0.85rem; border-radius: 4px; }}
+    .trans-btn:hover {{ border-color: var(--primary); color: var(--text); }}
+    .trans-btn.active {{ background: var(--primary); color: white; border-color: var(--primary); }}
+
+    .theme-card {{ background: var(--panel); padding: 1rem 1.5rem; border-left: 4px solid var(--primary); margin-bottom: 0.75rem; border: 1px solid var(--border); border-left-width: 4px; }}
+    .ai-analysis-box {{ background: rgba(31, 167, 163, 0.05); padding: 2rem; border-radius: 8px; border: 1px solid var(--border); margin-top: 2rem; }}
+    .evidence-box {{ max-width: 500px; text-align: right; }}
+    .evidence-quote {{ font-size: 0.85rem; font-style: italic; color: var(--muted); margin: 0; }}
     .badge.green {{ background: #e6f4ea; color: #137333; border-color: #137333; }}
     .badge.orange {{ background: #fef7e0; color: #b06000; border-color: #b06000; }}
     .badge.red {{ background: #fce8e6; color: #c5221f; border-color: #c5221f; }}
-    .entity-tag {{ background: rgba(217, 123, 61, 0.1); color: var(--accent-2); margin-right: 0.5rem; margin-bottom: 0.5rem; display: inline-block; padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.9rem; border: 1px solid rgba(217, 123, 61, 0.2); text-decoration: none; }}
-    .entity-tag.linked:hover {{ background: rgba(217, 123, 61, 0.2); text-decoration: underline; cursor: pointer; }}
+    .entity-tag {{ background: rgba(217, 123, 61, 0.1); color: var(--accent-2); margin-right: 0.5rem; margin-bottom: 0.5rem; display: inline-block; padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.9rem; border: 1px solid rgba(217, 123, 61, 0.2); }}
   </style>
   {}
 </head>""".format(phi_id, js_raw)
@@ -210,21 +373,53 @@ def generate_detail_page(merged_data):
             <a href="https://epigraphy.packhum.org/text/{}" target="_blank" class="button">View on PHI</a>
         </div>
     </div>
+    
     <div class="meta-grid">
         <div><small class="eyebrow">Provenance</small><br>{}</div>
         <div><small class="eyebrow">Date</small><br><strong>{}</strong></div>
         <div><small class="eyebrow">Completeness</small><br><span class="badge info">{}</span></div>
     </div>
-    <h3>Original Text</h3>
-    <div class="text-viewer">
-        <div class="line-numbers">{}</div>
-        <div class="greek-content" id="greekText">{}</div>
+
+    <div style="display:flex; justify-content:space-between; align-items:end; margin-bottom:0.5rem;">
+        <h3>Original Text & Translation</h3>
+        <div class="trans-controls">
+            <span class="eyebrow" style="margin:0; margin-right:0.5rem;">Translation:</span>
+            <button id="btnOff" class="trans-btn active" onclick="setTranslation('none')">Original (Lines)</button>
+            <button id="btnEn" class="trans-btn" onclick="setTranslation('en')">English (Compare)</button>
+            <button id="btnDe" class="trans-btn" onclick="setTranslation('de')">German (Compare)</button>
+        </div>
     </div>
+
+    <!-- Original Line-by-Line View -->
+    <div id="original-view" class="text-viewer-original">
+        <div class="line-numbers">{}</div>
+        <div class="greek-content">{}</div>
+    </div>
+
+    <!-- Fluent Comparison View -->
+    <div id="comparison-view" class="comparison-container" style="display:none;">
+        <div class="fluent-col">
+            <div class="fluent-col-header">Greek Text</div>
+            <div id="fluent-greek" class="fluent-greek"></div>
+        </div>
+        <div class="fluent-col">
+            <div class="fluent-col-header">Translation</div>
+            <div id="fluent-trans" class="fluent-trans"></div>
+        </div>
+    </div>
+
     <h3>Thematic Analysis</h3>
-    <p class="muted" style="margin-bottom:1rem;">Hover over cards to see evidence in text.</p>
     {}
-    <h3>Entities</h3>
-    <div>{}</div>
+    
+    <div style="margin-top:2rem;">
+        <h3>Entities</h3>
+        <div>{}</div>
+    </div>
+
+    <div class="ai-analysis-box">
+        <h3>🤖 AI Analysis Summary</h3>
+        <p style="line-height:1.7;">{}</p>
+    </div>
   </main>
 </body>
 </html>
@@ -235,9 +430,10 @@ def generate_detail_page(merged_data):
         merged_data['input'].get('date_str', 'N/A'),
         merged_data['output'].get('completeness', 'unknown'),
         line_nums_html,
-        text_content,
+        raw_greek_html,
         themes_html if themes_html else "<p class='muted'>No themes assigned.</p>",
-        persons_html + places_html
+        persons_html + places_html,
+        html.escape(global_rationale).replace('\n', '<br>')
     )
 
     return html_head + html_body
@@ -325,6 +521,11 @@ def build_website(mode=None):
     js_content = f"const APP_DATA = {json.dumps(full_data, ensure_ascii=False)};"
     with open(WEBSITE_DIR / "assets/js/data.js", 'w', encoding='utf-8') as f:
         f.write(js_content)
+    
+    # Also update the specific mode file for the dashboard's data switcher
+    if mode in ["real", "dummy"]:
+        with open(WEBSITE_DIR / f"assets/js/data_{mode}.js", 'w', encoding='utf-8') as f:
+            f.write(js_content)
         
     print(f"Website built. {len(merged_list)} pages generated.")
 
