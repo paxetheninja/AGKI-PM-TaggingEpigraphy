@@ -3,7 +3,7 @@ import random
 from pathlib import Path
 from .config import INPUT_DIR, OUTPUT_DUMMY_DIR, TAXONOMY_DIR
 from .data_loader import load_inscriptions
-from .schema import TaggedInscription, Theme, Hierarchy, Entities, PersonEntity, PlaceEntity, GeoLocation
+from .schema import TaggedInscription, Theme, Hierarchy, Entities, PersonEntity, PlaceEntity, GeoLocation, Translation, AlignedSegment
 
 def load_taxonomy():
     with open(TAXONOMY_DIR / "taxonomy.json", 'r', encoding='utf-8') as f:
@@ -98,6 +98,65 @@ def generate_theme_from_path(path, text):
         quote=quote
     )
 
+def get_dummy_translations(text):
+    # Normalize newlines and preserve everything else
+    text = text.replace('\r\n', '\n').replace('\r', '\n')
+    lines = text.split('\n')
+    en_align = []
+    de_align = []
+    
+    # Mock Phrases
+    en_phrases = [
+        "In the name of the gods.",
+        "The Council and the People decided.",
+        "During the prytany of the Leontis tribe.",
+        "It was resolved by the assembly.",
+        "May it be for the good fortune of the city.",
+        "To the Olympian deities.",
+        "As proposed by the archon.",
+        "Written in the official records.",
+        "This decree is to be set up on a stone stele.",
+        "For the excellence and justice shown to the people."
+    ]
+    de_phrases = [
+        "Im Namen der Götter.",
+        "Der Rat und das Volk haben beschlossen.",
+        "Während der Prytanie des Stammes Leontis.",
+        "Die Volksversammlung hat entschieden.",
+        "Möge es zum Wohle der Stadt sein.",
+        "Den olympischen Gottheiten.",
+        "Wie vom Archonten vorgeschlagen.",
+        "In den offiziellen Urkunden verzeichnet.",
+        "Dieses Dekret soll auf einer Stele aufgestellt werden.",
+        "Für die Exzellenz und Gerechtigkeit gegenüber dem Volk."
+    ]
+    
+    for i, line in enumerate(lines):
+        is_last = (i == len(lines) - 1)
+        suffix = "" if is_last else "\n"
+        
+        # Exact Greek line from input
+        greek_seg = line + suffix
+        
+        if not line.strip():
+            en_align.append(AlignedSegment(greek=greek_seg, translation=suffix))
+            de_align.append(AlignedSegment(greek=greek_seg, translation=suffix))
+            continue
+            
+        en_text = en_phrases[i % len(en_phrases)]
+        de_text = de_phrases[i % len(de_phrases)]
+        
+        en_align.append(AlignedSegment(greek=greek_seg, translation=en_text + suffix))
+        de_align.append(AlignedSegment(greek=greek_seg, translation=de_text + suffix))
+            
+    fluent_en = "".join([s.translation for s in en_align])
+    fluent_de = "".join([s.translation for s in de_align])
+    
+    return [
+        Translation(language="en", text=fluent_en, alignment=en_align),
+        Translation(language="de", text=fluent_de, alignment=de_align)
+    ]
+
 def generate_dummy_data(limit=50):
     inscriptions = load_inscriptions(INPUT_DIR, limit=limit)
     taxonomy = load_taxonomy()
@@ -117,9 +176,10 @@ def generate_dummy_data(limit=50):
             phi_id=inscription.id,
             themes=themes,
             entities=Entities(persons=persons, places=places),
+            translations=get_dummy_translations(inscription.text),
             completeness=random.choice(["intact", "fragmentary"]),
             provenance=get_random_provenance(inscription.region_main),
-            model="dummy-generator-v2"
+            model="dummy-generator-v3"
         )
         
         with open(OUTPUT_DUMMY_DIR / f"{inscription.id}.json", 'w', encoding='utf-8') as f:
