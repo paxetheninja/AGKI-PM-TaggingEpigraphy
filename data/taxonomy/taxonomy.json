@@ -1,0 +1,189 @@
+{
+  "Content": {
+    "Official and Legal Documents": {
+      "Decrees": {},
+      "Laws and Regulations": {},
+      "Edicts and Ordinances": {},
+      "Treaties and Agreements": {},
+      "Contracts and Private Legal Acts": {},
+      "Manumission Records": {},
+      "Official Letters": {}
+    },
+    "Religious and Dedicatory Texts": {
+      "Votive Dedications": {},
+      "Prayers and Invocations": {},
+      "Sacred Laws and Rules": {},
+      "Curses and Magic": {
+        "Curse Tablets (Defixiones)": {},
+        "Protective Charms": {}
+      },
+      "Oracular and Prophetic Texts": {},
+      "Hymns and Sacred Poetry": {},
+      "Confession Inscriptions": {},
+      "Orations and Praise of Gods": {}
+    },
+    "Honorific and Commemorative Inscriptions": {
+      "Honorific Inscriptions": {},
+      "Funerary Inscriptions (Epitaphs)": {},
+      "Commemorative Monuments": {},
+      "Agonistic / Victory Inscriptions": {},
+      "Building Commemoration": {}
+    },
+    "Administrative Records and Lists": {
+      "Accounts and Financial Records": {},
+      "Inventories": {},
+      "Lists of Officials or Citizens": {},
+      "Donor and Subscription Lists": {},
+      "Calendars and Timetables": {},
+      "Registers and Catalogues": {}
+    },
+    "Identification and Ownership Marks": {
+      "Ownership Marks": {},
+      "Maker’s Marks and Signatures": {},
+      "Labels and Captions": {},
+      "Boundary Markers (Horoi)": {},
+      "Centurial and Construction Marks": {}
+    },
+    "Didactic and School Texts": {
+      "Abecedaria (Alphabetical Exercises)": {},
+      "Writing Exercises and School Texts": {},
+      "Literary Quotations and Excerpts": {},
+      "Didascalic Epigrams": {},
+      "Catalogues of Knowledge": {}
+    },
+    "Graffiti and Personal Expressions": {
+      "Graffiti Messages": {},
+      "Acclamations and Slogans": {},
+      "Humor, Insults, and Competitive Graffiti": {},
+      "Drawings and Figure Labels (Textual Components)": {}
+    }
+  },
+  "Type": {
+    "Object Type": {
+      "Monumental Stone Objects": {
+        "Stele": {},
+        "Statue Base": {},
+        "Altar": {},
+        "Column or Pillar": {},
+        "Wall or Building Surface": {
+          "Rock-cut / Rupestral Inscriptions": {}
+        },
+        "Tombstone (Gravestone)": {},
+        "Sarcophagus": {},
+        "Mosaic Floor or Pavement": {},
+        "Other Architectural Elements": {
+          "Architraves / Friezes / Archways": {},
+          "Cornerstones / Building Blocks": {},
+          "Assembling / Setting Marks": {}
+        }
+      },
+      "Portable Objects": {
+        "Ceramic Vessels and Ostraca": {
+          "Painted Vessel Inscriptions": {},
+          "Incised Vessel Inscriptions": {},
+          "Ostraca": {}
+        },
+        "Lead or Metal Tablets": {
+          "Lead Tablets": {},
+          "Bronze Tablets": {}
+        },
+        "Plaques and Plates": {
+          "Metal Plaques / Leaves": {},
+          "Clay or Stone Tablets": {}
+        },
+        "Weapons and Armor": {
+          "Helmets": {},
+          "Shields": {},
+          "Swords / Blades": {}
+        },
+        "Tools and Utensils": {
+          "Strigils": {},
+          "Mirrors": {},
+          "Loom Weights": {},
+          "Measuring Weights": {}
+        },
+        "Jewelry and Gems": {
+          "Rings": {},
+          "Engraved Gemstones": {},
+          "Inscribed Jewelry Items": {}
+        },
+        "Coins": {},
+        "Organic Supports": {
+          "Wooden Tablets": {},
+          "Other Organic Objects": {}
+        }
+      }
+    },
+    "Material": {
+      "Stone": {
+        "Marble": {},
+        "Limestone": {},
+        "Sandstone": {},
+        "Basalt": {},
+        "Granite": {},
+        "Tuff / Volcanic Stone": {},
+        "Other Stone": {}
+      },
+      "Metal": {
+        "Bronze": {},
+        "Lead": {},
+        "Iron": {},
+        "Silver": {},
+        "Gold": {},
+        "Other Metal / Alloy": {}
+      },
+      "Clay and Ceramic": {
+        "Terracotta / Pottery": {},
+        "Ceramic Tiles / Bricks": {},
+        "Other Ceramic": {}
+      },
+      "Organic Materials": {
+        "Wood": {},
+        "Bone": {},
+        "Ivory": {},
+        "Horn": {},
+        "Shell / Eggshell": {},
+        "Papyrus / Parchment": {}
+      },
+      "Other Materials": {
+        "Glass": {},
+        "Plaster": {},
+        "Composite / Mixed Materials": {}
+      }
+    }
+  },
+  "State": {
+    "Complete / Intact": {
+      "Complete": {},
+      "Intact": {}
+    },
+    "Incomplete / Fragmentary": {
+      "Incomplete": {},
+      "Fragmentary": {},
+      "Broken": {},
+      "Non-contiguous Fragments": {},
+      "Contiguous / Rejoinable Fragments": {}
+    },
+    "Legibility": {
+      "Damaged but Legible": {},
+      "Good": {},
+      "Worn / Weathered": {},
+      "Illegible": {}
+    },
+    "Loss and Documentation Status": {
+      "Lost": {},
+      "Lost but Recorded": {}
+    },
+    "Reconstruction and Intervention": {
+      "Reconstructed": {
+        "Multiple Fragments Joined": {},
+        "Partial Reconstruction": {}
+      },
+      "Mutilated / Erased": {
+        "Damnatio Memoriae-like Name Erasure": {},
+        "Chiselled / Defaced Surface": {}
+      },
+      "Reused / Palimpsest": {}
+    }
+  }
+}
