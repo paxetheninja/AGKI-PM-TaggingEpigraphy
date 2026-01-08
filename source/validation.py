@@ -1,17 +1,31 @@
 import json
 from pathlib import Path
 from typing import List, Dict
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 class ValidationMetrics(BaseModel):
     total_samples: int = 0
+    valid_structural: int = 0
+    invalid_structural: List[str] = Field(default_factory=list)
     exact_matches: int = 0
     partial_matches: int = 0
     mismatches: int = 0
 
-def load_json(path: Path) -> Dict:
-    with open(path, 'r', encoding='utf-8') as f:
-        return json.load(f)
+def validate_structure(prediction_dir: Path):
+    """Checks if all JSON files in the directory match the TaggedInscription schema."""
+    from .schema import TaggedInscription
+    invalid_files = []
+    files = list(prediction_dir.glob("*.json"))
+    
+    for f in files:
+        try:
+            with open(f, 'r', encoding='utf-8') as f_in:
+                data = json.load(f_in)
+                TaggedInscription(**data)
+        except Exception as e:
+            invalid_files.append(f"{f.name}: {str(e)}")
+            
+    return len(files), invalid_files
 
 def compare_themes(pred_themes: List[Dict], truth_themes: List[Dict]) -> str:
     """
@@ -58,15 +72,17 @@ def run_validation(prediction_dir: Path, ground_truth_dir: Path) -> ValidationMe
     return metrics
 
 if __name__ == "__main__":
-    # Example usage
-    import sys
-    # These paths would need to be configured
-    PRED_DIR = Path("data/output")
-    TRUTH_DIR = Path("data/ground_truth") 
+    from .config import OUTPUT_DIR
     
-    if TRUTH_DIR.exists():
-        results = run_validation(PRED_DIR, TRUTH_DIR)
-        print("Validation Results:")
-        print(results.model_dump_json(indent=2))
-    else:
-        print(f"Ground truth directory {TRUTH_DIR} not found.")
+    print(f"Running structural validation on {OUTPUT_DIR}...")
+    total, invalid = validate_structure(OUTPUT_DIR)
+    
+    print(f"\nResults:")
+    print(f"Total files checked: {total}")
+    print(f"Valid files: {total - len(invalid)}")
+    print(f"Invalid files: {len(invalid)}")
+    
+    if invalid:
+        print("\nErrors found in:")
+        for err in invalid:
+            print(f" - {err}")

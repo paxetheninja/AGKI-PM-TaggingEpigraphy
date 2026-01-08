@@ -1,6 +1,6 @@
 import json
 from pathlib import Path
-from .config import INPUT_DIR, OUTPUT_DIR, OUTPUT_DUMMY_DIR, TAXONOMY_DIR
+from .config import INPUT_DIR, OUTPUT_DIR, TAXONOMY_DIR
 from .data_loader import load_inscriptions
 
 WEBSITE_DIR = Path("website")
@@ -132,100 +132,20 @@ def generate_detail_page(merged_data):
     places_html = ""
     for p in entities.get('places', []):
         places_html += '<span class="tag entity-tag">📍 {} <small>({})</small></span>'.format(html.escape(p["name"]), html.escape(p.get("type", "")))
+    deities_html = ""
+    for d in entities.get('deities', []):
+        deities_html += '<span class="tag entity-tag">⚡ {}</span>'.format(html.escape(d))
 
     # Global Analysis Summary
-    global_rationale = merged_data.get('output', {}).get('rationale', 'No additional analysis provided.')
+    global_rationale = merged_data.get('output', {}).get('rationale') or 'No additional analysis provided.'
 
-    # Prepare Tokenized Data
-    translations = merged_data.get('output', {}).get('translations', [])
-    
-    # We prepare a JS object containing the alignments for dynamic rendering
-    # format: { "en": [ {greek: "...", trans: "..."}, ... ], "de": ... }
-    alignment_js_data = {}
-    for tr in translations:
-        lang = tr['language']
-        alignment_js_data[lang] = tr.get('alignment', [])
-
-    alignment_json = json.dumps(alignment_js_data, ensure_ascii=False)
-    
     # Original Text (Strict Line-by-Line)
-    # We just use the raw text content. The CSS white-space: pre will handle the newlines.
+    # We just use the raw text content. The CSS white-space: pre-wrap will handle the newlines and wrapping.
     raw_greek_html = html.escape(text_content)
     
     lines = text_content.split('\n')
     line_nums = [str(i+1) if (i+1)%5==0 or i==0 else "" for i in range(len(lines))]
     line_nums_html = "\n".join(line_nums)
-
-    # Raw JS string
-    js_raw = r"""
-    <script>
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    document.documentElement.setAttribute('data-theme', savedTheme);
-    
-    const ALIGNMENTS = %s;
-
-    function setTranslation(lang) {
-        const btnEn = document.getElementById('btnEn');
-        const btnDe = document.getElementById('btnDe');
-        const btnOff = document.getElementById('btnOff');
-        
-        const originalView = document.getElementById('original-view');
-        const comparisonView = document.getElementById('comparison-view');
-        
-        const greekCol = document.getElementById('fluent-greek');
-        const transCol = document.getElementById('fluent-trans');
-
-        // Reset Buttons
-        [btnEn, btnDe, btnOff].forEach(b => b.classList.remove('active'));
-
-        if(lang === 'none') {
-            // Show Original Line-by-Line View
-            originalView.style.display = 'grid';
-            comparisonView.style.display = 'none';
-            btnOff.classList.add('active');
-        } else {
-            // Show Comparison Side-by-Side View
-            originalView.style.display = 'none';
-            comparisonView.style.display = 'grid';
-            
-            if(lang === 'en') btnEn.classList.add('active');
-            if(lang === 'de') btnDe.classList.add('active');
-            
-            // Render Fluent Columns
-            const data = ALIGNMENTS[lang] || [];
-            let greekHtml = '';
-            let transHtml = '';
-            
-            if (data.length === 0) {
-                greekHtml = '<p class="muted">No alignment data.</p>';
-                transHtml = '<p class="muted">No alignment data.</p>';
-            } else {
-                data.forEach((row, index) => {
-                    // Create interactive spans for fluent reading
-                    greekHtml += `<span class="fluent-segment" data-seg-id="${index}" onmouseover="highlightSegment(${index})" onmouseout="clearHighlightSegment()">${row.greek} </span>`;
-                    transHtml += `<span class="fluent-segment" data-seg-id="${index}" onmouseover="highlightSegment(${index})" onmouseout="clearHighlightSegment()">${row.translation} </span>`;
-                });
-            }
-            greekCol.innerHTML = greekHtml;
-            transCol.innerHTML = transHtml;
-        }
-    }
-
-    function highlightSegment(id) {
-        document.querySelectorAll(`.fluent-segment[data-seg-id="${id}"]`).forEach(el => el.classList.add('active-segment'));
-    }
-
-    function clearHighlightSegment() {
-        document.querySelectorAll('.fluent-segment').forEach(el => el.classList.remove('active-segment'));
-    }
-
-    function copyCitation() {
-        const citation = "AGKI Project. (2026). Inscription PHI-" + "%s" + ". Retrieved from " + window.location.href;
-        navigator.clipboard.writeText(citation);
-        alert("Citation copied to clipboard!");
-    }
-    </script>
-    """ % (alignment_json, phi_id)
 
     # Assemble HTML
     html_head = """<!doctype html>
@@ -285,65 +205,17 @@ def generate_detail_page(merged_data):
     }}
 
     .greek-content {{ 
-        white-space: pre-wrap; /* Better than scrollbar: wrap lines nicely */
+        white-space: pre-wrap; 
         word-break: break-word;
         padding-left: 1rem; 
     }}
 
-    /* Fluent Comparison View Styles */
-    .comparison-container {{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 2rem;
-        background: var(--panel);
-        border: 1px solid var(--border);
-        border-radius: 4px;
-        margin-bottom: 2rem;
-        padding: 2rem;
+    .highlight-evidence {{
+        background-color: var(--accent);
+        color: white;
+        border-radius: 2px;
+        padding: 0 2px;
     }}
-    
-    .fluent-col {{
-        line-height: 1.8;
-        font-size: 1.15rem;
-    }}
-
-    .fluent-col-header {{
-        font-weight: bold;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-        color: var(--muted);
-        font-size: 0.85rem;
-        margin-bottom: 1rem;
-        padding-bottom: 0.5rem;
-        border-bottom: 2px solid var(--border);
-    }}
-
-    .fluent-greek {{
-        font-family: "New Athena Unicode", "Gentium Plus", "Times New Roman", serif; 
-        font-size: 1.25rem;
-        color: var(--text);
-    }}
-
-    .fluent-trans {{
-        font-family: system-ui, -apple-system, sans-serif;
-        color: var(--text);
-    }}
-
-    .fluent-segment {{
-        border-radius: 3px;
-        transition: background-color 0.2s, color 0.1s;
-        cursor: pointer;
-    }}
-    
-    .fluent-segment:hover, .active-segment {{
-        background-color: rgba(217, 123, 61, 0.15); /* Accent color tint */
-        color: var(--primary);
-    }}
-
-    .trans-controls {{ margin-bottom: 1rem; display: flex; gap: 0.5rem; justify-content: flex-end; align-items: center; }}
-    .trans-btn {{ background: var(--bg); border: 1px solid var(--border); padding: 0.4rem 0.8rem; cursor: pointer; color: var(--muted); font-size: 0.85rem; border-radius: 4px; }}
-    .trans-btn:hover {{ border-color: var(--primary); color: var(--text); }}
-    .trans-btn.active {{ background: var(--primary); color: white; border-color: var(--primary); }}
 
     .theme-card {{ background: var(--panel); padding: 1rem 1.5rem; border-left: 4px solid var(--primary); margin-bottom: 0.75rem; border: 1px solid var(--border); border-left-width: 4px; }}
     .ai-analysis-box {{ background: rgba(31, 167, 163, 0.05); padding: 2rem; border-radius: 8px; border: 1px solid var(--border); margin-top: 2rem; }}
@@ -353,9 +225,67 @@ def generate_detail_page(merged_data):
     .badge.orange {{ background: #fef7e0; color: #b06000; border-color: #b06000; }}
     .badge.red {{ background: #fce8e6; color: #c5221f; border-color: #c5221f; }}
     .entity-tag {{ background: rgba(217, 123, 61, 0.1); color: var(--accent-2); margin-right: 0.5rem; margin-bottom: 0.5rem; display: inline-block; padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.9rem; border: 1px solid rgba(217, 123, 61, 0.2); }}
+    
+    /* Split View Styles */
+    .split-container {{ display: block; }}
+    .split-container.active {{ display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }}
+    .split-col-left {{ }}
+    .split-col-right {{ }}
+    
+    /* Sticky sidebar in split view */
+    .split-container.active .split-col-right {{ position: sticky; top: 20px; max-height: 90vh; overflow-y: auto; padding-right: 10px; }}
   </style>
-  {}
-</head>""".format(phi_id, js_raw)
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+
+    function toggleSplitView() {{
+        const container = document.getElementById('main-content');
+        const btn = document.getElementById('splitViewBtn');
+        container.classList.toggle('active');
+        if(container.classList.contains('active')) {{
+            btn.textContent = 'View: Split';
+            btn.classList.add('active');
+        }} else {{
+            btn.textContent = 'View: Standard';
+            btn.classList.remove('active');
+        }}
+    }}
+
+    function copyCitation() {{
+        const citation = "AGKI Project. (2026). Inscription PHI-" + "{}" + ". Retrieved from " + window.location.href;
+        navigator.clipboard.writeText(citation);
+        alert("Citation copied to clipboard!");
+    }}
+    
+    function highlightQuote(quote) {{
+        const container = document.querySelector('.greek-content');
+        if (!container || !quote) return;
+        
+        const escapedQuote = quote.replace(/[.*+?^${{}}()|[\\]\\\\]/g, '\\\\$&');
+        const regex = new RegExp(escapedQuote, 'g');
+        container.innerHTML = container.innerHTML.replace(
+            regex, 
+            match => `<mark class="highlight-evidence">${{match}}</mark>`
+        );
+    }}
+    
+    function clearHighlight() {{
+        const container = document.querySelector('.greek-content');
+        if (!container) return;
+        container.innerHTML = container.innerHTML.replace(/<mark class="highlight-evidence">(.*?)<\/mark>/g, '$1');
+    }}
+
+    function updateFontSize(size) {{
+        const container = document.getElementById('original-view');
+        if (container) {{
+            container.style.fontSize = size + 'px';
+            const lines = container.querySelector('.line-numbers');
+            if(lines) lines.style.fontSize = size + 'px';
+        }}
+    }}
+  </script>
+</head>""".format(phi_id, phi_id)
 
     html_body = """
 <body>
@@ -363,62 +293,65 @@ def generate_detail_page(merged_data):
     <div class="brand">
       <h1><a href="../index.html" style="color:white;text-decoration:none;">AGKI Tagging Tool</a></h1>
     </div>
+    <nav class="nav-links">
+        <a href="../index.html" class="nav-item">Search</a>
+        <a href="../explore.html" class="nav-item">Explore</a>
+        <a href="../indices.html" class="nav-item">Indices</a>
+    </nav>
   </header>
   <main class="page-container">
-    <a href="../index.html" class="back-link">← Back to Dashboard</a>
-    <div style="display:flex; justify-content:space-between; align-items:center;">
-        <h2>Inscription PHI-{}</h2>
-        <div style="display:flex; gap:0.5rem;">
-            <button onclick="copyCitation()" class="button secondary" style="font-size:0.9rem; padding:0.5rem 1rem;">📜 Cite</button>
-            <a href="https://epigraphy.packhum.org/text/{}" target="_blank" class="button">View on PHI</a>
-        </div>
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 1rem;">
+        <a href="../index.html" class="back-link" style="margin:0;">← Back to Dashboard</a>
+        <button id="splitViewBtn" onclick="toggleSplitView()" class="button secondary" style="font-size:0.8rem; padding:0.3rem 0.8rem;">View: Standard</button>
     </div>
     
-    <div class="meta-grid">
-        <div><small class="eyebrow">Provenance</small><br>{}</div>
-        <div><small class="eyebrow">Date</small><br><strong>{}</strong></div>
-        <div><small class="eyebrow">Completeness</small><br><span class="badge info">{}</span></div>
-    </div>
+    <div id="main-content" class="split-container">
+        <div class="split-col-left">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <h2>Inscription PHI-{}</h2>
+                <div style="display:flex; gap:0.5rem;">
+                    <button onclick="copyCitation()" class="button secondary" style="font-size:0.9rem; padding:0.5rem 1rem;">📜 Cite</button>
+                    <a href="https://epigraphy.packhum.org/text/{}" target="_blank" class="button">View on PHI</a>
+                </div>
+            </div>
+            
+            <div class="meta-grid">
+                <div><small class="eyebrow">Provenance</small><br>{}</div>
+                <div><small class="eyebrow">Date</small><br><strong>{}</strong></div>
+                <div><small class="eyebrow">Completeness</small><br><span class="badge info">{}</span></div>
+            </div>
 
-    <div style="display:flex; justify-content:space-between; align-items:end; margin-bottom:0.5rem;">
-        <h3>Original Text & Translation</h3>
-        <div class="trans-controls">
-            <span class="eyebrow" style="margin:0; margin-right:0.5rem;">Translation:</span>
-            <button id="btnOff" class="trans-btn active" onclick="setTranslation('none')">Original (Lines)</button>
-            <button id="btnEn" class="trans-btn" onclick="setTranslation('en')">English (Compare)</button>
-            <button id="btnDe" class="trans-btn" onclick="setTranslation('de')">German (Compare)</button>
+            <div style="display:flex; justify-content:space-between; align-items:end; margin-bottom:0.5rem;">
+                <h3>Original Text</h3>
+                <!-- Font Size Control -->
+                <div style="display:flex; align-items:center; gap:0.5rem; background:var(--panel); border:1px solid var(--border); padding:0.2rem 0.5rem; border-radius:4px;">
+                    <span style="font-size:0.8rem; color:var(--muted);">A</span>
+                    <input type="range" id="fontSizeSlider" min="14" max="32" value="20" oninput="updateFontSize(this.value)" style="width:80px; accent-color:var(--primary);">
+                    <span style="font-size:1rem; font-weight:bold; color:var(--muted);">A</span>
+                </div>
+            </div>
+
+            <!-- Original Line-by-Line View -->
+            <div id="original-view" class="text-viewer-original">
+                <div class="line-numbers">{}</div>
+                <div class="greek-content">{}</div>
+            </div>
         </div>
-    </div>
 
-    <!-- Original Line-by-Line View -->
-    <div id="original-view" class="text-viewer-original">
-        <div class="line-numbers">{}</div>
-        <div class="greek-content">{}</div>
-    </div>
+        <div class="split-col-right">
+            <h3>Thematic Analysis</h3>
+            {}
+            
+            <div style="margin-top:2rem;">
+                <h3>Entities</h3>
+                <div>{}</div>
+            </div>
 
-    <!-- Fluent Comparison View -->
-    <div id="comparison-view" class="comparison-container" style="display:none;">
-        <div class="fluent-col">
-            <div class="fluent-col-header">Greek Text</div>
-            <div id="fluent-greek" class="fluent-greek"></div>
+            <div class="ai-analysis-box">
+                <h3>🤖 AI Analysis Summary</h3>
+                <p style="line-height:1.7;">{}</p>
+            </div>
         </div>
-        <div class="fluent-col">
-            <div class="fluent-col-header">Translation</div>
-            <div id="fluent-trans" class="fluent-trans"></div>
-        </div>
-    </div>
-
-    <h3>Thematic Analysis</h3>
-    {}
-    
-    <div style="margin-top:2rem;">
-        <h3>Entities</h3>
-        <div>{}</div>
-    </div>
-
-    <div class="ai-analysis-box">
-        <h3>🤖 AI Analysis Summary</h3>
-        <p style="line-height:1.7;">{}</p>
     </div>
   </main>
 </body>
@@ -432,31 +365,156 @@ def generate_detail_page(merged_data):
         line_nums_html,
         raw_greek_html,
         themes_html if themes_html else "<p class='muted'>No themes assigned.</p>",
-        persons_html + places_html,
+        persons_html + places_html + deities_html,
         html.escape(global_rationale).replace('\n', '<br>')
     )
 
     return html_head + html_body
 
+def generate_indices_page(deities, persons, places):
+    import html
+    
+    def dict_to_rows(d, is_person=False, is_place=False):
+        sorted_keys = sorted(d.keys())
+        rows = ""
+        for k in sorted_keys:
+            val = d[k]
+            count = val if isinstance(val, int) else val['count']
+            extra = ""
+            if is_person: extra = f"<td>{html.escape(val['role'] or '')}</td>"
+            if is_place: extra = f"<td>{html.escape(val['type'] or '')}</td>"
+            
+            uri_link = ""
+            if not isinstance(val, int) and val.get('uri'):
+                uri_link = f' <a href="{val["uri"]}" target="_blank" style="text-decoration:none;">🔗</a>'
+            
+            rows += f"<tr><td>{html.escape(k)}{uri_link}</td>{extra}<td>{count}</td></tr>"
+        return rows
+
+    def get_template(title, content, active_sub=""):
+        return f"""<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{title} - AGKI Epigraphy Tool</title>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <style>
+    .page-container {{ max-width: 1200px; margin: 0 auto; padding: 2rem; }}
+    .index-nav {{ display: flex; gap: 1rem; margin-bottom: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 1rem; }}
+    .index-nav a {{ text-decoration: none; color: var(--muted); font-weight: 600; padding: 0.5rem 1rem; border-radius: 4px; }}
+    .index-nav a:hover {{ background: var(--panel); }}
+    .index-nav a.active {{ background: var(--primary); color: white; }}
+    .index-card {{ background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; }}
+    table {{ width: 100%; border-collapse: collapse; margin-top: 1rem; font-size: 0.9rem; }}
+    th, td {{ text-align: left; padding: 0.5rem; border-bottom: 1px solid var(--border); }}
+    th {{ color: var(--muted); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.05em; }}
+    .nav-links {{ display: flex; gap: 1.5rem; }}
+    .nav-item {{ color: rgba(255,255,255,0.8); font-weight: 600; text-decoration: none; padding: 0.5rem 0; }}
+    .nav-item:hover, .nav-item.active {{ color: white; border-bottom: 2px solid white; }}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand"><h1>AGKI Tagging Tool</h1></div>
+    <nav class="nav-links">
+        <a href="index.html" class="nav-item">Search</a>
+        <a href="explore.html" class="nav-item">Explore</a>
+        <a href="indices.html" class="nav-item active">Indices</a>
+    </nav>
+  </header>
+  <main class="page-container">
+    <h2>Corpus Indices</h2>
+    <nav class="index-nav">
+        <a href="indices.html" class="{"active" if active_sub=="main" else ""}">Overview</a>
+        <a href="index_deities.html" class="{"active" if active_sub=="deities" else ""}">⚡ Deities</a>
+        <a href="index_persons.html" class="{"active" if active_sub=="persons" else ""}">👤 Persons</a>
+        <a href="index_places.html" class="{"active" if active_sub=="places" else ""}">📍 Places</a>
+    </nav>
+    {content}
+  </main>
+</body>
+</html>"""
+
+    # 1. Main Landing Page
+    main_content = f"""
+    <div class="index-grid" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:1.5rem;">
+        <div class="index-card">
+            <h3>⚡ Deities</h3>
+            <p>Total unique deities: <strong>{len(deities)}</strong></p>
+            <a href="index_deities.html" class="button">Browse Deities</a>
+        </div>
+        <div class="index-card">
+            <h3>👤 Persons</h3>
+            <p>Total unique persons: <strong>{len(persons)}</strong></p>
+            <a href="index_persons.html" class="button">Browse Persons</a>
+        </div>
+        <div class="index-card">
+            <h3>📍 Places</h3>
+            <p>Total unique places: <strong>{len(places)}</strong></p>
+            <a href="index_places.html" class="button">Browse Places</a>
+        </div>
+    </div>
+    """
+    with open(WEBSITE_DIR / "indices.html", 'w', encoding='utf-8') as f:
+        f.write(get_template("Indices", main_content, "main"))
+
+    # 2. Deities Page
+    deities_content = f"""
+    <div class="index-card">
+        <h3>⚡ Deities Index</h3>
+        <table>
+            <thead><tr><th>Name</th><th>Mentions</th></tr></thead>
+            <tbody>{dict_to_rows(deities)}</tbody>
+        </table>
+    </div>
+    """
+    with open(WEBSITE_DIR / "index_deities.html", 'w', encoding='utf-8') as f:
+        f.write(get_template("Deities Index", deities_content, "deities"))
+
+    # 3. Persons Page
+    persons_content = f"""
+    <div class="index-card">
+        <h3>👤 Persons Index</h3>
+        <table>
+            <thead><tr><th>Name</th><th>Role</th><th>Mentions</th></tr></thead>
+            <tbody>{dict_to_rows(persons, is_person=True)}</tbody>
+        </table>
+    </div>
+    """
+    with open(WEBSITE_DIR / "index_persons.html", 'w', encoding='utf-8') as f:
+        f.write(get_template("Persons Index", persons_content, "persons"))
+
+    # 4. Places Page
+    places_content = f"""
+    <div class="index-card">
+        <h3>📍 Places Index</h3>
+        <table>
+            <thead><tr><th>Name</th><th>Type</th><th>Mentions</th></tr></thead>
+            <tbody>{dict_to_rows(places, is_place=True)}</tbody>
+        </table>
+    </div>
+    """
+    with open(WEBSITE_DIR / "index_places.html", 'w', encoding='utf-8') as f:
+        f.write(get_template("Places Index", places_content, "places"))
+
 def build_website(mode=None):
-    print(f"Building website (mode: {mode or 'auto'})...")
+    print("Building website...")
     INSCRIPTIONS_DIR.mkdir(parents=True, exist_ok=True)
     inputs = load_inscriptions(INPUT_DIR)
     inputs_map = {i.id: i.model_dump() for i in inputs}
     
-    if mode == "dummy":
-        target_dir = OUTPUT_DUMMY_DIR
-    elif mode == "real":
-        target_dir = OUTPUT_DIR
-    else:
-        target_dir = OUTPUT_DUMMY_DIR 
-        if not target_dir.exists(): target_dir = OUTPUT_DIR
+    target_dir = OUTPUT_DIR
 
     outputs = []
     for f in target_dir.glob("*.json"):
         data = load_json(f)
         if data: outputs.append(data)
     
+    all_deities = {} # Name -> count
+    all_persons = {} # Name -> {role, uri, count}
+    all_places = {}  # Name -> {type, uri, count}
+
     merged_list = []
     for out in outputs:
         phi_id = out['phi_id']
@@ -464,13 +522,44 @@ def build_website(mode=None):
         if not inp: continue
         merged = { "id": phi_id, "input": inp, "output": out }
         merged_list.append(merged)
+        
+        # Collect Entities for Index
+        ents = out.get('entities', {})
+        for d in ents.get('deities', []):
+            all_deities[d] = all_deities.get(d, 0) + 1
+        
+        for p in ents.get('persons', []):
+            name = p['name']
+            if name not in all_persons:
+                all_persons[name] = {"role": p.get('role'), "uri": p.get('uri'), "count": 0}
+            all_persons[name]["count"] += 1
+            
+        for pl in ents.get('places', []):
+            name = pl['name']
+            if name not in all_places:
+                all_places[name] = {"type": pl.get('type'), "uri": pl.get('uri'), "count": 0}
+            all_places[name]["count"] += 1
+
         with open(INSCRIPTIONS_DIR / f"{phi_id}.html", 'w', encoding='utf-8') as f:
             f.write(generate_detail_page(merged))
+            
+    # Generate Index Page
+    generate_indices_page(all_deities, all_persons, all_places)
             
     search_index = []
     for m in merged_list:
         themes = m['output'].get('themes', [])
-        hierarchy_paths = [t['hierarchy'] for t in themes]
+        
+        # Extended theme info for filtering
+        theme_data = []
+        for t in themes:
+            h = t['hierarchy']
+            path_parts = [h.get('domain'), h.get('subdomain'), h.get('category'), h.get('subcategory')]
+            theme_data.append({
+                "label": t['label'],
+                "path": "/".join(filter(None, path_parts)),
+                "confidence": t.get('confidence', 1.0)
+            })
         
         prov_list = m['output'].get('provenance', [])
         coords = None
@@ -509,7 +598,7 @@ def build_website(mode=None):
             "completeness": m['output'].get('completeness'),
             "coordinates": coords,
             "mentioned_places": mentioned_places,
-            "hierarchy_paths": hierarchy_paths,
+            "themes": theme_data,
             "themes_display": [t['label'] for t in themes]
         })
 
@@ -521,11 +610,6 @@ def build_website(mode=None):
     js_content = f"const APP_DATA = {json.dumps(full_data, ensure_ascii=False)};"
     with open(WEBSITE_DIR / "assets/js/data.js", 'w', encoding='utf-8') as f:
         f.write(js_content)
-    
-    # Also update the specific mode file for the dashboard's data switcher
-    if mode in ["real", "dummy"]:
-        with open(WEBSITE_DIR / f"assets/js/data_{mode}.js", 'w', encoding='utf-8') as f:
-            f.write(js_content)
         
     print(f"Website built. {len(merged_list)} pages generated.")
 

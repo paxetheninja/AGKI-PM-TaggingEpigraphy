@@ -105,7 +105,7 @@ class GoogleClient(LLMProvider):
                 temperature=0.0,
                 top_p=0.95,
                 top_k=64,
-                max_output_tokens=8192,
+                max_output_tokens=65536,
                 response_mime_type="application/json",
                 safety_settings=[
                     types.SafetySetting(
