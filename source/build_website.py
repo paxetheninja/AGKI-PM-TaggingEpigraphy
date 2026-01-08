@@ -6,6 +6,7 @@ from .data_loader import load_inscriptions
 WEBSITE_DIR = Path("website")
 INSCRIPTIONS_DIR = WEBSITE_DIR / "inscriptions"
 ASSETS_DIR = WEBSITE_DIR / "assets"
+TEMPLATES_DIR = Path(__file__).parent / "templates"
 
 REGION_DATA = {
     "Attica": {"uri": "https://pleiades.stoa.org/places/579888", "coords": [38.0, 23.8]},
@@ -71,6 +72,13 @@ def load_json(path):
 def load_taxonomy():
     with open(TAXONOMY_DIR / "taxonomy.json", 'r', encoding='utf-8') as f: return json.load(f)
 
+def sync_static_pages():
+    template = TEMPLATES_DIR / "search.html"
+    if not template.exists():
+        return
+    target = WEBSITE_DIR / "search.html"
+    target.write_text(template.read_text(encoding="utf-8"), encoding="utf-8")
+
 def generate_detail_page(merged_data):
     import html
     phi_id = merged_data['id']
@@ -99,13 +107,19 @@ def generate_detail_page(merged_data):
         conf_color = "green" if conf > 0.8 else ("orange" if conf > 0.6 else "red")
         quote = t.get('quote', '') or ''
         safe_quote = html.escape(quote).replace('"', '&quot;')
+        
+        ambiguity_html = ""
+        if t.get('is_ambiguous'):
+            note = html.escape(t.get('ambiguity_note', ''))
+            ambiguity_html = f'<span class="badge orange" title="{note}" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem; cursor:help;">⚠️ Ambiguous</span>'
 
         themes_html += """
         <div class="theme-card" onmouseover="highlightQuote('{quote}')" onmouseout="clearHighlight()">
             <div style="display:flex; justify-content:space-between; align-items:center;">
                 <div>
-                    <span class="tag domain-tag">{domain}</span>
+                    <a href="../search.html?theme={path_encoded}" class="tag domain-tag" style="text-decoration:none;">{domain}</a>
                     <span class="badge {conf_color}" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">{conf_pct}% Conf.</span>
+                    {ambiguity}
                     <div class="theme-path">{path}</div>
                     <div class="theme-label">{label}</div>
                 </div>
@@ -116,9 +130,11 @@ def generate_detail_page(merged_data):
         </div>
         """.format(
             quote=safe_quote,
+            path_encoded=html.escape(path_str.replace(" > ", "/")),
             domain=h.get('domain', 'Unclassified'),
             conf_color=conf_color,
             conf_pct=int(conf*100),
+            ambiguity=ambiguity_html,
             path=path_str,
             label=t['label'],
             orig_quote=html.escape(quote)
@@ -128,13 +144,14 @@ def generate_detail_page(merged_data):
     entities = merged_data.get('output', {}).get('entities', {})
     persons_html = ""
     for p in entities.get('persons', []):
-        persons_html += '<span class="tag entity-tag">👤 {} <small>({})</small></span>'.format(html.escape(p["name"]), html.escape(p.get("role", "")))
+        persons_html += '<a href="../search.html?q={}" class="tag entity-tag" style="text-decoration:none;">👤 {} <small>({})</small></a>'.format(html.escape(p["name"]), html.escape(p["name"]), html.escape(p.get("role", "")))
     places_html = ""
     for p in entities.get('places', []):
-        places_html += '<span class="tag entity-tag">📍 {} <small>({})</small></span>'.format(html.escape(p["name"]), html.escape(p.get("type", "")))
+        places_html += '<a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 {} <small>({})</small></a>'.format(html.escape(p["name"]), html.escape(p.get("type", "")))
     deities_html = ""
     for d in entities.get('deities', []):
-        deities_html += '<span class="tag entity-tag">⚡ {}</span>'.format(html.escape(d))
+        name = d['name'] if isinstance(d, dict) else d
+        deities_html += '<a href="../index_deities.html" class="tag entity-tag" style="text-decoration:none;">⚡ {}</a>'.format(html.escape(name))
 
     # Global Analysis Summary
     global_rationale = merged_data.get('output', {}).get('rationale') or 'No additional analysis provided.'
@@ -231,8 +248,6 @@ def generate_detail_page(merged_data):
     .split-container.active {{ display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }}
     .split-col-left {{ }}
     .split-col-right {{ }}
-    
-    /* Sticky sidebar in split view */
     .split-container.active .split-col-right {{ position: sticky; top: 20px; max-height: 90vh; overflow-y: auto; padding-right: 10px; }}
   </style>
   <script>
@@ -261,11 +276,19 @@ def generate_detail_page(merged_data):
     function highlightQuote(quote) {{
         const container = document.querySelector('.greek-content');
         if (!container || !quote) return;
+
+        if (!container.dataset.original) {{
+            container.dataset.original = container.innerHTML;
+        }} else {{
+            container.innerHTML = container.dataset.original;
+        }}
         
-        const escapedQuote = quote.replace(/[.*+?^${{}}()|[\\]\\\\]/g, '\\\\$&');
-        const regex = new RegExp(escapedQuote, 'g');
+        const normalized = quote.trim().replace(/\\s+/g, ' ');
+        const escapedQuote = normalized.replace(/[.*+?^${{}}()|[\\]\\\\]/g, '\\\\$&');
+        const spacedQuote = escapedQuote.replace(/\\s+/g, '\\\\s+');
+        const regex = new RegExp(spacedQuote, 'g');
         container.innerHTML = container.innerHTML.replace(
-            regex, 
+            regex,
             match => `<mark class="highlight-evidence">${{match}}</mark>`
         );
     }}
@@ -273,58 +296,241 @@ def generate_detail_page(merged_data):
     function clearHighlight() {{
         const container = document.querySelector('.greek-content');
         if (!container) return;
-        container.innerHTML = container.innerHTML.replace(/<mark class="highlight-evidence">(.*?)<\/mark>/g, '$1');
-    }}
-
-    function updateFontSize(size) {{
-        const container = document.getElementById('original-view');
-        if (container) {{
-            container.style.fontSize = size + 'px';
-            const lines = container.querySelector('.line-numbers');
-            if(lines) lines.style.fontSize = size + 'px';
+        if (container.dataset.original) {{
+            container.innerHTML = container.dataset.original;
+        }} else {{
+            container.innerHTML = container.innerHTML.replace(/<mark class="highlight-evidence">(.*?)<\\/mark>/g, '$1');
         }}
     }}
-  </script>
-</head>""".format(phi_id, phi_id)
+
+        function updateFontSize(size) {{
+
+            const container = document.getElementById('original-view');
+
+            if (container) {{
+
+                container.style.fontSize = size + 'px';
+
+                const lines = container.querySelector('.line-numbers');
+
+                if(lines) lines.style.fontSize = size + 'px';
+
+            }}
+
+        }}
+
+    
+
+        function openReportModal() {{
+
+            document.getElementById('reportModal').style.display = 'block';
+
+        }}
+
+    
+
+        function closeReportModal() {{
+
+            document.getElementById('reportModal').style.display = 'none';
+
+        }}
+
+    
+
+        function sendReport() {{
+
+            const category = document.getElementById('reportCategory').value;
+
+            const desc = document.getElementById('reportDesc').value;
+
+            const fix = document.getElementById('reportFix').value;
+
+            
+
+                    const subject = `AGKI Error Report: PHI-{}`;
+
+            
+
+                    const body = `Category: ${{category}}%0D%0ADescription: ${{desc}}%0D%0AProposed Fix: ${{fix}}%0D%0A%0D%0A(Sent from inscription page)`;
+
+            
+
+                    
+
+            
+
+                    window.location.href = `mailto:admin@agki-project.org?subject=${{encodeURIComponent(subject)}}&body=${{body}}`;
+
+            closeReportModal();
+
+        }}
+
+      </script>
+
+    </head>
+
+        """.format(phi_id, phi_id, phi_id)
 
     html_body = """
 <body>
   <header class="site-header">
-    <div class="brand">
-      <h1><a href="../index.html" style="color:white;text-decoration:none;">AGKI Tagging Tool</a></h1>
-    </div>
-    <nav class="nav-links">
-        <a href="../index.html" class="nav-item">Search</a>
-        <a href="../explore.html" class="nav-item">Explore</a>
-        <a href="../indices.html" class="nav-item">Indices</a>
-    </nav>
-  </header>
-  <main class="page-container">
-    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 1rem;">
-        <a href="../index.html" class="back-link" style="margin:0;">← Back to Dashboard</a>
-        <button id="splitViewBtn" onclick="toggleSplitView()" class="button secondary" style="font-size:0.8rem; padding:0.3rem 0.8rem;">View: Standard</button>
-    </div>
+
+        <div class="brand">
+
+          <h1><a href="../index.html">AGKI Tagging Tool</a></h1>
+
+        </div>
+
+        <nav class="nav-links">
+
+            <a href="../index.html" class="nav-item">Home</a>
+
+            <a href="../search.html" class="nav-item">Search</a>
+
+            <a href="../explore.html" class="nav-item">Explore</a>
+
+            <a href="../indices.html" class="nav-item">Indices</a>
+
+        </nav>
+
+        <div class="header-controls">
+
+            <button class="theme-toggle-btn" onclick="toggleTheme()" id="themeBtn">🌙 Dark Mode</button>
+
+        </div>
+
+      </header>
+
     
-    <div id="main-content" class="split-container">
+
+      <script>
+
+        const themeBtn = document.getElementById('themeBtn');
+
+        function updateThemeBtn() {{
+
+            const current = document.documentElement.getAttribute('data-theme');
+
+            if(themeBtn) themeBtn.textContent = current === 'light' ? '🌙 Dark Mode' : '☀️ Light Mode';
+
+        }}
+
+        updateThemeBtn();
+
+        window.toggleTheme = function() {{
+
+            const current = document.documentElement.getAttribute('data-theme');
+
+            const next = current === 'light' ? 'dark' : 'light';
+
+            document.documentElement.setAttribute('data-theme', next);
+
+            localStorage.setItem('theme', next);
+
+            updateThemeBtn();
+
+        }}
+
+      </script>
+
+      <main class="page-container inscription-page">
+        <div class="inscription-toolbar">
+
+            <a href="../search.html" class="back-link">← Back to Dashboard</a>
+
+            <div class="inscription-actions">
+                <button id="splitViewBtn" onclick="toggleSplitView()" class="button secondary compact">View: Standard</button>
+
+                            <button onclick="openReportModal()" class="button error compact">🚩 Report Error</button>
+
+
+            </div>
+
+        </div>
+
+        
+
+        <!-- Report Modal -->
+
+        <div id="reportModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:1000;">
+
+            <div style="background:var(--panel); width:90%; max-width:500px; margin:10% auto; padding:2rem; border-radius:8px; border:1px solid var(--border); box-shadow:var(--shadow);">
+
+                <h3>Report Error for PHI-{}</h3>
+
+                <label style="display:block; margin-bottom:0.5rem;">Error Category</label>
+
+                <select id="reportCategory" style="width:100%; padding:0.5rem; margin-bottom:1rem; border-radius:4px; border:1px solid var(--border); background:var(--bg); color:var(--text);">
+
+                    <option value="Incorrect Tag">Incorrect Tag / Theme</option>
+
+                    <option value="Missing Entity">Missing Person / Place</option>
+
+                    <option value="Translation Error">Translation / Text Issue</option>
+
+                    <option value="Other">Other</option>
+
+                </select>
+
+                
+
+                <label style="display:block; margin-bottom:0.5rem;">Description of Issue</label>
+
+                <textarea id="reportDesc" rows="3" style="width:100%; padding:0.5rem; margin-bottom:1rem; border-radius:4px; border:1px solid var(--border); background:var(--bg); color:var(--text);"></textarea>
+
+                
+
+                <label style="display:block; margin-bottom:0.5rem;">Proposed Fix (Optional)</label>
+
+                <textarea id="reportFix" rows="2" style="width:100%; padding:0.5rem; margin-bottom:1.5rem; border-radius:4px; border:1px solid var(--border); background:var(--bg); color:var(--text);"></textarea>
+
+                
+
+                <div style="display:flex; justify-content:flex-end; gap:0.5rem;">
+
+                    <button onclick="closeReportModal()" class="button secondary">Cancel</button>
+
+                    <button onclick="sendReport()" class="button">Create Email Report</button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    
+
+        <div id="main-content" class="split-container">
         <div class="split-col-left">
-            <div style="display:flex; justify-content:space-between; align-items:center;">
+            <section class="inscription-hero">
+                <div class="inscription-title-row">
                 <h2>Inscription PHI-{}</h2>
-                <div style="display:flex; gap:0.5rem;">
-                    <button onclick="copyCitation()" class="button secondary" style="font-size:0.9rem; padding:0.5rem 1rem;">📜 Cite</button>
-                    <a href="https://epigraphy.packhum.org/text/{}" target="_blank" class="button">View on PHI</a>
+                <div class="inscription-actions">
+                    <button onclick="copyCitation()" class="button secondary compact">📜 Cite</button>
+                    <a href="https://epigraphy.packhum.org/text/{}" target="_blank" class="button secondary compact">View on PHI</a>
                 </div>
             </div>
             
-            <div class="meta-grid">
-                <div><small class="eyebrow">Provenance</small><br>{}</div>
-                <div><small class="eyebrow">Date</small><br><strong>{}</strong></div>
-                <div><small class="eyebrow">Completeness</small><br><span class="badge info">{}</span></div>
+            <div class="inscription-meta">
+                <div class="meta-item">
+                        <div class="label">Provenance</div>
+                        <div class="meta-value">{}</div>
+                    </div>
+                <div class="meta-item">
+                        <div class="label">Date</div>
+                        <div class="meta-value">{}</div>
+                    </div>
+                <div class="meta-item">
+                        <div class="label">Completeness</div>
+                        <div class="meta-value"><span class="badge info">{}</span></div>
+                    </div>
             </div>
+            </section>
 
-            <div style="display:flex; justify-content:space-between; align-items:end; margin-bottom:0.5rem;">
+            <div class="inscription-title-row">
                 <h3>Original Text</h3>
                 <!-- Font Size Control -->
-                <div style="display:flex; align-items:center; gap:0.5rem; background:var(--panel); border:1px solid var(--border); padding:0.2rem 0.5rem; border-radius:4px;">
+                <div class="font-size-control">
                     <span style="font-size:0.8rem; color:var(--muted);">A</span>
                     <input type="range" id="fontSizeSlider" min="14" max="32" value="20" oninput="updateFontSize(this.value)" style="width:80px; accent-color:var(--primary);">
                     <span style="font-size:1rem; font-weight:bold; color:var(--muted);">A</span>
@@ -348,7 +554,7 @@ def generate_detail_page(merged_data):
             </div>
 
             <div class="ai-analysis-box">
-                <h3>🤖 AI Analysis Summary</h3>
+                <h3>AI Analysis Summary</h3>
                 <p style="line-height:1.7;">{}</p>
             </div>
         </div>
@@ -357,6 +563,7 @@ def generate_detail_page(merged_data):
 </body>
 </html>
 """.format(
+        phi_id,
         phi_id,
         phi_id,
         region_html,
@@ -385,8 +592,9 @@ def generate_indices_page(deities, persons, places):
             if is_place: extra = f"<td>{html.escape(val['type'] or '')}</td>"
             
             uri_link = ""
-            if not isinstance(val, int) and val.get('uri'):
-                uri_link = f' <a href="{val["uri"]}" target="_blank" style="text-decoration:none;">🔗</a>'
+            uri = val.get('uri') if isinstance(val, dict) else None
+            if uri:
+                uri_link = f' <a href="{uri}" target="_blank" style="text-decoration:none;">🔗</a>'
             
             rows += f"<tr><td>{html.escape(k)}{uri_link}</td>{extra}<td>{count}</td></tr>"
         return rows
@@ -399,31 +607,36 @@ def generate_indices_page(deities, persons, places):
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{title} - AGKI Epigraphy Tool</title>
   <link rel="stylesheet" href="assets/css/main.css">
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  </script>
   <style>
     .page-container {{ max-width: 1200px; margin: 0 auto; padding: 2rem; }}
-    .index-nav {{ display: flex; gap: 1rem; margin-bottom: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 1rem; }}
+    .index-nav {{ display: flex; gap: 1rem; margin-bottom: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 1rem; flex-wrap: wrap; }}
     .index-nav a {{ text-decoration: none; color: var(--muted); font-weight: 600; padding: 0.5rem 1rem; border-radius: 4px; }}
     .index-nav a:hover {{ background: var(--panel); }}
     .index-nav a.active {{ background: var(--primary); color: white; }}
-    .index-card {{ background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; }}
-    table {{ width: 100%; border-collapse: collapse; margin-top: 1rem; font-size: 0.9rem; }}
+    .index-card {{ background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 1.75rem; }}
+    table {{ width: 100%; border-collapse: collapse; font-size: 0.9rem; }}
     th, td {{ text-align: left; padding: 0.5rem; border-bottom: 1px solid var(--border); }}
     th {{ color: var(--muted); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.05em; }}
-    .nav-links {{ display: flex; gap: 1.5rem; }}
-    .nav-item {{ color: rgba(255,255,255,0.8); font-weight: 600; text-decoration: none; padding: 0.5rem 0; }}
-    .nav-item:hover, .nav-item.active {{ color: white; border-bottom: 2px solid white; }}
   </style>
 </head>
 <body>
   <header class="site-header">
-    <div class="brand"><h1>AGKI Tagging Tool</h1></div>
+    <div class="brand"><h1><a href="index.html">AGKI Tagging Tool</a></h1></div>
     <nav class="nav-links">
-        <a href="index.html" class="nav-item">Search</a>
+        <a href="index.html" class="nav-item">Home</a>
+        <a href="search.html" class="nav-item">Search</a>
         <a href="explore.html" class="nav-item">Explore</a>
         <a href="indices.html" class="nav-item active">Indices</a>
     </nav>
+    <div class="header-controls">
+        <button class="theme-toggle-btn" onclick="toggleTheme()" id="themeBtn">🌙 Dark Mode</button>
+    </div>
   </header>
-  <main class="page-container">
+  <main class="page-container page-wide">
     <h2>Corpus Indices</h2>
     <nav class="index-nav">
         <a href="indices.html" class="{"active" if active_sub=="main" else ""}">Overview</a>
@@ -433,6 +646,48 @@ def generate_indices_page(deities, persons, places):
     </nav>
     {content}
   </main>
+
+  <script>
+    const themeBtn = document.getElementById('themeBtn');
+    function updateThemeBtn() {{
+        const current = document.documentElement.getAttribute('data-theme');
+        if(themeBtn) themeBtn.textContent = current === 'light' ? '🌙 Dark Mode' : '☀️ Light Mode';
+    }}
+    updateThemeBtn();
+    window.toggleTheme = function() {{
+        const current = document.documentElement.getAttribute('data-theme');
+        const next = current === 'light' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        updateThemeBtn();
+    }}
+
+    function initIndexSearch() {{
+        const input = document.getElementById('indexSearchInput');
+        const table = document.getElementById('indexTable');
+        if (!input || !table) return;
+        const rows = Array.from(table.querySelectorAll('tbody tr'));
+        const empty = document.getElementById('indexEmpty');
+
+        const filterRows = () => {{
+            const query = input.value.trim().toLowerCase();
+            let visible = 0;
+            rows.forEach(row => {{
+                const text = row.textContent.toLowerCase();
+                const match = !query || text.includes(query);
+                row.style.display = match ? '' : 'none';
+                if (match) visible += 1;
+            }});
+            if (empty) {{
+                empty.style.display = visible ? 'none' : 'flex';
+            }}
+        }};
+
+        input.addEventListener('input', filterRows);
+        filterRows();
+    }}
+    initIndexSearch();
+  </script>
 </body>
 </html>"""
 
@@ -462,11 +717,19 @@ def generate_indices_page(deities, persons, places):
     # 2. Deities Page
     deities_content = f"""
     <div class="index-card">
-        <h3>⚡ Deities Index</h3>
-        <table>
-            <thead><tr><th>Name</th><th>Mentions</th></tr></thead>
-            <tbody>{dict_to_rows(deities)}</tbody>
-        </table>
+        <div class="index-toolbar">
+            <h3>⚡ Deities Index</h3>
+            <div class="index-search">
+                <input type="search" id="indexSearchInput" placeholder="Filter by name..." aria-label="Filter deities by name">
+            </div>
+        </div>
+        <div class="index-table">
+            <table id="indexTable">
+                <thead><tr><th>Name</th><th>Mentions</th></tr></thead>
+                <tbody>{dict_to_rows(deities)}</tbody>
+            </table>
+            <div class="index-empty" id="indexEmpty">No entries match this filter.</div>
+        </div>
     </div>
     """
     with open(WEBSITE_DIR / "index_deities.html", 'w', encoding='utf-8') as f:
@@ -475,11 +738,19 @@ def generate_indices_page(deities, persons, places):
     # 3. Persons Page
     persons_content = f"""
     <div class="index-card">
-        <h3>👤 Persons Index</h3>
-        <table>
-            <thead><tr><th>Name</th><th>Role</th><th>Mentions</th></tr></thead>
-            <tbody>{dict_to_rows(persons, is_person=True)}</tbody>
-        </table>
+        <div class="index-toolbar">
+            <h3>👤 Persons Index</h3>
+            <div class="index-search">
+                <input type="search" id="indexSearchInput" placeholder="Filter by name or role..." aria-label="Filter persons by name or role">
+            </div>
+        </div>
+        <div class="index-table">
+            <table id="indexTable">
+                <thead><tr><th>Name</th><th>Role</th><th>Mentions</th></tr></thead>
+                <tbody>{dict_to_rows(persons, is_person=True)}</tbody>
+            </table>
+            <div class="index-empty" id="indexEmpty">No entries match this filter.</div>
+        </div>
     </div>
     """
     with open(WEBSITE_DIR / "index_persons.html", 'w', encoding='utf-8') as f:
@@ -488,11 +759,19 @@ def generate_indices_page(deities, persons, places):
     # 4. Places Page
     places_content = f"""
     <div class="index-card">
-        <h3>📍 Places Index</h3>
-        <table>
-            <thead><tr><th>Name</th><th>Type</th><th>Mentions</th></tr></thead>
-            <tbody>{dict_to_rows(places, is_place=True)}</tbody>
-        </table>
+        <div class="index-toolbar">
+            <h3>🌍 Places Index</h3>
+            <div class="index-search">
+                <input type="search" id="indexSearchInput" placeholder="Filter by name or type..." aria-label="Filter places by name or type">
+            </div>
+        </div>
+        <div class="index-table">
+            <table id="indexTable">
+                <thead><tr><th>Name</th><th>Type</th><th>Mentions</th></tr></thead>
+                <tbody>{dict_to_rows(places, is_place=True)}</tbody>
+            </table>
+            <div class="index-empty" id="indexEmpty">No entries match this filter.</div>
+        </div>
     </div>
     """
     with open(WEBSITE_DIR / "index_places.html", 'w', encoding='utf-8') as f:
@@ -526,7 +805,12 @@ def build_website(mode=None):
         # Collect Entities for Index
         ents = out.get('entities', {})
         for d in ents.get('deities', []):
-            all_deities[d] = all_deities.get(d, 0) + 1
+            name = d['name'] if isinstance(d, dict) else d
+            uri = d.get('uri') if isinstance(d, dict) else None
+            
+            if name not in all_deities:
+                all_deities[name] = {"uri": uri, "count": 0}
+            all_deities[name]["count"] += 1
         
         for p in ents.get('persons', []):
             name = p['name']
@@ -586,13 +870,27 @@ def build_website(mode=None):
                     "coords": c,
                     "type": p.get('type')
                 })
+
+        mentioned_persons = []
+        for p in entities.get('persons', []):
+            mentioned_persons.append({
+                "name": p['name'],
+                "role": p.get('role')
+            })
+
+        mentioned_deities = []
+        for d in entities.get('deities', []):
+            name = d['name'] if isinstance(d, dict) else d
+            mentioned_deities.append(name)
         
         search_index.append({
             "id": m['id'],
+            "mentioned_persons": mentioned_persons,
+            "mentioned_deities": mentioned_deities,
             "region": region_display,
-            "date_str": m['input'].get('date_str'),
-            "date_min": m['input'].get('date_min'),
-            "date_max": m['input'].get('date_max'),
+            "date_str": m['output'].get('date_str') or m['input'].get('date_str'),
+            "date_min": m['output'].get('date_min') or m['input'].get('date_min'),
+            "date_max": m['output'].get('date_max') or m['input'].get('date_max'),
             "preview_text": m['input'].get('text', '')[:120] + "...",
             "text_length": len(m['input'].get('text', '')),
             "completeness": m['output'].get('completeness'),
@@ -610,6 +908,8 @@ def build_website(mode=None):
     js_content = f"const APP_DATA = {json.dumps(full_data, ensure_ascii=False)};"
     with open(WEBSITE_DIR / "assets/js/data.js", 'w', encoding='utf-8') as f:
         f.write(js_content)
+
+    sync_static_pages()
         
     print(f"Website built. {len(merged_list)} pages generated.")
 
