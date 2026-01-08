@@ -22,7 +22,7 @@
   <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
 
   <style>
-    .dashboard-container { display: grid; grid-template-columns: 320px 1fr; gap: 1.5rem; margin-top: 2rem; align-items: start; }
+    .dashboard-container { display: grid; grid-template-columns: minmax(260px, 320px) minmax(0, 1fr); gap: 1.75rem; margin-top: 2rem; align-items: start; }
     .sidebar { padding: 1.5rem; border-radius: 8px; position: sticky; top: 20px; max-height: 90vh; overflow-y: auto; }
     .filter-group { margin-bottom: 2rem; }
     .eyebrow { font-size: 0.8rem; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem; font-weight: 700; }
@@ -56,10 +56,6 @@
     .collection-item a, .history-item span { color: var(--primary); cursor: pointer; }
     .collection-remove { color: var(--muted); cursor: pointer; margin-left: 8px; }
 
-    .nav-links { display: flex; gap: 1.5rem; margin-right: 2rem; }
-    .nav-item { color: rgba(255,255,255,0.8); font-weight: 600; text-decoration: none; padding: 0.5rem 0; }
-    .nav-item.active { color: white; border-bottom: 2px solid white; }
-    .theme-toggle-btn { background: none; border: 1px solid rgba(255,255,255,0.3); color: white; padding: 0.4rem 0.8rem; border-radius: 20px; cursor: pointer; }
   </style>
   <script>
     const savedTheme = localStorage.getItem('theme') || 'light';
@@ -68,18 +64,35 @@
 </head>
 <body>
   <header class="site-header">
-    <div class="brand"><h1>AGKI Tagging Tool</h1></div>
+    <div class="brand"><h1><a href="index.html">AGKI Tagging Tool</a></h1></div>
     <nav class="nav-links">
-        <a href="index.html" class="nav-item">Search</a>
+        <a href="index.html" class="nav-item">Home</a>
+        <a href="search.html" class="nav-item">Search</a>
         <a href="explore.html" class="nav-item active">Explore</a>
         <a href="indices.html" class="nav-item">Indices</a>
     </nav>
     <div class="header-controls">
-        <button class="theme-toggle-btn" onclick="toggleTheme()" id="themeBtn">Toggle Theme</button>
+        <button class="theme-toggle-btn" onclick="toggleTheme()" id="themeBtn">🌙 Dark Mode</button>
     </div>
   </header>
 
-  <main class="page">
+  <script>
+    const themeBtn = document.getElementById('themeBtn');
+    function updateThemeBtn() {
+        const current = document.documentElement.getAttribute('data-theme');
+        themeBtn.textContent = current === 'light' ? '🌙 Dark Mode' : '☀️ Light Mode';
+    }
+    updateThemeBtn();
+    window.toggleTheme = function() {
+        const current = document.documentElement.getAttribute('data-theme');
+        const next = current === 'light' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        updateThemeBtn();
+    }
+  </script>
+
+  <main class="page page-wide">
     <div class="dashboard-container">
         <aside class="sidebar">
             <div class="filter-group">
@@ -114,6 +127,10 @@
             </div>
             <div class="meta-grid">
                 <div><p class="label">Analyzing</p><strong id="countDisplay">0</strong> Inscriptions</div>
+                <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-top:0.5rem;">
+                    <button onclick="exportData('json')" class="button block compact">📥 JSON</button>
+                    <button onclick="exportData('csv')" class="button secondary block compact">📥 CSV</button>
+                </div>
             </div>
         </aside>
 
@@ -129,9 +146,9 @@
                         <canvas id="timeChart"></canvas>
                     </div>
                 </div>
-                <div class="viz-card">
+                <div class="viz-card" style="grid-column: span 2;">
                     <h3 class="viz-title">Taxonomy Sunburst</h3>
-                    <div id="sunburstChart" style="width:100%; height:400px;"></div>
+                    <div id="sunburstChart" style="width:100%; height:700px;"></div>
                 </div>
             </div>
         </div>
@@ -179,10 +196,18 @@
     }
 
     // --- Theme ---
-    function toggleTheme() {
+    function updateThemeBtn() {
+        const current = document.documentElement.getAttribute('data-theme');
+        const btn = document.getElementById('themeBtn');
+        if(btn) btn.textContent = current === 'light' ? '🌙 Dark Mode' : '☀️ Light Mode';
+    }
+    updateThemeBtn();
+
+    window.toggleTheme = function() {
         const next = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
         document.documentElement.setAttribute('data-theme', next);
         localStorage.setItem('theme', next);
+        updateThemeBtn();
     }
 
     // --- Collections ---
@@ -337,7 +362,7 @@
             // 1. Source Markers
             if(item.coordinates) {
                 const isStarred = collection.includes(item.id);
-                const starBtn = `<button onclick="toggleCollection(${item.id})" style="margin-top:5px; cursor:pointer; border:1px solid #ccc; background:#fff; padding:2px 6px; border-radius:4px;">${isStarred ? '★ Unstar' : '☆ Star'}</button>`;
+                const starBtn = `<button onclick="toggleCollection(${item.id})" class="button secondary tiny" style="margin-top:5px;">${isStarred ? '★ Unstar' : '☆ Star'}</button>`;
                 
                 const m = L.circleMarker(item.coordinates, {
                     radius: 8, fillColor: isStarred ? "#d97b3d" : "#c1683c", color: "#fff", weight: 2, opacity: 1, fillOpacity: 0.9
@@ -345,11 +370,15 @@
                 sourceMarkers.push(m);
             }
 
-            // 2. Mention Markers
+            // 2. Mention Markers (with Jitter)
             if(item.mentioned_places && item.mentioned_places.length > 0) {
                 item.mentioned_places.forEach(p => {
                     if(p.coords) {
-                        const m = L.circleMarker(p.coords, {
+                        // Apply slight jitter to prevent exact overlap
+                        const jitter = () => (Math.random() - 0.5) * 0.01;
+                        const jitteredCoords = [p.coords[0] + jitter(), p.coords[1] + jitter()];
+                        
+                        const m = L.circleMarker(jitteredCoords, {
                             radius: 6, fillColor: "#0c8c88", color: "#fff", weight: 1, opacity: 0.9, fillOpacity: 0.7
                         }).bindPopup(`<b>Mentioned: ${p.name}</b><br>In: PHI-${item.id}<br>${p.type || ''}`);
                         mentionMarkers.push(m);
@@ -496,6 +525,48 @@
             ul.appendChild(li);
         });
         container.appendChild(ul);
+    }
+
+    window.exportData = function(format) {
+        const data = window.lastFilteredData || APP_DATA.inscriptions;
+        let blob;
+        let filename;
+
+        if (format === 'csv') {
+            const headers = ['ID', 'Region', 'Date', 'Completeness', 'Themes', 'Entities', 'Text Preview'];
+            const rows = data.map(item => {
+                const places = (item.mentioned_places || []).map(p => p.name).join('; ');
+                const escape = (txt) => {
+                    if (!txt) return "";
+                    return '"' + txt.toString().replace(/"/g, '""') + '"';
+                };
+                return [
+                    item.id,
+                    escape(item.region),
+                    escape(item.date_str),
+                    escape(item.completeness),
+                    escape(item.themes_display.join('; ')),
+                    escape(places),
+                    escape(item.preview_text)
+                ].join(",");
+            });
+            const csvContent = [headers.join(","), ...rows].join("\n");
+            blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            filename = "agki_export.csv";
+        } else {
+            const jsonContent = JSON.stringify(data, null, 2);
+            blob = new Blob([jsonContent], { type: 'application/json' });
+            filename = "agki_export.json";
+        }
+        
+        const link = document.createElement("a");
+        const url = URL.createObjectURL(blob);
+        link.setAttribute("href", url);
+        link.setAttribute("download", filename);
+        link.style.visibility = 'hidden';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
     }
 
     init();

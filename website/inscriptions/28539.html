@@ -1,0 +1,838 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PHI-28539 - AGKI</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <style>
+    /* Custom Scrollbar Styling */
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+        background: rgba(0,0,0,0.05); 
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #ccc; 
+        border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #aaa; 
+    }
+
+    .page-container { max-width: 1400px; margin: 0 auto; padding: 2rem; }
+    .back-link { display: inline-block; margin-bottom: 1rem; color: var(--primary); font-weight: 600; }
+    
+    /* Original View Styles (Line by Line) */
+    .text-viewer-original { 
+        display: grid; 
+        grid-template-columns: 40px 1fr; 
+        gap: 2rem; 
+        font-family: "New Athena Unicode", "Gentium Plus", "Times New Roman", serif; 
+        font-size: 1.25rem; 
+        line-height: 1.6; 
+        background: var(--panel); 
+        padding: 2rem; 
+        border: 1px solid var(--border); 
+        border-radius: 4px; 
+        margin-bottom: 2rem; 
+        color: var(--text);
+    }
+
+    .line-numbers { 
+        text-align: right; 
+        color: var(--muted); 
+        font-size: 1.25rem; 
+        line-height: 1.6; 
+        user-select: none; 
+        opacity: 0.5; 
+        font-family: inherit; 
+        white-space: pre; 
+        padding-right: 1rem;
+        border-right: 1px solid var(--border);
+    }
+
+    .greek-content { 
+        white-space: pre-wrap; 
+        word-break: break-word;
+        padding-left: 1rem; 
+    }
+
+    .highlight-evidence {
+        background-color: var(--accent);
+        color: white;
+        border-radius: 2px;
+        padding: 0 2px;
+    }
+
+    .theme-card { background: var(--panel); padding: 1rem 1.5rem; border-left: 4px solid var(--primary); margin-bottom: 0.75rem; border: 1px solid var(--border); border-left-width: 4px; }
+    .ai-analysis-box { background: rgba(31, 167, 163, 0.05); padding: 2rem; border-radius: 8px; border: 1px solid var(--border); margin-top: 2rem; }
+    .evidence-box { max-width: 500px; text-align: right; }
+    .evidence-quote { font-size: 0.85rem; font-style: italic; color: var(--muted); margin: 0; }
+    .badge.green { background: #e6f4ea; color: #137333; border-color: #137333; }
+    .badge.orange { background: #fef7e0; color: #b06000; border-color: #b06000; }
+    .badge.red { background: #fce8e6; color: #c5221f; border-color: #c5221f; }
+    .entity-tag { background: rgba(217, 123, 61, 0.1); color: var(--accent-2); margin-right: 0.5rem; margin-bottom: 0.5rem; display: inline-block; padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.9rem; border: 1px solid rgba(217, 123, 61, 0.2); }
+    
+    /* Split View Styles */
+    .split-container { display: block; }
+    .split-container.active { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+    .split-col-left { }
+    .split-col-right { }
+    .split-container.active .split-col-right { position: sticky; top: 20px; max-height: 90vh; overflow-y: auto; padding-right: 10px; }
+  </style>
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+
+    function toggleSplitView() {
+        const container = document.getElementById('main-content');
+        const btn = document.getElementById('splitViewBtn');
+        container.classList.toggle('active');
+        if(container.classList.contains('active')) {
+            btn.textContent = 'View: Split';
+            btn.classList.add('active');
+        } else {
+            btn.textContent = 'View: Standard';
+            btn.classList.remove('active');
+        }
+    }
+
+    function copyCitation() {
+        const citation = "AGKI Project. (2026). Inscription PHI-" + "28539" + ". Retrieved from " + window.location.href;
+        navigator.clipboard.writeText(citation);
+        alert("Citation copied to clipboard!");
+    }
+    
+    function highlightQuote(quote) {
+        const container = document.querySelector('.greek-content');
+        if (!container || !quote) return;
+
+        if (!container.dataset.original) {
+            container.dataset.original = container.innerHTML;
+        } else {
+            container.innerHTML = container.dataset.original;
+        }
+        
+        const normalized = quote.trim().replace(/\s+/g, ' ');
+        const escapedQuote = normalized.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const spacedQuote = escapedQuote.replace(/\s+/g, '\\s+');
+        const regex = new RegExp(spacedQuote, 'g');
+        container.innerHTML = container.innerHTML.replace(
+            regex,
+            match => `<mark class="highlight-evidence">${match}</mark>`
+        );
+    }
+    
+    function clearHighlight() {
+        const container = document.querySelector('.greek-content');
+        if (!container) return;
+        if (container.dataset.original) {
+            container.innerHTML = container.dataset.original;
+        } else {
+            container.innerHTML = container.innerHTML.replace(/<mark class="highlight-evidence">(.*?)<\/mark>/g, '$1');
+        }
+    }
+
+        function updateFontSize(size) {
+
+            const container = document.getElementById('original-view');
+
+            if (container) {
+
+                container.style.fontSize = size + 'px';
+
+                const lines = container.querySelector('.line-numbers');
+
+                if(lines) lines.style.fontSize = size + 'px';
+
+            }
+
+        }
+
+    
+
+        function openReportModal() {
+
+            document.getElementById('reportModal').style.display = 'block';
+
+        }
+
+    
+
+        function closeReportModal() {
+
+            document.getElementById('reportModal').style.display = 'none';
+
+        }
+
+    
+
+        function sendReport() {
+
+            const category = document.getElementById('reportCategory').value;
+
+            const desc = document.getElementById('reportDesc').value;
+
+            const fix = document.getElementById('reportFix').value;
+
+            
+
+                    const subject = `AGKI Error Report: PHI-28539`;
+
+            
+
+                    const body = `Category: ${category}%0D%0ADescription: ${desc}%0D%0AProposed Fix: ${fix}%0D%0A%0D%0A(Sent from inscription page)`;
+
+            
+
+                    
+
+            
+
+                    window.location.href = `mailto:admin@agki-project.org?subject=${encodeURIComponent(subject)}&body=${body}`;
+
+            closeReportModal();
+
+        }
+
+      </script>
+
+    </head>
+
+        
+<body>
+  <header class="site-header">
+
+        <div class="brand">
+
+          <h1><a href="../index.html">AGKI Tagging Tool</a></h1>
+
+        </div>
+
+        <nav class="nav-links">
+
+            <a href="../index.html" class="nav-item">Home</a>
+
+            <a href="../search.html" class="nav-item">Search</a>
+
+            <a href="../explore.html" class="nav-item">Explore</a>
+
+            <a href="../indices.html" class="nav-item">Indices</a>
+
+        </nav>
+
+        <div class="header-controls">
+
+            <button class="theme-toggle-btn" onclick="toggleTheme()" id="themeBtn">🌙 Dark Mode</button>
+
+        </div>
+
+      </header>
+
+    
+
+      <script>
+
+        const themeBtn = document.getElementById('themeBtn');
+
+        function updateThemeBtn() {
+
+            const current = document.documentElement.getAttribute('data-theme');
+
+            if(themeBtn) themeBtn.textContent = current === 'light' ? '🌙 Dark Mode' : '☀️ Light Mode';
+
+        }
+
+        updateThemeBtn();
+
+        window.toggleTheme = function() {
+
+            const current = document.documentElement.getAttribute('data-theme');
+
+            const next = current === 'light' ? 'dark' : 'light';
+
+            document.documentElement.setAttribute('data-theme', next);
+
+            localStorage.setItem('theme', next);
+
+            updateThemeBtn();
+
+        }
+
+      </script>
+
+      <main class="page-container inscription-page">
+        <div class="inscription-toolbar">
+
+            <a href="../search.html" class="back-link">← Back to Dashboard</a>
+
+            <div class="inscription-actions">
+                <button id="splitViewBtn" onclick="toggleSplitView()" class="button secondary compact">View: Standard</button>
+
+                            <button onclick="openReportModal()" class="button error compact">🚩 Report Error</button>
+
+
+            </div>
+
+        </div>
+
+        
+
+        <!-- Report Modal -->
+
+        <div id="reportModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:1000;">
+
+            <div style="background:var(--panel); width:90%; max-width:500px; margin:10% auto; padding:2rem; border-radius:8px; border:1px solid var(--border); box-shadow:var(--shadow);">
+
+                <h3>Report Error for PHI-28539</h3>
+
+                <label style="display:block; margin-bottom:0.5rem;">Error Category</label>
+
+                <select id="reportCategory" style="width:100%; padding:0.5rem; margin-bottom:1rem; border-radius:4px; border:1px solid var(--border); background:var(--bg); color:var(--text);">
+
+                    <option value="Incorrect Tag">Incorrect Tag / Theme</option>
+
+                    <option value="Missing Entity">Missing Person / Place</option>
+
+                    <option value="Translation Error">Translation / Text Issue</option>
+
+                    <option value="Other">Other</option>
+
+                </select>
+
+                
+
+                <label style="display:block; margin-bottom:0.5rem;">Description of Issue</label>
+
+                <textarea id="reportDesc" rows="3" style="width:100%; padding:0.5rem; margin-bottom:1rem; border-radius:4px; border:1px solid var(--border); background:var(--bg); color:var(--text);"></textarea>
+
+                
+
+                <label style="display:block; margin-bottom:0.5rem;">Proposed Fix (Optional)</label>
+
+                <textarea id="reportFix" rows="2" style="width:100%; padding:0.5rem; margin-bottom:1.5rem; border-radius:4px; border:1px solid var(--border); background:var(--bg); color:var(--text);"></textarea>
+
+                
+
+                <div style="display:flex; justify-content:flex-end; gap:0.5rem;">
+
+                    <button onclick="closeReportModal()" class="button secondary">Cancel</button>
+
+                    <button onclick="sendReport()" class="button">Create Email Report</button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    
+
+        <div id="main-content" class="split-container">
+        <div class="split-col-left">
+            <section class="inscription-hero">
+                <div class="inscription-title-row">
+                <h2>Inscription PHI-28539</h2>
+                <div class="inscription-actions">
+                    <button onclick="copyCitation()" class="button secondary compact">📜 Cite</button>
+                    <a href="https://epigraphy.packhum.org/text/28539" target="_blank" class="button secondary compact">View on PHI</a>
+                </div>
+            </div>
+            
+            <div class="inscription-meta">
+                <div class="meta-item">
+                        <div class="label">Provenance</div>
+                        <div class="meta-value"><a href="https://pleiades.stoa.org/places/570213" target="_blank" title="View in Pleiades">Epidauria</a> &gt; <a href="https://pleiades.stoa.org/places/570214" target="_blank" title="View in Pleiades">Epidauros</a></div>
+                    </div>
+                <div class="meta-item">
+                        <div class="label">Date</div>
+                        <div class="meta-value"> early 3rd c. BC </div>
+                    </div>
+                <div class="meta-item">
+                        <div class="label">Completeness</div>
+                        <div class="meta-value"><span class="badge info">fragmentary</span></div>
+                    </div>
+            </div>
+            </section>
+
+            <div class="inscription-title-row">
+                <h3>Original Text</h3>
+                <!-- Font Size Control -->
+                <div class="font-size-control">
+                    <span style="font-size:0.8rem; color:var(--muted);">A</span>
+                    <input type="range" id="fontSizeSlider" min="14" max="32" value="20" oninput="updateFontSize(this.value)" style="width:80px; accent-color:var(--primary);">
+                    <span style="font-size:1rem; font-weight:bold; color:var(--muted);">A</span>
+                </div>
+            </div>
+
+            <!-- Original Line-by-Line View -->
+            <div id="original-view" class="text-viewer-original">
+                <div class="line-numbers">1
+
+
+
+5
+
+
+
+
+10
+
+
+
+
+15
+
+
+
+
+20
+
+
+
+
+25
+
+
+
+
+30
+
+
+
+
+35
+
+
+
+
+40
+
+
+
+
+45
+
+
+
+
+50
+
+
+
+
+55
+
+
+
+
+60
+
+
+
+
+65
+
+
+
+
+70
+
+
+
+
+75
+
+
+
+
+80
+
+
+
+
+85
+
+
+
+
+90
+
+
+
+
+95
+
+
+
+
+100
+
+
+
+
+105
+
+
+
+
+110
+
+
+
+
+115
+
+
+
+
+120
+
+
+
+
+125
+
+
+
+
+130
+
+
+
+
+135
+
+
+
+
+140
+
+
+
+
+145
+
+
+
+
+150
+
+
+
+
+155
+
+
+
+
+160
+
+
+
+
+165
+
+
+
+
+170
+
+
+
+
+175
+
+
+
+
+180
+
+
+
+
+185
+
+
+
+
+190
+
+
+
+
+195
+
+
+
+
+200
+
+
+
+
+205
+
+
+
+
+210
+
+
+
+
+215</div>
+                <div class="greek-content">κοντα [---------------------------------------------------------]
+----λεια[--------------------------------------------------------]
+-ανετος [--------------------------------------------------------]
+--- δα[------------------------------------------------------ τετρα]ποδ αν [--------------------------------------------------------]μισσον [---------------------------------------------------------]
+ πτ μι[---------------------------------------------------------]
+ ργ ναι τ ς [-------------------------------------------------------]
+ λομ νωι τ [ν ------------------------------- τ χνωνι ργ ναι τ ς ξαγωγ δος τ ς κ τ ν ο ρηθρ ν]
+τ ν ν τ ι π[ποστ σι ----------------------------------------------- φαιρεθ ν]τος το πιδεκ του γ νοντ[αι δραχμα --------------------------------------------]
+ λομ νωι δραχμ ν [----------------------------------------------- ργ ναι τ ς]
+ ξαγωγ δος τ ς ε ς τ [------------------------------------------------ φαιρε]θ ντος το πιδεκ του γ νονται [δραχμα --------------------------------------------]
+ λομ νωι δραχμ ν τεσσαρ[--------------------------------------------- τ ς ρ ξιος]
+το μετ λλου το ποτ τ ν [---------------------------------------------- φαιρε]θ ντος το πιδε[κ] του γ ν[ονται -------------------------------------------- φ των]
+ νν α λομ νωι τ φ ς καστον [-----------------------------------------------]
+φιλ νωι ργ ναι τ ς γκα σιος [------------------------------------------ φαιρεθ ντος]
+το πιπ μπτου γ νονται δραχμα [------------------------------------------ ξ λων δεκα]πδων διακοσ ων τεσσαρ κοντα λομ νωι τ δεκ πεδον δραχμ ν τεσσ [ρων φαιρεθ ντος το πιπ μπτου γ νονται -----------]
+κα καλλ ππωι ργ ναι τ ς [χ]ρ σιος τ ν [ν ων] σκαναμ των τ ν π τ[ο κυν ς ------------------------ τ ς χρ]σιος δεκαπ δων ε κοσι λομ ν[ωι] τ δεκ πεδον νδεκ βο[λ ν γ]νον[ται ----------------- τ ς μ ν παλ ξιος τ δ ο μ ρη] 
+τ ς δ [πι]χρ σιος τ τρ τομ μ ρος φ[αιρεθ] ντος το πιδεκ του γ νονται δραχμα λ γος χ ι λ γος [π] ντων ργων χχχχη ιιιιι 
+ 
+[--------------------------------------------------] γριαν ου [----------------------------------------------------] πρ ταν
+[δ σιν πτακλ νων [------------------------------------- ε ς τ π] κυν ς σκα[ν ματα ------------------ λομ νωι ---- δραχμ ν --------- φαιρεθ ντος το πι]δεκ του
+[γ νονται δραχμα -------------------------------------- λομ νωι] τ ν [μαξα]ν
+[δραχμ ν -- φαιρεθ ντος το πιδεκ του γ νονται δραχμα ---------------- δευτ ραν δ σι]ν πτακλ νων τε[τ ρων λομ νωι τ ν πτ κλινον δραχμ ν --------------------------------] τ πιδ κα[τον ----------------------------------- μετρητ ν] δεκαπ ντε λομ νωι τ μ μετρ[ητ ν --------------------------------------- ξ λων τετρ]αγ νων ε[ ς] τ π κυ[ν ς σκαν]ματα [ λομ νωι τ ξ λον καστον δραχμ ν ------------- φαιρεθ ντος το πιδεκ του] γ νονται δραχμα 
+[------------------------------------------] τ ν π κυν ς σκαναμ των τ ς
+[--------------------------------------- φαιρεθ ντος το πιδεκ του γ] νονται
+[---------------------------------------------] ξ λων δ ο δεκαπ δων
+[-------------------------------------------------------]
+[-------------------------------------------] ε ς τ π [κ]υν ς σκαν ματα 
+[------------------------------------------- φαιρεθ ν]τος το πιδεκ του
+γ νονται δραχ[μα ----------------------------------- μαξ ν ---κ]οντα λομ νωι
+τ ν μαξαν [δραχμ ν -- φαιρεθ ντος το πιδεκ του γ νονται δραχμα --------------- ξ λων δ] ο δεκαπ δων
+εγ[---------------------------------------------- φαιρεθ ντος το πι]δεκ τ[ο]υ [γ νονται δραχμα --------------------------------------------]
+δραχ[μ]ν [----------------------------------------------------]
+ [------------------------------------------- ε ς τ] π κυν ς σκαν ματα [----------------------------------------------]λομ νωι τ δεκ[ πεδον δραχμ ν -- φαιρεθ ντος το πιδεκ του γ νονται δραχμα ---------------------------]
+ 
+π[ε]δον [--------------------------------------------------- π]
+κυν[ ς σκαναματ-------------------------------------------------]
+ρωι[------------------------------------------ ε ς] τ [π] κυν ς σκαν μ[ατα -------------------------------] τεταρ κοντα φαιρεθ ντος το πιδεκ του γ ν[ε]τα[ι] 0
+[------------------------------------ γ νον]ται δραχμα [---------- κ]α ρακλε [δαι ργ ναι ---------------------------------------------- π]εντακοσι ν
+[--------------------------------------------------] δραχμ ς [-]
+[----------------------------------------------------]λομ νωι [-]
+[------------------------------------------------------] γωγ ς
+[---------------------------------------------------------]
+[---------------------------------------------------------]
+[---------------------------------------------------------]
+[------------------------------------------------------] παρ 
+του [-------------------------------------------------------]
+[---------------------------------------------------------]
+[---------------------------------------------------------]
+[---------------------------------------------------------]
+[-----------------------------------------------------]απ δ[ων]
+[------------------------------------------- φαιρεθ ντος το πι]δεκ του [-]
+[---------------------------------------------------------]
+ π καταλ γου βουλ [ς -----------------------------------------------]
+δεκαεν ς [-----------------------------------------------------]
+δεκαπ ντε κα------υ[-----------------------------------------------]
+------ο[-] κτ[--------------------------------------------------]
+-----ος [--------------------------------------------------- καταλ γ]ων βουλ [ς --------------------------------------------------]
+[---- γ]νο[ν]τ[αι δραχμα ----------------------------------------------]
+[------------------------------------------------- γγυος π ρ τ ν ρ]γ ναν [λ]οντα σ[--------------------------------------------------]
+----του τοσ[---------------------------------------------------]
+[-- ξ λων ν] δρ κων [ ξεδ ξατο -------------------------------------------]
+---------κ[- κα] τ πιδ κατ[ον ------------------------------------------]
+------- ξ λων [--------------------------------------------------]
+-------- λομ νωι τ [-----------------------------------------------]
+[----]ατον[---------------------------------------------------]
+ 
+ λομ νωι τ ξλον καστον δραχμ[ ν -----------------------------------------]
+ 
+------τρι ν λομ νωι τ ν τετραπο[δ αν δραχμ ν -----------------------------------]
+----- λομ νωι τ ν τετραπο[δ αν δραχμ ν ---------------------------------------]
+τετραποδι ν κατ ν πεντ κοντα [ λομ νωι τ ν τετραποδ αν δραχμ ν ----------------------------]
+--ρον κα[ λ]ουτρ ν [------------------------------------------------]
+[το ς π] κυν ς σκαν μασι γω[γ ς ----------------------------------- τετραποδι ν κατ] ν πεντ κοντα πτ λομ νωι τ ν τετραποδ αν [δραχμ ν ---------------------------------]
+-------ομε-σπ[------------------------------------------- τετραποδι ν κα]τ ν πεντ κοντα [πτ] λομ νωι τ ν τετραποδ αν [δραχμ ν ------------------------------ φαι]ρεθ ντος το πιδεκ του γ νονται δραχμα [-------------------------------- το ς περιστ λους]
+το [ς ν]ω το ς ν το ς π κυν ς σκαν μασι [--------------------------------------]
+ασ[---------------------------------------------------------]
+----νων τ ς γκ[α σιος ----------------------------------------------]
+δραχμ ν ξ τετρωβ λου φαιρ[εθ ντος το πιδεκ του γ νονται δραχμα ---------------------] ς τ π κυν ς
+σκαν ματα π μπταν δ σιν [πτακλ νων π ντε] λομ νω[ι τ ν πτ κλινον δραχμ ν δεκαοκτ φαιρεθ ντος το πιδεκ το]υ γ νονται δ[ρα]χμα -----ωι ργ ναι τ ν θυ[ρ]δ[ων] τ ν ν [το ς π κυν ς σκαν μασι -- λομ νωι τ ν θυρ δα δραχμ ν --] γ νονται δραχμα 0. δαμοστρ τωι ργ ναι το κερ μου [το κορινθ ου κεραμ δων τριακοσι ν τρι]κοντα τρι ν λομ νωι [τ ν] κεραμ δα κ σταν δραχμ [ς] τρι ν [ βολ ν γ νονται δραχμα -----------] κα κτ σωνι
+ ργ ναι ξ λων τετραγ νων ναγωγ ς [ε ς τ π κυν ς σκαν ματα λομ νωι τ ν μαξαν δραχμ ν π ντε τετρωβ] λου [φαι]ρεθ ντος το πιδεκ του γ νονται δραχμα [--------- κα] ριστο[δ μωι τε]τραπο[δι ν -------]απ------ον [-------------------] φαιρ[εθ ν]τος [το]
+πιδεκ του γ νονται δραχμα [------------------] κα ριστοδ[ μωι] ω--υνεργον ργων κ τ ν αμφιλινου τας ργα[------ δ σιν πτακλ νων π ντε] λομ νωι τ ν
+πτ κλινον δραχμ ν κατ ν φαιρεθ ντος το[ πιδεκ του γ νονται δραχμα ----------]
+---ς ε ς το ς φαυστ ρας δ ων κ[ατ]ν δρα[χμ--- φαιρεθ ντος το πιδεκ του γ νονται] δραχμ[α]
+ [κ]τ σωνι ργ ν[αι] τ ς να[γωγ ς ---------- μαξ ν ----] λομνωι τ ν μαξαν δρα[χμ ν π] ντε τε[τρωβ λου ----------------]ναμεναν 
+-α γ νονται δραχμα --- κα φιλλι δαι ργ ν[αι τ ν ξ λων ναγωγ ς τ ν στρογγ λων ν δρ κων ξεδ ξατο ξ λ]ων τ[ρι]κοντα ξ λομ νωι τ ξ λ[ο]ν [ καστον τετ ρων βολ ν φαιρεθ ντος το πιδεκ του γ νοντ]α[ι -----] κα ε [θυκλε] ρ[γ ναι] το κερ μου μα[ξ ν --- λομ νωι τ ν μαξαν δραχμ ν -------] φαιρεθ ντο[ς]
+το πιδεκ του γ νονται δραχμα [-----------------κον]τα δ ο τ μ μ---πων ξα[-----------------------------]
+[--------------------- μν ν] κατ ν π ντε [ μιμ]να ου λομ νωι τ ν
+[μν ν] δεκωβ λου [ φαιρεθ]ντος τ[ο πιδεκ του γ νονται δραχμα - -] ιιιι χχ---- τελ ου [π] καταλ γων
+βουλ ς ριλα δος -ον--ο-α--π[-------- ε ς] τ π[ κ]υν ς σκαν ματα κταν δ σιν πτακλ νω[ν]
+π ντε λομ νωι τ ν [ πτ κλινον δραχμ ν κατ ν φαιρεθ ντος το πιδ]εκ του γ νονται δραχμα 0[0--] κα 0[ χ]ν[ωνι] ρ[γ] να[ι] π ρων τομ ς τ ν [κ -----------κο]ντα λ[ομ νωι τ ν π]ρον κα[στον]
+[-------------------- γ] ν[ονται] δραχμα ---- κα δημητρ ωι ργ [ναι] π ρων γωγ ς τρι κοντα π ντε τ ν [---------] λομ νωι τ ν [π] ρων καστο[ν] δραχμ ν
+[δ ο] φαιρεθ ντος το πιδεκ του γ νονται δραχμα [--------] π ρων γωγ ς τρι κοντα π ντε [τ ν]
+[κατ] τ μ τ[αλ]λον [τ] π[ρ] το [νακορε]ου λομ νωι [τ ν π ρων καστον --- φαιρεθ] ντος το πιδεκ [τ]ου
+[γ νονται] δραχμα[ ---] κα κτ σωνι ργ ναι π ρων [-- ε ς τ ν ργασ αν το χετο το πρ] τ ς παστ δος τ ς π π λλω[νος δευ]τ ραν δ σιν π ρων κα[τι] ν ς λομ νωι τ ν π[ ρων κα]σ[τον] δραχμ ν δ ο πεντωβ λου φαιρεθ ντος το πιδεκ [του] γ νονται δραχμα τ κα [τ]π[ιδ] κατον π [ντ]ων [--] γ νονται δραχμα ιιιι λ γος ηηη ι
+[παν]μου π καταλ γων βουλ ς [------ τ δε νι ργ ναι τ ς ρ ξιος] το μετ λλου τετραποδι ν κ[τ] λομ [νωι] τ ν τ[ε]τραποδ αν [δραχμ] ν δ κα μιωβ[ελ ου γ νονται --] κα τ χνωνι ργ ναι τ ν π ρων τ ς τομ ς
+[τ ν κ τ] τ μ ταλλον τ πρ το νακορε ου πιδ κατον [--- λομ νωι] τ ν π ρων καστον δ [κ]α βολ ν
+γ νονται δραχμα --- κα δημητρ ωι ργ ναι [π ρων γωγ ς ---κοντ]α π ντε λομ νωι τ ν προν κα[σ]τ[ον δραχμ ν δ ο γ νονται δρ[αχμα -- κα -- ργ ναι π ρων]γωγ ς τρι κοντα π ντε λομ νωι τ ν
+[π ρον κ]αστον δραχμ ν δ ο γ νονται δ[ραχμα --- ργ ναι τ ς] γκα σιος τ ν περθ ρων ν το ς π κυ[ν]ς [σκ]ανμασι περθ ρων τεσσαρ κοντα [λομ νωι] τ π[ ρθυρον] καστον δραχμ ν τρι ν τριωβ λου φαιρε[θ ντος] το πιδεκ του γ νονται δραχμ[α ----- ργ ναι τ ς καταξο ς τ ν στ λων τ ν ν το ς περιστ λο[ις] το ς π κυν ς σ[κα]ν [μ]ασι πρ ταν δ σιν στ λων [----- λο]μ νωι τ ν στ λων κ σταν δραχμ ν νν [α] πεντ 
+ βολ ν φαιρεθ ντος το [ πιδε]κ τ[ου γ]νονται δ[ρ]α[χμα --] κα τιμαγ θωι γγ οις δρ κοντος π ρ τ ν ργ ναν δρ κοντα ξ λων στρογγ λων [κτ] κα ------- λομ νωι τ ξ λον καστον δραχμ ν πτ κα ξ κα δεκαπ δων κατι λομ νωι τ ξ λον καστον δραχμ ν ι [κα] δεκαπ δων ξ λομ νωι τ ξ λον καστον δραχμ ν τετ ρων κα δεκαπ δων δεκαεπτ λομ νωι τ ξ λον καστον δραχμ ν τρι ν τριωβ λου φαιρεθ ντος το πιδεκ του γ νονται δραχμα ηη ιιι κα τ πιδ κατον π ντων τ ν ξ λων ντων --πιλνως τ ν μ ν κτωκαιδεκαπ δων
+τετρακατ ων λομ νωι ν δραχμ ς πτ κα κκαιδεκαπ δων τρι κοντα ν δραχμ ς ξ κα τετρακαιδεκαπ δων τετρακατ ων δεκα ξ ν δραχμ ς τ τορας κα δεκαπ δων τετρακατ ων πεντ κοντα ν δραχμ ς τρε ς τρε ς βολο ς κα κατι κα τετ ρων ποδ ν τρι κοντα ν δραχμ ς δεκαδ ο γ νεται τ πιδ κατον δραχμα ηη ιιιιιτχ [κ]α 0[α]τροχ ρει ργ ναι το κερ μου το νακ[ο]ρε ου ε ς τ π κυν ς σκαν ματα ζευγ ων πτακατ ων ξ κοντα κτ λομ νωι τ 
+ζε γος καστον τριωβ λου μιωβελ ου φαιρεθ ντος το πιδεκ του γ νονται δραχμα ηηη ιιιιχ[-] ξ λων τετραγ νων ν
+ πρι μεθα ε ς τ π κυν ς σκαν ματα μαξ ν τεταρ κοντα κα ποδ ν κατι δ ο τ ν μαξαν δραχμ ν τεταρ κοντα. τ π ν γ νονται δραχμα χ ηη ιι τιμαγ θωι δ ξαν λ αι λ γος χχχ τχ λ γος δαπ νας τ ν ργων χχχηη ιιιιτχχ
+ε θυνα τ ν αρ ν ργων αρομν μοσι νικομ δει καλλικρ τει δαμαρμ νωι δαμαιν τωι γροφε μνασικλε κ τ ν αρ ν ργων λ μματα π ρ
+θιοτ λεος το γγ ου το δ μωνος τ ν πιτιμ ν τν φαυστ ρων κα παρασταμ των ν το ς π κυν ς σκαν μασι ν κατ κρινε
+ βουλ δραχμ ς ξ κοντα κα π ρ δαμοστρ του ργ να το κερ μου το κορινθ ου κεραμ δων τριακοσι ν τρι κοντα νν α 
+ κ στας κεραμ δος βολ ν γ νονται δραχμα [ ιιι] κα παρ νασ μου ργ να το φαυστ ρος το π ρ τ ν πυρδα ων ν το ς π κυν ς σκαν μασι δραχμ ς κατ κριναν ο ντικατα νετοι κα παρ ε θυκλ ος τ περ μερον τ ν δ ων τ ν ν το ς π 
+κυν ς σκαν μασι δραχμ ς 0 κα π ρ τ χνω[ν]ος το κερ μου το κορινθ ου το π τ ν κλεισ αν περ μερον δραχμ ς λ γος 0
+ ιιι λ γος λ μματος παντ ς σ μ παρε[γγ] αι κα κ τ ν ργων μμχχη ι χχ παν μου δαπ ναι ε ς τ αρ ργα π καταλ γων
+βουλ ς τανταλ δος νικ νδρου τηλεφ νευς ργ ναι καλλικρ τει τ ς πρι σιος ε ς τ π κυν ς σκαν ματα βδ μαν δ σιν πτακλ νων π ντε λομ νωι τ ν πτ κλινον δραχμ ν δεκαοκτ φαιρεθ ντος το πιδεκ του γ νονται δραχμα [-]
+λειτ ι γγ ωι π ρ τ ν ργ ναν δ μωνα τ ν φαυστ ρων κα τ ν παρασταμ των τ ν ν το ς π κυν ς σκαν μασι ν το ς νω
+περιστ λοις τετ ρταν δ σιν δραχμ ς η ιιι κα φιλλι δαι ργ ναι τ ν ξ λων ναγωγ ς τ ν στρογγ λων ν 0[ρ] κων ξεδ ξατο ξ λων πεντ κοντα νν α λομ νωι τ ξ λον καστον τεσσ ρων βολ ν μ[ιω]βελ ου φαιρεθ ντος το πιδεκ του γ νονται δραχμα ι κα τ πιδ κατον π ντων τ ν ξ λων χιλ ων πεντακοσ ων ε κοσι ξ γ νονται δραχμα η ιι χχ κα δημητρ ωι ργ ναι ξ λων τετραγ νων ναγωγ ς τ ν γορασθ ντων π ρ τιμαγ θου ε ς τ π κυν ς σκαν ματα μαξ ν ε κοσι π ντε λομ νωι
+τ ν μαξαν δραχμ ν τεσσ ρων π ντε βολ ν μιωβελ ου γ νονται δραχμα η ιιι
+ 
+------------ταν-ν-ντ-----
+[------- τ ν] αρ ν ρ[γ]ων ---
+--------------- δραχμα----
+-------------ελομεθα -----
+-------- κα τ ------------
+-------- λομ νωι τ ν ------
+---- γ νονται δραχμα ------
+[------ τ αρ] ργα. π καταλ γων βου[λ ς]σμινα ας δα----
+[----- ργ ναι] ξ λων ρισ[τρ ι]
+[ξ λων] π ντε γορα[σ]θ [ντων]
+[τ ν]μαξαν κ σταν δρα[χμ ν]
+[τεσσαρ] κοντα [γ]νον[τ]αι δρ[αχμα ---]μ-ε-τ--λλ-αδαι----
+[--------- τ ν χ]ετ ν τ ν ε--ι
+[-------- ξ λων] δεκαπ δων [τεσ]σ ρων [λομ ν]ω[ι] τ δεκ πεδον [δραχμ ν -- γ νον]ται δραχμα [-]
+[κα ε χ ρμωι ργ ναι τ]ς [ γκα σιος τ ν περθ ρων ν το ς]π[ κυν ς σκαν μ]α[σι περθ ρων ----]
+[--- λομ νωι τ] π ρθυρον [ καστον δραχμ ν τρ]ι ν [τριωβ λου] 
+[ φα]ιρεθ ντος το πιδεκ του [γ νονται δραχμα -------] κα -----
+[--------- κα τι]μακλε δαι [ ρ ξιος το] μ[ετ]λλου π [τ τ ν περια]γωγ ν το δατος το ε ς [τ] βα[λανε]ον ποδ ν τρι κον[τα] λομ [νωι] τ ν π δα καστον δραχμ ς
+[ βολ] φαιρεθ ντος το πιδεκ [του] γ νονται δραχμα [ ιιι] κα [τιμακλε δαι] τ ς ρ ξιος το μετ λ[λου το π] [τ] τ ν περιαγωγ ν το [δατος τ]ο ε ς τ βαλανε ον ποδ ν
+[τρι κοντ]α λομ νωι τ ν π δα κα[στον δραχ]μ ς βολο γ νονται δρα[χμα κ]α στηνι ξ λων λ [γος ----- λ] γος ηηη ιιιι 
+[ π καταλ] γων βουλ ς τενι δ[ος] 
+----------ου λαχ ρευς ρ[γ ναι]
+[ε χ ρμωι τ] ς [πιχρ] σιος τ ν [κερ μων τ ν] ε ς τ ν στ γασιν τ[ ς]
+[κλεισ ας] π κυν ς σκαν μασ[ι]
+[κα τ ν] λοιπ ν πτακλ νων δε[κατεσ]σ ρων π μπτον μ [ρος] 
+[ λ]ο[μ] νωι τ ν πτ κλινον [δρ]α[χμ ν] ε κοσι φαιρεθ ντος τ[ο]
+[ πιπ] μπτου γ νονται δραχ[μ]α [ κατ ν] κα τ π πεμπτον [κα]τ ν γδο κοντα π ντε 
+η ιιι χχ γ νονται δραχμα 
+ηη ιιι κα τ ν γκαυσ μ[ων]
+--------- ων τ ν πιλο πων
+[δεκαπ δων] τεσσαρ [κ]οντα τ[ρι ν μ σ]σου λομ νωι τ δεκ πε[δον δρ]αχμ ν τε[σσ ρ]ων φαιρεθ ντος το πιπ μπτου γ νον[ται δ]ραχμα[ ---------] κα τ π[ πεμπ]τον [δ]εκαπ [δ]ων κατ ν 
+[το πιδεκ τ]ου φαιρεθ ν[τος]
+[ σωι πλε ο]ν χει δραχμ ς ιιιι
+ γ νονται δραχμα 0
+[-------- κα ε]χ ρμωι ργ να[ι]
+[τ ς γκα]σιος τ ν περθ ρων
+[σ ν το]ς φαυστ ρσιν κα [παραστ μασι τ ν] π κυν ς σκα[ν μασι π]ερθ ρων πτ τ ν πι[λο πων] λομ νωι τ π ρθυρον δρα[χμ] ν τρι ν τριωβ λου φαιρεθ ν[το]ς το πιδεκ του γ νονται δρα[χμ]α τ κα τ πιδ κατον πε[ρθ]ρων κατ ν δ ο γ νονται δραχμα 0 κα σωσ αι ργ ναι
+τ ν φατν ν τ ν ν τ [ι] προστ [σι] κα τ ν βατ ρων τ ν ν το ς π [ργ]οις το ς π κυν ς σκαν μασι 
+τ πιδ κατον λομ νωι δραχμ [ν]
+ κατ ν πεντ κοντα γ νονται δρα[χμ]α κα ριστον κωι ργ ναι τ[ ν]
+[κ]ερ[αμ] δων τ ν ν τ ι πποστ σε[ι]
+[κα] τ ν στ λων τ ν π τα ς [π]α[ρ δο]ις τ πιδ κατον λομ νωι
+[δραχ]μ ν ξ κοντα τρι ν τεσσ [ρων]βολ ν γ νονται δραχμα 
+[-- κα] τ χνωνι [ργ] να[ι] τ ς [ξαγωγ]δος τ ς κ τ ν ο ρηθρ ν τ ν
+ [ν] τ ι πποστ σει τ ι ν τ ι αρ ι
+[δε]καπ δων δεκαδ ο τ πιδ κατον λομ νωι τ δεκ πεδον δραχμ ν δ κα γ νονται δραχμα 
+κα ε ξεν δαι ργ ναι τ ς παροχ [ς]
+το μαρμ ρου πρ ταν δ σιν [μ]ε[δ μ]νων διακοσ ων νεν κοντα π[ ντε] 
+ν [π]εμ τρησ[ε] το ς αρομ[ν μοσι λ] μενος τ ν μ διμνον δραχ[μ] [ς]
+[κα] τεσσ ρων βολ ν φαιρεθ ντο[ς]
+[το] πιδεκ του γ νονται δραχμα 
+ηηηη ιχχ κα καλλ ππωι ργ να[ι]
+[τ] ς χρ σιος τ ν π κυν σκ[α]ν[αμ τ]ων τ ν ξω το χων τ ς μ [ν πα]λ ξιος δεκαπ δων ξ κοντα μ σσου τετ ρτου τ ς δ πιχρ σιος δε[κα]π δων κατ ν δεκαπ ντε [ μ]σσου τετ ρτου λομ νωι συναμφο ν τ δεκ πεδον ιιι τ γ νε[ται]
+[τ]ο του τ ς μ ν παλ ξιος τ δ [ο]
+μ ρη τ ς δ πιχρ σιος τ τρ τον
+μ ρος φαιρεθ ντος το πιδεκ [τ]ου γ νονται δραχμα η ιι
+[κ]α δημητρ ωι ργ ναι τ ς χρ σιο[ς]
+[τ] ν π κυν σκαναμ των τ ν --
+ατας νδον το χων π ντων τ[ ς]
+μ ν παλ ξιος δεκαπ δων πεντκοντα π ντε τ ς δ πιχρ σιος δ[εκα]π δων τρι κοντα δ ο λομ νωι [συν]αμφο ν τ δεκ πεδον δραχμ ν 
+τριχ λκου γ νεται το του [τ ς]
+μ ν παλ ξιος τ δ ο μ ρη τ ς δ πιχρ σιος τ τρ τον μ ρος φαι[ρεθ] ντος το πιδεκ του γ νονται
+[δ]ραχμα ιιιιι τχ λ γος χρ σ[ιος --] 0 π καταλ γων βουλ[ ς]
+παν μου τελεν κωι καλλικρ τ[ει]
+[ναυ]φε δος ργ ναι δημητρ ωι τ [ν]
+ π κυν σκαναμ των τ ς χρ σι[ος]
+[τ] ν ε σω το χων π ντων δεκαπ[ δ]ων τριακοσ ων ξ κοντα τεσσ[ ρω]ν λομ νωι τ δεκ πεδον δρα[χμ] ν δ ο τριχ λκου κα τ [ς χρ]σιος δεκαπ δων ε κοσι τρι ν γ νονται τ ς πιχρ σιος τ τρ τον μ ρο[ς]
+το πιδεκ του δραχμα η 0 κα σκυθ νωι ργ ναι τ ς [ργασ] ας το χετο το πρ τ ς πασ[τ δος]
+[τ] ς παρ π λλωνα τ ν δευτ ραν
+δ σιν τετραποδι ν δεκαοκτ[ ποδ ς ν] ς λομ νωι τ ν τετρα[ποδ αν]
+δ[ρ]αχμ ν νν α τριωβ λο[υ φαιρ]εθ ντος το πιπ μπτο[υ το]
+ πιδεκ του σωι πλε ον λ[αβε]
+ ν τ ι πρ ται δ σι γ νονται τ λοιπ ν δραχμα η ιιτ κα ζωπ ρωι
+ ργ ναι τ ν πλακ ν τ ς τομ ς
+[ε]ς τ ν χετ ν τ ν π π λλ[ω]ν[ι]
+τ πιδ κατον τετραποδι ν τρι κοντα ξ ποδ ν τρι ν λομ νωι
+τ ν τετραποδ αν δραχμ ν δ κα 
+φαιρεθ ντος ποδ ς ν ς [ ν] πλ [ο]ν χει γ νονται τ λοιπ ν δραχμ[α]
+ τ λοιπ ν τ ι λλωι
+κροτ φωι ι πιγ γραπται β τα.
+α
+ 
+[το ς]π κυν ς σκαν μασι ---
+------- μεδ μνων τετρακοσ[ ων]
+ 
+[--------- τ ι γγ ωι]
+π ρ τ ν ργ ναν δαμ στρατον
+--------νων ε ς τ ς --------
+[-------------]
+[----- σ]ω[λ]νων δ κα λομ νωι τ ν
+σ[ωλ]να κ[αστ]ον π ντ βολ [ν] 
+[ φ]αιρεθ ντος το πιδεκ τ[ου]
+[γ νοντ]αι δραχμα [ ιιι -------]
+------ τ ι γγ ωι π ρ τ ν [ργ ναν δαμα ν]ετον τ ν χοινικ δ[ων]
+[ ν] ε ς τ π κυν ς σκαν μ[ατα]
+[ ποκατ στ]ασε το ς αρομ[ν μοσι μν]ν βδο[μ] κοντα τρι ν 
+ λομ νωι τ ν μν ν κ σταν
+[δραχμ ν -]φαιρεθ ντος το 
+πιδεκ του γ νονται δραχμα --
+------- λ γος 0 [λ γος πας - σ ν]
+[το ς]λλοι[ς] ν τ ι κροτ φωι
+ ν ι τ γρ μμ α γ γραπται.</div>
+            </div>
+        </div>
+
+        <div class="split-col-right">
+            <h3>Thematic Analysis</h3>
+            
+        <div class="theme-card" onmouseover="highlightQuote('λ γος δαπ νας τ ν ργων')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Administrative Records and Lists/Accounts and Financial Records" class="tag domain-tag" style="text-decoration:none;">Administrative Records and Lists</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
+                    <div class="theme-path">Administrative Records and Lists > Accounts and Financial Records</div>
+                    <div class="theme-label">Accounts and Financial Records</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "λ γος δαπ νας τ ν ργων"</p>
+                </div>
+            </div>
+        </div>
+        
+            
+            <div style="margin-top:2rem;">
+                <h3>Entities</h3>
+                <div><a href="../search.html?q=Philon" class="tag entity-tag" style="text-decoration:none;">👤 Philon <small>(Contractor)</small></a><a href="../search.html?q=Kallippos" class="tag entity-tag" style="text-decoration:none;">👤 Kallippos <small>(Contractor)</small></a><a href="../search.html?q=Damostratos" class="tag entity-tag" style="text-decoration:none;">👤 Damostratos <small>(Contractor)</small></a><a href="../search.html?q=Kteson" class="tag entity-tag" style="text-decoration:none;">👤 Kteson <small>(Contractor)</small></a><a href="../search.html?q=Aristodemos" class="tag entity-tag" style="text-decoration:none;">👤 Aristodemos <small>(Contractor)</small></a><a href="../search.html?q=Phillidas" class="tag entity-tag" style="text-decoration:none;">👤 Phillidas <small>(Contractor)</small></a><a href="../search.html?q=Euthykles" class="tag entity-tag" style="text-decoration:none;">👤 Euthykles <small>(Contractor)</small></a><a href="../search.html?q=Demetrios" class="tag entity-tag" style="text-decoration:none;">👤 Demetrios <small>(Contractor)</small></a><a href="../search.html?q=Timagathos" class="tag entity-tag" style="text-decoration:none;">👤 Timagathos <small>(Guarantor)</small></a><a href="../search.html?q=Nikomedes" class="tag entity-tag" style="text-decoration:none;">👤 Nikomedes <small>(Hieromnemon)</small></a><a href="../search.html?q=Kallikrates" class="tag entity-tag" style="text-decoration:none;">👤 Kallikrates <small>(Hieromnemon)</small></a><a href="../search.html?q=Damarmenos" class="tag entity-tag" style="text-decoration:none;">👤 Damarmenos <small>(Hieromnemon)</small></a><a href="../search.html?q=Damainetos" class="tag entity-tag" style="text-decoration:none;">👤 Damainetos <small>(Hieromnemon)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Epidauros <small>(Polis)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Corinth <small>(Polis)</small></a><a href="../index_deities.html" class="tag entity-tag" style="text-decoration:none;">⚡ Apollo</a></div>
+            </div>
+
+            <div class="ai-analysis-box">
+                <h3>AI Analysis Summary</h3>
+                <p style="line-height:1.7;">This inscription is a detailed financial record (building account) from the sanctuary of Asclepius at Epidauros, dating to the early 3rd century BC. It documents the expenses incurred for various construction projects, including the &#x27;skanomata&#x27; (temporary shelters or booths), the &#x27;hippostasis&#x27; (stables), and the &#x27;balaneion&#x27; (bathhouse). The text lists contractors (ergonai), the specific tasks performed (e.g., stone cutting, wood transport, encaustic painting), the agreed price, the deduction of the &#x27;epidekaton&#x27; (a 10% tax or retention fee), and the final payment in drachmae and obols. It also mentions the &#x27;hieromnemones&#x27; (sacred officials) overseeing the works and the &#x27;boule&#x27; (council) involved in the administration.</p>
+            </div>
+        </div>
+    </div>
+  </main>
+</body>
+</html>

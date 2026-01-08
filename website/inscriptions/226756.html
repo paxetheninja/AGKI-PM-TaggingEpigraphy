@@ -81,8 +81,6 @@
     .split-container.active { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
     .split-col-left { }
     .split-col-right { }
-    
-    /* Sticky sidebar in split view */
     .split-container.active .split-col-right { position: sticky; top: 20px; max-height: 90vh; overflow-y: auto; padding-right: 10px; }
   </style>
   <script>
@@ -111,11 +109,19 @@
     function highlightQuote(quote) {
         const container = document.querySelector('.greek-content');
         if (!container || !quote) return;
+
+        if (!container.dataset.original) {
+            container.dataset.original = container.innerHTML;
+        } else {
+            container.innerHTML = container.dataset.original;
+        }
         
-        const escapedQuote = quote.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-        const regex = new RegExp(escapedQuote, 'g');
+        const normalized = quote.trim().replace(/\s+/g, ' ');
+        const escapedQuote = normalized.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const spacedQuote = escapedQuote.replace(/\s+/g, '\\s+');
+        const regex = new RegExp(spacedQuote, 'g');
         container.innerHTML = container.innerHTML.replace(
-            regex, 
+            regex,
             match => `<mark class="highlight-evidence">${match}</mark>`
         );
     }
@@ -123,56 +129,239 @@
     function clearHighlight() {
         const container = document.querySelector('.greek-content');
         if (!container) return;
-        container.innerHTML = container.innerHTML.replace(/<mark class="highlight-evidence">(.*?)<\/mark>/g, '$1');
-    }
-
-    function updateFontSize(size) {
-        const container = document.getElementById('original-view');
-        if (container) {
-            container.style.fontSize = size + 'px';
-            const lines = container.querySelector('.line-numbers');
-            if(lines) lines.style.fontSize = size + 'px';
+        if (container.dataset.original) {
+            container.innerHTML = container.dataset.original;
+        } else {
+            container.innerHTML = container.innerHTML.replace(/<mark class="highlight-evidence">(.*?)<\/mark>/g, '$1');
         }
     }
-  </script>
-</head>
+
+        function updateFontSize(size) {
+
+            const container = document.getElementById('original-view');
+
+            if (container) {
+
+                container.style.fontSize = size + 'px';
+
+                const lines = container.querySelector('.line-numbers');
+
+                if(lines) lines.style.fontSize = size + 'px';
+
+            }
+
+        }
+
+    
+
+        function openReportModal() {
+
+            document.getElementById('reportModal').style.display = 'block';
+
+        }
+
+    
+
+        function closeReportModal() {
+
+            document.getElementById('reportModal').style.display = 'none';
+
+        }
+
+    
+
+        function sendReport() {
+
+            const category = document.getElementById('reportCategory').value;
+
+            const desc = document.getElementById('reportDesc').value;
+
+            const fix = document.getElementById('reportFix').value;
+
+            
+
+                    const subject = `AGKI Error Report: PHI-226756`;
+
+            
+
+                    const body = `Category: ${category}%0D%0ADescription: ${desc}%0D%0AProposed Fix: ${fix}%0D%0A%0D%0A(Sent from inscription page)`;
+
+            
+
+                    
+
+            
+
+                    window.location.href = `mailto:admin@agki-project.org?subject=${encodeURIComponent(subject)}&body=${body}`;
+
+            closeReportModal();
+
+        }
+
+      </script>
+
+    </head>
+
+        
 <body>
   <header class="site-header">
-    <div class="brand">
-      <h1><a href="../index.html" style="color:white;text-decoration:none;">AGKI Tagging Tool</a></h1>
-    </div>
-    <nav class="nav-links">
-        <a href="../index.html" class="nav-item">Search</a>
-        <a href="../explore.html" class="nav-item">Explore</a>
-        <a href="../indices.html" class="nav-item">Indices</a>
-    </nav>
-  </header>
-  <main class="page-container">
-    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 1rem;">
-        <a href="../index.html" class="back-link" style="margin:0;">← Back to Dashboard</a>
-        <button id="splitViewBtn" onclick="toggleSplitView()" class="button secondary" style="font-size:0.8rem; padding:0.3rem 0.8rem;">View: Standard</button>
-    </div>
+
+        <div class="brand">
+
+          <h1><a href="../index.html">AGKI Tagging Tool</a></h1>
+
+        </div>
+
+        <nav class="nav-links">
+
+            <a href="../index.html" class="nav-item">Home</a>
+
+            <a href="../search.html" class="nav-item">Search</a>
+
+            <a href="../explore.html" class="nav-item">Explore</a>
+
+            <a href="../indices.html" class="nav-item">Indices</a>
+
+        </nav>
+
+        <div class="header-controls">
+
+            <button class="theme-toggle-btn" onclick="toggleTheme()" id="themeBtn">🌙 Dark Mode</button>
+
+        </div>
+
+      </header>
+
     
-    <div id="main-content" class="split-container">
+
+      <script>
+
+        const themeBtn = document.getElementById('themeBtn');
+
+        function updateThemeBtn() {
+
+            const current = document.documentElement.getAttribute('data-theme');
+
+            if(themeBtn) themeBtn.textContent = current === 'light' ? '🌙 Dark Mode' : '☀️ Light Mode';
+
+        }
+
+        updateThemeBtn();
+
+        window.toggleTheme = function() {
+
+            const current = document.documentElement.getAttribute('data-theme');
+
+            const next = current === 'light' ? 'dark' : 'light';
+
+            document.documentElement.setAttribute('data-theme', next);
+
+            localStorage.setItem('theme', next);
+
+            updateThemeBtn();
+
+        }
+
+      </script>
+
+      <main class="page-container inscription-page">
+        <div class="inscription-toolbar">
+
+            <a href="../search.html" class="back-link">← Back to Dashboard</a>
+
+            <div class="inscription-actions">
+                <button id="splitViewBtn" onclick="toggleSplitView()" class="button secondary compact">View: Standard</button>
+
+                            <button onclick="openReportModal()" class="button error compact">🚩 Report Error</button>
+
+
+            </div>
+
+        </div>
+
+        
+
+        <!-- Report Modal -->
+
+        <div id="reportModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:1000;">
+
+            <div style="background:var(--panel); width:90%; max-width:500px; margin:10% auto; padding:2rem; border-radius:8px; border:1px solid var(--border); box-shadow:var(--shadow);">
+
+                <h3>Report Error for PHI-226756</h3>
+
+                <label style="display:block; margin-bottom:0.5rem;">Error Category</label>
+
+                <select id="reportCategory" style="width:100%; padding:0.5rem; margin-bottom:1rem; border-radius:4px; border:1px solid var(--border); background:var(--bg); color:var(--text);">
+
+                    <option value="Incorrect Tag">Incorrect Tag / Theme</option>
+
+                    <option value="Missing Entity">Missing Person / Place</option>
+
+                    <option value="Translation Error">Translation / Text Issue</option>
+
+                    <option value="Other">Other</option>
+
+                </select>
+
+                
+
+                <label style="display:block; margin-bottom:0.5rem;">Description of Issue</label>
+
+                <textarea id="reportDesc" rows="3" style="width:100%; padding:0.5rem; margin-bottom:1rem; border-radius:4px; border:1px solid var(--border); background:var(--bg); color:var(--text);"></textarea>
+
+                
+
+                <label style="display:block; margin-bottom:0.5rem;">Proposed Fix (Optional)</label>
+
+                <textarea id="reportFix" rows="2" style="width:100%; padding:0.5rem; margin-bottom:1.5rem; border-radius:4px; border:1px solid var(--border); background:var(--bg); color:var(--text);"></textarea>
+
+                
+
+                <div style="display:flex; justify-content:flex-end; gap:0.5rem;">
+
+                    <button onclick="closeReportModal()" class="button secondary">Cancel</button>
+
+                    <button onclick="sendReport()" class="button">Create Email Report</button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    
+
+        <div id="main-content" class="split-container">
         <div class="split-col-left">
-            <div style="display:flex; justify-content:space-between; align-items:center;">
+            <section class="inscription-hero">
+                <div class="inscription-title-row">
                 <h2>Inscription PHI-226756</h2>
-                <div style="display:flex; gap:0.5rem;">
-                    <button onclick="copyCitation()" class="button secondary" style="font-size:0.9rem; padding:0.5rem 1rem;">📜 Cite</button>
-                    <a href="https://epigraphy.packhum.org/text/226756" target="_blank" class="button">View on PHI</a>
+                <div class="inscription-actions">
+                    <button onclick="copyCitation()" class="button secondary compact">📜 Cite</button>
+                    <a href="https://epigraphy.packhum.org/text/226756" target="_blank" class="button secondary compact">View on PHI</a>
                 </div>
             </div>
             
-            <div class="meta-grid">
-                <div><small class="eyebrow">Provenance</small><br><a href="https://pleiades.stoa.org/places/981503" target="_blank" title="View in Pleiades">Egypt</a> &gt; <a href="https://pleiades.stoa.org/places/786082" target="_blank" title="View in Pleiades">Ombos</a></div>
-                <div><small class="eyebrow">Date</small><br><strong> 135 BC</strong></div>
-                <div><small class="eyebrow">Completeness</small><br><span class="badge info">fragmentary</span></div>
+            <div class="inscription-meta">
+                <div class="meta-item">
+                        <div class="label">Provenance</div>
+                        <div class="meta-value"><a href="https://pleiades.stoa.org/places/981503" target="_blank" title="View in Pleiades">Egypt</a> &gt; <a href="https://pleiades.stoa.org/places/786082" target="_blank" title="View in Pleiades">Ombos</a></div>
+                    </div>
+                <div class="meta-item">
+                        <div class="label">Date</div>
+                        <div class="meta-value"> 135 BC</div>
+                    </div>
+                <div class="meta-item">
+                        <div class="label">Completeness</div>
+                        <div class="meta-value"><span class="badge info">fragmentary</span></div>
+                    </div>
             </div>
+            </section>
 
-            <div style="display:flex; justify-content:space-between; align-items:end; margin-bottom:0.5rem;">
+            <div class="inscription-title-row">
                 <h3>Original Text</h3>
                 <!-- Font Size Control -->
-                <div style="display:flex; align-items:center; gap:0.5rem; background:var(--panel); border:1px solid var(--border); padding:0.2rem 0.5rem; border-radius:4px;">
+                <div class="font-size-control">
                     <span style="font-size:0.8rem; color:var(--muted);">A</span>
                     <input type="range" id="fontSizeSlider" min="14" max="32" value="20" oninput="updateFontSize(this.value)" style="width:80px; accent-color:var(--primary);">
                     <span style="font-size:1rem; font-weight:bold; color:var(--muted);">A</span>
@@ -219,44 +408,77 @@
         <div class="split-col-right">
             <h3>Thematic Analysis</h3>
             
-        <div class="theme-card" onmouseover="highlightQuote('τὴν παρὰ τῶν βασιλέων ἐπιστολὴν')" onmouseout="clearHighlight()">
+        <div class="theme-card" onmouseover="highlightQuote('[δεδόχθαι -- τ]οῖς νεανίσκοις ἀναγ[ρ][άψ]αι τὸ ψήφισμα τοῦτ[ο]')" onmouseout="clearHighlight()">
             <div style="display:flex; justify-content:space-between; align-items:center;">
                 <div>
-                    <span class="tag domain-tag">Content</span>
+                    <a href="../search.html?theme=Content/Official and Legal Documents/Decrees" class="tag domain-tag" style="text-decoration:none;">Content</a>
                     <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
-                    <div class="theme-path">Content > Official and Legal Documents > Official Letters</div>
-                    <div class="theme-label">Official Letters</div>
-                </div>
-                <div class="evidence-box">
-                    <p class="evidence-quote">Evidence: "τὴν παρὰ τῶν βασιλέων ἐπιστολὴν"</p>
-                </div>
-            </div>
-        </div>
-        
-        <div class="theme-card" onmouseover="highlightQuote('ἀναγράψαι τὸ ψήφισμα τοῦτο')" onmouseout="clearHighlight()">
-            <div style="display:flex; justify-content:space-between; align-items:center;">
-                <div>
-                    <span class="tag domain-tag">Content</span>
-                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
                     <div class="theme-path">Content > Official and Legal Documents > Decrees</div>
                     <div class="theme-label">Decrees</div>
                 </div>
                 <div class="evidence-box">
-                    <p class="evidence-quote">Evidence: "ἀναγράψαι τὸ ψήφισμα τοῦτο"</p>
+                    <p class="evidence-quote">Evidence: "[δεδόχθαι -- τ]οῖς νεανίσκοις ἀναγ[ρ][άψ]αι τὸ ψήφισμα τοῦτ[ο]"</p>
                 </div>
             </div>
         </div>
         
-        <div class="theme-card" onmouseover="highlightQuote('εἰς στήλην λιθίνην')" onmouseout="clearHighlight()">
+        <div class="theme-card" onmouseover="highlightQuote('[καὶ τὴν παρὰ τῶν βασιλέων ἐπιστολὴν τ]ῶν περὶ τούτων')" onmouseout="clearHighlight()">
             <div style="display:flex; justify-content:space-between; align-items:center;">
                 <div>
-                    <span class="tag domain-tag">Type</span>
+                    <a href="../search.html?theme=Content/Official and Legal Documents/Official Letters" class="tag domain-tag" style="text-decoration:none;">Content</a>
                     <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
+                    <div class="theme-path">Content > Official and Legal Documents > Official Letters</div>
+                    <div class="theme-label">Official Letters</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "[καὶ τὴν παρὰ τῶν βασιλέων ἐπιστολὴν τ]ῶν περὶ τούτων"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('[-- εἰκόνι ---]ου πρώτου φίλου καὶ κτίστου τοῦ γυμνασίου')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Content/Honorific and Commemorative Inscriptions/Honorific Inscriptions" class="tag domain-tag" style="text-decoration:none;">Content</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">90% Conf.</span>
+                    
+                    <div class="theme-path">Content > Honorific and Commemorative Inscriptions > Honorific Inscriptions</div>
+                    <div class="theme-label">Honorific Inscriptions</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "[-- εἰκόνι ---]ου πρώτου φίλου καὶ κτίστου τοῦ γυμνασίου"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('εἰς στήλ[η]ν λι[θίν]ην')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Type/Object Type/Monumental Stone Objects/Stele" class="tag domain-tag" style="text-decoration:none;">Type</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
                     <div class="theme-path">Type > Object Type > Monumental Stone Objects > Stele</div>
                     <div class="theme-label">Stele</div>
                 </div>
                 <div class="evidence-box">
-                    <p class="evidence-quote">Evidence: "εἰς στήλην λιθίνην"</p>
+                    <p class="evidence-quote">Evidence: "εἰς στήλ[η]ν λι[θίν]ην"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('[---------]ασαι α τ χ-[-----------]')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=State/Incomplete / Fragmentary/Fragmentary" class="tag domain-tag" style="text-decoration:none;">State</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
+                    <div class="theme-path">State > Incomplete / Fragmentary > Fragmentary</div>
+                    <div class="theme-label">Fragmentary</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "[---------]ασαι α τ χ-[-----------]"</p>
                 </div>
             </div>
         </div>
@@ -264,12 +486,12 @@
             
             <div style="margin-top:2rem;">
                 <h3>Entities</h3>
-                <div><span class="tag entity-tag">👤 Ptolemy VIII Euergetes II <small>(King)</small></span><span class="tag entity-tag">👤 Cleopatra II <small>(Queen (Sister))</small></span><span class="tag entity-tag">👤 Cleopatra III <small>(Queen (Wife))</small></span><span class="tag entity-tag">👤 Boethos <small>(Strategos and Syngenes)</small></span><span class="tag entity-tag">👤 Alkimachos <small>(Petitioner)</small></span><span class="tag entity-tag">👤 Themistokles <small>(Petitioner)</small></span><span class="tag entity-tag">📍 Ombos <small>(City)</small></span><span class="tag entity-tag">📍 Gymnasium <small>(Educational/Social Institution)</small></span></div>
+                <div><a href="../search.html?q=Ptolemaios VIII Euergetes II" class="tag entity-tag" style="text-decoration:none;">👤 Ptolemaios VIII Euergetes II <small>(King)</small></a><a href="../search.html?q=Kleopatra II" class="tag entity-tag" style="text-decoration:none;">👤 Kleopatra II <small>(Queen and Sister)</small></a><a href="../search.html?q=Kleopatra III" class="tag entity-tag" style="text-decoration:none;">👤 Kleopatra III <small>(Queen and Wife)</small></a><a href="../search.html?q=Boethos" class="tag entity-tag" style="text-decoration:none;">👤 Boethos <small>(Syngenes and Strategos)</small></a><a href="../search.html?q=Alkimachos" class="tag entity-tag" style="text-decoration:none;">👤 Alkimachos <small>(Petitioner)</small></a><a href="../search.html?q=Themistokles" class="tag entity-tag" style="text-decoration:none;">👤 Themistokles <small>(Petitioner)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Ombos <small>(Polis)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Gymnasion of Ombos <small>(Building)</small></a></div>
             </div>
 
             <div class="ai-analysis-box">
-                <h3>🤖 AI Analysis Summary</h3>
-                <p style="line-height:1.7;">This inscription, dated to 135 BC, is a composite document from Ombos (Kom Ombo) in Upper Egypt. It records a decree passed by the neaniskoi (young men) associated with the local gymnasium. The decree mandates the engraving of royal letters received from the joint sovereigns Ptolemy VIII Euergetes II, his sister Cleopatra II, and his wife Cleopatra III. These letters were addressed to Boethos, a high-ranking official (strategos and kinsman of the king), and to the members of the gymnasium, in response to a petition (enteuxis) submitted by Alkimachos and Themistokles. The inscription illustrates the administrative procedures of the Ptolemaic court and the significant social status of the gymnasium as a civic institution capable of direct interaction with the monarchy.</p>
+                <h3>AI Analysis Summary</h3>
+                <p style="line-height:1.7;">This inscription, dated to 135 BC during the joint reign of Ptolemy VIII Euergetes II and his two queens (Cleopatra II and III), records a decree by the &#x27;neaniskoi&#x27; (young men/ephebes) associated with the gymnasium at Ombos (Kom Ombo). The text includes the transcription of royal letters sent to Boethos, the strategos of the Thebaid, regarding a petition submitted by Alkimachos and Themistokles. It highlights the administrative relationship between the Ptolemaic court, regional military governors, and local civic institutions like the gymnasium. The decree orders the text to be inscribed on a stone stele and placed in the gymnasium near the statue of its founder.</p>
             </div>
         </div>
     </div>

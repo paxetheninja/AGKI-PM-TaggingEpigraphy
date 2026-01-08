@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Search - AGKI Epigraphy Tool</title>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <style>
+    /* Layout */
+    main.page {
+      width: 100%;
+    }
+    .dashboard-container {
+        display: grid;
+        grid-template-columns: minmax(260px, 320px) minmax(480px, 1fr);
+        gap: 1.75rem;
+        margin-top: 2rem;
+        align-items: start;
+        width: 100%;
+        min-width: 100%;
+        justify-content: stretch;
+    }
+    .results-column {
+      width: 100%;
+      min-width: 0;
+    }
+    
+    .sidebar {
+      padding: 1.5rem;
+      border-radius: 8px;
+      position: sticky;
+      top: 20px;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    /* Filters */
+    .filter-group { margin-bottom: 2rem; }
+    .eyebrow { font-size: 0.8rem; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem; font-weight: 700; }
+    
+    .search-box, .select-box, .range-input {
+      width: 100%; padding: 0.6rem;
+      border: 1px solid var(--border); background: var(--bg); color: var(--text);
+      border-radius: 4px;
+    }
+
+    .range-inputs { display: flex; gap: 0.5rem; align-items: center; }
+    
+    /* Inscription List */
+    .inscription-list {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: 1fr;
+      align-items: start;
+      min-height: 60vh;
+    }
+    .inscription-list .empty-state {
+      grid-column: 1 / -1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 60vh;
+      padding: 2rem;
+      text-align: center;
+      color: var(--muted);
+    }
+    @media (max-width: 980px) {
+      .dashboard-container {
+        grid-template-columns: 1fr;
+      }
+      .sidebar {
+        position: static;
+        max-height: none;
+      }
+    }
+    .inscription-card {
+      padding: 1.25rem; border-radius: 8px;
+      transition: all 0.2s; display: block; text-decoration: none; color: inherit;
+      background: var(--panel); border: 1px solid var(--border);
+    }
+    .inscription-card:hover { transform: translateY(-2px); box-shadow: var(--shadow); border-color: var(--primary); }
+
+    /* Tree Filter */
+    .tree-root { list-style: none; padding-left: 0; margin: 0; font-size: 0.9rem; }
+    .tree-item { margin: 0.2rem 0; }
+    .tree-group { padding-left: 1.2rem; display: none; border-left: 1px solid var(--border); margin-left: 0.3rem; }
+    .tree-group.open { display: block; }
+    .tree-label-row { display: flex; align-items: center; cursor: pointer; padding: 2px 0; }
+    .tree-label-row:hover { color: var(--primary); }
+    .caret { width: 16px; text-align: center; margin-right: 4px; color: var(--muted); font-size: 0.7em; transition: transform 0.2s; }
+    .caret.open { transform: rotate(90deg); }
+    .caret.empty { visibility: hidden; }
+    .filter-checkbox { margin-right: 8px; accent-color: var(--primary); }
+
+  </style>
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <h1><a href="index.html">AGKI Tagging Tool</a></h1>
+    </div>
+    <nav class="nav-links">
+        <a href="index.html" class="nav-item">Home</a>
+        <a href="search.html" class="nav-item active">Search</a>
+        <a href="explore.html" class="nav-item">Explore</a>
+        <a href="indices.html" class="nav-item">Indices</a>
+    </nav>
+    <div class="header-controls">
+            <button class="theme-toggle-btn" onclick="toggleTheme()" id="themeBtn">
+                🌙 Dark Mode
+            </button>
+        </div>
+      </header>
+    
+      <main class="page page-wide">
+        <div class="dashboard-container">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="filter-group">
+                    <h4 class="eyebrow">Search</h4>
+                    <input type="text" id="searchInput" class="search-box" placeholder="ID, Text or Keyword...">
+                </div>
+                
+                <div class="filter-group">
+                    <h4 class="eyebrow">Physical Properties</h4>
+                    <label style="font-size:0.85rem; display:block; margin-bottom:0.3rem;">Completeness</label>
+                    <select id="completenessSelect" class="select-box" style="margin-bottom:0.5rem;">
+                        <option value="">Any</option>
+                        <option value="intact">Intact</option>
+                        <option value="fragmentary">Fragmentary</option>
+                        <option value="mutilated">Mutilated</option>
+                    </select>
+                    <label style="font-size:0.85rem; display:block; margin-bottom:0.3rem;">Min. Length (Chars)</label>
+                    <input type="number" id="minLength" class="range-input" placeholder="0">
+                </div>
+    
+                            <div class="filter-group">
+                                <h4 class="eyebrow">Time Period (Year)</h4>
+                                <div class="range-inputs" style="margin-bottom:0.5rem;">
+                                    <input type="number" id="minDate" class="range-input" placeholder="Min">
+                                    <span>-</span>
+                                    <input type="number" id="maxDate" class="range-input" placeholder="Max">
+                                </div>
+                                <div style="display:flex; gap:1rem; font-size:0.85rem;">
+                                    <label style="display:flex; align-items:center; cursor:pointer;"><input type="checkbox" id="showDated" checked class="filter-checkbox"> Dated</label>
+                                    <label style="display:flex; align-items:center; cursor:pointer;"><input type="checkbox" id="showUndated" checked class="filter-checkbox"> Undated</label>
+                                </div>
+                            </div>    
+                <div class="filter-group">
+                    <h4 class="eyebrow">Region</h4>
+                    <select id="regionSelect" class="select-box">
+                        <option value="">All Regions</option>
+                    </select>
+                </div>
+    
+                <div class="filter-group">
+                    <h4 class="eyebrow">Confidence Threshold</h4>
+                    <div style="display:flex; align-items:center; gap:10px;">
+                        <input type="range" id="confidenceSlider" min="0" max="100" value="0" style="flex-grow:1; accent-color:var(--primary);">
+                        <span id="confidenceValue" style="font-weight:bold; min-width:30px;">0%</span>
+                    </div>
+                </div>
+    
+                            <div class="filter-group">
+                                <h4 class="eyebrow">Taxonomy Filter</h4>
+                                <div style="margin-bottom:0.5rem; font-size:0.85rem; display:flex; gap:1rem;">
+                                    <label style="cursor:pointer; display:flex; align-items:center;"><input type="radio" name="taxMode" value="any" checked class="filter-checkbox"> Match Any (OR)</label>
+                                    <label style="cursor:pointer; display:flex; align-items:center;"><input type="radio" name="taxMode" value="all" class="filter-checkbox"> Match All (AND)</label>
+                                </div>
+                                <div id="taxonomyTreeContainer"></div>
+                            </div>                
+                <div class="meta-grid">
+                    <div>
+                        <p class="label">Filtered Results</p>
+                        <strong id="countDisplay">0</strong> / <span id="totalDisplay">0</span>
+                    </div>
+                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+                        <button onclick="exportData('json')" class="button block compact">📥 JSON</button>
+                        <button onclick="exportData('csv')" class="button secondary block compact">📥 CSV</button>
+                    </div>
+                </div>
+            </aside>
+    
+            <!-- Results List -->
+            <div class="results-column">
+                <div id="resultsList" class="inscription-list"></div>
+            </div>
+        </div>
+      </main>
+    
+      <script>
+        // --- Data Handling ---
+        const script = document.createElement('script');
+        script.src = `assets/js/data.js`;
+        script.onload = () => init();
+        document.body.appendChild(script);
+    
+        // --- Utils & Theme ---    const themeBtn = document.getElementById('themeBtn');
+    function updateThemeBtn() {
+        const current = document.documentElement.getAttribute('data-theme');
+        themeBtn.textContent = current === 'light' ? '🌙 Dark Mode' : '☀️ Light Mode';
+    }
+    updateThemeBtn();
+
+    window.toggleTheme = function() {
+        const current = document.documentElement.getAttribute('data-theme');
+        const next = current === 'light' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        updateThemeBtn();
+    }
+
+    // --- State ---
+    let activeFilters = new Map(); // path -> 'include' | 'exclude'
+
+    // --- Initialization ---
+    function init() {
+        document.getElementById('totalDisplay').textContent = APP_DATA.inscriptions.length;
+        
+        // Build Region Select
+        const regions = new Set(APP_DATA.inscriptions.map(i => i.region).filter(Boolean));
+        const regSelect = document.getElementById('regionSelect');
+        Array.from(regions).sort().forEach(r => {
+            const opt = document.createElement('option');
+            opt.value = r;
+            opt.textContent = r;
+            regSelect.appendChild(opt);
+        });
+
+        // Build Tree
+        buildTree(APP_DATA.taxonomy, '', document.getElementById('taxonomyTreeContainer'));
+
+        // Handle URL Parameters
+        const params = new URLSearchParams(window.location.search);
+        const query = params.get('q');
+        const theme = params.get('theme');
+
+        if (query) {
+            document.getElementById('searchInput').value = query;
+        }
+        if (theme) {
+            // theme is like "Content/Administrative Records and Lists"
+            activeFilters.set(theme, 'include');
+            // We should also try to open the tree nodes for visual feedback
+            // but for now, just adding to activeFilters works for logic.
+        }
+
+        // Confidence Slider
+        const confSlider = document.getElementById('confidenceSlider');
+        const confValue = document.getElementById('confidenceValue');
+        confSlider.addEventListener('input', (e) => {
+            confValue.textContent = `${e.target.value}%`;
+            filterData();
+        });
+
+        // Listeners
+        const inputs = ['searchInput', 'regionSelect', 'minDate', 'maxDate', 'completenessSelect', 'minLength', 'showDated', 'showUndated'];
+        inputs.forEach(id => document.getElementById(id).addEventListener(id.includes('Select') || id.includes('show') ? 'change' : 'input', filterData));
+        
+        document.querySelectorAll('input[name="taxMode"]').forEach(el => el.addEventListener('change', filterData));
+
+        filterData();
+    }
+
+    // --- Filter Logic ---
+    function filterData() {
+        const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+        const selectedRegion = document.getElementById('regionSelect').value;
+        const minDate = parseInt(document.getElementById('minDate').value);
+        const maxDate = parseInt(document.getElementById('maxDate').value);
+        const showDated = document.getElementById('showDated').checked;
+        const showUndated = document.getElementById('showUndated').checked;
+        const completeness = document.getElementById('completenessSelect').value;
+        const minLen = parseInt(document.getElementById('minLength').value) || 0;
+        const minConf = parseInt(document.getElementById('confidenceSlider').value) / 100;
+        const taxMode = document.querySelector('input[name="taxMode"]:checked').value; // 'any' or 'all'
+
+        const filtered = APP_DATA.inscriptions.filter(item => {
+            const matchesSearch = item.id.toString().includes(searchTerm) || 
+                                  (item.preview_text && item.preview_text.toLowerCase().includes(searchTerm)) ||
+                                  (item.mentioned_persons && item.mentioned_persons.some(p => p.name.toLowerCase().includes(searchTerm) || (p.role && p.role.toLowerCase().includes(searchTerm)))) ||
+                                  (item.mentioned_deities && item.mentioned_deities.some(d => d.toLowerCase().includes(searchTerm)));
+            const matchesComp = !completeness || item.completeness === completeness;
+            const matchesLen = (item.text_length || 0) >= minLen;
+            const matchesRegion = !selectedRegion || item.region === selectedRegion;
+
+            // Date Logic
+            const isUndated = (item.date_min === undefined || item.date_min === null);
+            if (isUndated && !showUndated) return false;
+            if (!isUndated && !showDated) return false;
+
+            let matchesDateRange = true;
+            if (!isUndated && (!isNaN(minDate) || !isNaN(maxDate))) {
+                const itemMin = item.date_min;
+                const itemMax = item.date_max || itemMin;
+                if (!isNaN(minDate) && itemMax < minDate) matchesDateRange = false;
+                if (!isNaN(maxDate) && itemMin > maxDate) matchesDateRange = false;
+            }
+
+            // Filter themes by confidence first for accurate matching
+            const validThemes = minConf > 0 ? item.themes.filter(t => t.confidence >= minConf) : item.themes;
+            const matchesConfidence = minConf > 0 ? validThemes.length > 0 : true;
+
+            // Inclusive / Exclusive Taxonomy logic
+            let passTaxonomy = true;
+            const inclusiveFilters = Array.from(activeFilters.entries()).filter(e => e[1] === 'include').map(e => e[0]);
+            const exclusiveFilters = Array.from(activeFilters.entries()).filter(e => e[1] === 'exclude').map(e => e[0]);
+
+            // If any exclusion matches, we fail (NOT logic)
+            if (exclusiveFilters.length > 0) {
+                for (let t of validThemes) {
+                    for (let f of exclusiveFilters) {
+                        if (t.path.startsWith(f)) {
+                            passTaxonomy = false; break;
+                        }
+                    }
+                    if (!passTaxonomy) break;
+                }
+            }
+
+            // Inclusive Logic
+            if (passTaxonomy && inclusiveFilters.length > 0) {
+                if (taxMode === 'any') {
+                    // OR Logic: Match ANY of the filters
+                    let matchFound = false;
+                    for (let t of validThemes) {
+                        for (let f of inclusiveFilters) {
+                            if (t.path.startsWith(f)) { matchFound = true; break; }
+                        }
+                        if (matchFound) break;
+                    }
+                    passTaxonomy = matchFound;
+                } else {
+                    // AND Logic: Match ALL of the filters
+                    // For each filter, there must be at least one theme that satisfies it
+                    passTaxonomy = inclusiveFilters.every(f => {
+                        return validThemes.some(t => t.path.startsWith(f));
+                    });
+                }
+            }
+
+            return matchesSearch && matchesRegion && matchesDateRange && passTaxonomy && matchesComp && matchesLen && matchesConfidence;
+        });
+
+        renderResults(filtered);
+        window.currentFilteredData = filtered;
+    }
+
+    // --- Rendering ---
+    function renderResults(data) {
+        const container = document.getElementById('resultsList');
+        document.getElementById('countDisplay').textContent = data.length;
+        container.innerHTML = '';
+        
+        if (data.length === 0) {
+            container.innerHTML = '<div class="empty-state">No results found.</div>';
+            return;
+        }
+        
+        data.forEach(item => {
+            const card = document.createElement('a');
+            card.href = `inscriptions/${item.id}.html`;
+            card.className = 'inscription-card';
+            
+            // Show top tags with their confidence
+            const tagsHtml = item.themes.slice(0, 5).map(t => {
+                return `<span class="tag" title="${Math.round(t.confidence*100)}% confidence">${t.label} <small style="opacity:0.7">(${Math.round(t.confidence*100)}%)</small></span>`;
+            }).join('');
+            
+            card.innerHTML = `
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.5rem;">
+                    <strong style="font-size: 1.1rem; color: var(--primary);">PHI-${item.id}</strong>
+                    <small class="muted">${item.date_str || 'Undated'} • ${item.region || 'Unknown'}</small>
+                </div>
+                <div style="font-family: 'Times New Roman', serif; color: var(--text); margin-bottom: 0.75rem; font-size: 0.95rem; line-height:1.4;">
+                    "${item.preview_text}"
+                </div>
+                <div style="display:flex; justify-content:space-between; align-items:end;">
+                    <div style="display:flex; flex-wrap:wrap; gap:4px;">${tagsHtml}</div>
+                    <span class="badge info" style="font-size:0.75rem;">${item.completeness || 'frag.'}</span>
+                </div>
+            `;
+            container.appendChild(card);
+        });
+    }
+
+    // --- Taxonomy Tree ---
+    function buildTree(node, parentPath, container) {
+        const ul = document.createElement('ul');
+        ul.className = parentPath ? 'tree-group' : 'tree-root';
+        
+        Object.keys(node).sort().forEach(key => {
+            const currentPath = parentPath ? `${parentPath}/${key}` : key;
+            const children = node[key];
+            const hasChildren = children && Object.keys(children).length > 0;
+            
+            const li = document.createElement('li');
+            li.className = 'tree-item';
+            
+            const row = document.createElement('div');
+            row.className = 'tree-label-row';
+            
+            const caret = document.createElement('span');
+            caret.className = `caret ${hasChildren ? '' : 'empty'}`;
+            caret.textContent = '▶';
+            
+            // Include Checkbox
+            const checkInc = document.createElement('input');
+            checkInc.type = 'checkbox';
+            checkInc.className = 'filter-checkbox';
+            checkInc.title = "Include";
+            checkInc.onclick = (e) => e.stopPropagation();
+            checkInc.onchange = (e) => {
+                if (e.target.checked) {
+                    activeFilters.set(currentPath, 'include');
+                    checkExc.checked = false; // Mutually exclusive
+                } else {
+                    activeFilters.delete(currentPath);
+                }
+                filterData();
+            };
+
+            // Exclude Checkbox (Negative Filter)
+            const checkExc = document.createElement('input');
+            checkExc.type = 'checkbox';
+            checkExc.className = 'filter-checkbox';
+            checkExc.style.accentColor = 'var(--error)';
+            checkExc.title = "Exclude";
+            checkExc.onclick = (e) => e.stopPropagation();
+            checkExc.onchange = (e) => {
+                if (e.target.checked) {
+                    activeFilters.set(currentPath, 'exclude');
+                    checkInc.checked = false; // Mutually exclusive
+                } else {
+                    activeFilters.delete(currentPath);
+                }
+                filterData();
+            };
+            
+            const label = document.createElement('span');
+            label.textContent = key;
+            label.style.fontSize = '0.85rem';
+            
+            const toggle = () => {
+                if(!hasChildren) return;
+                caret.classList.toggle('open');
+                const group = li.querySelector('.tree-group');
+                if(group) group.classList.toggle('open');
+            };
+            
+            caret.onclick = (e) => { e.stopPropagation(); toggle(); };
+            row.onclick = toggle;
+            
+            row.appendChild(caret);
+            row.appendChild(checkInc);
+            row.appendChild(checkExc);
+            row.appendChild(label);
+            li.appendChild(row);
+            
+            if (hasChildren) buildTree(children, currentPath, li);
+            ul.appendChild(li);
+        });
+        container.appendChild(ul);
+    }
+
+    window.exportData = function(format) {
+        const data = window.currentFilteredData || [];
+        let blob;
+        let filename;
+
+        if (format === 'csv') {
+            // Columns: ID, Region, Date, Completeness, Themes, Entities, Text Preview
+            const headers = ['ID', 'Region', 'Date', 'Completeness', 'Themes', 'Entities', 'Text Preview'];
+            const rows = data.map(item => {
+                // Collect entities names
+                const places = (item.mentioned_places || []).map(p => p.name).join('; ');
+                // We might not have person/deity data in search index yet, if not added in build_website.py
+                //Checking build_website.py, 'mentioned_places' is there. 'themes' is there.
+                
+                // Sanitize for CSV (escape double quotes)
+                const escape = (txt) => {
+                    if (!txt) return "";
+                    return '"' + txt.toString().replace(/"/g, '""') + '"';
+                };
+
+                return [
+                    item.id,
+                    escape(item.region),
+                    escape(item.date_str),
+                    escape(item.completeness),
+                    escape(item.themes_display.join('; ')),
+                    escape(places),
+                    escape(item.preview_text)
+                ].join(",");
+            });
+            const csvContent = [headers.join(","), ...rows].join("\n");
+            blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            filename = "agki_export.csv";
+        } else {
+            const jsonContent = JSON.stringify(data, null, 2);
+            blob = new Blob([jsonContent], { type: 'application/json' });
+            filename = "agki_export.json";
+        }
+
+        const link = document.createElement("a");
+        const url = URL.createObjectURL(blob);
+        link.setAttribute("href", url);
+        link.setAttribute("download", filename);
+        link.style.visibility = 'hidden';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+
+    init();
+  </script>
+</body>
+</html>

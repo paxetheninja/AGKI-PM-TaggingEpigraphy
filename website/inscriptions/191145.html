@@ -1,0 +1,668 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PHI-191145 - AGKI</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <style>
+    /* Custom Scrollbar Styling */
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+        background: rgba(0,0,0,0.05); 
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #ccc; 
+        border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #aaa; 
+    }
+
+    .page-container { max-width: 1400px; margin: 0 auto; padding: 2rem; }
+    .back-link { display: inline-block; margin-bottom: 1rem; color: var(--primary); font-weight: 600; }
+    
+    /* Original View Styles (Line by Line) */
+    .text-viewer-original { 
+        display: grid; 
+        grid-template-columns: 40px 1fr; 
+        gap: 2rem; 
+        font-family: "New Athena Unicode", "Gentium Plus", "Times New Roman", serif; 
+        font-size: 1.25rem; 
+        line-height: 1.6; 
+        background: var(--panel); 
+        padding: 2rem; 
+        border: 1px solid var(--border); 
+        border-radius: 4px; 
+        margin-bottom: 2rem; 
+        color: var(--text);
+    }
+
+    .line-numbers { 
+        text-align: right; 
+        color: var(--muted); 
+        font-size: 1.25rem; 
+        line-height: 1.6; 
+        user-select: none; 
+        opacity: 0.5; 
+        font-family: inherit; 
+        white-space: pre; 
+        padding-right: 1rem;
+        border-right: 1px solid var(--border);
+    }
+
+    .greek-content { 
+        white-space: pre-wrap; 
+        word-break: break-word;
+        padding-left: 1rem; 
+    }
+
+    .highlight-evidence {
+        background-color: var(--accent);
+        color: white;
+        border-radius: 2px;
+        padding: 0 2px;
+    }
+
+    .theme-card { background: var(--panel); padding: 1rem 1.5rem; border-left: 4px solid var(--primary); margin-bottom: 0.75rem; border: 1px solid var(--border); border-left-width: 4px; }
+    .ai-analysis-box { background: rgba(31, 167, 163, 0.05); padding: 2rem; border-radius: 8px; border: 1px solid var(--border); margin-top: 2rem; }
+    .evidence-box { max-width: 500px; text-align: right; }
+    .evidence-quote { font-size: 0.85rem; font-style: italic; color: var(--muted); margin: 0; }
+    .badge.green { background: #e6f4ea; color: #137333; border-color: #137333; }
+    .badge.orange { background: #fef7e0; color: #b06000; border-color: #b06000; }
+    .badge.red { background: #fce8e6; color: #c5221f; border-color: #c5221f; }
+    .entity-tag { background: rgba(217, 123, 61, 0.1); color: var(--accent-2); margin-right: 0.5rem; margin-bottom: 0.5rem; display: inline-block; padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.9rem; border: 1px solid rgba(217, 123, 61, 0.2); }
+    
+    /* Split View Styles */
+    .split-container { display: block; }
+    .split-container.active { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+    .split-col-left { }
+    .split-col-right { }
+    .split-container.active .split-col-right { position: sticky; top: 20px; max-height: 90vh; overflow-y: auto; padding-right: 10px; }
+  </style>
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+
+    function toggleSplitView() {
+        const container = document.getElementById('main-content');
+        const btn = document.getElementById('splitViewBtn');
+        container.classList.toggle('active');
+        if(container.classList.contains('active')) {
+            btn.textContent = 'View: Split';
+            btn.classList.add('active');
+        } else {
+            btn.textContent = 'View: Standard';
+            btn.classList.remove('active');
+        }
+    }
+
+    function copyCitation() {
+        const citation = "AGKI Project. (2026). Inscription PHI-" + "191145" + ". Retrieved from " + window.location.href;
+        navigator.clipboard.writeText(citation);
+        alert("Citation copied to clipboard!");
+    }
+    
+    function highlightQuote(quote) {
+        const container = document.querySelector('.greek-content');
+        if (!container || !quote) return;
+
+        if (!container.dataset.original) {
+            container.dataset.original = container.innerHTML;
+        } else {
+            container.innerHTML = container.dataset.original;
+        }
+        
+        const normalized = quote.trim().replace(/\s+/g, ' ');
+        const escapedQuote = normalized.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const spacedQuote = escapedQuote.replace(/\s+/g, '\\s+');
+        const regex = new RegExp(spacedQuote, 'g');
+        container.innerHTML = container.innerHTML.replace(
+            regex,
+            match => `<mark class="highlight-evidence">${match}</mark>`
+        );
+    }
+    
+    function clearHighlight() {
+        const container = document.querySelector('.greek-content');
+        if (!container) return;
+        if (container.dataset.original) {
+            container.innerHTML = container.dataset.original;
+        } else {
+            container.innerHTML = container.innerHTML.replace(/<mark class="highlight-evidence">(.*?)<\/mark>/g, '$1');
+        }
+    }
+
+        function updateFontSize(size) {
+
+            const container = document.getElementById('original-view');
+
+            if (container) {
+
+                container.style.fontSize = size + 'px';
+
+                const lines = container.querySelector('.line-numbers');
+
+                if(lines) lines.style.fontSize = size + 'px';
+
+            }
+
+        }
+
+    
+
+        function openReportModal() {
+
+            document.getElementById('reportModal').style.display = 'block';
+
+        }
+
+    
+
+        function closeReportModal() {
+
+            document.getElementById('reportModal').style.display = 'none';
+
+        }
+
+    
+
+        function sendReport() {
+
+            const category = document.getElementById('reportCategory').value;
+
+            const desc = document.getElementById('reportDesc').value;
+
+            const fix = document.getElementById('reportFix').value;
+
+            
+
+                    const subject = `AGKI Error Report: PHI-191145`;
+
+            
+
+                    const body = `Category: ${category}%0D%0ADescription: ${desc}%0D%0AProposed Fix: ${fix}%0D%0A%0D%0A(Sent from inscription page)`;
+
+            
+
+                    
+
+            
+
+                    window.location.href = `mailto:admin@agki-project.org?subject=${encodeURIComponent(subject)}&body=${body}`;
+
+            closeReportModal();
+
+        }
+
+      </script>
+
+    </head>
+
+        
+<body>
+  <header class="site-header">
+
+        <div class="brand">
+
+          <h1><a href="../index.html">AGKI Tagging Tool</a></h1>
+
+        </div>
+
+        <nav class="nav-links">
+
+            <a href="../index.html" class="nav-item">Home</a>
+
+            <a href="../search.html" class="nav-item">Search</a>
+
+            <a href="../explore.html" class="nav-item">Explore</a>
+
+            <a href="../indices.html" class="nav-item">Indices</a>
+
+        </nav>
+
+        <div class="header-controls">
+
+            <button class="theme-toggle-btn" onclick="toggleTheme()" id="themeBtn">🌙 Dark Mode</button>
+
+        </div>
+
+      </header>
+
+    
+
+      <script>
+
+        const themeBtn = document.getElementById('themeBtn');
+
+        function updateThemeBtn() {
+
+            const current = document.documentElement.getAttribute('data-theme');
+
+            if(themeBtn) themeBtn.textContent = current === 'light' ? '🌙 Dark Mode' : '☀️ Light Mode';
+
+        }
+
+        updateThemeBtn();
+
+        window.toggleTheme = function() {
+
+            const current = document.documentElement.getAttribute('data-theme');
+
+            const next = current === 'light' ? 'dark' : 'light';
+
+            document.documentElement.setAttribute('data-theme', next);
+
+            localStorage.setItem('theme', next);
+
+            updateThemeBtn();
+
+        }
+
+      </script>
+
+      <main class="page-container inscription-page">
+        <div class="inscription-toolbar">
+
+            <a href="../search.html" class="back-link">← Back to Dashboard</a>
+
+            <div class="inscription-actions">
+                <button id="splitViewBtn" onclick="toggleSplitView()" class="button secondary compact">View: Standard</button>
+
+                            <button onclick="openReportModal()" class="button error compact">🚩 Report Error</button>
+
+
+            </div>
+
+        </div>
+
+        
+
+        <!-- Report Modal -->
+
+        <div id="reportModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:1000;">
+
+            <div style="background:var(--panel); width:90%; max-width:500px; margin:10% auto; padding:2rem; border-radius:8px; border:1px solid var(--border); box-shadow:var(--shadow);">
+
+                <h3>Report Error for PHI-191145</h3>
+
+                <label style="display:block; margin-bottom:0.5rem;">Error Category</label>
+
+                <select id="reportCategory" style="width:100%; padding:0.5rem; margin-bottom:1rem; border-radius:4px; border:1px solid var(--border); background:var(--bg); color:var(--text);">
+
+                    <option value="Incorrect Tag">Incorrect Tag / Theme</option>
+
+                    <option value="Missing Entity">Missing Person / Place</option>
+
+                    <option value="Translation Error">Translation / Text Issue</option>
+
+                    <option value="Other">Other</option>
+
+                </select>
+
+                
+
+                <label style="display:block; margin-bottom:0.5rem;">Description of Issue</label>
+
+                <textarea id="reportDesc" rows="3" style="width:100%; padding:0.5rem; margin-bottom:1rem; border-radius:4px; border:1px solid var(--border); background:var(--bg); color:var(--text);"></textarea>
+
+                
+
+                <label style="display:block; margin-bottom:0.5rem;">Proposed Fix (Optional)</label>
+
+                <textarea id="reportFix" rows="2" style="width:100%; padding:0.5rem; margin-bottom:1.5rem; border-radius:4px; border:1px solid var(--border); background:var(--bg); color:var(--text);"></textarea>
+
+                
+
+                <div style="display:flex; justify-content:flex-end; gap:0.5rem;">
+
+                    <button onclick="closeReportModal()" class="button secondary">Cancel</button>
+
+                    <button onclick="sendReport()" class="button">Create Email Report</button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    
+
+        <div id="main-content" class="split-container">
+        <div class="split-col-left">
+            <section class="inscription-hero">
+                <div class="inscription-title-row">
+                <h2>Inscription PHI-191145</h2>
+                <div class="inscription-actions">
+                    <button onclick="copyCitation()" class="button secondary compact">📜 Cite</button>
+                    <a href="https://epigraphy.packhum.org/text/191145" target="_blank" class="button secondary compact">View on PHI</a>
+                </div>
+            </div>
+            
+            <div class="inscription-meta">
+                <div class="meta-item">
+                        <div class="label">Provenance</div>
+                        <div class="meta-value"><a href="https://pleiades.stoa.org/places/589919" target="_blank" title="View in Pleiades">Rhodes</a> &gt; <a href="https://pleiades.stoa.org/places/590001" target="_blank" title="View in Pleiades">Lindos</a></div>
+                    </div>
+                <div class="meta-item">
+                        <div class="label">Date</div>
+                        <div class="meta-value"> 22 AD</div>
+                    </div>
+                <div class="meta-item">
+                        <div class="label">Completeness</div>
+                        <div class="meta-value"><span class="badge info">fragmentary</span></div>
+                    </div>
+            </div>
+            </section>
+
+            <div class="inscription-title-row">
+                <h3>Original Text</h3>
+                <!-- Font Size Control -->
+                <div class="font-size-control">
+                    <span style="font-size:0.8rem; color:var(--muted);">A</span>
+                    <input type="range" id="fontSizeSlider" min="14" max="32" value="20" oninput="updateFontSize(this.value)" style="width:80px; accent-color:var(--primary);">
+                    <span style="font-size:1rem; font-weight:bold; color:var(--muted);">A</span>
+                </div>
+            </div>
+
+            <!-- Original Line-by-Line View -->
+            <div id="original-view" class="text-viewer-original">
+                <div class="line-numbers">1
+
+
+
+5
+
+
+
+
+10
+
+
+
+
+15
+
+
+
+
+20
+
+
+
+
+25
+
+
+
+
+30
+
+
+
+
+35
+
+
+
+
+40
+
+
+
+
+45
+
+
+
+
+50
+
+
+
+
+55
+
+
+
+
+60
+
+
+
+
+65
+
+
+
+
+70
+
+
+
+
+75
+
+
+
+
+80
+
+
+
+
+85
+
+
+
+
+90
+
+
+
+
+95
+
+
+
+
+100</div>
+                <div class="greek-content">ψ φισμα ππ α ππ α το ππ α ργε ου
+περ τ ς παρακαταθ κας τ ς θ νας.
+ π ερ ως τ ς θ νας ριστε δα το δ λ ου πλε[ι]στ ρχου πα ιϛ δοξε μασ[τ]ρο ς κα λινδ οις ππ ας γ ργ ε πε πειδ συνβα νει τ ς μ ν ποθ δους τ ς λινδ ων στερε ν τ δ ε [ς]
+τ ς θυσ ας κα παναγ [ρε]ις ναλματα πολλ κις πε γειν κα το [τ] τρ π το ς ρχοντας ε ς δυ[σχρ]ηστ αν νπε πτειν συνφ ρον δ στι λινδ[ οι]ς κ[α] τ [ς τ]ν θε ν τειμ ς κα τ το [κ]οινο 
+πρ πον διαφυλ [σσ]εσθαι [ν]τος ξ το μου ργυρ ου ε ς τ ς
+παναγ ρεις κα τς τ ν θε ν τειμ ς τ χ γαθ δεδ χθαι λινδ οις κυρωθ ντος το δε το ψαφ σματος τ γεγον ς περ ψαφον τν εροταμι ν μενεκρ τευς κα σκλαπι δα κα γησ νδρου π τ ς εροταμε ας α τ ν κ τ ς τ[ριε]τ ας κα ε τι παρειλ φαντι κ το του κα ε τ κα παραλ βωντ[ι]
+[τ]ο νεστακ τες εροταμ αι διον σιος κα καλλ μαχος κα
+υθ δωρος παραδ ντω ερ ν ε ς παρακαταθ καν τ ς θ να[ς]
+[τ] ς λινδ ας κα το δι ς το πολι ως καλλιστρ τ β τ ερε 
+τ ς θ νας ν[ια]υσ [ μ]ο ως δ κα το πιστ ται το ρχοντε[ς]
+[τ] ν π ερ ως καλλ[ιστρ] του κα οδοπε θευς νιαυ[τ ν]
+[ λ]σθων νδρας [ε] γ μ ν τ ν ερατευκ των τ[ ς]
+θ νας γ γ δ τ ν [ λλω]ν λινδ ων β το δ α ρεθ [ντε]ς παραλαβ ντ[ω παρ] το ερ ως τ ς θ να[ς]
+το δαμοσ ου π[ιστ]ντο[ς τ] ποκε μεν[α ν]
+[τ] νακορε χ λκ[ε]α κα σιδ [ρ]εα κα πιδειξ ν[τω]
+[τ]ο ς μαστρο ς κα λινδ οι[ς ν τ] μα[στ]ρε τ [ν τ]
+[π] λει γομ ν τ κα[ ποδ] σθω ατ παρα[κολ]ουθο ντων π σι κα τ ν [δα]μοσ ων κα ποδ μεν[οι]
+παραδ ντω τ πεσ ν ργ ριον [τ] ερε τ ς θ να[ς]
+ερ ν μειν ν παρακατ[αθ] κ τ ς θ νας τ ς λινδ [ας]
+κα το δι ς το πολι ω[ς] πειδ δ κα νδρι ντες
+[τ]ιν ς ντι ν τ ναβσει κα α τ τ κρ νεπ γραφοι κα 
+ σαμοι συνφ ρον δ στι κα το τους μειν πισ μους πιγρ[αφ] ν χοντας τι θεο ς ν κεινται δεδ χθαι λινδ οις κυ το δε
+[τ]ο ψα το α το πιστ ται μ[ισθω]σ ντω κ στου νδρι ντος τ ν
+πιγραφ ν διαχειρο[τονησ] ντων λινδ ων ε δε το ε ρ σκοντος κατακυρο [ν μ] κα [ε κ]α [δ] ξ το ε ρ σκοντος κα[τ]ακυρο ν τ πεσ ν ργ ριον π το [τ]ων καταβαλ με[ν]οι λ[ γ]ον πσου [κ] [σ]το[υ] πιγραφ[ πε]δ θ[η] παραδ ντω ερ ν
+μ[ειν ε ς] πα[ρ]ακα[τ]α[θ] καν τ ς [θ] νας τς λινδ ας κα τ[ο]
+[δι ς το πολι]ως [το δ] νησ [μ]ε[ν]οι τ ς πιγραφ ς μ 
+[ χ ντων ξουσ αν π]ε[νε]νκε [ν] κ τ ς κρας νδρι ν[τας]
+[τρ π μηδ]εν μηδ παρευρ σει μηδεμι νοχοι ντ[ω]
+[ σεβε] ποιησ μενοι δ τ ν α τησιν χ ντων ξουσ[ αν]
+[ πενενκ]ε ν κα συνχωρ σωσι δι τ ς α τ σιος λ ν[δ]ιοι π[ροθ ντω δ] το πιστ ται το ς χρ ζουσιν πα ξειν τ τ[ε] λ[ινδ]ων [πλ θ]ος κα τ ς τιμ ς τ ς θεο πανγελε αν σσο[ν κα]
+ κασ[τ]ος χρ ζ πανγ λλεσθαι [ργ]υρ ου ν λ ν[δ] [ν τα ς]
+γο[μ] ναις κκλησ αις τ γ μ κα τ μ ν πεσ ν ρ[γ ριον]
+π το του ε δευς παραδ ντω τ ερε τ ς θ να[ς κα τ ν]
+πανγειλαμ νων τ ν ματα ναγραψ ντω στ λ[αν λιθ] ναν πατριαστ κα δ μου κα π σον πανγε[ λαν]το [δωσε ν]
+προγρ ψαντες α το ς προγραμμ ν τ ν[δε] π ε[ρ ως]
+[τ] ς θ νας καλλιστρ του πιστατ ν τ ν σ ν ππ [γ ργ] 
+το δε προαιρο μενοι τ τε λινδ ων πλ θος πα[ ξ]ε[ιν]
+κα διαφυλ σσειν τ ς τε τ ν θε ν θυσ ας κα τ [ς παναγ] ρει[ς] πανγε λαντο δωσε ν χρ ματα δω[ρε] ν ε ς
+[π]αρακαταθ καν τ ς θ νας τ ς λινδ ας κα το δι ς το πολ[ι ως]
+[κα]τ τ ε σγραφ ν ψ φισμα π ππ α γ ργ π[ω]ς [δ] κα [ε ς τ]
+[λοιπ] ν α [ξ]ηται [τ]ς θεο παρακαταθ κα το πισ[τ ται το ε]
+[ ν ρχ ντες]πε κα π δε[ιρ] δος μετ τ ν [προβολ ν τ ν]
+[ ερ ων κα το ρχιεροθ τα π]ρο[β] λωνται εροθ[ τας]
+ πως δ κα ε ς τ λοιπ ν α ξηται τ ς θεο παρ[α]καταθ κα το πιστ ται [τ]ο ε ν ρχ ντες [π]ε κα π διρ δος μετ [τ] ν προβολ ν τ ν ερ ω[ν]
+κα το ρχ[ιε]ροθ τα προβ λωνται εροθ τας
+προθ [ντ]ων δ ως το ς χρ ζουσι πανγε λασθαι
+εροθυ[τε]αν δωρε ν το δ πανγειλ μενοι
+π ντα π[ρασσ]ν[τω] καθ κα το λλοι εροθ ται νοχοι [ντω] σεβε το δ εροταμ αι τ φ λο[ν τ]οτοι[ς] νοδι ζζεσθαι ργ ριον παραδ ντω τ ερε τ ς θ νας ερν μειν
+[ε]ς τ ν παρακαταθ καν π τ ς πανγελ ας
+[ ερ]οθ τα το πανγειλαμ νου τ νο[μ]α πα[τρ]ιαστ κα δ μου κατ τ ψ φισμα τ ε σ[γ]ραφ ν π ππ α γ ργ μο ω[ς] δ κα ε τ ς [κα]
+ερε ς παραγε νηται τ ς θ νας καθε[----]
+-ωσις λινδ οις το εροταμ αι τ φ[ε]λον δ δο[σθ]αι τ ερε ργ ριον ε ς τε τ ς ποδοχ ς κα θ[υσ]ας κα τ λλα ναλ μ[ατ]α μ τελε ντων α [τ] τρ π μηδεν μηδ παρευρ σ[ει μ]ηδεμι 
+--αν κα τελ σωντι α τ ς ανα--σω [π]αρ[αδ] ντω δ κα το το ε ς τ ν παρακαταθ κ[αν]
+[τ] ς θ νας ερ ν μειν ποτιγρ φον[τες]
+π τ ς ερωσ νας τ νομα το ερατε[ σαν]τος κατ τ ψ φισμα τ [ε] σγραφ ν π
+[ π]π α γ ργ δ ερε ς καθ οθεσ αν [γεν]μενος π[ ν]ανκες π ντα π[ρασσ] τ[ω]
+καθ κα ο λλ[οι ε]ρε ς σ[εβ ς τε]στω ποτ τ ν θε ν κα νοχος στω το ς πιτιμ οις γ γραπται [κ]α κατ τ ν λα[β]ντ[ων]
+τ ργ ριον -λι------αξαμειν -------
+διεγρ ψατο πως [δ] κα παρακαταθ[ κα]ς δ[υ]νατ ν ε ς τ ν α να διαφυλ σσηται [ερε] ς
+τ ς θ νας οι-μοι---ενος π[α]ραδιδ[ τω] τ[ με]τ α τ ν ερατε οντ[ι -]ετ------να [-----]
+ματων τ παραδοθ ν α τ ι ργ ριον πο[τιγρ φων το το]
+[π]αρ λαβον [κ]ατ τ ψ φισμα τ ε σγραφ ν [π ππ α γ]
+ ργ τ δ κατα--ιλεκατο-λαο[----------]
+ δ παραλαβ ν ποτιθ σθω α τ [ ν] πιο[ν]
+[τ ν μ]αστρ ν κ[α] τ ν πιστατ ν κα το 
+[γραμ]ματ ως τ [ν] μαστρ ν κ[α] τ ν πι[στατ ν]
+[ε ς] τ ερ ν σ --νας ε---ντων αρ-----
+----α τετρ δ[ι π δ κ]α το--- μο [ως δ κα]
+-----ος κατα[--------]και[------]
+[------------ διαχειρ]οτονη[σ]α---
+[------------------]νης
+--εις [τ] ς π[α]να[γ ρεις --------]
+[τ]ν χρημ των [---------]εκλ---ατα[---]
+-αν τι αι--ατ [-----]ια--θε ς τοι[---]
+[ψα]φισμ να -----σμε----ιει--- πα[ρ]αδο[---]
+---εθεν[------] π[ο]δομενο- μετ[ τ ν]
+ρχντων εκ-----ου το ς εροταμ αις [--]
+[λ] βωνται αυτο--σια--ας τι ποκατα[σ]τασε [ν]τι ς [τ ν] π[αρ] δοσιν τ ν ερ ων
+--τω μοως δ [κα -----]οεπ-ηλιεπαν[--]
+[---]ποδ ντω εν[---------]θεσμια
+ σεβε ς τε α το στω ποτ τ ν θε ν κα το πιστ ται πογραψ ντω καστον α τ ν φε λοντα ερ ς θ νας δρ μ μηδεν δ ξ στω
+μ τε ρχοντι μ τε δι τ μ τε ε [π]ε ν
+μ τε συ[ν]γρ ψαι μ τε γν μαν προφ ρειν
+ ς δε ε ς λλ[ο] τι [μ]ετ γειν το το τ ργ ριο[ν]
+ καταλ σα[ι τ] ν τ ς θεο π θοδον α τ ς
+[τ]ε ξ λης στω κα π ρατος κα γ νος α [τ]ο κα σεβ ς τω ποτ τ ν θε ν κα φειλ τ[ω]
+ερ ς θ νας δρ μ μο ως δ νοχος στω το ς πιτειμ οις κα ε τ ς κα μ ποι σ [τι] τ ν ν τδε τ ψαφ σματι κατακε[χ]ωρισμ [ν]ων ο ς
+καστα ποτιτ τακται ποτανγελλ τω
+δ χρ ζων π τ τρ τ ποτ το ς λογιστ ς πως δ [κα] ε επ γνωστα π σι τ δ ξαντα λιν[δ] οις το πιστ ται λ σθων νδρα δ α ρεθε ς ναγραψ τ[ω]
+τ δε τ ψφ[ισ]μα ε ς στ λαν λ θου λαρ[τ]ου γρ μμα[σι] ε σ μοις κα ναθ ντω ν
+[τ] ερ τ ς θ νας χομ ναν το κε ονος
+πει ναγεγραμ[μ] να ντ ποτευχ τ[ο]
+δ εροταμ αι τελε[σ] ντω τ α [ρ]ε[θ] ντι [ νδρ]
+ε ς τ ν κατασκευ ν τ ς στλας κ[α τ ν ν]θεσιν κα τ ν [ ν]αγρα[φ ν] τ ργ [ριο]ν σο[ν]
+κα ποφ νηται ν[ικα] νετος ρχιτ κτων ε κα μ τις πανγε ληται α ρ θεν
+ π τ ν διαλογ ν κ[α] π δειξιν κα κπωλ ν
+τ ν χαλκωμ των τιμαρχ δας ναυσ κου
+[τ]ο β [κα]ττ ε α[ρχ] δας ε [κλ]ε ς λινδοπολετας δαμ σ[ω]ν γ κ[α]ττ μενεκρ τ[η]ς
+παυσαν α νεττ ζ νων [κ]λευτε μου νε[ττ] π τ ν κατασκ[ευ] ν τ ς σ[τ] λας κα να[γ]ραφ [ν] το ψαφ σματος παντακλ ς
+ μ ρου ργ.</div>
+            </div>
+        </div>
+
+        <div class="split-col-right">
+            <h3>Thematic Analysis</h3>
+            
+        <div class="theme-card" onmouseover="highlightQuote('ψ φισμα')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Content/Official and Legal Documents/Decrees" class="tag domain-tag" style="text-decoration:none;">Content</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
+                    <div class="theme-path">Content > Official and Legal Documents > Decrees</div>
+                    <div class="theme-label">Decrees</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "ψ φισμα"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('περ τ ς παρακαταθ κας τ ς θ νας')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Content/Administrative Records and Lists/Accounts and Financial Records" class="tag domain-tag" style="text-decoration:none;">Content</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
+                    <div class="theme-path">Content > Administrative Records and Lists > Accounts and Financial Records</div>
+                    <div class="theme-label">Accounts and Financial Records</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "περ τ ς παρακαταθ κας τ ς θ νας"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('πανγειλαμ νων τ ν ματα ναγραψ ντω στ λ[αν λιθ] ναν')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Content/Administrative Records and Lists/Donor and Subscription Lists" class="tag domain-tag" style="text-decoration:none;">Content</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">95% Conf.</span>
+                    
+                    <div class="theme-path">Content > Administrative Records and Lists > Donor and Subscription Lists</div>
+                    <div class="theme-label">Donor and Subscription Lists</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "πανγειλαμ νων τ ν ματα ναγραψ ντω στ λ[αν λιθ] ναν"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote(' δ ερε ς καθ οθεσ αν [γεν]μενος π[ ν]ανκες π ντα π[ρασσ] τ[ω]')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Content/Religious and Dedicatory Texts/Sacred Laws and Rules" class="tag domain-tag" style="text-decoration:none;">Content</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">90% Conf.</span>
+                    
+                    <div class="theme-path">Content > Religious and Dedicatory Texts > Sacred Laws and Rules</div>
+                    <div class="theme-label">Sacred Laws and Rules</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: " δ ερε ς καθ οθεσ αν [γεν]μενος π[ ν]ανκες π ντα π[ρασσ] τ[ω]"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('ναγραψ τ[ω] τ δε τ ψφ[ισ]μα ε ς στ λαν λ θου λαρ[τ]ου')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Type/Object Type/Monumental Stone Objects/Stele" class="tag domain-tag" style="text-decoration:none;">Type</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
+                    <div class="theme-path">Type > Object Type > Monumental Stone Objects > Stele</div>
+                    <div class="theme-label">Stele</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "ναγραψ τ[ω] τ δε τ ψφ[ισ]μα ε ς στ λαν λ θου λαρ[τ]ου"</p>
+                </div>
+            </div>
+        </div>
+        
+            
+            <div style="margin-top:2rem;">
+                <h3>Entities</h3>
+                <div><a href="../search.html?q=Aristeidas" class="tag entity-tag" style="text-decoration:none;">👤 Aristeidas <small>(Priest of Athena)</small></a><a href="../search.html?q=Menekrates" class="tag entity-tag" style="text-decoration:none;">👤 Menekrates <small>(Hierotamias)</small></a><a href="../search.html?q=Asklapiadas" class="tag entity-tag" style="text-decoration:none;">👤 Asklapiadas <small>(Hierotamias)</small></a><a href="../search.html?q=Hagesandros" class="tag entity-tag" style="text-decoration:none;">👤 Hagesandros <small>(Hierotamias)</small></a><a href="../search.html?q=Kallistratos" class="tag entity-tag" style="text-decoration:none;">👤 Kallistratos <small>(Priest of Athena)</small></a><a href="../search.html?q=Timarchidas" class="tag entity-tag" style="text-decoration:none;">👤 Timarchidas <small>(Official/Donor)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Lindos <small>(Polis)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Rhodes <small>(Region)</small></a><a href="../index_deities.html" class="tag entity-tag" style="text-decoration:none;">⚡ Athena Lindia</a><a href="../index_deities.html" class="tag entity-tag" style="text-decoration:none;">⚡ Zeus Polieus</a></div>
+            </div>
+
+            <div class="ai-analysis-box">
+                <h3>AI Analysis Summary</h3>
+                <p style="line-height:1.7;">This inscription is a significant Lindian decree from 22 AD concerning the &#x27;parakatatheke&#x27; (sacred deposit/fund) of Athena Lindia and Zeus Polieus. It outlines administrative procedures for the sacred treasurers (hierotamiai) and the priest, including the sale of old bronze and iron sacred objects to generate funds. It also addresses the need to provide inscriptions for previously uninscribed statues in the sanctuary. The latter part of the text contains a subscription list (epidosis) where citizens and officials pledged money to the goddess&#x27;s fund. The text is inscribed on Lartian stone, a local Rhodian limestone.</p>
+            </div>
+        </div>
+    </div>
+  </main>
+</body>
+</html>

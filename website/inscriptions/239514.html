@@ -81,8 +81,6 @@
     .split-container.active { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
     .split-col-left { }
     .split-col-right { }
-    
-    /* Sticky sidebar in split view */
     .split-container.active .split-col-right { position: sticky; top: 20px; max-height: 90vh; overflow-y: auto; padding-right: 10px; }
   </style>
   <script>
@@ -111,11 +109,19 @@
     function highlightQuote(quote) {
         const container = document.querySelector('.greek-content');
         if (!container || !quote) return;
+
+        if (!container.dataset.original) {
+            container.dataset.original = container.innerHTML;
+        } else {
+            container.innerHTML = container.dataset.original;
+        }
         
-        const escapedQuote = quote.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-        const regex = new RegExp(escapedQuote, 'g');
+        const normalized = quote.trim().replace(/\s+/g, ' ');
+        const escapedQuote = normalized.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const spacedQuote = escapedQuote.replace(/\s+/g, '\\s+');
+        const regex = new RegExp(spacedQuote, 'g');
         container.innerHTML = container.innerHTML.replace(
-            regex, 
+            regex,
             match => `<mark class="highlight-evidence">${match}</mark>`
         );
     }
@@ -123,56 +129,239 @@
     function clearHighlight() {
         const container = document.querySelector('.greek-content');
         if (!container) return;
-        container.innerHTML = container.innerHTML.replace(/<mark class="highlight-evidence">(.*?)<\/mark>/g, '$1');
-    }
-
-    function updateFontSize(size) {
-        const container = document.getElementById('original-view');
-        if (container) {
-            container.style.fontSize = size + 'px';
-            const lines = container.querySelector('.line-numbers');
-            if(lines) lines.style.fontSize = size + 'px';
+        if (container.dataset.original) {
+            container.innerHTML = container.dataset.original;
+        } else {
+            container.innerHTML = container.innerHTML.replace(/<mark class="highlight-evidence">(.*?)<\/mark>/g, '$1');
         }
     }
-  </script>
-</head>
+
+        function updateFontSize(size) {
+
+            const container = document.getElementById('original-view');
+
+            if (container) {
+
+                container.style.fontSize = size + 'px';
+
+                const lines = container.querySelector('.line-numbers');
+
+                if(lines) lines.style.fontSize = size + 'px';
+
+            }
+
+        }
+
+    
+
+        function openReportModal() {
+
+            document.getElementById('reportModal').style.display = 'block';
+
+        }
+
+    
+
+        function closeReportModal() {
+
+            document.getElementById('reportModal').style.display = 'none';
+
+        }
+
+    
+
+        function sendReport() {
+
+            const category = document.getElementById('reportCategory').value;
+
+            const desc = document.getElementById('reportDesc').value;
+
+            const fix = document.getElementById('reportFix').value;
+
+            
+
+                    const subject = `AGKI Error Report: PHI-239514`;
+
+            
+
+                    const body = `Category: ${category}%0D%0ADescription: ${desc}%0D%0AProposed Fix: ${fix}%0D%0A%0D%0A(Sent from inscription page)`;
+
+            
+
+                    
+
+            
+
+                    window.location.href = `mailto:admin@agki-project.org?subject=${encodeURIComponent(subject)}&body=${body}`;
+
+            closeReportModal();
+
+        }
+
+      </script>
+
+    </head>
+
+        
 <body>
   <header class="site-header">
-    <div class="brand">
-      <h1><a href="../index.html" style="color:white;text-decoration:none;">AGKI Tagging Tool</a></h1>
-    </div>
-    <nav class="nav-links">
-        <a href="../index.html" class="nav-item">Search</a>
-        <a href="../explore.html" class="nav-item">Explore</a>
-        <a href="../indices.html" class="nav-item">Indices</a>
-    </nav>
-  </header>
-  <main class="page-container">
-    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 1rem;">
-        <a href="../index.html" class="back-link" style="margin:0;">← Back to Dashboard</a>
-        <button id="splitViewBtn" onclick="toggleSplitView()" class="button secondary" style="font-size:0.8rem; padding:0.3rem 0.8rem;">View: Standard</button>
-    </div>
+
+        <div class="brand">
+
+          <h1><a href="../index.html">AGKI Tagging Tool</a></h1>
+
+        </div>
+
+        <nav class="nav-links">
+
+            <a href="../index.html" class="nav-item">Home</a>
+
+            <a href="../search.html" class="nav-item">Search</a>
+
+            <a href="../explore.html" class="nav-item">Explore</a>
+
+            <a href="../indices.html" class="nav-item">Indices</a>
+
+        </nav>
+
+        <div class="header-controls">
+
+            <button class="theme-toggle-btn" onclick="toggleTheme()" id="themeBtn">🌙 Dark Mode</button>
+
+        </div>
+
+      </header>
+
     
-    <div id="main-content" class="split-container">
+
+      <script>
+
+        const themeBtn = document.getElementById('themeBtn');
+
+        function updateThemeBtn() {
+
+            const current = document.documentElement.getAttribute('data-theme');
+
+            if(themeBtn) themeBtn.textContent = current === 'light' ? '🌙 Dark Mode' : '☀️ Light Mode';
+
+        }
+
+        updateThemeBtn();
+
+        window.toggleTheme = function() {
+
+            const current = document.documentElement.getAttribute('data-theme');
+
+            const next = current === 'light' ? 'dark' : 'light';
+
+            document.documentElement.setAttribute('data-theme', next);
+
+            localStorage.setItem('theme', next);
+
+            updateThemeBtn();
+
+        }
+
+      </script>
+
+      <main class="page-container inscription-page">
+        <div class="inscription-toolbar">
+
+            <a href="../search.html" class="back-link">← Back to Dashboard</a>
+
+            <div class="inscription-actions">
+                <button id="splitViewBtn" onclick="toggleSplitView()" class="button secondary compact">View: Standard</button>
+
+                            <button onclick="openReportModal()" class="button error compact">🚩 Report Error</button>
+
+
+            </div>
+
+        </div>
+
+        
+
+        <!-- Report Modal -->
+
+        <div id="reportModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:1000;">
+
+            <div style="background:var(--panel); width:90%; max-width:500px; margin:10% auto; padding:2rem; border-radius:8px; border:1px solid var(--border); box-shadow:var(--shadow);">
+
+                <h3>Report Error for PHI-239514</h3>
+
+                <label style="display:block; margin-bottom:0.5rem;">Error Category</label>
+
+                <select id="reportCategory" style="width:100%; padding:0.5rem; margin-bottom:1rem; border-radius:4px; border:1px solid var(--border); background:var(--bg); color:var(--text);">
+
+                    <option value="Incorrect Tag">Incorrect Tag / Theme</option>
+
+                    <option value="Missing Entity">Missing Person / Place</option>
+
+                    <option value="Translation Error">Translation / Text Issue</option>
+
+                    <option value="Other">Other</option>
+
+                </select>
+
+                
+
+                <label style="display:block; margin-bottom:0.5rem;">Description of Issue</label>
+
+                <textarea id="reportDesc" rows="3" style="width:100%; padding:0.5rem; margin-bottom:1rem; border-radius:4px; border:1px solid var(--border); background:var(--bg); color:var(--text);"></textarea>
+
+                
+
+                <label style="display:block; margin-bottom:0.5rem;">Proposed Fix (Optional)</label>
+
+                <textarea id="reportFix" rows="2" style="width:100%; padding:0.5rem; margin-bottom:1.5rem; border-radius:4px; border:1px solid var(--border); background:var(--bg); color:var(--text);"></textarea>
+
+                
+
+                <div style="display:flex; justify-content:flex-end; gap:0.5rem;">
+
+                    <button onclick="closeReportModal()" class="button secondary">Cancel</button>
+
+                    <button onclick="sendReport()" class="button">Create Email Report</button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    
+
+        <div id="main-content" class="split-container">
         <div class="split-col-left">
-            <div style="display:flex; justify-content:space-between; align-items:center;">
+            <section class="inscription-hero">
+                <div class="inscription-title-row">
                 <h2>Inscription PHI-239514</h2>
-                <div style="display:flex; gap:0.5rem;">
-                    <button onclick="copyCitation()" class="button secondary" style="font-size:0.9rem; padding:0.5rem 1rem;">📜 Cite</button>
-                    <a href="https://epigraphy.packhum.org/text/239514" target="_blank" class="button">View on PHI</a>
+                <div class="inscription-actions">
+                    <button onclick="copyCitation()" class="button secondary compact">📜 Cite</button>
+                    <a href="https://epigraphy.packhum.org/text/239514" target="_blank" class="button secondary compact">View on PHI</a>
                 </div>
             </div>
             
-            <div class="meta-grid">
-                <div><small class="eyebrow">Provenance</small><br><a href="https://pleiades.stoa.org/places/541010" target="_blank" title="View in Pleiades">Phokis</a> &gt; <a href="https://pleiades.stoa.org/places/540724" target="_blank" title="View in Pleiades">Delphi</a></div>
-                <div><small class="eyebrow">Date</small><br><strong> ca. 124 BC</strong></div>
-                <div><small class="eyebrow">Completeness</small><br><span class="badge info">fragmentary</span></div>
+            <div class="inscription-meta">
+                <div class="meta-item">
+                        <div class="label">Provenance</div>
+                        <div class="meta-value"><a href="https://pleiades.stoa.org/places/541045" target="_blank" title="View in Pleiades">Phokis</a> &gt; <a href="https://pleiades.stoa.org/places/540698" target="_blank" title="View in Pleiades">Delphi</a></div>
+                    </div>
+                <div class="meta-item">
+                        <div class="label">Date</div>
+                        <div class="meta-value"> ca. 124 BC</div>
+                    </div>
+                <div class="meta-item">
+                        <div class="label">Completeness</div>
+                        <div class="meta-value"><span class="badge info">fragmentary</span></div>
+                    </div>
             </div>
+            </section>
 
-            <div style="display:flex; justify-content:space-between; align-items:end; margin-bottom:0.5rem;">
+            <div class="inscription-title-row">
                 <h3>Original Text</h3>
                 <!-- Font Size Control -->
-                <div style="display:flex; align-items:center; gap:0.5rem; background:var(--panel); border:1px solid var(--border); padding:0.2rem 0.5rem; border-radius:4px;">
+                <div class="font-size-control">
                     <span style="font-size:0.8rem; color:var(--muted);">A</span>
                     <input type="range" id="fontSizeSlider" min="14" max="32" value="20" oninput="updateFontSize(this.value)" style="width:80px; accent-color:var(--primary);">
                     <span style="font-size:1rem; font-weight:bold; color:var(--muted);">A</span>
@@ -204,8 +393,9 @@
         <div class="theme-card" onmouseover="highlightQuote('π δοτο κλευν κα κλευ[ν] κου συ[νευδοκ [ον]τ[ο]ς κ[α το υ ο α]τ ς κλεολ ου [τ ι] π λλωνι τ ι πυθ ωι σ μα γυναι[κε ον]ι ν[ομα] π στ[ις]')" onmouseout="clearHighlight()">
             <div style="display:flex; justify-content:space-between; align-items:center;">
                 <div>
-                    <span class="tag domain-tag">Content</span>
+                    <a href="../search.html?theme=Content/Official and Legal Documents/Manumission Records" class="tag domain-tag" style="text-decoration:none;">Content</a>
                     <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
                     <div class="theme-path">Content > Official and Legal Documents > Manumission Records</div>
                     <div class="theme-label">Manumission Records</div>
                 </div>
@@ -215,58 +405,32 @@
             </div>
         </div>
         
-        <div class="theme-card" onmouseover="highlightQuote('μ ρτυροι το ε[ρε ς] [το] π λλωνος το πυθ ου ρχων κα θαμβος κα ο ρχοντες')" onmouseout="clearHighlight()">
+        <div class="theme-card" onmouseover="highlightQuote(' ρχοντος καλλιδ μου')" onmouseout="clearHighlight()">
             <div style="display:flex; justify-content:space-between; align-items:center;">
                 <div>
-                    <span class="tag domain-tag">Content</span>
-                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
-                    <div class="theme-path">Content > Administrative Records and Lists > Lists of Officials or Citizens</div>
-                    <div class="theme-label">Lists of Officials or Citizens</div>
-                </div>
-                <div class="evidence-box">
-                    <p class="evidence-quote">Evidence: "μ ρτυροι το ε[ρε ς] [το] π λλωνος το πυθ ου ρχων κα θαμβος κα ο ρχοντες"</p>
-                </div>
-            </div>
-        </div>
-        
-        <div class="theme-card" onmouseover="highlightQuote('[ ρχοντος καλλιδ μου]')" onmouseout="clearHighlight()">
-            <div style="display:flex; justify-content:space-between; align-items:center;">
-                <div>
-                    <span class="tag domain-tag">Type</span>
+                    <a href="../search.html?theme=Type/Object Type/Monumental Stone Objects/Wall or Building Surface" class="tag domain-tag" style="text-decoration:none;">Type</a>
                     <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">90% Conf.</span>
+                    
                     <div class="theme-path">Type > Object Type > Monumental Stone Objects > Wall or Building Surface</div>
                     <div class="theme-label">Wall or Building Surface</div>
                 </div>
                 <div class="evidence-box">
-                    <p class="evidence-quote">Evidence: "[ ρχοντος καλλιδ μου]"</p>
+                    <p class="evidence-quote">Evidence: " ρχοντος καλλιδ μου"</p>
                 </div>
             </div>
         </div>
         
-        <div class="theme-card" onmouseover="highlightQuote('[ ρχοντος καλλιδ μου]')" onmouseout="clearHighlight()">
+        <div class="theme-card" onmouseover="highlightQuote('[ ρχοντος καλλιδ μου μην ς δαιδαφορ ου βουλ]ευ ντω[ν]')" onmouseout="clearHighlight()">
             <div style="display:flex; justify-content:space-between; align-items:center;">
                 <div>
-                    <span class="tag domain-tag">Type</span>
-                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">90% Conf.</span>
-                    <div class="theme-path">Type > Material > Stone > Limestone</div>
-                    <div class="theme-label">Limestone</div>
-                </div>
-                <div class="evidence-box">
-                    <p class="evidence-quote">Evidence: "[ ρχοντος καλλιδ μου]"</p>
-                </div>
-            </div>
-        </div>
-        
-        <div class="theme-card" onmouseover="highlightQuote('[ ρχοντος καλλιδ μου μην ς δαιδαφορ ου βουλ]ευ ντω[ν τ ν πρ ταν]')" onmouseout="clearHighlight()">
-            <div style="display:flex; justify-content:space-between; align-items:center;">
-                <div>
-                    <span class="tag domain-tag">State</span>
+                    <a href="../search.html?theme=State/Incomplete / Fragmentary/Fragmentary" class="tag domain-tag" style="text-decoration:none;">State</a>
                     <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
                     <div class="theme-path">State > Incomplete / Fragmentary > Fragmentary</div>
                     <div class="theme-label">Fragmentary</div>
                 </div>
                 <div class="evidence-box">
-                    <p class="evidence-quote">Evidence: "[ ρχοντος καλλιδ μου μην ς δαιδαφορ ου βουλ]ευ ντω[ν τ ν πρ ταν]"</p>
+                    <p class="evidence-quote">Evidence: "[ ρχοντος καλλιδ μου μην ς δαιδαφορ ου βουλ]ευ ντω[ν]"</p>
                 </div>
             </div>
         </div>
@@ -274,12 +438,12 @@
             
             <div style="margin-top:2rem;">
                 <h3>Entities</h3>
-                <div><span class="tag entity-tag">👤 Kallidemos <small>(Archon)</small></span><span class="tag entity-tag">👤 Kleunika <small>(Seller)</small></span><span class="tag entity-tag">👤 Kleunikos <small>(Seller)</small></span><span class="tag entity-tag">👤 Pistis <small>(Slave)</small></span><span class="tag entity-tag">👤 Sosixenos <small>(Guarantor (Bebaioter))</small></span><span class="tag entity-tag">👤 Apollo Pythios <small>(Deity)</small></span><span class="tag entity-tag">📍 Delphi <small>(Sanctuary)</small></span></div>
+                <div><a href="../search.html?q=Kallidemos" class="tag entity-tag" style="text-decoration:none;">👤 Kallidemos <small>(Archon)</small></a><a href="../search.html?q=Kleunika" class="tag entity-tag" style="text-decoration:none;">👤 Kleunika <small>(Seller)</small></a><a href="../search.html?q=Kleunikos" class="tag entity-tag" style="text-decoration:none;">👤 Kleunikos <small>(Seller)</small></a><a href="../search.html?q=Kleolaos" class="tag entity-tag" style="text-decoration:none;">👤 Kleolaos <small>(Consenter)</small></a><a href="../search.html?q=Pistis" class="tag entity-tag" style="text-decoration:none;">👤 Pistis <small>(Slave (Manumitted))</small></a><a href="../search.html?q=Sozenos" class="tag entity-tag" style="text-decoration:none;">👤 Sozenos <small>(Guarantor)</small></a><a href="../search.html?q=Kephalos" class="tag entity-tag" style="text-decoration:none;">👤 Kephalos <small>(Father of Sozenos)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Delphi <small>(Polis)</small></a><a href="../index_deities.html" class="tag entity-tag" style="text-decoration:none;">⚡ Apollo Pythios</a></div>
             </div>
 
             <div class="ai-analysis-box">
-                <h3>🤖 AI Analysis Summary</h3>
-                <p style="line-height:1.7;">This inscription is a manumission record from Delphi, dated to the archonship of Kallidemos (ca. 124 BC). It documents the fictitious sale of a female slave named Pistis to the god Apollo Pythios by Kleunika and her son Kleunikos for four silver minae. The document guarantees Pistis&#x27;s freedom (eleutheria) and status as untouchable (anaphaptos) for the rest of her life. Sosixenos son of Kephalos serves as the legal guarantor (bebaioter). The text is characteristic of the thousands of manumissions found at Delphi, providing a rich list of contemporary officials and witnesses, including the priests of Apollo and the city archons.</p>
+                <h3>AI Analysis Summary</h3>
+                <p style="line-height:1.7;">This inscription is a sacral manumission record from Delphi, dated to the archonship of Kallidemos (ca. 124 BC). It documents the fictitious sale of a female slave named Pistis to the god Apollo Pythios by Kleunika and Kleunikos, with the consent of Kleolaos. The price paid is four silver minae. The document specifies that Pistis is to be free (eleuthera) and untouchable (anaphatos) by any claimant for the rest of her life. It names Sozenos, son of Kephalos, as the guarantor (bebaioter) and lists several witnesses, including the priests of Apollo and other local officials.</p>
             </div>
         </div>
     </div>
