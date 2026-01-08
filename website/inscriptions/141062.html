@@ -6,12 +6,29 @@
   <title>PHI-141062 - AGKI</title>
   <link rel="stylesheet" href="../assets/css/main.css">
   <style>
-    .page-container { max-width: 1400px; margin: 0 auto; padding: 2rem; } /* Wider for side-by-side */
+    /* Custom Scrollbar Styling */
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+        background: rgba(0,0,0,0.05); 
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #ccc; 
+        border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #aaa; 
+    }
+
+    .page-container { max-width: 1400px; margin: 0 auto; padding: 2rem; }
     .back-link { display: inline-block; margin-bottom: 1rem; color: var(--primary); font-weight: 600; }
     
-    .text-viewer { 
+    /* Original View Styles (Line by Line) */
+    .text-viewer-original { 
         display: grid; 
-        grid-template-columns: 40px 1fr; /* Default single column */
+        grid-template-columns: 40px 1fr; 
         gap: 2rem; 
         font-family: "New Athena Unicode", "Gentium Plus", "Times New Roman", serif; 
         font-size: 1.25rem; 
@@ -22,156 +39,149 @@
         border-radius: 4px; 
         margin-bottom: 2rem; 
         color: var(--text);
-        transition: all 0.3s ease;
     }
 
-              .line-numbers { 
+    .line-numbers { 
+        text-align: right; 
+        color: var(--muted); 
+        font-size: 1.25rem; 
+        line-height: 1.6; 
+        user-select: none; 
+        opacity: 0.5; 
+        font-family: inherit; 
+        white-space: pre; 
+        padding-right: 1rem;
+        border-right: 1px solid var(--border);
+    }
 
-                  text-align: right; 
+    .greek-content { 
+        white-space: pre-wrap; 
+        word-break: break-word;
+        padding-left: 1rem; 
+    }
 
-                  color: var(--muted); 
+    .highlight-evidence {
+        background-color: var(--accent);
+        color: white;
+        border-radius: 2px;
+        padding: 0 2px;
+    }
 
-                  font-size: 1.25rem; 
-
-                  line-height: 1.6; 
-
-                  user-select: none; 
-
-                  opacity: 0.5; 
-
-                  font-family: inherit; 
-
-                  white-space: pre; 
-
-                  padding-right: 1rem;
-
-                  border-right: 1px solid var(--border);
-
-              }
-
-              .greek-content { white-space: pre; overflow-x: auto; padding-left: 1rem; }
-
-          
-
-    
-
-          /* Tokens */
-
-          .token { cursor: pointer; border-radius: 3px; padding: 0 2px; transition: background 0.1s; white-space: pre; }
-
-          .token:hover, .token.active { background-color: rgba(193, 104, 60, 0.25); color: var(--primary); }
-
-    
-
-          /* Translation Column */
-
-          .trans-col { display: none; border-left: 1px solid var(--border); padding-left: 2rem; white-space: pre; font-style: italic; overflow-x: auto; }
-
-    
-    .trans-controls { margin-bottom: 1rem; display: flex; gap: 0.5rem; justify-content: flex-end; align-items: center; }
-    .trans-btn { background: var(--bg); border: 1px solid var(--border); padding: 0.4rem 0.8rem; cursor: pointer; color: var(--muted); font-size: 0.85rem; border-radius: 4px; }
-    .trans-btn:hover { border-color: var(--primary); color: var(--text); }
-    .trans-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
-
-    .theme-card { background: var(--panel); padding: 1.5rem; border-left: 4px solid var(--primary); margin-bottom: 1rem; border: 1px solid var(--border); border-left-width: 4px; transition: transform 0.2s; }
-    .theme-card:hover { transform: translateX(4px); box-shadow: var(--shadow); }
-    .ai-rationale-box { background: rgba(31, 167, 163, 0.08); padding: 0.75rem; border-radius: 6px; font-size: 0.9rem; color: var(--muted); max-width: 400px; }
-    .evidence-quote { border-left: 2px solid var(--accent); padding-left: 0.5rem; margin-top: 0.5rem; font-style: italic; color: var(--text); }
+    .theme-card { background: var(--panel); padding: 1rem 1.5rem; border-left: 4px solid var(--primary); margin-bottom: 0.75rem; border: 1px solid var(--border); border-left-width: 4px; }
+    .ai-analysis-box { background: rgba(31, 167, 163, 0.05); padding: 2rem; border-radius: 8px; border: 1px solid var(--border); margin-top: 2rem; }
+    .evidence-box { max-width: 500px; text-align: right; }
+    .evidence-quote { font-size: 0.85rem; font-style: italic; color: var(--muted); margin: 0; }
     .badge.green { background: #e6f4ea; color: #137333; border-color: #137333; }
     .badge.orange { background: #fef7e0; color: #b06000; border-color: #b06000; }
     .badge.red { background: #fce8e6; color: #c5221f; border-color: #c5221f; }
-    .entity-tag { background: rgba(217, 123, 61, 0.1); color: var(--accent-2); margin-right: 0.5rem; margin-bottom: 0.5rem; display: inline-block; padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.9rem; border: 1px solid rgba(217, 123, 61, 0.2); text-decoration: none; }
-    .entity-tag.linked:hover { background: rgba(217, 123, 61, 0.2); text-decoration: underline; cursor: pointer; }
+    .entity-tag { background: rgba(217, 123, 61, 0.1); color: var(--accent-2); margin-right: 0.5rem; margin-bottom: 0.5rem; display: inline-block; padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.9rem; border: 1px solid rgba(217, 123, 61, 0.2); }
+    
+    /* Split View Styles */
+    .split-container { display: block; }
+    .split-container.active { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+    .split-col-left { }
+    .split-col-right { }
+    
+    /* Sticky sidebar in split view */
+    .split-container.active .split-col-right { position: sticky; top: 20px; max-height: 90vh; overflow-y: auto; padding-right: 10px; }
   </style>
-  
-    <script>
+  <script>
     const savedTheme = localStorage.getItem('theme') || 'light';
     document.documentElement.setAttribute('data-theme', savedTheme);
-    
-    const TRANSLATIONS = {"en": "<span class=\"token trans-token\" data-idx=\"0\" onmouseover=\"highlightToken(0)\" onmouseout=\"clearTokenHighlight()\">In the name of the gods.\n</span><span class=\"token trans-token\" data-idx=\"1\" onmouseover=\"highlightToken(1)\" onmouseout=\"clearTokenHighlight()\">The Council and the People decided.\n</span><span class=\"token trans-token\" data-idx=\"2\" onmouseover=\"highlightToken(2)\" onmouseout=\"clearTokenHighlight()\">During the prytany of the Leontis tribe.\n</span><span class=\"token trans-token\" data-idx=\"3\" onmouseover=\"highlightToken(3)\" onmouseout=\"clearTokenHighlight()\">It was resolved by the assembly.\n</span><span class=\"token trans-token\" data-idx=\"4\" onmouseover=\"highlightToken(4)\" onmouseout=\"clearTokenHighlight()\">May it be for the good fortune of the city.\n</span><span class=\"token trans-token\" data-idx=\"5\" onmouseover=\"highlightToken(5)\" onmouseout=\"clearTokenHighlight()\">To the Olympian deities.\n</span><span class=\"token trans-token\" data-idx=\"6\" onmouseover=\"highlightToken(6)\" onmouseout=\"clearTokenHighlight()\">As proposed by the archon.\n</span><span class=\"token trans-token\" data-idx=\"7\" onmouseover=\"highlightToken(7)\" onmouseout=\"clearTokenHighlight()\">Written in the official records.\n</span><span class=\"token trans-token\" data-idx=\"8\" onmouseover=\"highlightToken(8)\" onmouseout=\"clearTokenHighlight()\">This decree is to be set up on a stone stele.\n</span><span class=\"token trans-token\" data-idx=\"9\" onmouseover=\"highlightToken(9)\" onmouseout=\"clearTokenHighlight()\">For the excellence and justice shown to the people.\n</span><span class=\"token trans-token\" data-idx=\"10\" onmouseover=\"highlightToken(10)\" onmouseout=\"clearTokenHighlight()\">In the name of the gods.\n</span><span class=\"token trans-token\" data-idx=\"11\" onmouseover=\"highlightToken(11)\" onmouseout=\"clearTokenHighlight()\">The Council and the People decided.\n</span><span class=\"token trans-token\" data-idx=\"12\" onmouseover=\"highlightToken(12)\" onmouseout=\"clearTokenHighlight()\">During the prytany of the Leontis tribe.\n</span><span class=\"token trans-token\" data-idx=\"13\" onmouseover=\"highlightToken(13)\" onmouseout=\"clearTokenHighlight()\">It was resolved by the assembly.\n</span><span class=\"token trans-token\" data-idx=\"14\" onmouseover=\"highlightToken(14)\" onmouseout=\"clearTokenHighlight()\">May it be for the good fortune of the city.\n</span><span class=\"token trans-token\" data-idx=\"15\" onmouseover=\"highlightToken(15)\" onmouseout=\"clearTokenHighlight()\">To the Olympian deities.\n</span><span class=\"token trans-token\" data-idx=\"16\" onmouseover=\"highlightToken(16)\" onmouseout=\"clearTokenHighlight()\">As proposed by the archon.\n</span><span class=\"token trans-token\" data-idx=\"17\" onmouseover=\"highlightToken(17)\" onmouseout=\"clearTokenHighlight()\">Written in the official records.\n</span><span class=\"token trans-token\" data-idx=\"18\" onmouseover=\"highlightToken(18)\" onmouseout=\"clearTokenHighlight()\">This decree is to be set up on a stone stele.\n</span><span class=\"token trans-token\" data-idx=\"19\" onmouseover=\"highlightToken(19)\" onmouseout=\"clearTokenHighlight()\">For the excellence and justice shown to the people.\n</span><span class=\"token trans-token\" data-idx=\"20\" onmouseover=\"highlightToken(20)\" onmouseout=\"clearTokenHighlight()\">In the name of the gods.\n</span><span class=\"token trans-token\" data-idx=\"21\" onmouseover=\"highlightToken(21)\" onmouseout=\"clearTokenHighlight()\">The Council and the People decided.</span>", "de": "<span class=\"token trans-token\" data-idx=\"0\" onmouseover=\"highlightToken(0)\" onmouseout=\"clearTokenHighlight()\">Im Namen der Götter.\n</span><span class=\"token trans-token\" data-idx=\"1\" onmouseover=\"highlightToken(1)\" onmouseout=\"clearTokenHighlight()\">Der Rat und das Volk haben beschlossen.\n</span><span class=\"token trans-token\" data-idx=\"2\" onmouseover=\"highlightToken(2)\" onmouseout=\"clearTokenHighlight()\">Während der Prytanie des Stammes Leontis.\n</span><span class=\"token trans-token\" data-idx=\"3\" onmouseover=\"highlightToken(3)\" onmouseout=\"clearTokenHighlight()\">Die Volksversammlung hat entschieden.\n</span><span class=\"token trans-token\" data-idx=\"4\" onmouseover=\"highlightToken(4)\" onmouseout=\"clearTokenHighlight()\">Möge es zum Wohle der Stadt sein.\n</span><span class=\"token trans-token\" data-idx=\"5\" onmouseover=\"highlightToken(5)\" onmouseout=\"clearTokenHighlight()\">Den olympischen Gottheiten.\n</span><span class=\"token trans-token\" data-idx=\"6\" onmouseover=\"highlightToken(6)\" onmouseout=\"clearTokenHighlight()\">Wie vom Archonten vorgeschlagen.\n</span><span class=\"token trans-token\" data-idx=\"7\" onmouseover=\"highlightToken(7)\" onmouseout=\"clearTokenHighlight()\">In den offiziellen Urkunden verzeichnet.\n</span><span class=\"token trans-token\" data-idx=\"8\" onmouseover=\"highlightToken(8)\" onmouseout=\"clearTokenHighlight()\">Dieses Dekret soll auf einer Stele aufgestellt werden.\n</span><span class=\"token trans-token\" data-idx=\"9\" onmouseover=\"highlightToken(9)\" onmouseout=\"clearTokenHighlight()\">Für die Exzellenz und Gerechtigkeit gegenüber dem Volk.\n</span><span class=\"token trans-token\" data-idx=\"10\" onmouseover=\"highlightToken(10)\" onmouseout=\"clearTokenHighlight()\">Im Namen der Götter.\n</span><span class=\"token trans-token\" data-idx=\"11\" onmouseover=\"highlightToken(11)\" onmouseout=\"clearTokenHighlight()\">Der Rat und das Volk haben beschlossen.\n</span><span class=\"token trans-token\" data-idx=\"12\" onmouseover=\"highlightToken(12)\" onmouseout=\"clearTokenHighlight()\">Während der Prytanie des Stammes Leontis.\n</span><span class=\"token trans-token\" data-idx=\"13\" onmouseover=\"highlightToken(13)\" onmouseout=\"clearTokenHighlight()\">Die Volksversammlung hat entschieden.\n</span><span class=\"token trans-token\" data-idx=\"14\" onmouseover=\"highlightToken(14)\" onmouseout=\"clearTokenHighlight()\">Möge es zum Wohle der Stadt sein.\n</span><span class=\"token trans-token\" data-idx=\"15\" onmouseover=\"highlightToken(15)\" onmouseout=\"clearTokenHighlight()\">Den olympischen Gottheiten.\n</span><span class=\"token trans-token\" data-idx=\"16\" onmouseover=\"highlightToken(16)\" onmouseout=\"clearTokenHighlight()\">Wie vom Archonten vorgeschlagen.\n</span><span class=\"token trans-token\" data-idx=\"17\" onmouseover=\"highlightToken(17)\" onmouseout=\"clearTokenHighlight()\">In den offiziellen Urkunden verzeichnet.\n</span><span class=\"token trans-token\" data-idx=\"18\" onmouseover=\"highlightToken(18)\" onmouseout=\"clearTokenHighlight()\">Dieses Dekret soll auf einer Stele aufgestellt werden.\n</span><span class=\"token trans-token\" data-idx=\"19\" onmouseover=\"highlightToken(19)\" onmouseout=\"clearTokenHighlight()\">Für die Exzellenz und Gerechtigkeit gegenüber dem Volk.\n</span><span class=\"token trans-token\" data-idx=\"20\" onmouseover=\"highlightToken(20)\" onmouseout=\"clearTokenHighlight()\">Im Namen der Götter.\n</span><span class=\"token trans-token\" data-idx=\"21\" onmouseover=\"highlightToken(21)\" onmouseout=\"clearTokenHighlight()\">Der Rat und das Volk haben beschlossen.</span>"};
 
-    function setTranslation(lang) {
-        const container = document.getElementById('translationCol');
-        const content = document.getElementById('translationContent');
-        const viewer = document.getElementById('textViewer');
-        const btnEn = document.getElementById('btnEn');
-        const btnDe = document.getElementById('btnDe');
-        const btnOff = document.getElementById('btnOff');
-
-        // Reset Buttons
-        [btnEn, btnDe, btnOff].forEach(b => b.classList.remove('active'));
-
-        if(lang === 'none') {
-            container.style.display = 'none';
-            viewer.style.gridTemplateColumns = '40px 1fr';
-            btnOff.classList.add('active');
+    function toggleSplitView() {
+        const container = document.getElementById('main-content');
+        const btn = document.getElementById('splitViewBtn');
+        container.classList.toggle('active');
+        if(container.classList.contains('active')) {
+            btn.textContent = 'View: Split';
+            btn.classList.add('active');
         } else {
-            container.style.display = 'block';
-            viewer.style.gridTemplateColumns = '40px 1fr 1fr';
-            content.innerHTML = TRANSLATIONS[lang];
-            if(lang === 'en') btnEn.classList.add('active');
-            if(lang === 'de') btnDe.classList.add('active');
+            btn.textContent = 'View: Standard';
+            btn.classList.remove('active');
         }
     }
-
-    function highlightToken(idx) {
-        document.querySelectorAll(`.token[data-idx="${idx}"]`).forEach(el => el.classList.add('active'));
-    }
-
-    function clearTokenHighlight() {
-        document.querySelectorAll('.token').forEach(el => el.classList.remove('active'));
-    }
-
-    function highlightQuote(quote) {
-        // Legacy highlight for themes - might need adjustment if using tokens
-        // For now, simple find text in container if tokens not sufficient
-        if(!quote) return;
-    }
-
-    function clearHighlight() {}
 
     function copyCitation() {
         const citation = "AGKI Project. (2026). Inscription PHI-" + "141062" + ". Retrieved from " + window.location.href;
         navigator.clipboard.writeText(citation);
         alert("Citation copied to clipboard!");
     }
-    </script>
     
+    function highlightQuote(quote) {
+        const container = document.querySelector('.greek-content');
+        if (!container || !quote) return;
+        
+        const escapedQuote = quote.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const regex = new RegExp(escapedQuote, 'g');
+        container.innerHTML = container.innerHTML.replace(
+            regex, 
+            match => `<mark class="highlight-evidence">${match}</mark>`
+        );
+    }
+    
+    function clearHighlight() {
+        const container = document.querySelector('.greek-content');
+        if (!container) return;
+        container.innerHTML = container.innerHTML.replace(/<mark class="highlight-evidence">(.*?)<\/mark>/g, '$1');
+    }
+
+    function updateFontSize(size) {
+        const container = document.getElementById('original-view');
+        if (container) {
+            container.style.fontSize = size + 'px';
+            const lines = container.querySelector('.line-numbers');
+            if(lines) lines.style.fontSize = size + 'px';
+        }
+    }
+  </script>
 </head>
 <body>
   <header class="site-header">
     <div class="brand">
       <h1><a href="../index.html" style="color:white;text-decoration:none;">AGKI Tagging Tool</a></h1>
     </div>
+    <nav class="nav-links">
+        <a href="../index.html" class="nav-item">Search</a>
+        <a href="../explore.html" class="nav-item">Explore</a>
+        <a href="../indices.html" class="nav-item">Indices</a>
+    </nav>
   </header>
   <main class="page-container">
-    <a href="../index.html" class="back-link">← Back to Dashboard</a>
-    <div style="display:flex; justify-content:space-between; align-items:center;">
-        <h2>Inscription PHI-141062</h2>
-        <div style="display:flex; gap:0.5rem;">
-            <button onclick="copyCitation()" class="button secondary" style="font-size:0.9rem; padding:0.5rem 1rem;">📜 Cite</button>
-            <a href="https://epigraphy.packhum.org/text/141062" target="_blank" class="button">View on PHI</a>
-        </div>
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 1rem;">
+        <a href="../index.html" class="back-link" style="margin:0;">← Back to Dashboard</a>
+        <button id="splitViewBtn" onclick="toggleSplitView()" class="button secondary" style="font-size:0.8rem; padding:0.3rem 0.8rem;">View: Standard</button>
     </div>
     
-    <div class="meta-grid">
-        <div><small class="eyebrow">Provenance</small><br>Sicily, Italy, and the West (IG XIV)</div>
-        <div><small class="eyebrow">Date</small><br><strong> 174 AD</strong></div>
-        <div><small class="eyebrow">Completeness</small><br><span class="badge info">fragmentary</span></div>
-    </div>
+    <div id="main-content" class="split-container">
+        <div class="split-col-left">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <h2>Inscription PHI-141062</h2>
+                <div style="display:flex; gap:0.5rem;">
+                    <button onclick="copyCitation()" class="button secondary" style="font-size:0.9rem; padding:0.5rem 1rem;">📜 Cite</button>
+                    <a href="https://epigraphy.packhum.org/text/141062" target="_blank" class="button">View on PHI</a>
+                </div>
+            </div>
+            
+            <div class="meta-grid">
+                <div><small class="eyebrow">Provenance</small><br><a href="https://pleiades.stoa.org/places/432748" target="_blank" title="View in Pleiades">Campania</a> &gt; <a href="https://pleiades.stoa.org/places/433059" target="_blank" title="View in Pleiades">Puteoli</a></div>
+                <div><small class="eyebrow">Date</small><br><strong> 174 AD</strong></div>
+                <div><small class="eyebrow">Completeness</small><br><span class="badge info">intact</span></div>
+            </div>
 
-    <div style="display:flex; justify-content:space-between; align-items:end; margin-bottom:0.5rem;">
-        <h3>Original Text & Translation</h3>
-        <div class="trans-controls">
-            <span class="eyebrow" style="margin:0; margin-right:0.5rem;">Translation:</span>
-            <button id="btnOff" class="trans-btn active" onclick="setTranslation('none')">Off</button>
-            <button id="btnEn" class="trans-btn" onclick="setTranslation('en')">English</button>
-            <button id="btnDe" class="trans-btn" onclick="setTranslation('de')">German</button>
-        </div>
-    </div>
+            <div style="display:flex; justify-content:space-between; align-items:end; margin-bottom:0.5rem;">
+                <h3>Original Text</h3>
+                <!-- Font Size Control -->
+                <div style="display:flex; align-items:center; gap:0.5rem; background:var(--panel); border:1px solid var(--border); padding:0.2rem 0.5rem; border-radius:4px;">
+                    <span style="font-size:0.8rem; color:var(--muted);">A</span>
+                    <input type="range" id="fontSizeSlider" min="14" max="32" value="20" oninput="updateFontSize(this.value)" style="width:80px; accent-color:var(--primary);">
+                    <span style="font-size:1rem; font-weight:bold; color:var(--muted);">A</span>
+                </div>
+            </div>
 
-    <div id="textViewer" class="text-viewer">
-        <div class="line-numbers">1
+            <!-- Original Line-by-Line View -->
+            <div id="original-view" class="text-viewer-original">
+                <div class="line-numbers">1
 
 
 
@@ -193,54 +203,88 @@
 20
 
 </div>
-        <div class="greek-content" id="greekText"><span class="token greek-token" data-idx="0" onmouseover="highlightToken(0)" onmouseout="clearTokenHighlight()">πιστολ γραφε σα τ π λει
-</span><span class="token greek-token" data-idx="1" onmouseover="highlightToken(1)" onmouseout="clearTokenHighlight()">τυρ ων τ ς ερ ς κα σ λου κα α τον μου μητροπ λεως φοινε κης κα λλων π λεων κα ναυαρχ δος. ρχουσι βουλ κα δ μ τ ς κυρ ας πατρ δος ο ν ποτι λοις
-</span><span class="token greek-token" data-idx="2" onmouseover="highlightToken(2)" onmouseout="clearTokenHighlight()">κατοικο ντες χα ρειν.
-</span><span class="token greek-token" data-idx="3" onmouseover="highlightToken(3)" onmouseout="clearTokenHighlight()">δι το ς θεο ς κα τ ν το κυρ ου μ ν α τοκρ τορος τ χην ε κα τις λλη στατ ων στ ν ν ποτι λοις ς ο πλε ους μ ν σασι κα μετ ρα στ ν κα κ σμ κα 
-</span><span class="token greek-token" data-idx="4" onmouseover="highlightToken(4)" onmouseout="clearTokenHighlight()">μεγ θει τ ν λλων διαφ ρουσα τα της π λαι μ ν πεμελο ντο ο ν ποτι λοις κατοικο ντες τ ριοι πολλο ντες κα πλο σιοι ν ν δ ε ς λ γους μ ς περι στη τ ν
-</span><span class="token greek-token" data-idx="5" onmouseover="highlightToken(5)" onmouseout="clearTokenHighlight()"> ριθμ ν κα ναλ σκοντες ε ς τε θυσ ας κα θρησκε ας τ ν πατρ ων μ ν θε ν νθ δε φωσιωμ νων ν ναο ς ο κ ε τονο μεν τ ν μισθ ν τ ς στατ ωνος παρ χειν κατ τος σν μ λιστα κα τ ναλ ματα ε ς τ ν γ να τ ν ν ποτι λοις τ ς βουθουσ ας
-</span><span class="token greek-token" data-idx="6" onmouseover="highlightToken(6)" onmouseout="clearTokenHighlight()"> με ν προσετ θη. δε μεθα ο ν προνο σαι μ ς το διαμ νειν ε τ ν στατ ωνα δειαμενε δ ν πρ νοιαν τ ν κατ τος διδομ νων ε ς τ ν μ σθωσιν σν ποι σησθε τ γ ρ τερα ναλ ματα κα τ γειν μενα ε ς πισκευ ν τ ς στατ ωνος ε ς τ ς ερ ς μ ρας το 
-</span><span class="token greek-token" data-idx="7" onmouseover="highlightToken(7)" onmouseout="clearTokenHighlight()">κυρ ου α τοκρ τορος συνπεσο σης αυτο ς λογισ μεθα να μ τ ν π λιν βαρ μεν.
-</span><span class="token greek-token" data-idx="8" onmouseover="highlightToken(8)" onmouseout="clearTokenHighlight()"> πομιμν σκομεν δ μ ς τι ο δεμ α πρ σοδος γε νεται ο τε παρ ναυκλ ρων
-</span><span class="token greek-token" data-idx="9" onmouseover="highlightToken(9)" onmouseout="clearTokenHighlight()">ο τε παρ μπ ρων τ νθ δε στατ ωνι ς ν τ βασιλ δι μ. παρακαλο μεν
-</span><span class="token greek-token" data-idx="10" onmouseover="highlightToken(10)" onmouseout="clearTokenHighlight()">ο ν κα δε μεθα μ ν τ ς τ χης φροντ σαι τε το πρ γματος. γρ φη ν ποτι λοις πρ καλανδ ν α γο στων γ λλ κα φλ κκ κορνηλιαν π τοιν.
-</span><span class="token greek-token" data-idx="11" onmouseover="highlightToken(11)" onmouseout="clearTokenHighlight()"> π κτων βουλ ς χθε σης κα δ ου το τους τ φημερο ντος γ ο αλερ ου
-</span><span class="token greek-token" data-idx="12" onmouseover="highlightToken(12)" onmouseout="clearTokenHighlight()">καλλικρ τους παυσαν ου προ δρου.
-</span><span class="token greek-token" data-idx="13" onmouseover="highlightToken(13)" onmouseout="clearTokenHighlight()"> νεγν σθη πιστολ τυρ ων στατιωναρ ων ναδοθε σα π λ χητος
-</span><span class="token greek-token" data-idx="14" onmouseover="highlightToken(14)" onmouseout="clearTokenHighlight()"> ν ς α τ ν ν ξ ουν πρ νοιαν ποι σασθαι α το ς σν ναλ σκειν γ ρ ε ς τε θυσ ας
-</span><span class="token greek-token" data-idx="15" onmouseover="highlightToken(15)" onmouseout="clearTokenHighlight()">κα θρησκε ας τ ν πατρ ων μ ν θε ν κε φωσιωμ νων ν ναο ς
-</span><span class="token greek-token" data-idx="16" onmouseover="highlightToken(16)" onmouseout="clearTokenHighlight()">κα μ ε τονε ν τ ν μισθ ν τ ς στατ ωνος παρ χειν κατ τος 
-</span><span class="token greek-token" data-idx="17" onmouseover="highlightToken(17)" onmouseout="clearTokenHighlight()">κα τ ναλ ματα ε ς τ ν γ να τ ν ν ποτι λοις τ ς βουθουσ ας α το ς προστεθ ναι τ ν γ ρ τ ρων ναλωμ των κα τ ν γεινομ νων ε ς πισκευ ν τ ς στατ ωνος ε ς τ ς ερ ς μ ρας το κυρ ου α τοκρ τορος σ[υν]πεσο σης α το ς λογ σαντο να μ τ ν π λιν βαρ σιν κα πεμ μνησκον τι ο δεμ α πρ σοδος γε νεται α το ς ο τε παρ ναυκλ ρων ο τε
-</span><span class="token greek-token" data-idx="18" onmouseover="highlightToken(18)" onmouseout="clearTokenHighlight()">παρ μπ ρων ς ν τ βασιλ δι μ. μεθ ν ν γνωσιν φιλοκλ ς διοδ ρου ε πεν ο ν μ στατιων ριοι θος ε χον ε ποτε ξ ν α το λαμβ νουσιν παρ χειν το ς ν ποτι λοις ξιο σι κα ν ν ο ν ποτι λοις
-</span><span class="token greek-token" data-idx="19" onmouseover="highlightToken(19)" onmouseout="clearTokenHighlight()">στατιων ριοι α τ τα τα α το ς τηρε σθαι ε μ βο λονται ο ν μ α το ς παρ χειν α το ναδ χονται τ ς δ ο στατ ωνας π τ α τ α ρ σι. πεφ νησαν καλ ς ε πεν φιλοκλ ς δ καια ξι σι ο ν ποτι λοις ε 
-</span><span class="token greek-token" data-idx="20" onmouseover="highlightToken(20)" onmouseout="clearTokenHighlight()">ο τως γε νετο κα ν ν ο τως γειν σθω το το τ π λει συμφ ρει φυλαχθ τω συν θεια. νεγν σθη πιττ κιον δοθ ν τ π λ χητος πρειμογενειασ κα γαθ ποδος υ ο α το τυρ ων στατιωναρ ων στατ ωνος τυριακ ς τ ς ν κολων σεβαστ ποτι λοις ν δ λουν παρ χειν τ ν μετ ραν
-</span><span class="token greek-token" data-idx="21" onmouseover="highlightToken(21)" onmouseout="clearTokenHighlight()">πατρ δα στατ ωνας δ ο τ ν μ ν ν τ βασιλ δι μ[ τ ν δ -----]</span></div>
-        <div id="translationCol" class="trans-col">
-            <div id="translationContent"></div>
+                <div class="greek-content">πιστολ γραφε σα τ π λει
+τυρ ων τ ς ερ ς κα σ λου κα α τον μου μητροπ λεως φοινε κης κα λλων π λεων κα ναυαρχ δος. ρχουσι βουλ κα δ μ τ ς κυρ ας πατρ δος ο ν ποτι λοις
+κατοικο ντες χα ρειν.
+δι το ς θεο ς κα τ ν το κυρ ου μ ν α τοκρ τορος τ χην ε κα τις λλη στατ ων στ ν ν ποτι λοις ς ο πλε ους μ ν σασι κα μετ ρα στ ν κα κ σμ κα 
+μεγ θει τ ν λλων διαφ ρουσα τα της π λαι μ ν πεμελο ντο ο ν ποτι λοις κατοικο ντες τ ριοι πολλο ντες κα πλο σιοι ν ν δ ε ς λ γους μ ς περι στη τ ν
+ ριθμ ν κα ναλ σκοντες ε ς τε θυσ ας κα θρησκε ας τ ν πατρ ων μ ν θε ν νθ δε φωσιωμ νων ν ναο ς ο κ ε τονο μεν τ ν μισθ ν τ ς στατ ωνος παρ χειν κατ τος σν μ λιστα κα τ ναλ ματα ε ς τ ν γ να τ ν ν ποτι λοις τ ς βουθουσ ας
+ με ν προσετ θη. δε μεθα ο ν προνο σαι μ ς το διαμ νειν ε τ ν στατ ωνα δειαμενε δ ν πρ νοιαν τ ν κατ τος διδομ νων ε ς τ ν μ σθωσιν σν ποι σησθε τ γ ρ τερα ναλ ματα κα τ γειν μενα ε ς πισκευ ν τ ς στατ ωνος ε ς τ ς ερ ς μ ρας το 
+κυρ ου α τοκρ τορος συνπεσο σης αυτο ς λογισ μεθα να μ τ ν π λιν βαρ μεν.
+ πομιμν σκομεν δ μ ς τι ο δεμ α πρ σοδος γε νεται ο τε παρ ναυκλ ρων
+ο τε παρ μπ ρων τ νθ δε στατ ωνι ς ν τ βασιλ δι μ. παρακαλο μεν
+ο ν κα δε μεθα μ ν τ ς τ χης φροντ σαι τε το πρ γματος. γρ φη ν ποτι λοις πρ καλανδ ν α γο στων γ λλ κα φλ κκ κορνηλιαν π τοιν.
+ π κτων βουλ ς χθε σης κα δ ου το τους τ φημερο ντος γ ο αλερ ου
+καλλικρ τους παυσαν ου προ δρου.
+ νεγν σθη πιστολ τυρ ων στατιωναρ ων ναδοθε σα π λ χητος
+ ν ς α τ ν ν ξ ουν πρ νοιαν ποι σασθαι α το ς σν ναλ σκειν γ ρ ε ς τε θυσ ας
+κα θρησκε ας τ ν πατρ ων μ ν θε ν κε φωσιωμ νων ν ναο ς
+κα μ ε τονε ν τ ν μισθ ν τ ς στατ ωνος παρ χειν κατ τος 
+κα τ ναλ ματα ε ς τ ν γ να τ ν ν ποτι λοις τ ς βουθουσ ας α το ς προστεθ ναι τ ν γ ρ τ ρων ναλωμ των κα τ ν γεινομ νων ε ς πισκευ ν τ ς στατ ωνος ε ς τ ς ερ ς μ ρας το κυρ ου α τοκρ τορος σ[υν]πεσο σης α το ς λογ σαντο να μ τ ν π λιν βαρ σιν κα πεμ μνησκον τι ο δεμ α πρ σοδος γε νεται α το ς ο τε παρ ναυκλ ρων ο τε
+παρ μπ ρων ς ν τ βασιλ δι μ. μεθ ν ν γνωσιν φιλοκλ ς διοδ ρου ε πεν ο ν μ στατιων ριοι θος ε χον ε ποτε ξ ν α το λαμβ νουσιν παρ χειν το ς ν ποτι λοις ξιο σι κα ν ν ο ν ποτι λοις
+στατιων ριοι α τ τα τα α το ς τηρε σθαι ε μ βο λονται ο ν μ α το ς παρ χειν α το ναδ χονται τ ς δ ο στατ ωνας π τ α τ α ρ σι. πεφ νησαν καλ ς ε πεν φιλοκλ ς δ καια ξι σι ο ν ποτι λοις ε 
+ο τως γε νετο κα ν ν ο τως γειν σθω το το τ π λει συμφ ρει φυλαχθ τω συν θεια. νεγν σθη πιττ κιον δοθ ν τ π λ χητος πρειμογενειασ κα γαθ ποδος υ ο α το τυρ ων στατιωναρ ων στατ ωνος τυριακ ς τ ς ν κολων σεβαστ ποτι λοις ν δ λουν παρ χειν τ ν μετ ραν
+πατρ δα στατ ωνας δ ο τ ν μ ν ν τ βασιλ δι μ[ τ ν δ -----]</div>
+            </div>
         </div>
-    </div>
 
-    <h3>Thematic Analysis</h3>
-    <p class="muted" style="margin-bottom:1rem;">Hover over cards to see evidence in text.</p>
-    
-        <div class="theme-card" onmouseover="highlightQuote('καια ξι σι ο ν ποτι λοις ε')" onmouseout="clearHighlight()">
-            <div style="display:flex; justify-content:space-between; align-items:start;">
+        <div class="split-col-right">
+            <h3>Thematic Analysis</h3>
+            
+        <div class="theme-card" onmouseover="highlightQuote('πιστολ γραφε σα τ π λει')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
                 <div>
                     <span class="tag domain-tag">Content</span>
-                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">90% Conf.</span>
-                    <div class="theme-path">Content > Administrative Records and Lists > Accounts and Financial Records</div>
-                    <div class="theme-label">Accounts and Financial Records</div>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    <div class="theme-path">Content > Official and Legal Documents > Official Letters</div>
+                    <div class="theme-label">Official Letters</div>
                 </div>
-                <div class="ai-rationale-box">
-                    <strong>🤖 AI Rationale:</strong>
-                    <p>Generated rationale for Accounts and Financial Records</p>
-                    <p class="evidence-quote">Evidence: "καια ξι σι ο ν ποτι λοις ε"</p>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "πιστολ γραφε σα τ π λει"</p>
                 </div>
             </div>
         </div>
         
-    <h3>Entities</h3>
-    <div><span class="tag entity-tag">👤 Theemos <small>(Archon)</small></span><span class="tag entity-tag">📍 Athen <small>(Polis)</small></span></div>
+        <div class="theme-card" onmouseover="highlightQuote('ρχουσι βουλ κα δ μ τ ς κυρ ας πατρ δος')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <span class="tag domain-tag">Content</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    <div class="theme-path">Content > Official and Legal Documents > Decrees</div>
+                    <div class="theme-label">Decrees</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "ρχουσι βουλ κα δ μ τ ς κυρ ας πατρ δος"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('τ ν μισθ ν τ ς στατ ωνος παρ χειν')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <span class="tag domain-tag">Content</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">95% Conf.</span>
+                    <div class="theme-path">Content > Administrative Records and Lists > Accounts and Financial Records</div>
+                    <div class="theme-label">Accounts and Financial Records</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "τ ν μισθ ν τ ς στατ ωνος παρ χειν"</p>
+                </div>
+            </div>
+        </div>
+        
+            
+            <div style="margin-top:2rem;">
+                <h3>Entities</h3>
+                <div><span class="tag entity-tag">👤 Gaius Valerius Callicrates <small>(President of the Council)</small></span><span class="tag entity-tag">👤 Philokles son of Diodoros <small>(Council Speaker)</small></span><span class="tag entity-tag">👤 Laches <small>(Representative of the Tyrians in Puteoli)</small></span><span class="tag entity-tag">👤 Gallus <small>(Consul)</small></span><span class="tag entity-tag">👤 Flaccus Cornelianus <small>(Consul)</small></span><span class="tag entity-tag">📍 Puteoli <small>(Polis)</small></span><span class="tag entity-tag">📍 Tyre <small>(Polis)</small></span><span class="tag entity-tag">📍 Rome <small>(City)</small></span><span class="tag entity-tag">📍 Phoenicia <small>(Region)</small></span></div>
+            </div>
+
+            <div class="ai-analysis-box">
+                <h3>🤖 AI Analysis Summary</h3>
+                <p style="line-height:1.7;">This inscription, dated to 174 AD (during the consulship of Gallus and Flaccus Cornelianus), is a dossier containing a letter from the Tyrian merchants residing in Puteoli to their home city of Tyre. They petition for financial relief, explaining that their numbers have decreased and they can no longer afford the rent (misthos) for their commercial/religious station (statio) or the costs of sacrifices to their ancestral gods. They compare their situation to the Tyrian station in Rome, which receives support. The document includes the minutes of the Tyrian council meeting where Philokles son of Diodoros successfully argues in favor of the petition to preserve the city&#x27;s interests and tradition.</p>
+            </div>
+        </div>
+    </div>
   </main>
 </body>
 </html>

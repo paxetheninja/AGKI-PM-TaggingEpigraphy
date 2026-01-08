@@ -1,0 +1,632 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PHI-77668 - AGKI</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <style>
+    /* Custom Scrollbar Styling */
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+        background: rgba(0,0,0,0.05); 
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #ccc; 
+        border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #aaa; 
+    }
+
+    .page-container { max-width: 1400px; margin: 0 auto; padding: 2rem; }
+    .back-link { display: inline-block; margin-bottom: 1rem; color: var(--primary); font-weight: 600; }
+    
+    /* Original View Styles (Line by Line) */
+    .text-viewer-original { 
+        display: grid; 
+        grid-template-columns: 40px 1fr; 
+        gap: 2rem; 
+        font-family: "New Athena Unicode", "Gentium Plus", "Times New Roman", serif; 
+        font-size: 1.25rem; 
+        line-height: 1.6; 
+        background: var(--panel); 
+        padding: 2rem; 
+        border: 1px solid var(--border); 
+        border-radius: 4px; 
+        margin-bottom: 2rem; 
+        color: var(--text);
+    }
+
+    .line-numbers { 
+        text-align: right; 
+        color: var(--muted); 
+        font-size: 1.25rem; 
+        line-height: 1.6; 
+        user-select: none; 
+        opacity: 0.5; 
+        font-family: inherit; 
+        white-space: pre; 
+        padding-right: 1rem;
+        border-right: 1px solid var(--border);
+    }
+
+    .greek-content { 
+        white-space: pre-wrap; 
+        word-break: break-word;
+        padding-left: 1rem; 
+    }
+
+    .highlight-evidence {
+        background-color: var(--accent);
+        color: white;
+        border-radius: 2px;
+        padding: 0 2px;
+    }
+
+    .theme-card { background: var(--panel); padding: 1rem 1.5rem; border-left: 4px solid var(--primary); margin-bottom: 0.75rem; border: 1px solid var(--border); border-left-width: 4px; }
+    .ai-analysis-box { background: rgba(31, 167, 163, 0.05); padding: 2rem; border-radius: 8px; border: 1px solid var(--border); margin-top: 2rem; }
+    .evidence-box { max-width: 500px; text-align: right; }
+    .evidence-quote { font-size: 0.85rem; font-style: italic; color: var(--muted); margin: 0; }
+    .badge.green { background: #e6f4ea; color: #137333; border-color: #137333; }
+    .badge.orange { background: #fef7e0; color: #b06000; border-color: #b06000; }
+    .badge.red { background: #fce8e6; color: #c5221f; border-color: #c5221f; }
+    .entity-tag { background: rgba(217, 123, 61, 0.1); color: var(--accent-2); margin-right: 0.5rem; margin-bottom: 0.5rem; display: inline-block; padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.9rem; border: 1px solid rgba(217, 123, 61, 0.2); }
+    
+    /* Split View Styles */
+    .split-container { display: block; }
+    .split-container.active { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+    .split-col-left { }
+    .split-col-right { }
+    
+    /* Sticky sidebar in split view */
+    .split-container.active .split-col-right { position: sticky; top: 20px; max-height: 90vh; overflow-y: auto; padding-right: 10px; }
+  </style>
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+
+    function toggleSplitView() {
+        const container = document.getElementById('main-content');
+        const btn = document.getElementById('splitViewBtn');
+        container.classList.toggle('active');
+        if(container.classList.contains('active')) {
+            btn.textContent = 'View: Split';
+            btn.classList.add('active');
+        } else {
+            btn.textContent = 'View: Standard';
+            btn.classList.remove('active');
+        }
+    }
+
+    function copyCitation() {
+        const citation = "AGKI Project. (2026). Inscription PHI-" + "77668" + ". Retrieved from " + window.location.href;
+        navigator.clipboard.writeText(citation);
+        alert("Citation copied to clipboard!");
+    }
+    
+    function highlightQuote(quote) {
+        const container = document.querySelector('.greek-content');
+        if (!container || !quote) return;
+        
+        const escapedQuote = quote.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const regex = new RegExp(escapedQuote, 'g');
+        container.innerHTML = container.innerHTML.replace(
+            regex, 
+            match => `<mark class="highlight-evidence">${match}</mark>`
+        );
+    }
+    
+    function clearHighlight() {
+        const container = document.querySelector('.greek-content');
+        if (!container) return;
+        container.innerHTML = container.innerHTML.replace(/<mark class="highlight-evidence">(.*?)<\/mark>/g, '$1');
+    }
+
+    function updateFontSize(size) {
+        const container = document.getElementById('original-view');
+        if (container) {
+            container.style.fontSize = size + 'px';
+            const lines = container.querySelector('.line-numbers');
+            if(lines) lines.style.fontSize = size + 'px';
+        }
+    }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <h1><a href="../index.html" style="color:white;text-decoration:none;">AGKI Tagging Tool</a></h1>
+    </div>
+    <nav class="nav-links">
+        <a href="../index.html" class="nav-item">Search</a>
+        <a href="../explore.html" class="nav-item">Explore</a>
+        <a href="../indices.html" class="nav-item">Indices</a>
+    </nav>
+  </header>
+  <main class="page-container">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 1rem;">
+        <a href="../index.html" class="back-link" style="margin:0;">← Back to Dashboard</a>
+        <button id="splitViewBtn" onclick="toggleSplitView()" class="button secondary" style="font-size:0.8rem; padding:0.3rem 0.8rem;">View: Standard</button>
+    </div>
+    
+    <div id="main-content" class="split-container">
+        <div class="split-col-left">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <h2>Inscription PHI-77668</h2>
+                <div style="display:flex; gap:0.5rem;">
+                    <button onclick="copyCitation()" class="button secondary" style="font-size:0.9rem; padding:0.5rem 1rem;">📜 Cite</button>
+                    <a href="https://epigraphy.packhum.org/text/77668" target="_blank" class="button">View on PHI</a>
+                </div>
+            </div>
+            
+            <div class="meta-grid">
+                <div><small class="eyebrow">Provenance</small><br><a href="https://pleiades.stoa.org/places/599871" target="_blank" title="View in Pleiades">Paros</a> &gt; <a href="https://pleiades.stoa.org/places/599871" target="_blank" title="View in Pleiades">Paros</a></div>
+                <div><small class="eyebrow">Date</small><br><strong> 263/2 BC</strong></div>
+                <div><small class="eyebrow">Completeness</small><br><span class="badge info">fragmentary</span></div>
+            </div>
+
+            <div style="display:flex; justify-content:space-between; align-items:end; margin-bottom:0.5rem;">
+                <h3>Original Text</h3>
+                <!-- Font Size Control -->
+                <div style="display:flex; align-items:center; gap:0.5rem; background:var(--panel); border:1px solid var(--border); padding:0.2rem 0.5rem; border-radius:4px;">
+                    <span style="font-size:0.8rem; color:var(--muted);">A</span>
+                    <input type="range" id="fontSizeSlider" min="14" max="32" value="20" oninput="updateFontSize(this.value)" style="width:80px; accent-color:var(--primary);">
+                    <span style="font-size:1rem; font-weight:bold; color:var(--muted);">A</span>
+                </div>
+            </div>
+
+            <!-- Original Line-by-Line View -->
+            <div id="original-view" class="text-viewer-original">
+                <div class="line-numbers">1
+
+
+
+5
+
+
+
+
+10
+
+
+
+
+15
+
+
+
+
+20
+
+
+
+
+25
+
+
+
+
+30
+
+
+
+
+35
+
+
+
+
+40
+
+
+
+
+45
+
+
+
+
+50
+
+
+
+
+55
+
+
+
+
+60
+
+
+
+
+65
+
+
+
+
+70
+
+
+
+
+75
+
+
+
+
+80
+
+
+
+
+85
+
+
+
+
+90
+
+
+
+
+95
+
+
+
+
+100
+
+
+
+
+105
+
+
+
+
+110
+
+
+
+
+115
+
+
+
+
+120
+
+
+
+
+125
+
+
+
+
+130
+
+
+
+
+135
+
+
+
+
+140
+
+
+
+
+145
+
+
+
+
+150
+
+
+
+
+155
+
+
+
+
+160
+
+
+
+
+165
+
+
+
+
+170
+
+
+
+
+175
+
+
+
+
+180
+
+
+
+
+185
+</div>
+                <div class="greek-content">-----ου [---- κ συγγραμμ τω]ν παν[το]ων ------νων ν γραψα το ς ν-------
+----- ρξ μ[εν]ος π κ κροπος το πρ του βασιλε σαντος θην ν ε ως ρχοντος μ π ρωι [μ ν]
+[---]υ νακτος θ νησιν δ διογν του
+ φ ο κ κροψ θην ν βασ λευσε κα χ ρα κεκροπ α κλ θη τ πρ τερον καλουμ νη κτικ π κτα ου το α τ χθονος τη 0.
+ φ ο δευκαλ ων παρ τ ν παρνασσ ν ν λυκωρε αι βασ λευσε [βα]σιλε[ ο]ντος θην ν κ κροπος τη 0.
+ φ ο δ κη θ νησι[ν γ]νετο ρει κα ποσειδ νι π ρ λιρροθ ου το ποσειδ νος κα τ πος κλ θη
+ ρειος π γος τη 0 βασιλε οντος θην ν κρ[ανα]ο.
+ φ ο κατακλυσμ ς π δευκαλ ωνος γ νετο κα δευκαλ ων το ς
+ μβρους φυγεν γ λυκωρε ας ε ς θ νας πρ [ς κρανα] ν κα το δι [ς τ]ο [ λυ]μ[π]ου τ [ερ] ν δ[ρ σατ]ο κα τ σωτ ρια θυσεν 
+τη 0 βασιλε οντος θην ν κρ[α]ν[α]ο.
+ [φ ο μφι]κτ ων δευκαλ ωνος βασ λευσεν ν θερμοπ λαις κα συν γε[ιρε τ]ο ς περ τ [ ε]ρ ν ο κο ντας κα [ν]μασεν μφικτ ονας κα π[ρο θυσε]ν ο [περ] κα ν ν τι θ ουσιν μφικτ ονες 
+τη 0 βασιλε οντος θην ν μφικτ ονος.
+ φ ο λλην δευκ[αλ ωνος φθι] τιδος βασ λευσε κα λληνες
+[ ν]ομ σθησαν τ πρ τερον γραικο καλο μενοι κα τ ν γ να παναθναι[α] θεσαν τη] 0 βασιλε οντος
+ θην ν μφικτ ονος.
+ φ ο κ δμος γ νορος ε ς θ βας φ κετο [--- κα] κτισε τ ν καδμε αν τη 0 βασιλε οντος θην ν μφικτ ονος.
+ φ ο [σπαρτο ο μετ κ δμου θηβ ν κπεσ ντες λακω]νικ ς βασ λευσαν 
+ τη 0 βασιλε οντος θην ν μφικτ ονος.
+ φ ο να [ς δανα ν γουσα μετ τ ν πεντ] [κοντα δανα δ]ων ξ α γ πτου
+[ε] ς τ ν λλ δα πλευσε κα νομ σθη πεντηκ ντορος κα α δαναο θυγατ ρες [--- κα μυμ] νη κα βα[- κα]
+------ κα λ κη κα ρχεδ κη ποκληρωθε σαι π τ ν λοιπ ν [ θην ς ερ ν δρ σ]αντ[ο]
+κα θυσαν π τ ς κτ ς μ παρ [πλω]ι ν λ νδωι τ ς οδ ας τη 0 βασιλε ο[ντος θην ν ---].
+[ φ ο ριχ]θ νιος παναθηνα οις το ς πρ τοις γενομ νοις ρμα ζευξε κα τ ν γ να δε κνυε κα θηνα ους [ ν] [μασε κ]α [ γαλμα]
+[θ]ε ν μητρ ς φ νη γ κυβ λοις κα αγνις φρ ξ α λο ς πρ τος η ρεν γ κ[ελ]α[ι]να [ς π λει τ]ς φρ[υγ ας κα ρμον αν τ ν καλ]ουμ νην φρυγιστ πρ τος η λησε κα λλους ν μους μητρ ς διον σου παν ς κα τ ν π[ τ ι π θωνι πικ δειον]
+[λυδιστ] τη 0 βασιλε οντος θην ν ριχθον ου το τ ρμα ζε ξαντος.
+ φ ο μ νως [κ]ρ[ της] βα[σιλε σας κνωσ ν]
+[κα κυδω]ν αν ικισε κα σ δηρος η ρ θη ν τ ι δηι ε ρ ντων τ ν δα ων δακτ λων κ λμιος κ[α δαμναμεν ως τη -- βασι]λε οντος θην ν πανδ ονος.
+ φ ο δημ τηρ φικομ νη ε ς θ νας καρπ ν φ [τευσ]εν κα πρ[οηροσ α]πρ [χθη πρ] τη δ[---]
+ριπτολ μου το κελεο κα νεα ρας τη 0 βασιλε οντος θ νησιν ριχθ ως.
+ φ ο τριπτ [λεμος πρ τος]
+[καρπ ν] σπειρεν ν τ ι αρ αι καλουμ νηι λευσ νι τη 0 βασιλε οντος θην ν [ ριχθ ως].
+[ φ ο ρφε ς ο γρου κα καλλι πης]
+υ [ς τ]ν αυτο πο ησιν ξθηκε κ ρης τε ρπαγ ν κα δ μητρος ζ τησιν κα τ ν α του[ργηθ ντα π α τ ς σπ ρον κα τ]
+[ κε θεν]θος τ ν ποδεξαμ νων τ ν καρπ ν τη 0 βασιλε οντος θην ν ριχθ ως.
+[ φ ο ε μολπος]
+[μουσα]ου τ μυστ ρια ν φηνεν ν λευσ νι κα τ ς το [πατρ ς 0]ουσα ου ποι σ[ει]ς ξ θηκ[εν τη 0-- βασιλε οντος θην ν]
+[ ριχθ]ως το πανδ ονος.
+ φ ο καθαρμ ς πρ τον γ νετο -----ουπρωτωιαον---εαντ------ 
+ τη 0[--]0 βασιλε οντος θην ν πανδ ονος το κ κροπος.
+ φ ο ν λευσ νι γυμνικ ς [ γ ν τ θη κα] φ ο [τ λ μπια]
+[ ν λιδ]ι [κ]α τ λ καια ν ρκαδ αι γ νετο κα λ--κκε----- λυκ ονος δ θησαν [ ν] το ς λλ[η]σι[ν τ]η [0--] βασιλε οντος θην ν πανδ ονος το κ κροπος.
+ φ ο κα----γ-------ησιαι ρακλ ς -----ν-------ω-----δοστ[--- τη 0 --] 
+βασιλε οντος θ νησιν α γ ως.
+ φ ο θ νησι [σπ νι]ς τ ν καρπ ν γ νετο κα μαντευομ νοις θην[α οις π λ]λων [χρ]η[σε το νδρ γεω φ νου δ κα]ς ποσχε[ ν] [ς] μ μ νως ξι σει τη 0 βασιλε οντος θην ν α γ[ ως].
+ φ ο θησ[ε ς βασιλε σας]
+ θην ν τ ς δ δεκα π λεις ε ς τ α τ συν ικισεν κα πολιτε αν κα τ ν δημοκρατ αν π[ δ]ω[κε κα ------]
+[----]ος θην ν τ ν τ ν σθμ ων γ να θηκε σ νιν ποκτε νας τη 0.
+ π τ ς μ[αζ] ν[ων ε ς] τ [ν ττικ ν στρατε ας τη] 0 βασιλε οντος θην ν θησ ως.
+ φ ο ργε οι [μ]ε[τ] δρ σ[του π θ]βας [ στρ τ]ευσαν κα τ ν γ να ν [νεμ]α[ι]θ[εσ]αν [ π ρχεμ ρωι] τη 0 βασιλε οντος θην ν θησ ως.
+ φ ο ο [ λλη]νες ε ς τρο αν [ξεστ]ρ τευσ[αν] τη 0 βασιλε οντος θη[ν ν]
+[μεν]εσθ ως τρεισκαιδεκ του τους.
+ φ ο τρο α λω τη 0 βασιλε οντος θην ν [μενεσθ]ως δευτ ρου κα ε κοστο τους μην ς θ[αργηλι]νος βδ μηι φθ νοντος.
+ φ ο ρ στη[ι τ]ι [γαμ μνο]ν[ος κα τ ι α] γ σθου θυγατρ [ ριγ] ν[ηι π ρ α]γ σθου κα [κλ]υ[ταιμ στρας φ νου δ κη]
+[ γ νετ]ο ν ρε [ωι] π γωι ν ρ στης ν κησεν [ σων γενομ νων τ] ν [ψ φων τη ηηηηδδδιι βασιλε οντος θην ν δημοφ ντος.
+ φ ο [σαλαμ να]
+[τ ν γ] κ πρωι τε κρος ικισεν τη 0 βασιλε οντος θην ν δημοφ ντος.
+ φ ο νη[λ]ε ς ικισ[ε μ λητον κα τ ν] λ[λ]η[ν] [πα]σ[αν]
+[ ων]αν φεσον ρυθρ ς κλαζομεν ς [πρι ν]ην [λ βεδ]ον [τ ω] κολοφ να υο ντα [φ κ]α[ιαν] σ μον [χ ον κα] τ [παν]ι νι[α] γ νετο τ[η] [0 βασιλε οντος θην ν
+μ δοντος.
+ φ ο [ σ] οδος ποιητ ς [ φ ν]η τη 0-- βασιλε οντος θην ν -
+-----
+ φ ο μηρος ποιητ ς φ νη τη 0 βασιλε οντος θην [ν 0]ιογν του.
+ φ ο φ[ε]δων ργε ος δ μευσ[ε τ μ] [τρα κα]
+[στ]αθμ κατεσκε ασε κα ν μισμα ργυρο ν ν α γ νηι πο ησεν νδ κατος ν φ ρακλ ους τη 0 βασιλε οντος θην ν
+[φερεκλ]ε ους.
+ φ ο ρχ ας ε αγ του δ κατος ν π τημ νου κ κορ νθου γαγε τ ν ποικ αν [κα κτισε] συρακο [σσας τη ---]
+[-- βασι]λε [ον]τος θην ν α σχ λου τους ε κοστο κα ν ς.
+ φ ο κατ νιαυτ ν ρξεν ρχων τ[η] 0.
+ φ ο [ ρχ λοχ]ο[ς -------]
+[----------] τη 0 ρχοντος θ νησι λυσι [δου].
+ φ ο τ ρπανδρος δερδ νεος λ σβιος το ς ν μους το [ς κιθ]α[ρωι]δ[ικ]ο ς [ καινοτ μ]ησε κα τ ν μπροσθε μουσικ ν μετ στησεν τ[η] 0 ρχοντος θ νησιν δρωπ δου.
+ φ ο [λυ ττη]ς λυδ[ ν βα]σ λευσ[εν τη] 0 ρχοντος θ νησιν ριστοκλεους.
+ φ ο σαπφ γ μιτυλ νης ε ς σικελ αν πλευσε φυγο σα [---- τη 0-] 
+[ ρχο]ντος θ νησιν μ ν κριτ ου το προτ ρου ν συρακο σσαις δ τ ν γαμ ρων κατεχ ντων τ ν ρχ ν.
+[ φ ο]μ[φικτ] [ονες θ]υ[σαν κ]αταπο[λημ σα]ντες κ ρραν κα γ ν γυμνικ ς τ θη χρηματ της π τ ν λαφ ρων τη 0 ρχοντος θ νησιν σ μω[ν]ος.
+ φ ο [ ν δελφο]ς
+[ στε]φαν της γ ν π λιν τ θη τη 0 ρχοντος θ νησι δαμασ ου το δευτ ρου.
+ φ ο ν θ[ ν]αις κωμω[ιδ ν χο]ρ[ ς τ] θη [στη]σ ν[των πρ]των καρι ων ε ρ ντος σουσαρ ωνος κα θλον τ θη πρ τον σχ δω[ν] ρσιχο[ς] κα ο νου με[τ]ρητ ς [ τη 0-- ρχοντος θ νησιν]
+[--------].
+ φ ο πεισ στρατος θην ν τυρ ννευσεν τη 0 ρχοντος [ θ νησ]ι κ[ωμ]ου.
+ φ ο κρο σος [ ξ] σ ας [ε ς] δελφο ς [π στειλε θεωρο ς] 
+[ τη 0]0 ρχοντος θ νησιν ε θυδ μου.
+ φ ο κ ρος περσ ν βασιλε ς σ ρδεις λαβεν κα κρο σον π [τ ς πυθ α]ς σφαλ[ ντα τη 0-- ρχοντος θ νησιν ---] [ ν δ] κα ππ ναξ κατ το τον αμβοποι ς.
+ φ ο θ σπις ποιητ ς [ πεκρ να]το πρ τος ς δ δαξε [δρ] [μα ν στ[ει κα]τ θη [τ]ρ γος [ θλον] τη 0-- ρχοντος θ[ νησι ---]να ου το προτ ρου.
+ φ ο δαρε ος περσ ν βασ λευσε μ γου τελευτ σαντος τη 0 ρχοντος θ νησ[ι --].
+ φ ο ρμ διος κα [ ριστογε] των π κτε[ιναν]
+[ ππα]ρχον πεισιστρ του [δι]δ[οχ]ον κα θηνα οι [ ξαν στ]ησαν το ς πεισιστρατ δας κ [το 0]ελασγι[κ]ο τε χους τη 0 ρχοντος θ νησιν [ρ]π[ακτ δου].
+ φ ο χορο πρ τον γων σαντο νδρ ν [τε] διδ ξας π [δι]κος χαλκιδε [ς] ν κ[α] τη 0 ρχοντος θ νησιν λυσαγ ρου.
+ φ ο με[λαν]ιππ [δης] 0[ λιος]
+[ ν κησ]εν θ νησιν τη 0 ρχοντος θ νησι πυθοκρ του.
+ φ ο μ μαραθ νι μ χη γ νετο θηνα οις πρ ς το ς π ρσας ρ[ταφ] [ρνην τε τ]ν δαρε ου δελ[φ]ι[δο ν κα] [δ]τιν στρατηγ ν ν ν κων θηνα οι τη 0 ρχοντος θ νησιν [το] δευτ ρου [φα]ινπ[που] ι ν μ χηι συνηγων σατο α σχ λος ποιητ ς [ τ] [ν] ν 0.
+ φ ο σιμων δης σιμων δου π ππος το ποιητο ποιητ ς ν κα α τ ς ν κησεν [ θ]νησι κα δαρε ος τελευτ ι ξ ρξης δ υ ς βασιλε ει [τη] 0 ρχοντος θ νησι ριστε δου.
+ φ ο α σχ λος ποιητ ς τραγωιδ αι πρ τον ν κησε κα ε ριπ δης ποιητ ς γ νετο κα στησ χορος ποιητ ς ε [ς]
+τ ν λλ δα [φ κετ]ο τη 0 ρχοντος θ νησιν φιλοκρ τους.
+ φ ο ξ ρξης τ ν σχεδ αν ζευξεν ν λλησπ ντωι κα τ ν θω δι ρυξε κα ν θερμο[π]λαις μ χη γ νετο κα ναυμαχ α το ς λλησι περ σαλαμ να πρ ς το ς π ρσας ν ν κων ο λληνες τη 0 ρχοντος θ νησι καλλι δου.
+ φ ο ν
+πλαταια ς μ χη γ νετο θηνα οις πρ ς μαρδ νιον τ ν ξ ρξου στρατηγ ν ν ν κων θηνα οι κα μαρδ νιος τελε τησεν ν τ ι μ χηι κα τ π ρ ρ η [ν]
+[σ]ι[κ]ελ αι περ τ ν α τνην τη 0 ρχοντος θ νησι ξανθ ππου.
+ φ ο γλων δεινομ νους [συρακουσσ ν] τυρ ννευσεν τη 0 ρχοντος θ νησι τιμοσθ ν[ου].
+φ ο σιμων δης λεωπρ πους κε ος τ μνηνονικ ν ε ρ ν ν κησεν θ νησι διδ σκων κα α ε κ νες στ θησαν ρμοδ ου κα ριστογε τονος τη 0
+ ρχοντος θ νησιν δειμ ντου.
+ φ ο ρων συρακουσσ ν τυρ ννευσεν τη 0 ρχοντος θ νησι 0[ ρ]ητος ν δ κα π χαρμος ποιητ ς κατ το τον.
+ φ ο σοφοκλ ς σοφ λλου κ κολωνο ν κησε τραγωιδ αι τ ν ν 0 τη 0 ρχοντος θ νησι ψηφ ωνος.
+ φ ο ν α γ ς ποταμο ς λ θος πεσε 
+κα σιμων δης ποιητ ς τελε τησεν βιο ς τη 0 τη 0 ρχοντος θ νησι θεαγεν δου.
+ φ ο λ ξανδρος τελε τησεν δ υ ς περδ κκας μακεδ νων βασιλε ει τη 0 ρχοντος θ νησιν ε θ ππου.
+ φ ο α σχ λος ποιητ ς βι σας τη 0 τελε τησεν γ [γ λ]αι τ ς σικελ ας τη 0 ρχοντος αθ νησι καλλ ου το προτ ρου.
+ φ ο ε ριπ δης τ ν ν δδδδιιι τραγωιδ αι πρ τον ν κησεν τη 0 
+[ ρχ]οντος θ νησι διφ [λου]σαν δ κατ ε ριπ δην σωκρ της τε κα ναξαγ ρας.
+ φ ο ρχ λαος μακεδ νων βασιλε ει περδ κκου τελευτ σαντος τη 0 
+[ ρχ]οντος θ νησιν στυφ λου.
+ φ ο διον σιος συρακουσσ ν τυρ ννευσεν τη 0 ρχοντος θ νησιν ε κτ μονος.
+ φ ο ε ριπ δης βι[ σας τη 0]
+[ τε]λε τησεν τη 0 ρχοντος θ νησι ντιγ νους.
+ [φ] ο σο[φ]οκλ ς ποιητ ς βι σας τη δδδδιι τελε τησεν κα κ ρος ν β[η τη ηδδδδιι]
+[ ρχ]οντος θ νησι καλλ ου το προτ ρου.
+ φ ο τελ στης σελινο ντιος ν κησεν θ νησιν τη 0 ρχοντος θ νησιν μ κωνος.
+ φ ο [κατ λθον ο λληνες ο]
+[μετ] κ ρου ναβ ντες κα σωκρ της φιλ σοφος τελε τησεν βιο ς τη 0 τη 0 ρχοντος θ νησιν λ χητος.
+ φ ο ρ[ι]στ[ νους κιθαρωιδ ς ν κησεν] θ νησιν τη 0 ρχοντος θ νησιν ριστοκρ τους.
+ φ ο 0[ολ] ιδος σηλυμβριαν ς διθυρ μβωι ν κησεν θ νησιν τη 0[0- ρχοντος θ νησιν --].
+[ φ] ο φιλ ξενος διθυραμβοποι ς τελευτ ι βιο ς τη 0 τη 0 ρχοντος θ νησιν πυθ ου.
+ φ ο ναξανδρ δης κωμ[οιδοποι ς ν κησεν θ νησιν τη 0- ρχοντος]
+ θ νησι καλλ ου.
+ φ ο στυδ μας θ νησιν ν κησεν τη 0 ρχοντος θ νησιν στε ου κατεκ η δ τ τε κα[ ν δελφο ς να ς].
+[ φ ο ν λε κτροις μ χη]
+γ νετο θηβα ων κα λακεδαιμον ων ν ν κων θηβα οι τη 0 ρχοντος θ νησιν φρασικλε δου κα λ[ ξανδρος μ ντου κατ το τον μακεδ νων]
+βασιλε ει.
+ φ ο στησ χορος μερ[α] ος δε τερος ν κησεν θ νησιν κα ο κ σθη μεγ λη π λι[ς τη 0 ρχοντος θ νησιν --].
+ φ ο διον σιος σικελι της τελε τησεν δ υ ς διον σιος τυρ ννευσεν κα λ [ξα]ν[δ]ρ[ος τελευτ ι περδ κκας δ μ ντου μακεδ νων βα]σιλε ει τη 0 ρχοντος θ νησιν ναυσιγ νους.
+ φ ο φωκε ς τ ν δελφο ς μα[ντε ον κατ λαβον --- τη - ρχοντος θ]νησι κηφισοδ ρου.
+ φ ο τιμ θεος βι σας τη 0 τελε τησεν τ[η --] [ ρχοντος θ νησιν --].
+[ φ ο φ λιππος μ ντου μα]κεδ νων βασιλε ει κα ρτοξ ρξης τελε τησεν χος δ υ ς β[ασιλε ει τη -- ρχοντος θ νησιν ---].
+ φ ο θ νησι] ν κησεν τη 0 ρχοντος θ νησιν γαθοκλεους.
+[ φ ο -------- γ] νετο τη 0 ρχοντος θ νησι καλλιστ[ρ του -----]
+[- π το]του.
+ φ ο καλλι[------]
+[ τ]η 0-- ρχοντος [ θ νησιν --].
+ 
+[ φ ο -----------]δο[---].
+[ φ ο --]
+[----- φ λιππος τ]ε[λε] [τησε]ν [λ ξανδρ]ος δ βασιλε ει τη 0 ρχοντος θ νησι πυθοδ λου.
+ φ ο λ ξανδρος ε ς τριβαλλο ς κα λλυρ ους στρ [τευσε]
+κα θηβα ων παναστ ντων κα τ μ φρουρ ν πολιορκο ντων πανελθ ν κατ κρ τος
+λαβ ν τ ν π λιν κατ σκαψεν τη 0 ρχοντος θ νησι ε αιν του.
+ π τ ς λεξ νδρου διαβ σεως ε ς τ ν σ αν κα μ χης περ τ ν γρ νικον κα π τ ς ν σσ ι μ χης λεξ νδρωι πρ ς δαρε ον τη 0 ρχοντος θ νησι
+κτησικλε ους.
+ φ ο λ ξανδρος φοιν κης κα κ πρου κα α γ πτου κυρ ευσε τη 0 ρχοντος θ νησι νικοκρ τους.
+ π τ ς λεξ νδρου πρ ς δαρε ον μ χη[ς]
+τ ς περ ρβηλα ν ν κησεν λ ξανδρος κα βαβυλ ν λω κα φ κε το ς συμμ χους κα λεξ νδρεια κτ σθη τη 0 ρχοντος θ νησιν νικ του.
+ φ ο 
+κ λλιππος στρολογ αν ξ θηκεν κα λ ξανδρος δαρε ον λαβεν β σον δ κρ μασεν τη 0 ρχοντος θ νησι ριστοφ ντος.
+ φ ο φιλ μων κωμοιδοποι ς ν κησεν τη 0 ρχοντος θ νησι ε θυκρ του ικ σθη δ πρ ς τ ι ταν π λις λλην ς.
+ π τ ς λεξ ν[δ]ρου μεταλλαγ ς κα πτολεμα ου α γ πτο[υ]
+κυριε σεως τη 0 ρχοντος θ νησι γησ ου.
+ π το πολ μου το γενομ νου περ λαμ αν θηνα οις πρ ς ντ πατρον κα π τ ς ναυμαχ ας
+τ ς γενομ νης μακεδ σιν πρ ς θηνα ους περ μοργ ν ν ν κων μακεδ νες τη 0 ρχοντος θ νησιν κηφισοδ ρου.
+ φ ο ντ πατρος θ νας λαβε κα φ λας κυρ νην ποσταλε ς π πτολεμα ου τη 0 ρχοντος θ νησι φιλοκλ ους.
+ φ ο ντ γονος ε ς τ ν σ αν δι βη
+κα λ ξανδρος ε ς μ μφιν τ θη κα περδ κκας ε ς α γυπτον στρατε σας τελε τησεν κα κρ τερος κα ριστοτ λης σοφιστ ς τελε τησεν τη 0 βιο ς τη 0 ρχοντος θ νησι ρχ ππου πορε θη δ κα πτολεμα ος ε ς κυρ νην.
+ π τ ς ντιπ τρου τελευτ ς κασσ νδρου δ ποχωρ σεως
+ γ μακεδον ας κα π τ ς γ κυζ κωι πολιουρκ ας ν πολιο ρκησεν ριδα ος κα φ ο πτολεμα ος λαβεν συρ αν κα φοιν κην τη 0 ρχοντος θ νησι πολλοδ ρου τ ι δ α τ ι τει το τωι κα γαθοκλ ν συρακ σιοι ε λοντο π τ ν ρυμ των τ ν ν σικελ αι α τοκρ τορα στρατηγ ν.
+ π τ ς κλε του
+[ν]αυμα[χ]ας κα νικ νορος περ τ ερ ν τ καλχηδον ων κα τε δημ τριος ν μους θηκεν θ νησιν τη 0 ρχοντος θ νησι δημογ νους.
+ φ ο 
+κ σσανδρος ε ς μακεδον αν κατ λθεν κα θ βαι ο κ σθησαν κα λυμπι ς τελε τησεν κα κασσ νδρεια κτ σθη κα γαθοκλ ς συρακουσσν τυρ ννευσεν τη 0 ρχοντος θ νησι δημοκλε δ[ου] ν κα δ κα μ νανδρος κωμοιδοποι ς θ νησιν τ τε πρ τον.
+ φ ο σωσιφ νης ποιητ ς τελευτ ι τη 0 ρχοντος [ θ νη]σιν [θ]εο[φρ] στου [β]ι[ο ς τη 0]0.
+ φ ο λιος ξ λιπεν κα πτολεμα ος δημ τριον ν κα ν
+γ ζει κα σ λευκον π στειλεν ε ς βαβυλ να τη 0 [ρχ]οντο[ς θ νη]σιν πο[λ μ]ωνος.
+ φ [ο ν]ι[κ]οκρ ων τελε τησεν κα πτολεμα ος κυριε ει τ ς ν σου τη 0 [ρχ]οντος θ[ νη]σ[ιν]
+σι[μων δ]ου.
+ φ ο λ[ ξ]α[νδρος λεξ νδρου τ]ελ[ε]υτ ι κα τερος κ τ ς ρταβ ζου θυγατρ ς ρακλ ς κα γαθοκλ ς δι βη ε ς καρχηδ[ να ------------------------------------ τη 0]0 ρχοντος θ νησι ερομν μονος.
+ φ ο λ[υσι]μ χεια π λις κτ σθη κα φ λας [ε] [ς κα]ρχ[ηδ να στρατε σας ------------------------------ κ]α πτολεμα ος υ ς γ κ ι γ νετο κα κλ[εοπ] τρα ν σ ρδεσιν π θαν[εν κα σωτ ρ πτολεμα ος ε ς τ ν λλ δα δι βη τη 0 ρχοντος θ νη]σ[ι δη]μ[ητ]ρ ου.
+ φ ο δημ τριος ντιγ νου τ [μ]
+ειραι πολιορκ σας λαβε[ν κα δημ τριος φαληρε ς θ νας] [παρ δωκεν τη 0 ρχοντος] θ νησι καιρ μου.
+ φ ο δημ τριος μουνυχ αν κατσκαψεν κα κ προν λαβεν κα φ λα π-----------------------ον -----------------------σ--ου [ τη 0]0 ρχοντος θ νησιν ναξικρ του[ς].
+ φ ο σωσιφ νης ποιητ ς γ[ νετο κα ---------------------------] [ τη 0 ρχοντος θ νη]σ[ι κ]ορο βου.
+ π τ ς πε[ρ] δον πολιορκ ας κα φ ο
+[πτ]ολεμα ος τ ν βασιλε αν παρλ[α]β[εν τ]η [0 ρχοντος θ νησι ε ξεν ππου].
+[ π τ]ν σ[ε]ι[σ]μ ν τ ν [γε]νομ νων καθ ων αν κα τε δημ τριος χαλκ[ δα λαβ]εν καθ μολογ αν κα πρεσ[βε------------------------------------------ δη]μητρ ου τ[η] 0 ρχοντος θ νησι φερεκλε ους.
+ φ ο 
+[κομ της σ]τ ρ φν[η] κα λυσ μαχ[ο]ς [ε ς τ ν σ αν δι βη τη] [0 ρχοντος θ νησι] λ[εωστ]ρ[ του].
+[ φ] ο [δ]ι λυσις κασσ νδρωι κα δημητρ ωι
+[ γ νετο -----]ν--------- κασσ[α]ν[δ]ρο[----------------------------- ντ γονος τελε τη]σ[εν τη 0 ρχοντος θ νησι νικοκλε ους.
+[ φ ο -------------------------------------------------------------------------- δημητ]ρ ου ε ς χαλκ δα να[β]ολ ς θηνα οι δ κ σ[σανδρ---------------------------------------------------------- ------]ιωι πτολεμαι[------]τη 0 
+[ ρχοντος θηνησι ε κτ μονος].</div>
+            </div>
+        </div>
+
+        <div class="split-col-right">
+            <h3>Thematic Analysis</h3>
+            
+        <div class="theme-card" onmouseover="highlightQuote('συγγραμμ τω]ν παν[το]ων')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <span class="tag domain-tag">Content</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    <div class="theme-path">Content > Didactic and School Texts > Catalogues of Knowledge</div>
+                    <div class="theme-label">Catalogues of Knowledge</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "συγγραμμ τω]ν παν[το]ων"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('τη 0')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <span class="tag domain-tag">Content</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    <div class="theme-path">Content > Administrative Records and Lists > Calendars and Timetables</div>
+                    <div class="theme-label">Calendars and Timetables</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "τη 0"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('---ου')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <span class="tag domain-tag">Type</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    <div class="theme-path">Type > Object Type > Monumental Stone Objects > Stele</div>
+                    <div class="theme-label">Stele</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "---ου"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('---ου')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <span class="tag domain-tag">Type</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    <div class="theme-path">Type > Material > Stone > Marble</div>
+                    <div class="theme-label">Marble</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "---ου"</p>
+                </div>
+            </div>
+        </div>
+        
+            
+            <div style="margin-top:2rem;">
+                <h3>Entities</h3>
+                <div><span class="tag entity-tag">👤 Cecrops <small>(King of Athens)</small></span><span class="tag entity-tag">👤 Alexander the Great <small>(King of Macedon)</small></span><span class="tag entity-tag">👤 Homer <small>(Poet)</small></span><span class="tag entity-tag">👤 Aeschylus <small>(Tragic Poet)</small></span><span class="tag entity-tag">📍 Athens <small>(Polis)</small></span><span class="tag entity-tag">📍 Paros <small>(Island/Polis)</small></span><span class="tag entity-tag">📍 Troy <small>(Settlement)</small></span></div>
+            </div>
+
+            <div class="ai-analysis-box">
+                <h3>🤖 AI Analysis Summary</h3>
+                <p style="line-height:1.7;">This inscription is the &#x27;Marmor Parium&#x27; (Parian Marble), a Hellenistic chronographic document dated to 264/3 BC. It provides a chronological list of events in Greek history, starting from the reign of Cecrops in Athens (traditionally 1581 BC) down to the mid-3rd century BC. The text is a vital source for ancient Greek chronology, particularly for the dates of poets (Sappho, Sophocles, Euripides) and the establishment of festivals like the Panathenaia. The provided text shows significant lacunae and fragmentation, typical of the surviving portions of the stele now housed in the Ashmolean Museum and Paros.</p>
+            </div>
+        </div>
+    </div>
+  </main>
+</body>
+</html>

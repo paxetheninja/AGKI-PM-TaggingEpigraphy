@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PHI-3128 - AGKI</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <style>
+    /* Custom Scrollbar Styling */
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+        background: rgba(0,0,0,0.05); 
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #ccc; 
+        border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #aaa; 
+    }
+
+    .page-container { max-width: 1400px; margin: 0 auto; padding: 2rem; }
+    .back-link { display: inline-block; margin-bottom: 1rem; color: var(--primary); font-weight: 600; }
+    
+    /* Original View Styles (Line by Line) */
+    .text-viewer-original { 
+        display: grid; 
+        grid-template-columns: 40px 1fr; 
+        gap: 2rem; 
+        font-family: "New Athena Unicode", "Gentium Plus", "Times New Roman", serif; 
+        font-size: 1.25rem; 
+        line-height: 1.6; 
+        background: var(--panel); 
+        padding: 2rem; 
+        border: 1px solid var(--border); 
+        border-radius: 4px; 
+        margin-bottom: 2rem; 
+        color: var(--text);
+    }
+
+    .line-numbers { 
+        text-align: right; 
+        color: var(--muted); 
+        font-size: 1.25rem; 
+        line-height: 1.6; 
+        user-select: none; 
+        opacity: 0.5; 
+        font-family: inherit; 
+        white-space: pre; 
+        padding-right: 1rem;
+        border-right: 1px solid var(--border);
+    }
+
+    .greek-content { 
+        white-space: pre-wrap; 
+        word-break: break-word;
+        padding-left: 1rem; 
+    }
+
+    .highlight-evidence {
+        background-color: var(--accent);
+        color: white;
+        border-radius: 2px;
+        padding: 0 2px;
+    }
+
+    .theme-card { background: var(--panel); padding: 1rem 1.5rem; border-left: 4px solid var(--primary); margin-bottom: 0.75rem; border: 1px solid var(--border); border-left-width: 4px; }
+    .ai-analysis-box { background: rgba(31, 167, 163, 0.05); padding: 2rem; border-radius: 8px; border: 1px solid var(--border); margin-top: 2rem; }
+    .evidence-box { max-width: 500px; text-align: right; }
+    .evidence-quote { font-size: 0.85rem; font-style: italic; color: var(--muted); margin: 0; }
+    .badge.green { background: #e6f4ea; color: #137333; border-color: #137333; }
+    .badge.orange { background: #fef7e0; color: #b06000; border-color: #b06000; }
+    .badge.red { background: #fce8e6; color: #c5221f; border-color: #c5221f; }
+    .entity-tag { background: rgba(217, 123, 61, 0.1); color: var(--accent-2); margin-right: 0.5rem; margin-bottom: 0.5rem; display: inline-block; padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.9rem; border: 1px solid rgba(217, 123, 61, 0.2); }
+    
+    /* Split View Styles */
+    .split-container { display: block; }
+    .split-container.active { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+    .split-col-left { }
+    .split-col-right { }
+    
+    /* Sticky sidebar in split view */
+    .split-container.active .split-col-right { position: sticky; top: 20px; max-height: 90vh; overflow-y: auto; padding-right: 10px; }
+  </style>
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+
+    function toggleSplitView() {
+        const container = document.getElementById('main-content');
+        const btn = document.getElementById('splitViewBtn');
+        container.classList.toggle('active');
+        if(container.classList.contains('active')) {
+            btn.textContent = 'View: Split';
+            btn.classList.add('active');
+        } else {
+            btn.textContent = 'View: Standard';
+            btn.classList.remove('active');
+        }
+    }
+
+    function copyCitation() {
+        const citation = "AGKI Project. (2026). Inscription PHI-" + "3128" + ". Retrieved from " + window.location.href;
+        navigator.clipboard.writeText(citation);
+        alert("Citation copied to clipboard!");
+    }
+    
+    function highlightQuote(quote) {
+        const container = document.querySelector('.greek-content');
+        if (!container || !quote) return;
+        
+        const escapedQuote = quote.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const regex = new RegExp(escapedQuote, 'g');
+        container.innerHTML = container.innerHTML.replace(
+            regex, 
+            match => `<mark class="highlight-evidence">${match}</mark>`
+        );
+    }
+    
+    function clearHighlight() {
+        const container = document.querySelector('.greek-content');
+        if (!container) return;
+        container.innerHTML = container.innerHTML.replace(/<mark class="highlight-evidence">(.*?)<\/mark>/g, '$1');
+    }
+
+    function updateFontSize(size) {
+        const container = document.getElementById('original-view');
+        if (container) {
+            container.style.fontSize = size + 'px';
+            const lines = container.querySelector('.line-numbers');
+            if(lines) lines.style.fontSize = size + 'px';
+        }
+    }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <h1><a href="../index.html" style="color:white;text-decoration:none;">AGKI Tagging Tool</a></h1>
+    </div>
+    <nav class="nav-links">
+        <a href="../index.html" class="nav-item">Search</a>
+        <a href="../explore.html" class="nav-item">Explore</a>
+        <a href="../indices.html" class="nav-item">Indices</a>
+    </nav>
+  </header>
+  <main class="page-container">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 1rem;">
+        <a href="../index.html" class="back-link" style="margin:0;">← Back to Dashboard</a>
+        <button id="splitViewBtn" onclick="toggleSplitView()" class="button secondary" style="font-size:0.8rem; padding:0.3rem 0.8rem;">View: Standard</button>
+    </div>
+    
+    <div id="main-content" class="split-container">
+        <div class="split-col-left">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <h2>Inscription PHI-3128</h2>
+                <div style="display:flex; gap:0.5rem;">
+                    <button onclick="copyCitation()" class="button secondary" style="font-size:0.9rem; padding:0.5rem 1rem;">📜 Cite</button>
+                    <a href="https://epigraphy.packhum.org/text/3128" target="_blank" class="button">View on PHI</a>
+                </div>
+            </div>
+            
+            <div class="meta-grid">
+                <div><small class="eyebrow">Provenance</small><br><a href="https://pleiades.stoa.org/places/579885" target="_blank" title="View in Pleiades">Attica</a> &gt; <a href="https://pleiades.stoa.org/places/579885" target="_blank" title="View in Pleiades">Athens</a></div>
+                <div><small class="eyebrow">Date</small><br><strong></strong></div>
+                <div><small class="eyebrow">Completeness</small><br><span class="badge info">fragmentary</span></div>
+            </div>
+
+            <div style="display:flex; justify-content:space-between; align-items:end; margin-bottom:0.5rem;">
+                <h3>Original Text</h3>
+                <!-- Font Size Control -->
+                <div style="display:flex; align-items:center; gap:0.5rem; background:var(--panel); border:1px solid var(--border); padding:0.2rem 0.5rem; border-radius:4px;">
+                    <span style="font-size:0.8rem; color:var(--muted);">A</span>
+                    <input type="range" id="fontSizeSlider" min="14" max="32" value="20" oninput="updateFontSize(this.value)" style="width:80px; accent-color:var(--primary);">
+                    <span style="font-size:1rem; font-weight:bold; color:var(--muted);">A</span>
+                </div>
+            </div>
+
+            <!-- Original Line-by-Line View -->
+            <div id="original-view" class="text-viewer-original">
+                <div class="line-numbers">1
+
+
+
+5
+
+
+
+
+10
+
+
+
+
+15
+
+
+
+</div>
+                <div class="greek-content">------------ ιος ε [πε]ν [ πειδ νικ ρατος λεξανδρε ς ε νους στ ν τ ι δ μ]ωι τ ι θηνα ων κ[α δ αι το ς] παραγι[νομ νοις τ]ν [πο]λιτ [ν ε χρηστ]ον αυτ ν παρασκευ ζει τυγχ νει δ 
+[κα] τιμ μενος π πτολ[εμα ο]υ το π κ πρου στρατηγο παγγ λλε[τ]αι δ κα ε ς τ λοιπ ν τ ν α τ ν α ρεσιν διαφυλ ξειν κα περ το των πομεμαρτυρ κασιν ο παραγεγον τες ε ς κ προν τ ν
+πολιτ ν πως ν [ο] ν ε δ σιν παντες τι δ μος θηνα ων ε χ ριστος ν διατελε το ς ε ς αυτ ν φιλοτιμουμ νοις γαθε 
+τ χει δεδ χθαι τε βουλε το ς λαχ ντας προ δρους ε ς τ [ν]
+ πιο σαν κκλησ αν χρηματ σαι περ το των γν μην δ ξ[υμ]β λλεσθαι τ ς βουλ ς ε ς τ ν δ μον τι δοκε τε βουλε 
+ παιν σαι νικ ρατον νικηρ του λεξανδρ α κα στεφαν σαι
+α τ ν θαλλο στεφ νωι ε νο ας νεκεν κα φιλοτιμ ας τ ς
+ε ς τ ν [δ] μον τ ν θηνα ων ε ναι δ α τ ν κα πρ ξενον κα ε εργ [τη]ν το δ μου το θηνα ων κα ε ς τ λοιπ ν δ τ ν α τ [ν]
+α ρε[σ]ιν διατηρο ντι πρ ς τ ν δ μον κα λλο γαθ ν ε ρ σθαι
+του ν ε ξιος πως δ ν κα π μνημα π ρχει α τ ι περ τ ς πρ ς
+τ ν [δ] μον ε νο ας. ναγρ ψαι [δ] τ δε τ ψ φισμα τ γ γραμματ[ α]
+τ ν κατ πρυτανε αν ν στ λει λιθ νηι κα στ σαι α τ ν ν τ ι
+τ[εμ] νει το δ μου κα τ ν χα[ρ]των ε ς δ τ ν ναγραφ ν τ ς
+στ λ[η]ς κα τ ν ν θεσιν μ[ερ] σαι τ ν ταμαν τ γεν μενον ν λ[ω]μα.
+ βουλ 
+ δ μος
+νικ ρατον
+νικηρ του
+ λεξανδρ α.</div>
+            </div>
+        </div>
+
+        <div class="split-col-right">
+            <h3>Thematic Analysis</h3>
+            
+        <div class="theme-card" onmouseover="highlightQuote('δεδ χθαι τε βουλε')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <span class="tag domain-tag">Content</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    <div class="theme-path">Content > Official and Legal Documents > Decrees</div>
+                    <div class="theme-label">Decrees</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "δεδ χθαι τε βουλε"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote(' παιν σαι νικ ρατον νικηρ του λεξανδρ α κα στεφαν σαι')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <span class="tag domain-tag">Content</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    <div class="theme-path">Content > Honorific and Commemorative Inscriptions > Honorific Inscriptions</div>
+                    <div class="theme-label">Honorific Inscriptions</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: " παιν σαι νικ ρατον νικηρ του λεξανδρ α κα στεφαν σαι"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('ν στ λει λιθ νηι')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <span class="tag domain-tag">Type</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    <div class="theme-path">Type > Object Type > Monumental Stone Objects > Stele</div>
+                    <div class="theme-label">Stele</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "ν στ λει λιθ νηι"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('λιθ νηι')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <span class="tag domain-tag">Type</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    <div class="theme-path">Type > Material > Stone</div>
+                    <div class="theme-label">Stone</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "λιθ νηι"</p>
+                </div>
+            </div>
+        </div>
+        
+            
+            <div style="margin-top:2rem;">
+                <h3>Entities</h3>
+                <div><span class="tag entity-tag">👤 Nikoratos <small>(Honoree)</small></span><span class="tag entity-tag">👤 Ptolemaios <small>(Strategos of Cyprus)</small></span><span class="tag entity-tag">📍 Athens <small>(Polis)</small></span><span class="tag entity-tag">📍 Alexandria <small>(Polis)</small></span><span class="tag entity-tag">📍 Cyprus <small>(Region)</small></span></div>
+            </div>
+
+            <div class="ai-analysis-box">
+                <h3>🤖 AI Analysis Summary</h3>
+                <p style="line-height:1.7;">This inscription is an Athenian honorary decree dating to the period 181-170 BCE. It honors Nikoratos, son of Nikoratos, an Alexandrian who was in the service of Ptolemaios (likely Ptolemy, son of Polycrates), the Ptolemaic governor of Cyprus. Nikoratos is praised for his assistance to Athenian citizens visiting Cyprus. The decree grants him the status of proxenos and euergetes (benefactor) and orders the publication of the decree on a stone stele to be placed in the sanctuary of Demos and the Graces (Charites). The text follows standard Hellenistic Athenian diplomatic and administrative formulas.</p>
+            </div>
+        </div>
+    </div>
+  </main>
+</body>
+</html>

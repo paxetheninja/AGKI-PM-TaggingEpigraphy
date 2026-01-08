@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PHI-239307 - AGKI</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <style>
+    /* Custom Scrollbar Styling */
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+        background: rgba(0,0,0,0.05); 
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #ccc; 
+        border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #aaa; 
+    }
+
+    .page-container { max-width: 1400px; margin: 0 auto; padding: 2rem; }
+    .back-link { display: inline-block; margin-bottom: 1rem; color: var(--primary); font-weight: 600; }
+    
+    /* Original View Styles (Line by Line) */
+    .text-viewer-original { 
+        display: grid; 
+        grid-template-columns: 40px 1fr; 
+        gap: 2rem; 
+        font-family: "New Athena Unicode", "Gentium Plus", "Times New Roman", serif; 
+        font-size: 1.25rem; 
+        line-height: 1.6; 
+        background: var(--panel); 
+        padding: 2rem; 
+        border: 1px solid var(--border); 
+        border-radius: 4px; 
+        margin-bottom: 2rem; 
+        color: var(--text);
+    }
+
+    .line-numbers { 
+        text-align: right; 
+        color: var(--muted); 
+        font-size: 1.25rem; 
+        line-height: 1.6; 
+        user-select: none; 
+        opacity: 0.5; 
+        font-family: inherit; 
+        white-space: pre; 
+        padding-right: 1rem;
+        border-right: 1px solid var(--border);
+    }
+
+    .greek-content { 
+        white-space: pre-wrap; 
+        word-break: break-word;
+        padding-left: 1rem; 
+    }
+
+    .highlight-evidence {
+        background-color: var(--accent);
+        color: white;
+        border-radius: 2px;
+        padding: 0 2px;
+    }
+
+    .theme-card { background: var(--panel); padding: 1rem 1.5rem; border-left: 4px solid var(--primary); margin-bottom: 0.75rem; border: 1px solid var(--border); border-left-width: 4px; }
+    .ai-analysis-box { background: rgba(31, 167, 163, 0.05); padding: 2rem; border-radius: 8px; border: 1px solid var(--border); margin-top: 2rem; }
+    .evidence-box { max-width: 500px; text-align: right; }
+    .evidence-quote { font-size: 0.85rem; font-style: italic; color: var(--muted); margin: 0; }
+    .badge.green { background: #e6f4ea; color: #137333; border-color: #137333; }
+    .badge.orange { background: #fef7e0; color: #b06000; border-color: #b06000; }
+    .badge.red { background: #fce8e6; color: #c5221f; border-color: #c5221f; }
+    .entity-tag { background: rgba(217, 123, 61, 0.1); color: var(--accent-2); margin-right: 0.5rem; margin-bottom: 0.5rem; display: inline-block; padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.9rem; border: 1px solid rgba(217, 123, 61, 0.2); }
+    
+    /* Split View Styles */
+    .split-container { display: block; }
+    .split-container.active { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+    .split-col-left { }
+    .split-col-right { }
+    
+    /* Sticky sidebar in split view */
+    .split-container.active .split-col-right { position: sticky; top: 20px; max-height: 90vh; overflow-y: auto; padding-right: 10px; }
+  </style>
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+
+    function toggleSplitView() {
+        const container = document.getElementById('main-content');
+        const btn = document.getElementById('splitViewBtn');
+        container.classList.toggle('active');
+        if(container.classList.contains('active')) {
+            btn.textContent = 'View: Split';
+            btn.classList.add('active');
+        } else {
+            btn.textContent = 'View: Standard';
+            btn.classList.remove('active');
+        }
+    }
+
+    function copyCitation() {
+        const citation = "AGKI Project. (2026). Inscription PHI-" + "239307" + ". Retrieved from " + window.location.href;
+        navigator.clipboard.writeText(citation);
+        alert("Citation copied to clipboard!");
+    }
+    
+    function highlightQuote(quote) {
+        const container = document.querySelector('.greek-content');
+        if (!container || !quote) return;
+        
+        const escapedQuote = quote.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const regex = new RegExp(escapedQuote, 'g');
+        container.innerHTML = container.innerHTML.replace(
+            regex, 
+            match => `<mark class="highlight-evidence">${match}</mark>`
+        );
+    }
+    
+    function clearHighlight() {
+        const container = document.querySelector('.greek-content');
+        if (!container) return;
+        container.innerHTML = container.innerHTML.replace(/<mark class="highlight-evidence">(.*?)<\/mark>/g, '$1');
+    }
+
+    function updateFontSize(size) {
+        const container = document.getElementById('original-view');
+        if (container) {
+            container.style.fontSize = size + 'px';
+            const lines = container.querySelector('.line-numbers');
+            if(lines) lines.style.fontSize = size + 'px';
+        }
+    }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <h1><a href="../index.html" style="color:white;text-decoration:none;">AGKI Tagging Tool</a></h1>
+    </div>
+    <nav class="nav-links">
+        <a href="../index.html" class="nav-item">Search</a>
+        <a href="../explore.html" class="nav-item">Explore</a>
+        <a href="../indices.html" class="nav-item">Indices</a>
+    </nav>
+  </header>
+  <main class="page-container">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 1rem;">
+        <a href="../index.html" class="back-link" style="margin:0;">← Back to Dashboard</a>
+        <button id="splitViewBtn" onclick="toggleSplitView()" class="button secondary" style="font-size:0.8rem; padding:0.3rem 0.8rem;">View: Standard</button>
+    </div>
+    
+    <div id="main-content" class="split-container">
+        <div class="split-col-left">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <h2>Inscription PHI-239307</h2>
+                <div style="display:flex; gap:0.5rem;">
+                    <button onclick="copyCitation()" class="button secondary" style="font-size:0.9rem; padding:0.5rem 1rem;">📜 Cite</button>
+                    <a href="https://epigraphy.packhum.org/text/239307" target="_blank" class="button">View on PHI</a>
+                </div>
+            </div>
+            
+            <div class="meta-grid">
+                <div><small class="eyebrow">Provenance</small><br><a href="https://pleiades.stoa.org/places/540981" target="_blank" title="View in Pleiades">Phokis</a> &gt; <a href="https://pleiades.stoa.org/places/540724" target="_blank" title="View in Pleiades">Delphi</a></div>
+                <div><small class="eyebrow">Date</small><br><strong> 106 BC </strong></div>
+                <div><small class="eyebrow">Completeness</small><br><span class="badge info">fragmentary</span></div>
+            </div>
+
+            <div style="display:flex; justify-content:space-between; align-items:end; margin-bottom:0.5rem;">
+                <h3>Original Text</h3>
+                <!-- Font Size Control -->
+                <div style="display:flex; align-items:center; gap:0.5rem; background:var(--panel); border:1px solid var(--border); padding:0.2rem 0.5rem; border-radius:4px;">
+                    <span style="font-size:0.8rem; color:var(--muted);">A</span>
+                    <input type="range" id="fontSizeSlider" min="14" max="32" value="20" oninput="updateFontSize(this.value)" style="width:80px; accent-color:var(--primary);">
+                    <span style="font-size:1rem; font-weight:bold; color:var(--muted);">A</span>
+                </div>
+            </div>
+
+            <!-- Original Line-by-Line View -->
+            <div id="original-view" class="text-viewer-original">
+                <div class="line-numbers">1
+
+
+
+5
+
+
+
+
+10
+
+
+
+
+15
+
+
+
+
+20
+
+
+
+
+25
+
+
+
+
+30
+
+
+
+
+35
+
+
+
+
+40
+
+
+
+
+45
+
+
+
+
+50
+
+
+
+
+55
+
+
+
+
+60
+
+
+
+
+65
+
+
+
+
+70
+
+
+
+
+75
+
+
+
+
+80
+
+
+
+
+85
+
+
+
+
+90
+
+
+
+
+95
+
+
+
+
+100
+
+
+
+
+105
+</div>
+                <div class="greek-content">π γαθοκλ ους ρχον[το]ς θ νησιν κοσμ[η]το δ τ ν φ [βων λ]κ μου το καλλ ππου 
+ φηβοι ο προπ μψαντες τ ν πυθα δα ρακλε δης ρακλε δου 
+δημ τριος ζ νωνος 
+π τρων ζ νωνος 
+ θηναγ ρας ζ νωνος 
+φιλ στρατος φιλοστρ του 
+θ ρσιππος στρατοκλ ους 
+διον σιος λακρατε δου 
+δημ τριος ποσειδων ου 
+ ριστ βουλος ριστοβο λου 
+ζ πυρος ρμωνος 
+φυρ μαχος ρμολ ου 
+ πολλ νιος ντιδ ρου 
+ σων σονος 
+παρμεν ων παρμεν ωνος 
+ σων σονος 
+φιλ θεος θεοφ λου 
+ ρχ νεως ρχ νεω 
+ ρτ μων θηνα ου 
+β κχιος διοκλ ους 
+φ λων α νησιδ μου 
+ε δικος λκ μου 
+ σ[κληπι]δης 0--- 
+δω[ρ]θεος διοσ[κουρ δου] 
+ ριστε δης [--ω]ν ου 
+γνα ος δ [ω]νος 
+ πο[λλ]νιος ρχελ ου 
+θε φιλος γλα κωνος 
+ πολλ νιος ρχεν κου 
+καλλ στρατος θρασυβο λου 
+θρασυκλ ς ρχελ ου 
+ χαι ς φιλιππ δου 
+τιμοκρ της στ νου 
+θεοκ δης πολλοδ ρου 
+νικ ας σωπ τρου 
+ε φρ νιος πολλοδ ρου 
+θαρσ τας θαρσ του 
+μην φιλος μηνοφ λου 
+θρασ ας θρασ ου 
+σαραπ ων νδρον κου 
+ λ ξανδρος α ν ου 
+φιλ χορος φιλοχ ρου 
+ ρνα ος βα[κχ] ου 
+ λκιμος ρι[σ]τοκλ ους 
+φιλιστ δης [φ]ιλιστ δου 
+ πολλων [δ]ης σωσ ππου 
+κλε νυμο[ς] κλεων μου 
+βασιλε δη[ς] βασιλε δου 
+ πολλων δ[η]ς ττ λου 
+ε κ διος ε κ[αδ] ου 
+ τταλος [πολ]λων ου 
+ φροδ σιος [ε δ ξου] 
+δ ων δ ωνο[ς] 
+μενεκρ τη[ς ---] 
+φε δυλλος [ ρω]νος 
+ λυμπι δωρ[ος] παρμον δου 
+φιλ στρατ[ος] φιλοστρ του 
+ σκληπι [δης] πασ ωνος 
+ ριστογ [νης] πολυν κου 
+π τρων --- 
+δημ τρι[ος ---] 
+ λεξις 0[---] 
+[κα]λλιστ[----] 
+[--- κα]λλιμ [χου] 
+[-----]ωνος 
+[---]ς θεοδ ρου 
+[διον]υσ δωρος διονυσιδ ρου 
+[προ]ξεν δης μενο του 
+[μ]νων φ λωνος 
+[μη]ν δωρος θεοδωρ δου 
+[δι]ον σιος διονυσ ου 
+ην δωρος διονυσ ου 
+πολλων δης σιδ ρου 
+διογ[ νη]ς ζηνοβ ου 
+ε [θ] δομος ε θυδ μου 
+μεν μαχος σωσ νδρου 
+ σκληπι δης σκληπι δου 
+δημ τριος ρ στωνος 
+μεν λαος διονυσ ου 
+ λι δωρος πολλων ου 
+ ντ φιλος ντιφ λου 
+ε φρις π τρωνος 
+ ρακλε δης ρακλε δου 
+ λυμπι δωρος σατυρ ωνος 
+ποσειδ νιος ποσειδων ου 
+ ρισταγ ρας ρισταγ ρου 
+θε φιλος λυσιμ χου 
+σωκλ ς πικρ του 
+ε κλ ων ντι χου 
+δημ τριος δημητρ ου 
+ γ σιππος παρμον δου 
+ναυσ στρατος ρακλε 
+θε φιλος θεομν στου 
+ λυμπι δωρος χαρ τωνος 
+ε δοξος ε δ ξου 
+[ν κ]ων ν κωνος 
+μενεκ[ρ]της ντιπ τρου 
+μεν στρα[τος 0]ιονυσοδ ρου.
+παιδευτα ποσειδ νιος γαθοκλ ους 
+μεν σκος ε καδ ου 
+ νησ φιλος φ λωνος 
+σπ ρτοκος σπαρτ κου 
+διον[υ----] 
+διον σιος ε [β--] 
+ ντ λοχος ντιμ χου 
+καλχηδ ν ρακλε δου.</div>
+            </div>
+        </div>
+
+        <div class="split-col-right">
+            <h3>Thematic Analysis</h3>
+            
+        <div class="theme-card" onmouseover="highlightQuote(' φηβοι ο προπ μψαντες τ ν πυθα δα')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <span class="tag domain-tag">Content</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    <div class="theme-path">Content > Administrative Records and Lists > Lists of Officials or Citizens</div>
+                    <div class="theme-label">Lists of Officials or Citizens</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: " φηβοι ο προπ μψαντες τ ν πυθα δα"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('τ ν πυθα δα')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <span class="tag domain-tag">Content</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    <div class="theme-path">Content > Religious and Dedicatory Texts > Votive Dedications</div>
+                    <div class="theme-label">Votive Dedications</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "τ ν πυθα δα"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('π γαθοκλ ους ρχον[το]ς')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <span class="tag domain-tag">Type</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    <div class="theme-path">Type > Object Type > Monumental Stone Objects > Wall or Building Surface</div>
+                    <div class="theme-label">Wall or Building Surface</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "π γαθοκλ ους ρχον[το]ς"</p>
+                </div>
+            </div>
+        </div>
+        
+            
+            <div style="margin-top:2rem;">
+                <h3>Entities</h3>
+                <div><span class="tag entity-tag">👤 Agathokles <small>(Archon of Athens)</small></span><span class="tag entity-tag">👤 Alkimus son of Kallippos <small>(Kosmetes)</small></span><span class="tag entity-tag">👤 Poseidonios son of Agathokles <small>(Paideutes)</small></span><span class="tag entity-tag">📍 Athens <small>(Polis)</small></span><span class="tag entity-tag">📍 Delphi <small>(Sanctuary)</small></span></div>
+            </div>
+
+            <div class="ai-analysis-box">
+                <h3>🤖 AI Analysis Summary</h3>
+                <p style="line-height:1.7;">This inscription is a catalogue of Athenian ephebes who participated in the Pythais of 106/5 BC. The Pythais was a major religious procession from Athens to the sanctuary of Apollo at Delphi. The text lists the Athenian archon (Agathokles), the kosmetes (supervisor of the ephebes), and the names of the young men (ephebes) organized by their fathers&#x27; names. It was inscribed on the walls of the Athenian Treasury at Delphi to commemorate their participation in this sacred embassy. The text is fragmentary in parts, particularly in the lower sections of the name list.</p>
+            </div>
+        </div>
+    </div>
+  </main>
+</body>
+</html>

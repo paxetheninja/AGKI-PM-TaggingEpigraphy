@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PHI-62535 - AGKI</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <style>
+    /* Custom Scrollbar Styling */
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+        background: rgba(0,0,0,0.05); 
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #ccc; 
+        border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #aaa; 
+    }
+
+    .page-container { max-width: 1400px; margin: 0 auto; padding: 2rem; }
+    .back-link { display: inline-block; margin-bottom: 1rem; color: var(--primary); font-weight: 600; }
+    
+    /* Original View Styles (Line by Line) */
+    .text-viewer-original { 
+        display: grid; 
+        grid-template-columns: 40px 1fr; 
+        gap: 2rem; 
+        font-family: "New Athena Unicode", "Gentium Plus", "Times New Roman", serif; 
+        font-size: 1.25rem; 
+        line-height: 1.6; 
+        background: var(--panel); 
+        padding: 2rem; 
+        border: 1px solid var(--border); 
+        border-radius: 4px; 
+        margin-bottom: 2rem; 
+        color: var(--text);
+    }
+
+    .line-numbers { 
+        text-align: right; 
+        color: var(--muted); 
+        font-size: 1.25rem; 
+        line-height: 1.6; 
+        user-select: none; 
+        opacity: 0.5; 
+        font-family: inherit; 
+        white-space: pre; 
+        padding-right: 1rem;
+        border-right: 1px solid var(--border);
+    }
+
+    .greek-content { 
+        white-space: pre-wrap; 
+        word-break: break-word;
+        padding-left: 1rem; 
+    }
+
+    .highlight-evidence {
+        background-color: var(--accent);
+        color: white;
+        border-radius: 2px;
+        padding: 0 2px;
+    }
+
+    .theme-card { background: var(--panel); padding: 1rem 1.5rem; border-left: 4px solid var(--primary); margin-bottom: 0.75rem; border: 1px solid var(--border); border-left-width: 4px; }
+    .ai-analysis-box { background: rgba(31, 167, 163, 0.05); padding: 2rem; border-radius: 8px; border: 1px solid var(--border); margin-top: 2rem; }
+    .evidence-box { max-width: 500px; text-align: right; }
+    .evidence-quote { font-size: 0.85rem; font-style: italic; color: var(--muted); margin: 0; }
+    .badge.green { background: #e6f4ea; color: #137333; border-color: #137333; }
+    .badge.orange { background: #fef7e0; color: #b06000; border-color: #b06000; }
+    .badge.red { background: #fce8e6; color: #c5221f; border-color: #c5221f; }
+    .entity-tag { background: rgba(217, 123, 61, 0.1); color: var(--accent-2); margin-right: 0.5rem; margin-bottom: 0.5rem; display: inline-block; padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.9rem; border: 1px solid rgba(217, 123, 61, 0.2); }
+    
+    /* Split View Styles */
+    .split-container { display: block; }
+    .split-container.active { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+    .split-col-left { }
+    .split-col-right { }
+    
+    /* Sticky sidebar in split view */
+    .split-container.active .split-col-right { position: sticky; top: 20px; max-height: 90vh; overflow-y: auto; padding-right: 10px; }
+  </style>
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+
+    function toggleSplitView() {
+        const container = document.getElementById('main-content');
+        const btn = document.getElementById('splitViewBtn');
+        container.classList.toggle('active');
+        if(container.classList.contains('active')) {
+            btn.textContent = 'View: Split';
+            btn.classList.add('active');
+        } else {
+            btn.textContent = 'View: Standard';
+            btn.classList.remove('active');
+        }
+    }
+
+    function copyCitation() {
+        const citation = "AGKI Project. (2026). Inscription PHI-" + "62535" + ". Retrieved from " + window.location.href;
+        navigator.clipboard.writeText(citation);
+        alert("Citation copied to clipboard!");
+    }
+    
+    function highlightQuote(quote) {
+        const container = document.querySelector('.greek-content');
+        if (!container || !quote) return;
+        
+        const escapedQuote = quote.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const regex = new RegExp(escapedQuote, 'g');
+        container.innerHTML = container.innerHTML.replace(
+            regex, 
+            match => `<mark class="highlight-evidence">${match}</mark>`
+        );
+    }
+    
+    function clearHighlight() {
+        const container = document.querySelector('.greek-content');
+        if (!container) return;
+        container.innerHTML = container.innerHTML.replace(/<mark class="highlight-evidence">(.*?)<\/mark>/g, '$1');
+    }
+
+    function updateFontSize(size) {
+        const container = document.getElementById('original-view');
+        if (container) {
+            container.style.fontSize = size + 'px';
+            const lines = container.querySelector('.line-numbers');
+            if(lines) lines.style.fontSize = size + 'px';
+        }
+    }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <h1><a href="../index.html" style="color:white;text-decoration:none;">AGKI Tagging Tool</a></h1>
+    </div>
+    <nav class="nav-links">
+        <a href="../index.html" class="nav-item">Search</a>
+        <a href="../explore.html" class="nav-item">Explore</a>
+        <a href="../indices.html" class="nav-item">Indices</a>
+    </nav>
+  </header>
+  <main class="page-container">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 1rem;">
+        <a href="../index.html" class="back-link" style="margin:0;">← Back to Dashboard</a>
+        <button id="splitViewBtn" onclick="toggleSplitView()" class="button secondary" style="font-size:0.8rem; padding:0.3rem 0.8rem;">View: Standard</button>
+    </div>
+    
+    <div id="main-content" class="split-container">
+        <div class="split-col-left">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <h2>Inscription PHI-62535</h2>
+                <div style="display:flex; gap:0.5rem;">
+                    <button onclick="copyCitation()" class="button secondary" style="font-size:0.9rem; padding:0.5rem 1rem;">📜 Cite</button>
+                    <a href="https://epigraphy.packhum.org/text/62535" target="_blank" class="button">View on PHI</a>
+                </div>
+            </div>
+            
+            <div class="meta-grid">
+                <div><small class="eyebrow">Provenance</small><br><a href="https://pleiades.stoa.org/places/599580" target="_blank" title="View in Pleiades">Delos</a> &gt; <a href="https://pleiades.stoa.org/places/599580" target="_blank" title="View in Pleiades">Sanctuary of Apollo</a></div>
+                <div><small class="eyebrow">Date</small><br><strong> 360-350 BC</strong></div>
+                <div><small class="eyebrow">Completeness</small><br><span class="badge info">fragmentary</span></div>
+            </div>
+
+            <div style="display:flex; justify-content:space-between; align-items:end; margin-bottom:0.5rem;">
+                <h3>Original Text</h3>
+                <!-- Font Size Control -->
+                <div style="display:flex; align-items:center; gap:0.5rem; background:var(--panel); border:1px solid var(--border); padding:0.2rem 0.5rem; border-radius:4px;">
+                    <span style="font-size:0.8rem; color:var(--muted);">A</span>
+                    <input type="range" id="fontSizeSlider" min="14" max="32" value="20" oninput="updateFontSize(this.value)" style="width:80px; accent-color:var(--primary);">
+                    <span style="font-size:1rem; font-weight:bold; color:var(--muted);">A</span>
+                </div>
+            </div>
+
+            <!-- Original Line-by-Line View -->
+            <div id="original-view" class="text-viewer-original">
+                <div class="line-numbers">1
+
+
+
+5
+
+
+
+
+10
+
+
+
+
+15
+
+
+
+
+20
+
+
+
+
+25
+
+
+
+
+30
+
+
+
+
+35
+
+
+
+
+40
+
+
+
+
+45
+
+
+
+
+50
+
+
+
+
+55
+
+
+
+
+60
+
+
+
+
+65
+
+
+</div>
+                <div class="greek-content">---επο-----ο-----ω-ε- -------- ------------- τ-----[κ]α μο[λ βδ]ωι κα κι[σ] ρι[δ]ι 0------λλ κα τ λλ[α] ποι σει κατ τα τ το ς [ν τ ι ερ]ι. ν δ [ε ργασμ]νοι σι δο[κιμ σει ρχ]ιτ κτων ν [τ ι]ερι ν δ λωι [π] ντας το ς λ θους. πειδ [ν] δ [δ]ο[κι]μασθ σιν πα[ρα]λαβ ν [τ]ο ς στυλοβτα[ς κειμ] νους κα περ[ιξεσ] [μ]ενος [ μ]αλιε κατ κ ο[να] α τ ς α τ ι καν[ ν]ι λιθ ν[ω]ι ρθ. μαλιε δ [κ]α τ ς σ[π]ε ρα[ς] κα το ς κ ονας κα τ π κρ[αν]α π 
+λιστ[ρ] ο μ λαττον π μιπ διον κ κλωι παντα κα καθιε ε ς δραν μο ως πανταχ ι. τετρ ναι δ κα το ς
+ μπολ οις κα μολυβδοχο σαι ς ν ρχιτ κτων κελε [η]ι. κα ποδ σ[ε]ι στηκ τας ρθο ς κα γιε[ ς κ]α σους λλ λοις κατ κεφαλ ν κα ρθο ς πρ ς τ ν διαβ την πανταχ ι. θ σει δ τος [λ] θους π [ν]τας πα[ρ ντο]ς το παρχιτ κτονος. πειδ ν δ συγκε μενα ι π ντ[α] κα μεταξ τιθ με[να τ μπ λια] --υ------------ παρ ξει δ α τ ς α τ ι μισθωσ [μ]εν[ο]ς τ ργον π ντα σων [ ν δ] ηται πρ ς [τ] ρ[γον πλ ν μπ]ο[λ ων κ]α μολ βδου. το δ παραδε γματος το πεποιημ νο [τ]ο [π]ικρ νου [ στα]ι μ σθ[ωσις κατ λ γον] το [ ρ]γυρ ου σου μ μισθωθ ι τ ργο[ν] τ[ι] ν τ ξει ρχιτ [κ]των. κομιε δ κα τ παρ [δειγμα το] πικρ νου
+ε ς δ λ[ον] μισθωσ μενος τ ργον τ [λ]εσι το ς α το γι ς κα θ σει καθ περ περ τ ν λλων γ γραπται παραλαβ ν γι ς θ νησι. τ ι τε παρχιτ κτονι συντελε ε ς τ μ μισ[θ ν] π τ ς μ[ ρ]ας ς ν ρξηται ν δ λωι [ρ]γ ζεσθαι ως ν πιτελ σηι τ ργον ν ι [μεμι]σθωμ[ νος τ τ ταρτον]
+το ργυρ ου καθ περ το ς το ς ρθοστ τ[α]ς μεμισθωμ νοις ν τα ς συγ[γρ]α[φα ς γ γραπται. τα]τα δ ποι σας παντα δ κιμα κατ τ ν συγγραφ ν πο[δει]ξ τω το ς ναοποιο ς [κα τ ι]ρχιτ[ κτονι] μισθωσ μενος τ ργ[ο]ν τ λος χοντα κτ μην ν π το χρ νου ο μ μισθ σηται. το [ς δ γγυη]τ ς καθιστ ναι κατ 0 ξι χρεως. ν δ μ πο[ι] σε[ι]ν τ ι χρ νωι δ κιμα κα[τ τ ν] συγγ[ραφ ν]ποτιν τω 0 δραχμς τ ς μ ρας κ [σ]τη[ς] ως ν πο[ι]σει δ κιμα κατ τ ν συγγραφ ν ε σπρ[ατ]τ ντων δ α τ ν κα τος [ γγ]υητ ς ο ναοποιο τ[ο] [τ]ο [τ]ργ ριον κα τ λλα ποιο ντων καθ π[ε]ρ το ς λλοις μισθωτα ς [κ]α γγυητα ς τ ν [ργ]ων [ν τ ι συγ]γραφ ι γ [γραπτ]αι. το δ ργυρ ου λ ψεται τ μ ν μισυ πειδ ν το ς γ[γυ]η[τ] ς [κ]ατ[αστ σει] τ[ο δ] λοιπο τ μισυ πειδ ν ξειργασ[μ] να ι τ ν ργων τ μ [σ]η τ δ[ λοιπ] [ν] πειδ [ν π ντα] τ λος χον[τα δε ξει.] ν δ[ τι ντιλ]γωσ[ιν] ο μεμισθωμ νοι πρ ς λλ λ[ους] πε[ρ τ] ν ργων [κρινο σιν ο ναοποιο --------- κεφ] [λα]ιον
+[ ρ]γυρ ου μισθωμ των τ [μ] μισθωθ [ντ]ω[ν -------------------------------------------] ε[ρ] νηλωμ να 0 ----ευ ----ωο [--------------------- π τ]ς α γη δο[ς δευ]τ ρας πρυτανε ας κυρωτ ς [κ] τ [ν] π[ρυτ νεων το] τω[ν -----------------------] βοηδρομι νος τρ τηι σταμ νου δικαστ ριο[ν ----------]ον. λ[ θους μισθ σατο σ μπαν]τας 0 
+τ ν λ θον καστον 0 κεφ λαιον ργυ[ρ] [ου λ θων τ]ο τω[ν π ντων 0]0 μισθωτ ς κ νων διονυσοδ ρου θεσπι[ε] ς γγυ[ητα ---------]οκρ του ------- δη[ς νικ δ]ημος π στωνος θμονε ς πυργ ων γναθ ου φ[ιδ]να ο[ς ----------] ο νοστρ του [ν]α[γ]υ[ρ σιος] θουκυδ δης λκισθ νους φιδνα ος. μ τρα [τ]ν [λ]θων [π ντων τ] δε. λ θους 0 μ κος τεττ ρωμ πο[δ] ν κα π ντε
+δακτ λων πλ τος τεττ ρωμ ποδ ν κα δακτ λου. τ ρους 0 μ κος τεττ ρωμ ποδ ν κα μιποδ ου πλ τος τεττ ρωμ ποδ ν κα π ντε δακτ λων. τ ρους 0 μ κος τεττ ρωμ ποδ ν πλ τος τρι ν ποδ ν. τ ρους 0 μ κος τεττ ρων ποδ ν κα π ντε δακτ λων πλ τος δυο μ ποδο ν κα τρι ν δακτ λων. τ ρους 0 μ κος τεττ ρωμ ποδ ν πλ τος δυο μ ποδο ν κα τρι ν
+δακτ λων. τ ρους 0 μ κος τεττ ρωμ ποδ ν κα παλαστ ς πλ τος δυο μ ποδο ν κα τρι ν δακτ λων. τ ρους 0 μ κος τεττ ρωμ ποδ ν κα π ντε δακτ λων πλ τος τρι μ ποδ ν. τ ρους 0[-]0 μ κος τρι μ ποδ ν κα δ κα δακτ λων πλ τος δυο μ ποδο ν κ[α] τ[ρι] ν δα[κ]τ λων. τ ρους 0 μ κος τρι μ ποδ ν κα τρι μ παλαστ ν πλ τος δυο μ ποδο ν κα τρι ν δακτ λων. τ ρους 0 μ κο[ς] τρι μ ποδ ν κα δακτ λου πλ τος δυο μ ποδον [κ]α τρι ν δακ[τ]λων.
+ τ ρους μ κος δυο μ ποδο ν κα τρι ν δακ[τ] λων πλ τος δυο μ ποδο ν. [τ] ρους μκος δυο μ ποδο ν κα τρι ν δακτ λων πλ τος δυο μ ποδο ν. τ ρους 0 μ κος δυο μ ποδο ν κα 
+τρι ν παλαστ ν πλτος δυο μ ποδο ν κα τρι ν δακτ λων. τ ρου[ς] 0 μ κος πενθ μιποδ ων κα δακτ λου πλ τος δυο [μ] ποδο ν κα τρι ν δακτ λων. τ ρου[ς 0]0 μ κος τρι μ ποδ ν κα νν α δακτ λων πλ τος [δυ]ο [μ] ποδο [ν] κα τρι ν δακτ λων. τ ρου[ς 0]0 μ κος δυο μ ποδο ν κα 
+τρι ν δακτ λων πλ τος δυο μ ποδο ν κα δυο ν δακτ λοιν. τ ρους 0 μ κος τρι μ ποδ ν κ[α] δακτ λου πλ τος δυο μ ποδο ν. τ ρους 0 μ κος τρι μ ποδ ν πλ τος δυο μ ποδο ν [0]τ ρους 0 μ κος τρι μ ποδ ν κα ξ δακτ λων πλ τος δυο ν ποδο ν κα τρι ν δακτ λων. τ ρους 0 μ κος τρι μ πο[δ] ν πλ τος δυο μ ποδο ν κα τρι ν δακτ λων. π [χ]ος ο τ[ο]ι παντες ποδια οι. τ ρους 0 μ κο[ς] π ντε ποδ ν κα τρι ν παλαστ [ν] πλ τος δυο μ ποδο ν κα τρι ν παλαστ ν κα δυο ν δακτ λοιν τ ρους 0 μ κος τεττ ρωμ ποδ ν κα τρι μ πα[λασ]τ[ ν] κα δακτ λου πλ τος δυο ν ποδο ν κα τρι μ πα[λ]αστ ν κα δυο ν δακτ λοιν. τ ρους 0 [μ]κο[ς δυ]ο μ πο[δ]ο ν κα τρι ν παλαστ ν κα τρι ν δακτ λων πλ τος δυο μ ποδο ν κα τρι ν παλαστ ν [κ]α δυον δακτ λοιν. π χος ο τοι παντες ποδια οι κα δυο ν δακτ λοιν. τ ρους 0 μ κος κτ ποδ ν κα δ κα δακτ λων πλ τος παλαστ ν νν α κα δακτ λοιν δυο ν π χος δυ[ο] μ ποδο ν κα δυο ν δακτ λοιν. α[ δε] α συγγρα[φ]α καθ ς μισθ θησαν το τους -ε[---------- τ ν] μισθωσ[ με]νο[ν] μπ [ξ]αι π θ λατ[ταν ----------]ωι π τ ι χ ματι μ π[λ] ον
+χ 
+------- ----------------------- ον
+--ενο-ο ----
+----ερ ------------------------ ιοους ----------------------- οινμετ
+ υς τ δ ργα ------------------------ ο
+ι το ς ναοπ[οιο ς -------------------------------- καθ περ το ς λλοις μισθωτα ς κα γγυητ]α [ς]
+τ ν ργων [ ν τ ι συγγραφ ι γ γραπται. το δ ργυρ ου λ ψεται τ μ ν μισυ πειδ ν το ς γγυητ ς] κατα[σ]τ σει τ[ο δ λοιπο τ μισυ πειδ ν ------------------------------------ --------- τ δ λοιπ ν] πειδ ν τ τρια[-----------------------. ν δ τι ντιλ γωσιν ο] μισθωσ μενοι πρ [ς λλ λους περ τ ν ργων κρινο σιν ο ναοποιο]. -------------λον----ιι
+ λ θος [ κεφ λαιον ργυρ ου λ θων το των π ντων --- μισθωτ ς κ] νων διονυσο[δ] ρου θε[σπιε ς γγυητ -----------------------ι] νο[ς] ν τη[ι μ]εσο [ντος δικαστ ριον --- μ τρα τ ν λ θων. λ θους. -- μ κος ---- πλ] τος δυο ν
+[πο]δο ν [---------------------- παλ]αστ ν κα τρι [ν δακτ λων ---------------- παλα]στ ν κα τρι[ ν] δ[α]κτ [λων --------------]τρο[υς 0]0 μ [κ]ο[ς] τεττ[ ρων ποδ ν --------------- ων π]οδ ν [κ]α τρι ν π[α]λα[στ ν ------------------ π χος ο τ]ο[ι π]αντες ποδια οι [--------------------- μ κος - ων π]οδ ν πλ τος πε[ν]θ μιποδ ων [---------------- πλ]τος πενθ μιποδ ω[ν ------------------------- μιπ]οδ ων κα 
+δυο ν δ[ακτ λοιν -------------------- πλ τ]ος πενθ [μι]ποδ ω[ν ---------------------------] παλαστ ν κα [- δακτ λ ----------------- τ ρο]υς 0
+μ κος [------------------------------ παλα]στ [ν πλ] το[ς] π[ενθ μιποδ ων -------------------]τ ρους 0 ---------------------- ω[ν ποδ] ν κα δ[---------------------------- α δε α]
+συγ[γ]ραφα[ καθ ς μισθ θησαν ------------------]----
+-τωι-λ ------------------------------- λλλς 0-----νωι ------------------------------ ων
+εις[------------------------------- ε] γων ους -------------------------------- το--
+νι-ιωιο ------------------------------ ο--γ
+οοξ----ιε[-------------------------- κα] δυο ν δακτ λοιν ---------------------------- αι τ ς συγγραφ ς ------------------------ γν
+ηκ ---------------------------------- -
+το ------------------------------- [μι]σθω[σ]αμε[ν ---------------------------]π τ ι
+θαλ τ[τ]ηι [----------------------------]χοντα δο ------------------------------ μ λαττον ----------------------------- ου πογρ ψασθ[αι ----------------------------]θος
+τουλγωδ -------------------------- λθω[ν] τ ν δεδοκι[μασμ νων ------------------------] πιμελ στατα --ο -------------------------- λι κομιζον[τ ------------------------------ κα το των 0 ----------------------------- ----
+ν μ γιε [ς] ---------------------------- σι
+παρ τ ρ[γον ---------------------------]----
+οδ τωι γ[κ]υ[λ θεν] δραχμ ς 0 μ ραι παρ------------------------------ προσοφε ληι ----------------------------- λι--ν μοις το ς [--------------------- τ ς μ ρας] [κ ς]της ε σπρα[ττ ντων δ ---- ο ναοποιο ----------- πο]τ νεσθαι το ς ----------------------------- ----
+ι ποτιν τω [----------------------------- τ]ο ς ν μους λ[-----------------------------]γγυητ ν αυτο ---------------------------- ----
+ενι μισθωσα[------------------------ τ] [τ]ρ[ τ ο]μ μ ρος πειδ[ ν ------------------ [τ]ο δ λοιπο 
+[τ] μισυ πειδ ν ο ------------------------- ----
+που
+ δεκρι 
+ εισολοχει
+φε-ς τ δ λλα κατα
+[α]τ ς α τ ι τ ργον ποι
+-ος πλ ν τ ν πιστυλ ων προ
+[ο ναοποιο κα ρχ]ιτ κτων κ[ε]λε [ωσ]ιν πελ κιστα
+πλ τος [παλα]στ ς πανταχε β θος δ
+ξε
+ς ν [ ι με]μισ[θ]ωμ νος τ [ ργον]
+ο κα το τομ μ γεθος παρ[ ξει]
+[- μ] νωι γ κελε ωσιν ο [ναοποιο]
+[ν] μωι τ [α]το ργον ν ι μεμισθω[μ νος]
+[ ποδ]ειξ τω το ς ναοποιο ς κα τ ι ρ[χιτ κτονι]
+[ ν τ] ι ποσιδει νι μην τος τρ το[υς]
+παρ ξει δ τ ν [λ] θωμ πρ τους
+[μ]λ ττηι κατ τ μ ρος καστον
+[μ] λαττον τριημιπ δια [κ]α 0
+-- ο[ι] σιν [ο] λ θοι πογραψ --
+[λ]θων τ ν δεδοκ[ιμασμ νων]
+[θ λ]ατταγ κομ ζοντι 0
+-- α τ μ πλο ν καστο ---- ωι κα γιε ---- ες τ ν λ [θων]
+ωνεπιτ
+κλ 0
+κναρ 
+α---- ο
+γι 0
+νι
+---------------------οο 0-ερ ν 0-αυντου-ν
+ονι-ς</div>
+            </div>
+        </div>
+
+        <div class="split-col-right">
+            <h3>Thematic Analysis</h3>
+            
+        <div class="theme-card" onmouseover="highlightQuote('μισθωσ μενος τ ργον')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <span class="tag domain-tag">Content</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    <div class="theme-path">Content > Official and Legal Documents > Contracts and Private Legal Acts</div>
+                    <div class="theme-label">Contracts and Private Legal Acts</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "μισθωσ μενος τ ργον"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('το δ ργυρ ου λ ψεται τ μ ν μισυ πειδ ν το ς γ[γυ]η[τ] ς [κ]ατ[αστ σει]')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <span class="tag domain-tag">Content</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    <div class="theme-path">Content > Administrative Records and Lists > Accounts and Financial Records</div>
+                    <div class="theme-label">Accounts and Financial Records</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "το δ ργυρ ου λ ψεται τ μ ν μισυ πειδ ν το ς γ[γυ]η[τ] ς [κ]ατ[αστ σει]"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('μ κος τεττ ρωμ πο[δ] ν κα π ντε δακτ λων πλ τος τεττ ρωμ ποδ ν κα δακτ λου')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <span class="tag domain-tag">Type</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">95% Conf.</span>
+                    <div class="theme-path">Type > Object Type > Monumental Stone Objects > Other Architectural Elements</div>
+                    <div class="theme-label">Assembling / Setting Marks</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "μ κος τεττ ρωμ πο[δ] ν κα π ντε δακτ λων πλ τος τεττ ρωμ ποδ ν κα δακτ λου"</p>
+                </div>
+            </div>
+        </div>
+        
+            
+            <div style="margin-top:2rem;">
+                <h3>Entities</h3>
+                <div><span class="tag entity-tag">👤 Κόνων Διονυσοδώρου Θεσπιεύς <small>(Contractor (misthotes))</small></span><span class="tag entity-tag">👤 Νικόδημος Πίστωνος Ἀθμονεύς <small>(Guarantor (eggyetes))</small></span><span class="tag entity-tag">👤 Πυργίων Γναθίου Φιδναῖος <small>(Guarantor (eggyetes))</small></span><span class="tag entity-tag">👤 Θουκυδίδης Ἀλκισθένους Φιδναῖος <small>(Guarantor (eggyetes))</small></span><span class="tag entity-tag">👤 Νόστρατος Ἀναγυράσιος <small>(Guarantor (eggyetes))</small></span><span class="tag entity-tag">📍 Delos <small>(Island/Sanctuary)</small></span><span class="tag entity-tag">📍 Thespiae <small>(Polis)</small></span><span class="tag entity-tag">📍 Athmonon <small>(Deme)</small></span><span class="tag entity-tag">📍 Aphidna <small>(Deme)</small></span><span class="tag entity-tag">📍 Anagyrous <small>(Deme)</small></span></div>
+            </div>
+
+            <div class="ai-analysis-box">
+                <h3>🤖 AI Analysis Summary</h3>
+                <p style="line-height:1.7;">This inscription is a significant building contract from Delos, dated to the mid-4th century BC. It records the &#x27;syngraphai&#x27; (specifications) for the quarrying, transport, and finishing of stone blocks for a public building, likely a temple. The text is highly technical, listing precise measurements in feet (podes), palms (palaistai), and fingers (daktyloi). It names the contractor, Conon of Thespiae, and several Athenian guarantors from various demes, reflecting the international nature of labor and finance in the Delian sanctuary during this period. The legal clauses include oversight by the &#x27;naopoioi&#x27; (temple commissioners) and the &#x27;architekton&#x27; (architect), as well as penalties for non-compliance with the timeline.</p>
+            </div>
+        </div>
+    </div>
+  </main>
+</body>
+</html>

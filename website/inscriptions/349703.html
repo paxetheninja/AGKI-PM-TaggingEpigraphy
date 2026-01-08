@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PHI-349703 - AGKI</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <style>
+    /* Custom Scrollbar Styling */
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+        background: rgba(0,0,0,0.05); 
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #ccc; 
+        border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #aaa; 
+    }
+
+    .page-container { max-width: 1400px; margin: 0 auto; padding: 2rem; }
+    .back-link { display: inline-block; margin-bottom: 1rem; color: var(--primary); font-weight: 600; }
+    
+    /* Original View Styles (Line by Line) */
+    .text-viewer-original { 
+        display: grid; 
+        grid-template-columns: 40px 1fr; 
+        gap: 2rem; 
+        font-family: "New Athena Unicode", "Gentium Plus", "Times New Roman", serif; 
+        font-size: 1.25rem; 
+        line-height: 1.6; 
+        background: var(--panel); 
+        padding: 2rem; 
+        border: 1px solid var(--border); 
+        border-radius: 4px; 
+        margin-bottom: 2rem; 
+        color: var(--text);
+    }
+
+    .line-numbers { 
+        text-align: right; 
+        color: var(--muted); 
+        font-size: 1.25rem; 
+        line-height: 1.6; 
+        user-select: none; 
+        opacity: 0.5; 
+        font-family: inherit; 
+        white-space: pre; 
+        padding-right: 1rem;
+        border-right: 1px solid var(--border);
+    }
+
+    .greek-content { 
+        white-space: pre-wrap; 
+        word-break: break-word;
+        padding-left: 1rem; 
+    }
+
+    .highlight-evidence {
+        background-color: var(--accent);
+        color: white;
+        border-radius: 2px;
+        padding: 0 2px;
+    }
+
+    .theme-card { background: var(--panel); padding: 1rem 1.5rem; border-left: 4px solid var(--primary); margin-bottom: 0.75rem; border: 1px solid var(--border); border-left-width: 4px; }
+    .ai-analysis-box { background: rgba(31, 167, 163, 0.05); padding: 2rem; border-radius: 8px; border: 1px solid var(--border); margin-top: 2rem; }
+    .evidence-box { max-width: 500px; text-align: right; }
+    .evidence-quote { font-size: 0.85rem; font-style: italic; color: var(--muted); margin: 0; }
+    .badge.green { background: #e6f4ea; color: #137333; border-color: #137333; }
+    .badge.orange { background: #fef7e0; color: #b06000; border-color: #b06000; }
+    .badge.red { background: #fce8e6; color: #c5221f; border-color: #c5221f; }
+    .entity-tag { background: rgba(217, 123, 61, 0.1); color: var(--accent-2); margin-right: 0.5rem; margin-bottom: 0.5rem; display: inline-block; padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.9rem; border: 1px solid rgba(217, 123, 61, 0.2); }
+    
+    /* Split View Styles */
+    .split-container { display: block; }
+    .split-container.active { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+    .split-col-left { }
+    .split-col-right { }
+    
+    /* Sticky sidebar in split view */
+    .split-container.active .split-col-right { position: sticky; top: 20px; max-height: 90vh; overflow-y: auto; padding-right: 10px; }
+  </style>
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+
+    function toggleSplitView() {
+        const container = document.getElementById('main-content');
+        const btn = document.getElementById('splitViewBtn');
+        container.classList.toggle('active');
+        if(container.classList.contains('active')) {
+            btn.textContent = 'View: Split';
+            btn.classList.add('active');
+        } else {
+            btn.textContent = 'View: Standard';
+            btn.classList.remove('active');
+        }
+    }
+
+    function copyCitation() {
+        const citation = "AGKI Project. (2026). Inscription PHI-" + "349703" + ". Retrieved from " + window.location.href;
+        navigator.clipboard.writeText(citation);
+        alert("Citation copied to clipboard!");
+    }
+    
+    function highlightQuote(quote) {
+        const container = document.querySelector('.greek-content');
+        if (!container || !quote) return;
+        
+        const escapedQuote = quote.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const regex = new RegExp(escapedQuote, 'g');
+        container.innerHTML = container.innerHTML.replace(
+            regex, 
+            match => `<mark class="highlight-evidence">${match}</mark>`
+        );
+    }
+    
+    function clearHighlight() {
+        const container = document.querySelector('.greek-content');
+        if (!container) return;
+        container.innerHTML = container.innerHTML.replace(/<mark class="highlight-evidence">(.*?)<\/mark>/g, '$1');
+    }
+
+    function updateFontSize(size) {
+        const container = document.getElementById('original-view');
+        if (container) {
+            container.style.fontSize = size + 'px';
+            const lines = container.querySelector('.line-numbers');
+            if(lines) lines.style.fontSize = size + 'px';
+        }
+    }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <h1><a href="../index.html" style="color:white;text-decoration:none;">AGKI Tagging Tool</a></h1>
+    </div>
+    <nav class="nav-links">
+        <a href="../index.html" class="nav-item">Search</a>
+        <a href="../explore.html" class="nav-item">Explore</a>
+        <a href="../indices.html" class="nav-item">Indices</a>
+    </nav>
+  </header>
+  <main class="page-container">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 1rem;">
+        <a href="../index.html" class="back-link" style="margin:0;">← Back to Dashboard</a>
+        <button id="splitViewBtn" onclick="toggleSplitView()" class="button secondary" style="font-size:0.8rem; padding:0.3rem 0.8rem;">View: Standard</button>
+    </div>
+    
+    <div id="main-content" class="split-container">
+        <div class="split-col-left">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <h2>Inscription PHI-349703</h2>
+                <div style="display:flex; gap:0.5rem;">
+                    <button onclick="copyCitation()" class="button secondary" style="font-size:0.9rem; padding:0.5rem 1rem;">📜 Cite</button>
+                    <a href="https://epigraphy.packhum.org/text/349703" target="_blank" class="button">View on PHI</a>
+                </div>
+            </div>
+            
+            <div class="meta-grid">
+                <div><small class="eyebrow">Provenance</small><br><a href="https://pleiades.stoa.org/places/599941" target="_blank" title="View in Pleiades">Kos</a> &gt; <a href="https://pleiades.stoa.org/places/599739" target="_blank" title="View in Pleiades">Kos</a> &gt; <a href="https://pleiades.stoa.org/places/599514" target="_blank" title="View in Pleiades">Asklepieion</a></div>
+                <div><small class="eyebrow">Date</small><br><strong> ca. 300 BC </strong></div>
+                <div><small class="eyebrow">Completeness</small><br><span class="badge info">fragmentary</span></div>
+            </div>
+
+            <div style="display:flex; justify-content:space-between; align-items:end; margin-bottom:0.5rem;">
+                <h3>Original Text</h3>
+                <!-- Font Size Control -->
+                <div style="display:flex; align-items:center; gap:0.5rem; background:var(--panel); border:1px solid var(--border); padding:0.2rem 0.5rem; border-radius:4px;">
+                    <span style="font-size:0.8rem; color:var(--muted);">A</span>
+                    <input type="range" id="fontSizeSlider" min="14" max="32" value="20" oninput="updateFontSize(this.value)" style="width:80px; accent-color:var(--primary);">
+                    <span style="font-size:1rem; font-weight:bold; color:var(--muted);">A</span>
+                </div>
+            </div>
+
+            <!-- Original Line-by-Line View -->
+            <div id="original-view" class="text-viewer-original">
+                <div class="line-numbers">1
+
+
+
+5
+
+
+
+
+10
+
+
+
+
+15
+
+
+
+
+20
+
+
+
+
+25
+
+
+
+
+30
+
+
+
+
+35
+
+
+
+
+40
+
+
+
+
+45
+
+
+
+
+50
+
+
+
+
+55
+</div>
+                <div class="greek-content">0 
+[ δοξε τ ι δ μωι γν]μα πρυταν ων πειδ 
+[ δ μος δηλ μενος δι]αλυθ μεν ποτ το ς δια[φερομ νους ψαφ ξ]ατο πιτρ ψαι κ ιοις π ρ
+[ ν διεφ ροντο ποτ λλ] λους π ντων πως μο[νοιε ντες ν δαμοκρα]τ αι πολιτε ωνται δ δ [μος κ ιων μεμναμ νο]ς τ ς ε νο ας ψαφ ξατο
+[ ξαποστε λαι ποτ τ]ς διαλ σεις νδρας κα [λο ς κα γαθο ς ---]γ ραν μ κωνος ριστω[--------------- χ]ρμιππον χαρμ λου 
+[--------------------]να ξενοδ κου το δ 
+[ ξαπεσταλμ νοι διαλλακτα] δι λυσαν καλ ς
+[κα δικα ως τ ν δ μον] δεδ χθαι τ ι κ[κλησ αι παιν σαι μ ν τ ν δ μο]ν τ ν κ ιων
+[κα στεφαν σαι στεφ νωι χρυσ ωι π] δραχμ [ν]
+[χιλι ν παιν σαι δ κα το ς νδρας π] τ ι δ[ικα ως διαλ σαι τ ν δ μον τ ν τηλ ων -----]
+[------- τ ν διαφ]ερομ νων π[οτ τ ν δ μον τ ν]
+[τηλ ω]ν πως μονοιε ντες ν δαμοκρατ αι π[ολιτε ωνται] λε θεροι κα α τ νομοι ντες τυχ γαθ ι κ[ατ τ δε δι λ]υσαν τ ν δ μον κα το ς διαφερομ νους τηλ [ων]
+[ποτ] τ ν δ μον π ρ μ ν τ ν δικ ν τ ν ερ ν κα τ ν
+[δαμο]σι ν ς φλ ντες ν το ς δικαστηρ οις ντ λεγον
+[μ δικ]α ως φλ κεν πομισθ σαι τ ς ταμ ας α το ς τ γ
+[χρη]μ των ν φλον το ς μ ν τ ς ερ ς δ κας φλο [σι]ν τ ς ποτ τ θ ναιον κα κλεισιμβροτ δαι τ ν περ τ 
+αμ τριον κα φιλτυλ ωι παρασχε ν ς τ ν κατ μβαν τ ν
+θυομ ναν π μον ρχου θεαγ ρα τα ρον κρι ν ο ν θ λειαν τ ν δ τ ς δαμοσ ας δ κας φλ ντων ρισταγ ραν μ ν
+ριστοφ λου ποτετε κεν τ ργ ριον νδειχθε ς κατ [β]αλε ο γδεια γ νετο πωληθ ντων τ ν κτημ των ποτ 
+[τ] ν καταδ καν ριστ θεμιν δ ριστοφ λου ποτε σαι δρα[χ]μ ς πεντακισχιλ ας νικαγ ραν δ νικ νακτος ποτε σα[ι]
+[τ]ι π λει δραχμ[μ] ς χιλ ας πεντακοσ ας ποδ ντω δ μ μη[ν] καρνε ωι π θεαγ ρα ποτ δ τ λοιπ χρ ματα τ κ τ ν καταδικ ν πομισθωσ ντω το ταμ αι ριστοθ μι κα νικαγ ρα[ι]
+[κ]α ρισταγ ραι τ ν βωμ ν το σκλαπιο πισκευ ξαι κα ξαλε[ ψαι συ]ντελεσ ντων δ τ ν μ ν τ ς ερ ς δ κας φλ ντων τ ν
+[ κατ μβ]αν ριστοθ μιος δ κα νικαγ ρα κα ρισταγ ρα τ μ βω[μ ν κατ τ] γεγραμμ να πολελ σθαι α τ ς τ ν δικ ν κα 
+[τ ς γραφ ς] ναιρ σθαι κα μ μεν γκλημα περ τ ν δικ ν
+[τ ν τε ερ ν κα] τ ν δαμοσι ν τ ν δικασθεισ ν μ τε το ς
+[ φλο σιν πιφ ρειν] μηθ να μηθ ν μ τ λλωι μηδεν ποτ[ι--- παρευρ σει μη]δεμι ι τ ν δ δ καν τ ς δο ν ξι[διαξαμ νους ---- ριστο]μ νη κα ρισταγ ραν ναξισ[τρ του ζαμ ωσαν το --------] ρχοντος διαφεροντ[--]
+[------------------------]
+[--]ν δικαν ς ρκον συνκεχωρημ ν[ων κα τ ν διαφερο]μ νων π ρ τ ς δαμοσ ας δ κα[ς φαμ νων δ κως ζαμι σ]θαι κα τ ν δικαστ ν τ ν ψ φον [ νεικ ντων περ κ στας]
+δ κας γνωμες τ ργ ριον χει [----------]
+τας ποδ μεν ριστομ νει τοκ[ον τ ς εραπ λος περ δ]
+τ ν ζαμιωσι ν ς ζαμιωθ ν[τες --------- ν κοι]ν ι ναγεγραμμ νοι ντ κα μ[ολογο μενοι φλε ν πομισ]θωσ ντω το ταμ αι κα το εραπ[ λοι κ ριστοθ μιος κα νικ]αγ ρα κα ρισταγ ρα συντελ σα[ι τ ν βωμ ν συντελεσθ ν]των δ κα το των κατ τ γεγρα[μμ να πολελ σθαι α]τ ς τ ν ζαμιωσι ν κα τ ς να[γραφ ς τ ς ν κοιν ι κα]
+τ ν λλων π ντων ν νεκ λε[σεν α το ς π λις κα]
+τ ς πρ ξε[ι]ς τ ς πεπραγμ νας [κατ α τ ν ναιρ σθαι] τ ν δ π λιν πριαμ ναν τ ς γ [ς τ ς δαμευθε σας ς π]δοντο το πρ κτορες το ς δι τα[ις -------- πο]δ μεν το ς τε τ ς ερ ς δ κας φ[λο σι ------- α]το ς το ς κλαρον μοις ν τ ι μη[ν ------ π θεαγ]ρα κα το ς τ ς δαμοσ ας ο ς γ γ[ραπται ν τ ι διαλ σει] 
+ πομισθ σαι τ ς ταμ ας τ ν β[ωμ ν το σκλαπιο πισκευ ξα]ι κατ τα τ δ ποδ[ μεν το ς δι ταις ο τ ς γ ς τ ς]
+[δαμευθ]ε σας καρπε[ οντο τ ν τιμ ν ν π ρ τ ν γ ν κατ βαλον ----------------------]
+[-----------------] το βασιλε ς πμνα[μα]
+[-------------]ον τ χρ ος διαλ σαι παρ μ ν τ [ς]
+[π λιος κομιζ]σθω πρι μενος σον τ ι π λι κατ βαλε τ δ χρ ος 
+[δ μος δι]αλυ τω τ ρχα ον παρ το ξ ρχ ς φε λοντος κα
+[τ κ]τ μα κομιζομ νου σσα δ γ γραπται ποδ μεν τ ν π λ[ιν]
+[κ]τ ματα ποδ ντω το ταμ αι κα το εραπ λοι το ν κ στοις
+το ς χρ νοις γιν μενοι α δ κα μ ποδ ντι φειλ ντω καστο[ς]
+[τ] ν ταμι ν κα τ ν εραπ λων πεντακισχιλ ας δραχμ ς ερ [ς]
+[τ]ο δι ς το πολι ως κα τ ς θ νας τ ς πολι δος κα τ ι δι τα[ι]
+διπλο ν κα μ ποδ ι δ πρ ξις στω τ ι δι ται καθ περ κ δ [κ]ας το δ τ ς γραφ ς νελ ντες κα το πρυτ νιες το προθ ντες τ ς διαλ σεις κα το πρ κτορες κα το ταμ αι κα το εραπ λοι
+[κ]α το λλοι το διοικε ντ ς τι τ ν γεγραμμ νων μ ε ντω π δικοι α δ τ ς κα πο ι παρ τ γεγραμμ να ε θυναν γρ φηται τ [ι]
+[δ]ιαλ σει μ μμ νηι λλο τι γκλημα πιφ ρηι το ς ρχουσιν 
+το ς δι ταις σσα ς τ ν δι λυσιν καθ κε ποτεισ τω μυρ ας δρα[χ]μ ς ερ ς το δι ς το πολι ως κα τ ς θ νας τ ς πολι δος κα τ 
+γκλημα τ πενιχθ ν κυρον στω πως δ τ λιοι κα ε ς τ ν π λοι[π]ον χρ νον μονοε ντες διατελ ντι μοσ ντω το γεγενημ [ν]οι π τε κτωκα δεκα τ ων π ντες θε ς τ ς ρκ ος [κ]ατ ερ ν νε[οκ]α των τ ν ρκον τ νδε μμεν ω ν τ ι πολιτε ματι τ ι καθεστακ τι κα διαφυλαξ ω τ ν δαμοκρατ αν κα ο μνασικακησ ω περ τ ν
+[ ν τ ι κ]ρ σ[ει] γενομ νων ο δ πραξ ω παρ τ ν δι λυσιν τ νδε ο δ ν
+[ο δ] πλα ναντ α θησε μαι τ ι δ μωι ο δ τ ν κραν καταλαμψε ντι
+συμβουλευσ ω ο δ λλωι πιβουλε οντι ο δ καταλ οντι τ ν δ μον ε δ ς πιτραψ ω α δ κα α σθωμα τινα νεωτερ ζοντα συλλ γους συν γοντα π καταλ σει το δ μου δηλωσ ω το ς ρχουσιν ε ορκε ντι μ μ μοι μεν πολλ γαθ φιορκε ντι δ τ ναντ α. μοσ ντω δ κα το π δαμοι φ ο κ παραγ ν[ω]νται ν μ ραις
+ξ κοντα. α δ τ ς κα μ μ σηι χιλ ας δραχμ ς ποτεισ τω ερ ς
+[τ]ο δι ς το πολι ως κα τ ς θ νας τ ς πολι δος. δοξε τ ι
+[δ] μωι γν μα πρυταν ων γαθ ι τ χαι χρ σθαι τ ι διαλ σει καθ 
+[τ]ο διαλλακτα το κ ιοι δι γραψαν δ μεν δ κα ξ νια το ς διαλλα[κτ]α[ ς] δ ντω δ ταμ αι.</div>
+            </div>
+        </div>
+
+        <div class="split-col-right">
+            <h3>Thematic Analysis</h3>
+            
+        <div class="theme-card" onmouseover="highlightQuote('δοξε τ ι δ μωι')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <span class="tag domain-tag">Content</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    <div class="theme-path">Content > Official and Legal Documents > Decrees</div>
+                    <div class="theme-label">Decrees</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "δοξε τ ι δ μωι"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('διαλλακτα δι λυσαν καλ ς')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <span class="tag domain-tag">Content</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    <div class="theme-path">Content > Official and Legal Documents > Treaties and Agreements</div>
+                    <div class="theme-label">Treaties and Agreements</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "διαλλακτα δι λυσαν καλ ς"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('παιν σαι μ ν τ ν δ μο]ν τ ν κ ιων')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <span class="tag domain-tag">Content</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    <div class="theme-path">Content > Honorific and Commemorative Inscriptions > Honorific Inscriptions</div>
+                    <div class="theme-label">Honorific Inscriptions</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "παιν σαι μ ν τ ν δ μο]ν τ ν κ ιων"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('ποτε σαι δρα[χ]μ ς πεντακισχιλ ας')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <span class="tag domain-tag">Content</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">95% Conf.</span>
+                    <div class="theme-path">Content > Administrative Records and Lists > Accounts and Financial Records</div>
+                    <div class="theme-label">Accounts and Financial Records</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "ποτε σαι δρα[χ]μ ς πεντακισχιλ ας"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('βωμ ν το σκλαπιο πισκευ ξαι')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <span class="tag domain-tag">Content</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">90% Conf.</span>
+                    <div class="theme-path">Content > Religious and Dedicatory Texts > Sacred Laws and Rules</div>
+                    <div class="theme-label">Sacred Laws and Rules</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "βωμ ν το σκλαπιο πισκευ ξαι"</p>
+                </div>
+            </div>
+        </div>
+        
+            
+            <div style="margin-top:2rem;">
+                <h3>Entities</h3>
+                <div><span class="tag entity-tag">👤 Aristagoras son of Aristophilos <small>(Debtor/Citizen)</small></span><span class="tag entity-tag">👤 Aristothemis son of Aristophilos <small>(Debtor/Citizen)</small></span><span class="tag entity-tag">👤 Nikagoras son of Nikanax <small>(Debtor/Citizen)</small></span><span class="tag entity-tag">👤 Theagoras <small>(Eponymous Archon)</small></span><span class="tag entity-tag">👤 Charmippos son of Charmylos <small>(Arbitrator)</small></span><span class="tag entity-tag">📍 Kos <small>(Island/Polis)</small></span><span class="tag entity-tag">📍 Keos <small>(Island/Polis)</small></span><span class="tag entity-tag">📍 Telos <small>(Island/Polis)</small></span><span class="tag entity-tag">📍 Asklepieion <small>(Sanctuary)</small></span></div>
+            </div>
+
+            <div class="ai-analysis-box">
+                <h3>🤖 AI Analysis Summary</h3>
+                <p style="line-height:1.7;">This inscription is a significant historical document from the early Hellenistic period (ca. 300 BC) found at the Asklepieion of Kos. It records a decree concerning the reconciliation (dialysis) of the people of Telos, who were experiencing internal civil strife or legal disputes. The Koans acted as intermediaries, requesting arbitrators (diallaktai) from Keos to resolve the conflicts. The text details the settlement of sacred and public debts, the restoration of democratic governance, and the imposition of a civic oath to prevent future sedition. It also highlights the religious dimension of civic life through the repair of the altar of Asclepius and the regulation of sacrifices.</p>
+            </div>
+        </div>
+    </div>
+  </main>
+</body>
+</html>

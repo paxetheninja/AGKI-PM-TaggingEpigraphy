@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PHI-242120 - AGKI</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <style>
+    /* Custom Scrollbar Styling */
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+        background: rgba(0,0,0,0.05); 
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #ccc; 
+        border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #aaa; 
+    }
+
+    .page-container { max-width: 1400px; margin: 0 auto; padding: 2rem; }
+    .back-link { display: inline-block; margin-bottom: 1rem; color: var(--primary); font-weight: 600; }
+    
+    /* Original View Styles (Line by Line) */
+    .text-viewer-original { 
+        display: grid; 
+        grid-template-columns: 40px 1fr; 
+        gap: 2rem; 
+        font-family: "New Athena Unicode", "Gentium Plus", "Times New Roman", serif; 
+        font-size: 1.25rem; 
+        line-height: 1.6; 
+        background: var(--panel); 
+        padding: 2rem; 
+        border: 1px solid var(--border); 
+        border-radius: 4px; 
+        margin-bottom: 2rem; 
+        color: var(--text);
+    }
+
+    .line-numbers { 
+        text-align: right; 
+        color: var(--muted); 
+        font-size: 1.25rem; 
+        line-height: 1.6; 
+        user-select: none; 
+        opacity: 0.5; 
+        font-family: inherit; 
+        white-space: pre; 
+        padding-right: 1rem;
+        border-right: 1px solid var(--border);
+    }
+
+    .greek-content { 
+        white-space: pre-wrap; 
+        word-break: break-word;
+        padding-left: 1rem; 
+    }
+
+    .highlight-evidence {
+        background-color: var(--accent);
+        color: white;
+        border-radius: 2px;
+        padding: 0 2px;
+    }
+
+    .theme-card { background: var(--panel); padding: 1rem 1.5rem; border-left: 4px solid var(--primary); margin-bottom: 0.75rem; border: 1px solid var(--border); border-left-width: 4px; }
+    .ai-analysis-box { background: rgba(31, 167, 163, 0.05); padding: 2rem; border-radius: 8px; border: 1px solid var(--border); margin-top: 2rem; }
+    .evidence-box { max-width: 500px; text-align: right; }
+    .evidence-quote { font-size: 0.85rem; font-style: italic; color: var(--muted); margin: 0; }
+    .badge.green { background: #e6f4ea; color: #137333; border-color: #137333; }
+    .badge.orange { background: #fef7e0; color: #b06000; border-color: #b06000; }
+    .badge.red { background: #fce8e6; color: #c5221f; border-color: #c5221f; }
+    .entity-tag { background: rgba(217, 123, 61, 0.1); color: var(--accent-2); margin-right: 0.5rem; margin-bottom: 0.5rem; display: inline-block; padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.9rem; border: 1px solid rgba(217, 123, 61, 0.2); }
+    
+    /* Split View Styles */
+    .split-container { display: block; }
+    .split-container.active { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+    .split-col-left { }
+    .split-col-right { }
+    
+    /* Sticky sidebar in split view */
+    .split-container.active .split-col-right { position: sticky; top: 20px; max-height: 90vh; overflow-y: auto; padding-right: 10px; }
+  </style>
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+
+    function toggleSplitView() {
+        const container = document.getElementById('main-content');
+        const btn = document.getElementById('splitViewBtn');
+        container.classList.toggle('active');
+        if(container.classList.contains('active')) {
+            btn.textContent = 'View: Split';
+            btn.classList.add('active');
+        } else {
+            btn.textContent = 'View: Standard';
+            btn.classList.remove('active');
+        }
+    }
+
+    function copyCitation() {
+        const citation = "AGKI Project. (2026). Inscription PHI-" + "242120" + ". Retrieved from " + window.location.href;
+        navigator.clipboard.writeText(citation);
+        alert("Citation copied to clipboard!");
+    }
+    
+    function highlightQuote(quote) {
+        const container = document.querySelector('.greek-content');
+        if (!container || !quote) return;
+        
+        const escapedQuote = quote.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const regex = new RegExp(escapedQuote, 'g');
+        container.innerHTML = container.innerHTML.replace(
+            regex, 
+            match => `<mark class="highlight-evidence">${match}</mark>`
+        );
+    }
+    
+    function clearHighlight() {
+        const container = document.querySelector('.greek-content');
+        if (!container) return;
+        container.innerHTML = container.innerHTML.replace(/<mark class="highlight-evidence">(.*?)<\/mark>/g, '$1');
+    }
+
+    function updateFontSize(size) {
+        const container = document.getElementById('original-view');
+        if (container) {
+            container.style.fontSize = size + 'px';
+            const lines = container.querySelector('.line-numbers');
+            if(lines) lines.style.fontSize = size + 'px';
+        }
+    }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <h1><a href="../index.html" style="color:white;text-decoration:none;">AGKI Tagging Tool</a></h1>
+    </div>
+    <nav class="nav-links">
+        <a href="../index.html" class="nav-item">Search</a>
+        <a href="../explore.html" class="nav-item">Explore</a>
+        <a href="../indices.html" class="nav-item">Indices</a>
+    </nav>
+  </header>
+  <main class="page-container">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 1rem;">
+        <a href="../index.html" class="back-link" style="margin:0;">← Back to Dashboard</a>
+        <button id="splitViewBtn" onclick="toggleSplitView()" class="button secondary" style="font-size:0.8rem; padding:0.3rem 0.8rem;">View: Standard</button>
+    </div>
+    
+    <div id="main-content" class="split-container">
+        <div class="split-col-left">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <h2>Inscription PHI-242120</h2>
+                <div style="display:flex; gap:0.5rem;">
+                    <button onclick="copyCitation()" class="button secondary" style="font-size:0.9rem; padding:0.5rem 1rem;">📜 Cite</button>
+                    <a href="https://epigraphy.packhum.org/text/242120" target="_blank" class="button">View on PHI</a>
+                </div>
+            </div>
+            
+            <div class="meta-grid">
+                <div><small class="eyebrow">Provenance</small><br><a href="https://pleiades.stoa.org/places/658457" target="_blank" title="View in Pleiades">Kommagene</a> &gt; <a href="https://pleiades.stoa.org/places/658381" target="_blank" title="View in Pleiades">Arsameia</a></div>
+                <div><small class="eyebrow">Date</small><br><strong> 64-ca. 38 BC </strong></div>
+                <div><small class="eyebrow">Completeness</small><br><span class="badge info">fragmentary</span></div>
+            </div>
+
+            <div style="display:flex; justify-content:space-between; align-items:end; margin-bottom:0.5rem;">
+                <h3>Original Text</h3>
+                <!-- Font Size Control -->
+                <div style="display:flex; align-items:center; gap:0.5rem; background:var(--panel); border:1px solid var(--border); padding:0.2rem 0.5rem; border-radius:4px;">
+                    <span style="font-size:0.8rem; color:var(--muted);">A</span>
+                    <input type="range" id="fontSizeSlider" min="14" max="32" value="20" oninput="updateFontSize(this.value)" style="width:80px; accent-color:var(--primary);">
+                    <span style="font-size:1rem; font-weight:bold; color:var(--muted);">A</span>
+                </div>
+            </div>
+
+            <!-- Original Line-by-Line View -->
+            <div id="original-view" class="text-viewer-original">
+                <div class="line-numbers">1
+
+
+
+5
+
+
+
+
+10
+
+
+
+
+15
+
+
+
+
+20
+
+
+
+
+25
+
+
+
+
+30
+
+
+
+
+35
+
+
+
+
+40
+
+
+
+
+45
+
+
+
+
+50
+
+
+
+
+55
+
+
+
+
+60
+
+
+
+
+65
+
+
+
+
+70
+
+
+
+
+75
+
+
+
+
+80
+
+
+
+
+85
+
+
+
+</div>
+                <div class="greek-content">βασιλε ς μ [γας ντ οχος θε ς δ καιος πι]φαν ς φιλορ[ μαιος κα φιλ λλην κ βασιλ ως]
+μιθραδ το[υ καλλιν κου κα βασιλ σσης λαοδ]κης θε ς φιλ[αδ λφου τ ς κ βασιλ ως ντι χου]
+ πιφανο ς φιλ[ομ τορος καλλιν κου]
+καθι ρ[ωσε]ν [----------- κα ν γρα]ψεν ε ς χρ [νον α νιον ------ ν ρ]σαμε αι πα[ρ ----------------]εμος ρσαμε[ α ---------------]
+λιγμ στις κα[ν ς --- χαρισ]τ ριον πατρι[---------------- ε]ρο [ς] συλον ε[ ς] ε[ρ] ν π λ[ιν ------]
+ εροθ σι τε σ μασιν [β]ασιλι[κο ς ν τ πωι]
+το τωι καθε δ[ρ]υσεν. γ μ[νη]μ[ε α τ ν μ ν]
+προγνων πεθ μησα με [ζ]ονα [καλλ] ον τ[ε]
+τ ν παραλημφθ [ντ]ων [ ς ε καταλ]ιπε [ν]σ[α] γε
+[κ]αιρ ς παρε δε[ν χρ] νοις [προτ ρ]ο[ι]ς ιιεμταν
+-------------------------------------------------------------εμ--
+-----------------------------ινιλ-
+------------------------------πλ--
+--------------------------------------------------------------πλωι-
+------------------------------ιπ--
+----------------------------------------------------------------------------------------------ισδ--
+-------------γ------------------------φ-ωοεπι---σ--σσιοιιι---ηιι--γο- [βασιλικ] ν σ[ωμ]των [κιν]τοις -- καθωσ ωσα [ ερ] α τε [ π λεξα]
+--ιοχιο--ς κα ερο[δ]ο λω[ν θ]εραπε α[ν] ο ην ξιον βασιλικ[ ν --]
+βιειμκιοσιε---τιμηχιρισρισλι πιθ[ σεις τε κα] θ[υσ] [α]ς [ μ]μ νους [γ]ενε[θλ] [ο]ις μ[ ρα]ις κ[ στου] ---λνοιι ιιιυ-σ-ο-ιι---
+λισο-νιθς- [κ]τ [σ]θαι προενο [θ]ην ν μον τ[ε] [σι]ον ν-----
+μαι ολκυιετολτισευχοπ-ποι-λς---ωνηοοιι-τ--ει------------
+λισιν-πλοηιβατιιοεμηιι ν [θ]μι[ς ν]θρ πων
+[γενεα ς]π[ ντων ο ς ν χρ νο]ς
+[ πειρος ε ς διαδοχ] ν χ[ ρας τα της δ] α[ι β ου μο ραι κατασ]τ[ σ] [τη]ρ[ε ν συλ]ον ε δ [τ]ας [ς] χα[λεπ ν μεσις βασιλ]ικ ν δαιμ [ν]ων τιμωρ ς μ[ο ως μελ ας] τ[ε κα βρ]εως σ βειαν δι κει κα[θ]ωσιωμ[ νων τ]ε [ρ] ων
+ τειμασθες ν μος [ν]ειλ τους [ χει]
+ποιν ς. τ μ ν γ ρ σιον [π]αν κο φον ργον τ ς δ σεβε ας πισθοβαρε ς ν γκ[αι].
+ν μον δ το τον φων μ ν ξ γγειλεν μ 
+νο ς δ θε ν κ ρωσεν. ν μος.
+ ερε ς στις π μο καθ σταται βασιλ ων προγ νων μ ν τ ν καθοσιωθ ντων ν ρσαμε αι [ ν] θες ργ[α]νδην ς περιβ λωι στις τε ν στερον κα[τ]α[στ]α[θ μ]χρι παντ ς α νος κε νος λευθερωμ νος λ[λ]ης
+[χρ]ε α[ς]π σης νε[μπ δισ]τος προφασιστ ς τε εροθε[σ οις το τοις] π[ρο]σ[καρτερε τ]ω [προνο]ο μενος θεραπε [ας τε κα κ σμου πρ ποντο]ς ερ ν [γα]λ[μ των]. ν δ 
+[γενεθλ οις μ] [ρα]ι[ς ς μμ]ν[ους γει]ν κ στου [κα]τ
+[π ν τος ε διατ ταχα κ σμον περσικ] ς σθ τος να[λαμβ νων ν κα χ ρις μ κα π τριος ν μος] με[τ ρου γ νους α τ ι περι θηκε στεφ]α[νο τω π ντας τ]ο[ ς χρυσο ς στεφ νοις ο ς γ καθει]ρ[ω]σ[α -------------------]
+[-- τι]μ[α ς ----- πρ]ο[σ δ]ους [τε λαμβ νων π]
+[χ ρας ς]γ [καθω]σ ωσα φ[ σεως ρωικ ς χ ρισιν ε]ρα ς π[ιθ σε]ις [ φει]δ[ε ς λιβα]νωτο [κα ρωμ των ν]
+βω[μο]ς το το[ις] πο[ιε σθ]ω [θυσ ας τ]ε πολυ[τελε ς ε ς τι]μ ν ---------ουξεοβ-νε-υου-ιιγο-----------
+[-------- πι]τελ[ε] τ[ω]. τ[ραπ ζα]ς [μ ν ερ ς]
+[πρ]εποσ[ης θο νης γε]μζων κρατ[ ρας δ] πολην[ ους]
+ φ[θ] νου κρ[ ματος πληρ]ν [---- σ] [ν --------]
+κα [θ] λακα -----------------------
+κοι[ν]ν π λα[υσι]ν ορτ ς π[αρε]χ[ τω συναγωγα ς χλων α τ ς μ ν ς]
+[ θ]ος [ε]ρ[ωσ] νη[ς τιμ ι γ ρ]ας ξαι[ρο μενος το ς δ λοιπο ς χ ριν]
+[ μ]ν [ε ς λευθ ραν δον ν διαν μων πως καστος] ν ε[ρα ς]μ[ ραις νελλιπ ι χορηγ] αν [λ]αμβ[ νω]ν σ[υ]κοφν[τητον χηι] τ [ν ορτ] ν ε[ ω]χο [μενος π]ου προ[αιρε ται. το ς τε]
+ κπ μασι[ν ο ς] [γ] [καθ]ι ρ[ωσα διακονε σ]θω[σα]ν ω[ς]ν ν [ερ ι τ πωι] συν δου κοι[ν ς]
+μετα[λα]μ[β]ν[ωσ]ιν. [α] δ καθωσιωμ ναι [ π]
+[ μο] -----------ται μ[ε------]
+------------------------
+ σοι [στερον ------ υ ο τε το των κα]
+[θυγατ ρες κγονο τε α] τ [ν] [παν]τε[ς διδασκ]με[νο]ι τ ς [α] τ[ ς τ χνας]
+ π[αρεν χλη]τοι μ [ν] τ ν λ[λων]
+[ π ντ]ων φε σθωσαν τα [ς δ] δια[τεταγ]μ ναις π [ μο σ]υν [δ]οις ν[τα]θ[α προσ]καρτ[ερε τωσαν] π[ροφασ] στως τ[ε τ ς λειτ]ουργ ας [ φ] σον [ν β]ο ληται [χ]ρ νο[ν σ ν]οδος ποιε[ σθ]ωσαν. μη[θεν] δσ[ιον στω μ]τε βασιλε μ τε δυν στει [μ τε ερε μ τε ρ]χοντι τοτους το ς λ[λους ερ]ο[δο] [λους ο ς]
+[ γ π]ρογ νω[ν δ]α μοσιν κατ θε ν βο λη[σιν ν]θηκα μη[δ μ ν πα] δας κγ νους [τ]ε κε νων 
+ο τινες ν [ ν]παντι χ[ρ]νωι το το [γ]νος [δ]ιαδ χωνται [μ τε α]τ[ ι καταδουλ]σασθαι [μ] τε ε ς τερο[ν παλλοτρι σ]αι [τρ πωι μ]ηδεν 
+μ τε κακ σα [τινα το τ]ω[ν] περι[σπ σαι λε]ιτουργ ας τα τη[ς] λλ πιμελε σθωσαν μν α τ ν ερε ς πα[μ]υν τωσαν δ βασιλε ς τε κα ρχοντες δι τα[ τ]ε π ντες ο ς ποκε σεται παρ θε ν κα ρ [ων χ] ρις ε σεβε ας. μο ως δ 
+μηδ χ ραν ν γ [κ]αθι ρωσα δα μοσιν το [τοις] 
+μηδεν σιον [ στω μ] τε ξιδι σασθαι μ τε [ ξαλλ]οτρι σαι [μ τ]ε [μετα]διατ ξαι μ τε βλ ψαι κατ μηδ [ν]α τρ[ πον χ ραν κε]νην π[ρ] σοδον ν γ κτ μα
+[δ]αιμ νω[ν συλον] ν [θηκ]α. σα τως δ 
+[μη]δ[ λ]λη[ν παρε ρεσιν ε ς]βρι[ν τ]απε [νωσι]ν
+[ κατ λυσιν ν φωσ ωκα] θ[υσι ν] κα συν [δ]ων
+---------λσι----------ιμ--------------------ιαι------------ιε--------
+οδομ---------
+υ----------
+σ τουτο-------
+---λλ ο-------
+θυω-ιος-------
+δεπ---------
+τηνι[----- ο κ]μ ς δ[ον ς -----]ανου [π-------]
+δυονειι[---- λλ δ]ον ν θ[ε ν ---]
+[β]ασκανο-------
+ νειλ[α]τ-------
+τ ν ποι[ν ν ----]
+[δ]ιακο[νε σθωσαν --]
+ει-------------
+[δι ς π λ]λ[ων]ς τε κ[α] [ρα]κλ ους.
+----ινς-- δ[ κ]η πον[η]ρ δ κου [κ]α β[ια ου ---]υ-σο-λικι------οσεδ----αγα[θ-----]οις α-ιρα-βς---ωιμ-----δη
+------αι[--- δ] κης θ [πε]υτον ---νσε
+-------υγι----ιου πικ[ρ]οτ τη--θευ
+-----σ[--]ρομ[ σ]δ[ο]υ κ[ερ]αυνο ς [ π] κε[ιται --- περ] ---ι-ι-λ---μαυος--κοστεο
+----------ει---μοβ σε[βε α]ς γενη
+[------ ν] ορ[αν] ι πυ[ρ] φλεγ σ[θ]ω σοις
+------λε---λ-----ω κα πιθυμητ ς δεο
+-------αγρο[----- θ]ε ν ποβ[λε]π τωσαν [ε]ς δ μακ [ρ]ων [σ]νεσιν πιβαιν τ[ωσ]α[ν] ε δαι[μον--]απ-ς ξ μετ ρας τιμ ς β ον γαθ ν ε ς λπ δα[ς]
+[δι]α[γ τ]ω[σ]αν δ ας ο το τε π ντες φ ψηλο φρον ματος π[ροσ]ι ντες δι ς μ γ[αν] ο ρ νιον ο κον γγ ς φθαλμο ς [με]τε[ωρο ντες] δικ[α ους] κα θυ[σ] ας πιτελε τωσα[ν] ο ας μ τερ ν τε κ [σμον --------------]
+αι-ος μνο ντες κα γ-------------------
+ πιφ[αν]ς γ οις ε χα ς ε----------------
+γουε α τ ς ρομ σδ[ης ------------------]
+ο [κ] [πε]ραν τε ε ν----------------
+-λω κα λιον ρμ [ν ---------------]
+-νο- νιευ- ιευ-ιιιων χ----------------
+-σ-ιιαρο----------------</div>
+            </div>
+        </div>
+
+        <div class="split-col-right">
+            <h3>Thematic Analysis</h3>
+            
+        <div class="theme-card" onmouseover="highlightQuote('ν μον δ το τον φων μ ν ξ γγειλεν μ')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <span class="tag domain-tag">Content</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    <div class="theme-path">Content > Religious and Dedicatory Texts > Sacred Laws and Rules</div>
+                    <div class="theme-label">Sacred Laws and Rules</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "ν μον δ το τον φων μ ν ξ γγειλεν μ"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote(' εροθ σι τε σ μασιν [β]ασιλι[κο ς ν τ πωι]')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <span class="tag domain-tag">Content</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">95% Conf.</span>
+                    <div class="theme-path">Content > Honorific and Commemorative Inscriptions > Commemorative Monuments</div>
+                    <div class="theme-label">Commemorative Monuments</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: " εροθ σι τε σ μασιν [β]ασιλι[κο ς ν τ πωι]"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('καθε δ[ρ]υσεν')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <span class="tag domain-tag">Type</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">90% Conf.</span>
+                    <div class="theme-path">Type > Object Type > Monumental Stone Objects > Wall or Building Surface</div>
+                    <div class="theme-label">Rock-cut / Rupestral Inscriptions</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "καθε δ[ρ]υσεν"</p>
+                </div>
+            </div>
+        </div>
+        
+            
+            <div style="margin-top:2rem;">
+                <h3>Entities</h3>
+                <div><span class="tag entity-tag">👤 Antiochos I of Commagene <small>(King)</small></span><span class="tag entity-tag">👤 Mithradates I Kallinikos <small>(King, Father of Antiochos)</small></span><span class="tag entity-tag">👤 Laodike <small>(Queen, Mother of Antiochos)</small></span><span class="tag entity-tag">📍 Arsameia on the Nymphaios <small>(Sanctuary/City)</small></span><span class="tag entity-tag">📍 Commagene <small>(Region)</small></span></div>
+            </div>
+
+            <div class="ai-analysis-box">
+                <h3>🤖 AI Analysis Summary</h3>
+                <p style="line-height:1.7;">This inscription is a version of the famous &#x27;Sacred Law&#x27; (Nomos) of Antiochus I of Commagene (r. 70–31 BC). It was found at Arsameia on the Nymphaios and details the establishment of the royal cult. The text prescribes the duties of the priests, the organization of monthly festivals on the king&#x27;s birthday, and the use of sacred lands and revenues to support the sanctuary. It also contains protective clauses and curses against anyone who would violate the sanctity of the &#x27;hierothesion&#x27; or the royal decrees. The language reflects the syncretic Persian-Greek religious program of Antiochus I.</p>
+            </div>
+        </div>
+    </div>
+  </main>
+</body>
+</html>

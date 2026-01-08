@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PHI-346603 - AGKI</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <style>
+    /* Custom Scrollbar Styling */
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+        background: rgba(0,0,0,0.05); 
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #ccc; 
+        border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #aaa; 
+    }
+
+    .page-container { max-width: 1400px; margin: 0 auto; padding: 2rem; }
+    .back-link { display: inline-block; margin-bottom: 1rem; color: var(--primary); font-weight: 600; }
+    
+    /* Original View Styles (Line by Line) */
+    .text-viewer-original { 
+        display: grid; 
+        grid-template-columns: 40px 1fr; 
+        gap: 2rem; 
+        font-family: "New Athena Unicode", "Gentium Plus", "Times New Roman", serif; 
+        font-size: 1.25rem; 
+        line-height: 1.6; 
+        background: var(--panel); 
+        padding: 2rem; 
+        border: 1px solid var(--border); 
+        border-radius: 4px; 
+        margin-bottom: 2rem; 
+        color: var(--text);
+    }
+
+    .line-numbers { 
+        text-align: right; 
+        color: var(--muted); 
+        font-size: 1.25rem; 
+        line-height: 1.6; 
+        user-select: none; 
+        opacity: 0.5; 
+        font-family: inherit; 
+        white-space: pre; 
+        padding-right: 1rem;
+        border-right: 1px solid var(--border);
+    }
+
+    .greek-content { 
+        white-space: pre-wrap; 
+        word-break: break-word;
+        padding-left: 1rem; 
+    }
+
+    .highlight-evidence {
+        background-color: var(--accent);
+        color: white;
+        border-radius: 2px;
+        padding: 0 2px;
+    }
+
+    .theme-card { background: var(--panel); padding: 1rem 1.5rem; border-left: 4px solid var(--primary); margin-bottom: 0.75rem; border: 1px solid var(--border); border-left-width: 4px; }
+    .ai-analysis-box { background: rgba(31, 167, 163, 0.05); padding: 2rem; border-radius: 8px; border: 1px solid var(--border); margin-top: 2rem; }
+    .evidence-box { max-width: 500px; text-align: right; }
+    .evidence-quote { font-size: 0.85rem; font-style: italic; color: var(--muted); margin: 0; }
+    .badge.green { background: #e6f4ea; color: #137333; border-color: #137333; }
+    .badge.orange { background: #fef7e0; color: #b06000; border-color: #b06000; }
+    .badge.red { background: #fce8e6; color: #c5221f; border-color: #c5221f; }
+    .entity-tag { background: rgba(217, 123, 61, 0.1); color: var(--accent-2); margin-right: 0.5rem; margin-bottom: 0.5rem; display: inline-block; padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.9rem; border: 1px solid rgba(217, 123, 61, 0.2); }
+    
+    /* Split View Styles */
+    .split-container { display: block; }
+    .split-container.active { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+    .split-col-left { }
+    .split-col-right { }
+    
+    /* Sticky sidebar in split view */
+    .split-container.active .split-col-right { position: sticky; top: 20px; max-height: 90vh; overflow-y: auto; padding-right: 10px; }
+  </style>
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+
+    function toggleSplitView() {
+        const container = document.getElementById('main-content');
+        const btn = document.getElementById('splitViewBtn');
+        container.classList.toggle('active');
+        if(container.classList.contains('active')) {
+            btn.textContent = 'View: Split';
+            btn.classList.add('active');
+        } else {
+            btn.textContent = 'View: Standard';
+            btn.classList.remove('active');
+        }
+    }
+
+    function copyCitation() {
+        const citation = "AGKI Project. (2026). Inscription PHI-" + "346603" + ". Retrieved from " + window.location.href;
+        navigator.clipboard.writeText(citation);
+        alert("Citation copied to clipboard!");
+    }
+    
+    function highlightQuote(quote) {
+        const container = document.querySelector('.greek-content');
+        if (!container || !quote) return;
+        
+        const escapedQuote = quote.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const regex = new RegExp(escapedQuote, 'g');
+        container.innerHTML = container.innerHTML.replace(
+            regex, 
+            match => `<mark class="highlight-evidence">${match}</mark>`
+        );
+    }
+    
+    function clearHighlight() {
+        const container = document.querySelector('.greek-content');
+        if (!container) return;
+        container.innerHTML = container.innerHTML.replace(/<mark class="highlight-evidence">(.*?)<\/mark>/g, '$1');
+    }
+
+    function updateFontSize(size) {
+        const container = document.getElementById('original-view');
+        if (container) {
+            container.style.fontSize = size + 'px';
+            const lines = container.querySelector('.line-numbers');
+            if(lines) lines.style.fontSize = size + 'px';
+        }
+    }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <h1><a href="../index.html" style="color:white;text-decoration:none;">AGKI Tagging Tool</a></h1>
+    </div>
+    <nav class="nav-links">
+        <a href="../index.html" class="nav-item">Search</a>
+        <a href="../explore.html" class="nav-item">Explore</a>
+        <a href="../indices.html" class="nav-item">Indices</a>
+    </nav>
+  </header>
+  <main class="page-container">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 1rem;">
+        <a href="../index.html" class="back-link" style="margin:0;">← Back to Dashboard</a>
+        <button id="splitViewBtn" onclick="toggleSplitView()" class="button secondary" style="font-size:0.8rem; padding:0.3rem 0.8rem;">View: Standard</button>
+    </div>
+    
+    <div id="main-content" class="split-container">
+        <div class="split-col-left">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <h2>Inscription PHI-346603</h2>
+                <div style="display:flex; gap:0.5rem;">
+                    <button onclick="copyCitation()" class="button secondary" style="font-size:0.9rem; padding:0.5rem 1rem;">📜 Cite</button>
+                    <a href="https://epigraphy.packhum.org/text/346603" target="_blank" class="button">View on PHI</a>
+                </div>
+            </div>
+            
+            <div class="meta-grid">
+                <div><small class="eyebrow">Provenance</small><br><a href="https://pleiades.stoa.org/places/579888" target="_blank" title="View in Pleiades">Attica</a> &gt; <a href="https://pleiades.stoa.org/places/579921" target="_blank" title="View in Pleiades">Eleusis</a></div>
+                <div><small class="eyebrow">Date</small><br><strong> 353/2 BC? </strong></div>
+                <div><small class="eyebrow">Completeness</small><br><span class="badge info">fragmentary</span></div>
+            </div>
+
+            <div style="display:flex; justify-content:space-between; align-items:end; margin-bottom:0.5rem;">
+                <h3>Original Text</h3>
+                <!-- Font Size Control -->
+                <div style="display:flex; align-items:center; gap:0.5rem; background:var(--panel); border:1px solid var(--border); padding:0.2rem 0.5rem; border-radius:4px;">
+                    <span style="font-size:0.8rem; color:var(--muted);">A</span>
+                    <input type="range" id="fontSizeSlider" min="14" max="32" value="20" oninput="updateFontSize(this.value)" style="width:80px; accent-color:var(--primary);">
+                    <span style="font-size:1rem; font-weight:bold; color:var(--muted);">A</span>
+                </div>
+            </div>
+
+            <!-- Original Line-by-Line View -->
+            <div id="original-view" class="text-viewer-original">
+                <div class="line-numbers">1
+
+
+
+5
+
+
+
+
+10
+
+
+
+
+15
+
+
+
+
+20
+
+
+
+
+25
+
+
+
+
+30
+
+
+
+</div>
+                <div class="greek-content">θ[εο]
+ πιστ ται λευσ νι οι[-----------------------------]
+παιον δης δημα νετος [--------------------- νικ δημ]ος πιστων δο θμονε ς [----------------------- -----]
+νης φιλ ππο στιαι θε[ν ---------------------------] 
+μελ νωπος στιοδ ρο 0[----------------------------]
+ ρχιτ κτων φ λαργος α[------------------- συν γραψε] λ θους τεμε ν ξ α γ νη[ς ----------------------- μ κ]ος τετρ ποδας πλ τος τρ[ι ν ποδ ν π χος τριημιποδ ους κ]α κπελεκ σαι ρθο ς πα[νταχ ι περγον χοντας κα γα]γεν λευσ ν δε γιες κα [ θρα στους ριθμ ς τετταρ κο]ντα τ τταρες τ ρους λ θο[υς τεμε ν ξ α γ νης μ κος π ν]τε ποδ ν πλ τος τρι ν πο[δ] [ν π χος πενθημιποδ ους κα κ]πελεκ σαι ρθο ς πανταχ [ι περγον χοντας κα γαγεν]λευσ ν δε ε ς τ ερ ν γι[ες θρα στους ριθμ ς ε κοσι]
+τ τταρες κανον δας ργ σα[σθαι λ θο α γινα ο το μαλακο]
+[μ]κος παρ λον τ ν το χον το[---- τετρ ποδας τρι ν ποδ ν πλ τος τρι ν]μιποδ ων π χος σην κ[ στην ποιο ντα π δ τ ι γων αι μ]ο ως χουσαν ξ λωτο[-]ν [-----------------------]
+[- κα] παρατεμ ντα ν[τ] [ς] σ[ον π ------------------ κα ρ]αντα συντιθ ναι το ς ρμο[ ς θρα στος κα ρμ ττοντα]ς πανταχ ι κα δ σαι κα γο[μφ σαι κα μ λυβδον περιχ αι] ι ν ρχιτ κτων κελε η[ι κα περγ σασθαι κανον δων]ριθμ ς τετταρ κοντα δ ο τρ[ιγλ φους ε κοσι τ τταρας]
+ργ σασθαι λ θο α γινα ο [τ]ο μα[λακο ψος π ντε ποδ ν πλ τ]ος τρι ν ποδ ν τ ν α τν ργασ[ αν ποιο ντα τα ς ν τ ι]ερ ι ε ργασμ ναις κα [ραι στε ν τα ς δ αις χ ραις κε] σθαι τ ς τριγλ φους κα το[ των δ ο γωνια ας καθαρμ σα]ι ρμοττο σας κα ε τενε[ ς πανταχε κα δ σαι κα γομφ]σαι κα μ λυβδον περι[χ] [αι ριθμ ς τριγλ φων ε κοσι τ τ]ταρες λ θους τεμεν π[ε]ν[τεληικο ς ε ς μετ πια ψος π ντε]
+ποδ ν πλ τος π ντε ποδ[ ν παλαστ ς δε ντων π χος τρι ν π]αλαστ ν κα κπελεκ [σαι ρθ] [ς πανταχε περγον χοντα]ς πρ ς τ ν ναγραφ α [ν ν δ ι] [ ρχιτ κτων κα παραδο να]ι π ναθ κει γιε [ς λευκ ς σ]π[ λος ριθμ ς πεντεκα δε]κα λ θος γαγε ν πε[ντελ] θε[ν]λ[ευσ ν δε μ κος π ντε ποδ] ν πλ τος π ντε πο[δ ν] παλασ[τ ς δε ντων π χος τριπαλ στ]ος κα καθελ σθαι ν τ ι ερ ι γ[ιε ς κα θρα στος ριθ]μ ς δ κα π ντε μ[ετ] πια ργ σ[ασ]θαι [δ κα π ντε πεντεληικ] ψος π ντε πο[δ] ν πλ τος πν[τε] πο[δ] [ν παλαστ ς δε ντων τ] ν α τ ν ρ[γα]σ αν ποιον[τα] το[ ς] ν [τ ι ερ ι ε ργασμ νοι]ς κα ρα[ι κα] καθαρμ σα[ι] ρμ ττο[ντα κα ε τεν πανταχε] ραι δ [κα] τ ργασμ να κα[ καθαρμ σαι ε τεν πανταχε] κα δ [σαι] κα γομφ σα[ι] κ[α] μ λ[υ]β[δον περιχ αι κα περγ] σασ[θαι] λ θος τεμε ν πεντ[ε]λ[ηι]κ [ς ε ς τ γε σα μ κος ξ π]ο[δ] [ν π]λ τος τεττ ρων ποδ ν [π]α[λαστ ς] δ[ε ντων ψος π ντε]
+π[αλ]αστ ν κα κπελεκ σαι περγο[ν χο]ν[τας ρθ ς πανταχε] πρ ς τ ν ναγραφ α ν ν δ ι ρ[χιτ κτων κα παραδονα]ι π ναθ κει γιε ς λευκ ς σ[π]λος [ ριθμ ς τετταρ κον]τα πτ λ θος γαγε ν πεντελθεν λ[ε]υ[σ ν δε μ κος ξ πο]δ ν πλ τος τεττ ρων ποδ ν παλασ[τ] [ς δε] [ντων ψος π ντε π]αλαστ ν ριθμ ς τετταρ κοντα [πτ] γων[ια ος λ θος δ ο]γαγε ν μ κος νν α ποδ ν πλ το[ς ξ ποδ] [ν ψος π ντε παλα]στ ν κα καθελ σθαι ν τ ι ερ [ι γιε ς]θ[ρα στος γε σα]
+ ργ σασθαι πεντελη[ι]κ δωρ[ικ] πρ [ς] τ [ν ναγραφ α ν ν δ] ι ρχιτ κτων τετταρ [κ]ον[τα] πτ [μ κ]ο[ς ξ ποδ ν πλ τος]
+τεττ ρων ποδ ν παλαστ ς δε [ν]των [π χ]ο[ς πεντεπ λαστα το] των δ ο γωνια α κα ρα[ντα] συντ[ι]θ να[ι τ ς ρμ ς ρμ ττ]οντας πανταχε θρα στος πλ τος [π]ο[ι]ον[τα τ ν ρμ ν παλ]αστ ν κα δ σαι κα γο[μ]φ σαι κ[α μ] [λυ]β[δ]ο[ν περιχ αι κα]περγ σασθαι ρθ λ θο[ς] τε[μ]ε[ ν] πεντ[εληικ ς ε ς πλινθ]δας μ κος τεττ ρων ποδ ν κα παλ[α]σ[τ ς] π[λ τ]ος [δ ποδας π χ]ος τρι ν μιποδ ων κα κπελεκ [σ]α[ι] ρθ [ς περγον χον]τας κα ε γων ος πανταχε κα παρ[αδ]ον[αι π ναθ κει γι]ε ς λευκ ς σπ λος ριθμ ς τε[ττ]αρ κοντα [τ τταρες λ]θος γαγε ν πεντελ θεν λευσ ν δε μ κος [τε]ττ[ ρων ποδ]ν κα παλαστ ς πλ τος δ ποδα[ς] π χος τριη[μιπ]ο[δ ος κα κα]θελ σθαι ν τ ι ερ ι γιε ς θρ[α] σ[τ]ος ριθμ[ ς τετταρ]κοντα τ τταρες πλινθ δας ξεργσασθ[αι πε]ν[τ]ε[λ]η[ικ ς μ]κος τεττ ρων ποδ ν κα παλαστ ς πλ το[ς] δ[ πο]δας [π χος τρ]ιημιποδ ος ρθ ς κα ε γων ους παντ[α]χ[ε τ]ο ς [ρ]μ[ο ς π]οιο ντα π παλαστ ν κα ραι κα ο κοδ[ομ σα]ι [α τ ν α]τ ι παραστ δας τρε ς συντιθ ντα τος [ρ]μος [θρα στος]
+κα ρμ ττοντας πανταχε πλ τος δ εκ[---]ο[-----------]
+ι πρ ς τ μ τρα ν δ ι ρχιτ κτων κ[α] [δ σαι κα γομφ σα]ι κα μ λυβδον περιχ αι ριθμ ς πλινθ δων τ[εττ]αρ [κ]ο[ντ]α τ τταρες λ θος τεμε ν πεντεληικ ς ε ς π [κ]ρανα δ[ ο μ]κος π ντε ποδ ν παλαστ [ς] πλ τος τρι ν ποδ ν [κ]αμ[ιποδ]ο ψος τρι ν ποδ ν τ ρος λ θος τεμε ν [ε ς π] [κ]ρ[αν]α [τ] [ττ]αρας πεντεληικ ς μ κος τεττ ρων ποδ [ν πλ] το[ς] τρ[ι] [ν ποδ] ν κα μιποδ ο ψος δ ποδας κα πελε[κ] σ[α]ι [πε]ρ[γον χον]τας πρ ς τ ν ναγραφ α ν ν δ ι ρχιτ κ[τ]ω[ν ρ]θ ς [παντα]χε κα παραδο ναι π ναθ κει γιε ς λευκ [ς σπ λος] λθος γαγε ν πεντελ θεν λευσ ν δε δ ο [μ] κο[ς] πν[τε ποδ]ν κα παλαστ ς πλ τος τρι ν ποδ ν κα μιποδο [π χος τρι] ν ποδ ν τ ρος γαγε ν λ θος τ τταρας πεν[τελ] θ[ε]ν [ λε]υσ ν δε μ κος τεττ ρων ποδ ν πλ τος [τρ]ι [ν ποδ]ν κα [μ]ιποδ ο π χος δ ποδας κα καθελ σθ[αι ν τ] ι [ ερ] ι γ[ιε]ς θρα στος π κρανα ργ σασθαι τρ α [πα]ρ[αγ] [νι]α [πεντ]εληικ πρ ς τ ν ναγραφ α ν ν δ ι ρχιτ[ κ]των [μ]κ[ος π]ντε ποδ ν κα παλαστ ς πλ τος τρι ν ποδ [ν κα μι]πο[δ ο] 
+ ψος τρι ν ποδ ν κα ραι π τ ς παραστ[ δας] κ[α] κ[αθα]ρμ σαι ρμ ττοντα κα ε τεν κα δ σαι κα [γ]ο[μ]φ [σαι κα μ] λυβδον περιχ αι κα περγ σασθαι ρθ λθος [τ]εμεν πεντεληικ ς μ κος ποδ ν πτακα δεκα πλ τος [δ πο]δ[ας] π χος τρι ν μιποδ ων κα πελεκ σαι ρθ ς κα[ ε] [γων]ος πανταχε κα παραδο ναι π ναθ κει γιε ς [λευ]κς σ[π]λος περγον χοντας ριθμ ς κτ λ θος γ[αγε] ν εντ[ε]λ θεν λευσ ν δε μ κος ποδ ν πτακα δεκα [πλ]τος [δ π]ο[δ]ας π χος τρι ν μιποδ ων κα καθελ σθ[αι] [ν τ] ι [ε]ρ ι γ[ι]ε ς κα θρα στος ριθμ ς κτ λ θος ξεργ[ σ]ασθαι πεντεληικ ς κτ μ κος πτακα δεκα ποδ ν πλ τος δ ποδας 
+π χος τριημιποδ ος ρθ ς κα ε γων ος παντ[αχε κα] κξ σαι λε ος κα ραι κα θε ναι π κ τε[ρο]ν [τ ν] δ ν σ[υ]ντιθ ντα τ ς ρμ ς ρμ ττοντας θρα στος κ[α] δ [σαι] κα
+μ λυβδον περιχ αι κα περγ σασθαι ρθ.
+[θε]ο 
+[λ θους τεμε ν ε ς τ γε σα πεντελ]ηικο ς μ κος ξ ποδ ν πλ το[ς τεττ ρων ποδ ν π χος π ντε παλα]στ ν δυο ν δακτ λοιν κα κ[πελεκ σαι περγον χοντας πρ ς τ] ν ναγραφ α ν ν δ ι ρχι[τ κτων κα παραδο ναι π ναθ κε]ι γιε ς λευκο ς σπ λους [ριθμ ς τετταρ κοντα κα δ ο λ θο]ς γαγε ν πεντελ θεν λευσ[ ν δε μ κος ξ ποδ ν πλ τος τετρ] ποδας π χος π ντε παλαστ ν
+[δυο ν δακτ λοιν κα καθελ σθαι] ν τ ι ερ ι γιε ς θρα στο[υς ριθμ ς τετταρ κοντα κα δ]ο γε σα ργ σασθαι ωνικ πεν[τεληικ πρ ς τ ν ναγραφ α ν]ν δ ι ρχιτ κτων μ κος ξ ποδ[ ν πλ τος τεττ ρων ποδ ν π χος] π ντε παλαστ ν κα δυο ν δακτ[ λοιν κα ραντα συντιθ ναι τ]ο ς ρμο ς ρμ ττοντας θρα σ[τους κα ε τενε ς π παλαστ]ν πανταχ ι κα δ σαι κα γομφ σ[αι κα μ λυβδον περιχ αι κα]περγ σασθαι ρθ ριθμ ς τεττ[αρ κοντα δ ο λ θους τεμε ν πε]ντεληικο ς δ ο ε ς τ ς παραιετ[ δας λεοντοκεφ λους μ κος ξ] ποδ ν πλ τος κτ ποδ ν κα πελ[εκ σαι περγον χοντας πρ ς τ] ν ναγραφ α ν ν δ ι ρχιτ κ[των ρθ ς πανταχε κα παραδ]ο ναι π ναθ κει γιε ς λευκ ς
+[ σπ λος παραιετ δας γειν 0]εντελ θεν λευσ ν δε λεοντοκε[φ λος δ ο μ κος ξ ποδ ν πλ τ]ος κτ ποδ ν κα καθελ σθαι ν τ[ ι ερ ι γιε ς θρα στος λ]θος τεμεν πεντελεικ ς ε ς κερα[μ δας παραιετ δας μ κος τρ]ι ν ποδ ν παλαστ ς δε ντων πλ το[ς τρι ν ποδ ν κα πελεκ σαι] περγον χ σας πρ [ς] τ ν ναγραφ [α ν ν δ ι ρχιτ κτων ρθ] ς π[α]νταχε κα παρα[δ]ονα[ι] π ναθ [κει γιε ς λευκ ς σπ λου]ς ριθμ ς βδομ κοντα δ ο κεραμ δ[ας γαγε ν πεντελ θεν λε]υ[σ] ν δε μ κος τρι ν ποδ ν παλαστ [ς δε ντων πλ τος τρι ν ποδ]ν κ[α] καθελ σθαι ν τ ι ερ ι γιε[ ς θρα στους ριθμ ς βδομ] κοντα δ ο παραι[ετ]δας [ξ]ε[ρ]γ σ[ασθαι πεντεληικ ς λεοντοκε]φ λους δ ο μ κος ξ ποδ ν πλ τος
+[ κτ ποδ ν πρ ς τ ν ναγραφ α] ν ν δ ι ρχιτ κτων κα τ ς λε[οντοκεφαλ ς ξ σαι κα ραι κα] θε ναι κα καθαρμ σαι θρα σ[τους ε γων ους πανταχε κα δ]σ[α]ι [κα] γομφ σαι κα μ λυβδον
+[περιχ αι κεραμ δας ξεργ σασθαι] πεντεληικ ς μ κος ποδο ν
+[δυο ν τρι ν παλαστ ν πλ τ]ος [τρι ν π]οδ ν πρ ς τ ν ναγραφ α ν
+[ ν δ ι ρχιτ κτων κα] ρα[ι κ]α θ[ε ναι κ]α καθαρμ σ[αι] θρα στ[ους π δ ο δακτ λους κα] ε τενε ς παντ[αχ]ε ριθμ ς βδομ κο[ντα δ ο λ θος κτ τας τ]εμε ν στρ ματι 0 [τ]ς μαλακ ς π τρας μ[αλο ς μ κος τετρ ποδας] πλ τος δ ποδας π[ χ]ος τρι ν μιποδ ω[ν κα πελεκ σαι ρθο ς] πανταχε τ μνειν δ[ κα] με ζους λ θου[ς κτ τας καν ς κατ] λ γον κα παραδοναι [π να]θ κει γ[ι]ε ς [λ θος γειν 0 λευσ]ν δε τ ς μαλακ ς π τρας [μ] κος τετ[ρ ποδας πλ τος δ ποδας π χ]ος τρι ν μιποδ ων κα κα[θε]λ σθα[ι ν τ ι ερ ι γιε ς θρα στ]ους λ θος τεμε ν κτ τας [π]τρας [τ ς μαλακ ς μαλο ς μ κος] δ δεκα ποδ ν πλ τος τρι ν πο[δ ν κα μιποδ ο π χος τρι ν μι]ποδ ων ριθμ ς τετταρ κοντα τ[ τταρες τεμε ν δ κα τ ρους] λ θους δ ο μ κος πεντεκα δεκα π[οδ ν κα]
+ μιποδ ου πλ τος τρι ν ποδ ν κα μιποδ ου π χος τριημιποδ ους κα πε[λεκ σαι ρθο ς παντ]αχε περγον χοντας κα παραδον[αι π ναθ κει γιε ς λ θου]ς γαγε ν ξ κτ ς λευσ ν δε τ[εττ]α[ρ κοντα τ τταρας μ κος] δ δεκα ποδ ν πλ τος τρι ν ποδ ν κ[α] [μιποδ ο π χος τριημιπο]δ ους γαγε ν δ κα τ ρους δ ο μ κο[ς πεντεκα δεκα ποδ ν κα] μιποδ ου πλ τος τρι ν ποδ ν κα μ[ιποδ ο π χος τριημιποδ] ους κα καθελ σθαι ν τ ι ερ ι γιε ς [κα θρα στους το π]ροστ ιου το λευσ νι νακαθηρ μενον στ[ρωματ ζειν τ πρ σ]θιον το στρ ματος κα τ ς πικαμπ ς μ χρ[ι]
+[το το χου πλ το]ς ποιο ντα τ ς τ φρο δ κα π δας κα γφορ σα[ντα τ ν γ ν ξω το] ερο τιθ ναι το ς λ θους τ ς μαλακ ς π τρ[ας προσεπιτεμ]ντα ο ν ε ι π τρα συντιθ ναι το ς ρμο ς στερ[ φους ρμ ττον]τας πανταχε μ κος τετρ ποδας πλ τος δ ποδα[ς π χος τριημιπ]οδ ους που δ ν δ ηι κα με ζοσ[ι] λθοις χρ σθ[αι κανο ς πε]ργ ζεσθαι δ κατ τ ν στο χον καστον διανεκ 
+[παρ μ κος κα] ξ παμοιβ ν π δ το των τιθ ναι τ ν ε θυντη[ρ αν κτ το λ]θο περγασ μενον π τρε ς παλαστ ς τ περ χ[ον κα συντιθ] ναι το ς ρμο ς ρμ ττοντας πανταχε κα θρα[ στους λ θου]ς δ θ σει μ κος δ δεκα ποδ ν πλ τος τρι ν ποδ ν
+[κα μιποδ]ου π χος τριημιποδ ους θ σει δ κα το ς γωνια ο[υς μ κος πεν]τεκα δεκα ποδ ν κα μιποδ ου δ ο κα περγασ μ[ενον ρθ κ]α πρ ς τ ν περιτ νειαν ν ν δ ι ρχιτ κτων δ [σαι κα μ]λυβδον περιχ αι ριθμ ς τετταρ κοντα τ τταρες λ [θους τεμε] ν τ ς λευσινιακ ς π τρας μ κος ξ ποδ ν πλ τος τε[τρ ποδα]ς π χος πεντεπαλ στους κα κπελεκ σαι περγον χο[ντας ρθ]ο ς πανταχε ριθμ ς τετταρ κοντα δ ο λ θους γαγε[ ν κ τ]ς λευσ νι λιθοτομ ας ε ς τ ερ ν μ κος [ξ] ποδ ν πλ τ[ος τετρ] ποδας π χος πεντεπαλ στους κα καθελ σθαι ν τ ι ε[ρ ι γ]ιε ς θρα στους ριθμ ς τετταρ κοντα δ ο λ θους τεμε[ ν τ]ς λευσινιακ ς π τρας μ κος ξ ποδ ν πλ τος τρι ν ποδ ν
+[κα] μιποδ ου π χος πντε παλαστ ν κα κπελεκ σαι περγον
+[ χο]ντας ρθο ς πανταχε ριθμ ς εκοσ[ι] τ τταρες λ θους γα[γε] ν κ τ ς λευσ ν[ι] λιθοτομ ας μ κος ξ ποδ ν πλ τος τρι ν π[ο]δ ν κα μιποδ ου π χος πεντεπαλ στους κα καθελ σθαι ν τ ι ερ ι γιε ς θρα στους ριθμ ς ε κ[ο]σι τ τταρες στυλοβ τας ξεργ σασθαι τετταρ κοντα τ τταρας π τρας τ ς λευσινιακ ς πλ τος ξ ποδ ν μ κος τετρ ποδας π χος πεντεπαλ στους κα τ ρους ξεργ σασθαι πλ τος ξ ποδ ν μ κος τρι ν ποδ ν
+κα μιποδ ου π χος [π]εντ[ε]παλ στους ε κοσ[ι] δ ο κα τ ρους γωνια ους ξποδας παν[τ]αχ[ε] δ ο το τους περγασ μενον τιθ ναι κα παραξεσ μενον π μιπ διον τ λον συντιθ ναι το ς ρμο ς ρμ ττοντας πανταχε θρα στους κα [π]εργασ μενος ρθ κα λε α δ σ[ει] τ[ ν] [κ]ραν κα προστυχ σα[ι ε]τ[ε]ν προσλεποντα πιν κια κα[ κ]α[τ] μ ν κ ονα γομφ σαι κα μ λυβδον περιχ αι μ λυβδον δ κα σ δηρον το ς λ θοις ε ς τ δεσμ π λις παρ ξει κα τροχιλε[ α]ν ντελ.</div>
+            </div>
+        </div>
+
+        <div class="split-col-right">
+            <h3>Thematic Analysis</h3>
+            
+        <div class="theme-card" onmouseover="highlightQuote('συν γραψε')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <span class="tag domain-tag">Official and Legal Documents</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    <div class="theme-path">Official and Legal Documents > Contracts and Private Legal Acts</div>
+                    <div class="theme-label">Building Specifications</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "συν γραψε"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('ριθμ ς τετταρ κοντα δ ο')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <span class="tag domain-tag">Administrative Records and Lists</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">95% Conf.</span>
+                    <div class="theme-path">Administrative Records and Lists > Accounts and Financial Records</div>
+                    <div class="theme-label">Construction Accounts</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "ριθμ ς τετταρ κοντα δ ο"</p>
+                </div>
+            </div>
+        </div>
+        
+            
+            <div style="margin-top:2rem;">
+                <h3>Entities</h3>
+                <div><span class="tag entity-tag">👤 Φίλαργος <small>(Architect)</small></span><span class="tag entity-tag">👤 Δημάνετος <small>(Official)</small></span><span class="tag entity-tag">📍 Eleusis <small>(Sanctuary/Polis)</small></span><span class="tag entity-tag">📍 Pentelikon <small>(Quarry)</small></span><span class="tag entity-tag">📍 Aegina <small>(Island/Quarry)</small></span></div>
+            </div>
+
+            <div class="ai-analysis-box">
+                <h3>🤖 AI Analysis Summary</h3>
+                <p style="line-height:1.7;">IG II² 1666 is a major 4th-century BC inscription from Eleusis containing the building specifications (syngraphai) for the Philonian Portico of the Telesterion. The text provides an exhaustive list of architectural members—including triglyphs (τριγλύφους), metopes (μετώπια), cornices (γεῖσα), and stylobates (στυλοβάτας)—along with their precise dimensions in feet and palms. It specifies the use of Pentelic marble, Aeginetan stone, and local Eleusinian stone. The mention of the architect Philargos and the detailed instructions for dressing (ἐκπελεκῆσαι), dowelling (γομφῶσαι), and leading (μόλυβδον περιχέαι) the stones make it a primary source for understanding Greek monumental architecture and public procurement.</p>
+            </div>
+        </div>
+    </div>
+  </main>
+</body>
+</html>

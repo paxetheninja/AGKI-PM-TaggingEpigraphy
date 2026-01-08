@@ -1,0 +1,772 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PHI-186221 - AGKI</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <style>
+    /* Custom Scrollbar Styling */
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+        background: rgba(0,0,0,0.05); 
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #ccc; 
+        border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #aaa; 
+    }
+
+    .page-container { max-width: 1400px; margin: 0 auto; padding: 2rem; }
+    .back-link { display: inline-block; margin-bottom: 1rem; color: var(--primary); font-weight: 600; }
+    
+    /* Original View Styles (Line by Line) */
+    .text-viewer-original { 
+        display: grid; 
+        grid-template-columns: 40px 1fr; 
+        gap: 2rem; 
+        font-family: "New Athena Unicode", "Gentium Plus", "Times New Roman", serif; 
+        font-size: 1.25rem; 
+        line-height: 1.6; 
+        background: var(--panel); 
+        padding: 2rem; 
+        border: 1px solid var(--border); 
+        border-radius: 4px; 
+        margin-bottom: 2rem; 
+        color: var(--text);
+    }
+
+    .line-numbers { 
+        text-align: right; 
+        color: var(--muted); 
+        font-size: 1.25rem; 
+        line-height: 1.6; 
+        user-select: none; 
+        opacity: 0.5; 
+        font-family: inherit; 
+        white-space: pre; 
+        padding-right: 1rem;
+        border-right: 1px solid var(--border);
+    }
+
+    .greek-content { 
+        white-space: pre-wrap; 
+        word-break: break-word;
+        padding-left: 1rem; 
+    }
+
+    .highlight-evidence {
+        background-color: var(--accent);
+        color: white;
+        border-radius: 2px;
+        padding: 0 2px;
+    }
+
+    .theme-card { background: var(--panel); padding: 1rem 1.5rem; border-left: 4px solid var(--primary); margin-bottom: 0.75rem; border: 1px solid var(--border); border-left-width: 4px; }
+    .ai-analysis-box { background: rgba(31, 167, 163, 0.05); padding: 2rem; border-radius: 8px; border: 1px solid var(--border); margin-top: 2rem; }
+    .evidence-box { max-width: 500px; text-align: right; }
+    .evidence-quote { font-size: 0.85rem; font-style: italic; color: var(--muted); margin: 0; }
+    .badge.green { background: #e6f4ea; color: #137333; border-color: #137333; }
+    .badge.orange { background: #fef7e0; color: #b06000; border-color: #b06000; }
+    .badge.red { background: #fce8e6; color: #c5221f; border-color: #c5221f; }
+    .entity-tag { background: rgba(217, 123, 61, 0.1); color: var(--accent-2); margin-right: 0.5rem; margin-bottom: 0.5rem; display: inline-block; padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.9rem; border: 1px solid rgba(217, 123, 61, 0.2); }
+    
+    /* Split View Styles */
+    .split-container { display: block; }
+    .split-container.active { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+    .split-col-left { }
+    .split-col-right { }
+    
+    /* Sticky sidebar in split view */
+    .split-container.active .split-col-right { position: sticky; top: 20px; max-height: 90vh; overflow-y: auto; padding-right: 10px; }
+  </style>
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+
+    function toggleSplitView() {
+        const container = document.getElementById('main-content');
+        const btn = document.getElementById('splitViewBtn');
+        container.classList.toggle('active');
+        if(container.classList.contains('active')) {
+            btn.textContent = 'View: Split';
+            btn.classList.add('active');
+        } else {
+            btn.textContent = 'View: Standard';
+            btn.classList.remove('active');
+        }
+    }
+
+    function copyCitation() {
+        const citation = "AGKI Project. (2026). Inscription PHI-" + "186221" + ". Retrieved from " + window.location.href;
+        navigator.clipboard.writeText(citation);
+        alert("Citation copied to clipboard!");
+    }
+    
+    function highlightQuote(quote) {
+        const container = document.querySelector('.greek-content');
+        if (!container || !quote) return;
+        
+        const escapedQuote = quote.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const regex = new RegExp(escapedQuote, 'g');
+        container.innerHTML = container.innerHTML.replace(
+            regex, 
+            match => `<mark class="highlight-evidence">${match}</mark>`
+        );
+    }
+    
+    function clearHighlight() {
+        const container = document.querySelector('.greek-content');
+        if (!container) return;
+        container.innerHTML = container.innerHTML.replace(/<mark class="highlight-evidence">(.*?)<\/mark>/g, '$1');
+    }
+
+    function updateFontSize(size) {
+        const container = document.getElementById('original-view');
+        if (container) {
+            container.style.fontSize = size + 'px';
+            const lines = container.querySelector('.line-numbers');
+            if(lines) lines.style.fontSize = size + 'px';
+        }
+    }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <h1><a href="../index.html" style="color:white;text-decoration:none;">AGKI Tagging Tool</a></h1>
+    </div>
+    <nav class="nav-links">
+        <a href="../index.html" class="nav-item">Search</a>
+        <a href="../explore.html" class="nav-item">Explore</a>
+        <a href="../indices.html" class="nav-item">Indices</a>
+    </nav>
+  </header>
+  <main class="page-container">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 1rem;">
+        <a href="../index.html" class="back-link" style="margin:0;">← Back to Dashboard</a>
+        <button id="splitViewBtn" onclick="toggleSplitView()" class="button secondary" style="font-size:0.8rem; padding:0.3rem 0.8rem;">View: Standard</button>
+    </div>
+    
+    <div id="main-content" class="split-container">
+        <div class="split-col-left">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <h2>Inscription PHI-186221</h2>
+                <div style="display:flex; gap:0.5rem;">
+                    <button onclick="copyCitation()" class="button secondary" style="font-size:0.9rem; padding:0.5rem 1rem;">📜 Cite</button>
+                    <a href="https://epigraphy.packhum.org/text/186221" target="_blank" class="button">View on PHI</a>
+                </div>
+            </div>
+            
+            <div class="meta-grid">
+                <div><small class="eyebrow">Provenance</small><br><a href="https://pleiades.stoa.org/places/599741" target="_blank" title="View in Pleiades">Kos</a> &gt; <a href="https://pleiades.stoa.org/places/599691" target="_blank" title="View in Pleiades">Isthmos</a></div>
+                <div><small class="eyebrow">Date</small><br><strong> late 3rd c. BC (ca. 180-175 BC, Habicht) </strong></div>
+                <div><small class="eyebrow">Completeness</small><br><span class="badge info">fragmentary</span></div>
+            </div>
+
+            <div style="display:flex; justify-content:space-between; align-items:end; margin-bottom:0.5rem;">
+                <h3>Original Text</h3>
+                <!-- Font Size Control -->
+                <div style="display:flex; align-items:center; gap:0.5rem; background:var(--panel); border:1px solid var(--border); padding:0.2rem 0.5rem; border-radius:4px;">
+                    <span style="font-size:0.8rem; color:var(--muted);">A</span>
+                    <input type="range" id="fontSizeSlider" min="14" max="32" value="20" oninput="updateFontSize(this.value)" style="width:80px; accent-color:var(--primary);">
+                    <span style="font-size:1rem; font-weight:bold; color:var(--muted);">A</span>
+                </div>
+            </div>
+
+            <!-- Original Line-by-Line View -->
+            <div id="original-view" class="text-viewer-original">
+                <div class="line-numbers">1
+
+
+
+5
+
+
+
+
+10
+
+
+
+
+15
+
+
+
+
+20
+
+
+
+
+25
+
+
+
+
+30
+
+
+
+
+35
+
+
+
+
+40
+
+
+
+
+45
+
+
+
+
+50
+
+
+
+
+55
+
+
+
+
+60
+
+
+
+
+65
+
+
+
+
+70
+
+
+
+
+75
+
+
+
+
+80
+
+
+
+
+85
+
+
+
+
+90
+
+
+
+
+95
+
+
+
+
+100
+
+
+
+
+105
+
+
+
+
+110
+
+
+
+
+115
+
+
+
+
+120
+
+
+
+
+125
+
+
+
+
+130
+
+
+
+
+135
+
+
+
+
+140
+
+
+
+
+145
+
+
+
+
+150
+
+
+
+
+155
+
+
+
+
+160
+
+
+
+
+165
+
+
+
+
+170
+
+
+
+
+175
+
+
+
+
+180
+
+
+
+
+185
+
+
+
+
+190
+
+
+
+
+195
+
+
+
+
+200
+
+
+
+
+205
+
+
+
+
+210
+
+
+
+
+215
+
+
+
+
+220
+
+
+
+
+225
+
+
+
+
+230
+
+
+
+
+235
+
+
+
+
+240
+
+
+
+
+245
+
+
+
+
+250
+
+
+
+
+255
+
+
+
+
+260
+
+
+</div>
+                <div class="greek-content">το δε πεγρ ψαντο ο ς μ τεστι τ ς μοναρ[χ ας κ]ατ [τ γραφ ν]
+ψ φισμα π δαμ ρχου το δαμοξ νου π μον[ ρ]χου θε[--]
+μην ς παν μου μελαιναδα[--]
+ γησικλ ς θευκρ του ματρ ς δ νικοφ ντας τ ς πιγ νο[υ]
+ ρισταγ ρας σωκλε ς ματρ ς δ μενιτο ς τ ς ρισταγ ρα
+ γ θανδρος φιλιστε ς ματρ ς δ πλατ ννας τ ς γαθ [νδρου]
+ ρ στων φιλ ππου ματρ ς δ χαρμο ς τ ς παρμεν σκου
+ ρχιππος δορκυλ δα ματρ ς δ φιλαιν δος τ ς ριστ ππου
+ ριστ δαμος φιλ νου ματρ ς δ πισιμαχ δος τ ς ριστοδ μου
+ ρισταγ ρας σωσιστρ του ματρ ς δ βατι δος τ ς σωσιστρ του
+ ρκεσ λας πλ τθιος ματρ ς δ γναθ ου τ ς ριστοκρ του
+ ριστ κριτος πλ τθιος ματρ ς δ γναθ ου τ ς ριστοκρ του
+ριστιππ δας ε τελ δα ματρ ς δ θευδωρ δος τ ς θευδ ρου
+ ριστιππ δας θευδ ρου ματρ ς δ γεμον δος τ ς ριστιππ δα
+ ρχ πολις γεπ λιος ματρ ς δ σ μου τ ς παρμεν σκου
+ γησ ας νικομ χου ματρ ς δ νησ ου τ ς τελεσ ππου
+ ριστ ων χαρμ ππου ματρ ς δ φιλι δος τ ς κλευμ δευς
+ μφιμ δης πικλε ς ματρ ς δ κατα ας τ ς μφιμ δευς
+ γησ ας πικλε ς ματρ ς δ κατα ας τ ς μφιμ δευς
+ ριστ δαμος ριστιππ δα ματρ ς δ πισιμαχ δος τ ς φιλ νορος
+ ριστιππ δας ριστοδ μου ματρ ς δ μινκ λιος τ ς φιλ σκου
+α σχ λος ντιπ τρου ματρ ς δ παρμεν δος τ ς θευδ ρου
+ ριστογ νης παρταγ ρα ματρ ς δ κληνο ς τ ς πολυμν στου
+α σχυλ δας χαριδ μου ματρ ς δ πυθοκλε ας τ ς ρκεσ 
+α σχ λος χαρμ δα ματρ ς δ α σχυλ νης τ ς καλλιστρ του
+ ρ στων χαρμ δα ματρ ς δ πιν κης τ ς ρ στωνος
+α σχ λος ρκεσ λα ματρ ς δ πλατθ δος τ ς ριστ ππου
+α σχυλ νος χαρμ ππου ματρ ς δ παρμεν δος τ ς ε κλε ς
+ γησ ας φιλ ππου ματρ ς δ λ ης τ ς μακαρ ως
+ ριστογ νης θευδ ρου ματρ ς δ θευδωρ δος τ ς ριστογ νευς
+ ριστογ νης ριστογ νευς ματρ ς δ νικομ χης τ ς θευδ του
+ ριστοφ νης διομ δοντος ματρ ς δ σιμ λης τ ς ριστοφ νευς
+ ριστωνυμ δας κατοδ ρου ματρ ς δ κλειτο ς τ ς νδροτ λευς
+ ριστωνυμ δας θευδ ρου ματρ ς δ παρμεν δος τ ς θευδ ρου
+ ριστογ νης φιλ σκου ματρ ς δ νικατ ου τ ς πραξ α
+ ριστ κριτος νικοστρ του ματρ ς δ ζωπυρ δος τ ς ριστοδ μου
+ νδροτ λης κατοδ ρου ματρ ς δ κλειτο ς τ ς νδροτ λευς
+ ριστ βουλος φιλ νου ματρ ς δ πυθι δος τ ς πυθοκλε ς
+ ρκεσ λας α σχ λου ματρ ς δ φιλι δος τ ς ρκεσ λα
+ ριστιππ δας θευδ ρου ματρ ς δ γεμον δος τ ς ριστιππ δα
+ μφικλ ς περικλε ς ματρ ς δ ζωπυρ δος τ ς κατοδ ρου
+ ριστοφ νης πραξ α ματρ ς δ μικοτ ρας τ ς ριστοφ νευς
+ ριστιππ δας δορκυλ δα ματρ ς δ φιλαιν δος τ ς ριστιππ δα
+ ρκεσ λας θευδ ρου ματρ ς δ ξιν ου τ ς κυδικλε ς
+ 
+θρασυκλε δας καλλικλε ς ματρ ς δ [φ]ιλι δος τ ς πισιδ μου
+θε δωρος νικαγ ρα ματρ ς δ τιμο ς τ ς θευδ ρου
+θε δοτος νικαγ ρα ματρ ς δ τιμο ς τ ς θευδ του
+θρασ ανδρος τιμ νδρου ματρ ς δ φιλα[ι]ν δος τ ς νικοστρ του
+θε δωρος χαιρεδ μου ματρ ς δ φιλι δος τ ς θευδ ρου
+θε δωρος ριστογ νευς ματρ ς δ νικομ χης τ ς θευδ του
+θε δοτος ριστογ νευς ματρ ς δ νικομ χης τ ς θευδ του
+θρασ ανδρος κρ τητος ματρ ς δ σκληπι δος τ ς φαν α
+θρασ ανδρος νικοστρ τ[ο]υ ματρ ς δ κλυμ νης τ ς ρακλε του
+θευκλ ς χαρμ ππου ματρ ς δ ζωπυρ δος τ ς μελαγκρ δα
+θαυμας θαυμ νου ματρ ς δ δ στης τ ς φιλοκλε ς
+[θ]εμιστοκλ ς μακαρ ως ματρ ς δ τιμο ς τ ς θεμιστοκλε ς
+ππ ας τελεσ ππου ματρ ς δ θεμιστ ου τ ς ππ α
+σχ λας καλλιστρ του ματρ ς δ θευδοσ ης τ ς χαρμ λου
+κλεωνυμ δας χαρ νου ματρ ς δ ζωπυρ δος τ ς κλεωνυμ δα
+κλε τος δορκυλ δα ματρ ς δ ρατ ου τ ς κλε του
+καλλικλ ς τιμοξ νου ματρ ς δ καλλιστρ της τ ς καλλιστρ[ του]
+καλλ στρατος ρ στου ματρ ς δ φιλινν δος τ ς φιλ σκου
+κλε τος χαρμ ππου ματρ ς δ φιλινν δος τ ς φιλ σκου
+κρ των χαιρ [λ]ου ματρ ς δ λι δος τ ς πολλοδ ρου
+κρ των κρ τωνος ματρ ς δ γναθ ου τ ς κρ τωνος
+[κ] μαρχος χαρμ ππου ματρ ς δ λι δος τ ς κλευμ δευς
+[κ]λε φαντος χαιρ λου ματρ ς δ πλατθου τ ς κλευφ ντου
+[κλε] γορος χαιρ λου ματρ ς δ πλατθ ου τ ς κλευφ ντου
+[καλλ]ικρ της ριστογ νευς ματρ ς δ ζωπυρδος τ ς καλ[λικρ τευς]
+[καλλ]ιππ δας φιλ ππου μα[τ]ρ ς δ χαρμο ς τ ς παρμεν σκ[ου]
+λυσα[---]
+λα[----]
+λα[----]
+λι[----]
+με[----]
+με[----]
+μιν[----]
+νικ[----]
+νιι[----]
+νιι[----]
+νι[----]
+νιχ[----]
+νιι[----]
+νι[----]
+νιι[---]
+νιι[---]
+νι[----]
+νι[----]
+ο[----]
+ 
+σ[----]
+σ[----]
+σ[----]
+σ[----]
+[-----]
+[-----]
+σ[----]
+σ[----] 0[----] 0[----]
+ 
+φ[----]
+φι[----]
+[-----]
+[-----]
+φ[----]
+φα[----]
+φ[----]
+φιλ[---]
+φιλ[---]
+[-----]
+[-----]
+[-----]
+[-----]
+χα[----]
+χαλ[---]
+χα[----]
+χα[----] 0[----]
+χα[----]
+χα[----]
+χα[----]
+χα[----]
+χα[----] 0[----]
+χα[----]
+χα[----]
+χα[----]
+χα[----]
+χα[----]
+χα[----]
+χα[----]
+χα[----]
+χα[ρ]ι[--]
+χαι[---]
+χαρ[---]
+χα[----]
+χα[----]
+χα[----]
+χα[----]
+χα[----]
+χαυ[---]
+χα[----]
+χα[----]
+[ πεγ]ρ ψαντο δ κα τ ν
+[ ξω] ν[χ]ιστε ας το δε [ γ] ας σιμ α ματρ ς δ 
+[ν]ανν ου τ ς νικομ χου.
+[ γ] ας γ α ματρ ς δ σω[τ]ι δος τ ς μακαρ ως 
+παραγιν μενος π να[ν]ν ου τ ς νικομ χου.
+ ρχ ας νικομ χου ματρ [ς]
+δ γεμον δος τ ς ζωπ ρου παραγιν μενος π 
+φιλι δος τ ς ρακλε του.
+ε φρ νωρ π θωνος ματρ ς δ ρ στης τ ς ε φρ νορος. ε φ λητος
+ε δ μου ματρ ς δ μ νκης τ ς ε φιλ του παραγ[ι]ν μενος π νανν ου
+τ ς νικομ χου. ε τυχδας λαμπ α ματρ ς δ
+ κατα ας τ ς ε τυχ δα 
+παραγιν μενος π μελ ννας τ ς μεν ππου.
+ζ πυρος νικομ χου ματρ ς δ γεμον δος τ ς
+ζωπ ρου παραγιν μενο[ς]
+ π φιλι δος τ ς ρακλετου. μακαρε ς γ α
+ματρ ς δ σωτι δος τ ς
+μακαρ ως παραγιν μ[ε]νος π νανν ου τ ς ν[ι]κομ χου. ν καρχος
+ γ α ματρ ς δ [να---]
+[--] σωτι δος τ ς μακα[ρ]ως παραγιν μενος [π] νανν ου τ ς νικομ χου. νικ στρατος ρκ[εσ] λα ματρ ς δ κοσυμβ [δ]ος τ ς στασ λα παραγινμενος π μφικλε ς το
+στιε ου. πολ μναστος νικομ χου ματρ ς δ
+ γεμον δος τ ς ζωπ ρο[υ] 
+παραγιν μενος π φιλιδος τ ς ρακλε του. π σιππος ε δ μου ματρ ς
+δ μ νκης τ ς ε φιλ του 
+παραγιν μενος π ναν ου τ ς νικομ χου. σ[ι]μ ας φαινοκρ του ματρ ς
+δ μφιλοχ δος τ ς διογ νευς παραγιν μενος π 
+ναν ου τ ς νικομ χου.
+σωκλ ς σωσιστρ του ματρ ς δ παρμεν δος τ ς
+πολυανου παραγιν μενος π πολυκλε του το 
+πολυα νου. φιλ νος νικοστρ του ματρ ς δ φιλι δος τ ς φιλ νου παραγιν μενος π πολυκλε του
+το πολυα νου.
+ ντ οχος σελε κου.
+ σκληπι δης δη[μη]μητρ ου.
+ε φ νης σωτ ωνος
+ πεγρ ψαντο δ κα το δαμοπ ητοι το δε
+ε δαμος ε δ μου ματρ [ς]
+δ κλειτομαχ δος τ ς φιλνου. ε δαμος ε δ μου
+ματρ ς δ κλειτομαχ δο[ς]
+τ ς ε δ μου. κφαντ δας κφ ντου ματρ ς δ χελω δος τ ς πισ λα. ν[ι]κ μαχος ε δ μου ματρ [ς]
+δ κλειτομαχ δος τ ς νικ[ο]μ χου. νικ ρατος δαματρ ου ματρ ς δ σ μου τ ς
+χαιρεδ μου.
+παρμεν σκος
+πολυμν στου.
+ ργ ος μιλτι δου.
+πε σανδρος ργ ου.
+ ργ ος β.
+παλαμ δης β.
+ παφρ διτ[ος]
+νικ νορος
+ε
+[------]ιτοι[---------]
+[-------]ιο[---------]
+[-----------------]
+[-------]λ[---------]
+[-------]ο[---------]
+[-------]ου[---------]
+[-------]ου[---------]
+[-----------------]
+[-----------------]
+[-----------------]
+[-----------------]
+[-----------------]
+[------]-σ[----------]
+[------]0[----------]
+[-----]μνα[----------]
+[---- φ]ιλ νν[ας ---------]
+[----]υ[--]νι[---------]
+[---]νακτος [----------]
+[----] ου τ ς [----------]
+[------]ημι[---------]
+[----]ατρο[- ----]
+[---]ος τ ς πα[----------]
+[----]ολυ-ναι[---------]
+[----]υ[- μα]τρ ς [δ -------]
+[----]ος-- λλι[--------]
+[------]σκοδ[---------]
+[--- ματρ]ς δ [----------]
+[------]ταρ[---------]
+[------]οσπ[---------]
+[------]δε[----------]
+[------]ινο[----------]
+[------]μα[----------]
+[------]σ[-----------]
+[------]α[-----------]
+[------]ας[----------]
+[------]ου[----------]
+[------]β[----------]
+[----] νε τερος [--------]
+[-------]σνικ[--------]
+[-----]σ[------------]
+[-------]ρο[---------]
+[-------]στοδ[--------]
+[-------]ομα[--------]
+[--------]κ [--------]
+[-------]ρο-[--------]
+[-------]λευ[--------]
+[-------]τος[-------]
+[-------]α καθ [ οθεσ αν δ] 
+[------]-ραψουμ[------]
+[-------]οστα[-------]
+[-- καθ οθε]σ αν [δ -------]
+[-------]σοφ[--------]
+[--- καθ]οθεσ[ αν δ ------]
+[-------]επα[--------]
+[------]ου[----------]
+[------]υμα[---------]
+[------]α-ις[---------]
+[------]γορα[---------]
+[------]ιδης[---------]
+[------]ανδρ[---------]
+[-----] ππου μα[τρ ς δ -----]
+[-------]ασφιλι[-------]
+[-------]μηδε[--------]
+[-------]οστα[--------]
+[-- καθ οθεσ] αν δ [-------]
+[--------]ιδα[-------]
+[-------]ου καθ [ οθεσ αν δ]
+[-------]ου μα[τρ ς δ ----]
+[-------]σα[---------]
+[-------]εδ[---------]
+[------]σπαν[---------]
+[--- ματρ]ς δ α νη[--------]</div>
+            </div>
+        </div>
+
+        <div class="split-col-right">
+            <h3>Thematic Analysis</h3>
+            
+        <div class="theme-card" onmouseover="highlightQuote('τοὶ δὲ ἐπεγράψαντο οἷς μέτεστι τᾶς μοναρχίας')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <span class="tag domain-tag">Content</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    <div class="theme-path">Content > Administrative Records and Lists > Lists of Officials or Citizens</div>
+                    <div class="theme-label">Lists of Officials or Citizens</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "τοὶ δὲ ἐπεγράψαντο οἷς μέτεστι τᾶς μοναρχίας"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('κατὰ τὸ γραφὲν ψήφισμα')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <span class="tag domain-tag">Content</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    <div class="theme-path">Content > Official and Legal Documents > Decrees</div>
+                    <div class="theme-label">Decrees</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "κατὰ τὸ γραφὲν ψήφισμα"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('ἐπεγράψαντο δὲ καὶ τοὶ δαμοποίητοι')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <span class="tag domain-tag">Content</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">95% Conf.</span>
+                    <div class="theme-path">Content > Administrative Records and Lists > Registers and Catalogues</div>
+                    <div class="theme-label">Registers and Catalogues</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "ἐπεγράψαντο δὲ καὶ τοὶ δαμοποίητοι"</p>
+                </div>
+            </div>
+        </div>
+        
+            
+            <div style="margin-top:2rem;">
+                <h3>Entities</h3>
+                <div><span class="tag entity-tag">👤 Damoxenos <small>(Damarchos)</small></span><span class="tag entity-tag">👤 Hagesikles son of Theukritos <small>(Citizen)</small></span><span class="tag entity-tag">👤 Antiochos son of Seleukos <small>(Citizen)</small></span><span class="tag entity-tag">👤 Asklepiades son of Demetrios <small>(Citizen)</small></span><span class="tag entity-tag">📍 Kos <small>(Island)</small></span><span class="tag entity-tag">📍 Isthmos <small>(Deme)</small></span></div>
+            </div>
+
+            <div class="ai-analysis-box">
+                <h3>🤖 AI Analysis Summary</h3>
+                <p style="line-height:1.7;">This inscription from the deme of Isthmos on Kos (late 3rd/early 2nd century BC) is a significant administrative document. It records the registration of citizens eligible for the &#x27;monarchy&#x27; (the eponymous priesthood of Apollo) and naturalized citizens (damopoietoi). The text is highly characteristic of Koan epigraphy, utilizing a specific filiation formula that includes the father&#x27;s name, the mother&#x27;s name, and the maternal grandfather&#x27;s name. This detailed genealogical recording was likely linked to verifying tribal or cultic eligibility. The mention of the damarchos Damoxenos provides a chronological anchor for the decree that mandated this registration.</p>
+            </div>
+        </div>
+    </div>
+  </main>
+</body>
+</html>

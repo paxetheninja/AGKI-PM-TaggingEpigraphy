@@ -9,6 +9,9 @@
   <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   
+  <!-- Plotly -->
+  <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+  
   <!-- Leaflet -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
@@ -46,6 +49,12 @@
     .caret { width: 16px; text-align: center; margin-right: 4px; color: var(--muted); font-size: 0.7em; }
     .caret.open { transform: rotate(90deg); }
     .filter-checkbox { margin-right: 8px; accent-color: var(--primary); }
+    
+    /* Collections & History */
+    .collection-list, .history-list { list-style: none; padding: 0; margin: 0; }
+    .collection-item, .history-item { font-size: 0.9rem; padding: 4px 0; border-bottom: 1px dashed var(--border); display: flex; justify-content: space-between; }
+    .collection-item a, .history-item span { color: var(--primary); cursor: pointer; }
+    .collection-remove { color: var(--muted); cursor: pointer; margin-left: 8px; }
 
     .nav-links { display: flex; gap: 1.5rem; margin-right: 2rem; }
     .nav-item { color: rgba(255,255,255,0.8); font-weight: 600; text-decoration: none; padding: 0.5rem 0; }
@@ -63,11 +72,9 @@
     <nav class="nav-links">
         <a href="index.html" class="nav-item">Search</a>
         <a href="explore.html" class="nav-item active">Explore</a>
+        <a href="indices.html" class="nav-item">Indices</a>
     </nav>
     <div class="header-controls">
-        <button class="theme-toggle-btn" onclick="toggleDataMode()" id="dataModeBtn" style="margin-right:0.5rem; background: var(--accent); border:none;">
-            Data: Dummy
-        </button>
         <button class="theme-toggle-btn" onclick="toggleTheme()" id="themeBtn">Toggle Theme</button>
     </div>
   </header>
@@ -75,6 +82,21 @@
   <main class="page">
     <div class="dashboard-container">
         <aside class="sidebar">
+            <div class="filter-group">
+                <h4 class="eyebrow">My Collection</h4>
+                <ul id="myCollectionList" class="collection-list">
+                    <!-- Populated by JS -->
+                    <li class="muted" style="font-size:0.85rem;">No starred items.</li>
+                </ul>
+            </div>
+            
+            <div class="filter-group">
+                <h4 class="eyebrow">Search History</h4>
+                <ul id="searchHistoryList" class="history-list">
+                    <!-- Populated by JS -->
+                </ul>
+            </div>
+
             <div class="filter-group">
                 <h4 class="eyebrow">Map Settings</h4>
                 <div class="map-legend">
@@ -108,10 +130,8 @@
                     </div>
                 </div>
                 <div class="viz-card">
-                    <h3 class="viz-title">Thematic Distribution</h3>
-                    <div class="chart-container">
-                        <canvas id="themeChart"></canvas>
-                    </div>
+                    <h3 class="viz-title">Taxonomy Sunburst</h3>
+                    <div id="sunburstChart" style="width:100%; height:400px;"></div>
                 </div>
             </div>
         </div>
@@ -119,31 +139,13 @@
   </main>
 
   <script>
-    // --- Data Mode Handling ---
-    let currentDataMode = localStorage.getItem('dataMode') || 'dummy';
-    
-    function updateDataModeBtn() {
-        const btn = document.getElementById('dataModeBtn');
-        if(!btn) return;
-        btn.textContent = `Data: ${currentDataMode.charAt(0).toUpperCase() + currentDataMode.slice(1)}`;
-        btn.style.background = currentDataMode === 'real' ? '#c1683c' : '#0c8c88';
-    }
-
-    window.toggleDataMode = function() {
-        currentDataMode = currentDataMode === 'dummy' ? 'real' : 'dummy';
-        localStorage.setItem('dataMode', currentDataMode);
-        location.reload(); 
-    }
-
-    updateDataModeBtn();
-
+    // --- Data Handling ---
     const script = document.createElement('script');
-    script.src = `assets/js/data_${currentDataMode}.js`;
+    script.src = `assets/js/data.js`;
     script.onload = () => init();
     document.body.appendChild(script);
 
     // --- Utilities ---
-    // Debounce function to prevent lag on rapid input
     function debounce(func, wait) {
         let timeout;
         return function(...args) {
@@ -153,7 +155,7 @@
     }
 
     // --- State ---
-    let activeFilters = new Set();
+    let activeFilters = new Map(); // path -> 'include' | 'exclude'
     let chartInstances = {};
     let mapInstance = null;
     let inscriptionCluster = null;
@@ -163,11 +165,16 @@
     function init() {
         buildTree(APP_DATA.taxonomy, '', document.getElementById('taxonomyTreeContainer'));
         
-        // Use debounced filter for text input
-        document.getElementById('searchInput').addEventListener('input', debounce(filterData, 300));
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('input', debounce((e) => {
+            filterData();
+            if(e.target.value.length > 3) addToHistory(e.target.value);
+        }, 500));
         
         initCharts();
         initMap();
+        renderCollection();
+        renderHistory();
         filterData(); // Initial load
     }
 
@@ -176,6 +183,68 @@
         const next = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
         document.documentElement.setAttribute('data-theme', next);
         localStorage.setItem('theme', next);
+    }
+
+    // --- Collections ---
+    function getCollection() {
+        return JSON.parse(localStorage.getItem('myCollection') || '[]');
+    }
+
+    function toggleCollection(id) {
+        let col = getCollection();
+        if (col.includes(id)) {
+            col = col.filter(x => x !== id);
+        } else {
+            col.push(id);
+        }
+        localStorage.setItem('myCollection', JSON.stringify(col));
+        renderCollection();
+        updateMap(window.lastFilteredData || APP_DATA.inscriptions); // Refresh popups
+    }
+
+    function renderCollection() {
+        const list = document.getElementById('myCollectionList');
+        const col = getCollection();
+        list.innerHTML = '';
+        if (col.length === 0) {
+            list.innerHTML = '<li class="muted" style="font-size:0.85rem;">No starred items.</li>';
+            return;
+        }
+        col.forEach(id => {
+            const item = APP_DATA.inscriptions.find(i => i.id == id);
+            const label = item ? `PHI-${id} (${item.region})` : `PHI-${id}`;
+            const li = document.createElement('li');
+            li.className = 'collection-item';
+            li.innerHTML = `<a href="inscriptions/${id}.html">${label}</a> <span class="collection-remove" onclick="toggleCollection(${id})">×</span>`;
+            list.appendChild(li);
+        });
+    }
+
+    // --- History ---
+    function addToHistory(term) {
+        let hist = JSON.parse(localStorage.getItem('searchHistory') || '[]');
+        if (!hist.includes(term)) {
+            hist.unshift(term);
+            if(hist.length > 5) hist.pop();
+            localStorage.setItem('searchHistory', JSON.stringify(hist));
+            renderHistory();
+        }
+    }
+
+    function renderHistory() {
+        const list = document.getElementById('searchHistoryList');
+        const hist = JSON.parse(localStorage.getItem('searchHistory') || '[]');
+        list.innerHTML = '';
+        if (hist.length === 0) {
+            list.innerHTML = '<li class="muted" style="font-size:0.85rem;">No recent searches.</li>';
+            return;
+        }
+        hist.forEach(term => {
+            const li = document.createElement('li');
+            li.className = 'history-item';
+            li.innerHTML = `<span onclick="document.getElementById('searchInput').value='${term}'; filterData();">${term}</span>`;
+            list.appendChild(li);
+        });
     }
 
     // --- Filter Logic ---
@@ -187,21 +256,36 @@
             const matchesSearch = !searchTerm || item.id.toString().includes(searchTerm) || 
                                   (item.preview_text && item.preview_text.toLowerCase().includes(searchTerm));
             
-            let matchesTaxonomy = true;
-            if (activeFilters.size > 0) {
-                matchesTaxonomy = false;
-                for (let h of item.hierarchy_paths) {
-                    const themePathStr = [h.domain, h.subdomain, h.category, h.subcategory].filter(Boolean).join('/');
-                    for (let filterPath of activeFilters) {
-                        if (themePathStr.startsWith(filterPath)) { matchesTaxonomy = true; break; }
+            // Inclusive / Exclusive Taxonomy logic
+            let passTaxonomy = true;
+            const inclusiveFilters = Array.from(activeFilters.entries()).filter(e => e[1] === 'include').map(e => e[0]);
+            const exclusiveFilters = Array.from(activeFilters.entries()).filter(e => e[1] === 'exclude').map(e => e[0]);
+
+            if (exclusiveFilters.length > 0) {
+                for (let t of item.themes) {
+                    for (let f of exclusiveFilters) {
+                        if (t.path.startsWith(f)) { passTaxonomy = false; break; }
                     }
-                    if (matchesTaxonomy) break;
+                    if (!passTaxonomy) break;
                 }
             }
-            return matchesSearch && matchesTaxonomy;
+
+            if (passTaxonomy && inclusiveFilters.length > 0) {
+                let matchFound = false;
+                for (let t of item.themes) {
+                    for (let f of inclusiveFilters) {
+                        if (t.path.startsWith(f)) { matchFound = true; break; }
+                    }
+                    if (matchFound) break;
+                }
+                passTaxonomy = matchFound;
+            }
+
+            return matchesSearch && passTaxonomy;
         });
 
         document.getElementById('countDisplay').textContent = filtered.length;
+        window.lastFilteredData = filtered;
         
         // Update Visualizations
         updateCharts(filtered);
@@ -210,7 +294,6 @@
 
     // --- Map Logic ---
     function initMap() {
-        // preferCanvas: true improves performance for many markers
         mapInstance = L.map('map', { preferCanvas: true }).setView([38.0, 25.0], 6);
         
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { 
@@ -218,18 +301,13 @@
             maxZoom: 18
         }).addTo(mapInstance);
         
-        // Cluster Group for Inscriptions (Source)
         inscriptionCluster = L.markerClusterGroup({
             showCoverageOnHover: false,
             spiderfyOnMaxZoom: true,
             maxClusterRadius: 50,
-            chunkedLoading: true // Important for performance
+            chunkedLoading: true
         });
         
-        // Feature Group for Mentions (Entities) - No clustering for these to distinguish them? 
-        // Or simple clustering. Let's keep them unclustered if < 500, else cluster.
-        // For distinct visual, unclustered is better but performance risk. 
-        // Let's use a separate Cluster Group for mentions if we want them distinct but performant.
         mentionsLayer = L.markerClusterGroup({
             showCoverageOnHover: false,
             maxClusterRadius: 30,
@@ -253,13 +331,17 @@
 
         const sourceMarkers = [];
         const mentionMarkers = [];
+        const collection = getCollection();
 
         data.forEach(item => {
             // 1. Source Markers
             if(item.coordinates) {
+                const isStarred = collection.includes(item.id);
+                const starBtn = `<button onclick="toggleCollection(${item.id})" style="margin-top:5px; cursor:pointer; border:1px solid #ccc; background:#fff; padding:2px 6px; border-radius:4px;">${isStarred ? '★ Unstar' : '☆ Star'}</button>`;
+                
                 const m = L.circleMarker(item.coordinates, {
-                    radius: 8, fillColor: "#c1683c", color: "#fff", weight: 2, opacity: 1, fillOpacity: 0.9
-                }).bindPopup(`<b>Source: PHI-${item.id}</b><br>Region: ${item.region}<br><a href="inscriptions/${item.id}.html">Detail Page</a>`);
+                    radius: 8, fillColor: isStarred ? "#d97b3d" : "#c1683c", color: "#fff", weight: 2, opacity: 1, fillOpacity: 0.9
+                }).bindPopup(`<b>Source: PHI-${item.id}</b><br>Region: ${item.region}<br><a href="inscriptions/${item.id}.html">Detail Page</a><br>${starBtn}`);
                 sourceMarkers.push(m);
             }
 
@@ -276,7 +358,6 @@
             }
         });
 
-        // Batch add to prevent UI freeze
         if(sourceMarkers.length > 0) inscriptionCluster.addLayers(sourceMarkers);
         if(mentionMarkers.length > 0) mentionsLayer.addLayers(mentionMarkers);
     }
@@ -296,47 +377,79 @@
             data: { labels: [], datasets: [{ label: 'Count', data: [], backgroundColor: '#c1683c' }] },
             options: commonOptions
         });
-        
-        chartInstances.theme = new Chart(document.getElementById('themeChart').getContext('2d'), {
-            type: 'doughnut',
-            data: { labels: [], datasets: [{ data: [], backgroundColor: ['#0c8c88', '#d97b3d', '#2f8f5d', '#1fa7a3', '#c1683c'] }] },
-            options: commonOptions
-        });
     }
 
     function updateCharts(data) {
+        // 1. Time Histogram (50 year bins)
         const timeBins = {};
-        const themeBins = {};
-        
         data.forEach(item => {
-            // Time
             if (item.date_min !== null && item.date_min !== undefined) {
-                const c = Math.floor(item.date_min / 100) * 100;
+                // Round to nearest 50
+                const binSize = 50;
+                const c = Math.floor(item.date_min / binSize) * binSize;
                 const label = c < 0 ? `${Math.abs(c)} BC` : `${c} AD`;
-                timeBins[label] = (timeBins[label] || 0) + 1;
+                timeBins[c] = (timeBins[c] || 0) + 1;
             }
-            // Theme
-            item.themes_display.forEach(t => {
-                themeBins[t] = (themeBins[t] || 0) + 1;
+        });
+
+        const sortedYears = Object.keys(timeBins).map(Number).sort((a,b) => a - b);
+        const labels = sortedYears.map(y => y < 0 ? `${Math.abs(y)} BC` : `${y} AD`);
+        const counts = sortedYears.map(y => timeBins[y]);
+
+        chartInstances.time.data.labels = labels;
+        chartInstances.time.data.datasets[0].data = counts;
+        chartInstances.time.update();
+
+        // 2. Sunburst Chart
+        const hierarchyMap = new Map();
+        
+        function addToHier(path) {
+            let parentId = "";
+            let currentId = "";
+            const pathParts = path.split('/');
+            
+            pathParts.forEach((segment, idx) => {
+                if(!segment) return;
+                currentId = idx === 0 ? segment : `${parentId} - ${segment}`;
+                if (!hierarchyMap.has(currentId)) {
+                    hierarchyMap.set(currentId, {
+                        id: currentId,
+                        label: segment,
+                        parent: idx === 0 ? "" : parentId,
+                        value: 0
+                    });
+                }
+                hierarchyMap.get(currentId).value++;
+                parentId = currentId;
+            });
+        }
+
+        data.forEach(item => {
+            item.themes.forEach(t => {
+                addToHier(t.path);
             });
         });
 
-        // Sort Time
-        const sortedTimeLabels = Object.keys(timeBins).sort((a,b) => {
-             const yearA = parseInt(a.match(/\d+/)[0]) * (a.includes('BC') ? -1 : 1);
-             const yearB = parseInt(b.match(/\d+/)[0]) * (b.includes('BC') ? -1 : 1);
-             return yearA - yearB;
-        });
+        const sunburstData = Array.from(hierarchyMap.values());
+        
+        const plotData = [{
+            type: "sunburst",
+            ids: sunburstData.map(d => d.id),
+            labels: sunburstData.map(d => d.label),
+            parents: sunburstData.map(d => d.parent),
+            values: sunburstData.map(d => d.value),
+            outsidetextfont: {size: 14, color: "#377eb8"},
+            leaf: {opacity: 0.4},
+            marker: {line: {width: 2}},
+        }];
 
-        chartInstances.time.data.labels = sortedTimeLabels;
-        chartInstances.time.data.datasets[0].data = sortedTimeLabels.map(l => timeBins[l]);
-        chartInstances.time.update();
+        const layout = {
+            margin: {l: 0, r: 0, b: 0, t: 0},
+            sunburstcolorway:["#c1683c", "#0c8c88", "#d97b3d", "#2f8f5d"],
+            paper_bgcolor: 'rgba(0,0,0,0)', // transparent
+        };
 
-        // Sort Theme (Top 8)
-        const sortedThemes = Object.entries(themeBins).sort((a,b) => b[1] - a[1]).slice(0, 8);
-        chartInstances.theme.data.labels = sortedThemes.map(x => x[0]);
-        chartInstances.theme.data.datasets[0].data = sortedThemes.map(x => x[1]);
-        chartInstances.theme.update();
+        Plotly.newPlot('sunburstChart', plotData, layout, {displayModeBar: false});
     }
 
     function buildTree(node, path, container) {
@@ -350,14 +463,30 @@
             li.className = 'tree-item';
             const row = document.createElement('div');
             row.className = 'tree-label-row';
-            row.innerHTML = `<span class="caret ${has ? '' : 'empty'}">▶</span><input type="checkbox" class="filter-checkbox" value="${cur}"><span>${key}</span>`;
             
-            row.querySelector('input').onchange = (e) => {
-                if(e.target.checked) activeFilters.add(cur); else activeFilters.delete(cur);
+            row.innerHTML = `
+                <span class="caret ${has ? '' : 'empty'}">▶</span>
+                <input type="checkbox" class="filter-checkbox check-inc" title="Include">
+                <input type="checkbox" class="filter-checkbox check-exc" title="Exclude" style="accent-color:var(--error);">
+                <span style="font-size:0.85rem;">${key}</span>
+            `;
+            
+            const cInc = row.querySelector('.check-inc');
+            const cExc = row.querySelector('.check-exc');
+
+            cInc.onchange = (e) => {
+                if(e.target.checked) { activeFilters.set(cur, 'include'); cExc.checked = false; }
+                else { activeFilters.delete(cur); }
                 filterData();
             };
+            cExc.onchange = (e) => {
+                if(e.target.checked) { activeFilters.set(cur, 'exclude'); cInc.checked = false; }
+                else { activeFilters.delete(cur); }
+                filterData();
+            };
+
             row.onclick = (e) => { 
-                if(e.target !== row.querySelector('input')) { // prevent toggle when clicking checkbox
+                if(e.target.tagName !== 'INPUT') { 
                     if(has) { row.querySelector('.caret').classList.toggle('open'); li.querySelector('.tree-group').classList.toggle('open'); }
                 }
             };

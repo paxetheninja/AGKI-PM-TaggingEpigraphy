@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Deities Index - AGKI Epigraphy Tool</title>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <style>
+    .page-container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+    .index-nav { display: flex; gap: 1rem; margin-bottom: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 1rem; }
+    .index-nav a { text-decoration: none; color: var(--muted); font-weight: 600; padding: 0.5rem 1rem; border-radius: 4px; }
+    .index-nav a:hover { background: var(--panel); }
+    .index-nav a.active { background: var(--primary); color: white; }
+    .index-card { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; }
+    table { width: 100%; border-collapse: collapse; margin-top: 1rem; font-size: 0.9rem; }
+    th, td { text-align: left; padding: 0.5rem; border-bottom: 1px solid var(--border); }
+    th { color: var(--muted); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.05em; }
+    .nav-links { display: flex; gap: 1.5rem; }
+    .nav-item { color: rgba(255,255,255,0.8); font-weight: 600; text-decoration: none; padding: 0.5rem 0; }
+    .nav-item:hover, .nav-item.active { color: white; border-bottom: 2px solid white; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand"><h1>AGKI Tagging Tool</h1></div>
+    <nav class="nav-links">
+        <a href="index.html" class="nav-item">Search</a>
+        <a href="explore.html" class="nav-item">Explore</a>
+        <a href="indices.html" class="nav-item active">Indices</a>
+    </nav>
+  </header>
+  <main class="page-container">
+    <h2>Corpus Indices</h2>
+    <nav class="index-nav">
+        <a href="indices.html" class="">Overview</a>
+        <a href="index_deities.html" class="active">⚡ Deities</a>
+        <a href="index_persons.html" class="">👤 Persons</a>
+        <a href="index_places.html" class="">📍 Places</a>
+    </nav>
+    
+    <div class="index-card">
+        <h3>⚡ Deities Index</h3>
+        <table>
+            <thead><tr><th>Name</th><th>Mentions</th></tr></thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    
+  </main>
+</body>
+</html>

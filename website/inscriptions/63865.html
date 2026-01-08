@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PHI-63865 - AGKI</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <style>
+    /* Custom Scrollbar Styling */
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+        background: rgba(0,0,0,0.05); 
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #ccc; 
+        border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #aaa; 
+    }
+
+    .page-container { max-width: 1400px; margin: 0 auto; padding: 2rem; }
+    .back-link { display: inline-block; margin-bottom: 1rem; color: var(--primary); font-weight: 600; }
+    
+    /* Original View Styles (Line by Line) */
+    .text-viewer-original { 
+        display: grid; 
+        grid-template-columns: 40px 1fr; 
+        gap: 2rem; 
+        font-family: "New Athena Unicode", "Gentium Plus", "Times New Roman", serif; 
+        font-size: 1.25rem; 
+        line-height: 1.6; 
+        background: var(--panel); 
+        padding: 2rem; 
+        border: 1px solid var(--border); 
+        border-radius: 4px; 
+        margin-bottom: 2rem; 
+        color: var(--text);
+    }
+
+    .line-numbers { 
+        text-align: right; 
+        color: var(--muted); 
+        font-size: 1.25rem; 
+        line-height: 1.6; 
+        user-select: none; 
+        opacity: 0.5; 
+        font-family: inherit; 
+        white-space: pre; 
+        padding-right: 1rem;
+        border-right: 1px solid var(--border);
+    }
+
+    .greek-content { 
+        white-space: pre-wrap; 
+        word-break: break-word;
+        padding-left: 1rem; 
+    }
+
+    .highlight-evidence {
+        background-color: var(--accent);
+        color: white;
+        border-radius: 2px;
+        padding: 0 2px;
+    }
+
+    .theme-card { background: var(--panel); padding: 1rem 1.5rem; border-left: 4px solid var(--primary); margin-bottom: 0.75rem; border: 1px solid var(--border); border-left-width: 4px; }
+    .ai-analysis-box { background: rgba(31, 167, 163, 0.05); padding: 2rem; border-radius: 8px; border: 1px solid var(--border); margin-top: 2rem; }
+    .evidence-box { max-width: 500px; text-align: right; }
+    .evidence-quote { font-size: 0.85rem; font-style: italic; color: var(--muted); margin: 0; }
+    .badge.green { background: #e6f4ea; color: #137333; border-color: #137333; }
+    .badge.orange { background: #fef7e0; color: #b06000; border-color: #b06000; }
+    .badge.red { background: #fce8e6; color: #c5221f; border-color: #c5221f; }
+    .entity-tag { background: rgba(217, 123, 61, 0.1); color: var(--accent-2); margin-right: 0.5rem; margin-bottom: 0.5rem; display: inline-block; padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.9rem; border: 1px solid rgba(217, 123, 61, 0.2); }
+    
+    /* Split View Styles */
+    .split-container { display: block; }
+    .split-container.active { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+    .split-col-left { }
+    .split-col-right { }
+    
+    /* Sticky sidebar in split view */
+    .split-container.active .split-col-right { position: sticky; top: 20px; max-height: 90vh; overflow-y: auto; padding-right: 10px; }
+  </style>
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+
+    function toggleSplitView() {
+        const container = document.getElementById('main-content');
+        const btn = document.getElementById('splitViewBtn');
+        container.classList.toggle('active');
+        if(container.classList.contains('active')) {
+            btn.textContent = 'View: Split';
+            btn.classList.add('active');
+        } else {
+            btn.textContent = 'View: Standard';
+            btn.classList.remove('active');
+        }
+    }
+
+    function copyCitation() {
+        const citation = "AGKI Project. (2026). Inscription PHI-" + "63865" + ". Retrieved from " + window.location.href;
+        navigator.clipboard.writeText(citation);
+        alert("Citation copied to clipboard!");
+    }
+    
+    function highlightQuote(quote) {
+        const container = document.querySelector('.greek-content');
+        if (!container || !quote) return;
+        
+        const escapedQuote = quote.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const regex = new RegExp(escapedQuote, 'g');
+        container.innerHTML = container.innerHTML.replace(
+            regex, 
+            match => `<mark class="highlight-evidence">${match}</mark>`
+        );
+    }
+    
+    function clearHighlight() {
+        const container = document.querySelector('.greek-content');
+        if (!container) return;
+        container.innerHTML = container.innerHTML.replace(/<mark class="highlight-evidence">(.*?)<\/mark>/g, '$1');
+    }
+
+    function updateFontSize(size) {
+        const container = document.getElementById('original-view');
+        if (container) {
+            container.style.fontSize = size + 'px';
+            const lines = container.querySelector('.line-numbers');
+            if(lines) lines.style.fontSize = size + 'px';
+        }
+    }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <h1><a href="../index.html" style="color:white;text-decoration:none;">AGKI Tagging Tool</a></h1>
+    </div>
+    <nav class="nav-links">
+        <a href="../index.html" class="nav-item">Search</a>
+        <a href="../explore.html" class="nav-item">Explore</a>
+        <a href="../indices.html" class="nav-item">Indices</a>
+    </nav>
+  </header>
+  <main class="page-container">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 1rem;">
+        <a href="../index.html" class="back-link" style="margin:0;">← Back to Dashboard</a>
+        <button id="splitViewBtn" onclick="toggleSplitView()" class="button secondary" style="font-size:0.8rem; padding:0.3rem 0.8rem;">View: Standard</button>
+    </div>
+    
+    <div id="main-content" class="split-container">
+        <div class="split-col-left">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <h2>Inscription PHI-63865</h2>
+                <div style="display:flex; gap:0.5rem;">
+                    <button onclick="copyCitation()" class="button secondary" style="font-size:0.9rem; padding:0.5rem 1rem;">📜 Cite</button>
+                    <a href="https://epigraphy.packhum.org/text/63865" target="_blank" class="button">View on PHI</a>
+                </div>
+            </div>
+            
+            <div class="meta-grid">
+                <div><small class="eyebrow">Provenance</small><br><a href="https://pleiades.stoa.org/places/599570" target="_blank" title="View in Pleiades">Cyclades</a> &gt; <a href="https://pleiades.stoa.org/places/599588" target="_blank" title="View in Pleiades">Delos</a></div>
+                <div><small class="eyebrow">Date</small><br><strong> ca. 153/2? BC</strong></div>
+                <div><small class="eyebrow">Completeness</small><br><span class="badge info">fragmentary</span></div>
+            </div>
+
+            <div style="display:flex; justify-content:space-between; align-items:end; margin-bottom:0.5rem;">
+                <h3>Original Text</h3>
+                <!-- Font Size Control -->
+                <div style="display:flex; align-items:center; gap:0.5rem; background:var(--panel); border:1px solid var(--border); padding:0.2rem 0.5rem; border-radius:4px;">
+                    <span style="font-size:0.8rem; color:var(--muted);">A</span>
+                    <input type="range" id="fontSizeSlider" min="14" max="32" value="20" oninput="updateFontSize(this.value)" style="width:80px; accent-color:var(--primary);">
+                    <span style="font-size:1rem; font-weight:bold; color:var(--muted);">A</span>
+                </div>
+            </div>
+
+            <!-- Original Line-by-Line View -->
+            <div id="original-view" class="text-viewer-original">
+                <div class="line-numbers">1
+
+
+
+5
+
+
+
+
+10
+
+
+
+
+15
+
+
+
+
+20
+
+
+
+
+25
+
+
+
+
+30
+
+
+
+
+35
+
+
+
+
+40
+
+
+
+
+45
+
+
+
+
+50
+
+
+
+
+55
+
+
+
+
+60</div>
+                <div class="greek-content">[ ν θη]μα βασιλ [σσ]η[ς] -
+[--- δραχμα δδ
+[ ν θ]ημα τ μωνος [------------------- πορπ ον]π κιον ου ξυλ ν[ου] -
+[--- δ ν θημ[α ---- στεφ νια --- τ ν ο κ χον -- το ς]
+[δ]εσμο ς λκ δρα[χμα] -
+[--- ν θημα λ[υσ νδρου] -
+δραχμα 0 [ν θημα -------------------- ν]θ[ημα] βασιλ ως δη[μητρ ου] --------- ν [θημα] -
+ν θημα δηλι δων 
+[ λκ] δραχ[μα] ----------
+δραχμ[α] -
+τ ι λ νωι - [--------------------------- δρα]χμα 0 -
+-η δδδδ -
+ λλον δ φν[ης] -
+ λκ σ ν τ ν θη[μα -------------------------- ν θη]μα ξι[----------------------------- λ]κ δ[ραχμα] -
+ου -
+λειμ νιον [χρυσο ν ------------- στ φανον --- δ]φνης λκ σ ν τ -
+ μανταρ οις δραχ[μα] -
+μυρρ νης λκ δρα[χμα ------------------- ν]θημα νεμ ριου ωμ[α ου] -
+ιλ ου λλα στεφ ν[ια -------------------- δρα]χμα 0 ν θημα κ[------------------ φι λαι λε]αι πτ πιγρα[φ ς χουσαι λκ τ ς πρ της] -
+τ ς τρ της 0[------------------------- τ ς]
+ βδ μης 0
+τ ς πρ τ[ης] 
+δι μετ[ρον] [------------------------- ο νοχ]αι δ ο ----- δ---ην -- ο -- [ ν θημα γα ου ποστ]ομ ου -- [ λκ] δραχ. -- [χελι]δ νια δ ο -- οι 0 [ν θημα] -- ω -- [σ] ν το ς πα -- [ φ ο τ] β ο λκ -- φ ο τ
+- θεν -- ηλι -- υ -- ρο -
+[- ν θ]ημα -- λε-ι -- [δρ]αχμ[α] -- αρα -- λις -- [ ν θημα ξενο]τ μο[υ] -- ν λ[κ] -- [φι λας] δ ο [ν πλαισ οις]
+- [ λ]κ δδδδ [φωκα δ]ια ν [ αλ νωι]
+[ποτηρ ωι ---------------------] δραχμα η δυπ[ τια δ ο --]
+- [ποτ ρια τεθραυσμ]να νδεκα [ν λκ] σ[ ν τ ι καττιτ ρωι]
+- [δ]ραχ[μ]α η δδδ [τ]α τα [ νεστιν ν -]
+- [ ν θημα ρχ]εστρ του στατο[ν κ]ρατ[ ρας ----]
+[---- π β σεως] λιθ ν[ης ---- θυμιατ ριον χον]τ ρια δ ο κα ρωτ ρια τ ττ[αρα --]
+---------- ποτου -------------- χωρ ς το χαλκο π[ι]π[ ρου -----]
+[-- κα τ ν πικ]εκολλημ[ νων χαλκωμ των ---- ν]θεμα βουλο[μ]γας ζ[ωιδ ρια --]
+[--- π μ]ικυκλ ου κα [φ λακα --- τετρ ρη --- σ] ν το ς προσο[ σ]ιν [καλυδρ οις ---] 
+[ ν θημα β]ασιλ ως σε[λε κου φι λην -- ς παλαστ ν π ν]τε πρ σωπον [ χουσαν -----]
+[---- λ]λην ς ποδια [αν ------- ν θημα ριστοκρ]του λλην καρυ[ωτ ν ----]
+[ χουσαν π]λλωνα κιθαρ ζ[οντα -------- λλην -- ν πλινθ]ε ωι ν θεμ[α ----]
+[ λλην -- ν πλι]νθε ωι ν θεμα [---------- π τ ς] φι λης θε δοτος ------
+[---- λλην καρυ]ωτ ν μ πλινθε ω[ι ----------- λκ δ]ραχμα 0 ----]
+[---- λλην καρυ]ωτ ν ς λκ δραχμα[ ------------- λκ δραχμ[α ----] 
+[ ν θημα βασιλ ως] ντιγ νου φι λη κτ[ησυλλ δος --- σκ φιον π ρχοντο]ς ξενομ [δους ψυκτηρ διον π ρχοντος] πολλοδ ρου κυμβ ον ------------------------
+[ π ρχοντος φωκ]α εως λλο π ρχοντο[ς ------------------- λλο π]
+- [σκ φιο]ν ν θηκε σωσ βιος π τ[ ν δερμ των] -- δ -- τ -- [ ν θημα φιλ]οκρ [του κα πα δων] -- [ χουσαν] ρακ[λ ους] -- [θυεστ]αδ [ν] -- ραλ -
+αιι
+- [ λκ] δρα[χμα -----------]τον ε σ[πραχθ ντα π φερεκλ ους ------]
+[ ν τρ πον]πιγραφ [ χει -----------] λλας 0 τρι β[ολον ---------]ντ οδ [α]ς φι λην --- μετενεχθε σαν κ το]
+[πυθ ου π 0]ημαρ τ[ου ν θεμα βασιλ ως πρ]ουσ ου [σ]τατον -
+[φαρ τραν ----] χουσα[ν τ ξον σκυθικ ν κα ταιν]διον ν [θ]εμα -- [ π] κιον ου ν[ μισμα χαλκο ν παντοδα]π ν ν δρ αι χ[αλκ ι ------ δρ αν --]
+[---- πυθ]μ να ο [κ χουσαν ο τε ο ς ν ν]πιχυσιδ ωι χαλ[κ ι δακτυλ ους ------------------------------]
+[ ναριθμ του]ς ρ τ[αιναν χαλκ ν μ νωτον λ θ]ους νυχας ε κο[σιν -------- ν ο δ ο χοντες]
+[ λυσιν χρυσ]ν ποδ [ν δυε ν κα μιποδ ου ν θε]μα στρατον κης -- [ ν θεμα] κο ντου [ ωμα ου ----- κρυσ]ταλλ[ ν]ην ν κα[λι δι ----------- τρ ποδα]
+[------] π δας [χοντα πυξ νο]υς λ[εοντ β]ασιν δ[υ]π τια δ[ ο] -- [χα]ρακτ[ ρας σιδηρο ς] δ κα κ[τ]κμονα[ς π] ντε -- [τρ πεζας --- δ] ο ν [ μ α]ν θη[μα] ρων[ος] -- [ ρτεμ σια δ κ]α διοσκ[ο ρο]υς φ [ π]πων δ[ ο] -- ει τ[ ς λ]ητο [ς] χιτων[ σκος] -- [ λλε που]σι [λ ροι] τρε ς χους -- δι [χρυσ]ου κ[α ζ]ων ον -- [ π λ]λω[νι φροδ τ]ει ο λκ -- π λλων[ι] -- [φι λιον --- ντ] τ ς κ λι[κος] -- θυμιατ [ριον πομπικ ν κα κηρ κε]ιον κα λ[λα] -- [πτ ρυ]ξ γοργ νο[ς π το πισπ στρου] το θυρ μα[τος ------------ παρμεν σκους δ]ο το ς π[οπεπτωκ τας π το]ντ ς θυρ [ματος κα χην σκον ----- π το]
+[κρατ ρ]ος ο λκ [---------- χυμ]τια χρυσ -- ις κα λε[π διον ------ λκ δρ]αχ. δ λλα -- [δ]ραχμ κ[α ----------]ν λκ δραχμ[α] -- α κα ο[δ αι] ----------- νεστι δ κα -- [κοπ] ντ[ων το στεφανηφ ρου --] κα στεφανηφ ρ[ος δραχμ] -- υκα[------ μαχα ραν λε]φ ντινον [κολε ν χουσαν] -- ει -- ατα -- [κ]α χαλκ[ο ς] -- φ ο τ - χοντα -- [ στιαιι]κ ν ε [ς]ττικο λ γ[ον]
+- λ[λο]ν φ ο τ 0 -- δρ[αχ]μ ς 0 -- [ε ς ττικο] λ[ γ]ον δραχ ε[ ς] ττικο λ[ γον ---------- λλον ---] χοντ[α] -- [δ]ραχμ[ ς] -- αναρ -- ασφα -- ν ν θη[μα] -- το δευτ [ρου] -- [ ν θημα]ρακλε του θε -- φι λην λε α[ν]
+- ν ς τριπ λα[στον] -- κ λχην ς π[ο]δια[ αν] -- [ λ]λο λε ον ς τ[ρι]π [λαστον] -- [σκ φιον ς δ]ακτ λων [ξ] χον [πρ σωπα] -- ου φι [λ]ην καρυωτ ν ς -- [ λλην καρυωτ]ν ς τριπ λ[αστ]ον πρ σ[ωπον χουσαν] -- ν τ τρα[χμον κ]ιστοφ ρον -- [ ν θεμα θεωρ ν]κ κ λ[λην λ]ε αν ς τρ[ιπ λαστον] -- [διαβεβρωμ] νην [πρ σ]ωπον χου[σαν π λλωνος ν θε]μ[α] -- [πρ σωπον π λλω]νος [ν θη]μα δηλι δ[ων ------- θεωρ]ν τ ν -- [ λλην ---- χ]ουσαν κι[ττο φ λλα ν θημ]α περβ[ σσας] -- [ πιδ ντω]ν με[γαλοπολιτ ν λλην λ]ε αν ς -- [ ν θημα κ]ιω[ν λλην --- ς ποδι]α αν πρ σ[ωπον χουσαν] -- ν θεμα δηλι[ δων] -- [ χου]σαν νεπ γραφο[ν] -- [πρ σωπον χο]υσαν πλλωνος ν [θημα] -- [ ν θε]μα παυσαν ου [λλην] -- λλην λε αν ς τ[ριπ λαστον] -- [ ν θημα θεωρ ν] κ κ λλην λε αν [ς] -- [ λλην λε] αν ν θεμα 0[ηλι δων] -- [ ν θε]μα κ ιων -- ιεν -- [ ν θεμα θυμ ιδα το μ]ντορος τ θ[ ρωμα] -- [π ντ]ε δ ο κ το ν[θεμωτο] -- [το πισ]π στρου τ νθ[εμωτ ν] -- [δ]ο κα φεων κε[φαλα] -- ν θ[εμα] -- [π] ξον
+- αχ -
+α
+- λκ -- ημι -- αν -- ν -- ε -- ις -- ον -- ατρα -- ημ -- ου λλ -- η δραχμ -- πον χο[ντ] -- η δραχμ -- λκ -- ην ης -- λλ -- λ -- ωα -- λεια -- χορ -- τω -- υα -- ν -- υ
+- π κιο[ν ου] -- λκ δ[ραχμ] -- ητο -- ν -- [δ]ραχμ -- [ο]υ κο ντ[ου] -- υπ -- ουμα -
+τα -- ο -</div>
+            </div>
+        </div>
+
+        <div class="split-col-right">
+            <h3>Thematic Analysis</h3>
+            
+        <div class="theme-card" onmouseover="highlightQuote('ν θημα')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <span class="tag domain-tag">Administrative Records and Lists</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    <div class="theme-path">Administrative Records and Lists > Inventories</div>
+                    <div class="theme-label">Inventories</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "ν θημα"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('ν θημα')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <span class="tag domain-tag">Religious and Dedicatory Texts</span>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">95% Conf.</span>
+                    <div class="theme-path">Religious and Dedicatory Texts > Votive Dedications</div>
+                    <div class="theme-label">Votive Dedications</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "ν θημα"</p>
+                </div>
+            </div>
+        </div>
+        
+            
+            <div style="margin-top:2rem;">
+                <h3>Entities</h3>
+                <div><span class="tag entity-tag">👤 Demetrius <small>(King)</small></span><span class="tag entity-tag">👤 Seleucus <small>(King)</small></span><span class="tag entity-tag">👤 Antigonus <small>(King)</small></span><span class="tag entity-tag">👤 Prusias <small>(King of Bithynia)</small></span><span class="tag entity-tag">👤 Stratonike <small>(Dedicator)</small></span><span class="tag entity-tag">👤 Quintus <small>(Roman Dedicator)</small></span><span class="tag entity-tag">👤 Lysandros <small>(Dedicator)</small></span><span class="tag entity-tag">👤 Archestratos <small>(Dedicator)</small></span><span class="tag entity-tag">👤 Sosibios <small>(Dedicator)</small></span><span class="tag entity-tag">👤 Philokrates <small>(Dedicator)</small></span><span class="tag entity-tag">👤 Theodotos <small>(Dedicator)</small></span><span class="tag entity-tag">📍 Delos <small>(Sanctuary/Island)</small></span><span class="tag entity-tag">📍 Megalopolis <small>(Polis)</small></span></div>
+            </div>
+
+            <div class="ai-analysis-box">
+                <h3>🤖 AI Analysis Summary</h3>
+                <p style="line-height:1.7;">This inscription is a fragment of a Delian inventory, likely dating to the period of the Second Athenian Domination (post-167 BC). It records a variety of sacred objects (phialai, crowns, tripods, and statues) held in the temple treasuries. The text is significant for its mention of several Hellenistic monarchs, including the Seleucids (Demetrius, Seleucus), the Antigonids (Antigonus), and Prusias of Bithynia, whose offerings remained part of the temple&#x27;s wealth for generations. It also reflects the increasing Roman presence on the island through the mention of individuals like Quintus. The inventory meticulously notes the weight of each item in drachmae and occasionally describes their physical condition (e.g., &#x27;tethrausmena&#x27; or broken).</p>
+            </div>
+        </div>
+    </div>
+  </main>
+</body>
+</html>
