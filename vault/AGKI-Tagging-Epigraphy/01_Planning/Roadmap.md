@@ -13,7 +13,7 @@ Die Meilensteine definieren kritische Punkte im Projektverlauf, an denen Ergebni
     - _Kriterium:_ Web-Interface ist live. Nutzer können explorativ durch die Hierarchien zoomen (z. B. von „religiös“ zu „Weihung“) und Filter kombinieren.
     - _Status:_ Geplant.
 - **M5: Validierungsbericht (Optional/Post-Launch)**
-    - _Kriterium:_ Abschlussbericht über die Qualität der KI-Annotation im Vergleich zur menschlichen Expertise (Methodische Reflexion).
+    - _Kriterium:_ Erfolgreiche Generierung und Bereitstellung der annotierten Daten in einer interaktiven Weboberfläche.
 ## Zeitplan
 Eine kompakte zeitliche Übersicht basierend auf den Kalenderwochen (KW) und den Fristen der Checkliste.
 - **Dezember 2025**

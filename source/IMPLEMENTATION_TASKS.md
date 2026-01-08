@@ -56,8 +56,6 @@ This document outlines the technical tasks required to implement the automated t
 ## Phase 6: Validation & Quality Assurance
 - [ ] **Structural Validation**
     - [ ] Ensure every output file matches the defined JSON schema.
-- [ ] **Semantic Validation (Manual/Gold Standard)**
-    - [ ] Create a script to generate a comparison report (CSV/HTML) between LLM output and Human Ground Truth (if available).
 
 ## Phase 7: Documentation & Deployment
 - [ ] **Developer Guide**

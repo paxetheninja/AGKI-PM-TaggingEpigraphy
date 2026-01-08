@@ -27,7 +27,7 @@ Der PSP zerlegt das Gesamtprojekt in fünf logische Arbeitspakete (AP), die den 
 | **AP 3: Pipeline**    | _Prompting_       | Entwicklung systematischer Prompts mit Few-Shot Beispielen (analog Bsp. ID 62838).                  | High        |
 |                       | _Implementation_  | Skripting der API-Calls (Batching), Error-Handling (JSON-Validierung) und Logging.                  | High        |
 |                       | _Batch Run_       | Durchführung der automatischen Verschlagwortung für das gesamte Korpus.                             | Low         |
-| **AP 4: Validierung** | _Manual Tagging_  | Erstellung eines „Gold Standards“: Annotation eines stratifizierten Samples durch Fachexperten.     | High        |
+| **AP 4: Validierung** | _Schema Validation_ | Automatisierte Prüfung der JSON-Outputs gegen das Pydantic-Schema. | High        |
 |                       | _Evaluation_      | Berechnung von Metriken (Precision/Recall) und Analyse von Konfusionsmustern.                       | Medium      |
 |                       | _Refinement_      | Anpassung der Prompts oder Post-Processing Regeln basierend auf Fehleranalyse.                      | Medium      |
 | **AP 5: Frontend**    | _Backend API_     | Bereitstellung der angereicherten JSON-Daten (suchbar nach Hierarchie-Pfaden).                      | Medium      |

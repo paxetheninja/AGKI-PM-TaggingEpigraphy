@@ -37,16 +37,6 @@ The tagging pipeline generates one JSON file per inscription. The structure foll
       }
     ]
   },
-  "translations": [
-    {
-      "language": "en",
-      "text": "The Council and the People decided...",
-      "alignment": [
-        { "greek": "ἔδοξεν", "translation": "decided" },
-        { "greek": "τῇ βουλῇ", "translation": "the Council" }
-      ]
-    }
-  ],
   "completeness": "fragmentary",
   "region_uri": "https://pleiades.stoa.org/places/579888"
 }
@@ -59,24 +49,10 @@ The tagging pipeline generates one JSON file per inscription. The structure foll
 |---|---|---|
 | `phi_id` | Integer | The unique ID from the PHI corpus. |
 | `themes` | Array | List of thematic classifications. |
-| `entities` | Object | Dictionary containing lists of extracted `persons` and `places`. |
-| `translations` | Array | List of `Translation` objects (English/German) with word-level alignment. |
-| `completeness` | String | Physical state: `intact`, `fragmentary`, or `mutilated`. |
+| `entities` | Object | Container for `persons` and `places` lists. |
+| `completeness` | String | 'intact', 'fragmentary', or 'mutilated'. |
 | `region_uri` | String | Pleiades URI for the main region of the inscription. |
 | `model` | String | The name of the LLM used for generation (e.g. `gpt-4o`, `gemini-1.5-pro`). |
-
-### Translation Object
-| Field | Type | Description |
-|---|---|---|
-| `language` | String | Language code: `en` (English) or `de` (German). |
-| `text` | String | A fluent, natural-sounding translation of the text. |
-| `alignment` | Array | List of `AlignedSegment` objects mapping Greek chunks to the target language. |
-
-### AlignedSegment Object
-| Field | Type | Description |
-|---|---|---|
-| `greek` | String | A specific word or phrase from the original text. |
-| `translation` | String | The direct translation of that specific segment. |
 
 ### Theme Object
 | Field | Type | Description |

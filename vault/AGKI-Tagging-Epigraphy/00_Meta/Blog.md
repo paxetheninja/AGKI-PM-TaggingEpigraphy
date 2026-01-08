@@ -14,9 +14,8 @@ Das methodische Herzstück des Projekts ist die Kombination aus **menschlicher E
 - **Der LLM-Einsatz (Reflexiv):**
     - LLMs werden nicht als "Black Box" für die Endlösung genutzt, sondern als Werkzeug zur Skalierung.
     - Das Projekt sieht das LLM selbst als Forschungsgegenstand: Es wird explizit gefragt, wie gut diese Modelle historische Kontexte verstehen ("Methodische Reflexion").
-- **Validierungs-Strategie (Human-in-the-Loop):**
-    - Es wird nicht blind automatisiert. Ein „Gold Standard“-Datensatz (manuell von Experten kontrolliert) dient als Kontrollinstanz. Dies ist entscheidend für die wissenschaftliche Glaubwürdigkeit der Ergebnisse.
-
+- **Validierungs-Strategie:**
+- Die technische Konsistenz wird durch automatisierte Schema-Prüfungen sichergestellt. Dies erlaubt eine schnelle Skalierung auf tausende Inschriften.
 ### 3. Der Technische Workflow (Pipeline)
 Der beschriebene Prozess ist logisch stringent und orientiert sich an Best Practices der Datenverarbeitung:
 1. **Preprocessing:** Normalisierung (Bereinigung von Fehlern, Vereinheitlichung polytonischer Akzente). Dies ist essenziell, da Inschriftendaten oft "schmutzig" sind (Klammern, Ergänzungen, Beschädigungen).

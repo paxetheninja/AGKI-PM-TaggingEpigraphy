@@ -28,7 +28,6 @@ User Stories, filtered into categories based on the [[UserPersonas]] needs.
 - **Entity Extraction:** As **Stephan-Felix**, I want names of people and places to be underlined, so I can distinguish them from regular vocabulary words.
 - **Line Numbering:** As **Herbert**, I need standard line numbering (5, 10, 15) to cite the text accurately in my forthcoming publication.
 - **Critical Signs:** As **Herbert**, I need the text to accurately render Leiden Conventions (brackets, dots) to understand the preservation state without consulting the book.
-- **Interactive Translation:** As **Stephan-Felix**, I want to see a fluent English or German translation side-by-side with the Greek text, and when I hover over a word in the translation, I want the corresponding Greek word to highlight so I can learn the vocabulary in context.
 - **Split View:** As **Matthias**, I want to see the Greek text on the left and the extracted Metadata/Tags on the right to project this view during my lecture.
 ## Data Management & Export (The "Fair" Layer)
 - **Citation Generator:** As **Stephan-Felix**, I want a button to copy a permanent citation for the current inscription, including the date accessed, for my bibliography.
@@ -39,10 +38,9 @@ User Stories, filtered into categories based on the [[UserPersonas]] needs.
 - **API Access:** As **Florian**, I want an API endpoint to fetch data by ID so I can test if the external integrations are working correctly.
 - **Persistent URLs:** As **Herbert**, I want each inscription view to have a stable URL so I can link to it in a footnote and know it will still work in 10 years.
 ## Validation & Trust (The "Scientific" Layer)
-- **Flag Error:** As **Herbert**, I want a button to "Report Incorrect Tag" so I can use my expertise to correct the AI's mistakes.
-- **Model Version Display:** As **Florian**, I want to see which version of the LLM/Prompt (e.g., "v1.2") generated the tags to ensure reproducibility of the experiment.
-- **Ambiguity Note:** As **Herbert**, I want the system to display "Ambiguous" if the AI provided two conflicting potential categories, rather than forcing a false certainty.
-- **Source Link:** As **Herbert**, I want a direct link back to the original PHI database entry to verify the raw data against the source of truth.
+- [x] **Model Version Display:** As **Florian**, I want to see which version of the LLM/Prompt (e.g., "v1.2") generated the tags to ensure reproducibility of the experiment.
+- [ ] **Ambiguity Note:** As **Herbert**, I want the system to display "Ambiguous" if the AI provided two conflicting potential categories, rather than forcing a false certainty.
+- [ ] **Source Link:** As **Herbert**, I want a direct link back to the original PHI database entry to verify the raw data against the source of truth.
 ## Entities & Linked Open Data (The "Context" Layer)
 - **Pleiades Linking:** As **Gregor**, I want place names to link to their Pleiades ID so I can map them accurately in my GIS software.
 - **LGPN Connection:** As **Gregor**, I want personal names to suggest potential matches in the _Lexicon of Greek Personal Names_ to aid my prosopographical research.
