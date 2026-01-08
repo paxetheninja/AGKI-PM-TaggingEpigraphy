@@ -15,6 +15,12 @@ You will be provided with:
 
 Your output MUST be valid JSON strictly adhering to this schema. 
 Do NOT include any markdown formatting (like ```json), commentary, or extra text outside the JSON object.
+
+**Language Rule:** 
+- All descriptive fields (`rationale`, `label`, `role`, `type`) MUST be in **English**.
+- All entity names (`persons.name`, `places.name`, `deities`) MUST be in **English/Latin script (transliterated)** (e.g., use "Perikles" or "Pericles", not "Περικλῆς").
+- The `quote` fields MUST remain in the **original Ancient Greek** exactly as found in the text.
+
 {
     "themes": [
         {
@@ -27,17 +33,19 @@ Do NOT include any markdown formatting (like ```json), commentary, or extra text
             },
             "rationale": "<Specific reasoning for this tag in English>",
             "confidence": <float 0.0-1.0>,
-            "quote": "<The exact Greek substring from the text that justifies this tag>"
+            "quote": "<The exact Greek substring from the text that justifies this tag>",
+            "is_ambiguous": <bool>,
+            "ambiguity_note": "<Explanation if ambiguous>"
         }
     ],
     "entities": {
-        "persons": [{"name": "<Name>", "role": "<Role>", "uri": "<LGPN URI or similar>"}],
-        "places": [{"name": "<Place Name>", "type": "<Type>", "uri": "<Pleiades URI>"}],
-        "deities": ["<Deity Name>", "<Deity Name>"]
+        "persons": [{"name": "<Name>", "role": "<Role>", "uri": "<LGPN URI or similar>", "confidence": <float>}],
+        "places": [{"name": "<Place Name>", "type": "<Type>", "uri": "<Pleiades URI>", "confidence": <float>}],
+        "deities": [{"name": "<Deity Name>", "uri": "<URI>", "confidence": <float>}]
     },
     "provenance": [
-        { "name": "<Region>", "type": "Region", "uri": "<Pleiades URI>" },
-        { "name": "<City>", "type": "Polis", "uri": "<Pleiades URI>" }
+        { "name": "<Region>", "type": "Region", "uri": "<Pleiades URI>", "confidence": <float> },
+        { "name": "<City>", "type": "Polis", "uri": "<Pleiades URI>", "confidence": <float> }
     ],
     "completeness": "<'intact' | 'fragmentary' | 'mutilated'>",
     "rationale": "<Comprehensive summary of the analysis and historical context in English>"
@@ -51,6 +59,7 @@ Do NOT include any markdown formatting (like ```json), commentary, or extra text
 - **Entities**:
     - **Persons:** Use **LGPN** (Lexicon of Greek Personal Names) identifiers/URIs (e.g., `http://id.lgpn.ox.ac.uk/id/V1-12345`) whenever possible. Do NOT use Wikidata or Wikipedia URIs for persons unless they are major historical figures (e.g., kings, emperors) where LGPN is less relevant. If the specific LGPN ID is unknown, leave the URI null or provide a search query URL.
     - **Places:** Use **Pleiades** URIs.
+    - **Deities:** Use Wikidata URIs for deities.
 """
 
 def tag_inscription(
@@ -77,11 +86,16 @@ def tag_inscription(
     merged_data = {
         "phi_id": inscription.id,
         "themes": tagging_data.get("themes", []),
-        "entities": tagging_data.get("entities", {"persons": [], "places": []}),
+        "entities": tagging_data.get("entities", {"persons": [], "places": [], "deities": []}),
         "provenance": tagging_data.get("provenance", []),
         "completeness": tagging_data.get("completeness", "fragmentary"),
         "rationale": tagging_data.get("rationale", ""),
-        "model": model
+        "model": model,
+        # Propagate Date Metadata
+        "date_str": inscription.date_str,
+        "date_min": inscription.date_min,
+        "date_max": inscription.date_max,
+        "date_circa": inscription.date_circa
     }
     
     return TaggedInscription(**merged_data)

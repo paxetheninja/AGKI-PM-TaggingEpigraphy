@@ -25,27 +25,37 @@ class Theme(BaseModel):
     rationale: str = Field(..., description="Reasoning for this classification based on the text.")
     confidence: float = Field(default=1.0, description="Confidence score 0.0-1.0")
     quote: Optional[str] = Field(None, description="The specific Greek text segment that justifies this tag.")
+    is_ambiguous: bool = Field(default=False, description="True if the classification is uncertain or debated.")
+    ambiguity_note: Optional[str] = Field(None, description="Explanation of the ambiguity if present.")
 
 class PersonEntity(BaseModel):
     name: str
     role: Optional[str] = None
     uri: Optional[str] = Field(None, description="Linked Open Data URI (e.g. LGPN)")
+    confidence: float = Field(default=1.0, description="Confidence score 0.0-1.0")
 
 class PlaceEntity(BaseModel):
     name: str
     type: Optional[str] = None
     uri: Optional[str] = Field(None, description="Linked Open Data URI (e.g. Pleiades)")
+    confidence: float = Field(default=1.0, description="Confidence score 0.0-1.0")
+
+class DeityEntity(BaseModel):
+    name: str
+    uri: Optional[str] = Field(None, description="Linked Open Data URI (e.g. Wikidata/ToposText)")
+    confidence: float = Field(default=1.0, description="Confidence score 0.0-1.0")
 
 class Entities(BaseModel):
     persons: List[PersonEntity] = Field(default_factory=list)
     places: List[PlaceEntity] = Field(default_factory=list)
-    deities: List[str] = Field(default_factory=list, description="Names of deities mentioned in the text")
+    deities: List[DeityEntity] = Field(default_factory=list, description="Deities mentioned in the text")
 
 class GeoLocation(BaseModel):
     name: str
     type: Optional[str] = Field(None, description="e.g. Region, Polis, Sanctuary")
     uri: Optional[str] = Field(None, description="Pleiades URI")
     role: Optional[str] = Field(None, description="provenance")
+    confidence: float = Field(default=1.0, description="Confidence score 0.0-1.0")
 
 class TaggedInscription(BaseModel):
     phi_id: int
@@ -55,3 +65,9 @@ class TaggedInscription(BaseModel):
     provenance: List[GeoLocation] = Field(default_factory=list, description="Ordered hierarchy: [Macro -> Micro]")
     rationale: Optional[str] = Field(None, description="A comprehensive summary of the AI's analysis and reasoning.")
     model: Optional[str] = Field(None, description="The name of the model used for generation")
+    
+    # Date Metadata (Propagated from Input)
+    date_str: Optional[str] = None
+    date_min: Optional[float] = None
+    date_max: Optional[float] = None
+    date_circa: Optional[bool] = None
