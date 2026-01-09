@@ -30,7 +30,7 @@
         <a href="indices.html" class="nav-item">Indices</a>
     </nav>
     <div class="header-controls">
-        <button class="theme-toggle-btn" onclick="toggleTheme()" id="themeBtn">🌙 Dark Mode</button>
+        <button class="theme-toggle-btn" onclick="toggleTheme()" id="themeBtn">Dark Mode</button>
     </div>
   </header>
 
@@ -43,15 +43,15 @@
 
     <section class="features">
         <a href="search.html" class="feature-card">
-            <h3>🔍 Semantic Search</h3>
+            <h3>Semantic Search</h3>
             <p>Filter thousands of inscriptions using a hierarchical taxonomy. Find administrative, religious, or legal texts with precision.</p>
         </a>
         <a href="explore.html" class="feature-card">
-            <h3>🗺️ Visual Exploration</h3>
+            <h3>Visual Exploration</h3>
             <p>Visualize the corpus through geospatial maps, temporal histograms, and interactive sunburst diagrams of the taxonomy.</p>
         </a>
         <a href="indices.html" class="feature-card">
-            <h3>📇 Rich Indices</h3>
+            <h3>Rich Indices</h3>
             <p>Browse comprehensive lists of deities, persons, and places mentioned across the entire collection.</p>
         </a>
     </section>
@@ -61,7 +61,7 @@
     const themeBtn = document.getElementById('themeBtn');
     function updateThemeBtn() {
         const current = document.documentElement.getAttribute('data-theme');
-        themeBtn.textContent = current === 'light' ? '🌙 Dark Mode' : '☀️ Light Mode';
+        themeBtn.textContent = current === 'light' ? 'Dark Mode' : 'Light Mode';
     }
     updateThemeBtn();
     window.toggleTheme = function() {

@@ -22,18 +22,22 @@
   <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
 
   <style>
-    .dashboard-container { display: grid; grid-template-columns: minmax(260px, 320px) minmax(0, 1fr); gap: 1.75rem; margin-top: 2rem; align-items: start; }
-    .sidebar { padding: 1.5rem; border-radius: 8px; position: sticky; top: 20px; max-height: 90vh; overflow-y: auto; }
+    main.page { max-width: none; width: 100%; padding: 2rem; }
+    .dashboard-container { display: grid; grid-template-columns: minmax(280px, 340px) minmax(0, 1fr); gap: 1.75rem; margin-top: 2rem; align-items: start; width: 100%; }
+    .sidebar { padding: 1.5rem; border-radius: 8px; position: sticky; top: 20px; }
     .filter-group { margin-bottom: 2rem; }
     .eyebrow { font-size: 0.8rem; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem; font-weight: 700; }
     .search-box, .select-box, .range-input { width: 100%; padding: 0.6rem; border: 1px solid var(--border); background: var(--bg); color: var(--text); border-radius: 4px; }
     
-    .viz-layout { display: flex; flex-direction: column; gap: 2rem; }
-    .viz-card { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; box-shadow: var(--shadow); display: flex; flex-direction: column; }
+    .viz-layout { display: flex; flex-direction: column; gap: 2rem; min-width: 0; }
+    .viz-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1.5rem; align-items: stretch; }
+    .viz-wide { grid-column: 1 / -1; }
+    .viz-card { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; box-shadow: var(--shadow); display: flex; flex-direction: column; min-height: 360px; }
     .viz-title { margin: 0 0 1rem; font-size: 1rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
 
-    #map { height: 600px; width: 100%; border-radius: 4px; z-index: 1; flex-grow: 1; }
-    .chart-container { position: relative; height: 300px; width: 100%; }
+    #map { height: clamp(480px, 70vh, 780px); width: 100%; border-radius: 4px; z-index: 1; flex-grow: 1; }
+    .chart-container { position: relative; height: clamp(320px, 34vh, 420px); width: 100%; }
+    #sunburstChart { width: 100%; height: clamp(520px, 70vh, 820px); }
 
     /* Map Legend */
     .map-legend { background: var(--panel); padding: 10px; border-radius: 4px; border: 1px solid var(--border); font-size: 0.85rem; }
@@ -46,6 +50,7 @@
     .tree-group { padding-left: 1.2rem; display: none; border-left: 1px solid var(--border); margin-left: 0.3rem; }
     .tree-group.open { display: block; }
     .tree-label-row { display: flex; align-items: center; cursor: pointer; padding: 2px 0; }
+    .tree-label-row:hover { color: var(--primary); }
     .caret { width: 16px; text-align: center; margin-right: 4px; color: var(--muted); font-size: 0.7em; }
     .caret.open { transform: rotate(90deg); }
     .filter-checkbox { margin-right: 8px; accent-color: var(--primary); }
@@ -55,6 +60,12 @@
     .collection-item, .history-item { font-size: 0.9rem; padding: 4px 0; border-bottom: 1px dashed var(--border); display: flex; justify-content: space-between; }
     .collection-item a, .history-item span { color: var(--primary); cursor: pointer; }
     .collection-remove { color: var(--muted); cursor: pointer; margin-left: 8px; }
+
+    @media (max-width: 1200px) {
+      .dashboard-container { grid-template-columns: 1fr; }
+      .sidebar { position: static; }
+      .viz-grid { grid-template-columns: 1fr; }
+    }
 
   </style>
   <script>
@@ -72,7 +83,7 @@
         <a href="indices.html" class="nav-item">Indices</a>
     </nav>
     <div class="header-controls">
-        <button class="theme-toggle-btn" onclick="toggleTheme()" id="themeBtn">🌙 Dark Mode</button>
+        <button class="theme-toggle-btn" onclick="toggleTheme()" id="themeBtn">Dark Mode</button>
     </div>
   </header>
 
@@ -80,7 +91,7 @@
     const themeBtn = document.getElementById('themeBtn');
     function updateThemeBtn() {
         const current = document.documentElement.getAttribute('data-theme');
-        themeBtn.textContent = current === 'light' ? '🌙 Dark Mode' : '☀️ Light Mode';
+        themeBtn.textContent = current === 'light' ? 'Dark Mode' : 'Light Mode';
     }
     updateThemeBtn();
     window.toggleTheme = function() {
@@ -96,20 +107,13 @@
     <div class="dashboard-container">
         <aside class="sidebar">
             <div class="filter-group">
-                <h4 class="eyebrow">My Collection</h4>
-                <ul id="myCollectionList" class="collection-list">
-                    <!-- Populated by JS -->
-                    <li class="muted" style="font-size:0.85rem;">No starred items.</li>
-                </ul>
+                <h4 class="eyebrow">Search Context</h4>
+                <input type="text" id="searchInput" class="search-box" placeholder="Filter by keyword...">
             </div>
-            
             <div class="filter-group">
-                <h4 class="eyebrow">Search History</h4>
-                <ul id="searchHistoryList" class="history-list">
-                    <!-- Populated by JS -->
-                </ul>
+                <h4 class="eyebrow">Taxonomy Filter</h4>
+                <div id="taxonomyTreeContainer"></div>
             </div>
-
             <div class="filter-group">
                 <h4 class="eyebrow">Map Settings</h4>
                 <div class="map-legend">
@@ -118,18 +122,23 @@
                 </div>
             </div>
             <div class="filter-group">
-                <h4 class="eyebrow">Search Context</h4>
-                <input type="text" id="searchInput" class="search-box" placeholder="Filter by keyword...">
+                <h4 class="eyebrow">My Collection</h4>
+                <ul id="myCollectionList" class="collection-list">
+                    <!-- Populated by JS -->
+                    <li class="muted" style="font-size:0.85rem;">No starred items.</li>
+                </ul>
             </div>
             <div class="filter-group">
-                <h4 class="eyebrow">Taxonomy Filter</h4>
-                <div id="taxonomyTreeContainer"></div>
+                <h4 class="eyebrow">Search History</h4>
+                <ul id="searchHistoryList" class="history-list">
+                    <!-- Populated by JS -->
+                </ul>
             </div>
             <div class="meta-grid">
                 <div><p class="label">Analyzing</p><strong id="countDisplay">0</strong> Inscriptions</div>
                 <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-top:0.5rem;">
-                    <button onclick="exportData('json')" class="button block compact">📥 JSON</button>
-                    <button onclick="exportData('csv')" class="button secondary block compact">📥 CSV</button>
+                    <button onclick="exportData('json')" class="button block compact">JSON</button>
+                    <button onclick="exportData('csv')" class="button secondary block compact">CSV</button>
                 </div>
             </div>
         </aside>
@@ -139,16 +148,16 @@
                 <h3 class="viz-title">Geospatial Relations</h3>
                 <div id="map"></div>
             </div>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 1.5rem;">
-                <div class="viz-card">
+            <div class="viz-grid">
+                <div class="viz-card viz-wide">
                     <h3 class="viz-title">Time Distribution</h3>
                     <div class="chart-container">
                         <canvas id="timeChart"></canvas>
                     </div>
                 </div>
-                <div class="viz-card" style="grid-column: span 2;">
+                <div class="viz-card viz-wide">
                     <h3 class="viz-title">Taxonomy Sunburst</h3>
-                    <div id="sunburstChart" style="width:100%; height:700px;"></div>
+                    <div id="sunburstChart"></div>
                 </div>
             </div>
         </div>
@@ -199,7 +208,7 @@
     function updateThemeBtn() {
         const current = document.documentElement.getAttribute('data-theme');
         const btn = document.getElementById('themeBtn');
-        if(btn) btn.textContent = current === 'light' ? '🌙 Dark Mode' : '☀️ Light Mode';
+        if(btn) btn.textContent = current === 'light' ? 'Dark Mode' : 'Light Mode';
     }
     updateThemeBtn();
 
@@ -568,8 +577,6 @@
         link.click();
         document.body.removeChild(link);
     }
-
-    init();
   </script>
 </body>
 </html>

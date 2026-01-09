@@ -10,15 +10,23 @@
     document.documentElement.setAttribute('data-theme', savedTheme);
   </script>
   <style>
-    .page-container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
-    .index-nav { display: flex; gap: 1rem; margin-bottom: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 1rem; flex-wrap: wrap; }
-    .index-nav a { text-decoration: none; color: var(--muted); font-weight: 600; padding: 0.5rem 1rem; border-radius: 4px; }
-    .index-nav a:hover { background: var(--panel); }
-    .index-nav a.active { background: var(--primary); color: white; }
-    .index-card { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 1.75rem; }
-    table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
-    th, td { text-align: left; padding: 0.5rem; border-bottom: 1px solid var(--border); }
-    th { color: var(--muted); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.05em; }
+    .page-container { max-width: none; width: 100%; margin: 0 auto; padding: 2rem; }
+    .index-header { display: flex; align-items: baseline; gap: 1rem; flex-wrap: wrap; }
+    .index-nav { display: flex; gap: 0.75rem; margin: 1.25rem 0 2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.75rem; flex-wrap: wrap; }
+    .index-nav a { text-decoration: none; color: var(--muted); font-weight: 600; padding: 0.4rem 0.9rem; border-radius: 20px; border: 1px solid var(--border); }
+    .index-nav a:hover { background: var(--panel); color: var(--text); }
+    .index-nav a.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+    .index-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    .index-card { background: var(--panel); border: 1px solid var(--border); border-radius: 10px; padding: 1.75rem; }
+    .index-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+    .index-search input { min-width: 240px; }
+    .index-table { margin-top: 1rem; overflow: auto; border-radius: 8px; border: 1px solid var(--border); background: var(--panel); position: relative; }
+    .index-empty { display: none; align-items: center; justify-content: center; padding: 2rem; color: var(--muted); }
+    .index-link { color: var(--primary); font-size: 0.85rem; margin-left: 0.35rem; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+    th, td { text-align: left; padding: 0.65rem 0.75rem; border-bottom: 1px solid var(--border); }
+    th { color: var(--muted); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.05em; background: var(--panel); position: sticky; top: 0; }
+    tbody tr:hover { background: rgba(193, 104, 60, 0.08); }
   </style>
 </head>
 <body>
@@ -31,32 +39,34 @@
         <a href="indices.html" class="nav-item active">Indices</a>
     </nav>
     <div class="header-controls">
-        <button class="theme-toggle-btn" onclick="toggleTheme()" id="themeBtn">🌙 Dark Mode</button>
+        <button class="theme-toggle-btn" onclick="toggleTheme()" id="themeBtn">Dark Mode</button>
     </div>
   </header>
   <main class="page-container page-wide">
-    <h2>Corpus Indices</h2>
+    <div class="index-header">
+        <h2>Corpus Indices</h2>
+    </div>
     <nav class="index-nav">
         <a href="indices.html" class="active">Overview</a>
-        <a href="index_deities.html" class="">⚡ Deities</a>
-        <a href="index_persons.html" class="">👤 Persons</a>
-        <a href="index_places.html" class="">📍 Places</a>
+        <a href="index_deities.html" class="">Deities</a>
+        <a href="index_persons.html" class="">Persons</a>
+        <a href="index_places.html" class="">Places</a>
     </nav>
     
-    <div class="index-grid" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:1.5rem;">
+    <div class="index-grid">
         <div class="index-card">
-            <h3>⚡ Deities</h3>
-            <p>Total unique deities: <strong>133</strong></p>
+            <h3>Deities</h3>
+            <p>Total unique deities: <strong>145</strong></p>
             <a href="index_deities.html" class="button">Browse Deities</a>
         </div>
         <div class="index-card">
-            <h3>👤 Persons</h3>
-            <p>Total unique persons: <strong>941</strong></p>
+            <h3>Persons</h3>
+            <p>Total unique persons: <strong>1068</strong></p>
             <a href="index_persons.html" class="button">Browse Persons</a>
         </div>
         <div class="index-card">
-            <h3>📍 Places</h3>
-            <p>Total unique places: <strong>384</strong></p>
+            <h3>Places</h3>
+            <p>Total unique places: <strong>432</strong></p>
             <a href="index_places.html" class="button">Browse Places</a>
         </div>
     </div>
@@ -67,7 +77,7 @@
     const themeBtn = document.getElementById('themeBtn');
     function updateThemeBtn() {
         const current = document.documentElement.getAttribute('data-theme');
-        if(themeBtn) themeBtn.textContent = current === 'light' ? '🌙 Dark Mode' : '☀️ Light Mode';
+        if (themeBtn) themeBtn.textContent = current === 'light' ? 'Dark Mode' : 'Light Mode';
     }
     updateThemeBtn();
     window.toggleTheme = function() {

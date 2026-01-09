@@ -7,66 +7,17 @@
   <link rel="stylesheet" href="../assets/css/main.css">
   <style>
     /* Custom Scrollbar Styling */
-    ::-webkit-scrollbar {
-        width: 8px;
-        height: 8px;
-    }
-    ::-webkit-scrollbar-track {
-        background: rgba(0,0,0,0.05); 
-    }
-    ::-webkit-scrollbar-thumb {
-        background: #ccc; 
-        border-radius: 4px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-        background: #aaa; 
-    }
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: rgba(0,0,0,0.05); }
+    ::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #aaa; }
 
     .page-container { max-width: 1400px; margin: 0 auto; padding: 2rem; }
     .back-link { display: inline-block; margin-bottom: 1rem; color: var(--primary); font-weight: 600; }
-    
-    /* Original View Styles (Line by Line) */
-    .text-viewer-original { 
-        display: grid; 
-        grid-template-columns: 40px 1fr; 
-        gap: 2rem; 
-        font-family: "New Athena Unicode", "Gentium Plus", "Times New Roman", serif; 
-        font-size: 1.25rem; 
-        line-height: 1.6; 
-        background: var(--panel); 
-        padding: 2rem; 
-        border: 1px solid var(--border); 
-        border-radius: 4px; 
-        margin-bottom: 2rem; 
-        color: var(--text);
-    }
-
-    .line-numbers { 
-        text-align: right; 
-        color: var(--muted); 
-        font-size: 1.25rem; 
-        line-height: 1.6; 
-        user-select: none; 
-        opacity: 0.5; 
-        font-family: inherit; 
-        white-space: pre; 
-        padding-right: 1rem;
-        border-right: 1px solid var(--border);
-    }
-
-    .greek-content { 
-        white-space: pre-wrap; 
-        word-break: break-word;
-        padding-left: 1rem; 
-    }
-
-    .highlight-evidence {
-        background-color: var(--accent);
-        color: white;
-        border-radius: 2px;
-        padding: 0 2px;
-    }
-
+    .text-viewer-original { display: grid; grid-template-columns: 40px 1fr; gap: 2rem; font-family: "New Athena Unicode", "Gentium Plus", "Times New Roman", serif; font-size: 1.25rem; line-height: 1.6; background: var(--panel); padding: 2rem; border: 1px solid var(--border); border-radius: 4px; margin-bottom: 2rem; color: var(--text); }
+    .line-numbers { text-align: right; color: var(--muted); font-size: 1.25rem; line-height: 1.6; user-select: none; opacity: 0.5; font-family: inherit; white-space: pre; padding-right: 1rem; border-right: 1px solid var(--border); }
+    .greek-content { white-space: pre-wrap; word-break: break-word; padding-left: 1rem; }
+    .highlight-evidence { background-color: var(--accent); color: white; border-radius: 2px; padding: 0 2px; }
     .theme-card { background: var(--panel); padding: 1rem 1.5rem; border-left: 4px solid var(--primary); margin-bottom: 0.75rem; border: 1px solid var(--border); border-left-width: 4px; }
     .ai-analysis-box { background: rgba(31, 167, 163, 0.05); padding: 2rem; border-radius: 8px; border: 1px solid var(--border); margin-top: 2rem; }
     .evidence-box { max-width: 500px; text-align: right; }
@@ -75,12 +26,8 @@
     .badge.orange { background: #fef7e0; color: #b06000; border-color: #b06000; }
     .badge.red { background: #fce8e6; color: #c5221f; border-color: #c5221f; }
     .entity-tag { background: rgba(217, 123, 61, 0.1); color: var(--accent-2); margin-right: 0.5rem; margin-bottom: 0.5rem; display: inline-block; padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.9rem; border: 1px solid rgba(217, 123, 61, 0.2); }
-    
-    /* Split View Styles */
     .split-container { display: block; }
     .split-container.active { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
-    .split-col-left { }
-    .split-col-right { }
     .split-container.active .split-col-right { position: sticky; top: 20px; max-height: 90vh; overflow-y: auto; padding-right: 10px; }
   </style>
   <script>
@@ -91,284 +38,132 @@
         const container = document.getElementById('main-content');
         const btn = document.getElementById('splitViewBtn');
         container.classList.toggle('active');
-        if(container.classList.contains('active')) {
-            btn.textContent = 'View: Split';
-            btn.classList.add('active');
-        } else {
-            btn.textContent = 'View: Standard';
-            btn.classList.remove('active');
-        }
+        btn.textContent = container.classList.contains('active') ? 'View: Split' : 'View: Standard';
     }
 
     function copyCitation() {
-        const citation = "AGKI Project. (2026). Inscription PHI-" + "28351" + ". Retrieved from " + window.location.href;
+        const citation = "AGKI Project. (2026). Inscription PHI-28351 . Retrieved from " + window.location.href;
         navigator.clipboard.writeText(citation);
         alert("Citation copied to clipboard!");
     }
-    
+
     function highlightQuote(quote) {
         const container = document.querySelector('.greek-content');
         if (!container || !quote) return;
-
-        if (!container.dataset.original) {
-            container.dataset.original = container.innerHTML;
-        } else {
-            container.innerHTML = container.dataset.original;
-        }
+        if (!container.dataset.original) container.dataset.original = container.innerHTML;
+        else container.innerHTML = container.dataset.original;
         
-        const normalized = quote.trim().replace(/\s+/g, ' ');
-        const escapedQuote = normalized.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-        const spacedQuote = escapedQuote.replace(/\s+/g, '\\s+');
-        const regex = new RegExp(spacedQuote, 'g');
-        container.innerHTML = container.innerHTML.replace(
-            regex,
-            match => `<mark class="highlight-evidence">${match}</mark>`
-        );
+        const regex = new RegExp(quote.trim().replace(/\s+/g, '\\s+'), 'g');
+        container.innerHTML = container.innerHTML.replace(regex, match => `<mark class="highlight-evidence">${match}</mark>`);
     }
-    
+
     function clearHighlight() {
         const container = document.querySelector('.greek-content');
-        if (!container) return;
-        if (container.dataset.original) {
-            container.innerHTML = container.dataset.original;
-        } else {
-            container.innerHTML = container.innerHTML.replace(/<mark class="highlight-evidence">(.*?)<\/mark>/g, '$1');
-        }
+        if (container && container.dataset.original) container.innerHTML = container.dataset.original;
     }
 
-        function updateFontSize(size) {
+    function updateFontSize(size) {
+        const v = document.getElementById('original-view');
+        if(v) v.style.fontSize = size + 'px';
+    }
 
-            const container = document.getElementById('original-view');
+    function openReportModal() { document.getElementById('reportModal').style.display = 'block'; }
+    function closeReportModal() { document.getElementById('reportModal').style.display = 'none'; }
+    function sendReport() {
+        const category = document.getElementById('reportCategory').value;
+        const desc = document.getElementById('reportDesc').value;
+        const fix = document.getElementById('reportFix').value;
+        const subject = `AGKI Error Report: PHI-28351`;
+        const body = `Category: ${category}%0D%0ADescription: ${desc}%0D%0AProposed Fix: ${fix}`;
+        window.location.href = `mailto:admin@agki-project.org?subject=${encodeURIComponent(subject)}&body=${body}`;
+        closeReportModal();
+    }
+  </script>
+</head>
 
-            if (container) {
-
-                container.style.fontSize = size + 'px';
-
-                const lines = container.querySelector('.line-numbers');
-
-                if(lines) lines.style.fontSize = size + 'px';
-
-            }
-
-        }
-
-    
-
-        function openReportModal() {
-
-            document.getElementById('reportModal').style.display = 'block';
-
-        }
-
-    
-
-        function closeReportModal() {
-
-            document.getElementById('reportModal').style.display = 'none';
-
-        }
-
-    
-
-        function sendReport() {
-
-            const category = document.getElementById('reportCategory').value;
-
-            const desc = document.getElementById('reportDesc').value;
-
-            const fix = document.getElementById('reportFix').value;
-
-            
-
-                    const subject = `AGKI Error Report: PHI-28351`;
-
-            
-
-                    const body = `Category: ${category}%0D%0ADescription: ${desc}%0D%0AProposed Fix: ${fix}%0D%0A%0D%0A(Sent from inscription page)`;
-
-            
-
-                    
-
-            
-
-                    window.location.href = `mailto:admin@agki-project.org?subject=${encodeURIComponent(subject)}&body=${body}`;
-
-            closeReportModal();
-
-        }
-
-      </script>
-
-    </head>
-
-        
 <body>
   <header class="site-header">
+    <div class="brand"><h1><a href="../index.html">AGKI Tagging Tool</a></h1></div>
+    <nav class="nav-links">
+        <a href="../index.html" class="nav-item">Home</a>
+        <a href="../search.html" class="nav-item">Search</a>
+        <a href="../explore.html" class="nav-item">Explore</a>
+        <a href="../indices.html" class="nav-item">Indices</a>
+    </nav>
+    <div class="header-controls">
+        <button class="theme-toggle-btn" onclick="toggleTheme()" id="themeBtn">Dark Mode</button>
+    </div>
+  </header>
 
-        <div class="brand">
-
-          <h1><a href="../index.html">AGKI Tagging Tool</a></h1>
-
-        </div>
-
-        <nav class="nav-links">
-
-            <a href="../index.html" class="nav-item">Home</a>
-
-            <a href="../search.html" class="nav-item">Search</a>
-
-            <a href="../explore.html" class="nav-item">Explore</a>
-
-            <a href="../indices.html" class="nav-item">Indices</a>
-
-        </nav>
-
-        <div class="header-controls">
-
-            <button class="theme-toggle-btn" onclick="toggleTheme()" id="themeBtn">🌙 Dark Mode</button>
-
-        </div>
-
-      </header>
-
-    
-
-      <script>
-
-        const themeBtn = document.getElementById('themeBtn');
-
-        function updateThemeBtn() {
-
-            const current = document.documentElement.getAttribute('data-theme');
-
-            if(themeBtn) themeBtn.textContent = current === 'light' ? '🌙 Dark Mode' : '☀️ Light Mode';
-
-        }
-
+  <script>
+    const themeBtn = document.getElementById('themeBtn');
+    function updateThemeBtn() {
+        const current = document.documentElement.getAttribute('data-theme');
+        if(themeBtn) themeBtn.textContent = current === 'light' ? 'Dark Mode' : 'Light Mode';
+    }
+    updateThemeBtn();
+    window.toggleTheme = function() {
+        const current = document.documentElement.getAttribute('data-theme');
+        const next = current === 'light' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
         updateThemeBtn();
+    }
+  </script>
 
-        window.toggleTheme = function() {
-
-            const current = document.documentElement.getAttribute('data-theme');
-
-            const next = current === 'light' ? 'dark' : 'light';
-
-            document.documentElement.setAttribute('data-theme', next);
-
-            localStorage.setItem('theme', next);
-
-            updateThemeBtn();
-
-        }
-
-      </script>
-
-      <main class="page-container inscription-page">
-        <div class="inscription-toolbar">
-
-            <a href="../search.html" class="back-link">← Back to Dashboard</a>
-
-            <div class="inscription-actions">
-                <button id="splitViewBtn" onclick="toggleSplitView()" class="button secondary compact">View: Standard</button>
-
-                            <button onclick="openReportModal()" class="button error compact">🚩 Report Error</button>
-
-
-            </div>
-
+  <main class="page-container inscription-page">
+    <div class="inscription-toolbar">
+        <a href="../search.html" class="back-link"><- Back to Dashboard</a>
+        <div class="inscription-actions">
+            <button id="splitViewBtn" onclick="toggleSplitView()" class="button secondary compact">View: Standard</button>
+            <button onclick="openReportModal()" class="button error compact">Report Error</button>
         </div>
+    </div>
 
-        
-
-        <!-- Report Modal -->
-
-        <div id="reportModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:1000;">
-
-            <div style="background:var(--panel); width:90%; max-width:500px; margin:10% auto; padding:2rem; border-radius:8px; border:1px solid var(--border); box-shadow:var(--shadow);">
-
-                <h3>Report Error for PHI-28351</h3>
-
-                <label style="display:block; margin-bottom:0.5rem;">Error Category</label>
-
-                <select id="reportCategory" style="width:100%; padding:0.5rem; margin-bottom:1rem; border-radius:4px; border:1px solid var(--border); background:var(--bg); color:var(--text);">
-
-                    <option value="Incorrect Tag">Incorrect Tag / Theme</option>
-
-                    <option value="Missing Entity">Missing Person / Place</option>
-
-                    <option value="Translation Error">Translation / Text Issue</option>
-
-                    <option value="Other">Other</option>
-
-                </select>
-
-                
-
-                <label style="display:block; margin-bottom:0.5rem;">Description of Issue</label>
-
-                <textarea id="reportDesc" rows="3" style="width:100%; padding:0.5rem; margin-bottom:1rem; border-radius:4px; border:1px solid var(--border); background:var(--bg); color:var(--text);"></textarea>
-
-                
-
-                <label style="display:block; margin-bottom:0.5rem;">Proposed Fix (Optional)</label>
-
-                <textarea id="reportFix" rows="2" style="width:100%; padding:0.5rem; margin-bottom:1.5rem; border-radius:4px; border:1px solid var(--border); background:var(--bg); color:var(--text);"></textarea>
-
-                
-
-                <div style="display:flex; justify-content:flex-end; gap:0.5rem;">
-
-                    <button onclick="closeReportModal()" class="button secondary">Cancel</button>
-
-                    <button onclick="sendReport()" class="button">Create Email Report</button>
-
-                </div>
-
+    <!-- Report Modal -->
+    <div id="reportModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:1000;">
+        <div style="background:var(--panel); width:90%; max-width:500px; margin:10% auto; padding:2rem; border-radius:8px; border:1px solid var(--border);">
+            <h3>Report Error for PHI-28351</h3>
+            <label>Error Category</label>
+            <select id="reportCategory" style="width:100%; padding:0.5rem; margin-bottom:1rem;">
+                <option value="Incorrect Tag">Incorrect Tag / Theme</option>
+                <option value="Missing Entity">Missing Person / Place</option>
+                <option value="Translation Error">Translation / Text Issue</option>
+                <option value="Other">Other</option>
+            </select>
+            <label>Description</label>
+            <textarea id="reportDesc" rows="3" style="width:100%; margin-bottom:1rem;"></textarea>
+            <label>Proposed Fix</label>
+            <textarea id="reportFix" rows="2" style="width:100%; margin-bottom:1.5rem;"></textarea>
+            <div style="display:flex; justify-content:flex-end; gap:0.5rem;">
+                <button onclick="closeReportModal()" class="button secondary">Cancel</button>
+                <button onclick="sendReport()" class="button">Create Email Report</button>
             </div>
-
         </div>
+    </div>
 
-    
-
-        <div id="main-content" class="split-container">
+    <div id="main-content" class="split-container">
         <div class="split-col-left">
             <section class="inscription-hero">
                 <div class="inscription-title-row">
-                <h2>Inscription PHI-28351</h2>
-                <div class="inscription-actions">
-                    <button onclick="copyCitation()" class="button secondary compact">📜 Cite</button>
-                    <a href="https://epigraphy.packhum.org/text/28351" target="_blank" class="button secondary compact">View on PHI</a>
+                    <h2>Inscription PHI-28351</h2>
+                    <div class="inscription-actions">
+                        <button onclick="copyCitation()" class="button secondary compact">Cite</button>
+                        <a href="https://epigraphy.packhum.org/text/28351" target="_blank" class="button secondary compact">View on PHI</a>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="inscription-meta">
-                <div class="meta-item">
-                        <div class="label">Provenance</div>
-                        <div class="meta-value"><a href="https://pleiades.stoa.org/places/570768" target="_blank" title="View in Pleiades">Troizenis</a> &gt; <a href="https://pleiades.stoa.org/places/570768" target="_blank" title="View in Pleiades">Troizen</a></div>
-                    </div>
-                <div class="meta-item">
-                        <div class="label">Date</div>
-                        <div class="meta-value"> 4th c. BC</div>
-                    </div>
-                <div class="meta-item">
-                        <div class="label">Completeness</div>
-                        <div class="meta-value"><span class="badge info">fragmentary</span></div>
-                    </div>
-            </div>
+                <div class="inscription-meta">
+                    <div class="meta-item"><div class="label">Provenance</div><div class="meta-value"><a href="https://pleiades.stoa.org/places/570768" target="_blank" title="View in Pleiades">Troizenis</a> &gt; <a href="https://pleiades.stoa.org/places/570768" target="_blank" title="View in Pleiades">Troizen</a></div></div>
+                    <div class="meta-item"><div class="label">Date</div><div class="meta-value"> 4th c. BC</div></div>
+                    <div class="meta-item"><div class="label">Completeness</div><div class="meta-value"><span class="badge info">fragmentary</span></div></div>
+                </div>
             </section>
-
             <div class="inscription-title-row">
                 <h3>Original Text</h3>
-                <!-- Font Size Control -->
                 <div class="font-size-control">
-                    <span style="font-size:0.8rem; color:var(--muted);">A</span>
-                    <input type="range" id="fontSizeSlider" min="14" max="32" value="20" oninput="updateFontSize(this.value)" style="width:80px; accent-color:var(--primary);">
-                    <span style="font-size:1rem; font-weight:bold; color:var(--muted);">A</span>
+                    <input type="range" min="14" max="32" value="20" oninput="updateFontSize(this.value)">
                 </div>
             </div>
-
-            <!-- Original Line-by-Line View -->
             <div id="original-view" class="text-viewer-original">
                 <div class="line-numbers">1
 
@@ -432,7 +227,6 @@
 [-------] φ [διον --------------------------------]</div>
             </div>
         </div>
-
         <div class="split-col-right">
             <h3>Thematic Analysis</h3>
             
@@ -466,18 +260,11 @@
             </div>
         </div>
         
-            
-            <div style="margin-top:2rem;">
-                <h3>Entities</h3>
-                <div><a href="../search.html?q=Damophanes" class="tag entity-tag" style="text-decoration:none;">👤 Damophanes <small>(Contractor or Official)</small></a><a href="../search.html?q=Kesthenes" class="tag entity-tag" style="text-decoration:none;">👤 Kesthenes <small>(Contractor or Official)</small></a><a href="../search.html?q=Peithandros" class="tag entity-tag" style="text-decoration:none;">👤 Peithandros <small>(Contractor)</small></a><a href="../search.html?q=Theodoros" class="tag entity-tag" style="text-decoration:none;">👤 Theodoros <small>(Stone-cutter or Architect)</small></a><a href="../search.html?q=Melanthios" class="tag entity-tag" style="text-decoration:none;">👤 Melanthios <small>(Contractor)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Megara <small>(Polis)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Corinth <small>(Polis)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Kithairon <small>(Mountain Range)</small></a><a href="../index_deities.html" class="tag entity-tag" style="text-decoration:none;">⚡ Dionysos</a></div>
-            </div>
-
-            <div class="ai-analysis-box">
-                <h3>AI Analysis Summary</h3>
-                <p style="line-height:1.7;">This inscription is a comprehensive set of building accounts from Troizen, dating to the 4th century BC. It documents the financial administration of a major construction project, likely a temple (naos), as indicated by references to architectural elements like the stylobate, walls, and the temple itself. The text records payments to various individuals (Damophanes, Kesthenes, etc.) for labor, the procurement of stone from Megara and Corinth, and transport costs from Mount Kithairon. The mention of &#x27;Dionys...&#x27; suggests the project may have been dedicated to Dionysos.</p>
-            </div>
+            <div style="margin-top:2rem;"><h3>Entities</h3><div><a href="../search.html?q=Damophanes" class="tag entity-tag" style="text-decoration:none;">👤 Damophanes <small>(Contractor or Official)</small></a><a href="../search.html?q=Kesthenes" class="tag entity-tag" style="text-decoration:none;">👤 Kesthenes <small>(Contractor or Official)</small></a><a href="../search.html?q=Peithandros" class="tag entity-tag" style="text-decoration:none;">👤 Peithandros <small>(Contractor)</small></a><a href="../search.html?q=Theodoros" class="tag entity-tag" style="text-decoration:none;">👤 Theodoros <small>(Stone-cutter or Architect)</small></a><a href="../search.html?q=Melanthios" class="tag entity-tag" style="text-decoration:none;">👤 Melanthios <small>(Contractor)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Megara <small>(Polis)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Corinth <small>(Polis)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Kithairon <small>(Mountain Range)</small></a><a href="../index_deities.html" class="tag entity-tag" style="text-decoration:none;">⚡ Dionysos</a></div></div>
+            <div class="ai-analysis-box"><h3>AI Analysis Summary</h3><p>This inscription is a comprehensive set of building accounts from Troizen, dating to the 4th century BC. It documents the financial administration of a major construction project, likely a temple (naos), as indicated by references to architectural elements like the stylobate, walls, and the temple itself. The text records payments to various individuals (Damophanes, Kesthenes, etc.) for labor, the procurement of stone from Megara and Corinth, and transport costs from Mount Kithairon. The mention of &#x27;Dionys...&#x27; suggests the project may have been dedicated to Dionysos.</p></div>
         </div>
     </div>
   </main>
 </body>
 </html>
+    
