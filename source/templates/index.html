@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AGKI - Tagging Epigraphy</title>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <style>
+    .hero { padding: 4rem 2rem; text-align: center; background: var(--panel); border-bottom: 1px solid var(--border); }
+    .hero h2 { font-size: 2.5rem; margin-bottom: 1rem; color: var(--primary); }
+    .hero p { font-size: 1.2rem; color: var(--muted); max-width: 800px; margin: 0 auto 2rem; }
+    .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; padding: 4rem 2rem; max-width: 1200px; margin: 0 auto; }
+    .feature-card { background: var(--panel); padding: 2rem; border-radius: 8px; border: 1px solid var(--border); transition: transform 0.2s; text-decoration: none; color: inherit; }
+    .feature-card:hover { transform: translateY(-5px); border-color: var(--primary); }
+    .feature-card h3 { color: var(--primary); margin-bottom: 1rem; }
+    .cta-btn { display: inline-block; padding: 1rem 2rem; font-size: 1.1rem; font-weight: bold; }
+  </style>
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand"><h1><a href="index.html">AGKI Tagging Tool</a></h1></div>
+    <nav class="nav-links">
+        <a href="index.html" class="nav-item active">Home</a>
+        <a href="search.html" class="nav-item">Search</a>
+        <a href="explore.html" class="nav-item">Explore</a>
+        <a href="indices.html" class="nav-item">Indices</a>
+    </nav>
+    <div class="header-controls">
+        <button class="theme-toggle-btn" onclick="toggleTheme()" id="themeBtn">Dark Mode</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+        <h2>Unlocking Epigraphic Insights with AI</h2>
+        <p>A specialized platform for the automated semantic tagging and entity extraction of Ancient Greek inscriptions using Large Language Models.</p>
+        <a href="search.html" class="button cta-btn">Start Exploring</a>
+    </section>
+
+    <section class="features">
+        <a href="search.html" class="feature-card">
+            <h3>Semantic Search</h3>
+            <p>Filter thousands of inscriptions using a hierarchical taxonomy. Find administrative, religious, or legal texts with precision.</p>
+        </a>
+        <a href="explore.html" class="feature-card">
+            <h3>Visual Exploration</h3>
+            <p>Visualize the corpus through geospatial maps, temporal histograms, and interactive sunburst diagrams of the taxonomy.</p>
+        </a>
+        <a href="indices.html" class="feature-card">
+            <h3>Rich Indices</h3>
+            <p>Browse comprehensive lists of deities, persons, and places mentioned across the entire collection.</p>
+        </a>
+    </section>
+  </main>
+
+  <script>
+    const themeBtn = document.getElementById('themeBtn');
+    function updateThemeBtn() {
+        const current = document.documentElement.getAttribute('data-theme');
+        themeBtn.textContent = current === 'light' ? 'Dark Mode' : 'Light Mode';
+    }
+    updateThemeBtn();
+    window.toggleTheme = function() {
+        const current = document.documentElement.getAttribute('data-theme');
+        const next = current === 'light' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        updateThemeBtn();
+    }
+  </script>
+</body>
+</html>

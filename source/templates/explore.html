@@ -1,0 +1,582 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Explore - AGKI Epigraphy Tool</title>
+  <link rel="stylesheet" href="assets/css/main.css">
+  
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <!-- Plotly -->
+  <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+  
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <!-- Leaflet MarkerCluster -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
+  <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+
+  <style>
+    main.page { max-width: none; width: 100%; padding: 2rem; }
+    .dashboard-container { display: grid; grid-template-columns: minmax(280px, 340px) minmax(0, 1fr); gap: 1.75rem; margin-top: 2rem; align-items: start; width: 100%; }
+    .sidebar { padding: 1.5rem; border-radius: 8px; position: sticky; top: 20px; }
+    .filter-group { margin-bottom: 2rem; }
+    .eyebrow { font-size: 0.8rem; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem; font-weight: 700; }
+    .search-box, .select-box, .range-input { width: 100%; padding: 0.6rem; border: 1px solid var(--border); background: var(--bg); color: var(--text); border-radius: 4px; }
+    
+    .viz-layout { display: flex; flex-direction: column; gap: 2rem; min-width: 0; }
+    .viz-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1.5rem; align-items: stretch; }
+    .viz-wide { grid-column: 1 / -1; }
+    .viz-card { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; box-shadow: var(--shadow); display: flex; flex-direction: column; min-height: 360px; }
+    .viz-title { margin: 0 0 1rem; font-size: 1rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+
+    #map { height: clamp(480px, 70vh, 780px); width: 100%; border-radius: 4px; z-index: 1; flex-grow: 1; }
+    .chart-container { position: relative; height: clamp(320px, 34vh, 420px); width: 100%; }
+    #sunburstChart { width: 100%; height: clamp(520px, 70vh, 820px); }
+
+    /* Map Legend */
+    .map-legend { background: var(--panel); padding: 10px; border-radius: 4px; border: 1px solid var(--border); font-size: 0.85rem; }
+    .legend-item { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+    .dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+
+    /* Tree Filter */
+    .tree-root { list-style: none; padding-left: 0; margin: 0; font-size: 0.9rem; }
+    .tree-item { margin: 0.2rem 0; }
+    .tree-group { padding-left: 1.2rem; display: none; border-left: 1px solid var(--border); margin-left: 0.3rem; }
+    .tree-group.open { display: block; }
+    .tree-label-row { display: flex; align-items: center; cursor: pointer; padding: 2px 0; }
+    .tree-label-row:hover { color: var(--primary); }
+    .caret { width: 16px; text-align: center; margin-right: 4px; color: var(--muted); font-size: 0.7em; }
+    .caret.open { transform: rotate(90deg); }
+    .filter-checkbox { margin-right: 8px; accent-color: var(--primary); }
+    
+    /* Collections & History */
+    .collection-list, .history-list { list-style: none; padding: 0; margin: 0; }
+    .collection-item, .history-item { font-size: 0.9rem; padding: 4px 0; border-bottom: 1px dashed var(--border); display: flex; justify-content: space-between; }
+    .collection-item a, .history-item span { color: var(--primary); cursor: pointer; }
+    .collection-remove { color: var(--muted); cursor: pointer; margin-left: 8px; }
+
+    @media (max-width: 1200px) {
+      .dashboard-container { grid-template-columns: 1fr; }
+      .sidebar { position: static; }
+      .viz-grid { grid-template-columns: 1fr; }
+    }
+
+  </style>
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand"><h1><a href="index.html">AGKI Tagging Tool</a></h1></div>
+    <nav class="nav-links">
+        <a href="index.html" class="nav-item">Home</a>
+        <a href="search.html" class="nav-item">Search</a>
+        <a href="explore.html" class="nav-item active">Explore</a>
+        <a href="indices.html" class="nav-item">Indices</a>
+    </nav>
+    <div class="header-controls">
+        <button class="theme-toggle-btn" onclick="toggleTheme()" id="themeBtn">Dark Mode</button>
+    </div>
+  </header>
+
+  <script>
+    const themeBtn = document.getElementById('themeBtn');
+    function updateThemeBtn() {
+        const current = document.documentElement.getAttribute('data-theme');
+        themeBtn.textContent = current === 'light' ? 'Dark Mode' : 'Light Mode';
+    }
+    updateThemeBtn();
+    window.toggleTheme = function() {
+        const current = document.documentElement.getAttribute('data-theme');
+        const next = current === 'light' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        updateThemeBtn();
+    }
+  </script>
+
+  <main class="page page-wide">
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="filter-group">
+                <h4 class="eyebrow">Search Context</h4>
+                <input type="text" id="searchInput" class="search-box" placeholder="Filter by keyword...">
+            </div>
+            <div class="filter-group">
+                <h4 class="eyebrow">Taxonomy Filter</h4>
+                <div id="taxonomyTreeContainer"></div>
+            </div>
+            <div class="filter-group">
+                <h4 class="eyebrow">Map Settings</h4>
+                <div class="map-legend">
+                    <div class="legend-item"><span class="dot" style="background: #c1683c;"></span> <span>Inscription Source</span></div>
+                    <div class="legend-item"><span class="dot" style="background: #0c8c88;"></span> <span>Mentioned in Text</span></div>
+                </div>
+            </div>
+            <div class="filter-group">
+                <h4 class="eyebrow">My Collection</h4>
+                <ul id="myCollectionList" class="collection-list">
+                    <!-- Populated by JS -->
+                    <li class="muted" style="font-size:0.85rem;">No starred items.</li>
+                </ul>
+            </div>
+            <div class="filter-group">
+                <h4 class="eyebrow">Search History</h4>
+                <ul id="searchHistoryList" class="history-list">
+                    <!-- Populated by JS -->
+                </ul>
+            </div>
+            <div class="meta-grid">
+                <div><p class="label">Analyzing</p><strong id="countDisplay">0</strong> Inscriptions</div>
+                <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-top:0.5rem;">
+                    <button onclick="exportData('json')" class="button block compact">JSON</button>
+                    <button onclick="exportData('csv')" class="button secondary block compact">CSV</button>
+                </div>
+            </div>
+        </aside>
+
+        <div class="viz-layout">
+            <div class="viz-card" style="min-height: 500px;">
+                <h3 class="viz-title">Geospatial Relations</h3>
+                <div id="map"></div>
+            </div>
+            <div class="viz-grid">
+                <div class="viz-card viz-wide">
+                    <h3 class="viz-title">Time Distribution</h3>
+                    <div class="chart-container">
+                        <canvas id="timeChart"></canvas>
+                    </div>
+                </div>
+                <div class="viz-card viz-wide">
+                    <h3 class="viz-title">Taxonomy Sunburst</h3>
+                    <div id="sunburstChart"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </main>
+
+  <script>
+    // --- Data Handling ---
+    const script = document.createElement('script');
+    script.src = `assets/js/data.js`;
+    script.onload = () => init();
+    document.body.appendChild(script);
+
+    // --- Utilities ---
+    function debounce(func, wait) {
+        let timeout;
+        return function(...args) {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => func.apply(this, args), wait);
+        };
+    }
+
+    // --- State ---
+    let activeFilters = new Map(); // path -> 'include' | 'exclude'
+    let chartInstances = {};
+    let mapInstance = null;
+    let inscriptionCluster = null;
+    let mentionsLayer = null;
+
+    // --- Init ---
+    function init() {
+        buildTree(APP_DATA.taxonomy, '', document.getElementById('taxonomyTreeContainer'));
+        
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('input', debounce((e) => {
+            filterData();
+            if(e.target.value.length > 3) addToHistory(e.target.value);
+        }, 500));
+        
+        initCharts();
+        initMap();
+        renderCollection();
+        renderHistory();
+        filterData(); // Initial load
+    }
+
+    // --- Theme ---
+    function updateThemeBtn() {
+        const current = document.documentElement.getAttribute('data-theme');
+        const btn = document.getElementById('themeBtn');
+        if(btn) btn.textContent = current === 'light' ? 'Dark Mode' : 'Light Mode';
+    }
+    updateThemeBtn();
+
+    window.toggleTheme = function() {
+        const next = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        updateThemeBtn();
+    }
+
+    // --- Collections ---
+    function getCollection() {
+        return JSON.parse(localStorage.getItem('myCollection') || '[]');
+    }
+
+    function toggleCollection(id) {
+        let col = getCollection();
+        if (col.includes(id)) {
+            col = col.filter(x => x !== id);
+        } else {
+            col.push(id);
+        }
+        localStorage.setItem('myCollection', JSON.stringify(col));
+        renderCollection();
+        updateMap(window.lastFilteredData || APP_DATA.inscriptions); // Refresh popups
+    }
+
+    function renderCollection() {
+        const list = document.getElementById('myCollectionList');
+        const col = getCollection();
+        list.innerHTML = '';
+        if (col.length === 0) {
+            list.innerHTML = '<li class="muted" style="font-size:0.85rem;">No starred items.</li>';
+            return;
+        }
+        col.forEach(id => {
+            const item = APP_DATA.inscriptions.find(i => i.id == id);
+            const label = item ? `PHI-${id} (${item.region})` : `PHI-${id}`;
+            const li = document.createElement('li');
+            li.className = 'collection-item';
+            li.innerHTML = `<a href="inscriptions/${id}.html">${label}</a> <span class="collection-remove" onclick="toggleCollection(${id})">×</span>`;
+            list.appendChild(li);
+        });
+    }
+
+    // --- History ---
+    function addToHistory(term) {
+        let hist = JSON.parse(localStorage.getItem('searchHistory') || '[]');
+        if (!hist.includes(term)) {
+            hist.unshift(term);
+            if(hist.length > 5) hist.pop();
+            localStorage.setItem('searchHistory', JSON.stringify(hist));
+            renderHistory();
+        }
+    }
+
+    function renderHistory() {
+        const list = document.getElementById('searchHistoryList');
+        const hist = JSON.parse(localStorage.getItem('searchHistory') || '[]');
+        list.innerHTML = '';
+        if (hist.length === 0) {
+            list.innerHTML = '<li class="muted" style="font-size:0.85rem;">No recent searches.</li>';
+            return;
+        }
+        hist.forEach(term => {
+            const li = document.createElement('li');
+            li.className = 'history-item';
+            li.innerHTML = `<span onclick="document.getElementById('searchInput').value='${term}'; filterData();">${term}</span>`;
+            list.appendChild(li);
+        });
+    }
+
+    // --- Filter Logic ---
+    function filterData() {
+        const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+        
+        // Filtering
+        const filtered = APP_DATA.inscriptions.filter(item => {
+            const matchesSearch = !searchTerm || item.id.toString().includes(searchTerm) || 
+                                  (item.preview_text && item.preview_text.toLowerCase().includes(searchTerm));
+            
+            // Inclusive / Exclusive Taxonomy logic
+            let passTaxonomy = true;
+            const inclusiveFilters = Array.from(activeFilters.entries()).filter(e => e[1] === 'include').map(e => e[0]);
+            const exclusiveFilters = Array.from(activeFilters.entries()).filter(e => e[1] === 'exclude').map(e => e[0]);
+
+            if (exclusiveFilters.length > 0) {
+                for (let t of item.themes) {
+                    for (let f of exclusiveFilters) {
+                        if (t.path.startsWith(f)) { passTaxonomy = false; break; }
+                    }
+                    if (!passTaxonomy) break;
+                }
+            }
+
+            if (passTaxonomy && inclusiveFilters.length > 0) {
+                let matchFound = false;
+                for (let t of item.themes) {
+                    for (let f of inclusiveFilters) {
+                        if (t.path.startsWith(f)) { matchFound = true; break; }
+                    }
+                    if (matchFound) break;
+                }
+                passTaxonomy = matchFound;
+            }
+
+            return matchesSearch && passTaxonomy;
+        });
+
+        document.getElementById('countDisplay').textContent = filtered.length;
+        window.lastFilteredData = filtered;
+        
+        // Update Visualizations
+        updateCharts(filtered);
+        updateMap(filtered);
+    }
+
+    // --- Map Logic ---
+    function initMap() {
+        mapInstance = L.map('map', { preferCanvas: true }).setView([38.0, 25.0], 6);
+        
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { 
+            attribution: '© OSM',
+            maxZoom: 18
+        }).addTo(mapInstance);
+        
+        inscriptionCluster = L.markerClusterGroup({
+            showCoverageOnHover: false,
+            spiderfyOnMaxZoom: true,
+            maxClusterRadius: 50,
+            chunkedLoading: true
+        });
+        
+        mentionsLayer = L.markerClusterGroup({
+            showCoverageOnHover: false,
+            maxClusterRadius: 30,
+            iconCreateFunction: function(cluster) {
+                return L.divIcon({ html: '<div style="background-color:rgba(12, 140, 136, 0.8); color:white; border-radius:50%; width:30px; height:30px; display:flex; align-items:center; justify-content:center; font-weight:bold;">' + cluster.getChildCount() + '</div>', className: 'my-cluster-icon', iconSize: L.point(30, 30) });
+            }
+        });
+        
+        mapInstance.addLayer(inscriptionCluster);
+        mapInstance.addLayer(mentionsLayer);
+
+        L.control.layers(null, {
+            "Inscriptions (Source)": inscriptionCluster,
+            "Mentions (Entities)": mentionsLayer
+        }).addTo(mapInstance);
+    }
+
+    function updateMap(data) {
+        inscriptionCluster.clearLayers();
+        mentionsLayer.clearLayers();
+
+        const sourceMarkers = [];
+        const mentionMarkers = [];
+        const collection = getCollection();
+
+        data.forEach(item => {
+            // 1. Source Markers
+            if(item.coordinates) {
+                const isStarred = collection.includes(item.id);
+                const starBtn = `<button onclick="toggleCollection(${item.id})" class="button secondary tiny" style="margin-top:5px;">${isStarred ? '★ Unstar' : '☆ Star'}</button>`;
+                
+                const m = L.circleMarker(item.coordinates, {
+                    radius: 8, fillColor: isStarred ? "#d97b3d" : "#c1683c", color: "#fff", weight: 2, opacity: 1, fillOpacity: 0.9
+                }).bindPopup(`<b>Source: PHI-${item.id}</b><br>Region: ${item.region}<br><a href="inscriptions/${item.id}.html">Detail Page</a><br>${starBtn}`);
+                sourceMarkers.push(m);
+            }
+
+            // 2. Mention Markers (with Jitter)
+            if(item.mentioned_places && item.mentioned_places.length > 0) {
+                item.mentioned_places.forEach(p => {
+                    if(p.coords) {
+                        // Apply slight jitter to prevent exact overlap
+                        const jitter = () => (Math.random() - 0.5) * 0.01;
+                        const jitteredCoords = [p.coords[0] + jitter(), p.coords[1] + jitter()];
+                        
+                        const m = L.circleMarker(jitteredCoords, {
+                            radius: 6, fillColor: "#0c8c88", color: "#fff", weight: 1, opacity: 0.9, fillOpacity: 0.7
+                        }).bindPopup(`<b>Mentioned: ${p.name}</b><br>In: PHI-${item.id}<br>${p.type || ''}`);
+                        mentionMarkers.push(m);
+                    }
+                });
+            }
+        });
+
+        if(sourceMarkers.length > 0) inscriptionCluster.addLayers(sourceMarkers);
+        if(mentionMarkers.length > 0) mentionsLayer.addLayers(mentionMarkers);
+    }
+
+    // --- Charts ---
+    function initCharts() {
+        const commonOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { position: 'bottom' }
+            }
+        };
+
+        chartInstances.time = new Chart(document.getElementById('timeChart').getContext('2d'), {
+            type: 'bar',
+            data: { labels: [], datasets: [{ label: 'Count', data: [], backgroundColor: '#c1683c' }] },
+            options: commonOptions
+        });
+    }
+
+    function updateCharts(data) {
+        // 1. Time Histogram (50 year bins)
+        const timeBins = {};
+        data.forEach(item => {
+            if (item.date_min !== null && item.date_min !== undefined) {
+                // Round to nearest 50
+                const binSize = 50;
+                const c = Math.floor(item.date_min / binSize) * binSize;
+                const label = c < 0 ? `${Math.abs(c)} BC` : `${c} AD`;
+                timeBins[c] = (timeBins[c] || 0) + 1;
+            }
+        });
+
+        const sortedYears = Object.keys(timeBins).map(Number).sort((a,b) => a - b);
+        const labels = sortedYears.map(y => y < 0 ? `${Math.abs(y)} BC` : `${y} AD`);
+        const counts = sortedYears.map(y => timeBins[y]);
+
+        chartInstances.time.data.labels = labels;
+        chartInstances.time.data.datasets[0].data = counts;
+        chartInstances.time.update();
+
+        // 2. Sunburst Chart
+        const hierarchyMap = new Map();
+        
+        function addToHier(path) {
+            let parentId = "";
+            let currentId = "";
+            const pathParts = path.split('/');
+            
+            pathParts.forEach((segment, idx) => {
+                if(!segment) return;
+                currentId = idx === 0 ? segment : `${parentId} - ${segment}`;
+                if (!hierarchyMap.has(currentId)) {
+                    hierarchyMap.set(currentId, {
+                        id: currentId,
+                        label: segment,
+                        parent: idx === 0 ? "" : parentId,
+                        value: 0
+                    });
+                }
+                hierarchyMap.get(currentId).value++;
+                parentId = currentId;
+            });
+        }
+
+        data.forEach(item => {
+            item.themes.forEach(t => {
+                addToHier(t.path);
+            });
+        });
+
+        const sunburstData = Array.from(hierarchyMap.values());
+        
+        const plotData = [{
+            type: "sunburst",
+            ids: sunburstData.map(d => d.id),
+            labels: sunburstData.map(d => d.label),
+            parents: sunburstData.map(d => d.parent),
+            values: sunburstData.map(d => d.value),
+            outsidetextfont: {size: 14, color: "#377eb8"},
+            leaf: {opacity: 0.4},
+            marker: {line: {width: 2}},
+        }];
+
+        const layout = {
+            margin: {l: 0, r: 0, b: 0, t: 0},
+            sunburstcolorway:["#c1683c", "#0c8c88", "#d97b3d", "#2f8f5d"],
+            paper_bgcolor: 'rgba(0,0,0,0)', // transparent
+        };
+
+        Plotly.newPlot('sunburstChart', plotData, layout, {displayModeBar: false});
+    }
+
+    function buildTree(node, path, container) {
+        const ul = document.createElement('ul');
+        ul.className = path ? 'tree-group' : 'tree-root';
+        Object.keys(node).sort().forEach(key => {
+            const cur = path ? `${path}/${key}` : key;
+            const children = node[key];
+            const has = children && Object.keys(children).length > 0;
+            const li = document.createElement('li');
+            li.className = 'tree-item';
+            const row = document.createElement('div');
+            row.className = 'tree-label-row';
+            
+            row.innerHTML = `
+                <span class="caret ${has ? '' : 'empty'}">▶</span>
+                <input type="checkbox" class="filter-checkbox check-inc" title="Include">
+                <input type="checkbox" class="filter-checkbox check-exc" title="Exclude" style="accent-color:var(--error);">
+                <span style="font-size:0.85rem;">${key}</span>
+            `;
+            
+            const cInc = row.querySelector('.check-inc');
+            const cExc = row.querySelector('.check-exc');
+
+            cInc.onchange = (e) => {
+                if(e.target.checked) { activeFilters.set(cur, 'include'); cExc.checked = false; }
+                else { activeFilters.delete(cur); }
+                filterData();
+            };
+            cExc.onchange = (e) => {
+                if(e.target.checked) { activeFilters.set(cur, 'exclude'); cInc.checked = false; }
+                else { activeFilters.delete(cur); }
+                filterData();
+            };
+
+            row.onclick = (e) => { 
+                if(e.target.tagName !== 'INPUT') { 
+                    if(has) { row.querySelector('.caret').classList.toggle('open'); li.querySelector('.tree-group').classList.toggle('open'); }
+                }
+            };
+            
+            li.appendChild(row);
+            if(has) buildTree(children, cur, li);
+            ul.appendChild(li);
+        });
+        container.appendChild(ul);
+    }
+
+    window.exportData = function(format) {
+        const data = window.lastFilteredData || APP_DATA.inscriptions;
+        let blob;
+        let filename;
+
+        if (format === 'csv') {
+            const headers = ['ID', 'Region', 'Date', 'Completeness', 'Themes', 'Entities', 'Text Preview'];
+            const rows = data.map(item => {
+                const places = (item.mentioned_places || []).map(p => p.name).join('; ');
+                const escape = (txt) => {
+                    if (!txt) return "";
+                    return '"' + txt.toString().replace(/"/g, '""') + '"';
+                };
+                return [
+                    item.id,
+                    escape(item.region),
+                    escape(item.date_str),
+                    escape(item.completeness),
+                    escape(item.themes_display.join('; ')),
+                    escape(places),
+                    escape(item.preview_text)
+                ].join(",");
+            });
+            const csvContent = [headers.join(","), ...rows].join("\n");
+            blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            filename = "agki_export.csv";
+        } else {
+            const jsonContent = JSON.stringify(data, null, 2);
+            blob = new Blob([jsonContent], { type: 'application/json' });
+            filename = "agki_export.json";
+        }
+        
+        const link = document.createElement("a");
+        const url = URL.createObjectURL(blob);
+        link.setAttribute("href", url);
+        link.setAttribute("download", filename);
+        link.style.visibility = 'hidden';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+  </script>
+</body>
+</html>
