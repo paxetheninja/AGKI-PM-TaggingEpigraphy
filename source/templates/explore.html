@@ -92,15 +92,40 @@
     .leaflet-bar a { background: var(--panel); color: var(--text); border-bottom: 1px solid var(--border); }
     .leaflet-bar a:hover { background: var(--bg); }
 
-    /* Tree Filter */
+    /* Taxonomy Filter */
+    .taxonomy-controls { display: grid; gap: 0.6rem; margin-bottom: 0.75rem; }
+    .tax-row { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; flex-wrap: wrap; }
+    .tax-mode-toggle { display: inline-flex; gap: 0.4rem; flex-wrap: wrap; }
+    .tax-toggle { border: 1px solid var(--border); background: var(--bg); color: var(--text); padding: 0.3rem 0.65rem; border-radius: 999px; font-size: 0.75rem; cursor: pointer; }
+    .tax-toggle.active { background: var(--primary); border-color: var(--primary); color: #fff; }
+    .tax-clear { border: 1px solid var(--border); background: var(--panel); color: var(--text); padding: 0.3rem 0.6rem; border-radius: 6px; font-size: 0.75rem; cursor: pointer; }
+    .tax-hint { font-size: 0.78rem; color: var(--muted); margin: 0; }
+    .taxonomy-search { font-size: 0.85rem; }
+    .taxonomy-actions { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+    .tax-action { border: 1px solid var(--border); background: var(--bg); color: var(--text); padding: 0.25rem 0.5rem; border-radius: 6px; font-size: 0.75rem; cursor: pointer; }
+    .active-filters { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .active-filter-chip { display: inline-flex; align-items: center; gap: 0.3rem; border: 1px solid var(--border); background: var(--panel); color: var(--text); padding: 0.2rem 0.5rem; border-radius: 999px; font-size: 0.75rem; }
+    .active-filter-chip.include { border-color: var(--primary); color: var(--primary); }
+    .active-filter-chip.exclude { border-color: var(--error); color: var(--error); }
+    .active-filter-chip button { border: none; background: transparent; color: inherit; cursor: pointer; font-size: 0.75rem; padding: 0; }
+    .active-filter-empty { font-size: 0.78rem; color: var(--muted); }
+
     .tree-root { list-style: none; padding-left: 0; margin: 0; font-size: 0.9rem; }
-    .tree-item { margin: 0.2rem 0; }
+    .tree-item { margin: 0.15rem 0; }
+    .tree-item.hidden { display: none; }
     .tree-group { padding-left: 1.2rem; display: none; border-left: 1px solid var(--border); margin-left: 0.3rem; }
     .tree-group.open { display: block; }
-    .tree-label-row { display: flex; align-items: center; cursor: pointer; padding: 2px 0; }
+    .tree-label-row { display: flex; align-items: center; gap: 0.4rem; padding: 2px 0; }
     .tree-label-row:hover { color: var(--primary); }
-    .caret { width: 16px; text-align: center; margin-right: 4px; color: var(--muted); font-size: 0.7em; }
-    .caret.open { transform: rotate(90deg); }
+    .tree-caret { width: 16px; text-align: center; margin-right: 4px; color: var(--muted); font-size: 0.7em; transition: transform 0.2s; background: transparent; border: none; cursor: pointer; }
+    .tree-caret.open { transform: rotate(90deg); }
+    .tree-caret.empty { visibility: hidden; cursor: default; }
+    .tree-label { flex: 1; font-size: 0.85rem; }
+    .tax-count { font-size: 0.7rem; padding: 0.1rem 0.4rem; border-radius: 999px; border: 1px solid var(--border); color: var(--muted); }
+    .tax-count.empty { opacity: 0.4; }
+    .state-chip { border: 1px solid var(--border); background: var(--bg); color: var(--muted); padding: 0.15rem 0.5rem; border-radius: 999px; font-size: 0.7rem; cursor: pointer; }
+    .state-chip.include { background: rgba(193, 104, 60, 0.15); border-color: var(--primary); color: var(--primary); }
+    .state-chip.exclude { background: rgba(197, 34, 31, 0.15); border-color: var(--error); color: var(--error); }
     .filter-checkbox { margin-right: 8px; accent-color: var(--primary); }
     
     /* Collections & History */
@@ -160,6 +185,22 @@
             </div>
             <div class="filter-group">
                 <h4 class="eyebrow">Taxonomy Filter</h4>
+                <div class="taxonomy-controls">
+                    <div class="tax-row">
+                        <div class="tax-mode-toggle" role="group" aria-label="Taxonomy filter mode">
+                            <button type="button" class="tax-toggle" data-value="any">Any (OR)</button>
+                            <button type="button" class="tax-toggle" data-value="all">All (AND)</button>
+                        </div>
+                        <button type="button" class="tax-clear" id="clearTaxonomy">Clear All</button>
+                    </div>
+                    <p class="tax-hint">Click a tag to include. Click again to exclude. Click again to reset.</p>
+                    <input type="text" id="taxonomySearch" class="search-box taxonomy-search" placeholder="Search taxonomy...">
+                    <div class="taxonomy-actions">
+                        <button type="button" class="tax-action" id="expandAllTaxonomy">Expand All</button>
+                        <button type="button" class="tax-action" id="collapseAllTaxonomy">Collapse All</button>
+                    </div>
+                    <div id="activeFilters" class="active-filters"></div>
+                </div>
                 <div id="taxonomyTreeContainer"></div>
             </div>
             <div class="filter-group">
@@ -229,16 +270,253 @@
         };
     }
 
+    function normalizeText(value) {
+        return value ? value.toString().toLowerCase() : '';
+    }
+
+    function loadTaxonomyState() {
+        try {
+            const stored = JSON.parse(localStorage.getItem(TAXONOMY_STATE_KEY) || '{}');
+            if (stored.filters && typeof stored.filters === 'object') {
+                activeFilters = new Map(Object.entries(stored.filters));
+            }
+            if (stored.mode === 'all' || stored.mode === 'any') {
+                taxMode = stored.mode;
+            }
+            if (Array.isArray(stored.expanded)) {
+                expandedPaths = new Set(stored.expanded);
+            }
+        } catch (e) {
+            activeFilters = new Map();
+            expandedPaths = new Set();
+            taxMode = 'any';
+        }
+    }
+
+    function saveTaxonomyState() {
+        const filters = {};
+        activeFilters.forEach((value, key) => { filters[key] = value; });
+        localStorage.setItem(TAXONOMY_STATE_KEY, JSON.stringify({
+            filters,
+            mode: taxMode,
+            expanded: Array.from(expandedPaths)
+        }));
+    }
+
+    function setTaxMode(nextMode, options = {}) {
+        taxMode = nextMode === 'all' ? 'all' : 'any';
+        document.querySelectorAll('.tax-toggle').forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.value === taxMode);
+        });
+        if (!options.skipSave) saveTaxonomyState();
+        if (!options.skipFilter) filterData();
+    }
+
+    function updateFilterChip(path) {
+        const node = taxonomyNodes.get(path);
+        if (!node) return;
+        const chip = node.chip;
+        const state = activeFilters.get(path);
+        chip.classList.remove('include', 'exclude');
+        if (state === 'include') {
+            chip.classList.add('include');
+            chip.textContent = 'Include';
+        } else if (state === 'exclude') {
+            chip.classList.add('exclude');
+            chip.textContent = 'Exclude';
+        } else {
+            chip.textContent = 'Off';
+        }
+    }
+
+    function renderActiveFilters() {
+        const container = document.getElementById('activeFilters');
+        if (!container) return;
+        container.innerHTML = '';
+        if (activeFilters.size === 0) {
+            const empty = document.createElement('span');
+            empty.className = 'active-filter-empty';
+            empty.textContent = 'No taxonomy filters applied.';
+            container.appendChild(empty);
+            return;
+        }
+        activeFilters.forEach((state, path) => {
+            const chip = document.createElement('span');
+            chip.className = `active-filter-chip ${state}`;
+            chip.title = path;
+            const label = document.createElement('span');
+            label.textContent = `${state === 'include' ? 'Include' : 'Exclude'}: ${path.split('/').pop()}`;
+            const remove = document.createElement('button');
+            remove.type = 'button';
+            remove.textContent = 'x';
+            remove.onclick = () => {
+                activeFilters.delete(path);
+                updateFilterChip(path);
+                renderActiveFilters();
+                saveTaxonomyState();
+                filterData();
+            };
+            chip.appendChild(label);
+            chip.appendChild(remove);
+            container.appendChild(chip);
+        });
+    }
+
+    function setFilterState(path, state, options = {}) {
+        if (state === 'off') {
+            activeFilters.delete(path);
+        } else {
+            activeFilters.set(path, state);
+        }
+        updateFilterChip(path);
+        renderActiveFilters();
+        if (!options.skipSave) saveTaxonomyState();
+        if (!options.skipFilter) filterData();
+    }
+
+    function cycleFilterState(path) {
+        const current = activeFilters.get(path) || 'off';
+        const next = current === 'include' ? 'exclude' : current === 'exclude' ? 'off' : 'include';
+        setFilterState(path, next);
+    }
+
+    function setNodeExpanded(path, isOpen, options = {}) {
+        const node = taxonomyNodes.get(path);
+        if (!node || !node.group) return;
+        node.group.classList.toggle('open', isOpen);
+        node.caret.classList.toggle('open', isOpen);
+        if (isOpen) {
+            expandedPaths.add(path);
+        } else {
+            expandedPaths.delete(path);
+        }
+        if (!options.skipSave) saveTaxonomyState();
+    }
+
+    function expandPath(path) {
+        const parts = path.split('/');
+        let current = '';
+        parts.forEach(part => {
+            current = current ? `${current}/${part}` : part;
+            setNodeExpanded(current, true, { skipSave: true });
+        });
+        saveTaxonomyState();
+    }
+
+    function expandAllTaxonomy() {
+        taxonomyNodes.forEach((node, path) => {
+            if (node.group) setNodeExpanded(path, true, { skipSave: true });
+        });
+        saveTaxonomyState();
+    }
+
+    function collapseAllTaxonomy() {
+        taxonomyNodes.forEach((node, path) => {
+            if (node.group) setNodeExpanded(path, false, { skipSave: true });
+        });
+        saveTaxonomyState();
+    }
+
+    function filterTaxonomyTree(term) {
+        const searchTerm = normalizeText(term).trim();
+        const hasTerm = searchTerm.length > 0;
+        const root = document.querySelector('#taxonomyTreeContainer > ul');
+        if (!root) return;
+
+        function filterNode(li) {
+            const path = li.dataset.path;
+            const node = taxonomyNodes.get(path);
+            const labelText = node ? normalizeText(node.label.textContent) : '';
+            const selfMatch = hasTerm && labelText.includes(searchTerm);
+            let childMatch = false;
+
+            if (node && node.group) {
+                Array.from(node.group.children).forEach(child => {
+                    if (filterNode(child)) childMatch = true;
+                });
+            }
+
+            const visible = !hasTerm || selfMatch || childMatch;
+            li.classList.toggle('hidden', !visible);
+
+            if (node && node.group) {
+                if (hasTerm && visible) {
+                    node.group.classList.add('open');
+                    node.caret.classList.add('open');
+                } else if (!hasTerm) {
+                    const open = expandedPaths.has(path);
+                    node.group.classList.toggle('open', open);
+                    node.caret.classList.toggle('open', open);
+                }
+            }
+
+            return selfMatch || childMatch;
+        }
+
+        Array.from(root.children).forEach(child => filterNode(child));
+    }
+
+    function updateTaxonomyCounts(data) {
+        const counts = new Map();
+        data.forEach(item => {
+            const themes = Array.isArray(item.themes) ? item.themes : [];
+            const seen = new Set();
+            themes.forEach(t => {
+                if (!t.path) return;
+                const parts = t.path.split('/');
+                let current = '';
+                parts.forEach(part => {
+                    current = current ? `${current}/${part}` : part;
+                    seen.add(current);
+                });
+            });
+            seen.forEach(path => {
+                counts.set(path, (counts.get(path) || 0) + 1);
+            });
+        });
+
+        taxonomyNodes.forEach((node, path) => {
+            const count = counts.get(path) || 0;
+            node.count.textContent = count.toString();
+            node.count.classList.toggle('empty', count === 0);
+        });
+    }
+
     // --- State ---
+    const TAXONOMY_STATE_KEY = 'agki_taxonomy_state_v1';
     let activeFilters = new Map(); // path -> 'include' | 'exclude'
+    let taxMode = 'any';
+    let expandedPaths = new Set();
+    const taxonomyNodes = new Map();
     let chartInstances = {};
     let mapInstance = null;
     let mapClusterLayer = null;
 
     // --- Init ---
     function init() {
+        loadTaxonomyState();
         buildTree(APP_DATA.taxonomy, '', document.getElementById('taxonomyTreeContainer'));
-        
+        setTaxMode(taxMode, { skipSave: true, skipFilter: true });
+        activeFilters.forEach((state, path) => updateFilterChip(path));
+        renderActiveFilters();
+
+        // Taxonomy Controls
+        document.querySelectorAll('.tax-toggle').forEach(btn => {
+            btn.addEventListener('click', () => setTaxMode(btn.dataset.value));
+        });
+        document.getElementById('clearTaxonomy').addEventListener('click', () => {
+            activeFilters.clear();
+            taxonomyNodes.forEach((node, path) => updateFilterChip(path));
+            renderActiveFilters();
+            saveTaxonomyState();
+            filterData();
+        });
+        document.getElementById('taxonomySearch').addEventListener('input', (e) => {
+            filterTaxonomyTree(e.target.value);
+        });
+        document.getElementById('expandAllTaxonomy').addEventListener('click', expandAllTaxonomy);
+        document.getElementById('collapseAllTaxonomy').addEventListener('click', collapseAllTaxonomy);
+
         const searchInput = document.getElementById('searchInput');
         searchInput.addEventListener('input', debounce((e) => {
             filterData();
@@ -249,6 +527,7 @@
         initMap();
         renderCollection();
         renderHistory();
+        filterTaxonomyTree('');
         filterData(); // Initial load
     }
 
@@ -331,20 +610,35 @@
 
     // --- Filter Logic ---
     function filterData() {
-        const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-        
-        // Filtering
-        const filtered = APP_DATA.inscriptions.filter(item => {
-            const matchesSearch = !searchTerm || item.id.toString().includes(searchTerm) || 
-                                  (item.preview_text && item.preview_text.toLowerCase().includes(searchTerm));
-            
-            // Inclusive / Exclusive Taxonomy logic
+        const searchTerm = normalizeText(document.getElementById('searchInput').value).trim();
+
+        const inclusiveFilters = Array.from(activeFilters.entries()).filter(e => e[1] === 'include').map(e => e[0]);
+        const exclusiveFilters = Array.from(activeFilters.entries()).filter(e => e[1] === 'exclude').map(e => e[0]);
+
+        const baseFiltered = APP_DATA.inscriptions.filter(item => {
+            const themeLabels = Array.isArray(item.themes_display) ? item.themes_display : [];
+            const mentionedPlaces = Array.isArray(item.mentioned_places) ? item.mentioned_places : [];
+
+            const matchesSearch = !searchTerm ||
+                item.id.toString().includes(searchTerm) ||
+                normalizeText(item.preview_text).includes(searchTerm) ||
+                normalizeText(item.region).includes(searchTerm) ||
+                normalizeText(item.date_str).includes(searchTerm) ||
+                normalizeText(item.completeness).includes(searchTerm) ||
+                themeLabels.some(label => normalizeText(label).includes(searchTerm)) ||
+                mentionedPlaces.some(place => normalizeText(place.name).includes(searchTerm));
+
+            return matchesSearch;
+        });
+
+        updateTaxonomyCounts(baseFiltered);
+
+        const filtered = baseFiltered.filter(item => {
+            const themes = Array.isArray(item.themes) ? item.themes : [];
             let passTaxonomy = true;
-            const inclusiveFilters = Array.from(activeFilters.entries()).filter(e => e[1] === 'include').map(e => e[0]);
-            const exclusiveFilters = Array.from(activeFilters.entries()).filter(e => e[1] === 'exclude').map(e => e[0]);
 
             if (exclusiveFilters.length > 0) {
-                for (let t of item.themes) {
+                for (let t of themes) {
                     for (let f of exclusiveFilters) {
                         if (t.path.startsWith(f)) { passTaxonomy = false; break; }
                     }
@@ -353,17 +647,23 @@
             }
 
             if (passTaxonomy && inclusiveFilters.length > 0) {
-                let matchFound = false;
-                for (let t of item.themes) {
-                    for (let f of inclusiveFilters) {
-                        if (t.path.startsWith(f)) { matchFound = true; break; }
+                if (taxMode === 'any') {
+                    let matchFound = false;
+                    for (let t of themes) {
+                        for (let f of inclusiveFilters) {
+                            if (t.path.startsWith(f)) { matchFound = true; break; }
+                        }
+                        if (matchFound) break;
                     }
-                    if (matchFound) break;
+                    passTaxonomy = matchFound;
+                } else {
+                    passTaxonomy = inclusiveFilters.every(f => {
+                        return themes.some(t => t.path.startsWith(f));
+                    });
                 }
-                passTaxonomy = matchFound;
             }
 
-            return matchesSearch && passTaxonomy;
+            return passTaxonomy;
         });
 
         document.getElementById('countDisplay').textContent = filtered.length;
@@ -512,6 +812,7 @@
     }
 
     function updateMap(data) {
+        if (!mapClusterLayer) return;
         mapClusterLayer.clearLayers();
 
         const index = buildCoordinateIndex(data);
@@ -560,6 +861,7 @@
                 mapClusterLayer.addLayer(marker);
             }
         });
+        mapClusterLayer.refreshClusters();
     }
 
     // --- Charts ---
@@ -662,44 +964,61 @@
             const has = children && Object.keys(children).length > 0;
             const li = document.createElement('li');
             li.className = 'tree-item';
+            li.dataset.path = cur;
             const row = document.createElement('div');
             row.className = 'tree-label-row';
             
-            row.innerHTML = `
-                <span class="caret ${has ? '' : 'empty'}">></span>
-                <input type="checkbox" class="filter-checkbox check-inc" title="Include">
-                <input type="checkbox" class="filter-checkbox check-exc" title="Exclude" style="accent-color:var(--error);">
-                <span style="font-size:0.85rem;">${key}</span>
-            `;
-            
-            const cInc = row.querySelector('.check-inc');
-            const cExc = row.querySelector('.check-exc');
+            const caret = document.createElement('button');
+            caret.type = 'button';
+            caret.className = `tree-caret ${has ? '' : 'empty'}`;
+            caret.textContent = '>';
+            if (!has) caret.disabled = true;
 
-            cInc.onchange = (e) => {
-                if(e.target.checked) { activeFilters.set(cur, 'include'); cExc.checked = false; }
-                else { activeFilters.delete(cur); }
-                filterData();
-            };
-            cExc.onchange = (e) => {
-                if(e.target.checked) { activeFilters.set(cur, 'exclude'); cInc.checked = false; }
-                else { activeFilters.delete(cur); }
-                filterData();
-            };
+            const label = document.createElement('span');
+            label.className = 'tree-label';
+            label.textContent = key;
 
-            row.onclick = (e) => { 
-                if(e.target.tagName !== 'INPUT') { 
-                    if(has) { row.querySelector('.caret').classList.toggle('open'); li.querySelector('.tree-group').classList.toggle('open'); }
-                }
+            const count = document.createElement('span');
+            count.className = 'tax-count';
+            count.textContent = '0';
+
+            const chip = document.createElement('button');
+            chip.type = 'button';
+            chip.className = 'state-chip';
+            chip.textContent = 'Off';
+
+            const toggle = () => {
+                if (!has) return;
+                const isOpen = !caret.classList.contains('open');
+                setNodeExpanded(cur, isOpen);
             };
+            caret.onclick = (e) => { e.stopPropagation(); toggle(); };
+            row.onclick = toggle;
+            chip.onclick = (e) => { e.stopPropagation(); cycleFilterState(cur); };
             
+            row.appendChild(caret);
+            row.appendChild(label);
+            row.appendChild(count);
+            row.appendChild(chip);
             li.appendChild(row);
-            if(has) buildTree(children, cur, li);
+
+            let childGroup = null;
+            if (has) {
+                childGroup = buildTree(children, cur, li);
+            }
             ul.appendChild(li);
+
+            taxonomyNodes.set(cur, { li, caret, group: childGroup, label, count, chip });
+            updateFilterChip(cur);
+            if (childGroup && expandedPaths.has(cur)) {
+                childGroup.classList.add('open');
+                caret.classList.add('open');
+            }
         });
         container.appendChild(ul);
+        return ul;
     }
-
-    window.exportData = function(format) {
+window.exportData = function(format) {
         const data = window.lastFilteredData || APP_DATA.inscriptions;
         let blob;
         let filename;
@@ -743,4 +1062,7 @@
   </script>
 </body>
 </html>
+
+
+
 
