@@ -43,6 +43,54 @@
     .map-legend { background: var(--panel); padding: 10px; border-radius: 4px; border: 1px solid var(--border); font-size: 0.85rem; }
     .legend-item { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
     .dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+    .dot.combined { border: 3px solid #0c8c88; background: #c1683c; }
+
+    /* Map Markers + Popups */
+    .combined-marker-wrap { background: transparent; }
+    .combined-marker {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: 3px solid #0c8c88;
+      background: #c1683c;
+      box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.7);
+    }
+    .cluster-icon { background: transparent; }
+    .cluster-badge {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 700;
+      border: 2px solid #fff;
+      box-shadow: var(--shadow);
+    }
+    .cluster-provenance { background: #c1683c; }
+    .cluster-mentioned { background: #0c8c88; }
+    .cluster-overlap { background: conic-gradient(#0c8c88 0 50%, #c1683c 50% 100%); }
+    .popup-section { margin-top: 0.5rem; }
+    .popup-title { font-weight: 700; margin-bottom: 0.25rem; }
+    .popup-list { display: grid; gap: 0.25rem; max-height: 160px; overflow: auto; }
+    .popup-row { display: flex; justify-content: space-between; gap: 0.5rem; }
+    .popup-row a { color: var(--primary); text-decoration: none; }
+    .popup-meta { color: var(--muted); font-size: 0.8rem; }
+    .popup-caption { font-weight: 700; font-size: 1rem; margin-bottom: 0.65rem; }
+    .popup-caption span { display: block; font-size: 0.8rem; font-weight: 600; color: var(--muted); margin-top: 0.15rem; }
+    .popup-content { min-width: 220px; }
+    .leaflet-popup-content-wrapper,
+    .leaflet-popup-tip {
+      background: var(--panel);
+      color: var(--text);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+    .leaflet-popup-content-wrapper { border-radius: 12px; }
+    .leaflet-popup-content { margin: 14px; }
+    .leaflet-bar a { background: var(--panel); color: var(--text); border-bottom: 1px solid var(--border); }
+    .leaflet-bar a:hover { background: var(--bg); }
 
     /* Tree Filter */
     .tree-root { list-style: none; padding-left: 0; margin: 0; font-size: 0.9rem; }
@@ -119,6 +167,7 @@
                 <div class="map-legend">
                     <div class="legend-item"><span class="dot" style="background: #c1683c;"></span> <span>Inscription Source</span></div>
                     <div class="legend-item"><span class="dot" style="background: #0c8c88;"></span> <span>Mentioned in Text</span></div>
+                    <div class="legend-item"><span class="dot combined"></span> <span>Overlap</span></div>
                 </div>
             </div>
             <div class="filter-group">
@@ -184,8 +233,7 @@
     let activeFilters = new Map(); // path -> 'include' | 'exclude'
     let chartInstances = {};
     let mapInstance = null;
-    let inscriptionCluster = null;
-    let mentionsLayer = null;
+    let mapClusterLayer = null;
 
     // --- Init ---
     function init() {
@@ -249,7 +297,7 @@
             const label = item ? `PHI-${id} (${item.region})` : `PHI-${id}`;
             const li = document.createElement('li');
             li.className = 'collection-item';
-            li.innerHTML = `<a href="inscriptions/${id}.html">${label}</a> <span class="collection-remove" onclick="toggleCollection(${id})">×</span>`;
+            li.innerHTML = `<a href="inscriptions/${id}.html">${label}</a> <span class="collection-remove" onclick="toggleCollection(${id})">x</span>`;
             list.appendChild(li);
         });
     }
@@ -331,76 +379,191 @@
         mapInstance = L.map('map', { preferCanvas: true }).setView([38.0, 25.0], 6);
         
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { 
-            attribution: '© OSM',
+            attribution: '? OSM',
             maxZoom: 18
         }).addTo(mapInstance);
-        
-        inscriptionCluster = L.markerClusterGroup({
+
+        const clusterIcon = (cluster) => {
+            const markers = cluster.getAllChildMarkers();
+            let hasProv = false;
+            let hasMen = false;
+            markers.forEach((marker) => {
+                const type = marker.options.markerType;
+                if (type === 'overlap') { hasProv = true; hasMen = true; return; }
+                if (type === 'provenance') { hasProv = true; }
+                if (type === 'mentioned') { hasMen = true; }
+            });
+            const type = hasProv && hasMen ? 'overlap' : (hasProv ? 'provenance' : 'mentioned');
+            const count = cluster.getChildCount();
+            return L.divIcon({
+                html: `<div class="cluster-badge cluster-${type}">${count}</div>`,
+                className: 'cluster-icon',
+                iconSize: L.point(36, 36)
+            });
+        };
+
+        mapClusterLayer = L.markerClusterGroup({
             showCoverageOnHover: false,
             spiderfyOnMaxZoom: true,
-            maxClusterRadius: 50,
-            chunkedLoading: true
+            maxClusterRadius: 60,
+            chunkedLoading: true,
+            iconCreateFunction: clusterIcon
         });
         
-        mentionsLayer = L.markerClusterGroup({
-            showCoverageOnHover: false,
-            maxClusterRadius: 30,
-            iconCreateFunction: function(cluster) {
-                return L.divIcon({ html: '<div style="background-color:rgba(12, 140, 136, 0.8); color:white; border-radius:50%; width:30px; height:30px; display:flex; align-items:center; justify-content:center; font-weight:bold;">' + cluster.getChildCount() + '</div>', className: 'my-cluster-icon', iconSize: L.point(30, 30) });
-            }
-        });
-        
-        mapInstance.addLayer(inscriptionCluster);
-        mapInstance.addLayer(mentionsLayer);
-
-        L.control.layers(null, {
-            "Inscriptions (Source)": inscriptionCluster,
-            "Mentions (Entities)": mentionsLayer
-        }).addTo(mapInstance);
+        mapInstance.addLayer(mapClusterLayer);
     }
 
-    function updateMap(data) {
-        inscriptionCluster.clearLayers();
-        mentionsLayer.clearLayers();
+    function normalizeCoords(coords) {
+        return [Number(coords[0]), Number(coords[1])];
+    }
 
-        const sourceMarkers = [];
-        const mentionMarkers = [];
-        const collection = getCollection();
+    function coordKey(coords) {
+        return `${coords[0].toFixed(4)},${coords[1].toFixed(4)}`;
+    }
 
+    function buildCoordinateIndex(data) {
+        const index = new Map();
         data.forEach(item => {
-            // 1. Source Markers
-            if(item.coordinates) {
-                const isStarred = collection.includes(item.id);
-                const starBtn = `<button onclick="toggleCollection(${item.id})" class="button secondary tiny" style="margin-top:5px;">${isStarred ? '★ Unstar' : '☆ Star'}</button>`;
-                
-                const m = L.circleMarker(item.coordinates, {
-                    radius: 8, fillColor: isStarred ? "#d97b3d" : "#c1683c", color: "#fff", weight: 2, opacity: 1, fillOpacity: 0.9
-                }).bindPopup(`<b>Source: PHI-${item.id}</b><br>Region: ${item.region}<br><a href="inscriptions/${item.id}.html">Detail Page</a><br>${starBtn}`);
-                sourceMarkers.push(m);
+            if (item.coordinates) {
+                const coords = normalizeCoords(item.coordinates);
+                const key = coordKey(coords);
+                if (!index.has(key)) {
+                    index.set(key, { lat: coords[0], lng: coords[1], provenance: new Map(), mentioned: new Map() });
+                }
+                index.get(key).provenance.set(item.id, item);
             }
 
-            // 2. Mention Markers (with Jitter)
-            if(item.mentioned_places && item.mentioned_places.length > 0) {
+            if (item.mentioned_places && item.mentioned_places.length > 0) {
                 item.mentioned_places.forEach(p => {
-                    if(p.coords) {
-                        // Apply slight jitter to prevent exact overlap
-                        const jitter = () => (Math.random() - 0.5) * 0.01;
-                        const jitteredCoords = [p.coords[0] + jitter(), p.coords[1] + jitter()];
-                        
-                        const m = L.circleMarker(jitteredCoords, {
-                            radius: 6, fillColor: "#0c8c88", color: "#fff", weight: 1, opacity: 0.9, fillOpacity: 0.7
-                        }).bindPopup(`<b>Mentioned: ${p.name}</b><br>In: PHI-${item.id}<br>${p.type || ''}`);
-                        mentionMarkers.push(m);
+                    if (!p.coords) return;
+                    const coords = normalizeCoords(p.coords);
+                    const key = coordKey(coords);
+                    if (!index.has(key)) {
+                        index.set(key, { lat: coords[0], lng: coords[1], provenance: new Map(), mentioned: new Map() });
                     }
+                    const entry = index.get(key);
+                    if (!entry.mentioned.has(item.id)) {
+                        entry.mentioned.set(item.id, []);
+                    }
+                    entry.mentioned.get(item.id).push(p);
                 });
             }
         });
+        return index;
+    }
 
-        if(sourceMarkers.length > 0) inscriptionCluster.addLayers(sourceMarkers);
-        if(mentionMarkers.length > 0) mentionsLayer.addLayers(mentionMarkers);
+    function buildIdList(ids, collection) {
+        const rows = ids.map(id => {
+            const isStarred = collection.includes(id);
+            const button = `<button class="button secondary tiny" onclick="toggleCollection(${id})">${isStarred ? 'Unstar' : 'Star'}</button>`;
+            return `<div class="popup-row"><a href="inscriptions/${id}.html">PHI-${id}</a>${button}</div>`;
+        });
+        return rows.join('');
+    }
+
+    function buildMentionList(mentionedMap) {
+        const rows = [];
+        mentionedMap.forEach((mentions, id) => {
+            const names = mentions.map(m => m.name).filter(Boolean).join(', ');
+            const meta = names ? `<span class="popup-meta">${names}</span>` : '';
+            rows.push(`<div class="popup-row"><a href="inscriptions/${id}.html">PHI-${id}</a>${meta}</div>`);
+        });
+        return rows.join('');
+    }
+
+    function resolveLocationLabel(entry) {
+        const regions = new Set();
+        entry.provenance.forEach(item => {
+            if (item.region) regions.add(item.region);
+        });
+        const mentions = new Set();
+        entry.mentioned.forEach((places) => {
+            places.forEach((p) => {
+                if (p.name) mentions.add(p.name);
+            });
+        });
+
+        if (regions.size === 1) return { label: Array.from(regions)[0], source: 'Region' };
+        if (mentions.size === 1) return { label: Array.from(mentions)[0], source: 'Place' };
+        if (regions.size > 1) return { label: `Multiple regions (${regions.size})`, source: 'Region' };
+        if (mentions.size > 1) return { label: `Multiple places (${mentions.size})`, source: 'Place' };
+        return { label: 'Location', source: 'Area' };
+    }
+
+    function buildSection(title, content) {
+        return `<div class="popup-section"><div class="popup-title">${title}</div><div class="popup-list">${content}</div></div>`;
+    }
+
+    function buildPopup(entry, collection) {
+        const sections = [];
+        const location = resolveLocationLabel(entry);
+        const caption = `<div class="popup-caption">${location.label}<span>${location.source}</span></div>`;
+        const provIds = Array.from(entry.provenance.keys()).sort((a, b) => a - b);
+        const menIds = Array.from(entry.mentioned.keys()).sort((a, b) => a - b);
+
+        if (provIds.length > 0) {
+            sections.push(buildSection(`Provenance (${provIds.length})`, buildIdList(provIds, collection)));
+        }
+        if (menIds.length > 0) {
+            sections.push(buildSection(`Mentioned (${menIds.length})`, buildMentionList(entry.mentioned)));
+        }
+
+        return `<div class="popup-content">${caption}${sections.join('')}</div>`;
+    }
+
+    function updateMap(data) {
+        mapClusterLayer.clearLayers();
+
+        const index = buildCoordinateIndex(data);
+        const collection = getCollection();
+        const combinedIcon = L.divIcon({
+            className: 'combined-marker-wrap',
+            html: '<div class="combined-marker"></div>',
+            iconSize: [20, 20],
+            iconAnchor: [10, 10]
+        });
+
+        index.forEach(entry => {
+            const coords = [entry.lat, entry.lng];
+            const hasProv = entry.provenance.size > 0;
+            const hasMen = entry.mentioned.size > 0;
+            const popup = buildPopup(entry, collection);
+
+            if (hasProv && hasMen) {
+                mapClusterLayer.addLayer(L.marker(coords, { icon: combinedIcon, markerType: 'overlap' }).bindPopup(popup));
+                return;
+            }
+
+            if (hasProv) {
+                const marker = L.circleMarker(coords, {
+                    radius: 6,
+                    fillColor: "#c1683c",
+                    color: "#fff",
+                    weight: 2,
+                    opacity: 1,
+                    fillOpacity: 0.85,
+                    markerType: 'provenance'
+                }).bindPopup(popup);
+                mapClusterLayer.addLayer(marker);
+            }
+
+            if (hasMen) {
+                const marker = L.circleMarker(coords, {
+                    radius: 5,
+                    fillColor: "#0c8c88",
+                    color: "#fff",
+                    weight: 1,
+                    opacity: 0.9,
+                    fillOpacity: 0.7,
+                    markerType: 'mentioned'
+                }).bindPopup(popup);
+                mapClusterLayer.addLayer(marker);
+            }
+        });
     }
 
     // --- Charts ---
+
     function initCharts() {
         const commonOptions = {
             responsive: true,
@@ -503,7 +666,7 @@
             row.className = 'tree-label-row';
             
             row.innerHTML = `
-                <span class="caret ${has ? '' : 'empty'}">▶</span>
+                <span class="caret ${has ? '' : 'empty'}">></span>
                 <input type="checkbox" class="filter-checkbox check-inc" title="Include">
                 <input type="checkbox" class="filter-checkbox check-exc" title="Exclude" style="accent-color:var(--error);">
                 <span style="font-size:0.85rem;">${key}</span>
@@ -580,3 +743,4 @@
   </script>
 </body>
 </html>
+
