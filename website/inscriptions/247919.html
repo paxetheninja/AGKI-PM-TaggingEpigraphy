@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PHI-247919 - AGKI</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <style>
+    /* Custom Scrollbar Styling */
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: rgba(0,0,0,0.05); }
+    ::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #aaa; }
+
+    .page-container { max-width: 1400px; margin: 0 auto; padding: 2rem; }
+    .back-link { display: inline-block; margin-bottom: 1rem; color: var(--primary); font-weight: 600; }
+    .text-viewer-original { display: grid; grid-template-columns: 40px 1fr; gap: 2rem; font-family: "New Athena Unicode", "Gentium Plus", "Times New Roman", serif; font-size: 1.25rem; line-height: 1.6; background: var(--panel); padding: 2rem; border: 1px solid var(--border); border-radius: 4px; margin-bottom: 2rem; color: var(--text); }
+    .line-numbers { text-align: right; color: var(--muted); font-size: 1.25rem; line-height: 1.6; user-select: none; opacity: 0.5; font-family: inherit; white-space: pre; padding-right: 1rem; border-right: 1px solid var(--border); }
+    .greek-content { white-space: pre-wrap; word-break: break-word; padding-left: 1rem; }
+    .highlight-evidence { background-color: var(--accent); color: white; border-radius: 2px; padding: 0 2px; }
+    .theme-card { background: var(--panel); padding: 1rem 1.5rem; border-left: 4px solid var(--primary); margin-bottom: 0.75rem; border: 1px solid var(--border); border-left-width: 4px; }
+    .ai-analysis-box { background: rgba(31, 167, 163, 0.05); padding: 2rem; border-radius: 8px; border: 1px solid var(--border); margin-top: 2rem; }
+    .evidence-box { max-width: 500px; text-align: right; }
+    .evidence-quote { font-size: 0.85rem; font-style: italic; color: var(--muted); margin: 0; }
+    .badge.green { background: #e6f4ea; color: #137333; border-color: #137333; }
+    .badge.orange { background: #fef7e0; color: #b06000; border-color: #b06000; }
+    .badge.red { background: #fce8e6; color: #c5221f; border-color: #c5221f; }
+    .entity-tag { background: rgba(217, 123, 61, 0.1); color: var(--accent-2); margin-right: 0.5rem; margin-bottom: 0.5rem; display: inline-block; padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.9rem; border: 1px solid rgba(217, 123, 61, 0.2); }
+    .split-container { display: block; }
+    .split-container.active { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+    .split-container.active .split-col-right { position: sticky; top: 20px; max-height: 90vh; overflow-y: auto; padding-right: 10px; }
+  </style>
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+
+    function toggleSplitView() {
+        const container = document.getElementById('main-content');
+        const btn = document.getElementById('splitViewBtn');
+        container.classList.toggle('active');
+        btn.textContent = container.classList.contains('active') ? 'View: Split' : 'View: Standard';
+    }
+
+    function copyCitation() {
+        const citation = "AGKI Project. (2026). Inscription PHI-247919 . Retrieved from " + window.location.href;
+        navigator.clipboard.writeText(citation);
+        alert("Citation copied to clipboard!");
+    }
+
+    function highlightQuote(quote) {
+        const container = document.querySelector('.greek-content');
+        if (!container || !quote) return;
+        if (!container.dataset.original) container.dataset.original = container.innerHTML;
+        else container.innerHTML = container.dataset.original;
+        
+        const regex = new RegExp(quote.trim().replace(/\s+/g, '\\s+'), 'g');
+        container.innerHTML = container.innerHTML.replace(regex, match => `<mark class="highlight-evidence">${match}</mark>`);
+    }
+
+    function clearHighlight() {
+        const container = document.querySelector('.greek-content');
+        if (container && container.dataset.original) container.innerHTML = container.dataset.original;
+    }
+
+    function updateFontSize(size) {
+        const v = document.getElementById('original-view');
+        if(v) v.style.fontSize = size + 'px';
+    }
+
+    function openReportModal() { document.getElementById('reportModal').style.display = 'block'; }
+    function closeReportModal() { document.getElementById('reportModal').style.display = 'none'; }
+    function sendReport() {
+        const category = document.getElementById('reportCategory').value;
+        const desc = document.getElementById('reportDesc').value;
+        const fix = document.getElementById('reportFix').value;
+        const subject = `AGKI Error Report: PHI-247919`;
+        const body = `Category: ${category}%0D%0ADescription: ${desc}%0D%0AProposed Fix: ${fix}`;
+        window.location.href = `mailto:admin@agki-project.org?subject=${encodeURIComponent(subject)}&body=${body}`;
+        closeReportModal();
+    }
+  </script>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="brand"><h1><a href="../index.html">AGKI Tagging Tool</a></h1></div>
+    <nav class="nav-links">
+        <a href="../index.html" class="nav-item">Home</a>
+        <a href="../search.html" class="nav-item">Search</a>
+        <a href="../explore.html" class="nav-item">Explore</a>
+        <a href="../indices.html" class="nav-item">Indices</a>
+    </nav>
+    <div class="header-controls">
+        <button class="theme-toggle-btn" onclick="toggleTheme()" id="themeBtn">Dark Mode</button>
+    </div>
+  </header>
+
+  <script>
+    const themeBtn = document.getElementById('themeBtn');
+    function updateThemeBtn() {
+        const current = document.documentElement.getAttribute('data-theme');
+        if(themeBtn) themeBtn.textContent = current === 'light' ? 'Dark Mode' : 'Light Mode';
+    }
+    updateThemeBtn();
+    window.toggleTheme = function() {
+        const current = document.documentElement.getAttribute('data-theme');
+        const next = current === 'light' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        updateThemeBtn();
+    }
+  </script>
+
+  <main class="page-container inscription-page">
+    <div class="inscription-toolbar">
+        <a href="../search.html" class="back-link"><- Back to Dashboard</a>
+        <div class="inscription-actions">
+            <button id="splitViewBtn" onclick="toggleSplitView()" class="button secondary compact">View: Standard</button>
+            <button onclick="openReportModal()" class="button error compact">Report Error</button>
+        </div>
+    </div>
+
+    <!-- Report Modal -->
+    <div id="reportModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:1000;">
+        <div style="background:var(--panel); width:90%; max-width:500px; margin:10% auto; padding:2rem; border-radius:8px; border:1px solid var(--border);">
+            <h3>Report Error for PHI-247919</h3>
+            <label>Error Category</label>
+            <select id="reportCategory" style="width:100%; padding:0.5rem; margin-bottom:1rem;">
+                <option value="Incorrect Tag">Incorrect Tag / Theme</option>
+                <option value="Missing Entity">Missing Person / Place</option>
+                <option value="Translation Error">Translation / Text Issue</option>
+                <option value="Other">Other</option>
+            </select>
+            <label>Description</label>
+            <textarea id="reportDesc" rows="3" style="width:100%; margin-bottom:1rem;"></textarea>
+            <label>Proposed Fix</label>
+            <textarea id="reportFix" rows="2" style="width:100%; margin-bottom:1.5rem;"></textarea>
+            <div style="display:flex; justify-content:flex-end; gap:0.5rem;">
+                <button onclick="closeReportModal()" class="button secondary">Cancel</button>
+                <button onclick="sendReport()" class="button">Create Email Report</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="main-content" class="split-container">
+        <div class="split-col-left">
+            <section class="inscription-hero">
+                <div class="inscription-title-row">
+                    <h2>Inscription PHI-247919</h2>
+                    <div class="inscription-actions">
+                        <button onclick="copyCitation()" class="button secondary compact">Cite</button>
+                        <a href="https://epigraphy.packhum.org/text/247919" target="_blank" class="button secondary compact">View on PHI</a>
+                    </div>
+                </div>
+                <div class="inscription-meta">
+                    <div class="meta-item"><div class="label">Provenance</div><div class="meta-value"><a href="https://pleiades.stoa.org/places/981513" target="_blank" title="View in Pleiades">Asia</a> &gt; <a href="https://pleiades.stoa.org/places/599612" target="_blank" title="View in Pleiades">Ephesos</a></div></div>
+                    <div class="meta-item"><div class="label">Date</div><div class="meta-value"></div></div>
+                    <div class="meta-item"><div class="label">Completeness</div><div class="meta-value"><span class="badge info">fragmentary</span></div></div>
+                </div>
+            </section>
+            <div class="inscription-title-row">
+                <h3>Original Text</h3>
+                <div class="font-size-control">
+                    <input type="range" min="14" max="32" value="20" oninput="updateFontSize(this.value)">
+                </div>
+            </div>
+            <div id="original-view" class="text-viewer-original">
+                <div class="line-numbers">1
+
+
+
+5
+
+
+
+
+10
+
+
+
+
+15
+
+
+
+
+20
+
+
+
+
+25
+
+
+
+
+30
+
+
+
+
+35
+
+
+
+
+40
+
+
+
+
+45
+
+
+
+
+50
+
+
+
+
+55
+
+
+
+
+60
+
+
+
+
+65
+
+
+
+
+70
+
+
+
+
+75
+
+
+
+
+80
+
+
+
+
+85
+
+
+
+
+90
+
+
+
+
+95
+
+
+
+
+100
+
+
+
+
+105
+
+
+
+
+110
+
+
+
+
+115</div>
+                <div class="greek-content">σ ξτ[ ττ]
+σουβουραν τ[ μ ρκ σιν]
+μα[ρκ λλ π τοις - αν]
+[ π πρυτ νεως τιβ κλ ντιπ τρου ουλιανο]
+[μην ς ποσειδε νος - σταμ νου.]
+γ ος [ο ε βιος γ υ ς ο ωφεντε να σαλουτ ριος δι τα]ξιν ε [σφ ρει τ φεσ ων βουλ φιλοσεβ στ κα τ νεοκ ρ]
+ φεσ ω[ν δ μ φιλοσεβ στ περ ν καθι ρωκεν π]
+τα ς π[ογεγραμμ ναις ο κονομ αις τ μεγ στ θε φεσ ρ]τ μιδ[ι κα τ νεοκ ρ φεσ ων δ μ φιλοσεβ στ κα]
+τ φ[εσ ων βουλ φιλοσεβ στ κα τ φεσ ων γερουσ]
+φ[ιλοσεβ στ κα τα ς ξ φεσ ων φυλα ς κα το ς κατ νιαυτ ν]
+[ φεσ ων φ βοις κα το ς θεολ γοις κα μν δο ς κα το ς νεοποιο ς κα σκηπτο χοις κα το ς α ε σομ νοις φεσ ων]
+[παισ ν κα παιδων μοις πεικονισμ των τ ς θεο νν α ν ς μ ν χρυσ ου τ ν δ λοιπ ν ργυρ ων κα ε κ νων ργυρ ων]
+[ε κοσι κα δηναρ ων δισμυρ ων φ ε κ ν ργυρ α το κυρ ου]
+[ μ ν α τοκρ τορος κα σαρος ν ρουα τρα αν]ο[ σεβαστο γερμανικο δακικο λκ ς λειτρ ν -] ο νκι ν κα ε κ ν [ ργυρ α]
+[πλ]ω[τε νης σεβαστ ς λ]κ ς λειτρ ν νεοκορ νται πα[ρ α τ ι]
+σαλο[υταρ ωι] τ ι κ[αθι]ερωκ τι μετ δ τ ν σαλουταρ ο[υ τελευτ ν]
+ ποδοθσιν α προδηλο μεναι ε κ νες τ ι φεσ ων γραμμ[ατε π τ ι]
+προγεγραμμ νωι σταθμ ι π τ ν κληρον μων α το [στε κα α]τ ς τ θε[σ]θαι ν τα ς κκλησ αις π νω τ ς σελ δος τ ς βουλ[ ς μετ τ ς]
+χρυσ ας ρτ μιδος κα τ ν λλων ε κ νων. ρτεμις δ χρυσ[ α λκ ς]
+λειτρ ν τρι ν κα α περ α τ ν ργ ρεοι λαφοι δ ο κα τ λοιπ[ π χρυσα]
+ λκ ς λειτρ ν δ ο ο νκι ν δ κα γραμμ των π ντε κα ε [κ ν ργυ]ρ [α τ]ς ερ ς συνκλ του λκ ς λειτρ ν ο νκι ν κα ε [κ ν ργυ]ρ[ α τ]ς φιλοσεβ στου κα σεμνοτ της φεσ ων βουλ ς [λκ ς λειτρ]ν γραμ των τ κα α τ καθιερωμ να τ τε ρτ μιδι [κα τ φιλο]σ[εβ] στ φεσ ων βουλ ι. μο ως κα ργυρ α ρτεμις λα[μπαδηφ]ρ[ο]ς λκ ς κα ε κ ν ργυρ α το δ μου το ωμα ων [ λκ ς -]
+κα ε κ ν ργυρ α τ ς φιλοσεβ στου γερουσ ας λκ ς [- τ κα]
+α τ καθιερωμ να τ τε ρτ μιδι κα τ φεσ ων γερουσ.
+ μο ως κα λλη ρτεμις ργυρ α λαμπαδηφ ρος [μφερ ς]
+τ ν τ ξ δρ τ ν φ βων λκ ς ο νκι ν γραμ[μ των -]
+κα ε κ ν ργυρ α το ππικο τ γματος λκ ς [μιουν]κ ου γραμμ των κα λλη ε κ ν ργυρ α τ ς φηβε α[ς λκ ς -]
+τ κα α τ καθιερωμ να τ τε ρτ μιδι κα το ς κατ νιαυτ [ν ο σι]ν φ βοις. [μο ως κα λλη ρτεμις ργυρ α λαμπαδηφ ρος χουσα] φι λην λκ[ ς - ο νκι ν - γραμμ των - κα ε κ ν ργυρ α]
+[θεο] σεβαστο [ λκ ς - ο νκι ν - γραμμ των - κα ε κ ν ργυρ α φυλ ς σε]βαστ ς [λκ ς - τ κα α τ καθιερωμ να τ τε ρτ μιδι κα]
+[το ς α ε]σομ ν[οις πολε ταις τ ς σεβαστ ς φυλ ς. μο ως κα λλη]
+[ ρτεμις ργυρ α - λκ ς -]
+[κα ε κ ν ργυρ α το φιλοσεβ στου φεσ ων δ μου λκ ς -]
+[κα ε κ ν ργυρ α φυλ ς]φ[εσ ων λκ ς - τ κα α τ καθιερωμ] ν[α]
+[τ τε ρτ μιδι κα το ς α ε]σομ ν[οις πολε ταις τ ς φεσ ων φυλ ς.]
+[ μο ως κα λλη ρτεμις] ργυρ α [- χ]ειρ 
+[- λκ ς - ο νκι ν] κα ε[ κ ν ργυρ α - λκ ς -] κα 
+[ε κ ν ργυρ α φυλ ς καρηνα ων λκ ς - ο νκι ν - γραμμ] των γ τ 
+[κα α τ καθιερωμ να τ τε ρτ μιδι κα το ς α ε σομ νοις πο]λε ταις
+[τ ς καρηνα ων φυλ ς. μο ως κα λλη ρτεμις ργυρ α λαμπ]αδηφ [ρος -------- λκ ς - κα ε κ ν ργυρ α λυσιμ χου λκ ς - γ]ρ κα ε κ ν
+[ ργυρ α φυλ ς τη ων λκ] ς [ - τ κα α τ καθιερωμ να τ τ]ε ρτ μιδι
+[κα το ς α ε σομ νοις π]ολε[ ταις τ ς τη ων φυλ ς.] μο[ ω]ς κα λλη ρ[τεμις ργυρ α χου]σα τ τ[----- λκ ς - ο νκι] ν μ σους γρ μμα[τος κα ε κ ν ργ]υρ α ε[ ων μου λκ ς - κα ε κ ν ργυρ] α φυλ ς ε [ων μων λκ ς] μ[ιουνκ ου γραμμ των - τ κα α τ κ]αθιερωμ [να τ τε ρτ μιδι κα το] ς [α ε σομ νοις πολε ταις τ ς ε ων μω]ν φυλ ς.
+[ μο ως κα λλη ρτεμις ργυρ α λαμπαδηφ ρος - κα]σταλ [α - λκ ς - ο νκι ν - κα ε κ ν ργυρ α π ωνος λκ ς - κα ε] κ ν
+[ ργυρ α φυλ ς βεμβεινα ων λκ ς - τ κα α τ καθιερωμ να τ] τε [ρτ μιδι κα το ς α ε σομ νοις πολε ταις τ ς βεμβεινα ων φυλ]ς.
+[ δ προγεγραμμ νος σταθμ ς τ ν νν α πεικονισμ τω]ν τ ς θε[ο κα τ ν ε κοσι ε κ νων παρεστ θη ε μ]νει ε μ ν[ους το θεοφ λ]ου τ ι
+[κα α τ ι στρατηγ ι τ ς φεσ ων π λεως δι] το ζυγ[οστ του ρμ ου] ερο τ ς
+[ ρτ μιδος συμπαραλαμβ νο]ντ[ος μουσα]ου ερο τ[ ς ρτ μιδος το] π τ ν
+[παραθηκ ν. τ δ προγεγρ]αμμ [να πεικο]ν σματ[α ποτιθ σθω]σαν κατ 
+[π σαν ν μιμον κκλ]ησ αν κ[α τ τ ν] νουμη[ν τους ρ]χιερατι[κο πιτελουμ ν θυσ] ν τ ι [θε τρωι π] τ ν κα[θηκ ντων π τ]ς κατ σε[λ δας τεθειμ νας κ]α πιγεγ[ραμμ νας] β σεις [ ν ς π] το ς β [θροις κα ν τ δ]ιατ ξει βο[υλ ς γερου]σ ας φη[βε ας κα φυλ]ς καθι [ρωσις μετ δ τ] λυθ ν[αι τ ς κκλησ]ας ποφ[ερ σθωσαν τ πεικον σματα κα α ε κ νε]ς ε[ ς τ ερ ν τ ς ρτ μ]ιδος κα[ παραδιδ σθωσαν π]
+[τ ν φυλ κων συνεπιμελουμ νων κ] τ ν νεο[ποι ν δ ο κα σκηπτο χου]
+[μουσα ερ τ ς ρτ μιδος τ π τ ν παρ]αθη[κ ν διαδεχομ νων κα συμπροπεμπ ντων κα τ ν φ βων π τ ς μαγνητικ ς π λης ε ς τ θ ατρον κα π το θε τρου μ χρι τ ς κορησσικ ς π λης μετ] π σης [ε πρεπε ας σα τως δ γεν σθαι κα ν π σι το ς γυμνικο]ς γ σιν κ[α ε τινες]
+[ τεραι π τ ς βουλ ς κα το δ μου ρισθ σονται μ ραι. μηδ]εν δ ξ[ στω]
+[μετοικονομ σαι τ πεικον σματα τ ς θε]ο τ ς ε κ νας πρ ς τ 
+[μετονομασθ ναι ναχωνευθ ναι λλωι] τιν τρ πωι κακουργηθ να[ι] πε 
+[ ποι σας τι το των πε θυνο]ς στω εροσυλ κα σεβε κα ο δ ν
+[ σσον α τ ς πιδεικν σθω στα]θμ ς ν το ς προγεγραμμ νοις πεικον σ[μασιν κα ε κ σιν λειτρ ν] χοντος τ ν περ το των κδικ αν π ν ν[κ -.] τ ν δ καθιερωμ νων π σαλουτα[ρ ου δην] μ τ[ε]λ σει τ κον σαλουτ ριος δραχμια ον καθ καστον νι[αυτ ν] τ γει[ν] μενα δην ρια χ λια κτακ σια φ ν δ σει τ γραμμα[τε τ ς β]ουλ ς δην ρια τετρακ σι[α π]εντ κοντα πως πιτελε διανομ ν
+[το ς] βουλευτα ς ν τ ερ ι ν τ[ ι πρ]ον ωι τ ι γενεσ ωι τ ς μεγ στης θε ς ρ[τ μιδος] τις στ ν μην ς θαργη[λι] νος κτ σταμ νου γεινομ νης τ ς διανο[μ ς δη τ]ς π μπτης διδομ νο[υ]κ στ τ ν παρ ντων δηναρ ου ν ς 
+[μ χον]τος ξουσ αν το π τ ς διανομ ς π ντι δο ναι πε ποτεισ [τω τ ι β]ουλ ι π ρ κ στου ν ματος το μ παραγενομ νου κα λαβ ντος
+[προστε μου δην -] ν δ με ζω]ν γε [νηται κ λλυβος στε]
+[ε ς πλε ονας χωρε ν ξ στ]ω κα [-]
+[-]α ν κυ[----]ν. μο ω[ς δ σει τ το συνεδρ ου τ ς] γερουσ[ ας γ]ραμματε κ[ατ νιαυτ ν καστον π το προγεγραμμ ν]ου τ κου δη 
+[ σσ ρια πως πιτελ κλ ρον τ] γενεσ τ ς θεο
+[ μ ρ το ς το συνεδρ ου μετ χουσι]ν ε ς νδρας τθ [ ν δη ν]
+[δ με ζων γεν μενος κ λλυβος] στε ε ς πλε ο[νας]
+[χωρε ν κληρ σει κα πλε ονας κ] στου τ ν λαχ[ ντων ν δην ριον ν λαμβ νοντ]ος. διδ σθ[ω δ κα]
+[το ς - το ς νεοκορο σι παρ] σα[λ]ουταρ τ[ καθιερωκ τι ε ς διανομ ν δη - κα το] ς σιαρχ [σασι] το ς
+[ ναγραψαμ νοις δη - ε ς κλ ρον] ν [δην ρ]ια ι κα 
+[τ ε ς τ ν θυσ αν γορ σουσιν] το κλ ρου γεινομ νου
+[τ ι π μπτηι μ χοντος]ξουσ αν το γραμματ ος τ ς
+[γερουσ ας το παρι ναι τ ν δ]ιανομ ν ναγραφ ν μετ 
+[τ ν σαλουταρ ου τελευτ]ν πε ποτεισ τω πρ στειμον
+[τ ν τ διατ ξει ρισ]μ νον. μο ως π το προγε[γραμμ νου τ κου δ σει κατ]νιαυ[τ ν κ]αστον κα το ς ξ φυ[λ ρχοις ν δη π]ως π[ιτελ]σ[ι] κλ ρον τ ς προγεγραμ[μ νης καθιερ σεως τ ς] θεο ξ [ κ στη]ς φυλ ς ε ς ν ματα δι[ακ σια πεντ κοντα λα]μβαν ν[των τ] ν ληξομ νων σσ ρια 
+[καθ καστον ν δ με ζων γεν] μενος κ λλυβος π 
+[τ ν φυλ ρχων ξ στω κα λλους πολ]ε τας κληρο σθαι.
+[ μο ως δ σει π το προγεγραμμ νο]υ τ κου κατ νιαυτ ν
+[ καστον τ φηβ ρχ δην πω]ς πιτελ κλ ρον
+[τ ν κατ νιαυτ ν ντων φ βων τ γενεσ τ] ς ρτ μιδος
+[ε ς ν ματα διακ σια πεντ κοντα λαμβαν ν]των τ ν ληξο[μ νων ν σσ ρια λαμβαν τω δ] φ βαρχος χω[ρ ς το των δη. μο ως δ σει π τ]ο προγεγραμμ [νου τ κου κα τ ρχιερε σ ας το ν φ]σ ναο κοινο 
+[τ ς σ ας δη ς μισυ] κατ νιαυτ ν κασ[τον πως ξ α τ ν τ γενεσ τ ς θ]εο μ ρ πιτελε 
+[κλ ρον τ ν θεολ γων ν τ ερ] τ ς ρτ μιδος λαμ[β νοντος κ στου τ ν παρ α τ]ι ναγραψαμ νων
+[κα λαχ ντων ν δη ς μισυ γ]εινομ νης τ ς να[γραφ ς τ ι π μπτηι. μο ως δ σ]ει π το προγεγραμ[μ νου τ κου κατ νιαυτ ν καστον τ] ερε τ ς ρτ μιδος
+[ π ρ τ ν μν δ ν τ ς θεο τ ι γενεσ ω]ι τ ς ρτ μιδος ε ς
+[διανομ ν δην ρια. μο ως δ σε]ι π το π[ρ]ογεγραμ[μ νου τ κου κατ π σαν ν μιμον κκλ]ησ αν δυσν νεοποι[ο ς κα σκηπτο χ ς μισυ στε φ ρ]εσθαι κ το προν ου
+[ε ς τ θ ατρον τ πεικον σματα τ ς] θεο κα τ ς ε κ νας κα 
+[π λιν ναφ ρεσθαι κ το θε τρο]υ ε ς τ ν πρ ναον α θημε[ρ ν μετ τ ν φυλ κων. μο ως δ]σει π το προγεγραμμ [νου τ κου κατ νιαυτ ν καστο]ν κα το ς παιδων μοις
+[δη ς μισυ πως τ γενε]σ τ ς θεο μ ρ πιτελ [σωσι κλ ρον τ ν πα δων π ν]των ε ς ν ματα λαμβαν ν[των τ ν ληξομ νων τα τ] τ μ ρ ν τ ερ τ ς ρτ μιδος
+[ ν ς μισυ λαμβαν]ντων κα τ ν παιδων μων χωρ ς
+[το των ν σσ ρια.]μο ως δ σει π το προγεγραμ[μ νου τ κου καθ καστον ν]ιαυτ ν τ τ καθ ρσια ποιο ντι παρε[-] τ λοιπ δη τρι κοντα στε κα[θαρ ζειν κ στοτε π ταν ε]ς τ ερ ν ποφ ρηται τ πεικον[ σματα τ ς θεο πρ ν ποθε ν]αι α τ ε ς τ ν πρ ναον τ ς ρτ [μιδος. ν μ ν ο ν τερ ς τις κατ] δ αν προα ρεσιν γορ σ 
+[τ ν κληρονομ αν τα την κα βουλ]ηθ δ δοσθαι καθ καστον νι[αυτ ν τ ν τ κον διδ τω γορ]ζων τ προγεγραμμ να δη χ λια
+κτακ [σια μ ξ ν παρ τ]ν δι ταξιν ε σε[ν]ενκε ν μηδ ν
+ λασσο[ν -]λλ προσασφαλιζομ νου.
+ ν δ τι[ς γορ σ α τ ν βουλ]ηθ δ ποδο ναι τ χειον τ τ ς
+καθιερ [σεως ρχα α παντ]α ξ σται α τ π ν νκ ληψομ ν τ[ π τ ν χρημ τω]ν τ ς βουλ ς τ γειν μενα π ρ τ ν
+κα[θ]ιερω[μ νων τ βουλ] ρχα ου δη πεντακισχ λια 
+ μ[ο] ως κα[ τ π τ ν χρη]μ των τ ς γερουσ ας τ γειν μενα
+ π ρ τ ς καθιερωμ [ν]ων τ γερουσ δη τετρακ[ι]σ[χ]ελια τετρακ σια πεντ κοντα μο ως κα το ς θεολ γοις
+κα μν δο ς τ γειν μενα π ρ τ ς καθιερ σεως ρχα ου
+δη διακ σ[ι]α πεντ κοντα π ντε μο ως τ γραμματε 
+το δ μου τ λοιπ γειν μενα το ρχα ου π ρ τ ς καθιερ σεως τ ν ε ς το ς πολε τας κλ ρων κα φ βων κα νεοποι ν κα σκηπτο χων κα καθαρσ ων δη μ ρια διακ σια
+ βδομ κοντα π ντε πως κδαν ζωσιν α τ π τ κ 
+ σσαρ ων δεκαδ ο ργυρ ν δι πτωτα κα πιτελ ται καθ καστον νιαυτ ν π το τ κου τ διατεταγμ να νυπερθ τως ς προγ γραπται. ν δ πρ το ποδο ναι τ δισμ ρια δη διατ ξεσθαι π προσ δου
+χωρ ων δ δοσθαι τ ν τ κον α τ ν τελευτ σει
+σαλουτ ριος ποκε σθωσαν ο κληρον μοι α το τ ε λυτ σει τ ν καθιερωμ νων δη δισμυρ ων κα το ς πακολουθ σασι τ κοις μ χρι τ ς ε λυτ σεος ποκειμ νων α τ ν τ πρ ξει κατ τ ερ τ ς θεο κα τ παρ το ς πρεσβυτ ροις κδανιστικ νγραφα. π σχετο
+δ σαλουτ ριος στε ρξ[α]σθαι τ ν φιλοτειμ αν α το 
+τ νεστ τι τει ν τ γενε[σ] τ ς θεο μ ρ δ σει[ν]
+δη χε λια κτακ σια ε ς τ ς προγεγραμμ νας διανομ ς
+κα κλ ρους. μηδεν δ ξ στω ρχοντι κδ κ δι τ πε[ιρ]σα τι λλ ξαι μεταθε ναι μετοικονομ σαι μεταψηφ [σ]ασθα[ι] τ ν καθιερωμ νων πεικονισμ των το 
+ ργυρ ου τ ς [π]ροσ δου α το μεταθε ναι ε ς τερον π ρον
+ ν [λ]ωμα λ[λ]ο τι πο σαι παρ τ προγεγραμμ να κα διατετ[αγ]μ να πε τ γεν μενον παρ τα τα στω κυρον δ πε[ι]ρ σας ποι σα τι πεναντ ον τ διατ ξει το ς
+ π τς βου[λ] ς κα το δ μου ψηφισμ νοις κα πικεκυρωμ ν[οις περ] τα της τ ς διατ ξεως ποτεισ τω ε ς
+προσκ[ σμημα τ] ς με[γ στ]ης θε ς ρτ μιδος δη δισμ ρια
+[π]ε[ν]τα[κισχε λια κα ε ς τ ν το σε]βαστο φ σκον λλα δη ε.
+[ δ προγεγραμμ νη δι ταξις σ]τω κυρ α ε ς τ ν παντα χρ [νον - καθ περ κου λλι]ος πρ κλ[ος ε] [ε]ρ[γ] της
+[κα νθ πατο]ς κα φρ νιος φλαουιαν ς κρ τιστος πρεσβευτ ς
+κα[ ντιστ]ρ τηγος δι πιστολ ν περ τα της τ ς διατ ξεως πεκ ρωσαν κα ρισαν τ προγεγραμμ νον π[ρ] στειμον.
+γ ος ο ε βιος γα ου υ ς φεντε να σαλουτ ριος ε [σ]εν νοχα
+τ ν δι ταξιν κα καθι ρωσα τ προγεγραμμ να.</div>
+            </div>
+        </div>
+        <div class="split-col-right">
+            <h3>Thematic Analysis</h3>
+            
+        <div class="theme-card" onmouseover="highlightQuote('δι ταξιν ε [σφ ρει]')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Content/Official and Legal Documents/Contracts and Private Legal Acts" class="tag domain-tag" style="text-decoration:none;">Content</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
+                    <div class="theme-path">Content > Official and Legal Documents > Contracts and Private Legal Acts</div>
+                    <div class="theme-label">Foundation and Endowment</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "δι ταξιν ε [σφ ρει]"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('δηναρ ων δισμυρ ων')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Content/Administrative Records and Lists/Accounts and Financial Records" class="tag domain-tag" style="text-decoration:none;">Content</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
+                    <div class="theme-path">Content > Administrative Records and Lists > Accounts and Financial Records</div>
+                    <div class="theme-label">Financial Records</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "δηναρ ων δισμυρ ων"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('π τ ς μαγνητικ ς π λης ε ς τ θ ατρον')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Content/Religious and Dedicatory Texts/Sacred Laws and Rules" class="tag domain-tag" style="text-decoration:none;">Content</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
+                    <div class="theme-path">Content > Religious and Dedicatory Texts > Sacred Laws and Rules</div>
+                    <div class="theme-label">Sacred Procession and Ritual</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "π τ ς μαγνητικ ς π λης ε ς τ θ ατρον"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('καθι ρωκεν π τα ς π[ογεγραμμ ναις ο κονομ αις τ μεγ στ θε φεσ ρ]τ μιδ[ι]')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Content/Religious and Dedicatory Texts/Votive Dedications" class="tag domain-tag" style="text-decoration:none;">Content</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">95% Conf.</span>
+                    
+                    <div class="theme-path">Content > Religious and Dedicatory Texts > Votive Dedications</div>
+                    <div class="theme-label">Votive Dedication</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "καθι ρωκεν π τα ς π[ογεγραμμ ναις ο κονομ αις τ μεγ στ θε φεσ ρ]τ μιδ[ι]"</p>
+                </div>
+            </div>
+        </div>
+        
+            <div style="margin-top:2rem;"><h3>Entities</h3><div><a href="../search.html?q=Gaius Vibius Salutaris" class="tag entity-tag" style="text-decoration:none;">👤 Gaius Vibius Salutaris <small>(Donor/Benefactor)</small></a><a href="../search.html?q=Trajan" class="tag entity-tag" style="text-decoration:none;">👤 Trajan <small>(Emperor)</small></a><a href="../search.html?q=Plotina" class="tag entity-tag" style="text-decoration:none;">👤 Plotina <small>(Empress)</small></a><a href="../search.html?q=Aquillius Proculus" class="tag entity-tag" style="text-decoration:none;">👤 Aquillius Proculus <small>(Proconsul of Asia)</small></a><a href="../search.html?q=Afranius Flavianus" class="tag entity-tag" style="text-decoration:none;">👤 Afranius Flavianus <small>(Legatus pro praetore)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Ephesos <small>(Polis)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Magnesian Gate <small>(City Gate)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Coressian Gate <small>(City Gate)</small></a><a href="../index_deities.html" class="tag entity-tag" style="text-decoration:none;">⚡ Artemis</a></div></div>
+            <div class="ai-analysis-box"><h3>AI Analysis Summary</h3><p>This inscription, known as the &#x27;Salutaris Foundation&#x27; (104 AD), is one of the most significant documents from Roman Ephesus. It details a massive private endowment by the Roman knight Gaius Vibius Salutaris. The text outlines the donation of 29 gold and silver statues and 20,000 denarii. It establishes a complex system of financial distributions (dianomai) for the Boule, Gerousia, and other civic groups, and mandates a specific processional route for the statues through the city, linking the sanctuary of Artemis with the urban center and the theater. The text is reconstructed from multiple fragments found in the Great Theater.</p></div>
+        </div>
+    </div>
+  </main>
+</body>
+</html>
+    

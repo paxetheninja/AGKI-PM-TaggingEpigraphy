@@ -1,0 +1,616 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PHI-222791 - AGKI</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <style>
+    /* Custom Scrollbar Styling */
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: rgba(0,0,0,0.05); }
+    ::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #aaa; }
+
+    .page-container { max-width: 1400px; margin: 0 auto; padding: 2rem; }
+    .back-link { display: inline-block; margin-bottom: 1rem; color: var(--primary); font-weight: 600; }
+    .text-viewer-original { display: grid; grid-template-columns: 40px 1fr; gap: 2rem; font-family: "New Athena Unicode", "Gentium Plus", "Times New Roman", serif; font-size: 1.25rem; line-height: 1.6; background: var(--panel); padding: 2rem; border: 1px solid var(--border); border-radius: 4px; margin-bottom: 2rem; color: var(--text); }
+    .line-numbers { text-align: right; color: var(--muted); font-size: 1.25rem; line-height: 1.6; user-select: none; opacity: 0.5; font-family: inherit; white-space: pre; padding-right: 1rem; border-right: 1px solid var(--border); }
+    .greek-content { white-space: pre-wrap; word-break: break-word; padding-left: 1rem; }
+    .highlight-evidence { background-color: var(--accent); color: white; border-radius: 2px; padding: 0 2px; }
+    .theme-card { background: var(--panel); padding: 1rem 1.5rem; border-left: 4px solid var(--primary); margin-bottom: 0.75rem; border: 1px solid var(--border); border-left-width: 4px; }
+    .ai-analysis-box { background: rgba(31, 167, 163, 0.05); padding: 2rem; border-radius: 8px; border: 1px solid var(--border); margin-top: 2rem; }
+    .evidence-box { max-width: 500px; text-align: right; }
+    .evidence-quote { font-size: 0.85rem; font-style: italic; color: var(--muted); margin: 0; }
+    .badge.green { background: #e6f4ea; color: #137333; border-color: #137333; }
+    .badge.orange { background: #fef7e0; color: #b06000; border-color: #b06000; }
+    .badge.red { background: #fce8e6; color: #c5221f; border-color: #c5221f; }
+    .entity-tag { background: rgba(217, 123, 61, 0.1); color: var(--accent-2); margin-right: 0.5rem; margin-bottom: 0.5rem; display: inline-block; padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.9rem; border: 1px solid rgba(217, 123, 61, 0.2); }
+    .split-container { display: block; }
+    .split-container.active { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+    .split-container.active .split-col-right { position: sticky; top: 20px; max-height: 90vh; overflow-y: auto; padding-right: 10px; }
+  </style>
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+
+    function toggleSplitView() {
+        const container = document.getElementById('main-content');
+        const btn = document.getElementById('splitViewBtn');
+        container.classList.toggle('active');
+        btn.textContent = container.classList.contains('active') ? 'View: Split' : 'View: Standard';
+    }
+
+    function copyCitation() {
+        const citation = "AGKI Project. (2026). Inscription PHI-222791 . Retrieved from " + window.location.href;
+        navigator.clipboard.writeText(citation);
+        alert("Citation copied to clipboard!");
+    }
+
+    function highlightQuote(quote) {
+        const container = document.querySelector('.greek-content');
+        if (!container || !quote) return;
+        if (!container.dataset.original) container.dataset.original = container.innerHTML;
+        else container.innerHTML = container.dataset.original;
+        
+        const regex = new RegExp(quote.trim().replace(/\s+/g, '\\s+'), 'g');
+        container.innerHTML = container.innerHTML.replace(regex, match => `<mark class="highlight-evidence">${match}</mark>`);
+    }
+
+    function clearHighlight() {
+        const container = document.querySelector('.greek-content');
+        if (container && container.dataset.original) container.innerHTML = container.dataset.original;
+    }
+
+    function updateFontSize(size) {
+        const v = document.getElementById('original-view');
+        if(v) v.style.fontSize = size + 'px';
+    }
+
+    function openReportModal() { document.getElementById('reportModal').style.display = 'block'; }
+    function closeReportModal() { document.getElementById('reportModal').style.display = 'none'; }
+    function sendReport() {
+        const category = document.getElementById('reportCategory').value;
+        const desc = document.getElementById('reportDesc').value;
+        const fix = document.getElementById('reportFix').value;
+        const subject = `AGKI Error Report: PHI-222791`;
+        const body = `Category: ${category}%0D%0ADescription: ${desc}%0D%0AProposed Fix: ${fix}`;
+        window.location.href = `mailto:admin@agki-project.org?subject=${encodeURIComponent(subject)}&body=${body}`;
+        closeReportModal();
+    }
+  </script>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="brand"><h1><a href="../index.html">AGKI Tagging Tool</a></h1></div>
+    <nav class="nav-links">
+        <a href="../index.html" class="nav-item">Home</a>
+        <a href="../search.html" class="nav-item">Search</a>
+        <a href="../explore.html" class="nav-item">Explore</a>
+        <a href="../indices.html" class="nav-item">Indices</a>
+    </nav>
+    <div class="header-controls">
+        <button class="theme-toggle-btn" onclick="toggleTheme()" id="themeBtn">Dark Mode</button>
+    </div>
+  </header>
+
+  <script>
+    const themeBtn = document.getElementById('themeBtn');
+    function updateThemeBtn() {
+        const current = document.documentElement.getAttribute('data-theme');
+        if(themeBtn) themeBtn.textContent = current === 'light' ? 'Dark Mode' : 'Light Mode';
+    }
+    updateThemeBtn();
+    window.toggleTheme = function() {
+        const current = document.documentElement.getAttribute('data-theme');
+        const next = current === 'light' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        updateThemeBtn();
+    }
+  </script>
+
+  <main class="page-container inscription-page">
+    <div class="inscription-toolbar">
+        <a href="../search.html" class="back-link"><- Back to Dashboard</a>
+        <div class="inscription-actions">
+            <button id="splitViewBtn" onclick="toggleSplitView()" class="button secondary compact">View: Standard</button>
+            <button onclick="openReportModal()" class="button error compact">Report Error</button>
+        </div>
+    </div>
+
+    <!-- Report Modal -->
+    <div id="reportModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:1000;">
+        <div style="background:var(--panel); width:90%; max-width:500px; margin:10% auto; padding:2rem; border-radius:8px; border:1px solid var(--border);">
+            <h3>Report Error for PHI-222791</h3>
+            <label>Error Category</label>
+            <select id="reportCategory" style="width:100%; padding:0.5rem; margin-bottom:1rem;">
+                <option value="Incorrect Tag">Incorrect Tag / Theme</option>
+                <option value="Missing Entity">Missing Person / Place</option>
+                <option value="Translation Error">Translation / Text Issue</option>
+                <option value="Other">Other</option>
+            </select>
+            <label>Description</label>
+            <textarea id="reportDesc" rows="3" style="width:100%; margin-bottom:1rem;"></textarea>
+            <label>Proposed Fix</label>
+            <textarea id="reportFix" rows="2" style="width:100%; margin-bottom:1.5rem;"></textarea>
+            <div style="display:flex; justify-content:flex-end; gap:0.5rem;">
+                <button onclick="closeReportModal()" class="button secondary">Cancel</button>
+                <button onclick="sendReport()" class="button">Create Email Report</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="main-content" class="split-container">
+        <div class="split-col-left">
+            <section class="inscription-hero">
+                <div class="inscription-title-row">
+                    <h2>Inscription PHI-222791</h2>
+                    <div class="inscription-actions">
+                        <button onclick="copyCitation()" class="button secondary compact">Cite</button>
+                        <a href="https://epigraphy.packhum.org/text/222791" target="_blank" class="button secondary compact">View on PHI</a>
+                    </div>
+                </div>
+                <div class="inscription-meta">
+                    <div class="meta-item"><div class="label">Provenance</div><div class="meta-value"><a href="https://pleiades.stoa.org/places/776187" target="_blank" title="View in Pleiades">Oasis Magna</a> &gt; <a href="https://pleiades.stoa.org/places/776184" target="_blank" title="View in Pleiades">Hibis</a></div></div>
+                    <div class="meta-item"><div class="label">Date</div><div class="meta-value"> 246-249 AD </div></div>
+                    <div class="meta-item"><div class="label">Completeness</div><div class="meta-value"><span class="badge info">fragmentary</span></div></div>
+                </div>
+            </section>
+            <div class="inscription-title-row">
+                <h3>Original Text</h3>
+                <div class="font-size-control">
+                    <input type="range" min="14" max="32" value="20" oninput="updateFontSize(this.value)">
+                </div>
+            </div>
+            <div id="original-view" class="text-viewer-original">
+                <div class="line-numbers">1
+
+
+
+5
+
+
+
+
+10
+
+
+
+
+15
+
+
+
+
+20
+
+
+
+
+25
+
+
+
+
+30
+
+
+
+
+35
+
+
+
+
+40
+
+
+
+
+45
+
+
+
+
+50
+
+
+
+
+55
+
+
+
+
+60
+
+
+
+
+65
+
+
+
+
+70
+
+
+
+
+75
+
+
+
+
+80
+
+
+
+
+85
+
+
+
+
+90
+
+
+
+
+95
+
+
+
+
+100
+
+
+
+
+105
+
+
+
+
+110
+
+
+
+
+115
+
+
+
+
+120
+
+
+
+
+125
+
+
+
+
+130
+
+
+
+
+135
+
+
+
+
+140
+
+
+
+
+145
+
+
+
+
+150
+
+
+
+
+155
+
+
+
+
+160
+
+
+
+
+165
+
+
+
+
+170
+
+
+
+
+175
+
+
+
+
+180
+
+
+
+
+185
+
+
+
+
+190
+
+
+
+
+195
+
+
+
+
+200
+
+
+</div>
+                <div class="greek-content">ε ρ νη
+κλαυδ μαρκ λλ τ διασημοτ τ καθολικ 
+μαρκ σαλουταρ τ κρατ στ πιτρ π 
+τ ν κυρ ων σεβαστ[ ν] παρ α ρηλ ου γεμ νου
+ μφ[οδ ρχου] μφ δου -------- βιτ ν π λεως
+τ ς μεγ λης σεως πρ ς τ γραφ ντα π 
+----------------βιβλ------------
+ 
+ βιτ ν
+ δρευμα ----- πηγ α [----------------]
+[----------------------------]
+[----------------------------]
+μεγχεο ς [-----------------]
+ δρευμα [--------------------]
+[----------------------------]
+[----------------------------]
+ δρευματ------
+ δρευμα [------------------------]
+πμο ν [-----------------] δ φη
+ δρευμα [--------------] πηλι του δ φη
+ δρευμα [------------------] βορρ 
+[----------------] πρ ς ν τον
+λ φο[ι ------ πρ ς] βορρ δ φη δρευμα
+πμο ν [----------] πηλι του πρ ς ν τον περ στασις τ ς π λεως λιβ ς πρ ς βορρ 
+ ν πε ρ [------]-----
+ δρευμα φρ αρ [------------]ανι-αυτος
+ν πε ρ πηγ 
+ δρευμα πμ α--------τριου ν πε ρ πηγ 
+ μο ως ν τ κοιτασθε σ διαθ σει
+ δρευμα πμο ν πχετε ν πε ρ πηγ 
+καταπατ ςεως ν τ κοιτασθε σ διαθ σει
+ πηλι του χ μενα
+ δρευμα φρ αρ πετ πιος πηγ γε τονες ν του
+ δ φη φρ αρ πετεμεν πιος βορρ δ φη
+ δρευμα ---- πηλι του ----γος δρευμα πμο ν
+περχ----σ-------- λιβ ς [---------]
+ δρευμα πμ ------ ν πε ρ πηγ [καταπ]ατ σει
+ ν τ κοιτασθε σ διαθ σει ---
+ δρευμα πμ αρτε [-------------------------]
+πηγ β --------εχο------ δωρ π τ ς πηγ
+μ οντα δ 
+ δρευμα [----------] χο σης δωρ κα ο εο σης
+ δρευμα [------------] πηγ α καταπατ ςεως ν τ 
+κοιτασθε σ διαθ ςει
+ δρευμα ------- πηγ - χον δωρ π τ ς πηγ ς
+[------------------] χο σης δωρ κα μ 
+ ον
+ δρευμα [------------] ν πε ρ πηγ 
+καταπατ σεως ν τ κοιτασθε σ διαθ σει
+[----------------] δι στημα
+ δρευμα ------ρβο- πηγ ---και-----ρου
+[----------------] γε τονες ν του κ μ ν το 
+ πη[λιωτικ]ο περ στασις τ ς π λεως κ δ το 
+λιβικο [------------] πηλι του κ μ ν το 
+νοτ νου περ στασις τ ς π λεως κ δ το βορινο [--------------------] λιβ ς
+ κ μ ν το βορινο λ φοι κ δ το νοτ νου
+[-------------------- συν]επιρε ντων
+--------
+ δρευμα -----ος πηγ - χον δωρ κα μ ον ---
+[------------] δωρ κα μ εο σης βορρ 
+ χ μενα
+ δρευμα ---------αεως ψεν μου πηγ γ τονες κ τρι ν νεμ ν μμος ν του ---
+ δρευμα ----- ν πε ρ πηγ καταπατη--
+ ν τ κοιταστ ση διαθ σει βορρ χ μενα
+ δρευμα [--------------]τρ-ς πηγ γ τονες 
+ν του κα λιβ ς λ φοι πηλ ωτου κα βορρ ν
+ πε ρ δρευμα εβιην
+ δρευμα --τε κα τκονομω ν πε ρ πηγ 
+ δρευμα ψενν σιος ψενετ μιος ν πε ρ πηγ 
+ δρευμα πχουσον ---εμ-- ν πε ρ πηγ 
+καταπατ ςεως τ ν δρευ ν τ κοιτασθε σ 
+διαθ σει πηλι του χ μενα
+ δρευμα εβιην πηγ γ τονες ν του [--]-
+μεθ δ φη πεουαν κα πουαν κα πιν
+συνεπιρε ντων λλων δρευ βορρ 
+λ φοι λιβ ς κ μ ν το νοτ νου δ φη δρευμα
+πανυνε βιος ---ρ-ς κ δ το βορ νου
+ μμος πηλι του χ μενα
+ δρευμα τχ ν ρυ του πηγ γ τονες ν του
+κα λιβ ς δ φη δρευμα εβιην βορρ κα πηλι του λ φοι βορρ πρ ς λ βα -----γον
+δι στημα
+ δρευμα πιησε πηγ καταπατ ςεως ------ 
+ δρευμα πμ --ελοφ-ας πηγ 
+ δρευμα πμ πηγ γ τονες τ ν τρι ν δρευ
+συνεπιρε ντων λλων ---- [ν του κα] πηλι του
+ ρος βορρ κα λιβ ς μμος ----------- το 
+τρ του κα ε κοστο δρε ματος ------
+ δρευμα συνεπιρε ντων λλων ------------
+ δρευμα φρ αρ --------------[---- χον]
+ δωρ π τ ς πηγ μ ον δ ---------------
+ δωρ κα μ εο σης ------------
+ δρευμα πμο ν α--ου πηγ καταπατ σει ξ ς
+ δρευμα ------ πηγ συνεπιρ οντα 
+ 
+ δρευμα πμ βηστεντω--ς πηγ γ τονες ν του
+ μμος βορρ κα λιβ ς δ φη δρευμα --------
+ ---------------- ν του
+πρ ς λ βα --- μμον
+ δρευμα πμο ν βελλη πηγ γε τονες ν του ---υρις
+ πηλι του δ φη δρευμα βορρ λιβ ς δ φη δρευμα
+πμ πιω βορρ μμος ----------------
+λιβ ς χ μενα
+ δρευμα πμ πιω πηγ γε τονες ν του κα βορρ 
+κα λιβ ς μμος πηλ ωτου δ φη δρευμα πμ βελλη
+ δρευμα ---ρα πηγ γε τονες ν του κ μ ν το λιβικο 
+ δ φη δρευμα πμ βελλη κ δ πηλι[ωτικο] μμος
+βορρ κα πηλι του μμος -------- δρευμα
+πμο ν βελλη κα ---------------νωοα--ου
+κατ συγχ ρησιν --------------δε τοπαρχ αν
+τουποτ------------------ π το νω
+οαντου---------
+ δρευμα -------------- πηγ χον δωρ π τ ς
+πηγ κα μ ον
+ δρευμα σχουμεν ν πε ρ πηγ λιβ ς
+ χ μενα μεθ ν μμος
+ δρευμα ονρης πηγ γε[ τονες τ]ν λων τ πων
+ν του κ μ ν το[ λιβικο δ φη]δρευμα πμο ν
+αμενηβιος ονρης κ δ το πηλι του μ γα
+δι στημα μμος βορρ μμος λιβ ς μμος
+ πηλι του πτερ σματα
+ δρευμα πμ ουσιρεωνε ν πε ρ πηγ α 
+ν του το του
+ δρευμα πμ αμενηβιος ονρης πηγ γε τονες ν του
+κα λιβ ς μμος πηλι του δ φη δρευμα ονρης
+βορρ ---------- δρευ
+ δρευμα ---------- πηγ χον δωρ κα μ ον
+ δρευμα ------------ ν πε ρ πηγ 
+ δρευμα πμ τε---------- πηγ α 
+ δρευμα πμ -------- ν πε ρ πηγ - 
+ δρευμα ---------- ν πε ρ πηγ 
+ δρευμα ---------- ν πε ρ πηγ 
+ δρευμα ------νφθα ν πε ρ πηγ 
+ δρευμα πμο ν ---- ν πε ρ πηγ 
+ δρευμα πμο ν -----αιτος ν πε ρ πηγ 
+ δρευμα ---------ρπα σιος ν πε ρ πηγ 
+ δρευμα πμ --------τκεν--ς ν πε ρ πηγ 
+ δρευμα τχ ν ν πε ρ πηγ 
+ δρευμα πετεχων----ονος--ομε
+ ν πε ρ πηγ 
+ δρευμα τχ ν πμο ν ν πε ρ πηγ 
+ δρευμα πμο ν μι----θεως ν πε ρ πηγ 
+ δρευμα τεαιθεως ν πε ρ πηγ - 
+ δρευμα 0------ ν πε ρ πηγ 
+ δρευμα τχ ν ψενψυθιος ν πε ρ πηγ 
+ δρευμα ----υρ--ιος ν πε ρ πηγ 
+ δρευμα τκουαιει ν πε ρ πηγ 
+ δρευμα πμ αμενηβιος ψενπετ--ριος ν πε ρ πηγ 
+ δρευμα τχ ν αμενηβιος ν πε ρ πηγ 
+ δρευμα πμ πα---- ν πε ρ πηγ 
+ δρευμα πμ αμενηβιος ν πε ρ πηγ 
+ δρευμα ερ---του νεχθ---νιος ν πε ρ πηγ 
+ δρευμα πμο ν 
+ δρευμα τκερτεσηχει ν πε ρ πηγ 
+ δρευμα τχαλμεπι---ος ν πε ρ πηγ - 
+καταπατ ςεως π δρευμ των -ακ----
+ κτ ως το του ν τ κοιτασθε διαθ σει
+ δρευμα πιυριος πχ-----ος πηγ 
+ καταπ τηςις ξ ς ------------
+ δρευμα πεουαν πηγ 
+ δρευμα φρ αρ τε------- ν πε ρ πηγ 
+ δρευμα καλλιροου ----------- πηγ γ 
+ δρευμα τχ ν αμενηβιος πηγ 
+ δρευμα ----- πηγ τ ν - δρευ συνεπιρε ντων [----------------------] ν του
+ κ μ ν το λιβικο μμος κ δ το πηλιωτικ
+ δ φη δρε ματος τχ ν ----- πηλι του
+το νοτ νου δ φη δρε ματος τχ ν ------ κ δ 
+το βορινο λ φοι [----------------]ος λιβ ς
+ μμος καταπατ ςεως τ ν ε δρευ ------ ν
+ δρευμα πετεμεναπιος -------- πηγ χον δωρ
+κα μ ον
+ δρευμα ------ ν πε ρ πηγ καταπ τηςις ξ ς
+ δρευμα τχ ν εμφεως κα τχ ν κα 
+τχ ν μεν βιος πηγ γ [------------] τελε ται
+ δρευμα τχ ν -ε-ω ν πε ρ πηγ - 
+ δρευμα τχ ν -εν-ωρε ν πε ρ πηγ 
+ δρευμα μεγχ ους ψεναμου ν πε ρ πηγ 
+ δρευμα πμ σαλβ ου ν πε ρ πηγ 
+ δρευμα νε--τη ν πε ρ πηγ - 
+ δρευμα πμ βερριωρου ν πε ρ πηγ 
+ δρευμα πμ βερρισω-ικου ν πε ρ πηγ 
+ πηλι του χ μενα
+ δρευμα πελ---ου πηγ γε τονες [ κ τρι]ν ν μων
+λ φοι πηλι του [κ] μ ν το νοτ νου δ ς κ δ 
+το βορινο δ φ[η] δρε ματος φρ ατος πετεμεν πιος
+μεγχ ους
+ δρευμα ψενπηους ----βιος ν πε ρ πηγ 
+ δρευμα πμο ν περχη---- πηγ γε τονες τ ν λων
+τ πων ν του λ φοι μεθ δ φη φρ αρ πετεμεν πιος μεγχ ους βορρ λ φοι πηλι του
+ μμος λιβ ς κ μ ν το βορινο δ φη 
+ κ δ το νοτ νου δ φη δρευμα φρ αρ
+πετεμεν πιος μεγχ ους ν του χ μενα πρ ς λ βα
+ δρευμα φρ αρ πετεμεν πιος μεγχ ους
+πηγ γε τονες ν του κ μ ν το πηλιωτικ
+ μμος κ δ το λιβικο δ φη δρευμα φρ αρ
+υ ν σ φιος κα δρευμα πμ σερ μφιος βορρ 
+ κ μ ν το πηλιωτικ δ φη πμ περμ μιος
+ κ δ το λιβικο δ φη ψηει λιβ ς κ μ ν
+το βορινο περ στασις τ ς π λεως κ δ το 
+νοτ νου δ φη πμ σερ μφιος κα δ φη φρ ατος υ ν σ φιος πηλι του κ μ ν το νοτ νου
+ μμος κ δ το βορινο λ φοι λιβ ς
+ χ μενα
+ δρευμα φρ αρ κ στορος γε τονες
+ν του κα πηλι του δ φη φρ ατος πετεμεν πιος μεγχ ους βορρ κα λιβ ς περ στασις τ ς π λεως ν του χ μενα.</div>
+            </div>
+        </div>
+        <div class="split-col-right">
+            <h3>Thematic Analysis</h3>
+            
+        <div class="theme-card" onmouseover="highlightQuote('ὕδρευμα')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Administrative Records and Lists/Registers and Catalogues" class="tag domain-tag" style="text-decoration:none;">Administrative Records and Lists</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
+                    <div class="theme-path">Administrative Records and Lists > Registers and Catalogues</div>
+                    <div class="theme-label">Registers and Catalogues</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "ὕδρευμα"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('πρὸς τὰ γραφέντα ὑπὸ')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Official and Legal Documents/Official Letters" class="tag domain-tag" style="text-decoration:none;">Official and Legal Documents</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">90% Conf.</span>
+                    
+                    <div class="theme-path">Official and Legal Documents > Official Letters</div>
+                    <div class="theme-label">Official Letters</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "πρὸς τὰ γραφέντα ὑπὸ"</p>
+                </div>
+            </div>
+        </div>
+        
+            <div style="margin-top:2rem;"><h3>Entities</h3><div><a href="../search.html?q=Claudius Marcellus" class="tag entity-tag" style="text-decoration:none;">👤 Claudius Marcellus <small>(Katholikos (Rationalis))</small></a><a href="../search.html?q=Marcus Salutarius" class="tag entity-tag" style="text-decoration:none;">👤 Marcus Salutarius <small>(Epitropos (Procurator))</small></a><a href="../search.html?q=Aurelius Hegemonos" class="tag entity-tag" style="text-decoration:none;">👤 Aurelius Hegemonos <small>(Amphodarchos)</small></a><a href="../search.html?q=Pmon" class="tag entity-tag" style="text-decoration:none;">👤 Pmon <small>(Owner/Neighbor)</small></a><a href="../search.html?q=Amenebios" class="tag entity-tag" style="text-decoration:none;">👤 Amenebios <small>(Owner/Neighbor)</small></a><a href="../search.html?q=Psensios" class="tag entity-tag" style="text-decoration:none;">👤 Psensios <small>(Owner/Neighbor)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Hibis <small>(Polis)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Oasis Magna <small>(Region)</small></a></div></div>
+            <div class="ai-analysis-box"><h3>AI Analysis Summary</h3><p>This extensive inscription from the mid-3rd century AD (reign of Philip the Arab) serves as a detailed administrative register of water sources, known as &#x27;hydreumata&#x27;, in the Kharga Oasis (Hibis). The text is structured as a catalogue, listing each well or cistern alongside its neighbors (geitones) and cardinal orientations (north, south, east, west), often referencing the &#x27;perimeter of the city&#x27; (peristasis tes poleos). The involvement of the &#x27;katholikos&#x27; (the Roman rationalis of Egypt) Claudius Marcellus and the &#x27;epitropos&#x27; (procurator) Marcus Salutarius underscores the vital importance of water management and taxation in the desert regions of Roman Egypt. The document provides invaluable data for the historical geography and onomastics of the Great Oasis.</p></div>
+        </div>
+    </div>
+  </main>
+</body>
+</html>
+    

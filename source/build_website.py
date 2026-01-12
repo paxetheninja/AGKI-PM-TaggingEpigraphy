@@ -1,6 +1,7 @@
 import json
 import urllib.request
 import time
+import concurrent.futures
 from pathlib import Path
 from .config import INPUT_DIR, OUTPUT_DIR, TAXONOMY_DIR, DATA_DIR
 from .data_loader import load_inscriptions
@@ -52,6 +53,7 @@ def fetch_pleiades_coords(uri):
     try:
         api_url = f"{uri.rstrip('/')}/json"
         req = urllib.request.Request(api_url, headers={'User-Agent': 'AGKI-Tagging-Tool/1.0'})
+        print(f"DEBUG: Fetching {api_url}...")
         with urllib.request.urlopen(req, timeout=5) as response:
             if response.status == 200:
                 content = json.loads(response.read().decode())
@@ -61,28 +63,23 @@ def fetch_pleiades_coords(uri):
                     return PLEIADES_CACHE[uri]
     except Exception:
         pass
+    
+    PLEIADES_CACHE[uri] = None
     return None
 
 def get_coords(name, uri=None):
+    # 1. Try explicit URI
     if uri:
         c = fetch_pleiades_coords(uri)
         if c: return c
         
-    if not name: return None
-    if name in GAZETTEER: 
-        val = GAZETTEER[name]
-    else:
-        for key, coords in GAZETTEER.items():
-            if key in name or name in key: 
-                val = coords
-                break
-        else:
-            return None
-    
-    if isinstance(val, dict) and 'coords' in val:
-        return val['coords']
-    if isinstance(val, list):
-        return val
+    # 2. Try looking up URI by name in REGION_DATA
+    if name and name in REGION_DATA:
+        entry = REGION_DATA[name]
+        if isinstance(entry, dict) and 'uri' in entry:
+            c = fetch_pleiades_coords(entry['uri'])
+            if c: return c
+            
     return None
 
 # Combined Gazetteer
@@ -633,18 +630,27 @@ def build_website(mode=None):
             if pl.get('uri') and "pleiades" in pl['uri']: unique_uris.add(pl['uri'])
     
     print(f"Fetching {len(unique_uris)} unique Pleiades URIs...")
-    for i, uri in enumerate(unique_uris):
-        fetch_pleiades_coords(uri)
-        if i % 10 == 0: print(f"  Progress: {i}/{len(unique_uris)}")
-        # If we just fetched a lot, save progress periodically
-        if i % 50 == 0: save_pleiades_cache()
-        time.sleep(0.05)
+    uris_to_fetch = [u for u in unique_uris if u not in PLEIADES_CACHE]
+    print(f"  {len(uris_to_fetch)} URIs not in cache. Fetching in parallel...")
+
+    if uris_to_fetch:
+        with concurrent.futures.ThreadPoolExecutor(max_workers=20) as executor:
+            future_to_uri = {executor.submit(fetch_pleiades_coords, uri): uri for uri in uris_to_fetch}
+            for i, future in enumerate(concurrent.futures.as_completed(future_to_uri)):
+                if i % 50 == 0: 
+                    print(f"  Progress: {i}/{len(uris_to_fetch)}")
+                try:
+                    future.result()
+                except Exception:
+                    pass
     
     save_pleiades_cache()
 
     all_deities, all_persons, all_places = {}, {}, {}
     merged_list = []
-    for out in outputs:
+    print(f"Generating HTML for {len(outputs)} inscriptions...")
+    for i, out in enumerate(outputs):
+        if i % 50 == 0: print(f"  Generating page {i}/{len(outputs)}")
         phi_id = out['phi_id']
         inp = inputs_map.get(phi_id)
         if not inp: continue
@@ -666,10 +672,13 @@ def build_website(mode=None):
         with open(INSCRIPTIONS_DIR / f"{phi_id}.html", 'w', encoding='utf-8') as f:
             f.write(generate_detail_page(merged))
             
+    print("Generating indices pages...")
     generate_indices_page(all_deities, all_persons, all_places)
             
     search_index = []
-    for m in merged_list:
+    print("Building search index...")
+    for i, m in enumerate(merged_list):
+        if i % 200 == 0: print(f"  Indexing {i}/{len(merged_list)}")
         themes = m['output'].get('themes', [])
         theme_data = [{
             "label": t['label'],

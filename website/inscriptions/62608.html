@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PHI-62608 - AGKI</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <style>
+    /* Custom Scrollbar Styling */
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: rgba(0,0,0,0.05); }
+    ::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #aaa; }
+
+    .page-container { max-width: 1400px; margin: 0 auto; padding: 2rem; }
+    .back-link { display: inline-block; margin-bottom: 1rem; color: var(--primary); font-weight: 600; }
+    .text-viewer-original { display: grid; grid-template-columns: 40px 1fr; gap: 2rem; font-family: "New Athena Unicode", "Gentium Plus", "Times New Roman", serif; font-size: 1.25rem; line-height: 1.6; background: var(--panel); padding: 2rem; border: 1px solid var(--border); border-radius: 4px; margin-bottom: 2rem; color: var(--text); }
+    .line-numbers { text-align: right; color: var(--muted); font-size: 1.25rem; line-height: 1.6; user-select: none; opacity: 0.5; font-family: inherit; white-space: pre; padding-right: 1rem; border-right: 1px solid var(--border); }
+    .greek-content { white-space: pre-wrap; word-break: break-word; padding-left: 1rem; }
+    .highlight-evidence { background-color: var(--accent); color: white; border-radius: 2px; padding: 0 2px; }
+    .theme-card { background: var(--panel); padding: 1rem 1.5rem; border-left: 4px solid var(--primary); margin-bottom: 0.75rem; border: 1px solid var(--border); border-left-width: 4px; }
+    .ai-analysis-box { background: rgba(31, 167, 163, 0.05); padding: 2rem; border-radius: 8px; border: 1px solid var(--border); margin-top: 2rem; }
+    .evidence-box { max-width: 500px; text-align: right; }
+    .evidence-quote { font-size: 0.85rem; font-style: italic; color: var(--muted); margin: 0; }
+    .badge.green { background: #e6f4ea; color: #137333; border-color: #137333; }
+    .badge.orange { background: #fef7e0; color: #b06000; border-color: #b06000; }
+    .badge.red { background: #fce8e6; color: #c5221f; border-color: #c5221f; }
+    .entity-tag { background: rgba(217, 123, 61, 0.1); color: var(--accent-2); margin-right: 0.5rem; margin-bottom: 0.5rem; display: inline-block; padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.9rem; border: 1px solid rgba(217, 123, 61, 0.2); }
+    .split-container { display: block; }
+    .split-container.active { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+    .split-container.active .split-col-right { position: sticky; top: 20px; max-height: 90vh; overflow-y: auto; padding-right: 10px; }
+  </style>
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+
+    function toggleSplitView() {
+        const container = document.getElementById('main-content');
+        const btn = document.getElementById('splitViewBtn');
+        container.classList.toggle('active');
+        btn.textContent = container.classList.contains('active') ? 'View: Split' : 'View: Standard';
+    }
+
+    function copyCitation() {
+        const citation = "AGKI Project. (2026). Inscription PHI-62608 . Retrieved from " + window.location.href;
+        navigator.clipboard.writeText(citation);
+        alert("Citation copied to clipboard!");
+    }
+
+    function highlightQuote(quote) {
+        const container = document.querySelector('.greek-content');
+        if (!container || !quote) return;
+        if (!container.dataset.original) container.dataset.original = container.innerHTML;
+        else container.innerHTML = container.dataset.original;
+        
+        const regex = new RegExp(quote.trim().replace(/\s+/g, '\\s+'), 'g');
+        container.innerHTML = container.innerHTML.replace(regex, match => `<mark class="highlight-evidence">${match}</mark>`);
+    }
+
+    function clearHighlight() {
+        const container = document.querySelector('.greek-content');
+        if (container && container.dataset.original) container.innerHTML = container.dataset.original;
+    }
+
+    function updateFontSize(size) {
+        const v = document.getElementById('original-view');
+        if(v) v.style.fontSize = size + 'px';
+    }
+
+    function openReportModal() { document.getElementById('reportModal').style.display = 'block'; }
+    function closeReportModal() { document.getElementById('reportModal').style.display = 'none'; }
+    function sendReport() {
+        const category = document.getElementById('reportCategory').value;
+        const desc = document.getElementById('reportDesc').value;
+        const fix = document.getElementById('reportFix').value;
+        const subject = `AGKI Error Report: PHI-62608`;
+        const body = `Category: ${category}%0D%0ADescription: ${desc}%0D%0AProposed Fix: ${fix}`;
+        window.location.href = `mailto:admin@agki-project.org?subject=${encodeURIComponent(subject)}&body=${body}`;
+        closeReportModal();
+    }
+  </script>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="brand"><h1><a href="../index.html">AGKI Tagging Tool</a></h1></div>
+    <nav class="nav-links">
+        <a href="../index.html" class="nav-item">Home</a>
+        <a href="../search.html" class="nav-item">Search</a>
+        <a href="../explore.html" class="nav-item">Explore</a>
+        <a href="../indices.html" class="nav-item">Indices</a>
+    </nav>
+    <div class="header-controls">
+        <button class="theme-toggle-btn" onclick="toggleTheme()" id="themeBtn">Dark Mode</button>
+    </div>
+  </header>
+
+  <script>
+    const themeBtn = document.getElementById('themeBtn');
+    function updateThemeBtn() {
+        const current = document.documentElement.getAttribute('data-theme');
+        if(themeBtn) themeBtn.textContent = current === 'light' ? 'Dark Mode' : 'Light Mode';
+    }
+    updateThemeBtn();
+    window.toggleTheme = function() {
+        const current = document.documentElement.getAttribute('data-theme');
+        const next = current === 'light' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        updateThemeBtn();
+    }
+  </script>
+
+  <main class="page-container inscription-page">
+    <div class="inscription-toolbar">
+        <a href="../search.html" class="back-link"><- Back to Dashboard</a>
+        <div class="inscription-actions">
+            <button id="splitViewBtn" onclick="toggleSplitView()" class="button secondary compact">View: Standard</button>
+            <button onclick="openReportModal()" class="button error compact">Report Error</button>
+        </div>
+    </div>
+
+    <!-- Report Modal -->
+    <div id="reportModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:1000;">
+        <div style="background:var(--panel); width:90%; max-width:500px; margin:10% auto; padding:2rem; border-radius:8px; border:1px solid var(--border);">
+            <h3>Report Error for PHI-62608</h3>
+            <label>Error Category</label>
+            <select id="reportCategory" style="width:100%; padding:0.5rem; margin-bottom:1rem;">
+                <option value="Incorrect Tag">Incorrect Tag / Theme</option>
+                <option value="Missing Entity">Missing Person / Place</option>
+                <option value="Translation Error">Translation / Text Issue</option>
+                <option value="Other">Other</option>
+            </select>
+            <label>Description</label>
+            <textarea id="reportDesc" rows="3" style="width:100%; margin-bottom:1rem;"></textarea>
+            <label>Proposed Fix</label>
+            <textarea id="reportFix" rows="2" style="width:100%; margin-bottom:1.5rem;"></textarea>
+            <div style="display:flex; justify-content:flex-end; gap:0.5rem;">
+                <button onclick="closeReportModal()" class="button secondary">Cancel</button>
+                <button onclick="sendReport()" class="button">Create Email Report</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="main-content" class="split-container">
+        <div class="split-col-left">
+            <section class="inscription-hero">
+                <div class="inscription-title-row">
+                    <h2>Inscription PHI-62608</h2>
+                    <div class="inscription-actions">
+                        <button onclick="copyCitation()" class="button secondary compact">Cite</button>
+                        <a href="https://epigraphy.packhum.org/text/62608" target="_blank" class="button secondary compact">View on PHI</a>
+                    </div>
+                </div>
+                <div class="inscription-meta">
+                    <div class="meta-item"><div class="label">Provenance</div><div class="meta-value"><a href="https://pleiades.stoa.org/places/1001912" target="_blank" title="View in Pleiades">Cyclades</a> &gt; <a href="https://pleiades.stoa.org/places/462163" target="_blank" title="View in Pleiades">Delos</a></div></div>
+                    <div class="meta-item"><div class="label">Date</div><div class="meta-value"> 301 BC</div></div>
+                    <div class="meta-item"><div class="label">Completeness</div><div class="meta-value"><span class="badge info">fragmentary</span></div></div>
+                </div>
+            </section>
+            <div class="inscription-title-row">
+                <h3>Original Text</h3>
+                <div class="font-size-control">
+                    <input type="range" min="14" max="32" value="20" oninput="updateFontSize(this.value)">
+                </div>
+            </div>
+            <div id="original-view" class="text-viewer-original">
+                <div class="line-numbers">1
+
+
+
+5
+
+
+
+
+10
+
+
+
+
+15
+
+
+
+
+20
+
+
+
+
+25
+
+
+
+
+30
+
+
+
+
+35
+
+
+
+
+40
+
+
+
+
+45
+
+
+
+
+50
+
+
+
+
+55
+
+
+
+</div>
+                <div class="greek-content">[----------]ππο[υ ---- παρ --]ος [--- φο]ιν κων
+χη ιιι παρ π λοπος κ τ ς [λ]ειμ νος η κ π ργων παρ δημ [ου]
+χ η παρ α τοσθ νου[ς] διονυσ ου χ παρ λεων μου το [λυ]κωνε ου 0---
+νικο χ ρου --------------- γερ λλου 0
+--- ε κλε δου [------------- παρ]δομεν ----
+[παρ ν]τος γραμμ[ατ ως ------------]πιου ρχεκρ του
+-σαρχ δου ρχο[ν]το[ς] λυσιξ νου συμμαχικο ιι πρα--- απ[--------- κ]α χ[ην] ς ποθαν ντος ι ν 0
+[-------- δ ν]ειον τ ν φε[ λοντα ------]ην 0
+[------- δραχμ] ς 0 κα λλας π ξ αν το σ του ο 
+π λις πρ ατο χ κεφ λαιον ο π λις φε λει χχχχ ηηηη [τ] [δε] ν λωται ε ς πισκ[ευ] ν το ----------- λους
+--- [λεω]φωντ [δ]ηι μισθ ς δ ιι σω----------τια το 
+[κ]ερατ[ ν]ος ------ νωι-------------α
+------------ταχαια-------------
+ουσιιδιγ
+ο------------------- κια πισκευ------- τ γ γαυλ ν τ ν [ε ς] τ ν παλα[ στραν -------]ολισα 
+-----ιλ-ς ξ λα ι ---ρεα τ ι στο ι ---------- 0 πρωται ρ---------ς ξ λα [--------- μν]α τρε ς τιμ ργασαμ νωι πρωτ αι 0παρ ------------------ νον στεγν σα[ι] 0 --ηλωι κα τ ι ---- πισκευ σαν[τι ----] μισθ ς 0
+----------- ης τ π[ο]ρ ον[τα]πι[στρ] σαντι μισθ ς 0
+-------------------- το [ς λ] θους κα τ 
+[--------------- τ γαλμ]α τ ι διον σωι -----
+------- πρωτ αι 0 ---------------ωι ξ λ[α]
+------------------------ σαντι
+-----------------λι τ ι ε[ λει]θυα ωι 0
+------------------ καιν ς π τ νεωκ ριον
+[------------------ τ]ειχ ον πισκευ σαν[τι]
+---------------------ερι---εων τιμ 
+[----------------- μ]φιδ κα λοι ιιι [--------- ξ δομεν π κ ρυκος ν] τ ι γορ ι η δδ φιλ[------------------ ο]υλι της τ γαλμα
+-------------------- λος καθ ρασι τ ν ε------------------ εια π τ ν νωπ γ κερα---------------------- διακε[σα]μ νωι
+---------------------- ωι λκ σαν[τι -]
+----------------- μισθωτο ς πεν γκα[σι -----------------]λα ε ς τ νεωκ ριον
+------------------ φ ν ε ς τ ερ ν ιοιιω
+---------------- ειςε--ου τιμ 
+[------------- π τ ν νε] το π λλωνος ζε γη
+--------------- κ ---- πρωτ αι τας-αι
+[-------------- νθ]ρακας ---ον π τ νεωκ [ριον -------------] χορ ι γυναικν ερο μην ς
+------------- τ ν ----- κα υμο[ -] κεραμ δες
+---------- λ---- χορο ς τ γ γυναικ ν ρτεμισ οις κα 
+[βριτομαρτ οις ---------] παρ λ κων[ο]ς ξ λα κλ----οιη[---]νελ ντι το ς
+---------- ργολαβ σαντι πρωτ αι κατ συγγραφ ν δδδδ ---------- δ λ θους ν γκασι ργ ταις ------- ογ κα τ νεωκ ριον ιιι μισθωτο ς γ ν ν γ[κ]ασ[ι] 0 --- ε ς μελ θραν παρ τλ σιδος δδ ξ λα ε ς δοκο [ς]
+παρ λεωφ ντος διι σ μωι ρ στου κεφαλ ξ λα ε ς σφ κας παρ τλ σιδος τιμ δ ξ λα ε ς δι φραγμα δη--α- σαντι μι δ-----
+ φυκ ον γαγο σι κα πεν γκασιν ε ς ερ ν μισθωτο ς ---
+σιν ε ς ερ ν δ κιον μ λτου κα κ λλης κεραμ δων ζ[ε] γ[η -- ε ς τ] ς 
+ ροφ ς τ ν νεωκορ ων κα το στο δ ου δδδ πρωτ αι τ γ κ ραμον θ ντι το ς ε λειθυα οις ο ς παρ χ ρητος δδ ε ς τ λλα δδ κον ας μ διμνοι 0 παρ τ μ μεγαρ ων τιμ δδ κον ας μ διμνοι παρ α τονμου 0 τιμ δδδδ τ ν ποδομ ν ξ δομεν π κ ρυκος ν τ ι γορ ι κατ συγγραφ ν θε γνιδι χχ μισθωτο ς κον αγ κ πτουσιν μισθ ς μμον ν γκασιν δ λατ πης μ διμνοι ξ δδ κονι τηι τλ σιδι τ ν δ λιον ο κογ κονι σαντι ηδδδδ πηρ τηι τ ι κονι τηι μισθ ς δδδ το ς κ [ο]νας γνιτρ σασι κα κκαθ ρασιν δ τε βασιλε ς ξ πλευσεν 
+τ γ κ προν ξεν γκασιν κ το ερο μισθωτο ς δδ χο ρος τ ερ γ καθ ρασθαι παρ θεορρ του ξ λα τ διοσκο ριογ καθηρ[α]μ νωι χο ρος παρ ττ λου ξ λα τ ν κ τ ς ρτυγ ας ξεν γκαντι δ σκ φης ιιιι χο ρος παρ πιθ λους ξ λα τ ι καθαραμ νωι τ ερ ν τ ς ρτυγ ας γρ ψαντι το ς το χους
+ο δε το σ του το τ [ν]
+ ερ γ χρημ των ων[η]μ νου πρ δοσιν μβαλμενοι φε λουσιν τιμ[ησ] εργος δδ ιιι φιλοκλ[ ς]
+δδδ ιι δι κριτος ιι ριστ λοχος 0.
+----κτητος δ σ μος δδδδ ιι --
+τοσ[--------] 0[--------]
+ε θυμος 0
+λης 0.
+ο δε δανεισ μενοι το ερο ργυρ ου π το ς ατ ν πασιν φε λουσι
+τ κου πεντωβ λου φιλ[ο]κλ ς ηηηη παρμεν ων [η]
+ηη ψ ------- δημ[ο]θεστ δης η ραρχος η [--]
+[---------] τει[σι]κλ ς 0------ η φωκαε[ ς]
+ηιι δεξικ ς ηδ-------
+[---------] ---σι
+δ γαννος δδδδ
+[--] δημ ρητος η στ[η]σ λεως λε ρχου 
+ ναψυκτ δου δι [ξαν]τος ψευδεγγραφ ν [φ]λεν ντ γονος σφ ρου δδδ ιιιι.</div>
+            </div>
+        </div>
+        <div class="split-col-right">
+            <h3>Thematic Analysis</h3>
+            
+        <div class="theme-card" onmouseover="highlightQuote('τῶν ἱερῶν χρημάτων ὠνημένου πρόδοσιν')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Content/Administrative Records and Lists/Accounts and Financial Records" class="tag domain-tag" style="text-decoration:none;">Content</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
+                    <div class="theme-path">Content > Administrative Records and Lists > Accounts and Financial Records</div>
+                    <div class="theme-label">Accounts and Financial Records</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "τῶν ἱερῶν χρημάτων ὠνημένου πρόδοσιν"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('ἄρχοντος Λυσιξένου')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Type/Object Type/Monumental Stone Objects/Stele" class="tag domain-tag" style="text-decoration:none;">Type</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">95% Conf.</span>
+                    
+                    <div class="theme-path">Type > Object Type > Monumental Stone Objects > Stele</div>
+                    <div class="theme-label">Stele</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "ἄρχοντος Λυσιξένου"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('τοὺς λίθους')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Type/Material/Stone/Marble" class="tag domain-tag" style="text-decoration:none;">Type</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">90% Conf.</span>
+                    
+                    <div class="theme-path">Type > Material > Stone > Marble</div>
+                    <div class="theme-label">Marble</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "τοὺς λίθους"</p>
+                </div>
+            </div>
+        </div>
+        
+            <div style="margin-top:2rem;"><h3>Entities</h3><div><a href="../search.html?q=Lysixenos" class="tag entity-tag" style="text-decoration:none;">👤 Lysixenos <small>(Archon)</small></a><a href="../search.html?q=Archekratos" class="tag entity-tag" style="text-decoration:none;">👤 Archekratos <small>(Secretary)</small></a><a href="../search.html?q=Philokles" class="tag entity-tag" style="text-decoration:none;">👤 Philokles <small>(Debtor)</small></a><a href="../search.html?q=Parmenon" class="tag entity-tag" style="text-decoration:none;">👤 Parmenon <small>(Debtor)</small></a><a href="../search.html?q=Theognis" class="tag entity-tag" style="text-decoration:none;">👤 Theognis <small>(Contractor)</small></a><a href="../search.html?q=Telesis" class="tag entity-tag" style="text-decoration:none;">👤 Telesis <small>(Supplier)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Delos <small>(Island/Polis)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Ortygia <small>(Island)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Megara <small>(Polis)</small></a><a href="../index_deities.html" class="tag entity-tag" style="text-decoration:none;">⚡ Apollo</a><a href="../index_deities.html" class="tag entity-tag" style="text-decoration:none;">⚡ Dionysos</a><a href="../index_deities.html" class="tag entity-tag" style="text-decoration:none;">⚡ Eileithyia</a><a href="../index_deities.html" class="tag entity-tag" style="text-decoration:none;">⚡ Artemis</a><a href="../index_deities.html" class="tag entity-tag" style="text-decoration:none;">⚡ Britomartis</a><a href="../index_deities.html" class="tag entity-tag" style="text-decoration:none;">⚡ Dioskouri</a></div></div>
+            <div class="ai-analysis-box"><h3>AI Analysis Summary</h3><p>This inscription is a primary financial document from the sanctuary of Apollo on Delos, dated to the archonship of Lysixenos (301/300 BC). It belongs to the corpus of &#x27;Hieropoioi&#x27; accounts, which meticulously recorded the sacred treasury&#x27;s income and outgoings. The text details maintenance costs for various sacred structures (neokorion, palaestra), the purchase of construction materials like wood and tiles, and payments for ritual purifications. It also documents the lending of sacred funds to individuals, listing debtors and the interest (tokos) accrued. The mention of multiple deities (Apollo, Dionysos, Eileithyia, Artemis, Britomartis) reflects the diverse cultic landscape of the island under the administration of the sanctuary.</p></div>
+        </div>
+    </div>
+  </main>
+</body>
+</html>
+    

@@ -1,0 +1,665 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PHI-4365 - AGKI</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <style>
+    /* Custom Scrollbar Styling */
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: rgba(0,0,0,0.05); }
+    ::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #aaa; }
+
+    .page-container { max-width: 1400px; margin: 0 auto; padding: 2rem; }
+    .back-link { display: inline-block; margin-bottom: 1rem; color: var(--primary); font-weight: 600; }
+    .text-viewer-original { display: grid; grid-template-columns: 40px 1fr; gap: 2rem; font-family: "New Athena Unicode", "Gentium Plus", "Times New Roman", serif; font-size: 1.25rem; line-height: 1.6; background: var(--panel); padding: 2rem; border: 1px solid var(--border); border-radius: 4px; margin-bottom: 2rem; color: var(--text); }
+    .line-numbers { text-align: right; color: var(--muted); font-size: 1.25rem; line-height: 1.6; user-select: none; opacity: 0.5; font-family: inherit; white-space: pre; padding-right: 1rem; border-right: 1px solid var(--border); }
+    .greek-content { white-space: pre-wrap; word-break: break-word; padding-left: 1rem; }
+    .highlight-evidence { background-color: var(--accent); color: white; border-radius: 2px; padding: 0 2px; }
+    .theme-card { background: var(--panel); padding: 1rem 1.5rem; border-left: 4px solid var(--primary); margin-bottom: 0.75rem; border: 1px solid var(--border); border-left-width: 4px; }
+    .ai-analysis-box { background: rgba(31, 167, 163, 0.05); padding: 2rem; border-radius: 8px; border: 1px solid var(--border); margin-top: 2rem; }
+    .evidence-box { max-width: 500px; text-align: right; }
+    .evidence-quote { font-size: 0.85rem; font-style: italic; color: var(--muted); margin: 0; }
+    .badge.green { background: #e6f4ea; color: #137333; border-color: #137333; }
+    .badge.orange { background: #fef7e0; color: #b06000; border-color: #b06000; }
+    .badge.red { background: #fce8e6; color: #c5221f; border-color: #c5221f; }
+    .entity-tag { background: rgba(217, 123, 61, 0.1); color: var(--accent-2); margin-right: 0.5rem; margin-bottom: 0.5rem; display: inline-block; padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.9rem; border: 1px solid rgba(217, 123, 61, 0.2); }
+    .split-container { display: block; }
+    .split-container.active { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+    .split-container.active .split-col-right { position: sticky; top: 20px; max-height: 90vh; overflow-y: auto; padding-right: 10px; }
+  </style>
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+
+    function toggleSplitView() {
+        const container = document.getElementById('main-content');
+        const btn = document.getElementById('splitViewBtn');
+        container.classList.toggle('active');
+        btn.textContent = container.classList.contains('active') ? 'View: Split' : 'View: Standard';
+    }
+
+    function copyCitation() {
+        const citation = "AGKI Project. (2026). Inscription PHI-4365 . Retrieved from " + window.location.href;
+        navigator.clipboard.writeText(citation);
+        alert("Citation copied to clipboard!");
+    }
+
+    function highlightQuote(quote) {
+        const container = document.querySelector('.greek-content');
+        if (!container || !quote) return;
+        if (!container.dataset.original) container.dataset.original = container.innerHTML;
+        else container.innerHTML = container.dataset.original;
+        
+        const regex = new RegExp(quote.trim().replace(/\s+/g, '\\s+'), 'g');
+        container.innerHTML = container.innerHTML.replace(regex, match => `<mark class="highlight-evidence">${match}</mark>`);
+    }
+
+    function clearHighlight() {
+        const container = document.querySelector('.greek-content');
+        if (container && container.dataset.original) container.innerHTML = container.dataset.original;
+    }
+
+    function updateFontSize(size) {
+        const v = document.getElementById('original-view');
+        if(v) v.style.fontSize = size + 'px';
+    }
+
+    function openReportModal() { document.getElementById('reportModal').style.display = 'block'; }
+    function closeReportModal() { document.getElementById('reportModal').style.display = 'none'; }
+    function sendReport() {
+        const category = document.getElementById('reportCategory').value;
+        const desc = document.getElementById('reportDesc').value;
+        const fix = document.getElementById('reportFix').value;
+        const subject = `AGKI Error Report: PHI-4365`;
+        const body = `Category: ${category}%0D%0ADescription: ${desc}%0D%0AProposed Fix: ${fix}`;
+        window.location.href = `mailto:admin@agki-project.org?subject=${encodeURIComponent(subject)}&body=${body}`;
+        closeReportModal();
+    }
+  </script>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="brand"><h1><a href="../index.html">AGKI Tagging Tool</a></h1></div>
+    <nav class="nav-links">
+        <a href="../index.html" class="nav-item">Home</a>
+        <a href="../search.html" class="nav-item">Search</a>
+        <a href="../explore.html" class="nav-item">Explore</a>
+        <a href="../indices.html" class="nav-item">Indices</a>
+    </nav>
+    <div class="header-controls">
+        <button class="theme-toggle-btn" onclick="toggleTheme()" id="themeBtn">Dark Mode</button>
+    </div>
+  </header>
+
+  <script>
+    const themeBtn = document.getElementById('themeBtn');
+    function updateThemeBtn() {
+        const current = document.documentElement.getAttribute('data-theme');
+        if(themeBtn) themeBtn.textContent = current === 'light' ? 'Dark Mode' : 'Light Mode';
+    }
+    updateThemeBtn();
+    window.toggleTheme = function() {
+        const current = document.documentElement.getAttribute('data-theme');
+        const next = current === 'light' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        updateThemeBtn();
+    }
+  </script>
+
+  <main class="page-container inscription-page">
+    <div class="inscription-toolbar">
+        <a href="../search.html" class="back-link"><- Back to Dashboard</a>
+        <div class="inscription-actions">
+            <button id="splitViewBtn" onclick="toggleSplitView()" class="button secondary compact">View: Standard</button>
+            <button onclick="openReportModal()" class="button error compact">Report Error</button>
+        </div>
+    </div>
+
+    <!-- Report Modal -->
+    <div id="reportModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:1000;">
+        <div style="background:var(--panel); width:90%; max-width:500px; margin:10% auto; padding:2rem; border-radius:8px; border:1px solid var(--border);">
+            <h3>Report Error for PHI-4365</h3>
+            <label>Error Category</label>
+            <select id="reportCategory" style="width:100%; padding:0.5rem; margin-bottom:1rem;">
+                <option value="Incorrect Tag">Incorrect Tag / Theme</option>
+                <option value="Missing Entity">Missing Person / Place</option>
+                <option value="Translation Error">Translation / Text Issue</option>
+                <option value="Other">Other</option>
+            </select>
+            <label>Description</label>
+            <textarea id="reportDesc" rows="3" style="width:100%; margin-bottom:1rem;"></textarea>
+            <label>Proposed Fix</label>
+            <textarea id="reportFix" rows="2" style="width:100%; margin-bottom:1.5rem;"></textarea>
+            <div style="display:flex; justify-content:flex-end; gap:0.5rem;">
+                <button onclick="closeReportModal()" class="button secondary">Cancel</button>
+                <button onclick="sendReport()" class="button">Create Email Report</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="main-content" class="split-container">
+        <div class="split-col-left">
+            <section class="inscription-hero">
+                <div class="inscription-title-row">
+                    <h2>Inscription PHI-4365</h2>
+                    <div class="inscription-actions">
+                        <button onclick="copyCitation()" class="button secondary compact">Cite</button>
+                        <a href="https://epigraphy.packhum.org/text/4365" target="_blank" class="button secondary compact">View on PHI</a>
+                    </div>
+                </div>
+                <div class="inscription-meta">
+                    <div class="meta-item"><div class="label">Provenance</div><div class="meta-value"><a href="https://pleiades.stoa.org/places/579888" target="_blank" title="View in Pleiades">Attica</a> &gt; <a href="https://pleiades.stoa.org/places/579885" target="_blank" title="View in Pleiades">Athens</a></div></div>
+                    <div class="meta-item"><div class="label">Date</div><div class="meta-value"></div></div>
+                    <div class="meta-item"><div class="label">Completeness</div><div class="meta-value"><span class="badge info">fragmentary</span></div></div>
+                </div>
+            </section>
+            <div class="inscription-title-row">
+                <h3>Original Text</h3>
+                <div class="font-size-control">
+                    <input type="range" min="14" max="32" value="20" oninput="updateFontSize(this.value)">
+                </div>
+            </div>
+            <div id="original-view" class="text-viewer-original">
+                <div class="line-numbers">1
+
+
+
+5
+
+
+
+
+10
+
+
+
+
+15
+
+
+
+
+20
+
+
+
+
+25
+
+
+
+
+30
+
+
+
+
+35
+
+
+
+
+40
+
+
+
+
+45
+
+
+
+
+50
+
+
+
+
+55
+
+
+
+
+60
+
+
+
+
+65
+
+
+
+
+70
+
+
+
+
+75
+
+
+
+
+80
+
+
+
+
+85
+
+
+
+
+90
+
+
+
+
+95
+
+
+
+
+100
+
+
+
+
+105
+
+
+
+
+110
+
+
+
+
+115
+
+
+
+
+120
+
+
+
+
+125
+
+
+
+
+130
+
+
+
+
+135
+
+
+
+
+140
+
+
+
+
+145
+
+
+
+
+150
+
+
+
+
+155
+
+
+
+
+160
+
+
+
+
+165
+
+
+
+
+170
+
+
+
+
+175
+
+
+
+
+180
+
+
+
+
+185
+
+
+
+
+190
+
+
+
+
+195
+
+
+
+
+200
+
+
+
+
+205
+
+
+
+
+210
+
+
+
+
+215
+
+
+
+
+220</div>
+                <div class="greek-content">κοσμητ ς τ ν φ βων -------------------
+ π ρχοντος γ λβιδ ου σ[εκο νδ]ου παλλην ως ν γραψεν
+το ς τε συν ρχοντας κα [το ς]π α τ φηβε σαντας.
+ ντικοσμ της πο α λιος [σ χρυ]σος παλληνε ς.
+παιδοτρ βης δι β ου
+νεικ στρατος λ ρου παλ
+γραμματε ς δι β ου
+ ερε ς στρτων χαρ τ 
+σωφρονιστα 
+ ρακλ ων φλυ
+ πολλ νιος ζωσ μου βης
+ λευσε νιο[ς] σ φου κηφι
+σωτ ς ξ ο 
+ φροδε σιο[ς π]αφρο στει
+ λπ νεικο[ς] μυρι
+ ποσωφ[ρονι]στα 
+ σ δοτος σουνι
+ πελλ ς ντ[ι]
+ θην δωρο[ς] κα
+διον σιος σ[ τ]ου ξ [ο ου]
+λεων δης σ[ωτ]ω θμ
+παρ μονος [ αδι]νο αθ
+προστ τη[ς]
+πο α λιος παιδρως παλ
+ γεμ ν
+ θην δωρος θμο
+ πλομ χος
+[ζω] λος ε ρηναου φλυ
+δ[ιδ] σκαλος
+ζ σ[ιμ]ος λεξ ν λαμ
+ ποπαιδοτρ βης
+ε τυχια[ν]ς ακ ν σφ τ
+ πογραμματε ς
+πο α λ νθος ρεσ 
+κεστροφ λαξ
+κ ρπος [-]αφ
+ κ τ ν σεβαστοφορικν
+ δ θη το ς φ β[ο]ις π σι [ν]
+πλαταια ς τ ι δ[ι]αλ γω[ι]
+ κ στωι κα π [ρ] τ ς
+ γε ας το α τοκρ τορος
+ε ς θυσ ας το ς περ τν
+ πιμ λειαν α τ ν τε[τ]αγμ νοις κ στωι 
+κα κ τ ν περισσ ν
+ πετελ σθη γ ν τ [ν]
+ θηνα ων
+φιλιστε δ[ης πειρ]αιε ς κα πο α λ κορν λιος παλ
+ναυμαχ[ σαντε]ς μουν χια συνεστεφαν θησαν
+ ρχων κα γυμνασ αρ[χος]
+δι λου τους
+φιλιστε δης 0[ειρ]
+στρατηγ ς
+πο α λ κορν λιος πα[λ]
+κ ρυξ
+φλ μαρε νος παια
+βασιλε ς
+πο α λ φε διμος παλ
+ πετ λεσεν τ ν γ να
+τ ν ληνα ων κα στ ασε
+το ς συνεφ βους κα 
+το ς περ τ διογ νειον
+π ντας
+πολ μαρχος
+α ρ διονυσ δωρος χαρ
+ γοραν μοι
+διονυσ δωρος βησαι
+μην δωρος ε δου χαρ
+ πετ λεσαν το ς κ θρους
+ γωνοθ ται
+ ντινοε ων ν στει
+ πολλ νιος πειρ
+ δριανε ων
+α λ ρωτιαν ς φλυ
+ ντινοε ων ν λευσε νι
+νεικ στρατος νε κωνος τριν
+θησε ων
+περικλ ς προσδ κτου κεφ
+φιλαδελφε ων
+α ρ διονυσ δωρος χαρ
+το περ λκ ς
+πο α λ κορν λιος παλ
+φλ μαρε νος παια
+γερμανικε ων
+ θ ναια
+ κ τ ν σεβαστοφορικ ν
+ πινεικ ων
+πο α λ φε διμος παλ
+τ ν γ να πιτελ σας
+ μο[ι]ον τ περ λκ ς
+ε στ [ασ]ε το ς συνεφ βο[υς] κα το ς περ τ 
+διογ νειον
+ ρεχθε δος
+------μος κα λευσε νιος κηφ
+------νιος κα παιδ λ[ε]υσι κη
+-----ος κηφ
+----ρος ε π ρου κηφ
+----ητος δημητρ ου λαμ
+----ιος δημητρ ου λαμ
+----ς κηφ
+[ πο]λλ νιος σ φου κηφ
+---λιος πιγ νου κηφ
+---ιγ νης θ λλου φηγ
+[δη]μ τριος νησ μ κηφ
+ [ρμ] ς ζωπ ρου κ κη
+α γε δος
+ γαθοκλ ς ττικο γαρ
+----ν πικουριαν ς γαρ
+πανδιον δος
+[ π]αφρ δειτος φροδει στει
+[α]λ λο κιος γγε
+[ κ]τ βιος λπινε κου μυρι
+ λπ νεικος μυρι
+μουσ νιος ροξ ν στει
+ σ δοτος ροξ νου στει
+θ--γ νης σπ ρου κυδα
+β σσος κυθ
+λεωντ δος
+σω[τ] ς ξ ο 
+ζω---------ου ξ ο 
+ λα[ρος ------]σ ου ξ ο 
+πις ----- παιο
+ζ χιμος 0]ειμοκρ λευκ
+ ττ[ικ ς φ]ιλ του ε πυ
+π ν[νυχ]ος ξ ο 
+πτολεμα δος
+ ρα[κλ]ων φλυ
+ θ [ναι]ος ρακλ ω φλυ
+δι ---ος φιλοστρ τ βερ
+ ρτ[ μ]ων φλυ
+μητ[ρ]δωρος ρτ μω φλυ
+σεκ[ο]νδος ητορικο βερ
+ καμαντ δος
+ κ μας προσδ κτου κεφ
+α ρ ττικ ς π ρι
+πα[ρ] μονος μ σχου
+διο[ν]υσ δωρος μ σχ
+ δριαν δος
+ε πορος πολλων ου βης
+ζ σιμος ρ στωνος βης
+ διαν ς φηγαι
+μ νανδρος διανο φηγ
+ αδιν ς αθ
+ γαθ πους ε σιδ ρ φι
+νεικηφ ρος γλ κωνος βης
+ο νε δος
+χαρ των φιλ του χαρ
+γαργ ττιος φιλ του χαρ
+α λ φιλων δης χαρ
+στρ των ρθαγ ρου φυλ 
+ θ ναιος φιλοστρ τ χαρ
+κεκροπ δος
+φιλ μων τρινε
+ σ δοτος φιλ μονος τρινε
+ε οδιαν ς α ξω
+ θ ναιος στεφ νου πεικ
+ζ σιμος πολυκτ του μελι
+ πποθοωντ δος
+πιστοκρ της πιστικο πειρ
+διον σιος γενεθλ ου πειρ
+διον σιος σιδ του κ κο 
+ ρμε ας ζωσ μου πειρ
+φιλοκρ της γενεθλ ου πειρ
+α αντ δος
+κλ λενος μαρα
+ ο λ γρ ππας μαρα
+α ρ λυκο ργος μαρα
+ ουλ δι σκορος μαρα
+κρ των διονυσ ου φαλη
+ ρ στων ψαφι
+ ντιοχ δος
+κλ ουφε νος παλ
+πομπηιαν ς ε ν μου παλ
+ ρμε ας κλεων μου φυρν
+φιλων τ αθεν
+ τταλ δος
+γοργ ας ρακλε δου σουν
+μ σχος κορνηλιαν γν
+βακχ λος ε κ ρπου πολ
+ π νγραφοι
+ε δα μων φροδεισ ου
+α ρ σ νφορος
+πρσχολος σωσιπ τρου
+φιρμ νιος πειερ ων
+κλ ρμε ας
+φλ νεικ της
+ζωτικ ς μητροδ ρου
+κλ π κτητος
+ε τυχιαν ς περσ [ω]ς
+φ[ι]λοσ ραπις ζωσ μου
+ριστοκλε δης
+λ ιος νηρ ως
+ πιχ ρης σιδ ρου
+ζ σιμος χρυσ ωνος
+νεικηφ ρος ζωσ μου
+γ λως 
+ λυμπος γαθημ ρου
+[ε] τυχος νησ μου
+π μφιλος 
+ φηβος 
+α ρ σωτ ριχος
+πραξιτ λης 
+δομετιαν ς μαρκ λλου
+ ρ σκων 
+μην φιλος σωτ 
+ζ σιμος α γα ου
+ ππε ς ε σ 
+παρ μονος 
+ε τυχος σκληπι δου
+ζ σιμος ντωνε νου
+ ττικ ς κ λου
+ ντιπ ς νε κωνος
+στρατοκλ ς πρε μου
+δ φνος 
+ γαθ πους ε φ μου
+ παφρ δειτος ε φ μου
+α ρ ρ ς
+ε μερος πολειναρ ου
+νεικηφ ρος διονυσ ου
+θυρωρ ς κορν λιος δημ τριος
+λεντι ριος μ λισσος διοφ ντου</div>
+            </div>
+        </div>
+        <div class="split-col-right">
+            <h3>Thematic Analysis</h3>
+            
+        <div class="theme-card" onmouseover="highlightQuote('τοὺς τε συνάρχοντας καὶ [τοὺς] π’ αὐτῷ ἐφηβεύσαντας')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Administrative Records and Lists/Lists of Officials or Citizens" class="tag domain-tag" style="text-decoration:none;">Administrative Records and Lists</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
+                    <div class="theme-path">Administrative Records and Lists > Lists of Officials or Citizens</div>
+                    <div class="theme-label">Lists of Officials or Citizens</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "τοὺς τε συνάρχοντας καὶ [τοὺς] π’ αὐτῷ ἐφηβεύσαντας"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('ναυμαχ[ήσαντε]ς Μουνιχίᾳ συνεστεφανώθησαν')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Honorific and Commemorative Inscriptions/Agonistic / Victory Inscriptions" class="tag domain-tag" style="text-decoration:none;">Honorific and Commemorative Inscriptions</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">95% Conf.</span>
+                    
+                    <div class="theme-path">Honorific and Commemorative Inscriptions > Agonistic / Victory Inscriptions</div>
+                    <div class="theme-label">Agonistic / Victory Inscriptions</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "ναυμαχ[ήσαντε]ς Μουνιχίᾳ συνεστεφανώθησαν"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('ἐκ τῶν σεβαστοφορικῶν ἐδόθη τοῖς ἐφήβ[ο]ις πᾶσι[ν]')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Administrative Records and Lists/Accounts and Financial Records" class="tag domain-tag" style="text-decoration:none;">Administrative Records and Lists</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">90% Conf.</span>
+                    
+                    <div class="theme-path">Administrative Records and Lists > Accounts and Financial Records</div>
+                    <div class="theme-label">Accounts and Financial Records</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "ἐκ τῶν σεβαστοφορικῶν ἐδόθη τοῖς ἐφήβ[ο]ις πᾶσι[ν]"</p>
+                </div>
+            </div>
+        </div>
+        
+            <div style="margin-top:2rem;"><h3>Entities</h3><div><a href="../search.html?q=Galvidius Secundus" class="tag entity-tag" style="text-decoration:none;">👤 Galvidius Secundus <small>(Archon)</small></a><a href="../search.html?q=Philisteides" class="tag entity-tag" style="text-decoration:none;">👤 Philisteides <small>(Cosmetes/Official)</small></a><a href="../search.html?q=Publius Aelius Cornelius" class="tag entity-tag" style="text-decoration:none;">👤 Publius Aelius Cornelius <small>(Strategos/Official)</small></a><a href="../search.html?q=Flavius Marinus" class="tag entity-tag" style="text-decoration:none;">👤 Flavius Marinus <small>(Keryx)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Athens <small>(Polis)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Pallene <small>(Deme)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Piraeus <small>(Deme/Port)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Mounichia <small>(Harbor/Hill)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Diogeneion <small>(Gymnasium)</small></a><a href="../index_deities.html" class="tag entity-tag" style="text-decoration:none;">⚡ Antinous</a><a href="../index_deities.html" class="tag entity-tag" style="text-decoration:none;">⚡ Hadrian</a><a href="../index_deities.html" class="tag entity-tag" style="text-decoration:none;">⚡ Theseus</a></div></div>
+            <div class="ai-analysis-box"><h3>AI Analysis Summary</h3><p>This inscription is a classic Athenian ephebic catalogue from the Roman period (192/3 AD), specifically the archonship of Galvidius Secundus. It serves as an official record of the young men (ephebes) who completed their civic and military training, as well as the staff (cosmetes, sophronistai, didaskaloi) who managed them. The text is significant for its mention of the &#x27;Sebastophorika&#x27; funds, which highlights the financial relationship between the Roman imperial administration and the Athenian ephebeia. It also provides a detailed list of religious and athletic festivals (Antinoeia, Adrianeia, Theseia, etc.) that formed the core of ephebic life, and mentions the Diogeneion, the primary gymnasium for ephebic education in Athens.</p></div>
+        </div>
+    </div>
+  </main>
+</body>
+</html>
+    

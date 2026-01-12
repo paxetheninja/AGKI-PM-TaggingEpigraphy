@@ -1,0 +1,739 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PHI-3228 - AGKI</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <style>
+    /* Custom Scrollbar Styling */
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: rgba(0,0,0,0.05); }
+    ::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #aaa; }
+
+    .page-container { max-width: 1400px; margin: 0 auto; padding: 2rem; }
+    .back-link { display: inline-block; margin-bottom: 1rem; color: var(--primary); font-weight: 600; }
+    .text-viewer-original { display: grid; grid-template-columns: 40px 1fr; gap: 2rem; font-family: "New Athena Unicode", "Gentium Plus", "Times New Roman", serif; font-size: 1.25rem; line-height: 1.6; background: var(--panel); padding: 2rem; border: 1px solid var(--border); border-radius: 4px; margin-bottom: 2rem; color: var(--text); }
+    .line-numbers { text-align: right; color: var(--muted); font-size: 1.25rem; line-height: 1.6; user-select: none; opacity: 0.5; font-family: inherit; white-space: pre; padding-right: 1rem; border-right: 1px solid var(--border); }
+    .greek-content { white-space: pre-wrap; word-break: break-word; padding-left: 1rem; }
+    .highlight-evidence { background-color: var(--accent); color: white; border-radius: 2px; padding: 0 2px; }
+    .theme-card { background: var(--panel); padding: 1rem 1.5rem; border-left: 4px solid var(--primary); margin-bottom: 0.75rem; border: 1px solid var(--border); border-left-width: 4px; }
+    .ai-analysis-box { background: rgba(31, 167, 163, 0.05); padding: 2rem; border-radius: 8px; border: 1px solid var(--border); margin-top: 2rem; }
+    .evidence-box { max-width: 500px; text-align: right; }
+    .evidence-quote { font-size: 0.85rem; font-style: italic; color: var(--muted); margin: 0; }
+    .badge.green { background: #e6f4ea; color: #137333; border-color: #137333; }
+    .badge.orange { background: #fef7e0; color: #b06000; border-color: #b06000; }
+    .badge.red { background: #fce8e6; color: #c5221f; border-color: #c5221f; }
+    .entity-tag { background: rgba(217, 123, 61, 0.1); color: var(--accent-2); margin-right: 0.5rem; margin-bottom: 0.5rem; display: inline-block; padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.9rem; border: 1px solid rgba(217, 123, 61, 0.2); }
+    .split-container { display: block; }
+    .split-container.active { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+    .split-container.active .split-col-right { position: sticky; top: 20px; max-height: 90vh; overflow-y: auto; padding-right: 10px; }
+  </style>
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+
+    function toggleSplitView() {
+        const container = document.getElementById('main-content');
+        const btn = document.getElementById('splitViewBtn');
+        container.classList.toggle('active');
+        btn.textContent = container.classList.contains('active') ? 'View: Split' : 'View: Standard';
+    }
+
+    function copyCitation() {
+        const citation = "AGKI Project. (2026). Inscription PHI-3228 . Retrieved from " + window.location.href;
+        navigator.clipboard.writeText(citation);
+        alert("Citation copied to clipboard!");
+    }
+
+    function highlightQuote(quote) {
+        const container = document.querySelector('.greek-content');
+        if (!container || !quote) return;
+        if (!container.dataset.original) container.dataset.original = container.innerHTML;
+        else container.innerHTML = container.dataset.original;
+        
+        const regex = new RegExp(quote.trim().replace(/\s+/g, '\\s+'), 'g');
+        container.innerHTML = container.innerHTML.replace(regex, match => `<mark class="highlight-evidence">${match}</mark>`);
+    }
+
+    function clearHighlight() {
+        const container = document.querySelector('.greek-content');
+        if (container && container.dataset.original) container.innerHTML = container.dataset.original;
+    }
+
+    function updateFontSize(size) {
+        const v = document.getElementById('original-view');
+        if(v) v.style.fontSize = size + 'px';
+    }
+
+    function openReportModal() { document.getElementById('reportModal').style.display = 'block'; }
+    function closeReportModal() { document.getElementById('reportModal').style.display = 'none'; }
+    function sendReport() {
+        const category = document.getElementById('reportCategory').value;
+        const desc = document.getElementById('reportDesc').value;
+        const fix = document.getElementById('reportFix').value;
+        const subject = `AGKI Error Report: PHI-3228`;
+        const body = `Category: ${category}%0D%0ADescription: ${desc}%0D%0AProposed Fix: ${fix}`;
+        window.location.href = `mailto:admin@agki-project.org?subject=${encodeURIComponent(subject)}&body=${body}`;
+        closeReportModal();
+    }
+  </script>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="brand"><h1><a href="../index.html">AGKI Tagging Tool</a></h1></div>
+    <nav class="nav-links">
+        <a href="../index.html" class="nav-item">Home</a>
+        <a href="../search.html" class="nav-item">Search</a>
+        <a href="../explore.html" class="nav-item">Explore</a>
+        <a href="../indices.html" class="nav-item">Indices</a>
+    </nav>
+    <div class="header-controls">
+        <button class="theme-toggle-btn" onclick="toggleTheme()" id="themeBtn">Dark Mode</button>
+    </div>
+  </header>
+
+  <script>
+    const themeBtn = document.getElementById('themeBtn');
+    function updateThemeBtn() {
+        const current = document.documentElement.getAttribute('data-theme');
+        if(themeBtn) themeBtn.textContent = current === 'light' ? 'Dark Mode' : 'Light Mode';
+    }
+    updateThemeBtn();
+    window.toggleTheme = function() {
+        const current = document.documentElement.getAttribute('data-theme');
+        const next = current === 'light' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        updateThemeBtn();
+    }
+  </script>
+
+  <main class="page-container inscription-page">
+    <div class="inscription-toolbar">
+        <a href="../search.html" class="back-link"><- Back to Dashboard</a>
+        <div class="inscription-actions">
+            <button id="splitViewBtn" onclick="toggleSplitView()" class="button secondary compact">View: Standard</button>
+            <button onclick="openReportModal()" class="button error compact">Report Error</button>
+        </div>
+    </div>
+
+    <!-- Report Modal -->
+    <div id="reportModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:1000;">
+        <div style="background:var(--panel); width:90%; max-width:500px; margin:10% auto; padding:2rem; border-radius:8px; border:1px solid var(--border);">
+            <h3>Report Error for PHI-3228</h3>
+            <label>Error Category</label>
+            <select id="reportCategory" style="width:100%; padding:0.5rem; margin-bottom:1rem;">
+                <option value="Incorrect Tag">Incorrect Tag / Theme</option>
+                <option value="Missing Entity">Missing Person / Place</option>
+                <option value="Translation Error">Translation / Text Issue</option>
+                <option value="Other">Other</option>
+            </select>
+            <label>Description</label>
+            <textarea id="reportDesc" rows="3" style="width:100%; margin-bottom:1rem;"></textarea>
+            <label>Proposed Fix</label>
+            <textarea id="reportFix" rows="2" style="width:100%; margin-bottom:1.5rem;"></textarea>
+            <div style="display:flex; justify-content:flex-end; gap:0.5rem;">
+                <button onclick="closeReportModal()" class="button secondary">Cancel</button>
+                <button onclick="sendReport()" class="button">Create Email Report</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="main-content" class="split-container">
+        <div class="split-col-left">
+            <section class="inscription-hero">
+                <div class="inscription-title-row">
+                    <h2>Inscription PHI-3228</h2>
+                    <div class="inscription-actions">
+                        <button onclick="copyCitation()" class="button secondary compact">Cite</button>
+                        <a href="https://epigraphy.packhum.org/text/3228" target="_blank" class="button secondary compact">View on PHI</a>
+                    </div>
+                </div>
+                <div class="inscription-meta">
+                    <div class="meta-item"><div class="label">Provenance</div><div class="meta-value"><a href="https://pleiades.stoa.org/places/579888" target="_blank" title="View in Pleiades">Attica</a> &gt; <a href="https://pleiades.stoa.org/places/579885" target="_blank" title="View in Pleiades">Athens</a></div></div>
+                    <div class="meta-item"><div class="label">Date</div><div class="meta-value"></div></div>
+                    <div class="meta-item"><div class="label">Completeness</div><div class="meta-value"><span class="badge info">fragmentary</span></div></div>
+                </div>
+            </section>
+            <div class="inscription-title-row">
+                <h3>Original Text</h3>
+                <div class="font-size-control">
+                    <input type="range" min="14" max="32" value="20" oninput="updateFontSize(this.value)">
+                </div>
+            </div>
+            <div id="original-view" class="text-viewer-original">
+                <div class="line-numbers">1
+
+
+
+5
+
+
+
+
+10
+
+
+
+
+15
+
+
+
+
+20
+
+
+
+
+25
+
+
+
+
+30
+
+
+
+
+35
+
+
+
+
+40
+
+
+
+
+45
+
+
+
+
+50
+
+
+
+
+55
+
+
+
+
+60
+
+
+
+
+65
+
+
+
+
+70
+
+
+
+
+75
+
+
+
+
+80
+
+
+
+
+85
+
+
+
+
+90
+
+
+
+
+95
+
+
+
+
+100
+
+
+
+
+105
+
+
+
+
+110
+
+
+
+
+115
+
+
+
+
+120
+
+
+
+
+125
+
+
+
+
+130
+
+
+
+
+135
+
+
+
+
+140
+
+
+
+
+145
+
+
+
+
+150
+
+
+
+
+155
+
+
+
+
+160
+
+
+
+
+165
+
+
+
+
+170
+
+
+
+
+175
+
+
+
+
+180
+
+
+
+
+185
+
+
+
+
+190
+
+
+
+
+195
+
+
+
+
+200
+
+
+
+
+205
+
+
+
+
+210
+
+
+
+
+215
+
+
+
+
+220
+
+
+
+
+225
+
+
+
+
+230
+
+
+
+
+235
+
+
+
+
+240
+
+</div>
+                <div class="greek-content">[ π ληνα ου ρχοντ]ος π τ ς πανδιον δο[ς] τρ της πρυτανε ας σ δωρος πολ[λων]ου σκαμ[βω]ν δη[ς]
+[ γραμμ τευεν βοη]δρομι νος δ[εκ]τ σταμ ν[ου] δεκ τ τ ς [πρυτα]νε ας κκλησ α κ[υρ α ν τ ι θε τρωι τ ν π]ρο δρων [πεψ φι]ζεν ζ πυρο[ς] ριστε δο[υ λωπ]εκ θεν κα συνπρ ε[δροι δοξεν τ ι βουλ ι κα] τ ι δ μ[ωι σ]ωκρ της ριστ ωνος ξ ο ου [ε πεν]πειδ ο φηβοι ο π [ππ ρχου ρχοντος θ σαντες τα ς γγραφ]α ς ν τ ι πρυτανε ωι π τ[ ς κ]οιν ς στ ας το δ μου
+[κ]α καλλιερ] σαντες μετ τε τ]ο κοσμητο κα το ε[ρ ω]ς το δ μου κα[ τ] ν 0[αρ]των κα τ ν ξ[ηγητ ν π μπευσαν τ]ι ρτ μιδι τ ι γροτ ραι ποι σ[α]ντο δ κα τ ν πα[π ντ]ησ[ι]ν το ς ερο ς [ν πλοις κα προ πεμψαν α τ κα τ] ν ακχον σα τως [ραν]τ[ο δ] κα το ς μυ[στηρ οι]ς ν λευσ νι [τ ι θυσ αι το ς βο ς κα α]το βουθ τησαν ν τ ι [περιβ λωι]ξ γαγον δ κ[α]
+[τ] ν παλλ δα φ[αληρο κ κε θεν π λιν συνει]σ γαγον μετ [φ]ωτ ς [μετ π σ]ης ε κοσμ ας συν[ετ] λεσαν δ κα το [ς δρ μους το ς ν το ς γ]σι κα το ς [γυ]μνασ οις [ παντας κ]α ραντο τα ς θυσ αις το ς βο ς ε σχ[ημ νως κα τ ς λαμπ δας] δραμον [ π σας κα τ ς πομπ ς π μ]πευσαν π σας π ντησαν δ κα [το ς φ λοις κα συμμ χοις το] [δ] μο[υ ω]μ[α οις παρ γαγον δ κ]α το ς πειρ[α οις]
+τ ι διον σωι τα ρον κ -------------- ανε ------------------ ου κα εσ γαγον τ ν θε ν π τ ς [ σχ ρας ε ς τ θ ατρον --]α[------------------- τ ι πομ]π ι κα 
+θ σαντες π το [τοις καλλι ρησαν ποιησ μενοι δ] κα[ μελ την ν το ς πλοις πεδ]ε ξαντο το ς
+θησε οις κ[α το ς] πι[ταφ οις ν πλευσαν δ κα π τρ]παιο[ν δυσ πλο οις κα θυσα]ν τ ι δι τ ι
+τροπα ωι [ποι σαντο δ κα τ ι πομπ ι τ ν μεγ] λων θε ν [ μιλλαν ν τ ι λιμ] νι κα το ς θεο ς θυσαν κα [-------------- ποι] σαντο τ[-------------- ξ λ]θον δ κα ε ς τ ν χ[ ρ]αν ν πλο[ις καθ ς π ταττον α το ς τ ψηφ σμα]τα τ ς β[ουλ ς κα το δ μου π]αρ δρευσαν δ κα τα[ ς]
+ κκλη[σ] αις [π σαις ν πλοις ---- δ κα το ς δι] σω[τ]ηρ[ οις τ ι δι τ ι σω]τ ρι κα τ ι θην ι τ[ ι]
+σωτ ραι κα [---------- πλευσαν δ κα ε ς σαλα]μ να τ[ο ς α αντε οις κ κε ποι]ησ μενοι τ[ ν μιλλαν]
+τ ν π[λ]ο [ων κα πομπε σαντες κα θ σαντες τ ι α αντι πηιν θησαν π τ ν τ]ν ν σον κατοικο ντω[ν]
+[κ]α σ[τεφαν θησαν χρυσ ι στεφ νωι π τ ι ε τ κτως κα ε σχημ νως πεποι]σθαι τ ν πιδημ α[ν]
+[--------------------------------- ν τ ι]ερ ι τ ς τε λλα[ς]
+[θυσ ας τ ς καθηκο σας π σας θυσαν μετ τε το κοσμητο κα τ ν διδασκ λων το ς θεο ς κ]α το ς ε εργ ταις
+[το δ μου -------------------------------------] διετ λεσαν μ[ονο]ο [ντες κα πειθαρχο ντες τ ι τε κοσμητ ι κα το ς διδασκ λοις δι λου το νιαυτο -] βαλον δ κα το --
+μη[---------------------------- ποι σαντο δ κ]α π ξ δωι τ ς [ φη]βε ας [τ ν π δειξιν τ ι βουλ ι πως ο ν τε βο]υλ[ κα δ μος φα νωνται τιμ ντες το ς] πειθομ νους [το ς]
+τε ν[ μοις κα ψηφ σμασιν κ τ ς πρ]της [ λικ ας γαθ ι τ χηι δεδ χθαι τ] ι [βουλ ι] το ς λαχ ντας [προ δρους ε ς] τ [ν πιο σαν κκλησ αν χρηματ]σαι [περ το των γν μην δ ξυμβ λλεσθ]αι τ ς βουλ ς ε ς τ [ν] δ[ μον] τ[ι δοκ]ε τ ι βο[υλ]ι παιν [σαι] το ς φ βου[ς το ς π ππ ρχου ρχοντος κα στε]φαν σαι α το ς χ[ρυ]σ ι στεφ νωι [ε ταξ ας νεκεν ς χο]ντε[ς διετ λεσαν κα ε σεβε ας τ ς πρ ς τ]ο ς θεο ς κα[ φι]λο[τ]ιμ[ α]ς [τ ς ε ς τ ν β]ουλ[ ν κα τ ν δ]μ[ον κα νειπε ν τ ν στ φανον το τον] διονυσ ων τ [ν]ν σ[τει τραγωιδ ν τ ι καιν ι γ νι κα παναθηνα ων κα λευσιν ων το]ς γυμνικο ς γ σι[ν] [τ ς δ ναγορ]ε σεως το στεφ νου πιμε[ληθ ναι το ς στρατηγο ς κα τ ν] ταμ αν τ ν στρατ[ιωτικ] [ν] π[αιν]σαι [δ] κα το ς διδασκ λους τ ν [τε παιδοτρ βην λυσικρ την κ]εφ[αλ] θεν κα τ ν πλ[π]μ[ χον] νικ δαν 0[ελι]τ α κα τ ν κοντιστ ν ρωνα [ ναγυρ σιον κα τ ν τοξ την διο]κ[λ]ν κολων θεν κα τ ν [φ τ]ην καλχηδ να περιθο δην κα τ ν γραμμα[τ α α τ ν μενεκλ ν κυδαντ δην κα τ ν]π[ηρ] την [δι]ον σιον ε [πυρ]δην κα[ σ]τ[εφαν] σαι καστον α τ ν θαλλ[ο στ]εφ νω[ι. ναγρ ψαι δ τ δε τ ψ φι]σμα τ [ν γ]ρ[αμ]ματ α τ[ ν]
+[κατ πρυτανε αν ε ς στ λην λιθ νην κα σ]τ [σαι ν γορ ι τ δ γεν μενον ε ς α τ ν] ν λω[μα] μερ σα[ι]
+[τ ν ταμ]αν [τ ν στρατιωτικ ν].
+ δ μος
+τ ν κοσμη[τ ν]
+θε χαριν
+ στια ου
+ κ κεραμ ων
+ βουλ 
+ δ μος
+το ς φ βους
+[ βουλ] 
+[τ ν κοσ]μητ ν
+[θε χαρι]ν
+στια ου
+ κ κεραμ ων
+------------
+ δ μος
+τ ν κοσμητ ν
+[θε χα]ριν
+ στια ου
+ κ κεραμ ων
+ π ληνα ου ρχοντος π τ ς α γε δος ν τ[η]ς πρυτανε ας σ δ[ωρο]ς πολ[λ]ων ου σκαμβων δης γραμμ [τευ]εν λαφηβολι νος ν τ σταμ νου ν τ τ ς πρυταν[ε] ας [ κκ]λησ α ν τ ι θε τρωι τ [ν προ] δρων πεψ φιζεν ρακλε δης πα[υ]σιλ που πειραιε ς κα σ[υμ]πρ εδροι δοξεν τ ι βουλ ι κα τ [ι δ]μ σωκρ της ριστ ωνος ξ ο ου [ε] πεν πειδ θε χαρις σ[τια]ου κ κεραμ ων χειροτονηθε ς κοσ[μη]τ ς π το ς φ βους ε ς τ ν π π[π] ρχου ρχοντος νιαυτ ν πο[ι] σατο τ ν ναστροφ ν ν π σιν τ[ο] [ς]
+κατ τ ν ρχ ν καλ ς κα δικα ως κα διετ λεσεν παντα πρ ττων κολο θως το ς ν μοις κα το ς ψηφ σμασιν προενο θη δ κα τ ς τ ν φ βων εταξ ας [ ντ]ων τ ν [ ριθμ] ν κατ ν τετταρ κοντα ν ς κα τ ν πλ[ε]στην σπουδ ν κα πιμ λειαν ποι σατ[ο κ]α τ ς παιδε[ ας] α τ ν κα τ ς περ τ μαθ ματα φιλοτιμ ας συνετ ρησεν δ α τ[ο]ς κα παρ λον τ ν [νι]αυτ ν μονοο ντας πρ ς λλ [λου]ς κα ε πειθε ς κατεσκε ασεν
+το ς φ αυτο κα[ τ ν] στρατηγ ν πα[ραγγ]ελλομ νοις π σιν σως κα κη[δεμο]νικ ς προσφερ μενος θυσε[ν]
+[δ κ]α τ ς θυσ ας μετ α [τ ν π ρ το δ μου] το ς θεο ς κα το ς ε εργ ταις [ν] το [ς καθ κ]ουσιν χρ νοις ποι σατο δ κα τ [ν]
+[ π δ]ειξιν α τ ν [ν τε το ς πλοις κα] το ς [π]ερ τ ναυτικ καθ περ περ το [των προ]στ τακται κα περ π ντων τ ν
+[κατ τ ν]ρχ [ν δωκεν τ ς ε θ να]ς ν τ ι δ[ικα]στηρ ωι κατ τ ν ν μον δι[ τε τ π]ροειρημ να ο φηβοι βουλ μεν[οι κατ τ] καθ κον πον [μειν α]τ ι τ ς κατα[ξ ας] χ ριτας στεφ νωσαν [α τ ν κ]α προαιρο μενοι στ σαι α το 
+[ε]κ να παρακαλο σιν πιχ[ωρ] [σ]αι αυτο ς τ πον ε ς [τ ν ν θ]εσιν να ο ν βουλ κα [ δ μος φ]α νωνται το ς ναστραφ ντας [ν]
+[τ]α ς ρχα ς καλ ς κα π παντ ς το βελτ στ[ου τ ς καθ]ηκο σης τιμ ς ξιο ν[τες κα π] σιν φ μιλλον το ς π τα την
+[τ] ν ρχ ν καθισταμ νοις δικα ως κα τ ν α τ ν [τρ πον διεξ γ]ειν τ χηι γαθ ι δ[εδ χθαι] τ ι βουλ ι το ς λαχ ντας προ δρους ε ς τ ν πιο σαν κκλησ αν χρηματ σα[ι πε]ρ το των γ[ν] μην δ ξυμβ[ λλεσθα]ι τ ς βουλ ς ε ς τ ν δ μον τι δοκε τ ι βουλ ι παιν σαι τ ν κοσμητ ν τ ν φβων τ ν π ππ ρχου ρχον[τος θε] χαριν στια ου κ κεραμ ων
+κα στεφαν σαι α τ ν χρυσ ι στεφ νωι κατ τν ν μον ρετ ς νεκε[ν κ]α δικ[αι]ο[σ νης τ]ς πρ ς το ς φ βους κα ν[ειπε ν]
+τ ν στ φανον το τον διονυσ ων τ ν ν στει [τρ]αγ δ ν τ ι καιν ι γ νι [κ]α παναθ[η]να ων [κα]λευσιν ων το[ ς γυμνικ]ο ς γ σιν τ ς δ ναγορε σεως πιμελη[θ] ναι το ς στρατηγο ς πειδ κα ο φηβοι δι ν πεπο ηται ε ς [α το ς]
+[σ]πουδ ν κα φιλοτιμ αν βο λονται ναθε ν[α]ι α το ε κ να χαλκ ν πικεχωρ σθαι α το ς ποι σασθαι τ ν ν [θ]εσιν ο ν ε καιρον ε ναι φα νητα[ι πλ]ν ο ο ν μοι παγορε ουσιν. ναγρ ψαι δ τ δε τ ψ φισμα τ ν γραμ[ματ] α τ ν κατ πρυτανε αν ε ς στ λην λιθνην κα στ σαι ν γορ τ δ γεν μενον ε ς α τ ν ν λωμα μερ σα[ι τ ν
+τ]αμ αν τ ν στρατιωτικ ν.
+[φ]ιλοκλ ς νι χου ποτ μιος ε πεν πειδ ο φηβοι ο π υθ ου ρχοντος ν σαλαμ νι ν στει δ ππ ρχου παραγε[ν] μενοι δυσ πλο οις δικρ τοις π τ ν πομπ ν κα θυσ αν κα τ ν γ να τ ν α αντε ων τ ν τε πομπ ν συν πεμψαν τ 
+[α] αντι κα θυσαν μετ τε το ρχοντος κα το στρατηγο κα τ ν πιμελητ ν νεστρ φησαν δ ν τε τ πιδημ ε τ [κ]τως καθ περ ν α το ς ρμ ττον πως ο ν το των α το ς π ρχ π μνημα παρ το δ μου το σαλαμιν ων γαθε τ[ χηι δ]εδ χθαι τε βουλε το ς λαχ ντας προ δρους ε ς τ ν πιο σαν κκλησ αν χρηματ σαι περ το των γν μην δ ξυμβ λλεσ[θαι τ] ς βουλ ς ε ς τ ν δ μον τι δοκε τε β[ουλ παιν σαι το ς φ βους το ς π πυθ ου [ ρ]χοντος ν σαλαμ νι ν στ[ει]
+[δ ππ] ρχου κα τ ν κοσμητ ν α τ ν θε χαριν στια ου κ κεραμ ων κα στεφαν σαι α τ[ ν] χρυσ στεφ ν κατ τ ν ν [μον] 
+[κα νει]πε ν τ ν στ φανον το τον διονυσ ων [τ] ν ν σαλαμ νι τραγ δ ν τ γ νι τ ς δ ποι σ[εω]ς το στεφ νου κα ναγορε [σεως]
+πιμεληθ ναι τ ν ρχοντα κα τ ν στρατηγ ν κα το ς πιμελητ ς παιν σαι δ κα τ ν παιδοτ[ρ β]ην λυσικρ την κλειτομ χου [κεφαλ]θε[ν] κα τ ν πλομ χον νικ δαν νικ δα μελιτ α κα τ ν τοξ την διοκλ ν ξενοπε θου κολω[ν]θεν κα τ ν κοντιστ ν [ ρων]α ρ[α]κλε δου ναγυρ σιον κα τ ν [φ την κα]λχηδ να καλχηδ νος περιθο δην κα τ ν γραμμ[ατ] α α τ ν μενεκλ ν π[ολλω]ν ου κυδαντ δην κα τ ν πηρ [την] α τ ν διον[ σιον θ]εοτε χου ε πυρ δην κα στεφαν [σαι] καστον α τ ν θαλλο στ[ε]φ ν. ναγρ ψαι δ [τ δε τ ψ φισμ]α τ ν γραμμα[τ α το] δ μου ε ς στ λην λιθ νην κα στ[ σαι] ν τ α αντε ε ς δ τ ν [ναγ]ραφ ν τς [στ λης μ]ε[ρ]σ[αι τ ν τ]αμ αν κ τ ν ε [ς τ κατ ψ]ηφ σματα ναλισκομ νων τ [ι δ]μ.
+ο φηβε σαντες [π]ππ ρχ[ου] ρχοντο[ς] ρεχθε δος
+[δι]ογ νης διονυσ [ου] λαμπτρε ς
+[σ]ωσ θεος σωσιθ [ου] γρυλ θεν
+-----νετος διογ [ν]ου κηφ[ι]σιε ς
+[διον σ]ιος δημ νθου λαμπτρε ς
+[----κρ] της ρμοκρ του λαμπτρε ς
+[ζ]ωλος ζω λου ε ω[ν]υμε ς
+[λ]υσ μαχος ρχοντο[ς] λαμπτρε ς
+οσχ ων πιγ νου [λα]μπτρε ς
+α γε δο[ς]
+--- νωρ πολ[λ -- ρ]ικεε ς
+[σιλ]αν ς [σιλ]ανο[ γαρ]γ ττιος
+[ε]νομος φιλοστρ τ[ου ρα]φ νιος
+ρων ριστογε τονος τιθ[ρ]σιος
+[ γ]αθοκλ ς γαθοκλ ους ε ---
+[ε] μηλος νδραγ θου φηγα[ιε ς]
+[ε β]ουλος ριστον κου ρχιε ς
+---λαος ζωτικο φηγαιε ς
+νομακλ ς 
+μην δοτος μηνοφ λου ρχιε ς
+πανδιον δος
+φιλοκλ ς φιλων δου παιανιε ς
+[ ε]ροκλ ς λυσικρ του κυθ ρριος
+ι δοτος λιοδ ρου παιανιε ς
+[φ]ιλ θεος λιοδ ρου κυδαθηναιε ς
+λεωντ δος
+πυθ κριτος δημαιν του ε πυρ δης
+[σ] νικος κηφισοδ ρου ποτ μιος
+[κ]τησικλ ς δικαι ρχου δειραδι της
+ ντ φιλος ντιφ λου σκ[αμβων] δης
+[ ρ]χ λαος ρχελ ου --- ς
+----κος δημη[τρ ου ---]
+---------
+[πτο]λεμα[ι δος]
+-------χος σωσιβ ου θη[μακε ς]
+[καλλ θε]ος λυσι δου βερνικ [δης]
+[ ττιν] ς ρακλε δου φλυ[ε ς]
+[ ριστ] νικος ργα ου φλ[υε ς]
+ ρητυμ νης θεοδ [ρου ---]
+μην δοτος λ κωνος ---
+ νδρ λαος τιμ νορ[ος ---]
+ γαθοκλ ς γαθοκλ [ους ---]
+δρομοκλε δης δρομοκλε ----
+θεοδ σιος λκυον ως [καλ θεν]
+καλλιφ νης καλλιφ νου ---
+κρ των στια ου βερενικ δη[ς]
+μητρ δωρος θεοδ του φλυε ς
+νικ νωρ ρμ ππου φιδνα ος
+π ρρος π ρρου προσπ λτιος
+τιμοκρ της δι[οκ]λ ους βερενικδης
+χαρ δημος θηναγ ρου α γιλιε ς
+ε κλ ς σωκρ του α γιλιε ς
+ποσειδ νιος ποσειδων ου φλυ[ε ς]
+υ[θι]ν[ικο]ς 0[υθι]ον κου ο να ος
+[ κα]μαντ δος
+σ μμαχ[ος -]μ χου θορ κιος
+β κχιος λ νο[υ] ρμειος
+γλα κος [δι]οδ ρου κ κεραμ ω[ν]
+πολυχ [ρ]ης πολυκλε του π ριος
+ φαιστων φαιστ ωνος θορ κιο[ς]
+φ λων [φ]λωνος κ κεραμ ων
+ναυ[σι]μ δων πολυ ρχου ποτ[ μιος]
+ο νε δος
+ο -- νης νδροσθ νου λουσ[ι]ε ς
+τ[--]ς πολλοδ ρου περιθ[ο δης]
+--- ς μνασ ου φυλ σιος
+[--- ρι]στοκρ του χαρνε ς
+------ ς χαρνε ς
+------ θεν
+------ κοθωκ δης
+-------- σιος
+[------]θ[ε]ν
+---------
+[κεκροπ δος]
+----------------- δης
+[ ν]δρων νδρωνος α ξωνε ς
+[ ρι]στ βουλος τ μωνος μελιτ[ε ς]
+[φιλ]ωτ δης διονυτ συπαλ τ[τιος]
+λ ξανδρος ριστογ νου α ξ[ωνε ς]
+μ αρκος μα ρκου μελιτε ς
+ε νωρ ε νορος συπαλ ττιο[ς]
+μ νανδρος μεν νδρου α ξω[νε ς]
+μ σχος φρουρ ωνος μελιτε ς
+ ναξ λαος πα [σ]ωνος λαιε[ ς]
+ε κτ μων κηφισοφ ντος λα[ιε ς]
+ξ νων ξ νωνος λαιε ς
+νικ μαχος ιοκλ ους ξυπεται[ ν]
+χαρ ας [χαρ]ου μελιτε ς
+φιλ δημος φιλοδ μου [μελ]ιτε[ ς]
+τιμ θεος τιμοθ ου λαιε ς
+ θηνοφ νης [θη]νοδ ρου α ξω[νε ς]
+ πποθωντ δος
+φιλ μων φειδ ου πειραιε ς
+ε εργ της πιγ νου κ κο λ[ης]
+ζ πυρος ριστοκρ του ζη[νιε ς]
+νικ στρατος ρακλε δου κ [κο λης]
+π πλιος γα ου πειραιε ς
+σωσικρ της διονυσ ου πε[ιραιε ς]
+ε νοστ δης ντιδ ρου πε[ιραιε ς]
+α αντ δος
+ [λ] ξανδρος λεξ νδρου φαλη[ρε ς]
+τιμο-----ς ρισ[τε δ]ου φα[ληρε ς]
+ πολ[λ ---- φαληρε ς]
+α σχ νης ------
+ πολλ νιος θεο -----
+ νδρων νδρων[ος ---]
+ ρακ ν ε γε τον[ος αμνο σιος]
+ ρακ ν ρακ ντ[ος αμνο σιος]
+μοσχ ων παρμε[ν -----]
+ ρτ μων ε θυδ ----
+χαριμ δης φαντ -----
+ ντιοχ [δος]
+ ρμοκλ ς κλειδ μ[ου ---]
+ντιγ νης ντιγ νου μφιτρο[π θεν]
+[φ]λιππος ντιμ χου παλλην[ε ς]
+[κα]λλικρ της καλλικρ του κριω[ε ς]
+[σ] λευκος νδρον κου ναφλ στ[ιος]
+ρων ρωνος παλληνε ς
+[θ]ε ξενος 
+--ανδρος δημοφ νου λωπεκ θ[εν]
+[α]γιαλ ς ε κλε νου παλληνε ς
+[ ρ]ιστομ νης ε β ου θοραιε ς
+[--μ]οκρ της φ λωνος παλληνε [ς]
+[-- τ] μαχ[ος --]ου ναφλ στ[ιος]
+ [τταλ δος]
+--- ος -- [του ---]
+[κ]λλιππος πομπδου θμον[ε ς]
+[ε]βοιος ρμαγ ρου προβαλ[ σι]ος
+[μη]τρ δωρος νδρομ χου θμονε[ ς]
+ν σ[ιμο]ς κρατ ππου προβαλ σι[ος]
+[πολ] μαρ[χ]ος φιλοξεν δου πολλων[ιε ς]
+[σ]ωσιγ ν[ης] σωσιγ νου προβαλ σιο[ς]
+[σ]τρατ νικος φαν ου γκυλ θεν
+[σ]τρατ ν[ι]κος λαφα ου σουνιε ς
+--- ς ε φρ νορος π ριος
+[----σ]τρατο[ς] σωστρ του σικυ νι[ος]
+[--- δ]ωρος πο[λ]λων ου κερκιν τ[ης]
+-----νιος πολλ[ω]ν ου ρακλε[ της]
+[ σκλ]ηπι δης σκλη[π]ι δ[ου ---]
+[ μμ] νιος μμων ου λαοδ[ικε ς]
+[ σκ]ληπι δης φροδισ ου ---
+[κρατ]νος κρατ νου ρακλε της
+[νικομ] δης νικομ δου βηρ τιος
+----δοτος σα νδου θεσπιε ς
+[ποσ]ειδ νιος ποσειδων ου ντιοχε[ ς]
+[σατυ]ρ ων σατυρ ωνος λαοδικε ς
+-----αχος διογν του ντιοχε ς
+-----διος δημοκλ ους σολε ς
+--- π λοπος λαοδικε ς
+[-- ν]δρος μεν νδρου ντιοχε ς
+--- ς ποπλ ου ωμα ος
+ βουλ 
+ δ μος
+τ ν [πα]ιδοτρ [βην]
+λυ[σικρ]την
+κεφαλ θεν
+ β[ουλ]
+ δ [μος]
+τ ν πλ[ομ χον]
+νικ δα[ν]
+μελιτ[ α]
+[ βουλ]
+[ δ μος]
+[τ ν κοντιστ ν]
+[ ρωνα]
+[ ναγυρ σιον]
+[ βουλ]
+[ δ μος]
+[τ ν τοξ την]
+[διοκλ ν]
+[κολων θεν]
+ [βουλ]
+ δ[ μος]
+[τ ν] φ τη[ν]
+καλχη[δ να]
+περιθο [δην]
+[ βουλ]
+[ δ μος]
+[τ ν γραμματ α]
+[μενεκλ ν]
+[κυδαντ δην]
+ βουλ 
+ δ μος
+τ ν πηρ την
+διον σιον
+ε πυρ δην.</div>
+            </div>
+        </div>
+        <div class="split-col-right">
+            <h3>Thematic Analysis</h3>
+            
+        <div class="theme-card" onmouseover="highlightQuote('δοξεν τ ι βουλ ι κα τ ι δ μ')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Content/Official and Legal Documents/Decrees" class="tag domain-tag" style="text-decoration:none;">Content</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
+                    <div class="theme-path">Content > Official and Legal Documents > Decrees</div>
+                    <div class="theme-label">Decrees</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "δοξεν τ ι βουλ ι κα τ ι δ μ"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('παιν σαι το ς φ βου')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Content/Honorific and Commemorative Inscriptions/Honorific Inscriptions" class="tag domain-tag" style="text-decoration:none;">Content</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
+                    <div class="theme-path">Content > Honorific and Commemorative Inscriptions > Honorific Inscriptions</div>
+                    <div class="theme-label">Honorific Inscriptions</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "παιν σαι το ς φ βου"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('ο φηβε σαντες')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Content/Administrative Records and Lists/Lists of Officials or Citizens" class="tag domain-tag" style="text-decoration:none;">Content</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
+                    <div class="theme-path">Content > Administrative Records and Lists > Lists of Officials or Citizens</div>
+                    <div class="theme-label">Lists of Officials or Citizens</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "ο φηβε σαντες"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('ε ς στ λην λιθ νην')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Type/Object Type/Monumental Stone Objects/Stele" class="tag domain-tag" style="text-decoration:none;">Type</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
+                    <div class="theme-path">Type > Object Type > Monumental Stone Objects > Stele</div>
+                    <div class="theme-label">Stele</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "ε ς στ λην λιθ νην"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('στ λην λιθ νην')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Type/Material/Stone/Marble" class="tag domain-tag" style="text-decoration:none;">Type</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
+                    <div class="theme-path">Type > Material > Stone > Marble</div>
+                    <div class="theme-label">Marble</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "στ λην λιθ νην"</p>
+                </div>
+            </div>
+        </div>
+        
+            <div style="margin-top:2rem;"><h3>Entities</h3><div><a href="../search.html?q=Lenaios" class="tag entity-tag" style="text-decoration:none;">👤 Lenaios <small>(Archon)</small></a><a href="../search.html?q=Theocharis" class="tag entity-tag" style="text-decoration:none;">👤 Theocharis <small>(Kosmetes)</small></a><a href="../search.html?q=Sokrates" class="tag entity-tag" style="text-decoration:none;">👤 Sokrates <small>(Proposer)</small></a><a href="../search.html?q=Lysikrates" class="tag entity-tag" style="text-decoration:none;">👤 Lysikrates <small>(Paidotribes)</small></a><a href="../search.html?q=Hipparchos" class="tag entity-tag" style="text-decoration:none;">👤 Hipparchos <small>(Archon (previous year))</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Athens <small>(Polis)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Salamis <small>(Island)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Eleusis <small>(Deme)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Phaleron <small>(Deme)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Peiraieus <small>(Deme)</small></a><a href="../index_deities.html" class="tag entity-tag" style="text-decoration:none;">⚡ Artemis Agrotera</a><a href="../index_deities.html" class="tag entity-tag" style="text-decoration:none;">⚡ Dionysos</a><a href="../index_deities.html" class="tag entity-tag" style="text-decoration:none;">⚡ Zeus Soter</a><a href="../index_deities.html" class="tag entity-tag" style="text-decoration:none;">⚡ Athena Sotira</a><a href="../index_deities.html" class="tag entity-tag" style="text-decoration:none;">⚡ Ajax</a></div></div>
+            <div class="ai-analysis-box"><h3>AI Analysis Summary</h3><p>This inscription (IG II² 1008) is a major Athenian ephebic decree from 118/7 BC. It honors the ephebes of the previous year (119/8 BC) and their kosmetes, Theocharis of Kerameis, for their participation in religious festivals (Eleusinian Mysteries, Dionysia, Aianteia), military training, and athletic competitions. The text provides a detailed account of ephebic duties and concludes with a complete roster of the ephebes organized by tribe, making it a critical source for Athenian social and religious history.</p></div>
+        </div>
+    </div>
+  </main>
+</body>
+</html>
+    

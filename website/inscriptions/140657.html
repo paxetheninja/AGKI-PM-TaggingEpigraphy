@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PHI-140657 - AGKI</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <style>
+    /* Custom Scrollbar Styling */
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: rgba(0,0,0,0.05); }
+    ::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #aaa; }
+
+    .page-container { max-width: 1400px; margin: 0 auto; padding: 2rem; }
+    .back-link { display: inline-block; margin-bottom: 1rem; color: var(--primary); font-weight: 600; }
+    .text-viewer-original { display: grid; grid-template-columns: 40px 1fr; gap: 2rem; font-family: "New Athena Unicode", "Gentium Plus", "Times New Roman", serif; font-size: 1.25rem; line-height: 1.6; background: var(--panel); padding: 2rem; border: 1px solid var(--border); border-radius: 4px; margin-bottom: 2rem; color: var(--text); }
+    .line-numbers { text-align: right; color: var(--muted); font-size: 1.25rem; line-height: 1.6; user-select: none; opacity: 0.5; font-family: inherit; white-space: pre; padding-right: 1rem; border-right: 1px solid var(--border); }
+    .greek-content { white-space: pre-wrap; word-break: break-word; padding-left: 1rem; }
+    .highlight-evidence { background-color: var(--accent); color: white; border-radius: 2px; padding: 0 2px; }
+    .theme-card { background: var(--panel); padding: 1rem 1.5rem; border-left: 4px solid var(--primary); margin-bottom: 0.75rem; border: 1px solid var(--border); border-left-width: 4px; }
+    .ai-analysis-box { background: rgba(31, 167, 163, 0.05); padding: 2rem; border-radius: 8px; border: 1px solid var(--border); margin-top: 2rem; }
+    .evidence-box { max-width: 500px; text-align: right; }
+    .evidence-quote { font-size: 0.85rem; font-style: italic; color: var(--muted); margin: 0; }
+    .badge.green { background: #e6f4ea; color: #137333; border-color: #137333; }
+    .badge.orange { background: #fef7e0; color: #b06000; border-color: #b06000; }
+    .badge.red { background: #fce8e6; color: #c5221f; border-color: #c5221f; }
+    .entity-tag { background: rgba(217, 123, 61, 0.1); color: var(--accent-2); margin-right: 0.5rem; margin-bottom: 0.5rem; display: inline-block; padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.9rem; border: 1px solid rgba(217, 123, 61, 0.2); }
+    .split-container { display: block; }
+    .split-container.active { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+    .split-container.active .split-col-right { position: sticky; top: 20px; max-height: 90vh; overflow-y: auto; padding-right: 10px; }
+  </style>
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+
+    function toggleSplitView() {
+        const container = document.getElementById('main-content');
+        const btn = document.getElementById('splitViewBtn');
+        container.classList.toggle('active');
+        btn.textContent = container.classList.contains('active') ? 'View: Split' : 'View: Standard';
+    }
+
+    function copyCitation() {
+        const citation = "AGKI Project. (2026). Inscription PHI-140657 . Retrieved from " + window.location.href;
+        navigator.clipboard.writeText(citation);
+        alert("Citation copied to clipboard!");
+    }
+
+    function highlightQuote(quote) {
+        const container = document.querySelector('.greek-content');
+        if (!container || !quote) return;
+        if (!container.dataset.original) container.dataset.original = container.innerHTML;
+        else container.innerHTML = container.dataset.original;
+        
+        const regex = new RegExp(quote.trim().replace(/\s+/g, '\\s+'), 'g');
+        container.innerHTML = container.innerHTML.replace(regex, match => `<mark class="highlight-evidence">${match}</mark>`);
+    }
+
+    function clearHighlight() {
+        const container = document.querySelector('.greek-content');
+        if (container && container.dataset.original) container.innerHTML = container.dataset.original;
+    }
+
+    function updateFontSize(size) {
+        const v = document.getElementById('original-view');
+        if(v) v.style.fontSize = size + 'px';
+    }
+
+    function openReportModal() { document.getElementById('reportModal').style.display = 'block'; }
+    function closeReportModal() { document.getElementById('reportModal').style.display = 'none'; }
+    function sendReport() {
+        const category = document.getElementById('reportCategory').value;
+        const desc = document.getElementById('reportDesc').value;
+        const fix = document.getElementById('reportFix').value;
+        const subject = `AGKI Error Report: PHI-140657`;
+        const body = `Category: ${category}%0D%0ADescription: ${desc}%0D%0AProposed Fix: ${fix}`;
+        window.location.href = `mailto:admin@agki-project.org?subject=${encodeURIComponent(subject)}&body=${body}`;
+        closeReportModal();
+    }
+  </script>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="brand"><h1><a href="../index.html">AGKI Tagging Tool</a></h1></div>
+    <nav class="nav-links">
+        <a href="../index.html" class="nav-item">Home</a>
+        <a href="../search.html" class="nav-item">Search</a>
+        <a href="../explore.html" class="nav-item">Explore</a>
+        <a href="../indices.html" class="nav-item">Indices</a>
+    </nav>
+    <div class="header-controls">
+        <button class="theme-toggle-btn" onclick="toggleTheme()" id="themeBtn">Dark Mode</button>
+    </div>
+  </header>
+
+  <script>
+    const themeBtn = document.getElementById('themeBtn');
+    function updateThemeBtn() {
+        const current = document.documentElement.getAttribute('data-theme');
+        if(themeBtn) themeBtn.textContent = current === 'light' ? 'Dark Mode' : 'Light Mode';
+    }
+    updateThemeBtn();
+    window.toggleTheme = function() {
+        const current = document.documentElement.getAttribute('data-theme');
+        const next = current === 'light' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        updateThemeBtn();
+    }
+  </script>
+
+  <main class="page-container inscription-page">
+    <div class="inscription-toolbar">
+        <a href="../search.html" class="back-link"><- Back to Dashboard</a>
+        <div class="inscription-actions">
+            <button id="splitViewBtn" onclick="toggleSplitView()" class="button secondary compact">View: Standard</button>
+            <button onclick="openReportModal()" class="button error compact">Report Error</button>
+        </div>
+    </div>
+
+    <!-- Report Modal -->
+    <div id="reportModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:1000;">
+        <div style="background:var(--panel); width:90%; max-width:500px; margin:10% auto; padding:2rem; border-radius:8px; border:1px solid var(--border);">
+            <h3>Report Error for PHI-140657</h3>
+            <label>Error Category</label>
+            <select id="reportCategory" style="width:100%; padding:0.5rem; margin-bottom:1rem;">
+                <option value="Incorrect Tag">Incorrect Tag / Theme</option>
+                <option value="Missing Entity">Missing Person / Place</option>
+                <option value="Translation Error">Translation / Text Issue</option>
+                <option value="Other">Other</option>
+            </select>
+            <label>Description</label>
+            <textarea id="reportDesc" rows="3" style="width:100%; margin-bottom:1rem;"></textarea>
+            <label>Proposed Fix</label>
+            <textarea id="reportFix" rows="2" style="width:100%; margin-bottom:1.5rem;"></textarea>
+            <div style="display:flex; justify-content:flex-end; gap:0.5rem;">
+                <button onclick="closeReportModal()" class="button secondary">Cancel</button>
+                <button onclick="sendReport()" class="button">Create Email Report</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="main-content" class="split-container">
+        <div class="split-col-left">
+            <section class="inscription-hero">
+                <div class="inscription-title-row">
+                    <h2>Inscription PHI-140657</h2>
+                    <div class="inscription-actions">
+                        <button onclick="copyCitation()" class="button secondary compact">Cite</button>
+                        <a href="https://epigraphy.packhum.org/text/140657" target="_blank" class="button secondary compact">View on PHI</a>
+                    </div>
+                </div>
+                <div class="inscription-meta">
+                    <div class="meta-item"><div class="label">Provenance</div><div class="meta-value"><a href="https://pleiades.stoa.org/places/1001896" target="_blank" title="View in Pleiades">Sicilia</a> &gt; <a href="https://pleiades.stoa.org/places/462225" target="_blank" title="View in Pleiades">Halaesa</a></div></div>
+                    <div class="meta-item"><div class="label">Date</div><div class="meta-value"></div></div>
+                    <div class="meta-item"><div class="label">Completeness</div><div class="meta-value"><span class="badge info">fragmentary</span></div></div>
+                </div>
+            </section>
+            <div class="inscription-title-row">
+                <h3>Original Text</h3>
+                <div class="font-size-control">
+                    <input type="range" min="14" max="32" value="20" oninput="updateFontSize(this.value)">
+                </div>
+            </div>
+            <div id="original-view" class="text-viewer-original">
+                <div class="line-numbers">1
+
+
+
+5
+
+
+
+
+10
+
+
+
+
+15
+
+
+
+
+20
+
+
+
+
+25
+
+
+
+
+30
+
+
+
+
+35
+
+
+
+
+40
+
+
+
+
+45
+
+
+
+
+50
+
+
+
+
+55
+
+
+
+
+60
+
+
+
+
+65
+
+
+
+
+70
+
+
+
+
+75
+
+
+
+
+80
+
+
+
+
+85
+
+
+
+
+90
+
+
+
+
+95
+
+
+
+
+100
+
+
+
+
+105
+
+
+
+
+110
+
+</div>
+                <div class="greek-content">[-------------------] τ ν π κα[-------------- κα]τ το ρ ου ς τ ν πο[ταμ ν ------- κα κατ] το ποταμο στε ποτ 
+[τ ν ο σκον τ ν ρ ζοντ]α τ ν κλ ρον κα ν το ο[ σκου ς τ ν δ ν τ] ν π τ ν π ρραν α λα αι α [πιγεγραμμ ναι] α ται κολουθ οντι τ κλ ρ το τ.
+[τ ------] τ π τ ν χετ ν χρι ποτ τ ν κρ ναν
+[τ ν π]ρραν ο κ ργαξε ται κα περ στασιν φησε τα[ι]
+π δας παντ τ δ δ νδρεα καρπε σετ[αι].
+ π το τ ρμονος το ποτ τ κρ ν τ π ρρ κατ τ ς δο ς
+τ ν λα αν τ ν κολοβ ν ν τ ρμων κα ς τ ν λα αν ν 
+τ ρμων κα τ δ ς τ ν ποταμ ν κα κατ το ποταμο ς
+τ ριον το κλ ρου κα ς τ ρια το. κλ ρου α λα αι α ται α πιγεγραμμ ναι πονται τ κλ ρ το τ.
+ π τ ς δο τ ς ξεν δος κατ τ ς δο τ ς παρ τ 
+μειλιχιε ον ς τ ν ο σκον κα κατ το ο σκου ς
+τ ν συμβολ ν το ο σκου κα ν το ο σκου ς τ ν
+ δ ν τ ν ξεν δα κολουθε τ κλ ρ το τ τ δωρ τ κ τ ς κρ ννας κα το βαλανε ου τ πορρ ον
+ π το ρ ου το κλ ρου κατ τ ς δο τ ς γο σας
+ π τ τ πανον ς τ ν σκαφι ν τ ν παρ τ ν θεματε τιν κα ς α σκαφια παρ τ ν λον ς τ ν λα αν ν 
+τ ρμων κα ς τ ν λα αν ν τ ρμων κα ς τ ν ο σκον κα ν το 
+ ο σκου ς τ ν δ ν τ ν π τ τ πανον α λα αι α 
+ πιγεγραμμ ναι α ται πονται τ κλ ρ το τ.
+ π τ ς σκαφι ς τ ς παρ τ ν θεματε τιν ς τ οε διον κα κατ το οειδ ου ς τ ν γρι λαιον ν τ ρμων 
+κα π στρεμμα ς τ ν λα αν ν τ ρμων κα ς τ ν λα αν ν τ ρμων κα ς τ ν λα αν ν τ ρμων κα ς τ ν λα αν
+ ν τ ρμων κα ς τ ν π τρον ν τ ρμων κα ς τ ν λα αν ν 
+τ ρμων κα ς τ ν σκαφι ν κα ς τ ν τ ρμωνα τ ν ποτ τ π ρρ κα 
+κατ τ ς δο στε ποτ τ ν ο σκον κα ν το ο σκου
+ στε ποτ τ ν λα αν τ ν πιγεγραμμ ναν κα ς τ ρια
+το κλ ρου α λα αι α πιγεγραμμ ναι α ται πονται τ κλ ρ το τ.
+ π το γριελα ου ν τ ρμων κα κατ το οειδ ου ς τ ν λα αν 
+ ν τ ρμων κα ς τ ν λα αν ν τ ρμων κα ς τ ν λα αν τ ν πιγεγραμμ ναν π λις κα ς α σκαφια α παρ το ς πασσ λους
+κα κ τω ς α σκαφια κα ο π σσαλοι χρι ς τ ν σκαν ν 
+κα κ τ ς σκαν ς ν το το χου κα ς το χος ς
+τ ν σκαφι ν κα ς α σκαφια ς τ ν τ ρμονα τ ν π ρ τ ς δο κα ν τ ς δο ς τ ν τ ρμονα τ ν ποτ τ π ρρ κα ς
+τ ρια το κλ ρου σκαν κοιν ποτ τ ν μισθωσ μενον τ ν κλ ρον α λα αι α πιγεγραμμ ναι
+α ται πονται τ κλ ρ το τ.
+ π τ ς σκαν ς κ τω ς α σκαφια κα ο π σσαλοι
+ ς τ ν το χον κα ς το χος ς τ ν σκαφι ν κα ς
+α σκαφια ς τ ν ποταμ ν κα κατ το ποταμο στε ποτ τ ν δ ν τ ν ρ ζουσαν τ ν κλ ρον κα 
+ ς τ ρια το κα κλ ρου.
+ π το ρ ου το κλ ρου κατ τ ς δο τ ς π τ τ πανον ς τ ν γων αν τ ν νωτ ταν το περιτειχ σματος
+το ταπ νου κα κ το ταπ νου κατ τ ς ποθ δου τ ς ς τ 
+ δρανιε ον ς τ ν λα αν ν τ ρμων κα ς τ ς σιδ ας κα 
+ ς τ ν λα αν ν τ ρμων κα ς α σκαφια α π τ ν τ ρμονα
+ ς τ οε διον κα ν το οειδ ου ς τ ν σκαφι ν τ ν παρ 
+τ ν θεματε τιν κα ς τ ν δ ν τ ν γουσαν π τ τ πανον 
+α λα αι α πιγεγραμμ ναι α ται πονται τ κλ ρ το τ.
+ π το ταπ νου κατ τ ς δο στε ποτ τ οε διον κα κατ 
+το οειδ ου στε ποτ τ ν π σσαλον τ ν παρ τ οε διον κα 
+ ς ο π σσαλοι στε ποτ τ ριον το κλ ρου κα ς τ ρια
+το κλ ρου παρεξε π θοδον ξ πεδον ποτ τ δρανιε ον κα π δας ποστασε π το ναο παντ.
+ π τ ς σκαφι ς τ ς παρ τ ν πικαν ν κατ το πικανο 
+ ς τ ν ποταμ ν κα κατ το ποταμο στε κατ τ ν τ ρμονα τ ν
+ ν τ κλ ρ κα ν τ ν τε ς τ ν τ ρμονα τ ν ποτ τ συκ τ ν π 
+τ ν δ ν κα ς δ ς στε ποτ τ ριον το κλ ρου το μεγ λου δρυμο κα ς τ ριον το κλ ρου το μεγ λου δρυμο.
+ λαιοκ μιον δ κλαρον
+περ στασις τ λαιοκομ ε τ ς στι ερ πεται ο ποιησο ντι δ βυρσοδ ψιον ο δ μαγειρικ ν ο μισθωσ μενοι τ λαιοκ μιον.
+[------------------------]ου κα
+[----------------------]ν τ ν π τ 
+[--------------------] ς τ ν τ ρμονα
+[--------------- τ ρ]ιον το κλ ρου κα 
+[------------ου τ]ο κατ το ου το πικανο 
+[------------- κ]α ς τ ν τ ρμονα κα ς τ ν σκαφι ν τ ν
+[παρ ------- κ]α ς τ ρμων κα α σκαφια ς τ ν λα [αν ν τ ρμων κα] ς τ ριον το κλ ρου κα ν το ρ ου το [κλ]ρου στε ποτ τ ριον το πικ ττου κα ς τ ρια το 
+πικ ττου το τ τ κλ ρ πονται α λα αι α πιγεγραμμ ναι α ται.
+ π το τ ρμονος το π τ ν σπ δα ς τ ν πλ ταμον ε τ ρμων κα ς τ ν λα αν ν τ ρμων κα ς τ ν σκαφι ν
+κα ς α σκαφια ς τ ν λα αν ν τ ρμων κα ς τ ν δ ν
+τ ν π το ταπ νου κα ν τ ς δο στε ποτ τ ριον
+το κλ ρου κα ς τ ρια το κλ ρου ς τ ν τ ρμονα κα ς τ ρμων χρι κατ τ ν πλ ταμον το τ 
+τ κλ ρ πονται α λα αι α ται α πιγεγραμμ ναι.
+ π το ρ ου το κλ ρου κατ το πικανο ς τ ν σκαφι ν
+τ ν παρ τ ν πικαν ν κα ς α σκαφια α π τ ν τ ρμονα
+ ς τ ν δ ν τ ν γουσαν π τ τ πανον κα ν τ ς δο 
+ στε ποτ τ ριον το κλ ρου κα ς τ ρια το κλ ρου.
+το ς παρ τ ν ο ν τ ν λαισον δαιθμο ς ζ.
+ π το ου το λα σου ς τ ν τ ρμονα τ ν ν τ π τρ τ ν παρ τ ς
+πυ λους κα ν το χα ς τ ν π τρον ν τ ρμων κα ς τ ν δ ν κα 
+ ν τ ς δο ς τ ν ο σκον κα ν το ο σκου ς τ ν σκαφι ν
+τ ν π τ τ ρμονι κα ς τ ρμων π ρ τ ς σκαφι ς στε ποτ τ ν λον κα π ρ τ ς λου ς τ ρμων π ρ τ ν
+σκαφι ν κα ς τ ν σκαφι ν τ ν παρ τ ν λα αν κα π ρ τ ς λα ας ς τρ βος κα α σκαφια ς τ ν λα αν
+τ ν πιγεγραμμ ναν π λις κα κ τ ς λα ας ς τ ρμων
+ π ρ τ ν λα αν ς τ ν σκαφι ν κα νω ς τ ς μνους
+κα ς α μνοι περ τ ν τ ρμονα κα ς τ ν σκαφι ν
+κα νω ς τ ν τ ρμονα τ ν ν τ λ θ κα ς τ ρμων π 
+τ ν λον κα ς τ ν τ ρμονα τ ν ν τ π ργ κα π τ ν π ργον ς τ ν ο σκον τ ν π τ ν να τ ν ν τ π ργ ε 
+τ ρμων κα κατ το ο σκου ς τ ν ο ν τ ν λαισον κα ν το 
+ λα σου ς τ ν ρχ ν τ ς περιωρεσ ας ν το τ γρ ου.
+ π τ ς ιν ς τ ς ν τ π ργω ε τ ρμων π τ ν π ργον στε
+ποτ τ ν τ ρμονα τ ν ν τ π ργ κα π το τ ρμονος κ τω ς α σκαφια ς τ ν χρ δα τ ν πιγεγραμμ ναν π λις κα ς α σκαφια ς τ ν λα αν τ ν πιγεγραμμ ναν π λις κα ς τ ν
+συκ αν τ ν πιγεγραμμ ναν π λις κα ς α σκαφια στε ποτ τ ν τ ρμονα κα ς τ ρμων ς τ ν ο σκον κα κατ το 
+ ο σκου ς τ ν ο ν τ ν λαισον κα ν το λα σου ποτ τ 
+ ριον το κλ ρου ν το τ λαφ ος.
+ π το τ ρμονος το ν τ π ργ το ρ ζοντος τ ν κλ ρον στε
+ποτ τ ν ο σκον τ ν κ το διαπα ματος οντα κα κατ το ο σκου ς τ ν συμβολ ν το οειδ ου κα ν το οειδ ου ς τ ν τ ρμονα κα ς τ ρια το κλ ρου ν το τ λαφ ος.
+ π το ο σκου το κ το διαπα ματος π τ ν π ργον
+ στε ποτ τ ν ο σκον τ ν οντα κ τ ς ιν ς τ ς κατ τ ερ ν ε τ χ λκια κατ τ μαγειρικ ν κα κατ 
+το ο σκου στε ποτ τ ν τ ρμονα ε σκαφι κα ς 
+τ ρμων χρι ποτ τ ν ο σκον τ ν οντα κ το διαπα ματος τ ν ρ ζοντα τ ν κλ ρον.
+ π το τ ρμονος ε σκαφι κατ το ο σκου ς τ ν
+σκαφι ν κα ς α σκαφια ς τ ν ο ν τ ν λαισον κα ν
+το λα σου στε ς τ ν ο σκον τ ν ρ ζοντα τ ν κλ ρον κα ν το ο σκου στε ς τ ν τ ρμονα τ ν ρ ζοντα τ ν κλ ρον.
+ π τ ς ιν ς τ ς κατ τ ερ ν το π λλωνος τ ς κατ τ χ λκια τ ποτ τ μαγειρικ π τ ν π ργον στε ποτ τ ν ε να τ ν πελαστ ταν ποτ τ τυρρ διον κα κατ το χα ς α σκαφια ς τ ν λον κα ς
+τ ν τ ρμονα κα κ τω ς α σκαφια ς τ ν τ ρμονα κα ς 
+τ ρμων κα α σκαφια ς τ ν ο σκον κα κατ το ο σκου ς τ ν ο ν τ ν λαισον κα ν το λα σου ς τ 
+ ριον το κλ ρου.
+ π το π ργου κατ το βαθ ος ου ς τ ν ο ν τ ν λαισον κα ν το λα σου χρι ποτ τ ν ο σκον κα ν το 
+ ο σκου χρι ποτ τ ν π ργον ν το τ ρακλε δα πολλων ου κα φιλοξ νου μεν σκου.
+σκυρε νοις δαιθμο ς ιι 
+ π τ ς ειν ς καθ ς π ργος χρι ποτ τ ν ε να τ ν χομ ναν το τυρριδ ου κα π τ ς ειν ς κατ το οειδ ου χρι ποτ τ ν τ ρμονα κα ς τ ρμων π ρ τ ς λου κα ν το χα ς α σκαφια ς τ ν ε να ν το τ 
+ στιε ου θ στωνος κα πελαγ ου.
+ π το τ ρμονος κατ το ο σκου στε ποτ τ ν τ ρμονα 
+ε σκαφι κα τ τ ρμονι στε ποτ τ οε διον τ ον ν μ σον τ ν γαε νων κα ν το οειδ ου στε ποτ 
+τ ν τ ρμονα κα ς τ ρμων ς τ οε διον.
+ π το τ ρμονος κατ το οειδ ου το ν μ σον τ ν γαε νων στε ποτ τ ν τ ρμονα ε σκαφι κα ς τ ρμων
+κα α σκαφια ν το χα ς τ ν τ ρμονα κα π ρ τ ς λου κα ς
+τ ν τ ρμονα κα ς τ ρμων χρι ποτ τ ν ο σκον.</div>
+            </div>
+        </div>
+        <div class="split-col-right">
+            <h3>Thematic Analysis</h3>
+            
+        <div class="theme-card" onmouseover="highlightQuote(' ριον το κλ ρου')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Content/Administrative Records and Lists/Registers and Catalogues" class="tag domain-tag" style="text-decoration:none;">Content</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
+                    <div class="theme-path">Content > Administrative Records and Lists > Registers and Catalogues</div>
+                    <div class="theme-label">Registers and Catalogues</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: " ριον το κλ ρου"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('μισθωσ μενον τ ν κλ ρον')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Content/Official and Legal Documents/Contracts and Private Legal Acts" class="tag domain-tag" style="text-decoration:none;">Content</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">95% Conf.</span>
+                    
+                    <div class="theme-path">Content > Official and Legal Documents > Contracts and Private Legal Acts</div>
+                    <div class="theme-label">Contracts and Private Legal Acts</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "μισθωσ μενον τ ν κλ ρον"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote(' π το τ ρμονος το ποτ τ κρ ν')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Content/Identification and Ownership Marks/Boundary Markers (Horoi)" class="tag domain-tag" style="text-decoration:none;">Content</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">95% Conf.</span>
+                    
+                    <div class="theme-path">Content > Identification and Ownership Marks > Boundary Markers (Horoi)</div>
+                    <div class="theme-label">Boundary Markers (Horoi)</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: " π το τ ρμονος το ποτ τ κρ ν"</p>
+                </div>
+            </div>
+        </div>
+        
+            <div style="margin-top:2rem;"><h3>Entities</h3><div><a href="../search.html?q=Herakleidas" class="tag entity-tag" style="text-decoration:none;">👤 Herakleidas <small>(Landowner or official)</small></a><a href="../search.html?q=Apollonios" class="tag entity-tag" style="text-decoration:none;">👤 Apollonios <small>(Father of Herakleidas)</small></a><a href="../search.html?q=Philoxenos" class="tag entity-tag" style="text-decoration:none;">👤 Philoxenos <small>(Landowner or official)</small></a><a href="../search.html?q=Thyston" class="tag entity-tag" style="text-decoration:none;">👤 Thyston <small>(Landowner or official)</small></a><a href="../search.html?q=Pelagios" class="tag entity-tag" style="text-decoration:none;">👤 Pelagios <small>(Landowner or official)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Halaesa <small>(Polis)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Hadranieion <small>(Sanctuary)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Meilichieion <small>(Sanctuary)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Sanctuary of Apollo <small>(Sanctuary)</small></a><a href="../index_deities.html" class="tag entity-tag" style="text-decoration:none;">⚡ Apollo</a><a href="../index_deities.html" class="tag entity-tag" style="text-decoration:none;">⚡ Hadranos</a><a href="../index_deities.html" class="tag entity-tag" style="text-decoration:none;">⚡ Zeus Meilichios</a></div></div>
+            <div class="ai-analysis-box"><h3>AI Analysis Summary</h3><p>This inscription, known as the &#x27;Tabula Halaesina&#x27; (IG XIV 352), is a major administrative document from the city of Halaesa in Sicily. It serves as a cadastre or land register, meticulously recording the boundaries of sacred land lots (klaroi) that were leased out to citizens. The text describes the topography using landmarks such as roads (hodoi), rivers (potamoi), towers (pyrgoi), and specific olive trees (elaiai), which are noted as being &#x27;inscribed&#x27; or marked as part of the plot. It mentions several sanctuaries, including those of Apollo, Hadranos, and Zeus Meilichios, which served as topographical reference points. The document provides critical evidence for the agrarian economy, land tenure, and administrative organization of Hellenistic Sicily.</p></div>
+        </div>
+    </div>
+  </main>
+</body>
+</html>
+    

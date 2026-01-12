@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PHI-4338 - AGKI</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <style>
+    /* Custom Scrollbar Styling */
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: rgba(0,0,0,0.05); }
+    ::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #aaa; }
+
+    .page-container { max-width: 1400px; margin: 0 auto; padding: 2rem; }
+    .back-link { display: inline-block; margin-bottom: 1rem; color: var(--primary); font-weight: 600; }
+    .text-viewer-original { display: grid; grid-template-columns: 40px 1fr; gap: 2rem; font-family: "New Athena Unicode", "Gentium Plus", "Times New Roman", serif; font-size: 1.25rem; line-height: 1.6; background: var(--panel); padding: 2rem; border: 1px solid var(--border); border-radius: 4px; margin-bottom: 2rem; color: var(--text); }
+    .line-numbers { text-align: right; color: var(--muted); font-size: 1.25rem; line-height: 1.6; user-select: none; opacity: 0.5; font-family: inherit; white-space: pre; padding-right: 1rem; border-right: 1px solid var(--border); }
+    .greek-content { white-space: pre-wrap; word-break: break-word; padding-left: 1rem; }
+    .highlight-evidence { background-color: var(--accent); color: white; border-radius: 2px; padding: 0 2px; }
+    .theme-card { background: var(--panel); padding: 1rem 1.5rem; border-left: 4px solid var(--primary); margin-bottom: 0.75rem; border: 1px solid var(--border); border-left-width: 4px; }
+    .ai-analysis-box { background: rgba(31, 167, 163, 0.05); padding: 2rem; border-radius: 8px; border: 1px solid var(--border); margin-top: 2rem; }
+    .evidence-box { max-width: 500px; text-align: right; }
+    .evidence-quote { font-size: 0.85rem; font-style: italic; color: var(--muted); margin: 0; }
+    .badge.green { background: #e6f4ea; color: #137333; border-color: #137333; }
+    .badge.orange { background: #fef7e0; color: #b06000; border-color: #b06000; }
+    .badge.red { background: #fce8e6; color: #c5221f; border-color: #c5221f; }
+    .entity-tag { background: rgba(217, 123, 61, 0.1); color: var(--accent-2); margin-right: 0.5rem; margin-bottom: 0.5rem; display: inline-block; padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.9rem; border: 1px solid rgba(217, 123, 61, 0.2); }
+    .split-container { display: block; }
+    .split-container.active { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+    .split-container.active .split-col-right { position: sticky; top: 20px; max-height: 90vh; overflow-y: auto; padding-right: 10px; }
+  </style>
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+
+    function toggleSplitView() {
+        const container = document.getElementById('main-content');
+        const btn = document.getElementById('splitViewBtn');
+        container.classList.toggle('active');
+        btn.textContent = container.classList.contains('active') ? 'View: Split' : 'View: Standard';
+    }
+
+    function copyCitation() {
+        const citation = "AGKI Project. (2026). Inscription PHI-4338 . Retrieved from " + window.location.href;
+        navigator.clipboard.writeText(citation);
+        alert("Citation copied to clipboard!");
+    }
+
+    function highlightQuote(quote) {
+        const container = document.querySelector('.greek-content');
+        if (!container || !quote) return;
+        if (!container.dataset.original) container.dataset.original = container.innerHTML;
+        else container.innerHTML = container.dataset.original;
+        
+        const regex = new RegExp(quote.trim().replace(/\s+/g, '\\s+'), 'g');
+        container.innerHTML = container.innerHTML.replace(regex, match => `<mark class="highlight-evidence">${match}</mark>`);
+    }
+
+    function clearHighlight() {
+        const container = document.querySelector('.greek-content');
+        if (container && container.dataset.original) container.innerHTML = container.dataset.original;
+    }
+
+    function updateFontSize(size) {
+        const v = document.getElementById('original-view');
+        if(v) v.style.fontSize = size + 'px';
+    }
+
+    function openReportModal() { document.getElementById('reportModal').style.display = 'block'; }
+    function closeReportModal() { document.getElementById('reportModal').style.display = 'none'; }
+    function sendReport() {
+        const category = document.getElementById('reportCategory').value;
+        const desc = document.getElementById('reportDesc').value;
+        const fix = document.getElementById('reportFix').value;
+        const subject = `AGKI Error Report: PHI-4338`;
+        const body = `Category: ${category}%0D%0ADescription: ${desc}%0D%0AProposed Fix: ${fix}`;
+        window.location.href = `mailto:admin@agki-project.org?subject=${encodeURIComponent(subject)}&body=${body}`;
+        closeReportModal();
+    }
+  </script>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="brand"><h1><a href="../index.html">AGKI Tagging Tool</a></h1></div>
+    <nav class="nav-links">
+        <a href="../index.html" class="nav-item">Home</a>
+        <a href="../search.html" class="nav-item">Search</a>
+        <a href="../explore.html" class="nav-item">Explore</a>
+        <a href="../indices.html" class="nav-item">Indices</a>
+    </nav>
+    <div class="header-controls">
+        <button class="theme-toggle-btn" onclick="toggleTheme()" id="themeBtn">Dark Mode</button>
+    </div>
+  </header>
+
+  <script>
+    const themeBtn = document.getElementById('themeBtn');
+    function updateThemeBtn() {
+        const current = document.documentElement.getAttribute('data-theme');
+        if(themeBtn) themeBtn.textContent = current === 'light' ? 'Dark Mode' : 'Light Mode';
+    }
+    updateThemeBtn();
+    window.toggleTheme = function() {
+        const current = document.documentElement.getAttribute('data-theme');
+        const next = current === 'light' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        updateThemeBtn();
+    }
+  </script>
+
+  <main class="page-container inscription-page">
+    <div class="inscription-toolbar">
+        <a href="../search.html" class="back-link"><- Back to Dashboard</a>
+        <div class="inscription-actions">
+            <button id="splitViewBtn" onclick="toggleSplitView()" class="button secondary compact">View: Standard</button>
+            <button onclick="openReportModal()" class="button error compact">Report Error</button>
+        </div>
+    </div>
+
+    <!-- Report Modal -->
+    <div id="reportModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:1000;">
+        <div style="background:var(--panel); width:90%; max-width:500px; margin:10% auto; padding:2rem; border-radius:8px; border:1px solid var(--border);">
+            <h3>Report Error for PHI-4338</h3>
+            <label>Error Category</label>
+            <select id="reportCategory" style="width:100%; padding:0.5rem; margin-bottom:1rem;">
+                <option value="Incorrect Tag">Incorrect Tag / Theme</option>
+                <option value="Missing Entity">Missing Person / Place</option>
+                <option value="Translation Error">Translation / Text Issue</option>
+                <option value="Other">Other</option>
+            </select>
+            <label>Description</label>
+            <textarea id="reportDesc" rows="3" style="width:100%; margin-bottom:1rem;"></textarea>
+            <label>Proposed Fix</label>
+            <textarea id="reportFix" rows="2" style="width:100%; margin-bottom:1.5rem;"></textarea>
+            <div style="display:flex; justify-content:flex-end; gap:0.5rem;">
+                <button onclick="closeReportModal()" class="button secondary">Cancel</button>
+                <button onclick="sendReport()" class="button">Create Email Report</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="main-content" class="split-container">
+        <div class="split-col-left">
+            <section class="inscription-hero">
+                <div class="inscription-title-row">
+                    <h2>Inscription PHI-4338</h2>
+                    <div class="inscription-actions">
+                        <button onclick="copyCitation()" class="button secondary compact">Cite</button>
+                        <a href="https://epigraphy.packhum.org/text/4338" target="_blank" class="button secondary compact">View on PHI</a>
+                    </div>
+                </div>
+                <div class="inscription-meta">
+                    <div class="meta-item"><div class="label">Provenance</div><div class="meta-value"><a href="https://pleiades.stoa.org/places/579888" target="_blank" title="View in Pleiades">Attica</a> &gt; <a href="https://pleiades.stoa.org/places/579885" target="_blank" title="View in Pleiades">Athens</a></div></div>
+                    <div class="meta-item"><div class="label">Date</div><div class="meta-value"> p. post 169/70 p. </div></div>
+                    <div class="meta-item"><div class="label">Completeness</div><div class="meta-value"><span class="badge info">fragmentary</span></div></div>
+                </div>
+            </section>
+            <div class="inscription-title-row">
+                <h3>Original Text</h3>
+                <div class="font-size-control">
+                    <input type="range" min="14" max="32" value="20" oninput="updateFontSize(this.value)">
+                </div>
+            </div>
+            <div id="original-view" class="text-viewer-original">
+                <div class="line-numbers">1
+
+
+
+5
+
+
+
+
+10
+
+
+
+
+15
+
+
+
+
+20
+
+
+
+
+25
+
+
+
+
+30
+
+
+
+
+35
+
+
+
+
+40
+
+
+
+
+45
+
+
+
+
+50
+
+
+
+
+55
+
+
+
+
+60
+
+
+
+
+65
+
+
+
+
+70
+
+
+
+
+75
+
+
+
+
+80
+
+
+
+
+85
+
+
+
+
+90
+
+
+
+
+95
+
+
+
+
+100
+
+
+
+
+105
+
+
+
+
+110
+
+
+
+
+115
+
+
+
+
+120
+
+
+
+
+125
+
+
+
+
+130
+
+
+
+
+135
+
+
+
+
+140
+
+
+
+
+145
+
+
+
+
+150
+
+
+
+
+155
+</div>
+                <div class="greek-content">[σωφρονιστα]
+------------------------------------
+[ ποσω]φρονιστα 
+------ιος μαραθ 
+[ π κ]τητος φ λωνος φηγ
+[ φροδ] σιος 
+[ποσε] διππος παλλη
+[π]αιδοτρ βης μ ρκος
+ ποπαιδοτρ βης ρακλ ων στ
+γραμματε ς τε κρος
+προστ της
+ πλομ χος δ φνος
+διδ σκαλος πελλ ς φλυε
+ γεμ ν δε φιλος
+κεστροφ λαξ φιλ ας
+θυρουρ ς ε ρυβι δης
+[γυμνασ αρ]χοι
+------ς τταλος
+[--- φ]α δρος
+ πολλοφ νης γοργ ου
+καρε νας δημ δης
+κλ μ νιππος
+ ντ νιος κλαυδιαν ς
+ τταλος ο φου
+ ρεχθε δος
+πρ κλος περικλ ους
+ποσ ς περικλ ους
+φιλ πονος λαμ
+κλ ττικ ς ναγ
+κλ μηνογ νης ναγ
+ποσειδ νιος φα στου
+ θην ων σουβρ 
+α γε δος
+ ο φος ρμολ ου
+καρε νας δημ δης
+ζωσιμιαν ς τελ -
+[πανδιον δος]
+----------------------------- λ ου
+--- ς καλλ ου
+[------ θ]ην ωνος
+[λε]οντ δος
+[σ ν]τροφος 
+[δη]μ τριος διονυσ ου
+[πα]μμ νης δημητρ ου
+--- ς ζωσ μου
+[--- πο]λλων[ ου]
+--- ος 
+-----νε ς καλλιστρ το[υ]
+ φροδε σιος 
+πτολεμα δος
+ ντ κλαυδιαν ς
+σ ντροφος πικτ του
+α λ ρμε ας
+νεικ στρατος ε αγγ λου
+χρ στος ζωσ μου
+ ν σιμος ξενοκλ ους
+ καμαντ δος
+ε σ δοτος σφ ττ 0[ρ] φω[ν]λευθ[ ρου]
+---- ικ [ο]υ
+--- λευθ ρου
+------ος νησ μου
+[ φροδ]ε σιος νησ μου
+----λης 
+---τηρ καλλ στου
+--τικος 
+ δριαν δος
+ γαθ ας 
+ ρακλε δης κα λπιδηφ ρος πανβω
+λ ναις φ λωνος φηγ
+ο εντ σκληπι[ δ]οτος
+φο βος σωκρ του[ς]
+ε τυχ---- νεικοστρ του
+[ο ν]ε δος
+ φ[ροδ]σιος φιλαδ λφου
+-----ς 
+----αντ δης
+[ε]καρπος 
+κεκροπ δος
+ λπ νεικος ε τ χου
+φιλοκρ της 
+τειμοκρ της φιλοκρ του
+ε τυχος ρμε ου
+ ρ στω 
+πυθαγ ρας δημητρ ου
+ πολλ νιος ζωσ μου
+ ν σιμος 
+ζ σ[ιμος] 
+ π κτητος μ ρκου
+[ πποθωντ δος]
+------
+[α αντ δος]
+------ ου
+--------ου
+------ νης 
+[ζ]σιμος λεξ νδρου
+φα στος 
+πο α διον σιος
+[ ν]τιοχ δος
+-----στρατος θοραιε [ς]
+----λις ζωσ μου
+[ λ]πιδηφ ρος ρμε ου
+θην δωρος λευθερ ω[νος]
+λπ νεικος τρ φωνος
+ τταλ δος
+πο α φα δρος
+δε ος ρακ ντος
+ ρμε ας ε κ ρπου
+ λευσε νιος 
+ π κτητος λευσειν [ου]
+ε οδος 
+δ κκιος γαθ
+καλλ ς γε νου
+θε φραστος νεικ του
+ε τυχ δης ζοε [λου]
+διον σιος 
+ πολλ νιο[ς]
+θρεπτ ων [ν]εικηρ του
+θ λλος γαθ α
+νε κων πραξ 
+ζ σιμος φ λωνος
+σωκρ της σωτηρ χου
+ παφρ δειτος πελλο 
+δι δωρος παφροδε του
+ [ν]εμ σητος ---
+ιον σιος
+ν σιμος 0 --
+[γ]λαυκ ας ε --
+φερ νεικος ---
+ θ ναιος 0 ---
+ λευσε ν[ιος ---
+ο αλ ριο[ς ---]
+ο αλ ριο[ς ---]
+ ρ των ---
+ουφε ν[ος ---]
+πολυκ ----
+τροφ ----
+συ -----
+ε κα[ρπ -
+χ ρμος
+ γε νος
+ ρμ ς
+ε πορο[ς
+ παφρ δειτος ε τυχ
+ λπ νικος μηνοδ ρου
+συμφ ρων βασκ ντου
+σεραπ ων μ ρωνος
+ πιτυγχ νων ε σιδ [ρου]
+ θ ναις ε σιδ ρου
+ σκλ πων 
+πο α λ ωμαν ς
+ζ πυρος ζωσ μου
+ ριστ βουλος ζωπ ρου
+ παφρ δειτος δ φνου
+ζ σιμος 
+--- ζωσ μου
+---</div>
+            </div>
+        </div>
+        <div class="split-col-right">
+            <h3>Thematic Analysis</h3>
+            
+        <div class="theme-card" onmouseover="highlightQuote('[γυμνασ αρ]χοι')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Content/Administrative Records and Lists/Lists of Officials or Citizens" class="tag domain-tag" style="text-decoration:none;">Content</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
+                    <div class="theme-path">Content > Administrative Records and Lists > Lists of Officials or Citizens</div>
+                    <div class="theme-label">Lists of Officials or Citizens</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "[γυμνασ αρ]χοι"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote(' ρεχθε δος')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Type/Object Type/Monumental Stone Objects/Stele" class="tag domain-tag" style="text-decoration:none;">Type</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">95% Conf.</span>
+                    
+                    <div class="theme-path">Type > Object Type > Monumental Stone Objects > Stele</div>
+                    <div class="theme-label">Stele</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: " ρεχθε δος"</p>
+                </div>
+            </div>
+        </div>
+        
+            <div style="margin-top:2rem;"><h3>Entities</h3><div><a href="../search.html?q=Markos" class="tag entity-tag" style="text-decoration:none;">👤 Markos <small>(paidotribes)</small></a><a href="../search.html?q=Teukros" class="tag entity-tag" style="text-decoration:none;">👤 Teukros <small>(grammateus)</small></a><a href="../search.html?q=Perikles" class="tag entity-tag" style="text-decoration:none;">👤 Perikles <small>(father of Proklos and Poses)</small></a><a href="../search.html?q=Proklos" class="tag entity-tag" style="text-decoration:none;">👤 Proklos <small>(ephebe)</small></a><a href="../search.html?q=Attalos" class="tag entity-tag" style="text-decoration:none;">👤 Attalos <small>(gymnasiarchos)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Marathon <small>(deme)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Pallene <small>(deme)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Phlya <small>(deme)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Eleusis <small>(deme)</small></a></div></div>
+            <div class="ai-analysis-box"><h3>AI Analysis Summary</h3><p>This inscription is a classic example of an Athenian ephebic catalogue from the Roman Imperial period (late 2nd century AD). It lists the administrative and training staff of the ephebeia, including the &#x27;sophronistes&#x27; (moral supervisor), &#x27;paidotribes&#x27; (physical trainer), and &#x27;hoplomachos&#x27; (weapons instructor). The bulk of the text consists of the names of the ephebes themselves, grouped under the headings of the thirteen Athenian tribes (phylai), including the later additions like Hadrianis and Attalis. The demotics (e.g., Marathon, Pallene) identify the local origins of the citizens. The text is fragmentary, as evidenced by the numerous lacunae and reconstructed headings.</p></div>
+        </div>
+    </div>
+  </main>
+</body>
+</html>
+    
