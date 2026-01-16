@@ -23,7 +23,7 @@ class Theme(BaseModel):
     label: str = Field(..., description="The most specific label applied (e.g. 'Ehrendekret')")
     hierarchy: Hierarchy
     rationale: str = Field(..., description="Reasoning for this classification based on the text.")
-    confidence: float = Field(default=1.0, description="Confidence score 0.0-1.0")
+    confidence: Optional[float] = Field(default=None, description="Confidence score 0.0-1.0 (Assigned by Judge)")
     quote: Optional[str] = Field(None, description="The specific Greek text segment that justifies this tag.")
     is_ambiguous: bool = Field(default=False, description="True if the classification is uncertain or debated.")
     ambiguity_note: Optional[str] = Field(None, description="Explanation of the ambiguity if present.")

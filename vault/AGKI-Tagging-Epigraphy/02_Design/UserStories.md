@@ -1,4 +1,4 @@
-User Stories, filtered into categories based on the [[UserPersonas]] needs.
+	User Stories, filtered into categories based on the [[UserPersonas]] needs.
 ## Search & Filtering (The "Precision" Layer)
 - **Hierarchical Search:** As **Gregor**, I want to filter inscriptions by top-level domains (e.g., "Economic") so that I can broaden my research scope beyond specific keywords like "drachma".
 - **Sub-Category Drill-down:** As **Gregor**, I want to select specific sub-categories (e.g., "Economic > Tax > Harbour Dues") to find highly specific evidence for my paper on Aegean trade.
