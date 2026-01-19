@@ -62,23 +62,42 @@ def search_pleiades_offline(name):
     gaz = get_gazetteer()
     return gaz.search(name)
 
-def is_human_in_wikidata(wikidata_id):
-    """Check if a Wikidata item is an instance of human (Q5)."""
+def is_instance_of(wikidata_id, target_qids):
+    """Check if a Wikidata item is an instance of one of the target QIDs."""
+    if not wikidata_id: return False
+    if isinstance(target_qids, str): target_qids = [target_qids]
+    
     try:
         url = f"https://www.wikidata.org/wiki/Special:EntityData/{wikidata_id}.json"
         req = urllib.request.Request(url, headers={'User-Agent': 'AGKI-Reconciliation-Tool/1.0'})
         with urllib.request.urlopen(req, timeout=5) as response:
             data = json.loads(response.read().decode())
             entity = data.get("entities", {}).get(wikidata_id, {})
-            # P31 is 'instance of', Q5 is 'human'
+            # P31 is 'instance of'
             claims = entity.get("claims", {}).get("P31", [])
             for claim in claims:
-                target_id = claim.get("mainsnak", {}).get("datavalue", {}).get("value", {}).get("id")
-                if target_id == "Q5":
+                val = claim.get("mainsnak", {}).get("datavalue", {}).get("value")
+                if isinstance(val, dict) and val.get("id") in target_qids:
                     return True
     except Exception:
         pass
     return False
+
+def is_human_in_wikidata(wikidata_id):
+    """Check if a Wikidata item is an instance of human (Q5)."""
+    return is_instance_of(wikidata_id, ["Q5"])
+
+def is_deity_in_wikidata(wikidata_id):
+    """Check if a Wikidata item is a deity or mythological character."""
+    # Q178885: deity
+    # Q22989102: Greek deity
+    # Q11688446: Roman deity
+    # Q146083: Egyptian deity
+    # Q4271324: mythological character
+    # Q35277: deity (alternative)
+    # Q48350: mythological character (alternative)
+    deity_qids = ["Q178885", "Q22989102", "Q11688446", "Q146083", "Q4271324", "Q35277", "Q48350"]
+    return is_instance_of(wikidata_id, deity_qids)
 
 def reconcile_place(name, place_type=None):
     """Search for a place, primarily via Wikidata which often links to Pleiades, or direct Pleiades search."""
@@ -154,6 +173,11 @@ def reconcile_wikidata(name, type_filter=None):
                     # If we are looking for a Person (Q5), verify it's human
                     if type_filter == "Q5":
                         if is_human_in_wikidata(result['id']):
+                            target_cache[cache_key] = uri
+                            return uri
+                    # If we are looking for a Deity (Q35277 / Q178885), verify it
+                    elif type_filter in ["Q35277", "Q178885"]:
+                        if is_deity_in_wikidata(result['id']):
                             target_cache[cache_key] = uri
                             return uri
                     else:

@@ -7,7 +7,7 @@ from pathlib import Path
 from openai import OpenAI
 from google import genai
 from google.genai import types
-from tenacity import retry, stop_after_attempt, wait_exponential
+from tenacity import retry, stop_after_attempt, wait_exponential, retry_if_exception_type
 from .config import LOGS_DIR
 
 # Global session timestamp for this run
@@ -96,7 +96,11 @@ class GoogleClient(LLMProvider):
     def __init__(self, api_key: str):
         self.client = genai.Client(api_key=api_key)
 
-    @retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=1, min=4, max=10))
+    @retry(
+        stop=stop_after_attempt(5),
+        wait=wait_exponential(multiplier=2, min=5, max=60),
+        reraise=True
+    )
     def generate_json(self, system_prompt: str, user_prompt: str, model: str) -> Dict[str, Any]:
         try:
             # Config for the new SDK
