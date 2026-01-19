@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PHI-214846 - AGKI</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <style>
+    /* Custom Scrollbar Styling */
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: rgba(0,0,0,0.05); }
+    ::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #aaa; }
+
+    .page-container { max-width: 1400px; margin: 0 auto; padding: 2rem; }
+    .back-link { display: inline-block; margin-bottom: 1rem; color: var(--primary); font-weight: 600; }
+    .text-viewer-original { display: grid; grid-template-columns: 40px 1fr; gap: 2rem; font-family: "New Athena Unicode", "Gentium Plus", "Times New Roman", serif; font-size: 1.25rem; line-height: 1.6; background: var(--panel); padding: 2rem; border: 1px solid var(--border); border-radius: 4px; margin-bottom: 2rem; color: var(--text); }
+    .line-numbers { text-align: right; color: var(--muted); font-size: 1.25rem; line-height: 1.6; user-select: none; opacity: 0.5; font-family: inherit; white-space: pre; padding-right: 1rem; border-right: 1px solid var(--border); }
+    .greek-content { white-space: pre-wrap; word-break: break-word; padding-left: 1rem; }
+    .highlight-evidence { background-color: var(--accent); color: white; border-radius: 2px; padding: 0 2px; }
+    .theme-card { background: var(--panel); padding: 1rem 1.5rem; border-left: 4px solid var(--primary); margin-bottom: 0.75rem; border: 1px solid var(--border); border-left-width: 4px; }
+    .ai-analysis-box { background: rgba(31, 167, 163, 0.05); padding: 2rem; border-radius: 8px; border: 1px solid var(--border); margin-top: 2rem; }
+    .evidence-box { max-width: 500px; text-align: right; }
+    .evidence-quote { font-size: 0.85rem; font-style: italic; color: var(--muted); margin: 0; }
+    .badge.green { background: #e6f4ea; color: #137333; border-color: #137333; }
+    .badge.orange { background: #fef7e0; color: #b06000; border-color: #b06000; }
+    .badge.red { background: #fce8e6; color: #c5221f; border-color: #c5221f; }
+    .entity-tag { background: rgba(217, 123, 61, 0.1); color: var(--accent-2); margin-right: 0.5rem; margin-bottom: 0.5rem; display: inline-block; padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.9rem; border: 1px solid rgba(217, 123, 61, 0.2); }
+    .split-container { display: block; }
+    .split-container.active { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+    .split-container.active .split-col-right { position: sticky; top: 20px; max-height: 90vh; overflow-y: auto; padding-right: 10px; }
+  </style>
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+
+    function toggleSplitView() {
+        const container = document.getElementById('main-content');
+        const btn = document.getElementById('splitViewBtn');
+        container.classList.toggle('active');
+        btn.textContent = container.classList.contains('active') ? 'View: Split' : 'View: Standard';
+    }
+
+    function copyCitation() {
+        const citation = "AGKI Project. (2026). Inscription PHI-214846 . Retrieved from " + window.location.href;
+        navigator.clipboard.writeText(citation);
+        alert("Citation copied to clipboard!");
+    }
+
+    function highlightQuote(quote) {
+        const container = document.querySelector('.greek-content');
+        if (!container || !quote) return;
+        if (!container.dataset.original) container.dataset.original = container.innerHTML;
+        else container.innerHTML = container.dataset.original;
+        
+        const regex = new RegExp(quote.trim().replace(/\s+/g, '\\s+'), 'g');
+        container.innerHTML = container.innerHTML.replace(regex, match => `<mark class="highlight-evidence">${match}</mark>`);
+    }
+
+    function clearHighlight() {
+        const container = document.querySelector('.greek-content');
+        if (container && container.dataset.original) container.innerHTML = container.dataset.original;
+    }
+
+    function updateFontSize(size) {
+        const v = document.getElementById('original-view');
+        if(v) v.style.fontSize = size + 'px';
+    }
+
+    function openReportModal() { document.getElementById('reportModal').style.display = 'block'; }
+    function closeReportModal() { document.getElementById('reportModal').style.display = 'none'; }
+    function sendReport() {
+        const category = document.getElementById('reportCategory').value;
+        const desc = document.getElementById('reportDesc').value;
+        const fix = document.getElementById('reportFix').value;
+        const subject = `AGKI Error Report: PHI-214846`;
+        const body = `Category: ${category}%0D%0ADescription: ${desc}%0D%0AProposed Fix: ${fix}`;
+        window.location.href = `mailto:admin@agki-project.org?subject=${encodeURIComponent(subject)}&body=${body}`;
+        closeReportModal();
+    }
+  </script>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="brand"><h1><a href="../index.html">AGKI Tagging Tool</a></h1></div>
+    <nav class="nav-links">
+        <a href="../index.html" class="nav-item">Home</a>
+        <a href="../search.html" class="nav-item">Search</a>
+        <a href="../explore.html" class="nav-item">Explore</a>
+        <a href="../indices.html" class="nav-item">Indices</a>
+    </nav>
+    <div class="header-controls">
+        <button class="theme-toggle-btn" onclick="toggleTheme()" id="themeBtn">Dark Mode</button>
+    </div>
+  </header>
+
+  <script>
+    const themeBtn = document.getElementById('themeBtn');
+    function updateThemeBtn() {
+        const current = document.documentElement.getAttribute('data-theme');
+        if(themeBtn) themeBtn.textContent = current === 'light' ? 'Dark Mode' : 'Light Mode';
+    }
+    updateThemeBtn();
+    window.toggleTheme = function() {
+        const current = document.documentElement.getAttribute('data-theme');
+        const next = current === 'light' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        updateThemeBtn();
+    }
+  </script>
+
+  <main class="page-container inscription-page">
+    <div class="inscription-toolbar">
+        <a href="../search.html" class="back-link"><- Back to Dashboard</a>
+        <div class="inscription-actions">
+            <button id="splitViewBtn" onclick="toggleSplitView()" class="button secondary compact">View: Standard</button>
+            <button onclick="openReportModal()" class="button error compact">Report Error</button>
+        </div>
+    </div>
+
+    <!-- Report Modal -->
+    <div id="reportModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:1000;">
+        <div style="background:var(--panel); width:90%; max-width:500px; margin:10% auto; padding:2rem; border-radius:8px; border:1px solid var(--border);">
+            <h3>Report Error for PHI-214846</h3>
+            <label>Error Category</label>
+            <select id="reportCategory" style="width:100%; padding:0.5rem; margin-bottom:1rem;">
+                <option value="Incorrect Tag">Incorrect Tag / Theme</option>
+                <option value="Missing Entity">Missing Person / Place</option>
+                <option value="Translation Error">Translation / Text Issue</option>
+                <option value="Other">Other</option>
+            </select>
+            <label>Description</label>
+            <textarea id="reportDesc" rows="3" style="width:100%; margin-bottom:1rem;"></textarea>
+            <label>Proposed Fix</label>
+            <textarea id="reportFix" rows="2" style="width:100%; margin-bottom:1.5rem;"></textarea>
+            <div style="display:flex; justify-content:flex-end; gap:0.5rem;">
+                <button onclick="closeReportModal()" class="button secondary">Cancel</button>
+                <button onclick="sendReport()" class="button">Create Email Report</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="main-content" class="split-container">
+        <div class="split-col-left">
+            <section class="inscription-hero">
+                <div class="inscription-title-row">
+                    <h2>Inscription PHI-214846</h2>
+                    <div class="inscription-actions">
+                        <button onclick="copyCitation()" class="button secondary compact">Cite</button>
+                        <a href="https://epigraphy.packhum.org/text/214846" target="_blank" class="button secondary compact">View on PHI</a>
+                    </div>
+                </div>
+                <div class="inscription-meta">
+                    <div class="meta-item"><div class="label">Provenance</div><div class="meta-value"><a href="https://pleiades.stoa.org/places/570359" target="_blank" title="View in Pleiades">Kleitor</a></div></div>
+                    <div class="meta-item"><div class="label">Date</div><div class="meta-value"></div></div>
+                    <div class="meta-item"><div class="label">Completeness</div><div class="meta-value"><span class="badge info">fragmentary</span></div></div>
+                </div>
+            </section>
+            <div class="inscription-title-row">
+                <h3>Original Text</h3>
+                <div class="font-size-control">
+                    <input type="range" min="14" max="32" value="20" oninput="updateFontSize(this.value)">
+                </div>
+            </div>
+            <div id="original-view" class="text-viewer-original">
+                <div class="line-numbers">1
+
+
+
+5
+
+
+
+
+10
+
+
+
+
+15
+
+
+
+
+20
+
+
+
+
+25
+
+
+
+
+30
+
+
+
+
+35
+</div>
+                <div class="greek-content">[ζω λ]ος στ[ρ]α[τη]γς μαγν[ τ]ων κα μει[δ] [ας] γραμ[μ]α[τ]ε ς συνεδρ ου κλειτορ ων [το] ς δ[ημιοργο ς κα τ ι δ μωι χα ρειν. δωρ θεο]ν τ ν π[αρ μ ν] ποσταλ ντα π[ρ ς]μ ς δικ[ασ]τ ν γιν σκετε ν τε [το ς λλοις π σι πεποιηκ τα τ δ καια καθ ν τρ] πον κα[θ κο]ν ν νδρ καλ ι τε [κ]γαθ ι τν τε ναστρ[οφ] ν πε[ποιημ νον ξ ως μ ν τε τ ν κπεμψ ντων]
+[α τ ν] κα το κοιν[ο] τ [ν] 0[α]γν των [κα το] ς μ γ[ν]ητας ψη[φι]σμ νου[ς α τ ι τ ς καθηκο σας τιμ ς ποι σετε δ]
+[κα μ]ε ς κ[αλ ς καθ] τι κα το ς μγν[ησι]ν [δ δ]οκται [π]ρονοηθ ν[τες] πω[ς τ τ μια ναγραφ ι ε ς στ λην λιθ νην κα]
+ νατεθ ι ν τ[ ι γο]ρ [ι π]εστ λκα[μεν δ] μ [ν] κα το ψηφ [σματ]ος τ[ ντ γραφον τ πογεγραμμ νον. ρρωσθε].
+[ζω]λος στρα[τηγ ς ε]πεν. πε τ [ν 0]α[γν τ]ων π[οσ]τειλ ντω[ν πρ]ς τ [ν π λιν τ ν κλειτορ ων π ρ α τ σεως δικαστο]
+[δικασταγω]γ [ν --]δην δει[ν ου κα π]ρ ς τ[ ν τ] ν πατρ ω[ν ρχ αν] [παυσιμ χου ο δ μοι φιλοφρ νως κα ε ν ως]
+[ ποδεξ μ]εν[οι α το]ς κα κολο[υθ σαντ]ες [το ς] ξιουμ [νοις πεμψ]αν πρ ς μ ς δικαστ ς κλειτ ριοι μ ν δωρ θεον δαμ α πα]τ[ρε ς] δ [κρ]ατ[ησ]λ[οχ]ο[ν πα]υσι[μ χο]υ [κα] σκλ[ηπι--- ο τινες παραγεν μενοι]
+[ ξ ω]ς τ ν [τε] ποστειλ ντων κα [το] κοινο[ τ] ν μαγν των διεξ[ γαγον τ ς δ κας ποιησ μενοι τ ς κρ σεις μ]ετ π[αντ]ς το δικα ου δεδ χθαι το ς συν δροις π[αιν]σαι μ [ν το ς κλειτορ ους κα το ς πατρ ας π τ ι π μψαι νδρας]
+καλο ς κα γ[αθο ς] μο ως δ κα [το ς δικα]στ ς [δω]ρ θεον δαμ[ α] κρατησ[ λοχον παυσιμ χου σκληπι---]
+-------σαι------κλστδι κα στεφαν σαι καστον α [τ ν -- στεφ νωι τ ι κ το ν μου ε ναι δ α το ς]
+[κα προ]ξ ν[ους το] κοινο τ ν μα[γν των] α τ[ο ς] τε κα κγ[ ν]ους π [ρχειν δ α το ς κα τ λειαν κα συλ αν κα κατ] γ ν κα κατ θ[ λασσα]ν κ[α] ν πολ [μωι κα]ν ε ρ νηι κα τ λλ[α τ]μια σα [κα το ς λλοις προξ νοις δ δοται τ ν]
+[μα]γν τω[ν δοθ] ναι δ κα ξ νι[α] κ στωι α τ ν τ μ γισ[τα] κ τ ν κ[οιν ν προσ δων κα καλ σαι α το ς π τ κοιν ερ]
+[τ] τ ν μαγν των [ ναγρ] ψαι δ κα τ [δε τ ψ φισμα ε] ς στ λην λιθ νην [κα]ναθε [ναι ν δημητρι δι κα προνοηθ ναι]
+[το ς κοινο ς ρχο]ντας τ ς [νακομιδ] ς α[ τ] ν ως χαλ[κ δο]ς τ δ[ γεν μενα ε ς τα τα νηλ ματα δο ναι τ ν δε να τ ν]
+[ταμ αν γρ ψ]αι δ κα πρ ς τ [ς π λεις] ζω λ[ον] τ ν στρατ[ηγ]ν κα 0[ειδ αν τ ν γραμματ α πως παρακολουθ σωσι τ δεδογμ να κα τ]δ[ε] τ ψ φισμα να[γραφ ν ε ς] στ λην να[θ]σιν κα[ παρ α τα ς ν κλε τορι μ ν ν τ ι γορ ι ν π τραις] δ [ε ς τ]ν γορ ν [παρ] τ ν π[ λλωνα ν δημητρι] δι δ ν τ[ ι]γορ ι [ νατεθ σεται. δοξεν το ς συν δροις].
+[ δοξεν κα] τ[ ι] κκλησ α[ι].
+δη[μητρι ω]ν ο [στ]ρατηγο κα ο νομοφ λ[ακες] κλ[ειτορ] ων το ς δ[ημιορ]γο ς κ[α τ ι δ μωι χα ρειν. τ ν παρ μ ν]
+ποστ[αλ ν]τα δικαστ ν γιν σκετε [ ν τε το ς λλοις πα]σιν πεποι[η]κ[ τ]α τ [δ καια καθ ν τρ πον καθ κον ν νδρ καλ ι]
+καγαθ ι [τ ν] τε ναστροφ ν πε[ποιημ νον] ξ ως μ ν τ[ε κ]α το [ μετ ρου δ μου κα το ς δημητρι ας]
+ ψ[η]φισμ νους α τ ι τιμ ς καλ ς [δ] μ[ε ς ποι]σετε προνοη[θ ν]τες [ πως τ παρ μ ν δεδομ να τ μια ναγραφ ι ε ς στ] λην λιθ νην κα[ νατεθ ι ν] τ ι γορ ι ν τ ι [ ερ ι τ ς πλλ--- τ ς ντα ας καθ περ δ δοκται] κα τ ι μετ ρωι δ μωι. πεστ[ λκαμεν] δ μ[ ν κα το ψηφ σματος τ ντ γραφον τ πογεγραμμ νον. ρρωσθε].
+ [φ ερ ως γν]ου μην ς λ[-------------- ---]τηι γ[ν ας ερε ς το δι ς το κρα ου κα ζω λος στρατηγ ς ε παν].
+[ πε ποστει]λ ντων μ[ ν πιστολ ν πρ ς τ ν] π λιν τ ν [κ]λ[ειτ]ο[ρ ων περ δικαστο δ σεως κα δικασταγωγ ν ---δ]ην δειν ου κα [πρ ς] τ[ ν πατρ] ων ρ[χ αν 0]α[υσιμ χου ο δ μοι κ τεροι ποδεξ μενοι ---δην δειν ου κα] ρχ αν παυσ[ιμ χου] κα κολο[υθο ντες το ς ξιουμ νοις π μψαι ψηφ σαντο-----]
+δικαστ ς [κλε]ιτ ριοι μ ν 0[ωρ θ]εον [δαμ α πατρε ς δ κρατησ λοχον παυσιμ χου κα σκληπι--] 
+[-- ε]ς τ[ε τ] λλα νδρας κα[λο] ς κα γαθο ς [κα --------------- ο τινες παραγεν μενοι ξ ως]
+[τ ν τε] ποστειλ ντων κα τ[ ς μ]ετ ρας π λ[εως διεξ γαγον τ ς δ κας ποιησ μενοι τ ς κρ σεις μετ]
+[παντ]ς το δικα ου δεδ χθαι τ ι βουλ ι κα τ ι δ μωι παιν σαι μ ν το ς κλειτορ ους κα το ς πατρ ας]
+[ π τ ι π μ]ψαι νδρας καλ[ο ς] κ γα[θο] ς μο ως δ κα [παιν σαι το ς δικαστ ς δωρ θεον κρατησ λοχον] 
+[ σκληπι--]ον π το ς πεπ[ραγ]μ νοις κα στε[φα]ν [σαι] [καστον α τ ν --- στεφ νωι --]
+----- τ ι κ το ν μου κα ε ναι α το ς τε κα κγ[ νους ε εργ τας κα προξ νους τ ν δημητρι ων καθ περ]
+[κα τ ν] μαγν των[ων] [ π] ρχειν δ α το ς κα τ λει[αν κα συλ αν κα κατ γ ν κα κατ θ λασσαν κα πολ μου κα ε ρ νη]ς κα τ λλα π ντα σα κα το ς λλοις ε εργ τ[αις κα προξ νοις δ δοται τ ν δημητρι ων δοθ ναι]
+δ κα ξ νια κ στωι α τ ν δρ[αχμ] ς πεντ κοντα καλ σαι δ [α το ς κα ----- ν δημητρι] δι ναγρ ψαι δ κα τ ψ φισμα ε [ς] στ λη[ν λιθ νην ν κα ναθε ναι ν τ ι γορ ι ν τ ι ερ ι τ ς]
+[ ρτ] μι[δ]ος τ ς [ ω]λκ ας τ[ο]ς [δ] στρατηγο ς κα νομοφ λακας [προνοηθ ναι τ ς ναγραφ ς κα ναθ σεως κα τ ε ς]
+[τα τα σ μενα] νηλ μ[ατα δο ναι το ς] ταμ ας γρ [ψ]αι δ κ[α πρ ς το ς κλειτορ ους κα το ς πατρ ας] 
+[ πως κ τερο]ι τ δε τ ψ φ[ισμα ν]α[γρ ψ]αντ[ες] ε σς στ λη[ν λιθ νην ναθ σι κα παρ α το ς κλειτ ριοι]
+[μ ν ν τ ι γορ] ι ν τ ι ερ ι τ ς πλλ[--- τ ς] ντα ας παρ τ ν ζ[ να ---- πατρε ς]
+[δ ν τ] ι γορ [ι] παρ τ ν π λλ[ωνα]. δοξεν τ ι βο[υ]λ ι κα τ ι [ κκλησ αι].</div>
+            </div>
+        </div>
+        <div class="split-col-right">
+            <h3>Thematic Analysis</h3>
+            
+        <div class="theme-card" onmouseover="highlightQuote('ἔδοξεν τῆι βουλῆι καὶ τῶι ἐκκλησίαι')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Content/Official and Legal Documents/Decrees" class="tag domain-tag" style="text-decoration:none;">Content</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
+                    <div class="theme-path">Content > Official and Legal Documents > Decrees</div>
+                    <div class="theme-label">Decrees</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "ἔδοξεν τῆι βουλῆι καὶ τῶι ἐκκλησίαι"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('ἐπεστάλκαμεν δὲ ὑμῖν καὶ τοῦ ψηφίσματος τἀντίγραφον')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Content/Official and Legal Documents/Official Letters" class="tag domain-tag" style="text-decoration:none;">Content</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
+                    <div class="theme-path">Content > Official and Legal Documents > Official Letters</div>
+                    <div class="theme-label">Official Letters</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "ἐπεστάλκαμεν δὲ ὑμῖν καὶ τοῦ ψηφίσματος τἀντίγραφον"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('ἐπαινέσαι μὲν τοὺς κλειτορίους... καὶ στεφανῶσαι ἕκαστον αὐτῶν')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Content/Honorific and Commemorative Inscriptions/Honorific Inscriptions" class="tag domain-tag" style="text-decoration:none;">Content</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
+                    <div class="theme-path">Content > Honorific and Commemorative Inscriptions > Honorific Inscriptions</div>
+                    <div class="theme-label">Honorific Inscriptions</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "ἐπαινέσαι μὲν τοὺς κλειτορίους... καὶ στεφανῶσαι ἕκαστον αὐτῶν"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('δικαστὴν γινώσκετε... διεξήγαγον τὰς δίκας ποιησάμενοι τὰς κρίσεις')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Content/Official and Legal Documents/Legal Documents/Judicial Decisions" class="tag domain-tag" style="text-decoration:none;">Content</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
+                    <div class="theme-path">Content > Official and Legal Documents > Legal Documents > Judicial Decisions</div>
+                    <div class="theme-label">Foreign Judges</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "δικαστὴν γινώσκετε... διεξήγαγον τὰς δίκας ποιησάμενοι τὰς κρίσεις"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('ἀναγράψαι δὲ καὶ τόδε τὸ ψήφισμα εἰς στήλην λιθίνην')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Type/Object Type/Monumental Stone Objects/Stele" class="tag domain-tag" style="text-decoration:none;">Type</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
+                    <div class="theme-path">Type > Object Type > Monumental Stone Objects > Stele</div>
+                    <div class="theme-label">Stele</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "ἀναγράψαι δὲ καὶ τόδε τὸ ψήφισμα εἰς στήλην λιθίνην"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('ζωῖλος στρατηγὸς... μειδίας γραμματεὺς συνέδρου... οἱ στρατηγοὶ καὶ οἱ νομοφύλακες')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Content/Administrative Records and Lists/Lists of Officials or Citizens" class="tag domain-tag" style="text-decoration:none;">Content</a>
+                    <span class="badge red" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">50% Conf.</span>
+                    <span class="badge orange" title="The text mentions officials in the prescript and body but is not a formal catalog or list." style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem; cursor:help;">⚠️ Ambiguous</span>
+                    <div class="theme-path">Content > Administrative Records and Lists > Lists of Officials or Citizens</div>
+                    <div class="theme-label">Lists of Officials or Citizens</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "ζωῖλος στρατηγὸς... μειδίας γραμματεὺς συνέδρου... οἱ στρατηγοὶ καὶ οἱ νομοφύλακες"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('στήλην λιθίνην')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Type/Material/Stone" class="tag domain-tag" style="text-decoration:none;">Type</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
+                    <div class="theme-path">Type > Material > Stone</div>
+                    <div class="theme-label">Stone</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "στήλην λιθίνην"</p>
+                </div>
+            </div>
+        </div>
+        
+            <div style="margin-top:2rem;"><h3>Entities</h3><div><a href="../search.html?q=Zoilos" class="tag entity-tag" style="text-decoration:none;">👤 Zoilos <small>(strategos)</small></a><a href="../search.html?q=Meidias" class="tag entity-tag" style="text-decoration:none;">👤 Meidias <small>(secretary)</small></a><a href="../search.html?q=Dorotheos" class="tag entity-tag" style="text-decoration:none;">👤 Dorotheos <small>(judge)</small></a><a href="../search.html?q=Damias" class="tag entity-tag" style="text-decoration:none;">👤 Damias <small>(father of Dorotheos)</small></a><a href="../search.html?q=Kratesilochos" class="tag entity-tag" style="text-decoration:none;">👤 Kratesilochos <small>(judge)</small></a><a href="../search.html?q=Pausimachos" class="tag entity-tag" style="text-decoration:none;">👤 Pausimachos <small>(father of Kratesilochos)</small></a><a href="../search.html?q=Asklepiades" class="tag entity-tag" style="text-decoration:none;">👤 Asklepiades <small>(judge)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Kleitor <small>(city)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Magnesia <small>(city)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Patrai <small>(city)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Demetrias <small>(city)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Iolkos <small>(city)</small></a><a href="../index_deities.html" class="tag entity-tag" style="text-decoration:none;">⚡ Artemis Iolkia</a><a href="../index_deities.html" class="tag entity-tag" style="text-decoration:none;">⚡ Apollo</a><a href="../index_deities.html" class="tag entity-tag" style="text-decoration:none;">⚡ Zeus Krataios</a></div></div>
+            <div class="ai-analysis-box"><h3>AI Analysis Summary</h3><p>Πρόκειται για μια σύνθετη επιγραφή που περιλαμβάνει αλληλογραφία και ψηφίσματα μεταξύ των πόλεων Κλείτορος, Πατρών και Μαγνησίας/Δημητριάδος. Το κύριο θέμα είναι η αποστολή ξένων δικαστών για την επίλυση διαφορών και η απόδοση τιμών (προξενία, ατέλεια, στεφάνωση) σε αυτούς. Η επιγραφή σώζεται με αρκετά κενά που έχουν συμπληρωθεί από μελετητές.</p></div>
+        </div>
+    </div>
+  </main>
+</body>
+</html>
+    

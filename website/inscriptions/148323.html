@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PHI-148323 - AGKI</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <style>
+    /* Custom Scrollbar Styling */
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: rgba(0,0,0,0.05); }
+    ::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #aaa; }
+
+    .page-container { max-width: 1400px; margin: 0 auto; padding: 2rem; }
+    .back-link { display: inline-block; margin-bottom: 1rem; color: var(--primary); font-weight: 600; }
+    .text-viewer-original { display: grid; grid-template-columns: 40px 1fr; gap: 2rem; font-family: "New Athena Unicode", "Gentium Plus", "Times New Roman", serif; font-size: 1.25rem; line-height: 1.6; background: var(--panel); padding: 2rem; border: 1px solid var(--border); border-radius: 4px; margin-bottom: 2rem; color: var(--text); }
+    .line-numbers { text-align: right; color: var(--muted); font-size: 1.25rem; line-height: 1.6; user-select: none; opacity: 0.5; font-family: inherit; white-space: pre; padding-right: 1rem; border-right: 1px solid var(--border); }
+    .greek-content { white-space: pre-wrap; word-break: break-word; padding-left: 1rem; }
+    .highlight-evidence { background-color: var(--accent); color: white; border-radius: 2px; padding: 0 2px; }
+    .theme-card { background: var(--panel); padding: 1rem 1.5rem; border-left: 4px solid var(--primary); margin-bottom: 0.75rem; border: 1px solid var(--border); border-left-width: 4px; }
+    .ai-analysis-box { background: rgba(31, 167, 163, 0.05); padding: 2rem; border-radius: 8px; border: 1px solid var(--border); margin-top: 2rem; }
+    .evidence-box { max-width: 500px; text-align: right; }
+    .evidence-quote { font-size: 0.85rem; font-style: italic; color: var(--muted); margin: 0; }
+    .badge.green { background: #e6f4ea; color: #137333; border-color: #137333; }
+    .badge.orange { background: #fef7e0; color: #b06000; border-color: #b06000; }
+    .badge.red { background: #fce8e6; color: #c5221f; border-color: #c5221f; }
+    .entity-tag { background: rgba(217, 123, 61, 0.1); color: var(--accent-2); margin-right: 0.5rem; margin-bottom: 0.5rem; display: inline-block; padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.9rem; border: 1px solid rgba(217, 123, 61, 0.2); }
+    .split-container { display: block; }
+    .split-container.active { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+    .split-container.active .split-col-right { position: sticky; top: 20px; max-height: 90vh; overflow-y: auto; padding-right: 10px; }
+  </style>
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+
+    function toggleSplitView() {
+        const container = document.getElementById('main-content');
+        const btn = document.getElementById('splitViewBtn');
+        container.classList.toggle('active');
+        btn.textContent = container.classList.contains('active') ? 'View: Split' : 'View: Standard';
+    }
+
+    function copyCitation() {
+        const citation = "AGKI Project. (2026). Inscription PHI-148323 . Retrieved from " + window.location.href;
+        navigator.clipboard.writeText(citation);
+        alert("Citation copied to clipboard!");
+    }
+
+    function highlightQuote(quote) {
+        const container = document.querySelector('.greek-content');
+        if (!container || !quote) return;
+        if (!container.dataset.original) container.dataset.original = container.innerHTML;
+        else container.innerHTML = container.dataset.original;
+        
+        const regex = new RegExp(quote.trim().replace(/\s+/g, '\\s+'), 'g');
+        container.innerHTML = container.innerHTML.replace(regex, match => `<mark class="highlight-evidence">${match}</mark>`);
+    }
+
+    function clearHighlight() {
+        const container = document.querySelector('.greek-content');
+        if (container && container.dataset.original) container.innerHTML = container.dataset.original;
+    }
+
+    function updateFontSize(size) {
+        const v = document.getElementById('original-view');
+        if(v) v.style.fontSize = size + 'px';
+    }
+
+    function openReportModal() { document.getElementById('reportModal').style.display = 'block'; }
+    function closeReportModal() { document.getElementById('reportModal').style.display = 'none'; }
+    function sendReport() {
+        const category = document.getElementById('reportCategory').value;
+        const desc = document.getElementById('reportDesc').value;
+        const fix = document.getElementById('reportFix').value;
+        const subject = `AGKI Error Report: PHI-148323`;
+        const body = `Category: ${category}%0D%0ADescription: ${desc}%0D%0AProposed Fix: ${fix}`;
+        window.location.href = `mailto:admin@agki-project.org?subject=${encodeURIComponent(subject)}&body=${body}`;
+        closeReportModal();
+    }
+  </script>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="brand"><h1><a href="../index.html">AGKI Tagging Tool</a></h1></div>
+    <nav class="nav-links">
+        <a href="../index.html" class="nav-item">Home</a>
+        <a href="../search.html" class="nav-item">Search</a>
+        <a href="../explore.html" class="nav-item">Explore</a>
+        <a href="../indices.html" class="nav-item">Indices</a>
+    </nav>
+    <div class="header-controls">
+        <button class="theme-toggle-btn" onclick="toggleTheme()" id="themeBtn">Dark Mode</button>
+    </div>
+  </header>
+
+  <script>
+    const themeBtn = document.getElementById('themeBtn');
+    function updateThemeBtn() {
+        const current = document.documentElement.getAttribute('data-theme');
+        if(themeBtn) themeBtn.textContent = current === 'light' ? 'Dark Mode' : 'Light Mode';
+    }
+    updateThemeBtn();
+    window.toggleTheme = function() {
+        const current = document.documentElement.getAttribute('data-theme');
+        const next = current === 'light' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        updateThemeBtn();
+    }
+  </script>
+
+  <main class="page-container inscription-page">
+    <div class="inscription-toolbar">
+        <a href="../search.html" class="back-link"><- Back to Dashboard</a>
+        <div class="inscription-actions">
+            <button id="splitViewBtn" onclick="toggleSplitView()" class="button secondary compact">View: Standard</button>
+            <button onclick="openReportModal()" class="button error compact">Report Error</button>
+        </div>
+    </div>
+
+    <!-- Report Modal -->
+    <div id="reportModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:1000;">
+        <div style="background:var(--panel); width:90%; max-width:500px; margin:10% auto; padding:2rem; border-radius:8px; border:1px solid var(--border);">
+            <h3>Report Error for PHI-148323</h3>
+            <label>Error Category</label>
+            <select id="reportCategory" style="width:100%; padding:0.5rem; margin-bottom:1rem;">
+                <option value="Incorrect Tag">Incorrect Tag / Theme</option>
+                <option value="Missing Entity">Missing Person / Place</option>
+                <option value="Translation Error">Translation / Text Issue</option>
+                <option value="Other">Other</option>
+            </select>
+            <label>Description</label>
+            <textarea id="reportDesc" rows="3" style="width:100%; margin-bottom:1rem;"></textarea>
+            <label>Proposed Fix</label>
+            <textarea id="reportFix" rows="2" style="width:100%; margin-bottom:1.5rem;"></textarea>
+            <div style="display:flex; justify-content:flex-end; gap:0.5rem;">
+                <button onclick="closeReportModal()" class="button secondary">Cancel</button>
+                <button onclick="sendReport()" class="button">Create Email Report</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="main-content" class="split-container">
+        <div class="split-col-left">
+            <section class="inscription-hero">
+                <div class="inscription-title-row">
+                    <h2>Inscription PHI-148323</h2>
+                    <div class="inscription-actions">
+                        <button onclick="copyCitation()" class="button secondary compact">Cite</button>
+                        <a href="https://epigraphy.packhum.org/text/148323" target="_blank" class="button secondary compact">View on PHI</a>
+                    </div>
+                </div>
+                <div class="inscription-meta">
+                    <div class="meta-item"><div class="label">Provenance</div><div class="meta-value"><a href="https://pleiades.stoa.org/places/541044" target="_blank" title="View in Pleiades">Pherai</a> &gt; <a href="https://pleiades.stoa.org/places/541018" target="_blank" title="View in Pleiades">Pelasgiotis</a></div></div>
+                    <div class="meta-item"><div class="label">Date</div><div class="meta-value"> cf. Corrigenda p. XIII</div></div>
+                    <div class="meta-item"><div class="label">Completeness</div><div class="meta-value"><span class="badge info">fragmentary</span></div></div>
+                </div>
+            </section>
+            <div class="inscription-title-row">
+                <h3>Original Text</h3>
+                <div class="font-size-control">
+                    <input type="range" min="14" max="32" value="20" oninput="updateFontSize(this.value)">
+                </div>
+            </div>
+            <div id="original-view" class="text-viewer-original">
+                <div class="line-numbers">1
+
+
+
+5
+
+
+
+
+10
+
+
+
+
+15
+
+
+
+
+20
+
+
+
+
+25
+
+
+
+
+30
+
+
+
+
+35
+
+
+
+
+40
+
+
+
+
+45
+
+
+
+
+50
+
+
+
+
+55
+
+
+
+
+60
+
+
+
+
+65
+
+
+
+
+70
+
+
+
+
+75
+
+
+
+
+80
+
+</div>
+                <div class="greek-content">γελ ου [------]
+ π νικος π [κρατ νου]
+το πολ μωνος ε φροσ[---]
+ π κρατ νου το πολ μ[ωνος].
+ ντιλ οντος
+το πικρ τους ταμιε ο[ν]τος τ ς π λεως τ ν πρ τη[ν]
+ ξ μηνον το νιαυτο το 
+ π στρατηγο θεμιστογ νους το νδροσθ νους ο 
+δεδωκ τες π α τ πελε θεροι τ π λει το ς δεκαπ ντε στατ ρας κατ τ ν ν μον κλ τα π ρχελ ου
+το πποκρ τους κα γησ νδρας τ ς ππομ χου καλλιστ π κρατ νου το πολ μωνος κ[α]
+δικαιοπ λεως τ ς ρ στωνος.
+νικολ ου το 
+χρηματ ζοντος κ δα το ν κωνος ταμ[ι]ε οντος τ ς π λεως ν
+τ στρατηγ τ θεμισ[το]γ νους το νδροσθ νου[ς]
+ο δεδωκ τες π α τ ι πελε θεροι τ π λει το ς δεκαπ ντε στατ ρας κατ τ ν ν μον χρ στα π πολλων δου
+το παυσαν ου φ σει δ μφιστρ του γ θων π θεοδ του
+το μνασ ου ε βοι ως 
+τρυφ ρα π ρακλε δου
+το ρακλε δου.
+ λκ μου το 
+σωκρ τους ταμιε οντος τ ς π λεως τ ν
+πρ την ξ μηνον το νιαυτο το π στρατηγο ε βι του ο δεδωκ τες πελε θεροι
+τ π λει το ς δεκαπ ντε στατ ρας κατ τ ν ν μον ν κη π ρτεμισ ας τ ς τιμ ρχου σ σιμος
+ π φερεκρ τους το ν τα π γαθος κα δαμ ς π σ μου κα[ φ]ιλ ππου
+[κ]α δ μωνος τ ν σ μου κρ θων π 
+[κ]λεομ χου το γ γου παρμεν ων
+[ π] μενεκρ του το δα μ νου καλ[λισ]θ νης κα φροδισ α καλου[μ ν]η κα μμα π καλλιστο ς
+τ ς κλ ωνος το ριστ ωνος 
+π ρρος π νικοτ λους το φιλ ππου κα φιλ ππου το νικοτ λους 
+παμφ λα π ε θυν μου το 
+ε θυν μου.
+[δεκαπ ντε στατ ρας κατ]
+[τ]ν ν μ[ον] 
+[ γ] νετα[ι]
+[κ]ατ τ δι [ρ]θωμα δειν ρια ε κοσ[ι] δ ο μυσυ μην ς
+ ρμα ου φι[λ]κλεια π 
+[κ]ρατε ας τ ς
+φ λωνος
+νικ ου
+το πα[ρ]αμ νου ταμιε οντος
+τ ς π λεως τ ν πρ την ξ μηνον τους
+το π α τοκρ τορος
+κα σαρος
+θεο υ ο 
+σεβαστο 
+ο δεδωκ τες π α τ ι πελε θεροι
+τ π λει
+το ς δεκαπ ντε στατ ρας κατ 
+τ ν ν μον 
+ γ νεται
+δειν ρια
+ε κοσι δ ο
+ μυσυ μην ς ρμα ου γ θηα π παυσαν ου το 
+ε βι του 
+φ σει δ 
+παυσαν ου.
+[---------]το[------]
+[--------]ουπ[-------]
+[--------]απω[-------]
+[--------]ωια[-------]
+[------- δ]ωκε [------]
+[--------]ον[-------]
+[-----------------]
+[-----------------]
+[-----------------]
+[--------]εως[-------]
+[--------]ριακ[------]
+[--------] φ λω[ν -----]
+[--------] π[ελευθερωθε σα]
+[------]ω[-]ου[-------]
+[ π στρατη]γο κ [λλου -------]
+[ταμιε οντος τ] ς π λεως [------]
+[---------] ουξ[ ν---]
+[------- πελ]ευθερω[θ---]
+[---------] πελευ[θερ---]
+[-------]κ[--]εντε[-----]
+[-------]ομου ο φα [----]
+[------] ε πορ α πε[λευθερωθε σα]
+[-------] το μενε[------]
+[---------] π φα[-----]
+[---------] π[ελευθερωθε σα]
+[---------]ιβου[------]</div>
+            </div>
+        </div>
+        <div class="split-col-right">
+            <h3>Thematic Analysis</h3>
+            
+        <div class="theme-card" onmouseover="highlightQuote('ο δεδωκ τες π α τ πελε θεροι τ π λει το ς δεκαπ ντε στατ ρας κατ τ ν ν μον')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Content/Official and Legal Documents/Manumission Records" class="tag domain-tag" style="text-decoration:none;">Content</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
+                    <div class="theme-path">Content > Official and Legal Documents > Manumission Records</div>
+                    <div class="theme-label">Manumission Records</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "ο δεδωκ τες π α τ πελε θεροι τ π λει το ς δεκαπ ντε στατ ρας κατ τ ν ν μον"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('δειν ρια ε κοσι δ ο μυσυ')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Content/Administrative Records and Lists/Accounts and Financial Records" class="tag domain-tag" style="text-decoration:none;">Content</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
+                    <div class="theme-path">Content > Administrative Records and Lists > Accounts and Financial Records</div>
+                    <div class="theme-label">Accounts and Financial Records</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "δειν ρια ε κοσι δ ο μυσυ"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('ταμιε ο[ν]τος τ ς π λεως... π στρατηγο θεμιστογ νους')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Content/Administrative Records and Lists/Lists of Officials or Citizens" class="tag domain-tag" style="text-decoration:none;">Content</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
+                    <div class="theme-path">Content > Administrative Records and Lists > Lists of Officials or Citizens</div>
+                    <div class="theme-label">Lists of Officials or Citizens</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "ταμιε ο[ν]τος τ ς π λεως... π στρατηγο θεμιστογ νους"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('κατ τ ν ν μον')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Content/Official and Legal Documents/Laws and Regulations" class="tag domain-tag" style="text-decoration:none;">Content</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
+                    <div class="theme-path">Content > Official and Legal Documents > Laws and Regulations</div>
+                    <div class="theme-label">Laws and Regulations</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "κατ τ ν ν μον"</p>
+                </div>
+            </div>
+        </div>
+        
+            <div style="margin-top:2rem;"><h3>Entities</h3><div><a href="../search.html?q=Themistogenes son of Androsthenes" class="tag entity-tag" style="text-decoration:none;">👤 Themistogenes son of Androsthenes <small>(Strategos)</small></a><a href="../search.html?q=Antileon son of Epikrates" class="tag entity-tag" style="text-decoration:none;">👤 Antileon son of Epikrates <small>(Treasurer)</small></a><a href="../search.html?q=Eubiotus" class="tag entity-tag" style="text-decoration:none;">👤 Eubiotus <small>(Strategos)</small></a><a href="../search.html?q=Alkimus son of Socrates" class="tag entity-tag" style="text-decoration:none;">👤 Alkimus son of Socrates <small>(Treasurer)</small></a><a href="../search.html?q=Augustus (Autokrator Kaisar)" class="tag entity-tag" style="text-decoration:none;">👤 Augustus (Autokrator Kaisar) <small>(Emperor)</small></a><a href="../search.html?q=Nikias son of Paramenos" class="tag entity-tag" style="text-decoration:none;">👤 Nikias son of Paramenos <small>(Treasurer)</small></a><a href="../search.html?q=Klita" class="tag entity-tag" style="text-decoration:none;">👤 Klita <small>(Freedwoman)</small></a><a href="../search.html?q=Hagesandras" class="tag entity-tag" style="text-decoration:none;">👤 Hagesandras <small>(Freedwoman)</small></a><a href="../search.html?q=Kallisto" class="tag entity-tag" style="text-decoration:none;">👤 Kallisto <small>(Freedwoman)</small></a><a href="../search.html?q=Dikaiopolis" class="tag entity-tag" style="text-decoration:none;">👤 Dikaiopolis <small>(Freedwoman)</small></a><a href="../search.html?q=Chresta" class="tag entity-tag" style="text-decoration:none;">👤 Chresta <small>(Freedwoman)</small></a><a href="../search.html?q=Agathon" class="tag entity-tag" style="text-decoration:none;">👤 Agathon <small>(Freedman)</small></a><a href="../search.html?q=Tryphera" class="tag entity-tag" style="text-decoration:none;">👤 Tryphera <small>(Freedwoman)</small></a><a href="../search.html?q=Nike" class="tag entity-tag" style="text-decoration:none;">👤 Nike <small>(Freedwoman)</small></a><a href="../search.html?q=Sosimos" class="tag entity-tag" style="text-decoration:none;">👤 Sosimos <small>(Freedman)</small></a><a href="../search.html?q=Agathos" class="tag entity-tag" style="text-decoration:none;">👤 Agathos <small>(Freedman)</small></a><a href="../search.html?q=Damas" class="tag entity-tag" style="text-decoration:none;">👤 Damas <small>(Freedman)</small></a><a href="../search.html?q=Krithon" class="tag entity-tag" style="text-decoration:none;">👤 Krithon <small>(Freedman)</small></a><a href="../search.html?q=Parmenion" class="tag entity-tag" style="text-decoration:none;">👤 Parmenion <small>(Freedman)</small></a><a href="../search.html?q=Kallisthenes" class="tag entity-tag" style="text-decoration:none;">👤 Kallisthenes <small>(Freedman)</small></a><a href="../search.html?q=Aphrodisia" class="tag entity-tag" style="text-decoration:none;">👤 Aphrodisia <small>(Freedwoman)</small></a><a href="../search.html?q=Amma" class="tag entity-tag" style="text-decoration:none;">👤 Amma <small>(Freedwoman)</small></a><a href="../search.html?q=Pyrrhos" class="tag entity-tag" style="text-decoration:none;">👤 Pyrrhos <small>(Freedman)</small></a><a href="../search.html?q=Pamphila" class="tag entity-tag" style="text-decoration:none;">👤 Pamphila <small>(Freedwoman)</small></a><a href="../search.html?q=Philikleia" class="tag entity-tag" style="text-decoration:none;">👤 Philikleia <small>(Freedwoman)</small></a><a href="../search.html?q=Agathea" class="tag entity-tag" style="text-decoration:none;">👤 Agathea <small>(Freedwoman)</small></a><a href="../search.html?q=Euporia" class="tag entity-tag" style="text-decoration:none;">👤 Euporia <small>(Freedwoman)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Pherai <small>(City)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Pelasgiotis <small>(Region)</small></a><a href="../index_deities.html" class="tag entity-tag" style="text-decoration:none;">⚡ Theos (Divus Augustus)</a></div></div>
+            <div class="ai-analysis-box"><h3>AI Analysis Summary</h3><p>Πρόκειται για έναν κατάλογο απελευθερωτικών πράξεων από τις Φερές της Θεσσαλίας, χρονολογούμενο στην εποχή του Αυγούστου (περ. 27 π.Χ.). Το κείμενο καταγράφει τα ονόματα των απελευθέρων που κατέβαλαν στο δημόσιο ταμείο το προβλεπόμενο από τον νόμο ποσό (15 στατήρες, οι οποίοι μετατρέπονται σε 22,5 δηνάρια). Η δομή είναι τυποποιημένη, αναφέροντας τον στρατηγό και τον ταμία της πόλης για κάθε εξάμηνο.</p></div>
+        </div>
+    </div>
+  </main>
+</body>
+</html>
+    

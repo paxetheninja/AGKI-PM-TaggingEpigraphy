@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PHI-241311 - AGKI</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <style>
+    /* Custom Scrollbar Styling */
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: rgba(0,0,0,0.05); }
+    ::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #aaa; }
+
+    .page-container { max-width: 1400px; margin: 0 auto; padding: 2rem; }
+    .back-link { display: inline-block; margin-bottom: 1rem; color: var(--primary); font-weight: 600; }
+    .text-viewer-original { display: grid; grid-template-columns: 40px 1fr; gap: 2rem; font-family: "New Athena Unicode", "Gentium Plus", "Times New Roman", serif; font-size: 1.25rem; line-height: 1.6; background: var(--panel); padding: 2rem; border: 1px solid var(--border); border-radius: 4px; margin-bottom: 2rem; color: var(--text); }
+    .line-numbers { text-align: right; color: var(--muted); font-size: 1.25rem; line-height: 1.6; user-select: none; opacity: 0.5; font-family: inherit; white-space: pre; padding-right: 1rem; border-right: 1px solid var(--border); }
+    .greek-content { white-space: pre-wrap; word-break: break-word; padding-left: 1rem; }
+    .highlight-evidence { background-color: var(--accent); color: white; border-radius: 2px; padding: 0 2px; }
+    .theme-card { background: var(--panel); padding: 1rem 1.5rem; border-left: 4px solid var(--primary); margin-bottom: 0.75rem; border: 1px solid var(--border); border-left-width: 4px; }
+    .ai-analysis-box { background: rgba(31, 167, 163, 0.05); padding: 2rem; border-radius: 8px; border: 1px solid var(--border); margin-top: 2rem; }
+    .evidence-box { max-width: 500px; text-align: right; }
+    .evidence-quote { font-size: 0.85rem; font-style: italic; color: var(--muted); margin: 0; }
+    .badge.green { background: #e6f4ea; color: #137333; border-color: #137333; }
+    .badge.orange { background: #fef7e0; color: #b06000; border-color: #b06000; }
+    .badge.red { background: #fce8e6; color: #c5221f; border-color: #c5221f; }
+    .entity-tag { background: rgba(217, 123, 61, 0.1); color: var(--accent-2); margin-right: 0.5rem; margin-bottom: 0.5rem; display: inline-block; padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.9rem; border: 1px solid rgba(217, 123, 61, 0.2); }
+    .split-container { display: block; }
+    .split-container.active { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+    .split-container.active .split-col-right { position: sticky; top: 20px; max-height: 90vh; overflow-y: auto; padding-right: 10px; }
+  </style>
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+
+    function toggleSplitView() {
+        const container = document.getElementById('main-content');
+        const btn = document.getElementById('splitViewBtn');
+        container.classList.toggle('active');
+        btn.textContent = container.classList.contains('active') ? 'View: Split' : 'View: Standard';
+    }
+
+    function copyCitation() {
+        const citation = "AGKI Project. (2026). Inscription PHI-241311 . Retrieved from " + window.location.href;
+        navigator.clipboard.writeText(citation);
+        alert("Citation copied to clipboard!");
+    }
+
+    function highlightQuote(quote) {
+        const container = document.querySelector('.greek-content');
+        if (!container || !quote) return;
+        if (!container.dataset.original) container.dataset.original = container.innerHTML;
+        else container.innerHTML = container.dataset.original;
+        
+        const regex = new RegExp(quote.trim().replace(/\s+/g, '\\s+'), 'g');
+        container.innerHTML = container.innerHTML.replace(regex, match => `<mark class="highlight-evidence">${match}</mark>`);
+    }
+
+    function clearHighlight() {
+        const container = document.querySelector('.greek-content');
+        if (container && container.dataset.original) container.innerHTML = container.dataset.original;
+    }
+
+    function updateFontSize(size) {
+        const v = document.getElementById('original-view');
+        if(v) v.style.fontSize = size + 'px';
+    }
+
+    function openReportModal() { document.getElementById('reportModal').style.display = 'block'; }
+    function closeReportModal() { document.getElementById('reportModal').style.display = 'none'; }
+    function sendReport() {
+        const category = document.getElementById('reportCategory').value;
+        const desc = document.getElementById('reportDesc').value;
+        const fix = document.getElementById('reportFix').value;
+        const subject = `AGKI Error Report: PHI-241311`;
+        const body = `Category: ${category}%0D%0ADescription: ${desc}%0D%0AProposed Fix: ${fix}`;
+        window.location.href = `mailto:admin@agki-project.org?subject=${encodeURIComponent(subject)}&body=${body}`;
+        closeReportModal();
+    }
+  </script>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="brand"><h1><a href="../index.html">AGKI Tagging Tool</a></h1></div>
+    <nav class="nav-links">
+        <a href="../index.html" class="nav-item">Home</a>
+        <a href="../search.html" class="nav-item">Search</a>
+        <a href="../explore.html" class="nav-item">Explore</a>
+        <a href="../indices.html" class="nav-item">Indices</a>
+    </nav>
+    <div class="header-controls">
+        <button class="theme-toggle-btn" onclick="toggleTheme()" id="themeBtn">Dark Mode</button>
+    </div>
+  </header>
+
+  <script>
+    const themeBtn = document.getElementById('themeBtn');
+    function updateThemeBtn() {
+        const current = document.documentElement.getAttribute('data-theme');
+        if(themeBtn) themeBtn.textContent = current === 'light' ? 'Dark Mode' : 'Light Mode';
+    }
+    updateThemeBtn();
+    window.toggleTheme = function() {
+        const current = document.documentElement.getAttribute('data-theme');
+        const next = current === 'light' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        updateThemeBtn();
+    }
+  </script>
+
+  <main class="page-container inscription-page">
+    <div class="inscription-toolbar">
+        <a href="../search.html" class="back-link"><- Back to Dashboard</a>
+        <div class="inscription-actions">
+            <button id="splitViewBtn" onclick="toggleSplitView()" class="button secondary compact">View: Standard</button>
+            <button onclick="openReportModal()" class="button error compact">Report Error</button>
+        </div>
+    </div>
+
+    <!-- Report Modal -->
+    <div id="reportModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:1000;">
+        <div style="background:var(--panel); width:90%; max-width:500px; margin:10% auto; padding:2rem; border-radius:8px; border:1px solid var(--border);">
+            <h3>Report Error for PHI-241311</h3>
+            <label>Error Category</label>
+            <select id="reportCategory" style="width:100%; padding:0.5rem; margin-bottom:1rem;">
+                <option value="Incorrect Tag">Incorrect Tag / Theme</option>
+                <option value="Missing Entity">Missing Person / Place</option>
+                <option value="Translation Error">Translation / Text Issue</option>
+                <option value="Other">Other</option>
+            </select>
+            <label>Description</label>
+            <textarea id="reportDesc" rows="3" style="width:100%; margin-bottom:1rem;"></textarea>
+            <label>Proposed Fix</label>
+            <textarea id="reportFix" rows="2" style="width:100%; margin-bottom:1.5rem;"></textarea>
+            <div style="display:flex; justify-content:flex-end; gap:0.5rem;">
+                <button onclick="closeReportModal()" class="button secondary">Cancel</button>
+                <button onclick="sendReport()" class="button">Create Email Report</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="main-content" class="split-container">
+        <div class="split-col-left">
+            <section class="inscription-hero">
+                <div class="inscription-title-row">
+                    <h2>Inscription PHI-241311</h2>
+                    <div class="inscription-actions">
+                        <button onclick="copyCitation()" class="button secondary compact">Cite</button>
+                        <a href="https://epigraphy.packhum.org/text/241311" target="_blank" class="button secondary compact">View on PHI</a>
+                    </div>
+                </div>
+                <div class="inscription-meta">
+                    <div class="meta-item"><div class="label">Provenance</div><div class="meta-value">Phokis &gt; <a href="https://pleiades.stoa.org/places/540726" target="_blank" title="View in Pleiades">Delphi</a></div></div>
+                    <div class="meta-item"><div class="label">Date</div><div class="meta-value"> 173 BC</div></div>
+                    <div class="meta-item"><div class="label">Completeness</div><div class="meta-value"><span class="badge info">fragmentary</span></div></div>
+                </div>
+            </section>
+            <div class="inscription-title-row">
+                <h3>Original Text</h3>
+                <div class="font-size-control">
+                    <input type="range" min="14" max="32" value="20" oninput="updateFontSize(this.value)">
+                </div>
+            </div>
+            <div id="original-view" class="text-viewer-original">
+                <div class="line-numbers">1
+
+
+
+5
+</div>
+                <div class="greek-content">ρχοντος σωσιν κου μην ς βυσ ου π το σδε π δοτο λ ρισα τ ι π λλωνι τ ι πυθ ωι σ μα νδρε ον ι νομα μιθραδ [τ]ης τ γ νος καππ δοκα τιμ ς ργυρ ου μν ν τεσσ ρων καθ ς π στευσε μιθραδ της τ ι θε ι τ ν ν ν. βεβαιωτ ρ κα[τ] τν ν μον [τ] ς π λιος μν σων ξ νωνος δελφ ς. παραμειν τω δ μιθραδ της παρ λ ρισαν χρι κα ζ η λ ρισα νεγκλ τως [π]ο[ι]ων τ 
+ποτιτασσ μενον π ν τ δυνατ ν ε δ μ παραμε ναι μιθραδ της μ πο οι π ν τ πο[τ]ιτασσ μενον δυνατ ς ν κυρ α σ[τ]ω λ ρισα κολ ζουσα ι κα θ ληι τρ πωι ν κα λ ρισα κελε ση πλ μ μ πωλησ τω ε δ [τ] κα π θη λ ρισα ποιησ τω τ νομιζ μενα π ντα μιθραδ της κ τ ν λαρ σας
+ ξ ν κα χη β λτιστα ν τ ι πρ τωι νιαυτ ι ε κα καιρ ς α τ ι κποι κα ε τ κα ται περισσ ν τ ν λαρ σας α τ ς χ τω ε κα μ υ ς α τ ς παν λθη ε δ κα παν λθη πρ το τ νομιζ μενα συντελ σαι παραδο ς μιθραδ της τ λαρ σας π ντα τ[ ι] υ ι τ ι λαρ σας λε θερος στω ε δ κα μ παρα[γ νη]ται ποι σας τ νομιζ μενα μιθραδ της λε θερος στω κα ν φαπτος π π ντων τ μ π ντα χρ νον κυριε ων α τοσαυτο κα ποτρ χων ο ς κα θ ληι ε [δ τ ς]
+κα πτηται μιθραδ τεος π καταδουλισμ ι β βαιον παρεχ τω τ ι θε ι τ ν ν ν βεβαιωτ ρ μν σων ε δ κα μ παρ χηι β βαιον τ [ι θ]ε ι τ ν ν ν [πρ κτι]μος στω μιθραδ τει τε α τ ι κα λλωι τ ι θ λοντι π ρ μιθραδ τη κατ τ ν ν μον. μο ως δ κα ο παρατυγχ νοντες κ ριοι ντω συλ οντες μιθραδ την
+ ς λε θερον ντα ζ μιοι ντες κα νυπ δικοι ο συλ οντες π σας δ κας κα ζαμ ας. μ ρτυροι ο ερε ς θαμβος μ ντας κα ο ρχοντες λκ νος νδρομ νης δρομοκλε δας 
+ δι ται μαντ ας φρ νος καλλε δας.</div>
+            </div>
+        </div>
+        <div class="split-col-right">
+            <h3>Thematic Analysis</h3>
+            
+        <div class="theme-card" onmouseover="highlightQuote('ἀπέδοτο Λάρισα τῶι Ἀπόλλωνι τῶι Πυθίωι σῶμα ἀνδρεῖον ὧι ὄνομα Μιθραδάτης')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Content/Official and Legal Documents/Manumission Records" class="tag domain-tag" style="text-decoration:none;">Content</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
+                    <div class="theme-path">Content > Official and Legal Documents > Manumission Records</div>
+                    <div class="theme-label">Manumission Records</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "ἀπέδοτο Λάρισα τῶι Ἀπόλλωνι τῶι Πυθίωι σῶμα ἀνδρεῖον ὧι ὄνομα Μιθραδάτης"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('τιμῆς ἀργυρίου μνᾶν τεσσάρων ... βεβαιωτὴρ κατὰ τὸν νόμον τῆς πόλιος Μνάσων Ξένωνος')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Content/Official and Legal Documents/Contracts and Private Legal Acts" class="tag domain-tag" style="text-decoration:none;">Content</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
+                    <div class="theme-path">Content > Official and Legal Documents > Contracts and Private Legal Acts</div>
+                    <div class="theme-label">Contracts and Private Legal Acts</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "τιμῆς ἀργυρίου μνᾶν τεσσάρων ... βεβαιωτὴρ κατὰ τὸν νόμον τῆς πόλιος Μνάσων Ξένωνος"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('ἀπέδοτο Λάρισα τῶι Ἀπόλλωνι τῶι Πυθίωι')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Content/Religious and Dedicatory Texts/Votive Dedications" class="tag domain-tag" style="text-decoration:none;">Content</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">90% Conf.</span>
+                    <span class="badge orange" title="Η πώληση στον θεό είναι νομική μυθοπλασία για την εξασφάλιση της ελευθερίας, όχι θρησκευτική ανάθεση με την παραδοσιακή έννοια." style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem; cursor:help;">⚠️ Ambiguous</span>
+                    <div class="theme-path">Content > Religious and Dedicatory Texts > Votive Dedications</div>
+                    <div class="theme-label">Votive Dedications</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "ἀπέδοτο Λάρισα τῶι Ἀπόλλωνι τῶι Πυθίωι"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('τιμῆς ἀργυρίου μνᾶν τεσσάρων')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Content/Administrative Records and Lists/Accounts and Financial Records" class="tag domain-tag" style="text-decoration:none;">Content</a>
+                    <span class="badge orange" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">80% Conf.</span>
+                    
+                    <div class="theme-path">Content > Administrative Records and Lists > Accounts and Financial Records</div>
+                    <div class="theme-label">Accounts and Financial Records</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "τιμῆς ἀργυρίου μνᾶν τεσσάρων"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('μάρτυροι οἱ ἱερεῖς Θάμβος Μάντας καὶ οἱ ἄρχοντες Ἄλκων Ἀνδρομένης Δρομοκλείδας Δίαιται Μαντίας Φρῖνος Καλλείδας')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Content/Administrative Records and Lists/Lists of Officials or Citizens" class="tag domain-tag" style="text-decoration:none;">Content</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
+                    <div class="theme-path">Content > Administrative Records and Lists > Lists of Officials or Citizens</div>
+                    <div class="theme-label">Lists of Officials or Citizens</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "μάρτυροι οἱ ἱερεῖς Θάμβος Μάντας καὶ οἱ ἄρχοντες Ἄλκων Ἀνδρομένης Δρομοκλείδας Δίαιται Μαντίας Φρῖνος Καλλείδας"</p>
+                </div>
+            </div>
+        </div>
+        
+            <div style="margin-top:2rem;"><h3>Entities</h3><div><a href="../search.html?q=Σωσίνικος" class="tag entity-tag" style="text-decoration:none;">👤 Σωσίνικος <small>(Archon)</small></a><a href="../search.html?q=Λάρισα" class="tag entity-tag" style="text-decoration:none;">👤 Λάρισα <small>(Seller)</small></a><a href="../search.html?q=Μιθραδάτης" class="tag entity-tag" style="text-decoration:none;">👤 Μιθραδάτης <small>(Manumitted Slave)</small></a><a href="../search.html?q=Μνάσων" class="tag entity-tag" style="text-decoration:none;">👤 Μνάσων <small>(Guarantor)</small></a><a href="../search.html?q=Ξένων" class="tag entity-tag" style="text-decoration:none;">👤 Ξένων <small>(Father of Guarantor)</small></a><a href="../search.html?q=Θάμβος" class="tag entity-tag" style="text-decoration:none;">👤 Θάμβος <small>(Priest)</small></a><a href="../search.html?q=Μάντας" class="tag entity-tag" style="text-decoration:none;">👤 Μάντας <small>(Priest)</small></a><a href="../search.html?q=Ἄλκων" class="tag entity-tag" style="text-decoration:none;">👤 Ἄλκων <small>(Archon)</small></a><a href="../search.html?q=Ἀνδρομένης" class="tag entity-tag" style="text-decoration:none;">👤 Ἀνδρομένης <small>(Archon)</small></a><a href="../search.html?q=Δρομοκλείδας" class="tag entity-tag" style="text-decoration:none;">👤 Δρομοκλείδας <small>(Archon)</small></a><a href="../search.html?q=Διαίτας" class="tag entity-tag" style="text-decoration:none;">👤 Διαίτας <small>(Witness)</small></a><a href="../search.html?q=Μαντίας" class="tag entity-tag" style="text-decoration:none;">👤 Μαντίας <small>(Witness)</small></a><a href="../search.html?q=Φρῖνος" class="tag entity-tag" style="text-decoration:none;">👤 Φρῖνος <small>(Witness)</small></a><a href="../search.html?q=Καλλείδας" class="tag entity-tag" style="text-decoration:none;">👤 Καλλείδας <small>(Witness)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Δελφοί <small>(City)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Καππαδοκία <small>(Region)</small></a><a href="../index_deities.html" class="tag entity-tag" style="text-decoration:none;">⚡ Ἀπόλλων Πύθιος</a></div></div>
+            <div class="ai-analysis-box"><h3>AI Analysis Summary</h3><p>Η επιγραφή είναι μια πλήρης νομικά πράξη απελευθέρωσης (manumissio per vindictam) από τους Δελφούς. Παρά τις μικρές φθορές στο κείμενο, η δομή είναι ακέραιη, περιλαμβάνοντας τη χρονολόγηση, την πώληση στον Απόλλωνα, το τίμημα, τον εγγυητή, τη ρήτρα παραμονής (paramone) και τον κατάλογο μαρτύρων. Ο Μιθραδάτης, Καππάδοκας στην καταγωγή, απελευθερώνεται από τη Λάρισα υπό τον όρο να παραμείνει κοντά της μέχρι τον θάνατό της και να εκτελέσει τα ταφικά της καθήκοντα.</p></div>
+        </div>
+    </div>
+  </main>
+</body>
+</html>
+    
