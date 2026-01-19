@@ -3,3 +3,5 @@ data/
 .env
 __pycache__/
 vault/AGKI-Tagging-Epigraphy/.obsidian/
+.claude/
+search_debug.html
