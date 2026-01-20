@@ -307,7 +307,7 @@ function getTourSteps(page) {
             {
                 element: '#searchInput',
                 title: 'Search Box',
-                intro: 'Type your search query here. You can search for Greek text (using Latin transliteration), names, places, or any keyword.'
+                intro: 'Type your search query here. You can search for Greek text, names, places, keywords, or standard publication references (e.g., "IG II²").'
             },
             {
                 element: '#entityType',
@@ -341,6 +341,11 @@ function getTourSteps(page) {
                 intro: 'Filter by geographic region. You can also click on the map to filter by location.'
             },
             {
+                element: '#myCollectionList',
+                title: 'My Collection',
+                intro: 'Inscriptions you "star" will appear here for quick access. You can export this list.'
+            },
+            {
                 element: '#queryExplanation',
                 title: 'Query Explanation',
                 intro: 'This banner shows a natural language summary of your current filters, making it easy to understand what you\'re viewing.'
@@ -348,18 +353,38 @@ function getTourSteps(page) {
             {
                 element: '#mapContainer',
                 title: 'Interactive Map',
-                intro: 'Click on markers to view inscriptions from that location. Click the region name in popups to filter by that region.'
+                intro: 'Click markers to view inscriptions. Click on a region polygon to automatically filter the results to that region.'
+            },
+            {
+                element: '.viz-row',
+                title: 'Key Statistics',
+                intro: 'See breakdowns of Completeness (intact vs. fragmentary) and the most frequently mentioned Deities and Places.'
             },
             {
                 element: '#timeChart',
                 title: 'Timeline',
                 intro: 'This chart shows the temporal distribution of your filtered results. It updates as you apply filters.'
+            },
+            {
+                element: '#sankeyChart',
+                title: 'Thematic Flows',
+                intro: 'Trace how themes are distributed across different regions.'
+            },
+            {
+                element: '#heatmapChart',
+                title: 'Thematic Heatmap',
+                intro: 'Identify "hotspots" where specific themes appear most frequently.'
             }
         ],
         'detail': [
             {
                 title: 'Inscription Detail',
                 intro: 'This page shows the full details of a single inscription, including the Greek text, AI-generated tags, and metadata.'
+            },
+            {
+                element: '.inscription-meta',
+                title: 'Metadata',
+                intro: 'Key information including Provenance, Date, Completeness, and the AI Model version used for tagging.'
             },
             {
                 element: '.greek-content',
@@ -369,7 +394,7 @@ function getTourSteps(page) {
             {
                 element: '.theme-card',
                 title: 'Thematic Tags',
-                intro: 'AI-generated tags with confidence scores. Each tag includes the rationale and a quote from the text that supports it.'
+                intro: 'AI-generated tags with confidence scores. Look for the "⚠️ Ambiguous" badge, which flags cases where the AI found conflicting categories.'
             },
             {
                 element: '#reportBtn',
