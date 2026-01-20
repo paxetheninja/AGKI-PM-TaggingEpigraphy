@@ -1,0 +1,728 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PHI-138538 - AGKI</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <style>
+    /* Custom Scrollbar Styling */
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: rgba(0,0,0,0.05); }
+    ::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #aaa; }
+
+    .page-container { max-width: 1400px; margin: 0 auto; padding: 2rem; }
+    .back-link { display: inline-block; margin-bottom: 1rem; color: var(--primary); font-weight: 600; }
+    .text-viewer-original { display: grid; grid-template-columns: 40px 1fr; gap: 2rem; font-family: "New Athena Unicode", "Gentium Plus", "Times New Roman", serif; font-size: 1.25rem; line-height: 1.6; background: var(--panel); padding: 2rem; border: 1px solid var(--border); border-radius: 4px; margin-bottom: 2rem; color: var(--text); }
+    .line-numbers { text-align: right; color: var(--muted); font-size: 1.25rem; line-height: 1.6; user-select: none; opacity: 0.5; font-family: inherit; white-space: pre; padding-right: 1rem; border-right: 1px solid var(--border); }
+    .greek-content { white-space: pre-wrap; word-break: break-word; padding-left: 1rem; }
+    .highlight-evidence { background-color: var(--accent); color: white; border-radius: 2px; padding: 0 2px; }
+    .theme-card { background: var(--panel); padding: 1rem 1.5rem; border-left: 4px solid var(--primary); margin-bottom: 0.75rem; border: 1px solid var(--border); border-left-width: 4px; }
+    .ai-analysis-box { background: rgba(31, 167, 163, 0.05); padding: 2rem; border-radius: 8px; border: 1px solid var(--border); margin-top: 2rem; }
+    .evidence-box { max-width: 500px; text-align: right; }
+    .evidence-quote { font-size: 0.85rem; font-style: italic; color: var(--muted); margin: 0; }
+    .badge.green { background: #e6f4ea; color: #137333; border-color: #137333; }
+    .badge.orange { background: #fef7e0; color: #b06000; border-color: #b06000; }
+    .badge.red { background: #fce8e6; color: #c5221f; border-color: #c5221f; }
+    .entity-tag { background: rgba(217, 123, 61, 0.1); color: var(--accent-2); margin-right: 0.5rem; margin-bottom: 0.5rem; display: inline-block; padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.9rem; border: 1px solid rgba(217, 123, 61, 0.2); }
+    .split-container { display: block; }
+    .split-container.active { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+    .split-container.active .split-col-right { position: sticky; top: 20px; max-height: 90vh; overflow-y: auto; padding-right: 10px; }
+  </style>
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+
+    function toggleSplitView() {
+        const container = document.getElementById('main-content');
+        const btn = document.getElementById('splitViewBtn');
+        container.classList.toggle('active');
+        btn.textContent = container.classList.contains('active') ? 'View: Split' : 'View: Standard';
+    }
+
+    function copyCitation() {
+        const citation = "AGKI Project. (2026). Inscription PHI-138538 . Retrieved from " + window.location.href;
+        navigator.clipboard.writeText(citation);
+        alert("Citation copied to clipboard!");
+    }
+
+    function highlightQuote(quote) {
+        const container = document.querySelector('.greek-content');
+        if (!container || !quote) return;
+        if (!container.dataset.original) container.dataset.original = container.innerHTML;
+        else container.innerHTML = container.dataset.original;
+        
+        const regex = new RegExp(quote.trim().replace(/\s+/g, '\\s+'), 'g');
+        container.innerHTML = container.innerHTML.replace(regex, match => `<mark class="highlight-evidence">${match}</mark>`);
+    }
+
+    function clearHighlight() {
+        const container = document.querySelector('.greek-content');
+        if (container && container.dataset.original) container.innerHTML = container.dataset.original;
+    }
+
+    function updateFontSize(size) {
+        const v = document.getElementById('original-view');
+        if(v) v.style.fontSize = size + 'px';
+    }
+
+    function openReportModal() { document.getElementById('reportModal').style.display = 'block'; }
+    function closeReportModal() { document.getElementById('reportModal').style.display = 'none'; }
+    function sendReport() {
+        const category = document.getElementById('reportCategory').value;
+        const desc = document.getElementById('reportDesc').value;
+        const fix = document.getElementById('reportFix').value;
+        const subject = `AGKI Error Report: PHI-138538`;
+        const body = `Category: ${category}%0D%0ADescription: ${desc}%0D%0AProposed Fix: ${fix}`;
+        window.location.href = `mailto:admin@agki-project.org?subject=${encodeURIComponent(subject)}&body=${body}`;
+        closeReportModal();
+    }
+  </script>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="brand"><h1><a href="../index.html">AGKI Tagging Tool</a></h1></div>
+    <nav class="nav-links">
+        <a href="../index.html" class="nav-item">Home</a>
+        <a href="../search.html" class="nav-item">Search</a>
+        <a href="../explore.html" class="nav-item">Explore</a>
+        <a href="../compare.html" class="nav-item">Compare</a>
+        <a href="../network.html" class="nav-item">Network</a>
+        <a href="../matrix.html" class="nav-item">Matrix</a>
+        <a href="../indices.html" class="nav-item">Indices</a>
+    </nav>
+    <div class="header-controls">
+        <button class="theme-toggle-btn" onclick="toggleTheme()" id="themeBtn">Dark Mode</button>
+    </div>
+  </header>
+
+  <script>
+    const themeBtn = document.getElementById('themeBtn');
+    function updateThemeBtn() {
+        const current = document.documentElement.getAttribute('data-theme');
+        if(themeBtn) themeBtn.textContent = current === 'light' ? 'Dark Mode' : 'Light Mode';
+    }
+    updateThemeBtn();
+    window.toggleTheme = function() {
+        const current = document.documentElement.getAttribute('data-theme');
+        const next = current === 'light' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        updateThemeBtn();
+    }
+  </script>
+
+  <main class="page-container inscription-page">
+    <div class="inscription-toolbar">
+        <a href="../search.html" class="back-link"><- Back to Dashboard</a>
+        <div class="inscription-actions">
+            <button id="splitViewBtn" onclick="toggleSplitView()" class="button secondary compact">View: Standard</button>
+            <button onclick="openReportModal()" class="button error compact">Report Error</button>
+        </div>
+    </div>
+
+    <!-- Report Modal -->
+    <div id="reportModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:1000;">
+        <div style="background:var(--panel); width:90%; max-width:500px; margin:10% auto; padding:2rem; border-radius:8px; border:1px solid var(--border);">
+            <h3>Report Error for PHI-138538</h3>
+            <label>Error Category</label>
+            <select id="reportCategory" style="width:100%; padding:0.5rem; margin-bottom:1rem;">
+                <option value="Incorrect Tag">Incorrect Tag / Theme</option>
+                <option value="Missing Entity">Missing Person / Place</option>
+                <option value="Translation Error">Translation / Text Issue</option>
+                <option value="Other">Other</option>
+            </select>
+            <label>Description</label>
+            <textarea id="reportDesc" rows="3" style="width:100%; margin-bottom:1rem;"></textarea>
+            <label>Proposed Fix</label>
+            <textarea id="reportFix" rows="2" style="width:100%; margin-bottom:1.5rem;"></textarea>
+            <div style="display:flex; justify-content:flex-end; gap:0.5rem;">
+                <button onclick="closeReportModal()" class="button secondary">Cancel</button>
+                <button onclick="sendReport()" class="button">Create Email Report</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="main-content" class="split-container">
+        <div class="split-col-left">
+            <section class="inscription-hero">
+                <div class="inscription-title-row">
+                    <h2>Inscription PHI-138538</h2>
+                    <div class="inscription-actions">
+                        <button onclick="copyCitation()" class="button secondary compact">Cite</button>
+                        <a href="https://epigraphy.packhum.org/text/138538" target="_blank" class="button secondary compact">View on PHI</a>
+                    </div>
+                </div>
+                <div class="inscription-meta">
+                    <div class="meta-item"><div class="label">Provenance</div><div class="meta-value"><a href="https://pleiades.stoa.org/places/590031" target="_blank" title="View in Pleiades">Rhodes</a></div></div>
+                    <div class="meta-item"><div class="label">Date</div><div class="meta-value"> after 69 AD</div></div>
+                    <div class="meta-item"><div class="label">Completeness</div><div class="meta-value"><span class="badge info">fragmentary</span></div></div>
+                    <div class="meta-item"><div class="label">Tagged by</div><div class="meta-value"><span class="badge" style="background:rgba(12,140,136,0.15); color:#0c8c88; border:1px solid #0c8c88;">gemini-3-flash-preview (Proposer+Judge)</span></div></div>
+                </div>
+            </section>
+            <div class="inscription-title-row">
+                <h3>Original Text</h3>
+                <div class="font-size-control">
+                    <input type="range" min="14" max="32" value="20" oninput="updateFontSize(this.value)">
+                </div>
+            </div>
+            <div id="original-view" class="text-viewer-original">
+                <div class="line-numbers">1
+
+
+
+5
+
+
+
+
+10
+
+
+
+
+15
+
+
+
+
+20
+
+
+
+
+25
+
+
+
+
+30
+
+
+
+
+35
+
+
+
+
+40
+
+
+
+
+45
+
+
+
+
+50
+
+
+
+
+55
+
+
+
+
+60
+
+
+
+
+65
+
+
+
+
+70
+
+
+
+
+75
+
+
+
+
+80
+
+
+
+
+85
+
+
+
+
+90
+
+
+
+
+95
+
+
+
+
+100
+
+
+
+
+105
+
+
+
+
+110
+
+
+
+
+115
+
+
+
+
+120
+
+
+
+
+125
+
+
+
+
+130
+
+
+
+
+135
+
+
+
+
+140
+
+
+
+
+145
+
+
+
+
+150
+
+
+
+
+155
+
+
+
+
+160
+
+
+
+
+165
+
+
+
+
+170
+
+
+
+
+175
+
+
+
+
+180
+
+
+
+
+185
+
+
+
+
+190
+
+
+
+
+195
+
+
+
+
+200
+
+
+
+
+205
+
+
+
+
+210
+
+
+
+
+215
+
+
+
+
+220
+
+
+
+
+225
+
+
+
+
+230
+
+
+
+
+235
+
+
+
+
+240
+
+</div>
+                <div class="greek-content">[--]υ 
+[--]
+[---]θους.
+[--]ιιιιι[-----------------]
+τ[ρ] διον σιος [καθ θ ωνος]
+ γρ ο λιος φαινλ[ας μοιων δευς]
+ ριστ βουλος δ[------]
+ ο ηρ νιος ε φη[μος ----]
+ διον σιος γ καθ [θ ωνος]
+ μενεκλ ς δ
+ κλα διος κλιν μβ[ροτος μελαν θ]ου καθ ι[---]
+[ φλα ιος]ψικλ ς [λυσιστρ του]
+[------------------]
+[------]ευς
+[------]-
+[------]
+[------]υ
+[------]ς
+[-----]ων ου
+[-----]
+[-----]λου
+[-----]
+[-----]του
+[-----]υς
+[------]ευς
+[------]
+[------]
+[------]
+[------]ατου
+[------]ατου
+[------]νος
+[------]
+[------]ρ του
+[-------]ευς
+[---- γα]θαγ του 
+[------]
+[------]
+[------] λα 
+[------]
+[-------]ς κλαρο
+[-------]που 
+[-------]ευς
+[-------]
+[-------]του
+[-------]
+[-------]
+[-------]
+[---- καρπα]θιοπο
+[---- ποσι]δων ου 
+[----- κλ]αρο 
+[-------]ου
+[-------]
+[-------]
+[ --------------]
+[ --------------]
+[ --------------]
+[ --------------]
+[ --------------]
+[ --------------]
+[ --------------]
+[ --------------]
+[ -------------]
+[ --------------]
+[ --------------] φ σκιος
+[ --------------]σιδου
+[ -------------]
+[ κλα διος ντ πατρος 0]ρ κοντος
+[ ----------]σ ου
+[ φλα ιος ψικ]λ ς λυσιστρ του
+[ ---]---οκρατ α στιοδ ρου
+[ ---]αρχος λλαν κου
+[ κλα διος]ψικλ ς β καθ ποσιδων ου
+[ ο]λιος φαιν λας μοιων δευς
+ κλα διος ψικλ ς β καθ ποσιδων ου
+πρ φλα ιος μοιραγ νης τιμοδ κου
+τρ γ λοχος ριστ ως
+σμ ο λιος φαιν λας μοιων δευς
+ φιλ σκος λεξ νδρου
+ π θων β μν στιος
+ π θων γ του μν στιος
+ φλα ιος ριστογ νης π που
+ σωμ νης κ μωνος
+ φλα ιος γλ χαρτος φιλοκρ του
+ ψικλ ς δ ωνος καθ [----]
+ κλα διος ππ λυτος π θωνος
+ ο λιος φαιν λας μοιων δευς
+ π θων γ του μν στιος
+ φλα ιος ε φρ νωρ
+ κλα διος φαν στρατος
+ γ ιος σαβ διος λα
+ φλα ιος μοιραγ νης τιμοδ κου
+ ο λιος ντ πατρος ρτεμιδ ρου
+ ο λιος μοιραγ νης ζ νωνος
+ φλα ιος μην δοτος ρατοφ νευς
+ φλα ιος πολλ νιος ρμοκρ τευς
+ δαμ χαρις γοργ α
+ φλα ιος ριστ δας ριστ ππου
+ φλαυ α ρτεμισ α καλλικρ τευς
+ ο λιος φαιν λας μοιων δευς
+ εροφ ν δωσιθ ου τλ ος
+ κλ[α] διος ψικλ ς β καθ ποσιδων ου
+ ο λιος φαιν λας μοιων δευς
+ ο ηραν α νικ σσα κλευκρ τευς
+ κλα διος μνασαγ ρας καλλιστρ του
+τρ σων πυθαγ ρα
+ ρτ κλαυδ α δαμο[-] κρατ δευ[ς] 
+ ε κρ της ντιλ οντος ς
+ φλα ιος μελ νθιος ε νδρου ο
+ κλα διος ψικλ ς β καθ ποσιδων ου
+ κλα διος φιλοκρ της γλωκρ του
+ ο ηραν α νικ σσα κλευκρ τευς
+ φλαυ ου δρ κοντος πολλ[ω]ν
+ δημητρ ου κασσι τα κλαρο
+ κλα διος ντ πατρος δρ κοντος
+ ρ στιππος β βυ
+ι διον σιος γ καθ θ ωνος
+[ -----------]
+[ -----------]
+[ ---------]νο[--]
+[ --------]-γ[-]ατ[--]
+[ γ ργος δι]ονυσ ου
+[ κλα διος κλι]ν μβροτος μελαν[θ ου]
+[ ο λιος] φαιν λας μοιων δ[ευς]
+[ φλα ιος] ψικλ ς λυσιστρ του
+[ φ]λα ιος θ βρων ψικλε ς σιβ
+ δαμ χαρις γοργ α
+[κ] φλα ιος γητος κλισιμβρ του
+ γλ χαρτος τιμασ ρχου
+ ο λιος διον σιος ρτεμιδ ρου
+ φλα ιος θρασυμ δης λυσιστρ του
+ ρμοκρ της πραξ ωνος κρυ
+ κλα διος μνασαγ ρας καλλιστρ
+ κλα διος φαρν κης καλλιστρ του
+τρ κλα διος κλευκρ της τειμοδ κου
+ α δαμαγ ρας διονυσ ου ο
+ ο λιος φαιν λας μοιων δευ[ς]
+ φλα ιος γλ χαρτος νεικασιμ χο[υ]
+ φλαυ εροκλε ς υ ο μεικυλα ου λ
+ γ ργος διονυσ ου καρπα
+ σων πυθαγ ρα βου
+ φλαυ α ρτεμεισ α
+ φλαυ εροκλε ς μεικυλα ου κλα
+ φλαυ σατ ρα εροκλε ς κα θυ φ ν[ευς] 
+ φλαυ ρτεμεισ α [-----]
+ φλαυ α ρτεμεισ α
+ δαμ χαρις γοργ α
+ κλα διος ντ πατρος δρ κοντος στυπα
+ φλαυ α ρτεμεισ α
+ φλα ιος εροκλ ς λα
+ φλα ιος ριστε δας ριστ ππου
+ φλαυ α ρτεμε[ισ] α
+ γ σαρχος ε κλε ς φαγα
+ τειμ ναξ τιμοπ λεως φαγα
+ ο λιος φαιν λας μοιων δευς
+ ο λιος φαιν λας μοιων δευς
+ μ νανδρος δωσιθ ου τλ ος
+ γησ δαμος διοδ του ρχ
+ φλα ιος μοιραγ νης τιμοδ κου
+ φλα ιος μελ νθιος ε νδρου
+ φλα ιος διον σιος βου καθ ριστομ νευς
+ λιβουσκ διος δημητρ ου σερμι
+ κλα διος μνασαγ ρας καλλιστρ του
+προ κλα διος μνασαγ ρας καλλιστρ του
+τρ φλα ιος μοιραγ νης τιμοδ κου
+π φιλ σκος λεξ νδρου
+ κρατ δας ναυσ κου λα
+ κλα διος ντ πατρος δρ κοντος
+ κ μων μενεκρ τευς
+ δαμαγ ρας διονυσ ου ο
+ ο λιος μοιραγ νης ζ νωνος καρπα
+ φλα ιος ψικλ ς λυσιστρ του
+ ο λιος φαιν λας μοιων δευς
+ δαμαγ ρας διονυσ ου ο
+ φλα ιος γητος κλισιμβρ του
+ φλα ιος λ ξανδρος κ μωνος
+ δαμαγ ρας διονυσ ου ο
+ διον σιος γ καθ [θ]ωνος κρυ
+ σωμ νης κ μωνος βρ σιος
+ μοσχ ων θ ωνος καθ σσου
+ κλα διος κλευκρ της τιμοδ κου
+ [--]γ[-----------]
+[ -------------]
+[ -------------]
+[ ----------]
+[ ----------]
+[ ----------]
+[ ----------]
+[ ----------]
+[ ---------]
+[ ----------]
+[ ----------]
+[ ----------]
+[ ----------]
+[ ---------]
+[ ---------]
+[ ---------]
+[ ---------]
+[ ---------]
+[ ---------]
+[ ---------]
+[ ---------]
+[ ---------]
+[ ----------]
+[ ---------]
+[ ---------]
+[ ---------]
+[ ---------]
+[ ---------]
+ λη-[--------]
+ γη[-------]
+ γ[--------]
+τρ ρτ[----]
+π κλ[α διος ---]
+ κλα διος [---------]
+ γορ[-----------]
+ ε κρ[ της ντιλ οντος μιος]
+ γ ργ[ος διονυσ ου καρπα]
+ δα[μαγ ρας διονυσ ου ο]
+ γλ[ χαρτος τιμασ ρχου]
+ ο [λιος -------]
+ φ[λα ιος ------]
+ μο [---------]
+ κλε[---------]
+ φιλ [σκος λεξ νδρου]
+ φλα ιος [-----]
+ ρισ[--------]
+ ο λ[ιος ------]
+ κλα διος [----]
+ φλα ιος [-----]
+ κλα διος [ψικλ ς καθ ποσιδων ου]
+ κλα δ[ιος ------]
+ διον [σιος ------]
+ τ τος [-------]
+ διον[ σιος -----]
+ κλα [διος ------]
+ σωσ[---------]
+ κρατ[ δας ναυσ κου λα]
+κε πυ [--------]
+[ ----------]
+[ ----------]
+[προτρ ------]
+[τρ -------]</div>
+            </div>
+        </div>
+        <div class="split-col-right">
+            <h3>Thematic Analysis</h3>
+            
+        <div class="theme-card" onmouseover="highlightQuote('ο λιος φαιν λας μοιων δευς')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Content/Administrative Records and Lists/Lists of Officials or Citizens" class="tag domain-tag" style="text-decoration:none;">Content</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
+                    <div class="theme-path">Content > Administrative Records and Lists > Lists of Officials or Citizens</div>
+                    <div class="theme-label">Lists of Officials or Citizens</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "ο λιος φαιν λας μοιων δευς"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('ο λιος φαιν λας μοιων δευς')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Type/Object Type/Monumental Stone Objects/Stele" class="tag domain-tag" style="text-decoration:none;">Type</a>
+                    <span class="badge orange" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">80% Conf.</span>
+                    
+                    <div class="theme-path">Type > Object Type > Monumental Stone Objects > Stele</div>
+                    <div class="theme-label">Stele</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "ο λιος φαιν λας μοιων δευς"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('ο λιος φαιν λας μοιων δευς')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Type/Material/Stone/Marble" class="tag domain-tag" style="text-decoration:none;">Type</a>
+                    <span class="badge orange" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">80% Conf.</span>
+                    
+                    <div class="theme-path">Type > Material > Stone > Marble</div>
+                    <div class="theme-label">Marble</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "ο λιος φαιν λας μοιων δευς"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('[--]υ [--] [---]θους.')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=State/Incomplete / Fragmentary/Fragmentary" class="tag domain-tag" style="text-decoration:none;">State</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
+                    <div class="theme-path">State > Incomplete / Fragmentary > Fragmentary</div>
+                    <div class="theme-label">Fragmentary</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "[--]υ [--] [---]θους."</p>
+                </div>
+            </div>
+        </div>
+        
+            <div style="margin-top:2rem;"><h3>Entities</h3><div><a href="../search.html?q=Aurelius Phainilas" class="tag entity-tag" style="text-decoration:none;">👤 Aurelius Phainilas <small>(Official)</small></a><a href="../search.html?q=Claudius Psicles" class="tag entity-tag" style="text-decoration:none;">👤 Claudius Psicles <small>(Official)</small></a><a href="../search.html?q=Flavius Moiragenes" class="tag entity-tag" style="text-decoration:none;">👤 Flavius Moiragenes <small>(Official)</small></a><a href="../search.html?q=Claudius Antipater" class="tag entity-tag" style="text-decoration:none;">👤 Claudius Antipater <small>(Official)</small></a><a href="../search.html?q=Flavia Artemisia" class="tag entity-tag" style="text-decoration:none;">👤 Flavia Artemisia <small>(Citizen)</small></a><a href="../search.html?q=Dionysius" class="tag entity-tag" style="text-decoration:none;">👤 Dionysius <small>(Citizen)</small></a><a href="../search.html?q=Python" class="tag entity-tag" style="text-decoration:none;">👤 Python <small>(Citizen)</small></a><a href="../search.html?q=Menander" class="tag entity-tag" style="text-decoration:none;">👤 Menander <small>(Citizen)</small></a><a href="../search.html?q=Gorgus" class="tag entity-tag" style="text-decoration:none;">👤 Gorgus <small>(Citizen)</small></a><a href="../search.html?q=Damacharis" class="tag entity-tag" style="text-decoration:none;">👤 Damacharis <small>(Citizen)</small></a><a href="../search.html?q=Aristippus" class="tag entity-tag" style="text-decoration:none;">👤 Aristippus <small>(Citizen)</small></a><a href="../search.html?q=Euphranor" class="tag entity-tag" style="text-decoration:none;">👤 Euphranor <small>(Citizen)</small></a><a href="../search.html?q=Phanostratus" class="tag entity-tag" style="text-decoration:none;">👤 Phanostratus <small>(Citizen)</small></a><a href="../search.html?q=Gaius Sabidius" class="tag entity-tag" style="text-decoration:none;">👤 Gaius Sabidius <small>(Citizen)</small></a><a href="../search.html?q=Artemidorus" class="tag entity-tag" style="text-decoration:none;">👤 Artemidorus <small>(Citizen)</small></a><a href="../search.html?q=Zeno" class="tag entity-tag" style="text-decoration:none;">👤 Zeno <small>(Citizen)</small></a><a href="../search.html?q=Eratophanes" class="tag entity-tag" style="text-decoration:none;">👤 Eratophanes <small>(Citizen)</small></a><a href="../search.html?q=Apollonius" class="tag entity-tag" style="text-decoration:none;">👤 Apollonius <small>(Citizen)</small></a><a href="../search.html?q=Hermocrates" class="tag entity-tag" style="text-decoration:none;">👤 Hermocrates <small>(Citizen)</small></a><a href="../search.html?q=Aristidas" class="tag entity-tag" style="text-decoration:none;">👤 Aristidas <small>(Citizen)</small></a><a href="../search.html?q=Callicrates" class="tag entity-tag" style="text-decoration:none;">👤 Callicrates <small>(Citizen)</small></a><a href="../search.html?q=Dositheus" class="tag entity-tag" style="text-decoration:none;">👤 Dositheus <small>(Citizen)</small></a><a href="../search.html?q=Cleucrates" class="tag entity-tag" style="text-decoration:none;">👤 Cleucrates <small>(Citizen)</small></a><a href="../search.html?q=Callistratus" class="tag entity-tag" style="text-decoration:none;">👤 Callistratus <small>(Citizen)</small></a><a href="../search.html?q=Pythagoras" class="tag entity-tag" style="text-decoration:none;">👤 Pythagoras <small>(Citizen)</small></a><a href="../search.html?q=Damocratidas" class="tag entity-tag" style="text-decoration:none;">👤 Damocratidas <small>(Citizen)</small></a><a href="../search.html?q=Antileon" class="tag entity-tag" style="text-decoration:none;">👤 Antileon <small>(Citizen)</small></a><a href="../search.html?q=Melanthius" class="tag entity-tag" style="text-decoration:none;">👤 Melanthius <small>(Citizen)</small></a><a href="../search.html?q=Philocrates" class="tag entity-tag" style="text-decoration:none;">👤 Philocrates <small>(Citizen)</small></a><a href="../search.html?q=Glaucrates" class="tag entity-tag" style="text-decoration:none;">👤 Glaucrates <small>(Citizen)</small></a><a href="../search.html?q=Draco" class="tag entity-tag" style="text-decoration:none;">👤 Draco <small>(Citizen)</small></a><a href="../search.html?q=Demetrius" class="tag entity-tag" style="text-decoration:none;">👤 Demetrius <small>(Citizen)</small></a><a href="../search.html?q=Cassitas" class="tag entity-tag" style="text-decoration:none;">👤 Cassitas <small>(Citizen)</small></a><a href="../search.html?q=Bybus" class="tag entity-tag" style="text-decoration:none;">👤 Bybus <small>(Citizen)</small></a><a href="../search.html?q=Theon" class="tag entity-tag" style="text-decoration:none;">👤 Theon <small>(Citizen)</small></a><a href="../search.html?q=Thebron" class="tag entity-tag" style="text-decoration:none;">👤 Thebron <small>(Citizen)</small></a><a href="../search.html?q=Agetus" class="tag entity-tag" style="text-decoration:none;">👤 Agetus <small>(Citizen)</small></a><a href="../search.html?q=Clisimbrotus" class="tag entity-tag" style="text-decoration:none;">👤 Clisimbrotus <small>(Citizen)</small></a><a href="../search.html?q=Glauchartus" class="tag entity-tag" style="text-decoration:none;">👤 Glauchartus <small>(Citizen)</small></a><a href="../search.html?q=Timasarchus" class="tag entity-tag" style="text-decoration:none;">👤 Timasarchus <small>(Citizen)</small></a><a href="../search.html?q=Thrasymedes" class="tag entity-tag" style="text-decoration:none;">👤 Thrasymedes <small>(Citizen)</small></a><a href="../search.html?q=Praxon" class="tag entity-tag" style="text-decoration:none;">👤 Praxon <small>(Citizen)</small></a><a href="../search.html?q=Pharnaces" class="tag entity-tag" style="text-decoration:none;">👤 Pharnaces <small>(Citizen)</small></a><a href="../search.html?q=Timodocus" class="tag entity-tag" style="text-decoration:none;">👤 Timodocus <small>(Citizen)</small></a><a href="../search.html?q=Damagoras" class="tag entity-tag" style="text-decoration:none;">👤 Damagoras <small>(Citizen)</small></a><a href="../search.html?q=Nicasimachus" class="tag entity-tag" style="text-decoration:none;">👤 Nicasimachus <small>(Citizen)</small></a><a href="../search.html?q=Hierocles" class="tag entity-tag" style="text-decoration:none;">👤 Hierocles <small>(Citizen)</small></a><a href="../search.html?q=Meicylaus" class="tag entity-tag" style="text-decoration:none;">👤 Meicylaus <small>(Citizen)</small></a><a href="../search.html?q=Satyra" class="tag entity-tag" style="text-decoration:none;">👤 Satyra <small>(Citizen)</small></a><a href="../search.html?q=Phanes" class="tag entity-tag" style="text-decoration:none;">👤 Phanes <small>(Citizen)</small></a><a href="../search.html?q=Euclees" class="tag entity-tag" style="text-decoration:none;">👤 Euclees <small>(Citizen)</small></a><a href="../search.html?q=Timonax" class="tag entity-tag" style="text-decoration:none;">👤 Timonax <small>(Citizen)</small></a><a href="../search.html?q=Timopolis" class="tag entity-tag" style="text-decoration:none;">👤 Timopolis <small>(Citizen)</small></a><a href="../search.html?q=Hegesidamus" class="tag entity-tag" style="text-decoration:none;">👤 Hegesidamus <small>(Citizen)</small></a><a href="../search.html?q=Diodotus" class="tag entity-tag" style="text-decoration:none;">👤 Diodotus <small>(Citizen)</small></a><a href="../search.html?q=Aristomenes" class="tag entity-tag" style="text-decoration:none;">👤 Aristomenes <small>(Citizen)</small></a><a href="../search.html?q=Libuscidius" class="tag entity-tag" style="text-decoration:none;">👤 Libuscidius <small>(Citizen)</small></a><a href="../search.html?q=Nausicrates" class="tag entity-tag" style="text-decoration:none;">👤 Nausicrates <small>(Citizen)</small></a><a href="../search.html?q=Menecrates" class="tag entity-tag" style="text-decoration:none;">👤 Menecrates <small>(Citizen)</small></a><a href="../search.html?q=Alexander" class="tag entity-tag" style="text-decoration:none;">👤 Alexander <small>(Citizen)</small></a><a href="../search.html?q=Moschion" class="tag entity-tag" style="text-decoration:none;">👤 Moschion <small>(Citizen)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Rhodes <small>(Island)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Karpathos <small>(Island)</small></a><a href="../index_deities.html" class="tag entity-tag" style="text-decoration:none;">⚡ Poseidon</a></div></div>
+            <div class="ai-analysis-box"><h3>AI Analysis Summary</h3><p>This inscription from Rhodes, dating to the Roman Imperial period (likely 2nd century AD), is a catalog of names. It features a high concentration of individuals with Roman citizenship (Aurelii, Claudii, Flavii), reflecting the social integration of the Rhodian elite into the Roman administrative system. The frequent use of the abbreviation &#x27;καθ&#x27; (for καθ&#x27; υἱοθεσίαν) highlights the local importance of recording both biological and adoptive lineage, a hallmark of Rhodian social structure.</p></div>
+        </div>
+    </div>
+  </main>
+</body>
+</html>
+    

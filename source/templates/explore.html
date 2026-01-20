@@ -134,10 +134,36 @@
     .collection-item a, .history-item span { color: var(--primary); cursor: pointer; }
     .collection-remove { color: var(--muted); cursor: pointer; margin-left: 8px; }
 
+    /* New Visualizations */
+    .viz-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .viz-small { min-height: 280px; }
+
+    /* Donut Chart */
+    #completenessChart { max-height: 220px; }
+    .donut-legend { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; margin-top: 0.75rem; font-size: 0.8rem; }
+    .donut-legend-item { display: flex; align-items: center; gap: 0.4rem; }
+    .donut-legend-color { width: 12px; height: 12px; border-radius: 3px; }
+
+    /* Top Entities Panels */
+    .entity-list { list-style: none; padding: 0; margin: 0; }
+    .entity-item { display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0; border-bottom: 1px solid var(--border); font-size: 0.85rem; }
+    .entity-item:last-child { border-bottom: none; }
+    .entity-name { color: var(--text); flex: 1; }
+    .entity-name a { color: var(--primary); text-decoration: none; }
+    .entity-name a:hover { text-decoration: underline; }
+    .entity-count { background: var(--bg); color: var(--muted); padding: 0.15rem 0.5rem; border-radius: 999px; font-size: 0.75rem; font-weight: 600; }
+
+    /* Heatmap */
+    #heatmapChart { width: 100%; height: 400px; }
+
+    /* Sankey */
+    #sankeyChart { width: 100%; height: 450px; }
+
     @media (max-width: 1200px) {
       .dashboard-container { grid-template-columns: 1fr; }
       .sidebar { position: static; }
       .viz-grid { grid-template-columns: 1fr; }
+      .viz-row { grid-template-columns: 1fr; }
     }
 
   </style>
@@ -145,6 +171,10 @@
     const savedTheme = localStorage.getItem('theme') || 'light';
     document.documentElement.setAttribute('data-theme', savedTheme);
   </script>
+  <!-- Intro.js for Tours -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intro.js@7.2.0/minified/introjs.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/intro.js@7.2.0/minified/intro.min.js"></script>
+  <script src="assets/js/tour.js"></script>
 </head>
 <body>
   <header class="site-header">
@@ -153,6 +183,9 @@
         <a href="index.html" class="nav-item">Home</a>
         <a href="search.html" class="nav-item">Search</a>
         <a href="explore.html" class="nav-item active">Explore</a>
+        <a href="compare.html" class="nav-item">Compare</a>
+        <a href="network.html" class="nav-item">Network</a>
+        <a href="matrix.html" class="nav-item">Matrix</a>
         <a href="indices.html" class="nav-item">Indices</a>
     </nav>
     <div class="header-controls">
@@ -238,6 +271,23 @@
                 <h3 class="viz-title">Geospatial Relations</h3>
                 <div id="map"></div>
             </div>
+            <!-- Row: Completeness + Top Entities -->
+            <div class="viz-row">
+                <div class="viz-card viz-small">
+                    <h3 class="viz-title">Completeness</h3>
+                    <canvas id="completenessChart"></canvas>
+                    <div id="completenessLegend" class="donut-legend"></div>
+                </div>
+                <div class="viz-card viz-small">
+                    <h3 class="viz-title">Top Deities</h3>
+                    <ul id="topDeities" class="entity-list"></ul>
+                </div>
+                <div class="viz-card viz-small">
+                    <h3 class="viz-title">Top Places</h3>
+                    <ul id="topPlaces" class="entity-list"></ul>
+                </div>
+            </div>
+
             <div class="viz-grid">
                 <div class="viz-card viz-wide">
                     <h3 class="viz-title">Time Distribution</h3>
@@ -249,6 +299,18 @@
                     <h3 class="viz-title">Taxonomy Sunburst</h3>
                     <div id="sunburstChart"></div>
                 </div>
+            </div>
+
+            <!-- Sankey: Region to Theme Flow -->
+            <div class="viz-card viz-wide">
+                <h3 class="viz-title">Region → Theme Flow (Sankey)</h3>
+                <div id="sankeyChart"></div>
+            </div>
+
+            <!-- Heatmap: Themes × Regions -->
+            <div class="viz-card viz-wide">
+                <h3 class="viz-title">Theme × Region Heatmap</h3>
+                <div id="heatmapChart"></div>
             </div>
         </div>
     </div>
@@ -544,6 +606,10 @@
         document.documentElement.setAttribute('data-theme', next);
         localStorage.setItem('theme', next);
         updateThemeBtn();
+        // Re-render Plotly charts with new theme colors
+        if (window.lastFilteredData) {
+            updateCharts(window.lastFilteredData);
+        }
     }
 
     // --- Collections ---
@@ -880,6 +946,28 @@
             data: { labels: [], datasets: [{ label: 'Count', data: [], backgroundColor: '#c1683c' }] },
             options: commonOptions
         });
+
+        // Completeness Donut Chart
+        chartInstances.completeness = new Chart(document.getElementById('completenessChart').getContext('2d'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Intact', 'Fragmentary', 'Mutilated', 'Unknown'],
+                datasets: [{
+                    data: [0, 0, 0, 0],
+                    backgroundColor: ['#2f8f5d', '#c1683c', '#c5221f', '#666666'],
+                    borderWidth: 2,
+                    borderColor: 'var(--panel)'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                cutout: '60%',
+                plugins: {
+                    legend: { display: false }
+                }
+            }
+        });
     }
 
     function updateCharts(data) {
@@ -903,7 +991,19 @@
         chartInstances.time.data.datasets[0].data = counts;
         chartInstances.time.update();
 
-        // 2. Sunburst Chart
+        // 2. Completeness Donut
+        updateCompletenessChart(data);
+
+        // 3. Top Entities
+        updateTopEntities(data);
+
+        // 4. Heatmap
+        updateHeatmap(data);
+
+        // 5. Sankey
+        updateSankey(data);
+
+        // 6. Sunburst Chart
         const hierarchyMap = new Map();
         
         function addToHier(path) {
@@ -934,25 +1034,260 @@
         });
 
         const sunburstData = Array.from(hierarchyMap.values());
-        
+
+        const dark = isDarkMode();
+        const fontColor = getPlotlyFontColor();
+
         const plotData = [{
             type: "sunburst",
             ids: sunburstData.map(d => d.id),
             labels: sunburstData.map(d => d.label),
             parents: sunburstData.map(d => d.parent),
             values: sunburstData.map(d => d.value),
-            outsidetextfont: {size: 14, color: "#377eb8"},
-            leaf: {opacity: 0.4},
-            marker: {line: {width: 2}},
+            outsidetextfont: {size: 14, color: fontColor},
+            insidetextfont: {color: dark ? '#fff' : '#333'},
+            leaf: {opacity: dark ? 0.7 : 0.4},
+            marker: {line: {width: 2, color: dark ? '#333' : '#fff'}},
+            textfont: {color: fontColor}
         }];
 
         const layout = {
             margin: {l: 0, r: 0, b: 0, t: 0},
-            sunburstcolorway:["#c1683c", "#0c8c88", "#d97b3d", "#2f8f5d"],
-            paper_bgcolor: 'rgba(0,0,0,0)', // transparent
+            sunburstcolorway: dark
+                ? ["#e8a070", "#4ec9c5", "#f0a060", "#5cbfb0"]
+                : ["#c1683c", "#0c8c88", "#d97b3d", "#2f8f5d"],
+            paper_bgcolor: 'rgba(0,0,0,0)',
         };
 
         Plotly.newPlot('sunburstChart', plotData, layout, {displayModeBar: false});
+    }
+
+    // --- Completeness Donut ---
+    function updateCompletenessChart(data) {
+        const completenessCount = { intact: 0, fragmentary: 0, mutilated: 0, unknown: 0 };
+        data.forEach(item => {
+            const c = (item.completeness || '').toLowerCase();
+            if (c === 'intact') completenessCount.intact++;
+            else if (c === 'fragmentary') completenessCount.fragmentary++;
+            else if (c === 'mutilated') completenessCount.mutilated++;
+            else completenessCount.unknown++;
+        });
+
+        const values = [completenessCount.intact, completenessCount.fragmentary, completenessCount.mutilated, completenessCount.unknown];
+        chartInstances.completeness.data.datasets[0].data = values;
+        chartInstances.completeness.update();
+
+        // Update legend
+        const legendContainer = document.getElementById('completenessLegend');
+        const colors = ['#2f8f5d', '#c1683c', '#c5221f', '#666666'];
+        const labels = ['Intact', 'Fragmentary', 'Mutilated', 'Unknown'];
+        legendContainer.innerHTML = labels.map((label, i) => `
+            <div class="donut-legend-item">
+                <span class="donut-legend-color" style="background:${colors[i]}"></span>
+                <span>${label}: ${values[i]}</span>
+            </div>
+        `).join('');
+    }
+
+    // --- Top Entities ---
+    function updateTopEntities(data) {
+        // Deities
+        const deityCounts = {};
+        data.forEach(item => {
+            (item.mentioned_deities || []).forEach(d => {
+                deityCounts[d] = (deityCounts[d] || 0) + 1;
+            });
+        });
+        const topDeities = Object.entries(deityCounts)
+            .sort((a, b) => b[1] - a[1])
+            .slice(0, 8);
+
+        document.getElementById('topDeities').innerHTML = topDeities.length > 0
+            ? topDeities.map(([name, count]) => `
+                <li class="entity-item">
+                    <span class="entity-name"><a href="search.html?q=${encodeURIComponent(name)}">${name}</a></span>
+                    <span class="entity-count">${count}</span>
+                </li>
+            `).join('')
+            : '<li class="entity-item"><span class="entity-name" style="color:var(--muted)">No deities found</span></li>';
+
+        // Places
+        const placeCounts = {};
+        data.forEach(item => {
+            (item.mentioned_places || []).forEach(p => {
+                placeCounts[p.name] = (placeCounts[p.name] || 0) + 1;
+            });
+        });
+        const topPlaces = Object.entries(placeCounts)
+            .sort((a, b) => b[1] - a[1])
+            .slice(0, 8);
+
+        document.getElementById('topPlaces').innerHTML = topPlaces.length > 0
+            ? topPlaces.map(([name, count]) => `
+                <li class="entity-item">
+                    <span class="entity-name"><a href="search.html?q=${encodeURIComponent(name)}">${name}</a></span>
+                    <span class="entity-count">${count}</span>
+                </li>
+            `).join('')
+            : '<li class="entity-item"><span class="entity-name" style="color:var(--muted)">No places found</span></li>';
+    }
+
+    // --- Theme detection helper ---
+    function isDarkMode() {
+        return document.documentElement.getAttribute('data-theme') === 'dark';
+    }
+
+    function getPlotlyFontColor() {
+        return isDarkMode() ? '#e0e0e0' : '#333333';
+    }
+
+    // --- Heatmap: Theme × Region ---
+    function updateHeatmap(data) {
+        // Collect themes (first level only) and regions
+        const themeSet = new Set();
+        const regionSet = new Set();
+        const matrix = {};
+
+        data.forEach(item => {
+            const region = item.region || 'Unknown';
+            regionSet.add(region);
+            (item.themes || []).forEach(t => {
+                const topLevel = t.path.split('/')[0];
+                themeSet.add(topLevel);
+                const key = `${region}|${topLevel}`;
+                matrix[key] = (matrix[key] || 0) + 1;
+            });
+        });
+
+        const themes = Array.from(themeSet).sort();
+        const regions = Array.from(regionSet).sort();
+
+        if (themes.length === 0 || regions.length === 0) {
+            Plotly.purge('heatmapChart');
+            return;
+        }
+
+        // Build z-values (regions × themes)
+        const z = regions.map(region =>
+            themes.map(theme => matrix[`${region}|${theme}`] || 0)
+        );
+
+        // Dark mode aware colorscale
+        const dark = isDarkMode();
+        const colorscale = dark
+            ? [[0, '#1e1e1e'], [0.3, '#4a3020'], [0.6, '#c1683c'], [1, '#ff9966']]
+            : [[0, '#f5f5f5'], [0.3, '#f0d0b0'], [0.6, '#d97b3d'], [1, '#8b3a1d']];
+
+        const fontColor = getPlotlyFontColor();
+
+        const heatmapData = [{
+            z: z,
+            x: themes,
+            y: regions,
+            type: 'heatmap',
+            colorscale: colorscale,
+            hoverongaps: false,
+            showscale: true,
+            colorbar: {
+                tickfont: { color: fontColor }
+            }
+        }];
+
+        const layout = {
+            margin: { l: 150, r: 30, t: 30, b: 100 },
+            paper_bgcolor: 'rgba(0,0,0,0)',
+            plot_bgcolor: 'rgba(0,0,0,0)',
+            xaxis: {
+                tickangle: -45,
+                tickfont: { size: 10, color: fontColor },
+                gridcolor: dark ? '#333' : '#ddd'
+            },
+            yaxis: {
+                tickfont: { size: 10, color: fontColor },
+                gridcolor: dark ? '#333' : '#ddd'
+            }
+        };
+
+        Plotly.newPlot('heatmapChart', heatmapData, layout, { displayModeBar: false });
+    }
+
+    // --- Sankey: Region → Theme Flow ---
+    function updateSankey(data) {
+        // Build links: region -> theme (top-level)
+        const linkCounts = {};
+        const regionSet = new Set();
+        const themeSet = new Set();
+
+        data.forEach(item => {
+            const region = item.region || 'Unknown';
+            regionSet.add(region);
+            (item.themes || []).forEach(t => {
+                const topLevel = t.path.split('/')[0];
+                themeSet.add(topLevel);
+                const key = `${region}|||${topLevel}`;
+                linkCounts[key] = (linkCounts[key] || 0) + 1;
+            });
+        });
+
+        const regions = Array.from(regionSet).sort();
+        const themes = Array.from(themeSet).sort();
+
+        if (regions.length === 0 || themes.length === 0) {
+            Plotly.purge('sankeyChart');
+            return;
+        }
+
+        const dark = isDarkMode();
+        const fontColor = getPlotlyFontColor();
+
+        // Nodes: regions first, then themes
+        const nodes = [...regions, ...themes];
+        const nodeColors = [
+            ...regions.map(() => dark ? '#e8a070' : '#c1683c'),
+            ...themes.map(() => dark ? '#4ec9c5' : '#0c8c88')
+        ];
+
+        // Links
+        const sources = [];
+        const targets = [];
+        const values = [];
+
+        Object.entries(linkCounts).forEach(([key, count]) => {
+            const [region, theme] = key.split('|||');
+            const sourceIdx = regions.indexOf(region);
+            const targetIdx = regions.length + themes.indexOf(theme);
+            if (sourceIdx >= 0 && targetIdx >= regions.length) {
+                sources.push(sourceIdx);
+                targets.push(targetIdx);
+                values.push(count);
+            }
+        });
+
+        const sankeyData = [{
+            type: 'sankey',
+            orientation: 'h',
+            node: {
+                pad: 15,
+                thickness: 20,
+                line: { color: dark ? '#444' : '#ccc', width: 0.5 },
+                label: nodes,
+                color: nodeColors
+            },
+            link: {
+                source: sources,
+                target: targets,
+                value: values,
+                color: dark ? 'rgba(232, 160, 112, 0.4)' : 'rgba(193, 104, 60, 0.3)'
+            }
+        }];
+
+        const layout = {
+            margin: { l: 10, r: 10, t: 10, b: 10 },
+            paper_bgcolor: 'rgba(0,0,0,0)',
+            font: { size: 10, color: fontColor }
+        };
+
+        Plotly.newPlot('sankeyChart', sankeyData, layout, { displayModeBar: false });
     }
 
     function buildTree(node, path, container) {
@@ -1059,6 +1394,11 @@ window.exportData = function(format) {
         link.click();
         document.body.removeChild(link);
     }
+
+    // Initialize tour
+    document.addEventListener('DOMContentLoaded', () => {
+        if (window.AGKI_Tour) AGKI_Tour.init('explore');
+    });
   </script>
 </body>
 </html>

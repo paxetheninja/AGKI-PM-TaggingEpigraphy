@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Regional Comparison - AGKI Epigraphy Tool</title>
+  <link rel="stylesheet" href="assets/css/main.css">
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    main.page { max-width: none; width: 100%; padding: 2rem; }
+
+    .compare-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem; }
+    .compare-header h2 { margin: 0; }
+    .compare-controls { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+
+    .region-selector { display: flex; align-items: center; gap: 0.5rem; }
+    .region-selector label { font-weight: 600; font-size: 0.9rem; }
+    .region-selector select { padding: 0.5rem 1rem; border: 1px solid var(--border); background: var(--panel); color: var(--text); border-radius: 4px; min-width: 200px; }
+
+    .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .compare-column { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; }
+    .compare-column h3 { margin: 0 0 1rem; padding-bottom: 0.5rem; border-bottom: 3px solid var(--primary); }
+    .compare-column.region-b h3 { border-bottom-color: var(--accent); }
+
+    .stat-row { display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--border); }
+    .stat-row:last-child { border-bottom: none; }
+    .stat-label { color: var(--muted); }
+    .stat-value { font-weight: 700; }
+    .stat-diff { font-size: 0.85rem; margin-left: 0.5rem; }
+    .stat-diff.positive { color: #137333; }
+    .stat-diff.negative { color: #c5221f; }
+
+    .chart-container { height: 300px; margin-top: 1rem; }
+    .chart-section { margin-top: 2rem; }
+    .chart-title { font-size: 0.9rem; color: var(--muted); text-transform: uppercase; margin-bottom: 0.5rem; }
+
+    .theme-comparison { margin-top: 2rem; }
+    .theme-bar { display: flex; align-items: center; gap: 0.5rem; margin: 0.3rem 0; }
+    .theme-name { width: 200px; font-size: 0.85rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .theme-bars { flex: 1; display: flex; height: 20px; border-radius: 4px; overflow: hidden; background: var(--bg); }
+    .theme-bar-a { background: var(--primary); height: 100%; }
+    .theme-bar-b { background: var(--accent); height: 100%; }
+    .theme-counts { width: 100px; font-size: 0.75rem; color: var(--muted); text-align: right; }
+
+    .empty-state { text-align: center; padding: 3rem; color: var(--muted); }
+
+    @media (max-width: 1000px) {
+      .compare-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  </script>
+  <!-- Intro.js for Tours -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intro.js@7.2.0/minified/introjs.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/intro.js@7.2.0/minified/intro.min.js"></script>
+  <script src="assets/js/tour.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand"><h1><a href="index.html">AGKI Tagging Tool</a></h1></div>
+    <nav class="nav-links">
+        <a href="index.html" class="nav-item">Home</a>
+        <a href="search.html" class="nav-item">Search</a>
+        <a href="explore.html" class="nav-item">Explore</a>
+        <a href="compare.html" class="nav-item active">Compare</a>
+        <a href="network.html" class="nav-item">Network</a>
+        <a href="matrix.html" class="nav-item">Matrix</a>
+        <a href="indices.html" class="nav-item">Indices</a>
+    </nav>
+    <div class="header-controls">
+        <button class="theme-toggle-btn" onclick="toggleTheme()" id="themeBtn">Dark Mode</button>
+    </div>
+  </header>
+
+  <script>
+    const themeBtn = document.getElementById('themeBtn');
+    function updateThemeBtn() {
+        const current = document.documentElement.getAttribute('data-theme');
+        themeBtn.textContent = current === 'light' ? 'Dark Mode' : 'Light Mode';
+    }
+    updateThemeBtn();
+    window.toggleTheme = function() {
+        const current = document.documentElement.getAttribute('data-theme');
+        const next = current === 'light' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        updateThemeBtn();
+    }
+  </script>
+
+  <main class="page page-wide">
+    <div class="compare-header">
+        <h2>Regional Comparison</h2>
+        <div class="compare-controls">
+            <div class="region-selector">
+                <label for="regionA">Region A:</label>
+                <select id="regionA" class="select-box"></select>
+            </div>
+            <span style="font-size:1.5rem; color:var(--muted);">vs</span>
+            <div class="region-selector">
+                <label for="regionB">Region B:</label>
+                <select id="regionB" class="select-box"></select>
+            </div>
+        </div>
+    </div>
+
+    <div id="comparisonContent">
+        <div class="empty-state">
+            <p>Select two regions above to compare their epigraphic profiles.</p>
+        </div>
+    </div>
+  </main>
+
+  <script>
+    const script = document.createElement('script');
+    script.src = 'assets/js/data.js';
+    script.onload = () => init();
+    document.body.appendChild(script);
+
+    let chartA, chartB, timeChartA, timeChartB;
+
+    function init() {
+        // Build region selects
+        const regions = Array.from(new Set(APP_DATA.inscriptions.map(i => i.region).filter(Boolean))).sort();
+
+        const selectA = document.getElementById('regionA');
+        const selectB = document.getElementById('regionB');
+
+        regions.forEach((r, i) => {
+            selectA.appendChild(new Option(r, r, i === 0, i === 0));
+            selectB.appendChild(new Option(r, r, i === 1, i === 1));
+        });
+
+        selectA.addEventListener('change', updateComparison);
+        selectB.addEventListener('change', updateComparison);
+
+        updateComparison();
+    }
+
+    function getRegionData(region) {
+        const items = APP_DATA.inscriptions.filter(i => i.region === region);
+
+        // Theme counts
+        const themes = {};
+        items.forEach(item => {
+            (item.themes || []).forEach(t => {
+                const label = t.label;
+                themes[label] = (themes[label] || 0) + 1;
+            });
+        });
+
+        // Time distribution
+        const timeBins = {};
+        items.forEach(item => {
+            if (item.date_min != null) {
+                const bin = Math.floor(item.date_min / 50) * 50;
+                timeBins[bin] = (timeBins[bin] || 0) + 1;
+            }
+        });
+
+        // Completeness
+        const completeness = { intact: 0, fragmentary: 0, mutilated: 0, unknown: 0 };
+        items.forEach(item => {
+            const c = item.completeness || 'unknown';
+            completeness[c] = (completeness[c] || 0) + 1;
+        });
+
+        // Entity counts
+        let personCount = 0, placeCount = 0, deityCount = 0;
+        items.forEach(item => {
+            personCount += (item.mentioned_persons || []).length;
+            placeCount += (item.mentioned_places || []).length;
+            deityCount += (item.mentioned_deities || []).length;
+        });
+
+        // Average confidence
+        let totalConf = 0, confCount = 0;
+        items.forEach(item => {
+            (item.themes || []).forEach(t => {
+                if (t.confidence) {
+                    totalConf += t.confidence;
+                    confCount++;
+                }
+            });
+        });
+
+        return {
+            count: items.length,
+            themes,
+            timeBins,
+            completeness,
+            persons: personCount,
+            places: placeCount,
+            deities: deityCount,
+            avgConfidence: confCount > 0 ? (totalConf / confCount * 100).toFixed(1) : 0
+        };
+    }
+
+    function updateComparison() {
+        const regionA = document.getElementById('regionA').value;
+        const regionB = document.getElementById('regionB').value;
+
+        if (!regionA || !regionB) return;
+
+        const dataA = getRegionData(regionA);
+        const dataB = getRegionData(regionB);
+
+        // Merge all themes
+        const allThemes = new Set([...Object.keys(dataA.themes), ...Object.keys(dataB.themes)]);
+        const sortedThemes = Array.from(allThemes).sort((a, b) => {
+            const total = (dataA.themes[b] || 0) + (dataB.themes[b] || 0) - (dataA.themes[a] || 0) - (dataB.themes[a] || 0);
+            return total;
+        }).slice(0, 15);
+
+        // Merge time bins
+        const allBins = new Set([...Object.keys(dataA.timeBins), ...Object.keys(dataB.timeBins)]);
+        const sortedBins = Array.from(allBins).map(Number).sort((a, b) => a - b);
+
+        const content = document.getElementById('comparisonContent');
+        content.innerHTML = `
+            <div class="compare-grid">
+                <div class="compare-column region-a">
+                    <h3>${regionA}</h3>
+                    <div class="stat-row">
+                        <span class="stat-label">Total Inscriptions</span>
+                        <span class="stat-value">${dataA.count}</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Persons Mentioned</span>
+                        <span class="stat-value">${dataA.persons}</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Places Mentioned</span>
+                        <span class="stat-value">${dataA.places}</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Deities Mentioned</span>
+                        <span class="stat-value">${dataA.deities}</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Avg. Tag Confidence</span>
+                        <span class="stat-value">${dataA.avgConfidence}%</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Intact Texts</span>
+                        <span class="stat-value">${dataA.completeness.intact} (${((dataA.completeness.intact / dataA.count) * 100).toFixed(0)}%)</span>
+                    </div>
+
+                    <div class="chart-section">
+                        <div class="chart-title">Time Distribution</div>
+                        <div class="chart-container"><canvas id="timeChartA"></canvas></div>
+                    </div>
+                </div>
+
+                <div class="compare-column region-b">
+                    <h3>${regionB}</h3>
+                    <div class="stat-row">
+                        <span class="stat-label">Total Inscriptions</span>
+                        <span class="stat-value">${dataB.count} ${getDiffBadge(dataA.count, dataB.count)}</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Persons Mentioned</span>
+                        <span class="stat-value">${dataB.persons} ${getDiffBadge(dataA.persons, dataB.persons)}</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Places Mentioned</span>
+                        <span class="stat-value">${dataB.places} ${getDiffBadge(dataA.places, dataB.places)}</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Deities Mentioned</span>
+                        <span class="stat-value">${dataB.deities} ${getDiffBadge(dataA.deities, dataB.deities)}</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Avg. Tag Confidence</span>
+                        <span class="stat-value">${dataB.avgConfidence}%</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Intact Texts</span>
+                        <span class="stat-value">${dataB.completeness.intact} (${((dataB.completeness.intact / dataB.count) * 100).toFixed(0)}%)</span>
+                    </div>
+
+                    <div class="chart-section">
+                        <div class="chart-title">Time Distribution</div>
+                        <div class="chart-container"><canvas id="timeChartB"></canvas></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="theme-comparison">
+                <h3>Thematic Distribution Comparison</h3>
+                <p style="font-size:0.85rem; color:var(--muted); margin-bottom:1rem;">
+                    <span style="display:inline-block; width:12px; height:12px; background:var(--primary); border-radius:2px; margin-right:4px;"></span> ${regionA}
+                    <span style="display:inline-block; width:12px; height:12px; background:var(--accent); border-radius:2px; margin-left:1rem; margin-right:4px;"></span> ${regionB}
+                </p>
+                <div id="themeComparison"></div>
+            </div>
+        `;
+
+        // Render time charts
+        renderTimeChart('timeChartA', sortedBins, dataA.timeBins, '#c1683c');
+        renderTimeChart('timeChartB', sortedBins, dataB.timeBins, '#0c8c88');
+
+        // Render theme comparison bars
+        const themeContainer = document.getElementById('themeComparison');
+        const maxThemeCount = Math.max(
+            ...sortedThemes.map(t => Math.max(dataA.themes[t] || 0, dataB.themes[t] || 0))
+        );
+
+        sortedThemes.forEach(theme => {
+            const countA = dataA.themes[theme] || 0;
+            const countB = dataB.themes[theme] || 0;
+            const widthA = (countA / maxThemeCount) * 50;
+            const widthB = (countB / maxThemeCount) * 50;
+
+            themeContainer.innerHTML += `
+                <div class="theme-bar">
+                    <div class="theme-name" title="${theme}">${theme}</div>
+                    <div class="theme-bars">
+                        <div class="theme-bar-a" style="width: ${widthA}%"></div>
+                        <div class="theme-bar-b" style="width: ${widthB}%"></div>
+                    </div>
+                    <div class="theme-counts">${countA} / ${countB}</div>
+                </div>
+            `;
+        });
+    }
+
+    function getDiffBadge(a, b) {
+        if (a === b) return '';
+        const diff = b - a;
+        const pct = a > 0 ? ((diff / a) * 100).toFixed(0) : (diff > 0 ? '+100' : '-100');
+        const cls = diff > 0 ? 'positive' : 'negative';
+        const sign = diff > 0 ? '+' : '';
+        return `<span class="stat-diff ${cls}">${sign}${pct}%</span>`;
+    }
+
+    function renderTimeChart(canvasId, bins, data, color) {
+        const ctx = document.getElementById(canvasId).getContext('2d');
+        const labels = bins.map(b => b < 0 ? `${Math.abs(b)} BC` : `${b} AD`);
+        const values = bins.map(b => data[b] || 0);
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels,
+                datasets: [{
+                    label: 'Count',
+                    data: values,
+                    backgroundColor: color
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    y: { beginAtZero: true }
+                }
+            }
+        });
+    }
+
+    // Initialize Tour
+    document.addEventListener('DOMContentLoaded', () => {
+        if (window.AGKI_Tour) AGKI_Tour.init('compare');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tag Co-occurrence Matrix - AGKI Epigraphy Tool</title>
+  <link rel="stylesheet" href="assets/css/main.css">
+
+  <style>
+    main.page { max-width: none; width: 100%; padding: 2rem; }
+
+    .matrix-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem; }
+    .matrix-header h2 { margin: 0; }
+    .matrix-controls { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+
+    .control-group { display: flex; align-items: center; gap: 0.5rem; }
+    .control-group label { font-weight: 600; font-size: 0.9rem; }
+    .control-group select, .control-group input { padding: 0.5rem; border: 1px solid var(--border); background: var(--panel); color: var(--text); border-radius: 4px; }
+
+    .matrix-container { overflow: auto; max-height: 80vh; }
+    .matrix-wrapper { display: inline-block; min-width: 100%; }
+
+    .matrix-table { border-collapse: collapse; font-size: 0.65rem; }
+    .matrix-table th, .matrix-table td { padding: 0; width: 18px; height: 18px; text-align: center; }
+    .matrix-table th { background: var(--panel); position: sticky; top: 0; z-index: 2; }
+    .matrix-table th.row-header { position: sticky; left: 0; z-index: 3; text-align: right; padding-right: 6px; width: auto; white-space: nowrap; font-size: 0.7rem; }
+    .matrix-table th.corner { position: sticky; top: 0; left: 0; z-index: 4; background: var(--panel); }
+    .matrix-table th.col-header { writing-mode: vertical-lr; text-orientation: mixed; transform: rotate(180deg); padding: 4px 2px; white-space: nowrap; font-size: 0.7rem; }
+
+    .matrix-cell { cursor: pointer; transition: transform 0.15s; }
+    .matrix-cell:hover { transform: scale(1.5); z-index: 10; position: relative; }
+
+    .legend { display: flex; align-items: center; gap: 1rem; margin-top: 1rem; padding: 1rem; background: var(--panel); border-radius: 8px; }
+    .legend-label { font-size: 0.85rem; color: var(--muted); }
+    .legend-gradient { width: 200px; height: 20px; border-radius: 4px; }
+    .legend-scale { display: flex; justify-content: space-between; width: 200px; font-size: 0.75rem; color: var(--muted); }
+
+    .tooltip { position: fixed; background: var(--panel); border: 1px solid var(--border); padding: 0.75rem; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 1000; pointer-events: none; max-width: 300px; }
+    .tooltip-title { font-weight: 700; margin-bottom: 0.25rem; }
+    .tooltip-value { font-size: 0.9rem; color: var(--muted); }
+
+    .stats-panel { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+    .stat-card { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; }
+    .stat-card h4 { margin: 0 0 0.5rem; font-size: 0.85rem; color: var(--muted); text-transform: uppercase; }
+    .stat-card .value { font-size: 1.5rem; font-weight: 700; }
+
+    .insight-list { list-style: none; padding: 0; margin: 1rem 0 0; }
+    .insight-list li { padding: 0.5rem 0; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+    .insight-list li:last-child { border-bottom: none; }
+  </style>
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  </script>
+  <!-- Intro.js for Tours -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intro.js@7.2.0/minified/introjs.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/intro.js@7.2.0/minified/intro.min.js"></script>
+  <script src="assets/js/tour.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand"><h1><a href="index.html">AGKI Tagging Tool</a></h1></div>
+    <nav class="nav-links">
+        <a href="index.html" class="nav-item">Home</a>
+        <a href="search.html" class="nav-item">Search</a>
+        <a href="explore.html" class="nav-item">Explore</a>
+        <a href="compare.html" class="nav-item">Compare</a>
+        <a href="network.html" class="nav-item">Network</a>
+        <a href="matrix.html" class="nav-item active">Matrix</a>
+        <a href="indices.html" class="nav-item">Indices</a>
+    </nav>
+    <div class="header-controls">
+        <button class="theme-toggle-btn" onclick="toggleTheme()" id="themeBtn">Dark Mode</button>
+    </div>
+  </header>
+
+  <script>
+    const themeBtn = document.getElementById('themeBtn');
+    function updateThemeBtn() {
+        const current = document.documentElement.getAttribute('data-theme');
+        themeBtn.textContent = current === 'light' ? 'Dark Mode' : 'Light Mode';
+    }
+    updateThemeBtn();
+    window.toggleTheme = function() {
+        const current = document.documentElement.getAttribute('data-theme');
+        const next = current === 'light' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        updateThemeBtn();
+    }
+  </script>
+
+  <main class="page page-wide">
+    <div class="matrix-header">
+        <h2>Tag Co-occurrence Matrix</h2>
+        <div class="matrix-controls">
+            <div class="control-group">
+                <label for="minCount">Min. Co-occurrences:</label>
+                <input type="number" id="minCount" value="2" min="1" max="50" style="width:70px;">
+            </div>
+            <div class="control-group">
+                <label for="categoryFilter">Category:</label>
+                <select id="categoryFilter">
+                    <option value="">All Categories</option>
+                </select>
+            </div>
+            <button class="button" onclick="updateMatrix()">Update</button>
+        </div>
+    </div>
+
+    <div class="stats-panel" id="statsPanel">
+        <div class="stat-card">
+            <h4>Total Tags</h4>
+            <div class="value" id="totalTags">-</div>
+        </div>
+        <div class="stat-card">
+            <h4>Co-occurrence Pairs</h4>
+            <div class="value" id="totalPairs">-</div>
+        </div>
+        <div class="stat-card">
+            <h4>Strongest Link</h4>
+            <div class="value" id="strongestLink">-</div>
+        </div>
+        <div class="stat-card">
+            <h4>Most Connected Tag</h4>
+            <div class="value" id="mostConnected">-</div>
+        </div>
+    </div>
+
+    <div class="matrix-container" id="matrixContainer">
+        <p style="text-align:center; color:var(--muted); padding:3rem;">Loading data...</p>
+    </div>
+
+    <div class="legend">
+        <span class="legend-label">Co-occurrence frequency:</span>
+        <div>
+            <div class="legend-gradient" id="legendGradient"></div>
+            <div class="legend-scale">
+                <span>0</span>
+                <span id="legendMax">10</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="tooltip" class="tooltip" style="display:none;"></div>
+  </main>
+
+  <script>
+    const script = document.createElement('script');
+    script.src = 'assets/js/data.js';
+    script.onload = () => init();
+    document.body.appendChild(script);
+
+    let cooccurrenceData = {};
+    let allTags = [];
+
+    function init() {
+        // Extract all unique categories
+        const categories = new Set();
+        APP_DATA.inscriptions.forEach(item => {
+            (item.themes || []).forEach(t => {
+                if (t.category) categories.add(t.category);
+            });
+        });
+
+        const categorySelect = document.getElementById('categoryFilter');
+        Array.from(categories).sort().forEach(cat => {
+            categorySelect.appendChild(new Option(cat, cat));
+        });
+
+        updateMatrix();
+        setupLegend();
+    }
+
+    function setupLegend() {
+        const gradient = document.getElementById('legendGradient');
+        gradient.style.background = 'linear-gradient(to right, #f0f0f0, #c1683c)';
+    }
+
+    function buildCooccurrenceData(minCount, categoryFilter) {
+        const tagCounts = new Map();
+        const pairCounts = new Map();
+
+        APP_DATA.inscriptions.forEach(item => {
+            let themes = item.themes || [];
+            if (categoryFilter) {
+                themes = themes.filter(t => t.category === categoryFilter);
+            }
+
+            const labels = themes.map(t => t.label).filter(Boolean);
+
+            // Count individual tags
+            labels.forEach(label => {
+                tagCounts.set(label, (tagCounts.get(label) || 0) + 1);
+            });
+
+            // Count pairs
+            for (let i = 0; i < labels.length; i++) {
+                for (let j = i + 1; j < labels.length; j++) {
+                    const key = [labels[i], labels[j]].sort().join('|||');
+                    pairCounts.set(key, (pairCounts.get(key) || 0) + 1);
+                }
+            }
+        });
+
+        // Filter pairs by minimum count
+        const filteredPairs = new Map();
+        const includedTags = new Set();
+
+        pairCounts.forEach((count, key) => {
+            if (count >= minCount) {
+                filteredPairs.set(key, count);
+                const [a, b] = key.split('|||');
+                includedTags.add(a);
+                includedTags.add(b);
+            }
+        });
+
+        // Sort tags by total co-occurrences
+        const tagTotals = new Map();
+        filteredPairs.forEach((count, key) => {
+            const [a, b] = key.split('|||');
+            tagTotals.set(a, (tagTotals.get(a) || 0) + count);
+            tagTotals.set(b, (tagTotals.get(b) || 0) + count);
+        });
+
+        const sortedTags = Array.from(includedTags).sort((a, b) =>
+            (tagTotals.get(b) || 0) - (tagTotals.get(a) || 0)
+        );
+
+        return { pairs: filteredPairs, tags: sortedTags, tagTotals };
+    }
+
+    function updateMatrix() {
+        const minCount = parseInt(document.getElementById('minCount').value) || 2;
+        const categoryFilter = document.getElementById('categoryFilter').value;
+
+        const data = buildCooccurrenceData(minCount, categoryFilter);
+        cooccurrenceData = data.pairs;
+        allTags = data.tags;
+
+        updateStats(data);
+        renderMatrix(data);
+    }
+
+    function updateStats(data) {
+        document.getElementById('totalTags').textContent = data.tags.length;
+        document.getElementById('totalPairs').textContent = data.pairs.size;
+
+        // Find strongest link
+        let maxPair = null;
+        let maxCount = 0;
+        data.pairs.forEach((count, key) => {
+            if (count > maxCount) {
+                maxCount = count;
+                maxPair = key;
+            }
+        });
+
+        if (maxPair) {
+            const [a, b] = maxPair.split('|||');
+            document.getElementById('strongestLink').innerHTML = `
+                <span style="font-size:0.85rem;">${a.substring(0, 20)}${a.length > 20 ? '...' : ''} &harr; ${b.substring(0, 20)}${b.length > 20 ? '...' : ''}</span>
+                <br><span style="font-size:0.9rem; color:var(--muted);">(${maxCount})</span>
+            `;
+        } else {
+            document.getElementById('strongestLink').textContent = '-';
+        }
+
+        // Most connected tag
+        if (data.tagTotals.size > 0) {
+            const sorted = Array.from(data.tagTotals.entries()).sort((a, b) => b[1] - a[1]);
+            const [tag, total] = sorted[0];
+            document.getElementById('mostConnected').innerHTML = `
+                <span style="font-size:0.85rem;">${tag.substring(0, 25)}${tag.length > 25 ? '...' : ''}</span>
+                <br><span style="font-size:0.9rem; color:var(--muted);">(${total} links)</span>
+            `;
+        } else {
+            document.getElementById('mostConnected').textContent = '-';
+        }
+
+        // Update legend max
+        document.getElementById('legendMax').textContent = maxCount || 10;
+    }
+
+    function renderMatrix(data) {
+        const container = document.getElementById('matrixContainer');
+
+        if (data.tags.length === 0) {
+            container.innerHTML = '<p style="text-align:center; color:var(--muted); padding:3rem;">No co-occurrences found with the current filters. Try lowering the minimum count.</p>';
+            return;
+        }
+
+        // Limit to top 40 tags for readability
+        const tags = data.tags.slice(0, 40);
+        const maxCount = Math.max(...Array.from(data.pairs.values()));
+
+        let html = '<div class="matrix-wrapper"><table class="matrix-table">';
+
+        // Header row
+        html += '<tr><th class="corner"></th>';
+        tags.forEach(tag => {
+            const shortTag = tag.length > 20 ? tag.substring(0, 17) + '...' : tag;
+            html += `<th class="col-header" title="${tag}">${shortTag}</th>`;
+        });
+        html += '</tr>';
+
+        // Data rows
+        tags.forEach((rowTag, i) => {
+            const shortRowTag = rowTag.length > 25 ? rowTag.substring(0, 22) + '...' : rowTag;
+            html += `<tr><th class="row-header" title="${rowTag}">${shortRowTag}</th>`;
+
+            tags.forEach((colTag, j) => {
+                if (i === j) {
+                    // Diagonal
+                    html += '<td style="background:var(--border);"></td>';
+                } else {
+                    const key = [rowTag, colTag].sort().join('|||');
+                    const count = data.pairs.get(key) || 0;
+
+                    if (count > 0) {
+                        const intensity = count / maxCount;
+                        const color = getHeatColor(intensity);
+                        html += `<td class="matrix-cell" style="background:${color};"
+                                    data-row="${rowTag}" data-col="${colTag}" data-count="${count}"
+                                    onmouseover="showTooltip(event, this)"
+                                    onmouseout="hideTooltip()"
+                                    onclick="openSearch('${rowTag}', '${colTag}')"></td>`;
+                    } else {
+                        html += '<td></td>';
+                    }
+                }
+            });
+            html += '</tr>';
+        });
+
+        html += '</table></div>';
+        container.innerHTML = html;
+    }
+
+    function getHeatColor(intensity) {
+        // Gradient from light gray to primary color
+        const r = Math.round(240 - intensity * (240 - 193));
+        const g = Math.round(240 - intensity * (240 - 104));
+        const b = Math.round(240 - intensity * (240 - 60));
+        return `rgb(${r}, ${g}, ${b})`;
+    }
+
+    function showTooltip(event, element) {
+        const tooltip = document.getElementById('tooltip');
+        const row = element.dataset.row;
+        const col = element.dataset.col;
+        const count = element.dataset.count;
+
+        tooltip.innerHTML = `
+            <div class="tooltip-title">${row}</div>
+            <div class="tooltip-title" style="color:var(--accent);">&harr; ${col}</div>
+            <div class="tooltip-value">${count} co-occurrence${count > 1 ? 's' : ''}</div>
+            <div style="font-size:0.75rem; color:var(--muted); margin-top:0.5rem;">Click to search inscriptions</div>
+        `;
+        tooltip.style.display = 'block';
+        tooltip.style.left = (event.clientX + 15) + 'px';
+        tooltip.style.top = (event.clientY + 15) + 'px';
+    }
+
+    function hideTooltip() {
+        document.getElementById('tooltip').style.display = 'none';
+    }
+
+    function openSearch(tag1, tag2) {
+        // Navigate to explore page with both tags selected
+        const params = new URLSearchParams();
+        params.set('include', `${tag1},${tag2}`);
+        window.location.href = `explore.html?${params.toString()}`;
+    }
+
+    // Initialize Tour
+    document.addEventListener('DOMContentLoaded', () => {
+        if (window.AGKI_Tour) AGKI_Tour.init('matrix');
+    });
+  </script>
+</body>
+</html>

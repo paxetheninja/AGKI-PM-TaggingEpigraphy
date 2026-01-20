@@ -194,6 +194,9 @@ def generate_detail_page(merged_data):
     # Global Analysis Summary
     global_rationale = merged_data.get('output', {}).get('rationale') or 'No additional analysis provided.'
 
+    # Model version
+    model_version = merged_data.get('output', {}).get('model') or 'Unknown'
+
     # Original Text (Strict Line-by-Line)
     raw_greek_html = html.escape(text_content)
     lines = text_content.split('\n')
@@ -293,6 +296,9 @@ def generate_detail_page(merged_data):
         <a href="../index.html" class="nav-item">Home</a>
         <a href="../search.html" class="nav-item">Search</a>
         <a href="../explore.html" class="nav-item">Explore</a>
+        <a href="../compare.html" class="nav-item">Compare</a>
+        <a href="../network.html" class="nav-item">Network</a>
+        <a href="../matrix.html" class="nav-item">Matrix</a>
         <a href="../indices.html" class="nav-item">Indices</a>
     </nav>
     <div class="header-controls">
@@ -361,6 +367,7 @@ def generate_detail_page(merged_data):
                     <div class="meta-item"><div class="label">Provenance</div><div class="meta-value">{}</div></div>
                     <div class="meta-item"><div class="label">Date</div><div class="meta-value">{}</div></div>
                     <div class="meta-item"><div class="label">Completeness</div><div class="meta-value"><span class="badge info">{}</span></div></div>
+                    <div class="meta-item"><div class="label">Tagged by</div><div class="meta-value"><span class="badge" style="background:rgba(12,140,136,0.15); color:#0c8c88; border:1px solid #0c8c88;">{}</span></div></div>
                 </div>
             </section>
             <div class="inscription-title-row">
@@ -389,6 +396,7 @@ def generate_detail_page(merged_data):
         region_html,
         merged_data['input'].get('date_str', 'N/A'),
         merged_data['output'].get('completeness', 'unknown'),
+        model_version,
         line_nums_html,
         raw_greek_html,
         themes_html if themes_html else "<p class='muted'>No themes assigned.</p>",
@@ -458,6 +466,9 @@ def generate_indices_page(deities, persons, places):
         <a href="index.html" class="nav-item">Home</a>
         <a href="search.html" class="nav-item">Search</a>
         <a href="explore.html" class="nav-item">Explore</a>
+        <a href="compare.html" class="nav-item">Compare</a>
+        <a href="network.html" class="nav-item">Network</a>
+        <a href="matrix.html" class="nav-item">Matrix</a>
         <a href="indices.html" class="nav-item active">Indices</a>
     </nav>
     <div class="header-controls">

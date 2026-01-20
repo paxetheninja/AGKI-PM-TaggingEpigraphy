@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prosopography Network - AGKI Epigraphy Tool</title>
+  <link rel="stylesheet" href="assets/css/main.css">
+
+  <!-- D3.js for network visualization -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+
+  <style>
+    main.page { max-width: none; width: 100%; padding: 2rem; }
+    .dashboard-container { display: grid; grid-template-columns: minmax(280px, 340px) minmax(0, 1fr); gap: 1.75rem; margin-top: 2rem; align-items: start; width: 100%; }
+    .sidebar { padding: 1.5rem; border-radius: 8px; position: sticky; top: 20px; max-height: calc(100vh - 40px); overflow-y: auto; }
+    .filter-group { margin-bottom: 2rem; }
+    .eyebrow { font-size: 0.8rem; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem; font-weight: 700; }
+    .search-box, .select-box, .range-input { width: 100%; padding: 0.6rem; border: 1px solid var(--border); background: var(--bg); color: var(--text); border-radius: 4px; }
+
+    .viz-card { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; box-shadow: var(--shadow); min-height: 700px; }
+    .viz-title { margin: 0 0 1rem; font-size: 1rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+
+    #networkContainer { width: 100%; height: 650px; position: relative; }
+    #networkSvg { width: 100%; height: 100%; }
+
+    .node { cursor: pointer; }
+    .node circle { stroke: #fff; stroke-width: 2px; }
+    .node text { font-size: 10px; fill: var(--text); pointer-events: none; }
+    .node.highlighted circle { stroke: var(--primary); stroke-width: 3px; }
+    .link { stroke: var(--border); stroke-opacity: 0.6; }
+    .link.highlighted { stroke: var(--primary); stroke-opacity: 1; }
+
+    .legend-item { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; font-size: 0.85rem; }
+    .legend-dot { width: 12px; height: 12px; border-radius: 50%; }
+
+    .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+    .stat-item { background: var(--bg); padding: 0.5rem; border-radius: 4px; text-align: center; }
+    .stat-value { font-size: 1.5rem; font-weight: 700; color: var(--primary); }
+    .stat-label { font-size: 0.75rem; color: var(--muted); }
+
+    .node-info { background: var(--bg); padding: 1rem; border-radius: 4px; margin-top: 1rem; display: none; }
+    .node-info.active { display: block; }
+    .node-info h4 { margin: 0 0 0.5rem; color: var(--primary); }
+    .node-info p { margin: 0.25rem 0; font-size: 0.85rem; }
+
+    @media (max-width: 1200px) {
+      .dashboard-container { grid-template-columns: 1fr; }
+      .sidebar { position: static; }
+    }
+  </style>
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  </script>
+  <!-- Intro.js for Tours -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intro.js@7.2.0/minified/introjs.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/intro.js@7.2.0/minified/intro.min.js"></script>
+  <script src="assets/js/tour.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand"><h1><a href="index.html">AGKI Tagging Tool</a></h1></div>
+    <nav class="nav-links">
+        <a href="index.html" class="nav-item">Home</a>
+        <a href="search.html" class="nav-item">Search</a>
+        <a href="explore.html" class="nav-item">Explore</a>
+        <a href="compare.html" class="nav-item">Compare</a>
+        <a href="network.html" class="nav-item active">Network</a>
+        <a href="matrix.html" class="nav-item">Matrix</a>
+        <a href="indices.html" class="nav-item">Indices</a>
+    </nav>
+    <div class="header-controls">
+        <button class="theme-toggle-btn" onclick="toggleTheme()" id="themeBtn">Dark Mode</button>
+    </div>
+  </header>
+
+  <script>
+    const themeBtn = document.getElementById('themeBtn');
+    function updateThemeBtn() {
+        const current = document.documentElement.getAttribute('data-theme');
+        themeBtn.textContent = current === 'light' ? 'Dark Mode' : 'Light Mode';
+    }
+    updateThemeBtn();
+    window.toggleTheme = function() {
+        const current = document.documentElement.getAttribute('data-theme');
+        const next = current === 'light' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        updateThemeBtn();
+    }
+  </script>
+
+  <main class="page page-wide">
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="filter-group">
+                <h4 class="eyebrow">Network Controls</h4>
+                <label style="font-size:0.85rem; display:block; margin-bottom:0.3rem;">Min. Co-occurrences</label>
+                <input type="range" id="minEdgeWeight" min="1" max="10" value="1" style="width:100%; accent-color:var(--primary);">
+                <div style="display:flex; justify-content:space-between; font-size:0.75rem; color:var(--muted);">
+                    <span>1</span><span id="edgeWeightDisplay">1</span><span>10</span>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <h4 class="eyebrow">Region Filter</h4>
+                <select id="regionFilter" class="select-box">
+                    <option value="">All Regions</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <h4 class="eyebrow">Network Statistics</h4>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-value" id="nodeCount">0</div>
+                        <div class="stat-label">Persons</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="edgeCount">0</div>
+                        <div class="stat-label">Connections</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <h4 class="eyebrow">Legend</h4>
+                <div class="legend-item"><span class="legend-dot" style="background: #c1683c;"></span> <span>High connections (5+)</span></div>
+                <div class="legend-item"><span class="legend-dot" style="background: #0c8c88;"></span> <span>Medium (2-4)</span></div>
+                <div class="legend-item"><span class="legend-dot" style="background: #888;"></span> <span>Low (1)</span></div>
+            </div>
+
+            <div class="filter-group">
+                <h4 class="eyebrow">Selected Node</h4>
+                <div id="nodeInfo" class="node-info">
+                    <p class="muted">Click a node to see details.</p>
+                </div>
+            </div>
+
+            <div class="meta-grid">
+                <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+                    <button onclick="resetZoom()" class="button secondary block compact">Reset View</button>
+                    <button onclick="exportNetwork()" class="button block compact">Export SVG</button>
+                </div>
+            </div>
+        </aside>
+
+        <div class="viz-card">
+            <h3 class="viz-title">Prosopography Network - Co-mentioned Persons</h3>
+            <div id="networkContainer">
+                <svg id="networkSvg"></svg>
+            </div>
+        </div>
+    </div>
+  </main>
+
+  <script>
+    // Load data
+    const script = document.createElement('script');
+    script.src = 'assets/js/data.js';
+    script.onload = () => init();
+    document.body.appendChild(script);
+
+    let simulation, svg, g, link, node;
+    let networkData = { nodes: [], links: [] };
+    let allNetworkData = { nodes: [], links: [] };
+
+    function init() {
+        // Build region select
+        const regions = new Set(APP_DATA.inscriptions.map(i => i.region).filter(Boolean));
+        const regSelect = document.getElementById('regionFilter');
+        Array.from(regions).sort().forEach(r => {
+            const opt = document.createElement('option');
+            opt.value = r;
+            opt.textContent = r;
+            regSelect.appendChild(opt);
+        });
+
+        // Build network data
+        buildNetworkData(APP_DATA.inscriptions);
+
+        // Initialize SVG
+        initNetwork();
+
+        // Event listeners
+        document.getElementById('minEdgeWeight').addEventListener('input', (e) => {
+            document.getElementById('edgeWeightDisplay').textContent = e.target.value;
+            filterNetwork();
+        });
+
+        document.getElementById('regionFilter').addEventListener('change', () => {
+            const region = document.getElementById('regionFilter').value;
+            const filtered = region
+                ? APP_DATA.inscriptions.filter(i => i.region === region)
+                : APP_DATA.inscriptions;
+            buildNetworkData(filtered);
+            filterNetwork();
+        });
+    }
+
+    function buildNetworkData(inscriptions) {
+        const edges = new Map();
+        const nodeSet = new Map();
+
+        inscriptions.forEach(item => {
+            const persons = item.mentioned_persons || [];
+            const names = persons.map(p => p.name).filter(Boolean);
+
+            // Add nodes
+            names.forEach(name => {
+                if (!nodeSet.has(name)) {
+                    const person = persons.find(p => p.name === name);
+                    nodeSet.set(name, {
+                        id: name,
+                        role: person?.role || '',
+                        count: 0,
+                        connections: 0
+                    });
+                }
+                nodeSet.get(name).count++;
+            });
+
+            // Add edges (co-occurrences)
+            for (let i = 0; i < names.length; i++) {
+                for (let j = i + 1; j < names.length; j++) {
+                    const key = [names[i], names[j]].sort().join('|||');
+                    if (!edges.has(key)) {
+                        edges.set(key, {
+                            source: names[i],
+                            target: names[j],
+                            weight: 0,
+                            inscriptions: []
+                        });
+                    }
+                    edges.get(key).weight++;
+                    edges.get(key).inscriptions.push(item.id);
+                }
+            }
+        });
+
+        // Count connections per node
+        edges.forEach(edge => {
+            if (nodeSet.has(edge.source)) nodeSet.get(edge.source).connections++;
+            if (nodeSet.has(edge.target)) nodeSet.get(edge.target).connections++;
+        });
+
+        allNetworkData = {
+            nodes: Array.from(nodeSet.values()),
+            links: Array.from(edges.values())
+        };
+    }
+
+    function filterNetwork() {
+        const minWeight = parseInt(document.getElementById('minEdgeWeight').value);
+
+        // Filter links by weight
+        const filteredLinks = allNetworkData.links.filter(l => l.weight >= minWeight);
+
+        // Get nodes that have at least one connection
+        const connectedNodes = new Set();
+        filteredLinks.forEach(l => {
+            connectedNodes.add(l.source.id || l.source);
+            connectedNodes.add(l.target.id || l.target);
+        });
+
+        const filteredNodes = allNetworkData.nodes.filter(n => connectedNodes.has(n.id));
+
+        networkData = { nodes: filteredNodes, links: filteredLinks };
+
+        // Update stats
+        document.getElementById('nodeCount').textContent = filteredNodes.length;
+        document.getElementById('edgeCount').textContent = filteredLinks.length;
+
+        updateNetwork();
+    }
+
+    function initNetwork() {
+        const container = document.getElementById('networkContainer');
+        const width = container.clientWidth;
+        const height = container.clientHeight;
+
+        svg = d3.select('#networkSvg')
+            .attr('width', width)
+            .attr('height', height);
+
+        // Add zoom behavior
+        const zoom = d3.zoom()
+            .scaleExtent([0.1, 4])
+            .on('zoom', (event) => {
+                g.attr('transform', event.transform);
+            });
+
+        svg.call(zoom);
+
+        g = svg.append('g');
+
+        // Create link and node groups
+        link = g.append('g').attr('class', 'links').selectAll('line');
+        node = g.append('g').attr('class', 'nodes').selectAll('g');
+
+        simulation = d3.forceSimulation()
+            .force('link', d3.forceLink().id(d => d.id).distance(100))
+            .force('charge', d3.forceManyBody().strength(-200))
+            .force('center', d3.forceCenter(width / 2, height / 2))
+            .force('collision', d3.forceCollide().radius(30));
+
+        window.zoomBehavior = zoom;
+        filterNetwork();
+    }
+
+    function updateNetwork() {
+        // Update links
+        link = link.data(networkData.links, d => `${d.source.id || d.source}-${d.target.id || d.target}`);
+        link.exit().remove();
+        link = link.enter()
+            .append('line')
+            .attr('class', 'link')
+            .attr('stroke-width', d => Math.min(d.weight, 5))
+            .merge(link);
+
+        // Update nodes
+        node = node.data(networkData.nodes, d => d.id);
+        node.exit().remove();
+
+        const nodeEnter = node.enter()
+            .append('g')
+            .attr('class', 'node')
+            .call(d3.drag()
+                .on('start', dragstarted)
+                .on('drag', dragged)
+                .on('end', dragended))
+            .on('click', (event, d) => showNodeInfo(d))
+            .on('mouseover', (event, d) => highlightConnections(d, true))
+            .on('mouseout', (event, d) => highlightConnections(d, false));
+
+        nodeEnter.append('circle')
+            .attr('r', d => Math.min(5 + d.count * 2, 20))
+            .attr('fill', d => {
+                if (d.connections >= 5) return '#c1683c';
+                if (d.connections >= 2) return '#0c8c88';
+                return '#888';
+            });
+
+        nodeEnter.append('text')
+            .attr('dx', 12)
+            .attr('dy', 4)
+            .text(d => d.id.length > 20 ? d.id.substring(0, 20) + '...' : d.id);
+
+        node = nodeEnter.merge(node);
+
+        // Update simulation
+        simulation.nodes(networkData.nodes).on('tick', ticked);
+        simulation.force('link').links(networkData.links);
+        simulation.alpha(1).restart();
+    }
+
+    function ticked() {
+        link
+            .attr('x1', d => d.source.x)
+            .attr('y1', d => d.source.y)
+            .attr('x2', d => d.target.x)
+            .attr('y2', d => d.target.y);
+
+        node.attr('transform', d => `translate(${d.x},${d.y})`);
+    }
+
+    function dragstarted(event, d) {
+        if (!event.active) simulation.alphaTarget(0.3).restart();
+        d.fx = d.x;
+        d.fy = d.y;
+    }
+
+    function dragged(event, d) {
+        d.fx = event.x;
+        d.fy = event.y;
+    }
+
+    function dragended(event, d) {
+        if (!event.active) simulation.alphaTarget(0);
+        d.fx = null;
+        d.fy = null;
+    }
+
+    function highlightConnections(d, highlight) {
+        const connectedNodes = new Set();
+        connectedNodes.add(d.id);
+
+        link.each(function(l) {
+            const sourceId = l.source.id || l.source;
+            const targetId = l.target.id || l.target;
+            if (sourceId === d.id || targetId === d.id) {
+                connectedNodes.add(sourceId);
+                connectedNodes.add(targetId);
+                d3.select(this).classed('highlighted', highlight);
+            }
+        });
+
+        node.classed('highlighted', n => highlight && connectedNodes.has(n.id));
+    }
+
+    function showNodeInfo(d) {
+        const infoDiv = document.getElementById('nodeInfo');
+        const connections = networkData.links.filter(l =>
+            (l.source.id || l.source) === d.id || (l.target.id || l.target) === d.id
+        );
+
+        const connectedNames = connections.map(l => {
+            const sourceId = l.source.id || l.source;
+            const targetId = l.target.id || l.target;
+            return sourceId === d.id ? targetId : sourceId;
+        }).slice(0, 5);
+
+        infoDiv.innerHTML = `
+            <h4>${d.id}</h4>
+            <p><strong>Role:</strong> ${d.role || 'Unknown'}</p>
+            <p><strong>Mentions:</strong> ${d.count}</p>
+            <p><strong>Connections:</strong> ${d.connections}</p>
+            <p><strong>Connected to:</strong> ${connectedNames.join(', ')}${connections.length > 5 ? '...' : ''}</p>
+            <a href="search.html?q=${encodeURIComponent(d.id)}" class="button compact" style="margin-top:0.5rem;">View Inscriptions</a>
+        `;
+        infoDiv.classList.add('active');
+    }
+
+    function resetZoom() {
+        const container = document.getElementById('networkContainer');
+        svg.transition().duration(750).call(
+            window.zoomBehavior.transform,
+            d3.zoomIdentity.translate(container.clientWidth / 2, container.clientHeight / 2).scale(1)
+        );
+    }
+
+    function exportNetwork() {
+        const svgElement = document.getElementById('networkSvg');
+        const svgData = new XMLSerializer().serializeToString(svgElement);
+        const blob = new Blob([svgData], { type: 'image/svg+xml' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'prosopography_network.svg';
+        a.click();
+        URL.revokeObjectURL(url);
+    }
+
+    // Initialize Tour
+    document.addEventListener('DOMContentLoaded', () => {
+        if (window.AGKI_Tour) AGKI_Tour.init('network');
+    });
+  </script>
+</body>
+</html>

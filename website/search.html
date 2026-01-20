@@ -157,6 +157,10 @@
     const savedTheme = localStorage.getItem('theme') || 'light';
     document.documentElement.setAttribute('data-theme', savedTheme);
   </script>
+  <!-- Intro.js for Tours -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intro.js@7.2.0/minified/introjs.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/intro.js@7.2.0/minified/intro.min.js"></script>
+  <script src="assets/js/tour.js"></script>
 </head>
 <body>
   <header class="site-header">
@@ -167,12 +171,14 @@
         <a href="index.html" class="nav-item">Home</a>
         <a href="search.html" class="nav-item active">Search</a>
         <a href="explore.html" class="nav-item">Explore</a>
+        <a href="compare.html" class="nav-item">Compare</a>
+        <a href="network.html" class="nav-item">Network</a>
+        <a href="matrix.html" class="nav-item">Matrix</a>
         <a href="indices.html" class="nav-item">Indices</a>
     </nav>
-    <div class="header-controls">
+        <div class="header-controls">
             <button class="theme-toggle-btn" onclick="toggleTheme()" id="themeBtn">Dark Mode</button>
-        </div>
-      </header>
+        </div>      </header>
     
       <main class="page page-wide">
         <div class="dashboard-container">
@@ -832,7 +838,7 @@
                 const places = (item.mentioned_places || []).map(p => p.name).join('; ');
                 // We might not have person/deity data in search index yet, if not added in build_website.py
                 //Checking build_website.py, 'mentioned_places' is there. 'themes' is there.
-                
+
                 // Sanitize for CSV (escape double quotes)
                 const escape = (txt) => {
                     if (!txt) return "";
@@ -867,6 +873,11 @@
         link.click();
         document.body.removeChild(link);
     }
+
+    // Initialize tour
+    document.addEventListener('DOMContentLoaded', () => {
+        if (window.AGKI_Tour) AGKI_Tour.init('search');
+    });
   </script>
 </body>
 </html>
