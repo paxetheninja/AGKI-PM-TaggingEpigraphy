@@ -5,3 +5,4 @@ __pycache__/
 vault/AGKI-Tagging-Epigraphy/.obsidian/
 .claude/
 search_debug.html
+debug_reconcile.py
