@@ -207,7 +207,7 @@ def reconcile_person(name, role=None):
         return wd_uri
 
     # 2. Fallback to LGPN Search
-    search_url = f"http://id.lgpn.ox.ac.uk/id/search?name={urllib.parse.quote(name)}"
+    search_url = f"http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name={urllib.parse.quote(name)}"
     CACHE["persons"][name] = search_url
     return search_url
 
