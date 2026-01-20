@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Meilensteine | AGKI PM Tagging Epigraphy</title>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/docs.css">
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand"><h1><a href="../../index.html">AGKI Tagging Tool</a></h1></div>
+    <nav class="nav-links">
+        <a href="../../index.html" class="nav-item">Home</a>
+        <a href="../../search.html" class="nav-item">Search</a>
+        <a href="../../explore.html" class="nav-item">Explore</a>
+        <a href="../../compare.html" class="nav-item">Compare</a>
+        <a href="../../network.html" class="nav-item">Network</a>
+        <a href="../../matrix.html" class="nav-item">Matrix</a>
+        <a href="../../indices.html" class="nav-item">Indices</a>
+    </nav>
+    <div class="header-controls">
+        <button class="theme-toggle-btn" onclick="toggleTheme()" id="themeBtn">Dark Mode</button>
+    </div>
+  </header>
+
+  <script>
+    const themeBtn = document.getElementById('themeBtn');
+    function updateThemeBtn() {
+        const current = document.documentElement.getAttribute('data-theme');
+        if (themeBtn) themeBtn.textContent = current === 'light' ? 'Dark Mode' : 'Light Mode';
+    }
+    updateThemeBtn();
+    window.toggleTheme = function() {
+        const current = document.documentElement.getAttribute('data-theme');
+        const next = current === 'light' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        updateThemeBtn();
+    }
+  </script>
+
+  <main class="page">
+    <nav class="docs-nav" style="display:flex; gap:1rem; margin-bottom:2rem; justify-content:center; border-bottom:1px solid var(--border); padding-bottom:1rem;">
+      <a class="nav-link" href="index.html" style="text-decoration:none; color:var(--text);">Projekt</a>
+      <a class="nav-link" href="tagebuch.html" style="text-decoration:none; color:var(--text);">Literatur</a>
+      <a class="nav-link active" href="meilensteine.html" style="text-decoration:none; font-weight:bold; color:var(--primary);">Meilensteine</a>
+    </nav>
+
+    <div style="text-align:center; margin-bottom:2rem;">
+      <h1>Meilensteine</h1>
+      <p class="lead" style="color:var(--muted);">Checkliste und Fortschritt des Projekts.</p>
+    </div>
+
+  <main class="page">
+    <section class="card status-card">
+      <div>
+        <p class="eyebrow">Status</p>
+        <h3>Meilensteine</h3>
+      </div>
+      <div class="meta-grid">
+        <div>
+          <p class="label">Status</p>
+          <span class="badge success">Fertig</span>
+        </div>
+        <div>
+          <p class="label">Letzte Aktualisierung</p>
+          <p class="muted">20.01.2026</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <p class="eyebrow">Checkliste</p>
+
+      <ul class="checklist">
+        <li>
+          <div class="check-row">
+            
+            <strong>M1 – Datenbasis & Pipeline (KW 48–50)</strong>
+          </div>
+          <div class="item-meta">
+            <span class="badge success">Fertig</span>
+            <span class="muted">Erledigt: 13.12.2025</span>
+          </div>
+          <p class="note">PHI-JSON-Daten sichten, Feldvollständigkeit prüfen; Filter auf Inschriften &gt; 1000 Zeichen und gewünschte Regionen/Zeiten.</p>
+        </li>
+        <li>
+          <div class="check-row">
+            <strong>M2 – Taxonomie & Annotation-Schema (KW 50–52)</strong>
+          </div>
+          <div class="item-meta">
+            <span class="badge success">Fertig</span>
+            <span class="muted">Erledigt: 27.12.2025</span>
+          </div>
+          <p class="note">Entwurf der mehrstufigen Taxonomie (z. B. „ökonomisch → administrativ → …“); Definition des JSON-Outputs (themes, hierarchy, entities).</p>
+        </li>
+        <li>
+          <div class="check-row">
+            <strong>M3 – LLM-Pipeline & Prototyp-Tagging (KW 01–02)</strong>
+          </div>
+          <div class="item-meta">
+            <span class="badge success">Fertig</span>
+            <span class="muted">Erledigt: 10.01.2026</span>
+          </div>
+          <p class="note">Prompt-Design für hierarchische Mehrfach-Labels und Entitäten; Implementierung der LLM-Call-Pipeline (Batching, Output-Validierung, Logging).</p>
+        </li>
+        <li>
+          <div class="check-row">
+            <strong>M4 – Web-Prototyp für Exploration (KW 02–03)</strong>
+          </div>
+          <div class="item-meta">
+            <span class="badge success">Fertig</span>
+            <span class="muted">Erledigt: 20.01.2026</span>
+          </div>
+          <p class="note">Backend-API (Suche nach Themes, Hierarchie, Region, Zeit). Einfaches Frontend mit Listen- und Detailansicht (Text + Tags + Entitäten) und Filtern nach hierarchischen Themes.</p>
+        </li>
+        <li>
+          <div class="check-row">
+            <strong>M5 – Ergebniskontrolle & Validierung</strong>
+          </div>
+          <div class="item-meta">
+            <span class="badge warn">In Planung</span>
+          </div>
+          <p class="note">Manuelle Überprüfung der KI-generierten Tags durch Domänenexpert:innen zur Sicherstellung der wissenschaftlichen Belastbarkeit.</p>
+        </li>
+        <li>
+          <div class="check-row">
+            <strong>M6 – Kontinuierliche Korpuserweiterung</strong>
+          </div>
+          <div class="item-meta">
+            <span class="badge info">Laufend</span>
+          </div>
+          <p class="note">Sukzessive Aufnahme weiterer Inschriften aus dem PHI-Bestand und anderen digitalen Korpora zur Erweiterung der räumlichen und zeitlichen Abdeckung.</p>
+        </li>
+        <li>
+          <div class="check-row">
+            <strong>M7 – Vertiefung der LOD-Anbindung</strong>
+          </div>
+          <div class="item-meta">
+            <span class="badge info">Laufend</span>
+          </div>
+          <p class="note">Verbesserte Verknüpfung mit externen Normdaten (LGPN, Pleiades, Trismegistos) für eine präzisere Entitätenauflösung.</p>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      © 2026 Florian Wachter | Private Non-Profit Research Project | 
+      <a href="https://github.com/paxetheninja/AGKI-PM-TaggingEpigraphy" target="_blank">GitHub</a>
+    </div>
+    <div class="footer-legal">
+      Impressum: Privates Forschungsprojekt. Verantwortlich: Florian Wachter, Institut für Antike, Goethestraße 19, 8010 Graz. Kontakt: florian.wachter@uni-graz.at. Keine Gewähr für die Richtigkeit der Daten.
+    </div>
+  </footer>
+</body>
+</html>

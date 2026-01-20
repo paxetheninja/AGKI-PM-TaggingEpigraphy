@@ -1,0 +1,85 @@
+﻿<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Literatur | AGKI PM Tagging Epigraphy</title>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/docs.css">
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand"><h1><a href="../../index.html">AGKI Tagging Tool</a></h1></div>
+    <nav class="nav-links">
+        <a href="../../index.html" class="nav-item">Home</a>
+        <a href="../../search.html" class="nav-item">Search</a>
+        <a href="../../explore.html" class="nav-item">Explore</a>
+        <a href="../../compare.html" class="nav-item">Compare</a>
+        <a href="../../network.html" class="nav-item">Network</a>
+        <a href="../../matrix.html" class="nav-item">Matrix</a>
+        <a href="../../indices.html" class="nav-item">Indices</a>
+    </nav>
+    <div class="header-controls">
+        <button class="theme-toggle-btn" onclick="toggleTheme()" id="themeBtn">Dark Mode</button>
+    </div>
+  </header>
+
+  <script>
+    const themeBtn = document.getElementById('themeBtn');
+    function updateThemeBtn() {
+        const current = document.documentElement.getAttribute('data-theme');
+        if (themeBtn) themeBtn.textContent = current === 'light' ? 'Dark Mode' : 'Light Mode';
+    }
+    updateThemeBtn();
+    window.toggleTheme = function() {
+        const current = document.documentElement.getAttribute('data-theme');
+        const next = current === 'light' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        updateThemeBtn();
+    }
+  </script>
+
+  <main class="page">
+    <nav class="docs-nav" style="display:flex; gap:1rem; margin-bottom:2rem; justify-content:center; border-bottom:1px solid var(--border); padding-bottom:1rem;">
+      <a class="nav-link" href="index.html" style="text-decoration:none; color:var(--text);">Projekt</a>
+      <a class="nav-link active" href="tagebuch.html" style="text-decoration:none; font-weight:bold; color:var(--primary);">Literatur</a>
+      <a class="nav-link" href="meilensteine.html" style="text-decoration:none; color:var(--text);">Meilensteine</a>
+    </nav>
+
+    <div style="text-align:center; margin-bottom:2rem;">
+      <h1>Literatur</h1>
+      <p class="lead" style="color:var(--muted);">Ausgew&auml;hlte Arbeiten zu LLMs, Epigraphik und Altgriechisch.</p>
+    </div>
+
+  <main class="page">
+    <section class="card">
+      <p class="eyebrow">Literatur</p>
+      <ul class="bullets">
+        <li>Assael, Y., Sommerschield, T., Cooley, A., Shillingford, B., Pavlopoulos, J., Suresh, P., ... &amp; Mohamed, S. (2025). Contextualizing ancient texts with generative neural networks. Nature, 645(7930), 141-147. <a href="https://doi.org/10.1038/s41586-025-09292-5">https://doi.org/10.1038/s41586-025-09292-5</a></li>
+        <li>Assael, Y., Sommerschield, T., Shillingford, B., Bordbar, M., Pavlopoulos, J., Chatzipanagiotou, M., Androutsopoulos, I., Prag, J., . &amp; de Freitas, N. (2022). Restoring and attributing ancient texts using deep neural networks. Nature, 603, 280-283. <a href="https://doi.org/10.1038/s41586-022-04448-z">https://doi.org/10.1038/s41586-022-04448-z</a></li>
+        <li>Beersmans, M., Keersmaekers, A., de Graaf, E., Van de Cruys, T., Depauw, M., &amp; Fantoli, M. (2024). "Gotta catch 'em all!": Retrieving people in Ancient Greek texts combining transformer models and domain knowledge. In Proceedings of the 1st Workshop on Machine Learning for Ancient Languages (ML4AL 2024) (pp. 152-164). ACL. <a href="https://aclanthology.org/2024.ml4al-1.16/">https://aclanthology.org/2024.ml4al-1.16/</a></li>
+        <li>Nadel, P. M., &amp; Crane, G. (2025). Evaluating large language models with a word-level translation alignment task between Ancient Greek and English. Computational Humanities Research, 1, e12. <a href="https://doi.org/10.1017/chr.2025.10010">https://doi.org/10.1017/chr.2025.10010</a></li>
+        <li>Riemenschneider, F., &amp; Frank, A. (2023). Exploring large language models for classical philology. In Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Vol. 1: Long Papers) (pp. 15181-15199). ACL. <a href="https://aclanthology.org/2023.acl-long.846/">https://aclanthology.org/2023.acl-long.846/</a></li>
+
+        <li>Tzanoulinou, D., Triantafyllopoulos, L., &amp; Verykios, V. S. (2025). Harnessing language models for studying the Ancient Greek language: A systematic review. Machine Learning and Knowledge Extraction, 7(3), 71. <a href="https://doi.org/10.3390/make7030071">https://doi.org/10.3390/make7030071</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      © 2026 Florian Wachter | Private Non-Profit Research Project | 
+      <a href="https://github.com/paxetheninja/AGKI-PM-TaggingEpigraphy" target="_blank">GitHub</a>
+    </div>
+    <div class="footer-legal">
+      Impressum: Privates Forschungsprojekt. Verantwortlich: Florian Wachter, Institut für Antike, Goethestraße 19, 8010 Graz. Kontakt: florian.wachter@uni-graz.at. Keine Gewähr für die Richtigkeit der Daten.
+    </div>
+  </footer>
+</body>
+</html>
+
