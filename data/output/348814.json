@@ -1,0 +1,170 @@
+{
+  "phi_id": 348814,
+  "themes": [
+    {
+      "label": "Official Letters",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Official Letters",
+        "subcategory": null
+      },
+      "rationale": "The text is a royal communication or administrative letter issued by a central authority to local officials regarding land and military settlement.",
+      "confidence": 1.0,
+      "quote": "συνετ ξαμεν [------]ειν θεν δ[υ]να μεθα χ ραμ προσορ σαι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Edicts and Ordinances",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Edicts and Ordinances",
+        "subcategory": null
+      },
+      "rationale": "The inscription contains specific administrative orders and regulations concerning land grants, tax exemptions, and military service obligations.",
+      "confidence": 1.0,
+      "quote": "συγχωρ πρ ς ο ς πεχωρ σαμεμ π νθ τεσιν τελε αν α το ς",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The text mentions specific monetary amounts in drachmas and tax-related matters such as tithes and royal treasury payments.",
+      "confidence": 1.0,
+      "quote": "δραχμ ν υμη - σ ποδοθ κομ σασθαι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The document refers to the settlement of Mysian soldiers (katoikoi) and their status within the community.",
+      "confidence": 0.8,
+      "quote": "κατοικο ντας μυσο ς [------]ν ε ς καστωλλ μ",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Sacred Laws and Rules",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Sacred Laws and Rules",
+        "subcategory": null
+      },
+      "rationale": "The inscription includes regulations for sacrifices and religious honors for Zeus and local deities.",
+      "confidence": 0.8,
+      "quote": "θυσ ας κα διαμ ν μ ν ερ κα τελ ς τ δ ργ ριον δοθ ναι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Lykon",
+        "role": "Land surveyor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lykon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Meleager",
+        "role": "Official",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Meleager",
+        "confidence": 1.0
+      },
+      {
+        "name": "Bakchios",
+        "role": "Priest",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Bakchios",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Lydia",
+        "type": "Region",
+        "uri": "https://pleiades.stoa.org/places/550701",
+        "confidence": 0.8
+      },
+      {
+        "name": "Daldis",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/550508",
+        "confidence": 0.8
+      },
+      {
+        "name": "Kastollos",
+        "type": "Settlement",
+        "uri": "https://pleiades.stoa.org/places/614691",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sibloe",
+        "type": "Village",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Thileudos",
+        "type": "Settlement",
+        "uri": "https://pleiades.stoa.org/places/864488325",
+        "confidence": 0.9
+      },
+      {
+        "name": "Plazeira",
+        "type": "Settlement",
+        "uri": "https://pleiades.stoa.org/places/351685829",
+        "confidence": 0.9
+      }
+    ],
+    "deities": [
+      {
+        "name": "Zeus",
+        "uri": "https://www.wikidata.org/wiki/Q34201",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kournoubeudos",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Lydia",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/550701",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Daldis",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/550508",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a royal ordinance or letter, likely from the Attalid period (165/164 BC), concerning the settlement of Mysian military colonists (katoikoi) in the region of Lydia. It details the surveying of land by Lykon, the granting of tax exemptions (tithes), and the reconstruction of houses destroyed during a previous war. It also establishes religious provisions for Zeus of the Army and the local deity Kournoubeudos, including the appointment of a priest named Bakchios and financial support from the royal treasury for sacrifices.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 165/164 BC ",
+  "date_min": -165.0,
+  "date_max": -164.0,
+  "date_circa": false
+}

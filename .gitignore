@@ -1,5 +1,10 @@
 # Data outputs
-data/
+data/input/
+data/pleiades_cache.json
+data/reconciliation_cache.json
+data/logs/
+data/pictures/
+
 .env
 __pycache__/
 vault/AGKI-Tagging-Epigraphy/.obsidian/

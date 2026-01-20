@@ -1,0 +1,164 @@
+{
+  "phi_id": 199519,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text is a formal decree issued by the city of Malla, indicated by the standard opening formula 'it was decided by the kosmoi and the city'.",
+      "confidence": 1.0,
+      "quote": "ἔδοξε Μαλλαίων τοῖς κόσμοις καὶ τᾶι πόλει",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Treaties and Agreements",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Treaties and Agreements",
+        "subcategory": null
+      },
+      "rationale": "The inscription records an agreement between Malla and Teos regarding isopoliteia (equal citizenship), asylia (inviolability), and tax exemptions.",
+      "confidence": 1.0,
+      "quote": "δίδομεν δὲ αὐτοῖς καὶ ἀτέλειαν καὶ ἰσοπολιτείαν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Oracular and Prophetic Texts",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Oracular and Prophetic Texts",
+        "subcategory": null
+      },
+      "rationale": "The decree references oracles from Apollo at Delphi and Didyma to justify the sacred status and inviolability of the territory of Teos.",
+      "confidence": 1.0,
+      "quote": "συνέστησαν διά τε τῶν χρησμῶν τοῦ Ἀπόλλωνος τῶν ἐν Δελφοῖς καὶ ἐν Διδύμοις",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The text includes a formal commendation of the ambassadors sent from Teos for their diligence and ambition.",
+      "confidence": 1.0,
+      "quote": "ἐπαινοῦμεν δὲ καὶ τοὺς πρεσβευτάς",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The text explicitly mentions that the decree is to be inscribed on a stone stele and set up in the sanctuary of Zeus Monnitios.",
+      "confidence": 1.0,
+      "quote": "εἰς στήλην γράψαντες ἀναθήσομεν εἰς τὸ ἱερὸν τοῦ Ζηνὸς τοῦ Μοννιτίου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Herodotus",
+        "role": "Ambassador",
+        "uri": "https://www.wikidata.org/wiki/Q26825",
+        "confidence": 1.0
+      },
+      {
+        "name": "Menodotus",
+        "role": "Father of Herodotus",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Menodotus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Menekles",
+        "role": "Ambassador",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Menekles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dionysius",
+        "role": "Father of Menekles",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dionysius",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Malla",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/589921",
+        "confidence": 1.0
+      },
+      {
+        "name": "Teos",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/550913",
+        "confidence": 1.0
+      },
+      {
+        "name": "Delphi",
+        "type": "Sanctuary",
+        "uri": "https://pleiades.stoa.org/places/540726",
+        "confidence": 1.0
+      },
+      {
+        "name": "Didyma",
+        "type": "Sanctuary",
+        "uri": "https://pleiades.stoa.org/places/599593",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Apollo",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Zeus Monnitios",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Malla",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/589921",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Crete",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/5066435",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a Hellenistic decree from the Cretan city of Malla responding to an embassy from Teos. It confirms the traditional friendship and kinship between the two cities, recognizes the asylia (inviolability) of Teos based on oracular authority from Delphi and Didyma, and grants the Teians isopoliteia (equal citizenship) and ateleia (tax exemption) in Malla. The text mentions the kosmoi (Cretan magistrates) and the assembly, and orders the decree to be set up in the local sanctuary of Zeus Monnitios.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " after ca. 170 BC ",
+  "date_min": -170.0,
+  "date_max": -170.0,
+  "date_circa": true
+}

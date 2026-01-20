@@ -1,0 +1,297 @@
+{
+  "phi_id": 281589,
+  "themes": [
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The text repeatedly uses the verb 'etimēse' (honored) and 'estepanōse' (crowned) to describe actions taken by individuals towards the community.",
+      "confidence": 1.0,
+      "quote": "ἐτίμησε τὸν ὄχλον",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Donor and Subscription Lists",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Donor and Subscription Lists",
+        "subcategory": null
+      },
+      "rationale": "The inscription functions as a list of individuals who have made contributions or performed services for the community, often specifying quantities of goods like oil.",
+      "confidence": 1.0,
+      "quote": "λαίου ξέστας",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The format and length of this communal list are typical for a stone stele set up in a public or sacred space.",
+      "confidence": 0.8,
+      "quote": "[ τίμησε τ]ὸν ὄχλ[ον]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The text contains numerous lacunae and missing sections, particularly at the beginning and end of lines.",
+      "confidence": 1.0,
+      "quote": "[---]πὲρ τοῦ [---]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Damaged but Legible",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Legibility",
+        "category": "Damaged but Legible",
+        "subcategory": null
+      },
+      "rationale": "Despite the fragments, the majority of the names and the formulaic expressions are clearly readable.",
+      "confidence": 0.8,
+      "quote": "τίμησε τὸν ὄχλον",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Aceptus",
+        "role": "Donor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aceptus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Menis",
+        "role": "Donor and Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Menis",
+        "confidence": 1.0
+      },
+      {
+        "name": "Agathopus",
+        "role": "Donor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Agathopus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Attalus",
+        "role": "Donor and Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Attalus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Amyntas",
+        "role": "Donor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Amyntas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kalamiskos",
+        "role": "Father of Menis",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kalamiskos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Niceides",
+        "role": "Father of Menis",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Niceides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Polydeuces",
+        "role": "Donor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Polydeuces",
+        "confidence": 1.0
+      },
+      {
+        "name": "Demetrius",
+        "role": "Donor and Brother",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demetrius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Saeis",
+        "role": "Donor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Saeis",
+        "confidence": 1.0
+      },
+      {
+        "name": "Onesimus",
+        "role": "Donor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Onesimus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Allax",
+        "role": "Father of Menis",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Allax",
+        "confidence": 1.0
+      },
+      {
+        "name": "Marcus",
+        "role": "Donor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Marcus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Antheus",
+        "role": "Father of Marcus",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antheus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Leucius",
+        "role": "Donor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Leucius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dracon",
+        "role": "Father of Menis",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dracon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Bascantus",
+        "role": "Father of Agathopus",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Bascantus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Melissurgus",
+        "role": "Father of Menis",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Melissurgus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Billius",
+        "role": "Father of Menis",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Billius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Saturnus",
+        "role": "Donor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Saturnus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dionysius",
+        "role": "Donor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dionysius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Castor",
+        "role": "Father of Menis",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Castor",
+        "confidence": 1.0
+      },
+      {
+        "name": "Apollonius",
+        "role": "Father of Menis",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Apollonius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Daron",
+        "role": "Father of Apollonius",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Daron",
+        "confidence": 0.8
+      },
+      {
+        "name": "Menisteus",
+        "role": "Donor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Menisteus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lygostrophos",
+        "role": "Father of Menis",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lygostrophos",
+        "confidence": 0.8
+      },
+      {
+        "name": "Straton",
+        "role": "Father of Demetrius",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Straton",
+        "confidence": 1.0
+      },
+      {
+        "name": "Casius",
+        "role": "Donor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Casius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Craterus",
+        "role": "Donor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Craterus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Gaius",
+        "role": "Father of Casius and Craterus",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Gaius",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Ormeleis",
+        "type": "Region",
+        "uri": "https://pleiades.stoa.org/places/639023",
+        "confidence": 0.8
+      },
+      {
+        "name": "Pisidia",
+        "type": "Region",
+        "uri": "https://pleiades.stoa.org/places/639060",
+        "confidence": 0.8
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Ormeleis",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/639023",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Pisidia",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/639060",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a characteristic communal record from the Ormeleis region in Pisidia. It lists various individuals who 'honored the ochlos' (the local community or association). The honors often involved 'crowning' and the provision of specific quantities of oil (measured in sextarii) or other goods. The text is highly formulaic, repeating the names of donors and their fathers, many of which are typical for the Phrygian-Pisidian borderlands, such as Menis and Attalus.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

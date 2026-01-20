@@ -1,0 +1,197 @@
+{
+  "phi_id": 239755,
+  "themes": [
+    {
+      "label": "Manumission Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Manumission Records",
+        "subcategory": null
+      },
+      "rationale": "The inscription is a classic Delphic manumission record, documenting the sale of a slave to the god Apollo to ensure their freedom, including conditions of stay (paramone) and legal protections against re-enslavement.",
+      "confidence": 1.0,
+      "quote": "[ λ]ευθραν ε [μεν] κα ν φ]απτο[ν π] π ν[τ]ων τ μ π ντα β ον",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The text concludes with an extensive list of witnesses, including priests of Apollo, archons, and a neokoros, which serves as an official record of the civic and religious authorities present.",
+      "confidence": 1.0,
+      "quote": "μ ρτυροι ε[ρ]ες το π λλω[νος] ... κα ο ρχοντες ζ ρατος ντιχ ρεος τιμ [κρ]ιτος ντιγ νεος κα νεωκ[ ρος τ]εισ [δα]ς",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The document mentions the price paid in silver for the manumission, which is a standard component of the legal and financial transaction recorded at the sanctuary.",
+      "confidence": 1.0,
+      "quote": "τιμ ς ργυρ [ο]υ",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Pyrrhias",
+        "role": "Seller and former owner",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pyrrhias",
+        "confidence": 1.0
+      },
+      {
+        "name": "Agathocles",
+        "role": "Guarantor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Agathocles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eisis",
+        "role": "Manumitted person",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eisis",
+        "confidence": 1.0
+      },
+      {
+        "name": "Polykleitos",
+        "role": "Official",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Polykleitos",
+        "confidence": 0.8
+      },
+      {
+        "name": "Zaratos",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Zaratos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Antichares",
+        "role": "Father of Zaratos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antichares",
+        "confidence": 1.0
+      },
+      {
+        "name": "Timokritos",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Timokritos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Antigenes",
+        "role": "Father of Timokritos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antigenes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Teisidas",
+        "role": "Neokoros",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Teisidas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Heracleidas",
+        "role": "Seer and witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Heracleidas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kallias",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kallias",
+        "confidence": 1.0
+      },
+      {
+        "name": "Philoxenus",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philoxenus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Nicomachus",
+        "role": "Father of Philoxenus",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nicomachus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Ariston",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ariston",
+        "confidence": 1.0
+      },
+      {
+        "name": "Damophanes",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Damophanes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Euphronius",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Euphronius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dracon",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dracon",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Delphi",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/540726",
+        "confidence": 1.0
+      },
+      {
+        "name": "Chaleion",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/540704",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Apollo",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Delphi",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/540726",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Phokis",
+      "type": "Region",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a legal document from Delphi recording the manumission of a slave named Eisis by her owner Pyrrhias. The process follows the standard Delphic practice of a fictitious sale to the god Apollo. The text includes a 'paramone' clause requiring Eisis to remain with Pyrrhias for a certain period, legal protections against seizure, and a detailed list of witnesses including local archons and sanctuary officials. The mention of 'silver' and 'price' confirms the economic nature of the transaction.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

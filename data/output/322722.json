@@ -1,0 +1,143 @@
+{
+  "phi_id": 322722,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The inscription follows the standard formula for a public decree passed by the council and the people of Mytilene, using the formula 'it was decided by the council and the people'.",
+      "confidence": 1.0,
+      "quote": "[δ δοχθαι] τ ι β λλαι κα τ ι δ μωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The text records the granting of honors, including a golden crown and the titles of proxenos and benefactor, to individuals for their goodwill toward the city.",
+      "confidence": 1.0,
+      "quote": "πα νεσαι τ]ε τρ μητο[ν ... κα στεφ ν[ωσαι ... χρυσ ωι στε[φ νωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Proxeny",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text explicitly mentions the appointment of the individual as a proxenos and benefactor.",
+      "confidence": 1.0,
+      "quote": "[-- α τ]ον πρ ξενογ κα ε [εργ ταν ----]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Citizenship Grant",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The decree includes a clause granting citizenship to the honoree and their descendants.",
+      "confidence": 0.8,
+      "quote": "[πολ ταις μμεναι] κα α τοις [κα κγ νοις]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "Public decrees in Mytilene were traditionally inscribed on stone stelae for public display, as evidenced by the layout and formulaic nature of the text.",
+      "confidence": 0.8,
+      "quote": "[δ δοχθαι] τ ι β λλαι κα τ ι δ μωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The inscription is preserved in a fragmentary state with numerous lacunae and reconstructed sections.",
+      "confidence": 1.0,
+      "quote": "[δ δοχθαι] τ ι β λλαι κα τ ι δ μωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Trometos",
+        "role": "Honoree and Benefactor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Trometos",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Mytilene",
+        "type": "Issuing City",
+        "uri": "https://pleiades.stoa.org/places/550763",
+        "confidence": 1.0
+      },
+      {
+        "name": "Magnesia",
+        "type": "Origin of Honoree",
+        "uri": "https://pleiades.stoa.org/places/599778",
+        "confidence": 0.8
+      }
+    ],
+    "deities": [
+      {
+        "name": "Dionysus",
+        "uri": "https://www.wikidata.org/wiki/Q41680",
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Lesbos",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/550696",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Mytilene",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/550763",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a fragmentary honorific decree from Mytilene, likely dating to the late 4th century BC. It records the decision of the council and the people to honor an individual named Trometos, identified as a Magnesian, with a golden crown, the titles of proxenos and benefactor, and the grant of citizenship for himself and his descendants. The decree specifies that the honors should be announced during the Dionysia festival and instructs the generals and treasurers to oversee the implementation of these privileges, including the provision of hospitality (xenia) and ensuring the honoree's needs are met by the city.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " end 4th c. BC ",
+  "date_min": -350.0,
+  "date_max": -301.0,
+  "date_circa": false
+}

@@ -1,0 +1,158 @@
+{
+  "phi_id": 260540,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text follows the standard civic decree formula (edoxen tei boulei kai toi demoi), identifying it as a formal legislative act of the city-state.",
+      "confidence": 1.0,
+      "quote": "ἔδοξεν τῆι βουλῆι καὶ τῶι δήμωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The decree explicitly mentions the acceptance of honors and the public announcement of crowns (stephanoi) for the people of Cnidus.",
+      "confidence": 1.0,
+      "quote": "τὴν ἀναγγελίαν τῶν στεφάνων ποιεῖσθαι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Agonistic / Victory Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Agonistic / Victory Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The honors are scheduled to be proclaimed during the musical contest of the Leukophryena, a major panhellenic festival.",
+      "confidence": 1.0,
+      "quote": "ἐν τῶι μουσικῶι ἀγῶνι τῶν συντελουμένων παρ’ ἡμῖν Λευκοφρυηνῶν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The text includes administrative instructions for the treasurers (oikonomoi) to provide funds for the production and engraving of the stone monument.",
+      "confidence": 1.0,
+      "quote": "δότωσαν οἱ οἰκονόμοι ἐκ τῶν ἐψηφισμένων πόρων",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The decree contains a publication clause ordering the text to be inscribed on a stone stele and set up in a prominent location.",
+      "confidence": 1.0,
+      "quote": "εἰς στήλην ἀναγράψαι καὶ ἀναθεῖναι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Knidian Ambassadors",
+        "role": "Diplomatic representatives",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Knidian%20Ambassadors",
+        "confidence": 1.0
+      },
+      {
+        "name": "Agonothetai",
+        "role": "Supervisors of the games",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Agonothetai",
+        "confidence": 1.0
+      },
+      {
+        "name": "Oikonomoi",
+        "role": "Financial treasurers",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Oikonomoi",
+        "confidence": 1.0
+      },
+      {
+        "name": "Stephanophoros",
+        "role": "Eponymous magistrate",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Stephanophoros",
+        "confidence": 1.0
+      },
+      {
+        "name": "Polemarchs",
+        "role": "Military officials",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Polemarchs",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hipparchs",
+        "role": "Cavalry commanders",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hipparchs",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Cnidus",
+        "type": "City-state",
+        "uri": "https://pleiades.stoa.org/places/599575",
+        "confidence": 1.0
+      },
+      {
+        "name": "Magnesia on the Maeander",
+        "type": "City-state",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Prytaneion",
+        "type": "Public building",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Artemis Leukophryene",
+        "uri": null,
+        "confidence": 0.8
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Magnesia on the Maeander",
+      "type": "City-state",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a diplomatic decree from Magnesia on the Maeander responding to an embassy from Cnidus. The Knidians requested that their honors and crowns be recognized and announced during the Leukophryena, a major panhellenic festival dedicated to Artemis Leukophryene. The decree confirms the acceptance of these honors, orders the publication of the decision on a stele, and provides for the hospitality (xenia) and safe passage of the Knidian ambassadors. The text mentions various civic and military officials (oikonomoi, polemarchs, hipparchs) involved in the implementation of the decree, reflecting the complex administrative and security measures taken for foreign delegations.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

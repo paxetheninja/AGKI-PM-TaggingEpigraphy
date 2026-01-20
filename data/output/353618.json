@@ -1,0 +1,191 @@
+{
+  "phi_id": 353618,
+  "themes": [
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription explicitly states that the Demos and the Council honored the priests and their families for their service and generosity.",
+      "confidence": 1.0,
+      "quote": "ὁ δῆμος καὶ ἡ βουλὴ ἐτείμησαν τοὺς ἱερέας καὶ τοὺς πανοίκους αὐτῶν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text represents a formal decision or decree by the civic bodies (Demos and Boule) of the city.",
+      "confidence": 1.0,
+      "quote": "ὁ δῆμος καὶ ἡ βουλὴ ἐτείμησαν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Public Benefactions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Donor and Subscription Lists",
+        "subcategory": null
+      },
+      "rationale": "The text records the distribution of money (drachmas) and oil to citizens, Romans, and foreigners, which is a form of public donation or liturgy.",
+      "confidence": 1.0,
+      "quote": "δόντας ἐν τοῖς γενεθλίοις ἑκάστῳ τῶν πολειτῶν ἐν δραχμὰς τρεῖς καὶ Ῥωμαίοις καὶ παροίκοις",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Cult Practices",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Orations and Praise of Gods",
+        "subcategory": null
+      },
+      "rationale": "The inscription details service to Hekate and Artemis, and participation in the mysteries of Dionysos.",
+      "confidence": 1.0,
+      "quote": "ἱερατεύσαντας δὲ τῆς μεγίστης καὶ ἐπιφανεστάτης θεᾶς Ἑκάτης ... ἐν πᾶσιν τοῖς τοῦ Διονύσου μυστηρίοις",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Herakleitos",
+        "role": "Priest",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Herakleitos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Apollonides",
+        "role": "Father of Herakleitos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Apollonides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Demetrios",
+        "role": "Grandfather of Herakleitos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demetrios",
+        "confidence": 1.0
+      },
+      {
+        "name": "Tatirion",
+        "role": "Wife of Herakleitos and Priestess",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Tatirion",
+        "confidence": 1.0
+      },
+      {
+        "name": "Myonides",
+        "role": "Father of Tatirion",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Myonides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Polyneike",
+        "role": "Priestess, also known as Apphia Lollia",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Polyneike",
+        "confidence": 1.0
+      },
+      {
+        "name": "Apphia Lollia",
+        "role": "Priestess, also known as Polyneike",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Apphia%20Lollia",
+        "confidence": 1.0
+      },
+      {
+        "name": "Marcus Agrippa",
+        "role": "Roman statesman mentioned as a model of piety",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Marcus%20Agrippa",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hermias",
+        "role": "Son of Herakleitos, also known as Apollonides",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hermias",
+        "confidence": 0.8
+      },
+      {
+        "name": "Damelas",
+        "role": "Son of Herakleitos, also known as Menekles",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Damelas",
+        "confidence": 0.8
+      },
+      {
+        "name": "Menekles",
+        "role": "Son of Herakleitos, also known as Damelas",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Menekles",
+        "confidence": 0.8
+      }
+    ],
+    "places": [
+      {
+        "name": "Lagina",
+        "type": "Sanctuary site",
+        "uri": "https://pleiades.stoa.org/places/599747",
+        "confidence": 1.0
+      },
+      {
+        "name": "Panamara",
+        "type": "Sanctuary site",
+        "uri": "https://pleiades.stoa.org/places/599853",
+        "confidence": 1.0
+      },
+      {
+        "name": "Caria",
+        "type": "Region",
+        "uri": "https://pleiades.stoa.org/places/599564",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Hekate",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Artemis",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Dionysos",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Lagina",
+      "type": "Sanctuary site",
+      "uri": "https://pleiades.stoa.org/places/599747",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Caria",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/599564",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription from Lagina is an honorific decree issued by the Demos and Boule to honor a family of priests. It details their lifelong service to Hekate and Artemis of Panamara, their financial generosity during festivals (including distributions to citizens, Romans, and residents), and their participation in the Dionysian mysteries. The mention of Marcus Agrippa provides a chronological and cultural anchor to the early Roman Imperial period.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " aft. 12 AD ",
+  "date_min": 12.0,
+  "date_max": 12.0,
+  "date_circa": false
+}

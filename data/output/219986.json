@@ -1,0 +1,154 @@
+{
+  "phi_id": 219986,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text is a formal resolution issued by the priests and elders of Diospolis Magna, using the standard decree formula 'it was decided by'.",
+      "confidence": 1.0,
+      "quote": "δοξε το ς π διοσπ λεως τ ς [μ]εγ λης ερε σι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription honors Callimachus for his philanthropy and services to the city, specifically for saving the population during a famine.",
+      "confidence": 1.0,
+      "quote": "προσαγορε εσθαι μ ν α τ ν σωτ ρα τ ς π λεως",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Orations and Praise of Gods",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Orations and Praise of Gods",
+        "subcategory": null
+      },
+      "rationale": "The text contains significant praise for the piety of Callimachus towards the gods and the restoration of religious festivals and processions.",
+      "confidence": 0.8,
+      "quote": "τ ν ε ς τ θε ον ναπεμπομ νων π ντων ς νι κρ τιστα ε σεβ ς",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The decree explicitly commands that the text be inscribed on a stone stele.",
+      "confidence": 1.0,
+      "quote": "ναγρ ψαι ε ς στ λην λιθ νην",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Other Stone",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Other Stone"
+      },
+      "rationale": "The text specifies that the statues and the stele should be made of 'hard stone' (likely granite or basalt), which falls under 'Other Stone' in the taxonomy.",
+      "confidence": 0.8,
+      "quote": "κ σκληρο λ θου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The inscription as preserved contains numerous lacunae and reconstructed sections.",
+      "confidence": 1.0,
+      "quote": "[βασιλευ ντων κλεοπ] τρας θε ς [φ]ιλοπ το[ρος]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Cleopatra",
+        "role": "Queen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Cleopatra",
+        "confidence": 1.0
+      },
+      {
+        "name": "Ptolemy Caesar",
+        "role": "King",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ptolemy%20Caesar",
+        "confidence": 1.0
+      },
+      {
+        "name": "Callimachus",
+        "role": "Strategos and Epistrategos of the Thebaid",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Callimachus",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Diospolis Magna",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/786017",
+        "confidence": 1.0
+      },
+      {
+        "name": "Thebaid",
+        "type": "Region",
+        "uri": "https://www.wikidata.org/wiki/Q768515",
+        "confidence": 1.0
+      },
+      {
+        "name": "Thebes",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/541138",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Amonrasonther",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Karnak",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/786017",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a priestly decree from 39 BC, issued at Karnak (Thebes/Diospolis Magna) during the reign of Cleopatra VII and Ptolemy XV Caesarion. It honors Callimachus, a high-ranking official (strategos and epistrategos), for his exceptional philanthropy and leadership during a period of severe famine. He is credited with saving the city's population and ensuring the continuity of religious life. The decree orders the erection of three statues (one bronze, two stone) and the publication of the text on a bilingual stele (Greek and Egyptian) to be placed in the temple of Amun-Ra (Amonrasonther).",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 39 BC ",
+  "date_min": -39.0,
+  "date_max": -39.0,
+  "date_circa": false
+}

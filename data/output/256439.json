@@ -1,0 +1,128 @@
+{
+  "phi_id": 256439,
+  "themes": [
+    {
+      "label": "Official Letters",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Official Letters",
+        "subcategory": null
+      },
+      "rationale": "The inscription is structured as a formal diplomatic letter from the city and archons of Cydonia to the council and people of Teos, using the standard greeting formula 'chairein'.",
+      "confidence": 1.0,
+      "quote": "κυδωνιατ ν π λις κα ο ρχοντες τη ων τ ι βωλ[ ι] κα τ ι δ μωι χα ρειν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text explicitly mentions the delivery of a decree (psephisma) by ambassadors and the subsequent decision-making process of the city of Cydonia.",
+      "confidence": 1.0,
+      "quote": "τ τε ψ φισμα π δωκαν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Asylia",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Treaties and Agreements",
+        "subcategory": null
+      },
+      "rationale": "The document records a formal diplomatic agreement between Cydonia and Teos regarding the recognition of the sacred status and inviolability (asylia) of the city and its territory.",
+      "confidence": 1.0,
+      "quote": "τ ν καθι ρωσιν τ ι διον σωι τ ς τε π λιος κα τ ς χ ρας τ ς τη ων κα τ ν συλ αν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The text contains formal praise for the ambassadors and the people of Teos for their conduct and piety towards the god Dionysus.",
+      "confidence": 0.9,
+      "quote": "παιν μεν δ[ι] [τι κα]λ ς κα νδ ξως κα καταξ ως τ [ ι] θε [ ι] προεστ καντι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Kinship",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Diplomatic Relations",
+        "category": "Kinship",
+        "subcategory": null
+      },
+      "rationale": "The text emphasizes the ancestral kinship (syngeneia) between Cydonia and Teos as a justification for the diplomatic honors and recognition.",
+      "confidence": 1.0,
+      "quote": "πειδ [τ]οι φ λοι κα συγγενε ς π ρχοντες δι προγ νων",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Polydotus",
+        "role": "Ambassador",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Polydotus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Colotas",
+        "role": "Ambassador",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Colotas",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Cydonia",
+        "type": "City",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Teos",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/550913",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Dionysus",
+        "uri": "https://www.wikidata.org/wiki/Q41680",
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Teos",
+      "type": "Discovery site",
+      "uri": "https://pleiades.stoa.org/places/550913",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is an official diplomatic letter from the city of Cydonia (Crete) to the city of Teos (Ionia). It acknowledges the arrival of Teian ambassadors, Polydotus and Colotas, who presented a decree requesting the recognition of Teos and its territory as sacred and inviolable (asylia) under the protection of Dionysus. Cydonia formally grants this status, citing the ancestral kinship (syngeneia) between the two peoples and their shared piety towards the god. The text contains several lacunae but the overall sense and legal formulas are clear.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

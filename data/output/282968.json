@@ -1,0 +1,138 @@
+{
+  "phi_id": 282968,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text is a formal decree (psephisma) of the community of the Tymnians, as indicated by the standard opening formula and the instruction for publication.",
+      "confidence": 1.0,
+      "quote": "ἔδοξε Τυμνίων τῶι κοινῶι ... ἀναγραψάτω τόδε τὸ ψήφισμα",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    },
+    {
+      "label": "Sacred Laws and Rules",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Sacred Laws and Rules",
+        "subcategory": null
+      },
+      "rationale": "The inscription establishes strict regulations for the use of a sacred stoa and oracular facilities, including prohibitions against secular use and the maintenance of religious purity.",
+      "confidence": 1.0,
+      "quote": "περὶ τῶν ἱερῶν κατὰ τὰ προδεδογμένα τῶι κοινῶι ... μηθὲν μηδὲ ποτὲ ἄλλαν χρείαν μηδεμίαν",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    },
+    {
+      "label": "Fines and Penalties",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Fines and Penalties",
+        "subcategory": null
+      },
+      "rationale": "The decree specifies a financial penalty of 100 drachmas to be paid to the god Apollo for any violation of the established rules.",
+      "confidence": 1.0,
+      "quote": "ὀφειλόντω ἐπιτίμιον ἱερὸν Ἀπόλλωνος δραχμὰς ἑκατόν",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    },
+    {
+      "label": "Wall or Building Surface",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Wall or Building Surface"
+      },
+      "rationale": "The text explicitly orders its own publication on the walls of the stoa, specifically on the opposite walls.",
+      "confidence": 1.0,
+      "quote": "ἀναγραψάτω τόδε τὸ ψήφισμα ἐν τῆι στοᾶι ἐπὶ τῶν ἐνάντιον τοίχων",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The text contains several lacunae and restored sections, indicating it is not fully preserved.",
+      "confidence": 1.0,
+      "quote": "[ π ερ]οθ τα κλειν α το πιγ νου παν μου [δευτ ραι]",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Epigonos son of Kleinas",
+        "role": "Proposer of the decree",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Epigonos%20son%20of%20Kleinas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kleinas son of Epigonos",
+        "role": "Hierothytes (Sacred Official) and Eponymous Official",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kleinas%20son%20of%20Epigonos",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Tymnos",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/599994",
+        "confidence": 1.0
+      },
+      {
+        "name": "Stoa",
+        "type": "Sacred Building",
+        "uri": "https://pleiades.stoa.org/places/759679649",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Apollo",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Zeus",
+        "uri": "https://www.wikidata.org/wiki/Q34201",
+        "confidence": 0.8
+      },
+      {
+        "name": "Hera",
+        "uri": null,
+        "confidence": 0.8
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Tymnos",
+      "type": "City/Region",
+      "uri": "https://pleiades.stoa.org/places/599994",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a Hellenistic decree from the community of Tymnos in the Rhodian Peraia. It regulates the use and maintenance of a sacred stoa and its associated oracular facilities (chresteria). The text appoints hierothytai (sacred officials) to oversee the space, forbids the use of the stoa for secular purposes or the attachment of objects to its architecture, and establishes a fine of 100 drachmas payable to Apollo for any infractions. The decree concludes with instructions for its own publication on the walls of the stoa to ensure public awareness and religious purity.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 2nd/1st c. BC ",
+  "date_min": -200.0,
+  "date_max": -1.0,
+  "date_circa": false
+}

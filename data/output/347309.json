@@ -1,0 +1,169 @@
+{
+  "phi_id": 347309,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text is a formal resolution passed by the Athenian assembly, explicitly referred to as a 'psephisma' (decree).",
+      "confidence": 1.0,
+      "quote": "ἀναγράψαι δὲ τόδε τὸ ψήφισμα εἰς στήλην λιθίνην",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription records the Athenian people bestowing honors and gratitude upon a benefactor for his goodwill.",
+      "confidence": 1.0,
+      "quote": "ὁ δῆμος Ἀθηναίων ἀποδίδωσιν χάριτας μεγάλας τοῖς εὐεργετοῦσιν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Laws and Regulations",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Laws and Regulations",
+        "subcategory": null
+      },
+      "rationale": "The text involves the 'nomothetai' (lawgivers) and the process of 'prosnomethetesai' (additional legislation) regarding the allocation of funds.",
+      "confidence": 1.0,
+      "quote": "ἐν δὲ τοῖς νομοθέταις τοὺς προέδρους οἳ ἂν προεδρεύωσιν καὶ τὸν ἐπιστάτην προσνομοθετῆσαι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The decree specifies financial disbursements, including thirty drachmas for the stele and a daily drachma for Peisitheides' maintenance.",
+      "confidence": 1.0,
+      "quote": "δότω ταμίας τοῦ δήμου τριάκοντα δραχμάς ... διδόναι Πεισιθείδει δραχμὴν τῆς ἡμέρας",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The text explicitly commands that the decree be inscribed on a stone stele.",
+      "confidence": 1.0,
+      "quote": "ἀναγράψαι δὲ τόδε τὸ ψήφισμα εἰς στήλην λιθίνην",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Other Stone",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Other Stone"
+      },
+      "rationale": "The inscription describes the material as 'lithine' (stone).",
+      "confidence": 1.0,
+      "quote": "στήλην λιθίνην",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The text contains numerous lacunae and reconstructed sections, indicating it is not fully preserved.",
+      "confidence": 1.0,
+      "quote": "[ θην]α ων κα[-----------------]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Peisitheides",
+        "role": "Benefactor and recipient of Athenian citizenship and maintenance",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Peisitheides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Peisitheides",
+        "role": "Father of the honored Peisitheides",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Peisitheides",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Athens",
+        "type": "City-state",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      },
+      {
+        "name": "Akropolis",
+        "type": "Sanctuary and location of the stele",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      },
+      {
+        "name": "Delos",
+        "type": "Island or city of origin for Peisitheides",
+        "uri": "https://pleiades.stoa.org/places/599587",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Athena",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579885",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Akropolis",
+      "type": "Site",
+      "uri": "https://pleiades.stoa.org/places/579885",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is an Athenian decree from 334 BC honoring Peisitheides of Delos. It grants him Athenian citizenship (naturalization) and provides a daily maintenance allowance (trophe) of one drachma. The text outlines the administrative procedures for recording the decree on the Akropolis, the financial responsibilities of the treasurer (tamias), and the involvement of the lawgivers (nomothetai) to ensure the funding is properly allocated. It also includes a protection clause declaring anyone who kills Peisitheides an enemy of the Athenian people.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " ca. 334 BC ",
+  "date_min": -334.0,
+  "date_max": -334.0,
+  "date_circa": true
+}

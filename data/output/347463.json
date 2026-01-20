@@ -1,0 +1,341 @@
+{
+  "phi_id": 347463,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text contains the standard Athenian decree formulas for decisions made by the Council (Boule) and the People (Demos).",
+      "confidence": 1.0,
+      "quote": "ἔδοξεν τῶι δήμωι ... ἔδοξεν τῆι βουλεῖ",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription honors the prytaneis of the tribe Leontis for their piety and service, awarding them a golden crown.",
+      "confidence": 1.0,
+      "quote": "ἐπαινέσαι δὲ τοὺς πρυτάνεις τῆς Λεωντίδος καὶ στεφανῶσαι χρυσῶι στεφάνωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The second part of the inscription consists of a detailed list of names of the prytaneis organized by their respective demes.",
+      "confidence": 1.0,
+      "quote": "Σουνιεῖς Πατροκλῆς ... Φρεάρριοι ... Χολλεῖδαι ... Λευκονοεῖς",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Orations and Praise of Gods",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Orations and Praise of Gods",
+        "subcategory": null
+      },
+      "rationale": "The decree mentions the performance of sacrifices to Apollo Prostaterios and Artemis Boulaia and other gods for the health and safety of the council and people.",
+      "confidence": 1.0,
+      "quote": "ἔθυσαν τὰς θυσίας τὰς πρὸ τῶν ἐκκλησιῶν τῶι τε Ἀπόλλωνι τῶι Προστατηρίωι καὶ τῆι Ἀρτέμιδι τῆι Βουλαίαι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The text explicitly orders the decree to be inscribed on a stone stele and set up in the Prytanikon.",
+      "confidence": 1.0,
+      "quote": "ἀναγράψαι δὲ τόδε τὸ ψήφισμα τὸν γραμματέα τὸν κατὰ πρυτανείαν ἐν στήλει λιθίνει καὶ στῆσαι ἐν τῶι πρυτανικῶι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "The inscription is recorded in the Agora inventory as being on marble, and the text mentions a stone stele (lithinei stelei).",
+      "confidence": 0.8,
+      "quote": "στήλει λιθίνει",
+      "is_ambiguous": true,
+      "ambiguity_note": "The text uses the general term for stone (lithinei), but archaeological context confirms marble."
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The text contains numerous lacunae and reconstructed sections, indicating the physical state of the stone is broken.",
+      "confidence": 1.0,
+      "quote": "[--- ε] κοστ[ε τ ς] πρυτανε α[ς]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Archelaus",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Archelaus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Moschus",
+        "role": "Secretary",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Moschus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Moschion",
+        "role": "Father of Moschus",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Moschion",
+        "confidence": 1.0
+      },
+      {
+        "name": "Callistratus",
+        "role": "Presiding officer (Proedros)",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Callistratus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Ecphantus",
+        "role": "Speaker and Treasurer of the Council",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ecphantus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Euphanus",
+        "role": "Father of Ecphantus",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Euphanus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Patrocles",
+        "role": "Treasurer of the Prytaneis",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Patrocles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pollophanes",
+        "role": "Secretary of the Prytaneis",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pollophanes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lysicles",
+        "role": "Presiding officer (Proedros)",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lysicles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pollodorus",
+        "role": "Father of Lysicles",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pollodorus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Euboulides",
+        "role": "Priest of the Eponymous",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Euboulides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eucles",
+        "role": "Herald of the Council and People",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eucles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lenomus",
+        "role": "Under-secretary",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lenomus",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Athens",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eleusinion",
+        "type": "Sanctuary",
+        "uri": "https://pleiades.stoa.org/places/570216",
+        "confidence": 1.0
+      },
+      {
+        "name": "Prytanikon",
+        "type": "Building",
+        "uri": "https://pleiades.stoa.org/places/720198157",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sunium",
+        "type": "Deme",
+        "uri": "https://www.wikidata.org/wiki/Q1136637",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phrearrhioi",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580077",
+        "confidence": 1.0
+      },
+      {
+        "name": "Cholleidai",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/585901",
+        "confidence": 1.0
+      },
+      {
+        "name": "Leuconoe",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Halimus",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Paionidai",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580048",
+        "confidence": 1.0
+      },
+      {
+        "name": "Scambonidai",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Oe",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Pelekes",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580063",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eupyridae",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Potamos",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/590008",
+        "confidence": 1.0
+      },
+      {
+        "name": "Colonus",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Cropidai",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Berenicidae",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Trinemeia",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580126",
+        "confidence": 1.0
+      },
+      {
+        "name": "Cyttus",
+        "type": "Deme",
+        "uri": "https://www.wikidata.org/wiki/Q138348",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kephale",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579971",
+        "confidence": 1.0
+      },
+      {
+        "name": "Thria",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580120",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Apollo Prostaterios",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Artemis Boulaia",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579885",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription (Agora XV 128) is a significant Athenian document from the archonship of Archelaus (212/1 BC). It contains two decrees: one by the Demos and one by the Boule, both honoring the prytaneis of the tribe Leontis. The text provides a detailed administrative record, including the names of officials, religious duties performed (sacrifices to Apollo Prostaterios and Artemis Boulaia), and a complete roster of the fifty councilors organized by their demes. The mention of the Eleusinion as a meeting place for the council is a notable topographical detail.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 211/10 BC ",
+  "date_min": -211.0,
+  "date_max": -210.0,
+  "date_circa": false
+}

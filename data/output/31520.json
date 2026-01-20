@@ -1,0 +1,165 @@
+{
+  "phi_id": 31520,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The inscription begins with the standard formula 'ἔδοξε τᾶι πόλι τῶν Γερονθρητῶν', identifying it as a civic decree.",
+      "confidence": 1.0,
+      "quote": "ἔδοξε τᾶι πόλι τῶν Γερονθρητῶν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The text grants the titles of proxenos and benefactor (euergetes) to individuals, a hallmark of honorific decrees.",
+      "confidence": 1.0,
+      "quote": "πρόξενος καὶ εὐεργέτας",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The decree explicitly orders the ephors to record the text on a stone stele (stelan petrinan).",
+      "confidence": 1.0,
+      "quote": "στήλαν πετρίναν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Other Stone",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Other Stone"
+      },
+      "rationale": "The inscription refers to the material as 'petrinan', a general term for stone.",
+      "confidence": 1.0,
+      "quote": "στήλαν πετρίναν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The text contains numerous lacunae and reconstructed sections, indicating its fragmentary state.",
+      "confidence": 1.0,
+      "quote": "[ δοξε τ ι π λι τ ν γερονθρη]τ ν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Xenophanes",
+        "role": "Strategos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Xenophanes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Casson",
+        "role": "Honoree",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Casson",
+        "confidence": 0.8
+      },
+      {
+        "name": "...okrates",
+        "role": "Honoree",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=...okrates",
+        "confidence": 0.8
+      },
+      {
+        "name": "Pyrrhachion",
+        "role": "Father of Honoree",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pyrrhachion",
+        "confidence": 0.8
+      }
+    ],
+    "places": [
+      {
+        "name": "Geronthrai",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/570263",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lacedaemon",
+        "type": "Region",
+        "uri": "https://pleiades.stoa.org/places/570406",
+        "confidence": 1.0
+      },
+      {
+        "name": "Gytheion",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/570268",
+        "confidence": 1.0
+      },
+      {
+        "name": "Carystus",
+        "type": "City",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Eretria",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/540767",
+        "confidence": 0.8
+      }
+    ],
+    "deities": [
+      {
+        "name": "Apollo",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Geronthrai",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/570263",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Lakonike",
+      "type": "Region",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This is a civic decree from the city of Geronthrai, likely dating to the 2nd century BC. It honors individuals from Carystus and Gytheion by granting them the status of proxenoi and benefactors. The decree includes standard privileges such as the right to own land and houses (enktesis), tax immunity (ateleia), and safety in war and peace. It was to be set up in the sanctuary of Apollo by the ephors during the term of the strategos Xenophanes.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " after 146 BC",
+  "date_min": -146.0,
+  "date_max": -146.0,
+  "date_circa": false
+}

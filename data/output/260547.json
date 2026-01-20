@@ -1,0 +1,158 @@
+{
+  "phi_id": 260547,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text begins with the standard formula for a public decree, indicating a decision made by the people (demos).",
+      "confidence": 1.0,
+      "quote": "[ἔδ]οξεν τῶι δήμωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription records honors (timas) granted to an envoy and a panel of judges for their services.",
+      "confidence": 1.0,
+      "quote": "τὰς γεγενημένας τιμὰς ὑπὸ τῆς αὑτοῦ πατρίδος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The decree explicitly orders the text to be inscribed on a stone stele.",
+      "confidence": 1.0,
+      "quote": "ἀναγράψαι δὲ καὶ τὸ ψήφισμα εἰς στήλην",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "The text specifies that the stele should be made of 'white stone', which in this region and context typically refers to marble.",
+      "confidence": 0.9,
+      "quote": "στήλην λευκοῦ λίθου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The inscription includes instructions for the city's financial administrators (oikonomoi) to provide the necessary funds for the monument.",
+      "confidence": 1.0,
+      "quote": "τὴν ἐσομένην δαπάνην χορηγησάτωσαν οἱ οἰκονόμοι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Aristagoras son of Aristagoras",
+        "role": "Proposer of the decree",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristagoras%20son%20of%20Aristagoras",
+        "confidence": 1.0
+      },
+      {
+        "name": "Menogenes son of Zenon",
+        "role": "Envoy from Alarba",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Menogenes%20son%20of%20Zenon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Philocrates son of Dionysius",
+        "role": "Judge",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philocrates%20son%20of%20Dionysius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Socrates son of Arcesilaus",
+        "role": "Judge",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Socrates%20son%20of%20Arcesilaus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristagoras son of Neumon",
+        "role": "Judge",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristagoras%20son%20of%20Neumon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Moschus son of Zenodotus",
+        "role": "Secretary",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Moschus%20son%20of%20Zenodotus",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Alarba",
+        "type": "City of the Alarbeni",
+        "uri": "https://www.wikidata.org/wiki/Q24016516",
+        "confidence": 1.0
+      },
+      {
+        "name": "Magnesia on the Maeander",
+        "type": "Issuing city",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Agora",
+        "type": "Public square and location for the stele",
+        "uri": "https://pleiades.stoa.org/places/501332",
+        "confidence": 1.0
+      },
+      {
+        "name": "Prytaneum",
+        "type": "Civic building for hospitality",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Magnesia on the Maeander",
+      "type": "Region",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a formal decree from Magnesia on the Maeander. It acknowledges an embassy from the Alarbeni and honors Menogenes, the envoy, as well as a group of foreign judges (Philocrates, Socrates, and Aristagoras) and their secretary (Moschus). The decree outlines the publication process, including the creation of a white stone stele to be placed in the most prominent part of the agora, and the provision of hospitality (xenia) and an invitation to the Prytaneum for the honored individuals. It also details the financial responsibility of the city's treasurers (oikonomoi) for the costs of the monument.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

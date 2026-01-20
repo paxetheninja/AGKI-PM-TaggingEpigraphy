@@ -1,0 +1,163 @@
+{
+  "phi_id": 200240,
+  "themes": [
+    {
+      "label": "Treaties and Agreements",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Treaties and Agreements",
+        "subcategory": null
+      },
+      "rationale": "The text explicitly mentions a treaty and an alliance between King Antigonus and the city of Hierapytna.",
+      "confidence": 1.0,
+      "quote": "τ σδε τ ς συνθ κας ------- τ γ]χανον στρατου μενοι παρ",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Laws and Regulations",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Laws and Regulations",
+        "subcategory": null
+      },
+      "rationale": "The inscription refers to penalties and legal procedures according to the laws of the respective parties.",
+      "confidence": 1.0,
+      "quote": "το ς πιτιμ οις το ς κ τ ν ν μων τ ν] παρ κ στοις παρχ ντων",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Sacred Laws and Rules",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Sacred Laws and Rules",
+        "subcategory": null
+      },
+      "rationale": "The document regulates participation in religious festivals, specifically the Theudaisia and the Asklepieia, which is a common feature of Cretan isopolity or alliance treaties.",
+      "confidence": 1.0,
+      "quote": "ς τ θευδα σια κα ο[----------- ο δ εραπ τνιοι]ς ρκ [δ]ας ς τ σκλαπ [εια]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Magistrates and Officials",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The text mentions the magistrates (kosmoi), who were the chief officials in Cretan cities, responsible for enforcing the treaty and paying fines.",
+      "confidence": 1.0,
+      "quote": "ποτιν τω]σαν ο κ σμοι δραχμ ς μυ[ρ ας",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The length and formal nature of this international treaty indicate it was inscribed on a stone stele for public display.",
+      "confidence": 0.8,
+      "quote": "τ σδε τ ς συνθ κας",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Other Stone",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Other Stone"
+      },
+      "rationale": "The inscription is carved on stone, typical for Cretan public documents of this period.",
+      "confidence": 0.8,
+      "quote": "τ σδε τ ς συνθ κας",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The text contains numerous lacunae and broken lines, requiring significant restoration.",
+      "confidence": 1.0,
+      "quote": "[---------------------------]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Antigonus",
+        "role": "King",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antigonus",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Hierapytna",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/589807",
+        "confidence": 1.0
+      },
+      {
+        "name": "Arkades",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/589710",
+        "confidence": 1.0
+      },
+      {
+        "name": "Macedonia",
+        "type": "Region",
+        "uri": "https://pleiades.stoa.org/places/491656",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Asklepios",
+        "uri": "https://www.wikidata.org/wiki/Q83223",
+        "confidence": 0.8
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Hierapytna",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/589807",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Crete",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/5066435",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a detailed treaty and alliance between King Antigonus (likely Antigonus III Doson) and the Cretan city of Hierapytna, also involving the city of Arkades. It outlines military obligations, including the provision of troops and aid, and establishes financial penalties for magistrates (kosmoi) who fail to comply. Beyond military matters, it grants civil rights such as intermarriage (epigamia) and regulates reciprocal participation in religious festivals like the Theudaisia and Asklepieia. It also includes economic clauses regarding the export of grain.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " ca. 250-200 BC",
+  "date_min": -250.0,
+  "date_max": -200.0,
+  "date_circa": true
+}

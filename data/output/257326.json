@@ -1,0 +1,222 @@
+{
+  "phi_id": 257326,
+  "themes": [
+    {
+      "label": "Funerary Inscriptions (Epitaphs)",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Funerary Inscriptions (Epitaphs)",
+        "subcategory": null
+      },
+      "rationale": "The inscription is a funerary text detailing the construction of a tomb (altar and sarcophagus) and providing burial instructions for the owner and his family.",
+      "confidence": 1.0,
+      "quote": "κατεσκεύασεν τὸν βωμὸν καὶ τὴν ἐπικειμένην αὐτῷ σορόν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Contracts and Private Legal Acts",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Contracts and Private Legal Acts",
+        "subcategory": null
+      },
+      "rationale": "The text functions as a private legal act, specifying burial rights, prohibiting the transfer or sale of the tomb, and establishing fines for violations.",
+      "confidence": 1.0,
+      "quote": "ἐν δὲ ταῖς ὑποκειμέναις εἰσώσταις ταφήσονται οἷς ἂν Εὔμαχος βουληθῇ",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Protective Charms",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Curses and Magic",
+        "subcategory": "Protective Charms"
+      },
+      "rationale": "The inscription contains a protective formula against tomb violation, declaring any offender to be a tomb-robber, impious, and cursed.",
+      "confidence": 1.0,
+      "quote": "ἔστω δὲ ὁ ποιήσας... τυμβωρύχος καὶ ἀσεβὴς καὶ ἐπάρατος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Registers and Catalogues",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Registers and Catalogues",
+        "subcategory": null
+      },
+      "rationale": "The text mentions that a copy of the inscription was deposited in the public archives (chreophylakion), indicating its status as a registered document.",
+      "confidence": 1.0,
+      "quote": "τῆς ἐπιγραφῆς ἀντίγραφον ἀπετέθη εἰς τὸ χρεοφυλάκιον",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Sarcophagus",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Sarcophagus"
+      },
+      "rationale": "The text explicitly mentions the construction of a 'soros' (sarcophagus).",
+      "confidence": 1.0,
+      "quote": "τὴν ἐπικειμένην αὐτῷ σορόν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Altar",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Altar"
+      },
+      "rationale": "The text explicitly mentions the construction of a 'bomos' (altar) as part of the funerary monument.",
+      "confidence": 1.0,
+      "quote": "κατεσκεύασεν τὸν βωμὸν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Tombstone (Gravestone)",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Tombstone (Gravestone)"
+      },
+      "rationale": "The inscription serves as a monumental funerary marker for a family tomb.",
+      "confidence": 1.0,
+      "quote": "φηρωσθαι το μνημειον",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Aurelius Eumachus",
+        "role": "Tomb owner and builder",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aurelius%20Eumachus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aurelia Tatia",
+        "role": "Wife of Eumachus",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aurelia%20Tatia",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pappas",
+        "role": "Father of Tatia",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pappas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aurelius Dionysius",
+        "role": "Son of Tatia",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aurelius%20Dionysius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Chrysogonus",
+        "role": "Father of Dionysius",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Chrysogonus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aurelius Pelles",
+        "role": "Son of Eumachus",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aurelius%20Pelles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aurelia Eumachia",
+        "role": "Daughter of Eumachus",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aurelia%20Eumachia",
+        "confidence": 1.0
+      },
+      {
+        "name": "Tiberius Claudius Achilles",
+        "role": "Husband of Eumachia",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Tiberius%20Claudius%20Achilles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Tolmedes",
+        "role": "Father of Achilles",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Tolmedes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Glycon",
+        "role": "Stephanephoros (Magistrate)",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Glycon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Archimedes",
+        "role": "Father of Glycon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Archimedes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Zenon",
+        "role": "Ancestor of Eumachus",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Zenon",
+        "confidence": 0.8
+      },
+      {
+        "name": "Eudemos",
+        "role": "Ancestor of Eumachus",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eudemos",
+        "confidence": 0.8
+      }
+    ],
+    "places": [
+      {
+        "name": "Aphrodisias",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/638753",
+        "confidence": 1.0
+      },
+      {
+        "name": "Rome",
+        "type": "State (Treasury context)",
+        "uri": "https://pleiades.stoa.org/places/423025",
+        "confidence": 1.0
+      },
+      {
+        "name": "Chreophylakion",
+        "type": "Public Archive",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Aphrodisias",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/638753",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription from Aphrodisias records the establishment of a family tomb by Aurelius Eumachus. It includes detailed legal provisions regarding burial rights for his wife Tatia, children Pelles and Eumachia, and other relatives. The text is notable for its strict prohibitions against unauthorized burials or the sale of the monument, backed by a significant fine of 10,000 denarii payable to the Roman treasury. The document concludes with a dating formula and a note that a copy was officially registered in the city's archives.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

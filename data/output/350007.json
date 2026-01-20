@@ -1,0 +1,282 @@
+{
+  "phi_id": 350007,
+  "themes": [
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The inscription contains multiple references to financial transactions, including drachmae (δραχ) and payments or measurements (μέτρημα), often associated with specific time periods.",
+      "confidence": 1.0,
+      "quote": "δραχ ηηη μ τρ[η]μα νιαυτο",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The text consists of a long list of individuals identified by their names and patronymics, likely citizens receiving or providing payments.",
+      "confidence": 1.0,
+      "quote": "φ λιππος π θωνος διμ νου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "Based on the format of the administrative list and the metadata from Kos, this record was originally inscribed on a stone stele.",
+      "confidence": 0.8,
+      "quote": "[-----------------------]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The inscription is highly broken with significant portions of the text missing at the beginning and end of lines, as well as entire missing sections.",
+      "confidence": 1.0,
+      "quote": "[----]μ νου μ τρημα τετραμ νου τελ[-------]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Philippos",
+        "role": "Recipient or payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philippos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Python",
+        "role": "Father of Philippos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Python",
+        "confidence": 1.0
+      },
+      {
+        "name": "Nicomedes",
+        "role": "Recipient or payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nicomedes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Demetrios",
+        "role": "Recipient or payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demetrios",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pistodamos",
+        "role": "Recipient or payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pistodamos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristomachos",
+        "role": "Recipient or payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristomachos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Cleumedeus",
+        "role": "Father of Aristomachos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Cleumedeus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Philistos",
+        "role": "Recipient or payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philistos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Nicophron",
+        "role": "Recipient or payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nicophron",
+        "confidence": 1.0
+      },
+      {
+        "name": "Timostratos",
+        "role": "Father of Nicophron",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Timostratos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Parmenion",
+        "role": "Recipient or payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Parmenion",
+        "confidence": 1.0
+      },
+      {
+        "name": "Damonomos",
+        "role": "Recipient or payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Damonomos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eutychidas",
+        "role": "Recipient or payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eutychidas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Nicarchos",
+        "role": "Father of Eutychidas",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nicarchos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Callistratos",
+        "role": "Recipient or payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Callistratos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Theodotos",
+        "role": "Recipient or payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theodotos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Heracleitos",
+        "role": "Father of Theodotos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Heracleitos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Nicandros",
+        "role": "Recipient or payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nicandros",
+        "confidence": 1.0
+      },
+      {
+        "name": "Epigarios",
+        "role": "Father of Nicandros",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Epigarios",
+        "confidence": 1.0
+      },
+      {
+        "name": "Meniphilos",
+        "role": "Recipient or payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Meniphilos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Anaxagoras",
+        "role": "Father of Meniphilos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Anaxagoras",
+        "confidence": 1.0
+      },
+      {
+        "name": "Theudotos",
+        "role": "Father or recipient",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theudotos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Crates",
+        "role": "Recipient or payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Crates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Chaerestratos",
+        "role": "Recipient or payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Chaerestratos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Ismondron",
+        "role": "Recipient or payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ismondron",
+        "confidence": 0.8
+      },
+      {
+        "name": "Xiphones",
+        "role": "Recipient or payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Xiphones",
+        "confidence": 1.0
+      },
+      {
+        "name": "Ptolemaios",
+        "role": "Father of Xiphones",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ptolemaios",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hermippos",
+        "role": "Father or recipient",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hermippos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Archidamos",
+        "role": "Father or recipient",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Archidamos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Anesidemos",
+        "role": "Recipient or payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Anesidemos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Clenagoras",
+        "role": "Recipient or payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Clenagoras",
+        "confidence": 1.0
+      },
+      {
+        "name": "Agesandros",
+        "role": "Recipient or payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Agesandros",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Kos",
+        "type": "Island",
+        "uri": "https://pleiades.stoa.org/places/736946",
+        "confidence": 1.0
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Kos",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/736946",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription from Kos is an administrative and financial ledger. It lists various individuals alongside terms for grain allowances (sitiresion) and payments (metrema). The entries are organized by time periods, such as two-month (dimenou), three-month (trimenou), four-month (tetramenou), and yearly (eniauto) intervals, suggesting a recurring distribution or tax collection system. The presence of drachmae values confirms its fiscal nature.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " early 2nd c. BC ",
+  "date_min": -200.0,
+  "date_max": -151.0,
+  "date_circa": false
+}

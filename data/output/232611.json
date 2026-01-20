@@ -1,0 +1,304 @@
+{
+  "phi_id": 232611,
+  "themes": [
+    {
+      "label": "Treaties and Agreements",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Treaties and Agreements",
+        "subcategory": null
+      },
+      "rationale": "The inscription records a formal settlement and arbitration agreement between two groups of Salaminians (those from the Seven Tribes and those from Sounion) to resolve disputes over religious and land rights.",
+      "confidence": 1.0,
+      "quote": "δι λλαξαν ο διαιτητα σαλαμιν ος τ ς κ τ ν πταφυλ ν κα σαλαμιν ος το ς π σον ο μολογο ντας λλ λοις",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Sacred Laws and Rules",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Sacred Laws and Rules",
+        "subcategory": null
+      },
+      "rationale": "The text provides detailed regulations for priesthoods, the distribution of sacrificial meat, and the performance of religious rituals according to ancestral customs.",
+      "confidence": 1.0,
+      "quote": "τ ς ερεωσ νας κοιν ς ε ναι μφοτ ρων ε ς τ ν α ε χρ νον... θ εν δ το ς θεο ς κα το ς ρωσι κατ τ δε",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Calendars and Timetables",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Calendars and Timetables",
+        "subcategory": null
+      },
+      "rationale": "The second half of the inscription contains a sacrificial calendar organized by the months of the Attic year, including Mounichion, Hekatombaion, Metageitnion, Boedromion, Pyanopsion, and Maimakterion.",
+      "confidence": 1.0,
+      "quote": "μουνιχι νος... κατονβαι νος... μεταγειτνι νος... βοηδρομι νος... πυανοψι νος... μαιμακτηρι νος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The text lists the names of the five arbitrators and the individuals from both Salaminian groups who swore the oath to uphold the agreement.",
+      "confidence": 1.0,
+      "quote": "γνωσαν ο διαιτητα στ φανος μυρριν σιος κλεαγ ρας χαρνε ς ριστογε των μυρριν σιος ε θ κριτος λαμπτρε ς κηφισ δοτος α θαλ δης",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The inscription specifies the financial contributions required for sacrifices and the monetary value of certain offerings, such as pelanos and specific drachma amounts.",
+      "confidence": 1.0,
+      "quote": "ερε συνα 0 δραχμ ς ε ς πελαν ν δ 0 δραχμ ς το των τ μυσυ κατ ρος συμβ λλεσθαι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The text explicitly commands that the agreement and sacrificial list be inscribed on a stone stele to be set up in the sanctuary of Athena Skiras.",
+      "confidence": 1.0,
+      "quote": "τα τα δ ναγρ ψαι ς στ ληι κοιν ι μφοτ ρος κα στ σαι ν τ ι ερ ι τ ς θην ς τ ς σκιρ δος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "The inscription is carved on a marble stele, which was the standard material for public decrees in 4th-century BCE Athens.",
+      "confidence": 0.9,
+      "quote": "στ ληι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Charicleides",
+        "role": "Archon of Athens",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Charicleides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Stephanos of Myrrhinous",
+        "role": "Arbitrator",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Stephanos%20of%20Myrrhinous",
+        "confidence": 1.0
+      },
+      {
+        "name": "Cleagoras of Acharnae",
+        "role": "Arbitrator",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Cleagoras%20of%20Acharnae",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristogeiton of Myrrhinous",
+        "role": "Arbitrator",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristogeiton%20of%20Myrrhinous",
+        "confidence": 1.0
+      },
+      {
+        "name": "Euthycritos of Lamptrae",
+        "role": "Arbitrator",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Euthycritos%20of%20Lamptrae",
+        "confidence": 1.0
+      },
+      {
+        "name": "Cephisodotos of Aithalidae",
+        "role": "Arbitrator",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Cephisodotos%20of%20Aithalidae",
+        "confidence": 1.0
+      },
+      {
+        "name": "Thrasycles",
+        "role": "Herald",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Thrasycles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristarchos",
+        "role": "Archon of the Salaminians",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristarchos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Diophilos son of Diopeithes",
+        "role": "Archon of the Salaminians at Sounion",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Diophilos%20son%20of%20Diopeithes",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Athens",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      },
+      {
+        "name": "Salamis",
+        "type": "Region",
+        "uri": "https://pleiades.stoa.org/places/707617",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sounion",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580107",
+        "confidence": 1.0
+      },
+      {
+        "name": "Porthmos",
+        "type": "Locality",
+        "uri": "https://pleiades.stoa.org/places/580084",
+        "confidence": 1.0
+      },
+      {
+        "name": "Koile",
+        "type": "Locality",
+        "uri": "https://pleiades.stoa.org/places/579980",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eurysakeion",
+        "type": "Sanctuary",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Myrrhinous",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580030",
+        "confidence": 1.0
+      },
+      {
+        "name": "Acharnae",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Athena Skiras",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Heracles",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Eurysaces",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Aglauros",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Pandrosos",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Kourotrophos",
+        "uri": "https://www.wikidata.org/wiki/Q1785582",
+        "confidence": 1.0
+      },
+      {
+        "name": "Poseidon Hippodromios",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Apollo Patroos",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Artemis",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Theseus",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Zeus Phratrios",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Alcmene",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Teucer",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Nausirus",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Ion",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579885",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription, dated to the archonship of Charicleides (363/2 BCE), records a detailed settlement between two branches of the Salaminians (the Seven Tribes and the Sounion group). It covers the joint administration of priesthoods, the division of land in Koile and Porthmos, and provides a comprehensive sacrificial calendar with associated costs and perquisites for the priests. The text is largely preserved but contains some lacunae and restorations.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 363/2 a. ",
+  "date_min": -363.0,
+  "date_max": -362.0,
+  "date_circa": false
+}

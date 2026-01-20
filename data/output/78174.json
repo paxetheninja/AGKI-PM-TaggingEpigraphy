@@ -1,0 +1,143 @@
+{
+  "phi_id": 78174,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text follows the standard formula for a civic decree, beginning with the decision of the council and the people of Tenos.",
+      "confidence": 1.0,
+      "quote": "ἔδοξεν τῇ βουλῇ καὶ τῷ δήμῳ",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription honors a physician for his professional excellence and goodwill, granting him titles, a crown, and front-row seating at festivals.",
+      "confidence": 1.0,
+      "quote": "ἐπαινέσαι Ἀπολλώνιον Ἱεροκλέους Μιλήσιον τὸν ἰατρὸν καὶ στεφανῶσαι αὐτὸν",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The decree explicitly orders the text to be inscribed on a stone stele for public display in the sanctuary.",
+      "confidence": 1.0,
+      "quote": "ἀναγράψαι δὲ καὶ τὸ ψήφισμα τόδε εἰς στήλην λιθίνην",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    },
+    {
+      "label": "Other Stone",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Other Stone"
+      },
+      "rationale": "The text specifies a stone support (lithine) but does not identify the specific variety such as marble or limestone, thus falling under the general stone category.",
+      "confidence": 0.8,
+      "quote": "στήλην λιθίνην",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The inscription contains numerous lacunae and reconstructed sections, indicating it is not fully preserved.",
+      "confidence": 1.0,
+      "quote": "[ δοξεν τε βουλε κα τ ι δ μωι]",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Apollonius",
+        "role": "Physician and Benefactor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Apollonius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hierocles",
+        "role": "Father of Apollonius",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hierocles",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Tenos",
+        "type": "City-state",
+        "uri": "https://pleiades.stoa.org/places/590073",
+        "confidence": 1.0
+      },
+      {
+        "name": "Miletus",
+        "type": "City-state",
+        "uri": "https://pleiades.stoa.org/places/599799",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Poseidon",
+        "uri": "https://www.wikidata.org/wiki/Q41127",
+        "confidence": 1.0
+      },
+      {
+        "name": "Amphitrite",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Apollo",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Dionysus",
+        "uri": "https://www.wikidata.org/wiki/Q41680",
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Tenos",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/590073",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This is a 2nd-century BC honorific decree from Tenos for a Milesian physician named Apollonius, son of Hierocles. The text details his professional excellence and his benevolence toward the citizens of Tenos. In recognition of his service, the city grants him the status of proxenos and benefactor, crowns him with an olive wreath in the sanctuary of Poseidon and Amphitrite, and provides him with front-row seating (proedria) at the festivals of the Posideia and Dionysia. The decree was to be inscribed on a stone stele and a copy sent to Miletus to be displayed in the sanctuary of Apollo.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 2nd c. BC",
+  "date_min": -200.0,
+  "date_max": -101.0,
+  "date_circa": false
+}

@@ -1,0 +1,178 @@
+{
+  "phi_id": 77228,
+  "themes": [
+    {
+      "label": "Orations and Praise of Gods",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Orations and Praise of Gods",
+        "subcategory": null
+      },
+      "rationale": "The text is a famous aretalogy of Isis, a first-person speech where the goddess praises her own attributes, powers, and contributions to civilization.",
+      "confidence": 1.0,
+      "quote": "γ ε μι κρ νου θυγ τηρ πρεσβυτ τη. γ ε μι γυν κα δελφ σε ρεος βασιλ ος.",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Votive Dedications",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Votive Dedications",
+        "subcategory": null
+      },
+      "rationale": "The inscription begins with a formal dedication to the Egyptian deities Isis, Serapis, Anubis, and Harpocrates.",
+      "confidence": 1.0,
+      "quote": "[ ν θηκεν ε]σι[δι σερ π]ι[δ]ι νο βιδι κ [ρποκρ]τ.",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Sacred Laws and Rules",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Sacred Laws and Rules",
+        "subcategory": null
+      },
+      "rationale": "Isis claims to have established the laws for humanity and asserts that these laws cannot be changed.",
+      "confidence": 1.0,
+      "quote": "γ ν μους νθρ ποις θ μην κα ν μοθ τησα ο δε ς δ ναται μεταθε ναι.",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Catalogues of Knowledge",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Didactic and School Texts",
+        "category": "Catalogues of Knowledge",
+        "subcategory": null
+      },
+      "rationale": "The goddess lists her inventions and discoveries, including letters, navigation, and the paths of the sun and moon.",
+      "confidence": 1.0,
+      "quote": "γρ μματα ε ρον μετ ρμο ... γ λ ου κα σελ νης πορε αν συν ταξα.",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Laws and Regulations",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Laws and Regulations",
+        "subcategory": null
+      },
+      "rationale": "The text describes the goddess as the original legislator who defined justice and the legal relationship between men and women.",
+      "confidence": 1.0,
+      "quote": "γ τ δ καιον σχυρ ν πο ησα. γ γυνα κα κα νδρα συν γαγα.",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Building Commemoration",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Building Commemoration",
+        "subcategory": null
+      },
+      "rationale": "The inscription mentions the building of the city of Bubastis as one of the goddess's achievements.",
+      "confidence": 0.8,
+      "quote": "[μ]ο βο βαστις π λις ο κοδομ θη.",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Contracts and Private Legal Acts",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Contracts and Private Legal Acts",
+        "subcategory": null
+      },
+      "rationale": "Isis claims to have invented marriage contracts, a fundamental private legal act.",
+      "confidence": 1.0,
+      "quote": "γ συνγραφ ς γαμικ [ς] ε ρα.",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [],
+    "places": [
+      {
+        "name": "Bubastis",
+        "type": "City",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Ios",
+        "type": "Island",
+        "uri": "https://pleiades.stoa.org/places/599672",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Isis",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Serapis",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Anubis",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Harpocrates",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Cronus",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Osiris",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Hermes",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Sirius",
+        "uri": null,
+        "confidence": 0.8
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Ios",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/599672",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a version of the famous 'Aretalogy of Isis', a religious text found in several locations across the Mediterranean. It is written in the first person as a self-revelation of the goddess's power and her role as the founder of civilization, law, and culture. The text is fragmentary, with several lacunae, but the standard formulas of the aretalogy allow for clear identification of the themes and deities involved.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 2nd/3rd c. AD ",
+  "date_min": 101.0,
+  "date_max": 300.0,
+  "date_circa": false
+}

@@ -1,0 +1,168 @@
+{
+  "phi_id": 246658,
+  "themes": [
+    {
+      "label": "Agonistic / Victory Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Agonistic / Victory Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription provides a detailed list of athletic victories in various prestigious games, including the stadion, diaulos, and dolichos races.",
+      "confidence": 1.0,
+      "quote": "λυμπε ων ν κος ν σταδ οις",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The text explicitly states that the council and the people set up the monument to honor the individual.",
+      "confidence": 1.0,
+      "quote": " βουλ [κα δ μος σ]τ[ησαν μ]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Agonistic Epigrams",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Agonistic Epigrams",
+        "subcategory": null
+      },
+      "rationale": "The first part of the inscription is composed in verse (metrical epigram) to commemorate the athlete's achievements, which is a standard form for victory monuments.",
+      "confidence": 1.0,
+      "quote": "[ ρ ν με] ν σ[τα]δοις τ ν ε[-]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Statue Base",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Statue Base"
+      },
+      "rationale": "The formulaic expression of the council and people 'setting up' the subject indicates this was originally a base for a statue.",
+      "confidence": 1.0,
+      "quote": " βουλ [κα δ μος σ]τ[ησαν μ]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Aurelius Hieronymus",
+        "role": "Athlete and Victor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aurelius%20Hieronymus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hadrian",
+        "role": "Emperor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hadrian",
+        "confidence": 1.0
+      },
+      {
+        "name": "Caesar",
+        "role": "Emperor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Caesar",
+        "confidence": 0.8
+      }
+    ],
+    "places": [
+      {
+        "name": "Athens",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      },
+      {
+        "name": "Smyrna",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/550893",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pergamum",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/550812",
+        "confidence": 1.0
+      },
+      {
+        "name": "Puteoli",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/432815",
+        "confidence": 1.0
+      },
+      {
+        "name": "Naples",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/433014",
+        "confidence": 1.0
+      },
+      {
+        "name": "Bithynia",
+        "type": "Region",
+        "uri": "https://pleiades.stoa.org/places/511189",
+        "confidence": 1.0
+      },
+      {
+        "name": "Isthmus",
+        "type": "Sanctuary",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Olympia",
+        "type": "Sanctuary",
+        "uri": "https://pleiades.stoa.org/places/570531",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pisa",
+        "type": "Region",
+        "uri": "https://pleiades.stoa.org/places/570612",
+        "confidence": 0.8
+      },
+      {
+        "name": "Rome",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/423025",
+        "confidence": 0.8
+      }
+    ],
+    "deities": [
+      {
+        "name": "Zeus",
+        "uri": "https://www.wikidata.org/wiki/Q34201",
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/579885",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a comprehensive agonistic record for the athlete Aurelius Hieronymus. It combines a poetic epigram with a prose list of victories across the Mediterranean, including the most prestigious Panhellenic and Roman imperial games (Olympic, Isthmian, Panhellenic, and Capitoline). The monument was an official honorific dedication by the city of Athens, likely serving as a statue base.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

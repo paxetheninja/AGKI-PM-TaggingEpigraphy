@@ -1,0 +1,236 @@
+{
+  "phi_id": 227116,
+  "themes": [
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription is a formal public dedication by a city to Emperor Marcus Aurelius Antoninus, listing his full imperial titles and victory epithets such as Armeniacus, Medicus, and Parthicus Maximus.",
+      "confidence": 1.0,
+      "quote": "αὐτοκράτορα Καίσαρα Μᾶρκον Αὐρήλιον Ἀντωνῖνο[ν] Σεβαστὸν Ἀρμενιακὸν Μηδικὸν Παρθικὸν Μέγιστον ἡ πόλις",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The text provides an extensive prosopographical list of local magistrates, priests, and administrators, detailing their careers and family lineages across various Egyptian nomes.",
+      "confidence": 1.0,
+      "quote": "διὰ Ἀπόλλωνος ἐνάρχου ἀρχιερέως τῶν κυρίων Σεβαστῶν υἱοῦ Ἀπολλωνίου τοῦ καὶ Λεωνίδου γενομένου ἀρχιερέως τῶν κυρίων Σεβαστῶν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Imperial Cult",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Votive Dedications",
+        "subcategory": null
+      },
+      "rationale": "The inscription mentions several high priests of the imperial cult, specifically those serving the 'Lord Augusti', the Hadrianeion, and the deified Antoninus Pius.",
+      "confidence": 1.0,
+      "quote": "ἀρχιερέως τῶν κυρίων Σεβαστῶν... ἀρχιερέως Ἁδριανείου... ἀρχιερέως θεοῦ Αἰλίου Ἀντωνίνου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Marcus Aurelius Antoninus",
+        "role": "Emperor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Marcus%20Aurelius%20Antoninus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Apollonius",
+        "role": "High Priest in office",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Apollonius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Apollonius also called Leonidas",
+        "role": "Former High Priest",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Apollonius%20also%20called%20Leonidas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hierax the Younger",
+        "role": "Former High Priest",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hierax%20the%20Younger",
+        "confidence": 1.0
+      },
+      {
+        "name": "Leonidas son of Seleucus",
+        "role": "Former High Priest",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Leonidas%20son%20of%20Seleucus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Alexander",
+        "role": "Former Gymnasiarch, Agoranomos, and Strategos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Alexander",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aurelius Polycles",
+        "role": "Former High Priest and Royal Scribe",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aurelius%20Polycles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Achillemmon",
+        "role": "Former High Priest and Agoranomos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Achillemmon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aurelius Asclepiades",
+        "role": "Former Gymnasiarch and Strategos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aurelius%20Asclepiades",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sarapion also called Serenus",
+        "role": "Former Gymnasiarch",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sarapion%20also%20called%20Serenus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Herennius son of Polycles also called Titianus",
+        "role": "Former Gymnasiarch",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Herennius%20son%20of%20Polycles%20also%20called%20Titianus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Isidorus",
+        "role": "Former Gymnasiarch",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Isidorus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Areius",
+        "role": "Former High Priest and Royal Scribe",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Areius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sarapion also called Ammonius",
+        "role": "Former High Priest",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sarapion%20also%20called%20Ammonius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hierax also called Hierascos",
+        "role": "Former High Priest",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hierax%20also%20called%20Hierascos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Apollonius the Elder",
+        "role": "Former Gymnasiarch and Exegetes",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Apollonius%20the%20Elder",
+        "confidence": 1.0
+      },
+      {
+        "name": "Isidorus also called Zosimus",
+        "role": "Former High Priest",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Isidorus%20also%20called%20Zosimus",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Apollonopolite Nome",
+        "type": "Administrative District",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Sethroite Nome",
+        "type": "Administrative District",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Mareote Nome",
+        "type": "Administrative District",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Heracleopolite Nome",
+        "type": "Administrative District",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Busirite Nome",
+        "type": "Administrative District",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Sebennyte Nome",
+        "type": "Administrative District",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Bubastite Nome",
+        "type": "Administrative District",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Alexandria",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/29457",
+        "confidence": 0.8
+      }
+    ],
+    "deities": [
+      {
+        "name": "Apollo",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Hadrian",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Aelius Antoninus",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Alexandria",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/29457",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription, dated to 170 AD (Year 10 of Marcus Aurelius), represents a significant document of the municipal and imperial administration in Roman Egypt. It records a dedication by 'the city' (likely Alexandria or a major metropolis) and provides a detailed list of the elite families who dominated civic and religious life. The individuals mentioned held multiple prestigious offices, including the high priesthood of the imperial cult (Hadrianeion and deified emperors) and governorships (strategiai) of various nomes, illustrating the high degree of social mobility and administrative integration among the Graeco-Egyptian elite.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 170 AD ",
+  "date_min": 170.0,
+  "date_max": 170.0,
+  "date_circa": false
+}

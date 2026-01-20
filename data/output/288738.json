@@ -1,0 +1,215 @@
+{
+  "phi_id": 288738,
+  "themes": [
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The inscription is a formal catalogue of names, including the ephebarch, the dioiketes, and a long list of ephebes organized by their respective tribes.",
+      "confidence": 1.0,
+      "quote": "οἵδε ἐφήβευσαν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Registers and Catalogues",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Registers and Catalogues",
+        "subcategory": null
+      },
+      "rationale": "The text serves as an official register of the ephebic class for a specific year in the city of Cyzicus, documenting the civic training cohort.",
+      "confidence": 1.0,
+      "quote": "ἐφηβαρχοῦντος τῆς λαμπροτάτης μητροπόλεως",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Prayers and Invocations",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Prayers and Invocations",
+        "subcategory": null
+      },
+      "rationale": "The inscription begins with the standard formulaic invocation to Good Fortune (Agathe Tyche).",
+      "confidence": 1.0,
+      "quote": "ἀγαθῇ τύχῃ",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Agonistic / Victory Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Agonistic / Victory Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "Ephebic lists commemorate the successful completion of physical and civic training, which was inherently competitive and agonistic in nature.",
+      "confidence": 0.8,
+      "quote": "ἐφηβεύσαντα",
+      "is_ambiguous": true,
+      "ambiguity_note": "While not a victory list for a specific game, it commemorates the completion of the ephebeia."
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The layout and length of the list are characteristic of a public stone stele displayed in a gymnasium or civic center.",
+      "confidence": 0.8,
+      "quote": "ἐφηβαρχοῦντος τῆς λαμπροτάτης μητροπόλεως",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "Inscriptions from Cyzicus during the Roman imperial period were almost exclusively carved on local Proconnesian marble.",
+      "confidence": 0.8,
+      "quote": "ἐφηβαρχοῦντος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The text contains several lacunae and missing sections, particularly in the latter half of the list where names are lost.",
+      "confidence": 1.0,
+      "quote": "α ρ. [ ------]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Aurelia Julia Menelais",
+        "role": "Benefactor or relative of official",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aurelia%20Julia%20Menelais",
+        "confidence": 1.0
+      },
+      {
+        "name": "Herodes",
+        "role": "Father of Aurelia Julia Menelais",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Herodes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Menelaus",
+        "role": "Asiarch and grandfather",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Menelaus",
+        "confidence": 0.9
+      },
+      {
+        "name": "Marcus Aurelius Merimnus",
+        "role": "Ephebarch",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Marcus%20Aurelius%20Merimnus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Marcus Aurelius Faustinus",
+        "role": "Former Ephebarch and brother",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Marcus%20Aurelius%20Faustinus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aelius Lallius Egnatius Elpistos",
+        "role": "Aigikoreus and Ephebe",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aelius%20Lallius%20Egnatius%20Elpistos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aurelius Eutyches",
+        "role": "Dioiketes",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aurelius%20Eutyches",
+        "confidence": 1.0
+      },
+      {
+        "name": "Valerius Maximus",
+        "role": "Ephebe",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Valerius%20Maximus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Valerius Victorinus",
+        "role": "Ephebe",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Valerius%20Victorinus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Vulcacius Eutyches",
+        "role": "Ephebe",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Vulcacius%20Eutyches",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aurelius Heracleides",
+        "role": "Trichonistes",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aurelius%20Heracleides",
+        "confidence": 0.9
+      }
+    ],
+    "places": [
+      {
+        "name": "Cyzicus",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/511218",
+        "confidence": 1.0
+      },
+      {
+        "name": "Asia",
+        "type": "Province",
+        "uri": "https://pleiades.stoa.org/places/599527",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Tyche",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Hadrian",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Cyzicus",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/511218",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a detailed ephebic list from Cyzicus, dating to the 3rd century AD (post-212 AD, given the prevalence of the name Aurelius). It records the names of ephebes and the officials overseeing them, such as the ephebarch Marcus Aurelius Merimnus and the dioiketes Aurelius Eutyches. The text highlights Cyzicus' prestigious titles as a 'Metropolis of Asia' and 'Neokoros'. Crucially, the list is organized by the five ancient Ionian tribes of the city: Geleontes, Boreis, Ergadeis, Oinopes, and Hopletes. The mention of 'Olympian Hadrian' refers to the imperial cult, for which Cyzicus was a major center.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

@@ -1,0 +1,238 @@
+{
+  "phi_id": 236258,
+  "themes": [
+    {
+      "label": "Curse Tablets (Defixiones)",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Curses and Magic",
+        "subcategory": "Curse Tablets (Defixiones)"
+      },
+      "rationale": "The inscription is a classic example of a binding spell, repeatedly using the verb 'katadein' (to bind) to target various individuals and their faculties.",
+      "confidence": 1.0,
+      "quote": "καταδ. καταδ στ φανον πολυαρ [το] παρ φερσε[φ]νει κα ρμει.",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Prayers and Invocations",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Prayers and Invocations",
+        "subcategory": null
+      },
+      "rationale": "The text invokes chthonic deities such as Persephone and Hermes to facilitate the curse.",
+      "confidence": 1.0,
+      "quote": "παρ φερσε[φ]νει κα ρμει. θε θ[εμι]ν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lead Tablets",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Portable Objects",
+        "subcategory": "Lead or Metal Tablets > Lead Tablets"
+      },
+      "rationale": "Based on the archaeological context of the Kerameikos and the nature of the text as a defixio, the support is identified as a lead tablet.",
+      "confidence": 0.8,
+      "quote": "καταδ. καταδ στ φανον",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lead",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Metal",
+        "subcategory": "Lead"
+      },
+      "rationale": "The material used for this type of magical inscription in 5th-century Athens was lead, consistent with the genre of binding spells.",
+      "confidence": 0.8,
+      "quote": "καταδ. καταδ στ φανον",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Stephanus",
+        "role": "Cursed person",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Stephanus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Polyartos",
+        "role": "Father of Stephanus",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Polyartos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Gamachos",
+        "role": "Cursed person",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Gamachos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phanostratos",
+        "role": "Father of Gamachos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Phanostratos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Ekleia",
+        "role": "Cursed person",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ekleia",
+        "confidence": 1.0
+      },
+      {
+        "name": "Demokrates",
+        "role": "Father of Ekleia",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demokrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Philostrate",
+        "role": "Cursed person",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philostrate",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristoboule",
+        "role": "Concubine",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristoboule",
+        "confidence": 1.0
+      },
+      {
+        "name": "Charias",
+        "role": "Cursed person",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Charias",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pheidides",
+        "role": "Father of Charias",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pheidides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Meinonke",
+        "role": "Courtesan",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Meinonke",
+        "confidence": 1.0
+      },
+      {
+        "name": "Timotheos",
+        "role": "Cursed person from Paionidai",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Timotheos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Mnesippos",
+        "role": "Cursed person",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Mnesippos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Nesias",
+        "role": "Cursed person from Paionidai",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nesias",
+        "confidence": 1.0
+      },
+      {
+        "name": "Plangon",
+        "role": "Sister of Mnesios",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Plangon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Mnesios",
+        "role": "Brother of Plangon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Mnesios",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kallippos",
+        "role": "Brother of Plangon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kallippos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Ergasio",
+        "role": "Servant",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ergasio",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pythios",
+        "role": "Servant",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pythios",
+        "confidence": 1.0
+      },
+      {
+        "name": "Peithandros",
+        "role": "Cursed person from Paionidai",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Peithandros",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Athens",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 0.8
+      },
+      {
+        "name": "Kerameikos",
+        "type": "Site",
+        "uri": "https://pleiades.stoa.org/places/97294452",
+        "confidence": 0.8
+      },
+      {
+        "name": "Paionidai",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580048",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Persephone",
+        "uri": "https://www.wikidata.org/wiki/Q45967",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hermes",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Themis",
+        "uri": null,
+        "confidence": 0.8
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579885",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This is a complex curse tablet (defixio) from the Classical period in Athens. It targets a large group of individuals, including their souls (psyche), tongues (glotta), hands (cheiras), and works (erga). The text is notable for identifying individuals by their social status (concubine, courtesan, servant) and their civic affiliation (the deme of Paionidai). The invocation of Persephone and Hermes is standard for chthonic binding magic.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " ca. 450-425 BC",
+  "date_min": -450.0,
+  "date_max": -425.0,
+  "date_circa": true
+}

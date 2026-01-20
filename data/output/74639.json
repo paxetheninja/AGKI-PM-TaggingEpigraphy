@@ -1,0 +1,166 @@
+{
+  "phi_id": 74639,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text explicitly refers to itself as a 'psephisma' (decree) passed by the council and the people of Mytilene.",
+      "confidence": 1.0,
+      "quote": "τ ψ φισμα το το",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription honors Alexander, son of Biocles, with titles such as proxenos and benefactor, and awards him a golden crown for his virtue and goodwill.",
+      "confidence": 1.0,
+      "quote": "πρ ξενον μμεναι λ ξα[νδρον τ ς π λιος κα α τον]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The decree includes instructions for the treasurer (tamias) to pay for the costs of the inscription from the public funds.",
+      "confidence": 1.0,
+      "quote": "τ δ ν λωμα δ τω ταμ ας κ τ ν κ[ατ τος γχερριζομ νων]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The text specifies that the decree is to be inscribed on a stone stele.",
+      "confidence": 1.0,
+      "quote": "ε ς στ λαν λι[θ ναν]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Other Stone",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Other Stone"
+      },
+      "rationale": "The inscription is carved on a stone support, referred to as 'lithinan'.",
+      "confidence": 1.0,
+      "quote": "στ λαν λι[θ ναν]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The inscription contains numerous lacunae and missing sections, particularly at the beginning and end of lines.",
+      "confidence": 1.0,
+      "quote": "[------]κ[-------- κα τ ι] π [λ]ι λε[------]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Alexander",
+        "role": "Honoree and Proxenos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Alexander",
+        "confidence": 1.0
+      },
+      {
+        "name": "Biocles",
+        "role": "Father of Alexander",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Biocles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Chaereas",
+        "role": "Prytanis",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Chaereas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Diophanes",
+        "role": "Proposer of the decree",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Diophanes",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Mytilene",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/550763",
+        "confidence": 0.8
+      },
+      {
+        "name": "Lesbos",
+        "type": "Region",
+        "uri": "https://pleiades.stoa.org/places/550696",
+        "confidence": 0.8
+      }
+    ],
+    "deities": [
+      {
+        "name": "Athena",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Dionysus",
+        "uri": "https://www.wikidata.org/wiki/Q41680",
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Mytilene",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/550763",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Lesbos",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/550696",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This is a complex honorific decree from Mytilene on the island of Lesbos, dating to the Hellenistic period. It honors Alexander, son of Biocles, for his services to the city, granting him proxeny, citizenship, and a golden crown to be announced at the Dionysia festival. The text details the administrative procedures of the city, mentioning the council (boula), the generals (strategoi), and the prytanis Chaereas. It also provides specific instructions for the publication of the decree on a stone stele to be placed in the sanctuary of Athena, with the expenses covered by the public treasurer.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

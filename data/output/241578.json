@@ -1,0 +1,181 @@
+{
+  "phi_id": 241578,
+  "themes": [
+    {
+      "label": "Manumission Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Manumission Records",
+        "subcategory": null
+      },
+      "rationale": "The inscription is a formal record of a slave's release from bondage through the legal fiction of a sale to the god Apollo at Delphi.",
+      "confidence": 1.0,
+      "quote": "π δοτο φιλοκρ της θευφρ στου δελφ ς τ ι π λλωνι τ ι πυθ ωι σ μα νδρε ον ι νομα πολλ νιος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Contracts and Private Legal Acts",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Contracts and Private Legal Acts",
+        "subcategory": null
+      },
+      "rationale": "The text details a legal contract including the purchase price of three silver minae and a 'paramone' clause requiring the freedman to remain with his former master for a period.",
+      "confidence": 1.0,
+      "quote": "τιμ ς ργυρ ου μν ν τρι ν καθ ς π στευσε πολλ νιος τ ι θε ι ... παραμειν τω δ πολλ νιος παρ [φ]ιλοκρ τη χρι κα φιλοκρ της ζ η",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Votive Dedications",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Votive Dedications",
+        "subcategory": null
+      },
+      "rationale": "The manumission is structured as a religious dedication where the slave is sold to Apollo Pythios, placing the individual under the god's protection.",
+      "confidence": 1.0,
+      "quote": "τ ι π λλωνι τ ι πυθ ωι σ μα νδρε ον ι νομα πολλ νιος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The document includes a list of civic and religious officials, including the archon, priests, and witnesses, to validate the legal transaction.",
+      "confidence": 0.9,
+      "quote": "ρχοντος μαντ α ... μ ρτυροι το ερε ς θαμβος μ ντας ρχοντες πολυκρ της σωδαμ δας",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Mantas",
+        "role": "Archon and Priest",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Mantas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Philokrates",
+        "role": "Seller and former owner",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philokrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Theuphrastos",
+        "role": "Father of Philokrates",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theuphrastos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Apollonios",
+        "role": "Slave being manumitted",
+        "uri": "https://www.wikidata.org/wiki/Q3620717",
+        "confidence": 1.0
+      },
+      {
+        "name": "Euryps",
+        "role": "Guarantor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Euryps",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pisitheos",
+        "role": "Father of Euryps",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pisitheos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Demarchos",
+        "role": "Guarantor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demarchos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eutychidas",
+        "role": "Father of Demarchos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eutychidas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Thambos",
+        "role": "Priest",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Thambos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Polycrates",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Polycrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sodamidas",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sodamidas",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Delphi",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/540726",
+        "confidence": 1.0
+      },
+      {
+        "name": "Mysia",
+        "type": "Region",
+        "uri": "https://pleiades.stoa.org/places/570498",
+        "confidence": 1.0
+      },
+      {
+        "name": "Myania",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/540952",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Apollo",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "intact",
+  "provenance": [
+    {
+      "name": "Phokis",
+      "type": "Region",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Delphi",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/540726",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This is a standard Delphic manumission inscription from the 2nd century BC. It records the sacral sale of a Mysian slave named Apollonios to Apollo Pythios by Philokrates. The text includes the price of 3 minae, a paramone clause requiring service until the master's death, and the names of several guarantors and witnesses to ensure the legality of the manumission. The document is functionally complete and follows the established legal formulas of the period.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 179 BC",
+  "date_min": -179.0,
+  "date_max": -179.0,
+  "date_circa": false
+}

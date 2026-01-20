@@ -1,0 +1,182 @@
+{
+  "phi_id": 341,
+  "themes": [
+    {
+      "label": "Inventories",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Inventories",
+        "subcategory": null
+      },
+      "rationale": "The inscription provides a detailed list of sacred objects, including gold crowns, silver bowls, and incense burners, along with their specific weights.",
+      "confidence": 1.0,
+      "quote": "φι λ[αι χρυ]σα 0 σταθμ ν το τον χχδδδδ κ ρε χρυσ[ε π] στ λες σταθμος πορ[α]ντ ριον [ργυρο]ν σταθμον στεφ νο χρυσ 0 σταθμ ν το τοι[ν 0]δ στ φανος χρυσος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The text records the formal handover of sacred funds and treasures from one board of treasurers to their successors.",
+      "confidence": 1.0,
+      "quote": "[παρ] [δοσαν το] ς ταμ αις ς [λυσικλ]ες δρακ[ο]ντ δο βατεθεν γραμμ[ τε]υε δεχσιθ ο[ι ---ασ] [ο]ι κα χσυν ρχοσι παραδ[εχσ μ]ενοι παρ τον προτ ρον ταμιον",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The inscription lists the names, patronymics, and demotics of the treasurers (tamiai) and secretaries (grammateis) responsible for the sacred property.",
+      "confidence": 1.0,
+      "quote": "[τες θενα ας ναχσικρ]τ[ες λαμπτρε]ς κα χσυν [ρχοντες] ς ε χσενος ε φ νος προσπ[ λτι]ο[ς] γρ[αμμ] [τευε]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "This type of Athenian financial record was traditionally inscribed on a stone stele for public display on the Acropolis.",
+      "confidence": 0.8,
+      "quote": "σταθμος πορ[α]ντ ριον [ργυρο]ν σταθμον στεφ νο χρυσ 0 σταθμ ν το τοι[ν 0]δ στ φανος χρυσος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "Athenian public records of the 5th century BCE, especially those from the Acropolis, were almost exclusively inscribed on Pentelic marble.",
+      "confidence": 0.8,
+      "quote": "σταθμ ν το το ηη στ φανος χρυσος σταθμ ν [το το ---] ιι στεφ νε [χρυσε σταθμ ν τα τες 0]0 στ[ φα]νοι χρυσο",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Naxicrates",
+        "role": "Treasurer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Naxicrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Euxenos",
+        "role": "Secretary",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Euxenos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Euphanes",
+        "role": "Father of Euxenos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Euphanes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lysicles",
+        "role": "Secretary of the incoming board",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lysicles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dracontides",
+        "role": "Father of Lysicles",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dracontides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dexitheos",
+        "role": "Incoming Treasurer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dexitheos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phormion",
+        "role": "Secretary of the outgoing board",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Phormion",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristion",
+        "role": "Father of Phormion",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristion",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Lamptrae",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Prospalta",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580092",
+        "confidence": 1.0
+      },
+      {
+        "name": "Bate",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579892",
+        "confidence": 1.0
+      },
+      {
+        "name": "Cydathenaeum",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Hekatompedon",
+        "type": "Temple section",
+        "uri": "https://pleiades.stoa.org/places/481859",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Athena",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579885",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a classic example of the Athenian 'Traditiones' (handover records) of the Treasurers of Athena. Dated to 417/6 BCE, it records the transfer of sacred items kept in the Hekatompedon (the cella of the Parthenon). The text follows a strict formula: naming the incoming and outgoing boards of treasurers and their secretaries, followed by an itemized list of precious metal objects (votives) with their weights recorded in the acrophonic numeral system.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 417/6 a.",
+  "date_min": -417.0,
+  "date_max": -416.0,
+  "date_circa": false
+}

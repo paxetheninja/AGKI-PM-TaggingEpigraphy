@@ -1,0 +1,153 @@
+{
+  "phi_id": 215958,
+  "themes": [
+    {
+      "label": "Official Letters",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Official Letters",
+        "subcategory": null
+      },
+      "rationale": "The text contains an official communication from the epistates of Theadelphia regarding a royal command and a petition from the priests.",
+      "confidence": 1.0,
+      "quote": "τῶι ἐπιστάτηι Θεαδελφείας τῆς δεδομένης τῶι θεῶι βασιλίσσηι ἐντεύξεως",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The inscription refers to a royal command (prostagma) issued by the queen regarding the temple's status.",
+      "confidence": 1.0,
+      "quote": "συλον κατὰ πρόσταγμα μὴ πρᾶγμα",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Sacred Laws and Rules",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Sacred Laws and Rules",
+        "subcategory": null
+      },
+      "rationale": "The text concerns the legal and religious status of the temple, specifically the right of asylum (asylia) and the performance of sacred rites.",
+      "confidence": 1.0,
+      "quote": "τὸ τοῦ ἱεροῦ ἀσυλίαν ἐπικυρωθῆναι ἵνα τὸ τούτου πρὸς αὔξησιν ἀγομένου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Boundary Markers (Horoi)",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Identification and Ownership Marks",
+        "category": "Boundary Markers (Horoi)",
+        "subcategory": null
+      },
+      "rationale": "The petition defines the physical boundaries of the sacred precinct that are to be protected under the right of asylum, including measurements in cubits.",
+      "confidence": 1.0,
+      "quote": "τοὺς προσόντας τόπους λιβὸς μὲν ἐπὶ ἀπηλιώτην πήχεις ἑκατὸν δέκα ἑπτά",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Prayers and Invocations",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Prayers and Invocations",
+        "subcategory": null
+      },
+      "rationale": "The priests mention performing sacrifices, libations, and prayers for the well-being of the queen and her ancestors.",
+      "confidence": 1.0,
+      "quote": "ὑπέρ τε σοῦ καὶ τῶν προγόνων προαιρούμενοι δὲ τὴν τοῦ ἱεροῦ ἀσυλίαν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Berenice",
+        "role": "Queen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Berenice",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dioscorides",
+        "role": "Relative and Strategos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dioscorides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Socrates",
+        "role": "Temple Overseer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Socrates",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Theadelphia",
+        "type": "Village",
+        "uri": "https://pleiades.stoa.org/places/9781961",
+        "confidence": 1.0
+      },
+      {
+        "name": "Arsinoite",
+        "type": "Nome",
+        "uri": "https://www.wikidata.org/wiki/Q21071388",
+        "confidence": 1.0
+      },
+      {
+        "name": "Themistos",
+        "type": "Division",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Bubastieion",
+        "type": "Sanctuary",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Pnepheros",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Theadelphia",
+      "type": "Village",
+      "uri": "https://pleiades.stoa.org/places/9781961",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Egypt",
+      "type": "Region",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a formal petition addressed to Queen Berenice IV (57 BC) by the priests of the crocodile god Pnepheros in Theadelphia. The priests request the confirmation of the right of asylum (asylia) for their temple and its surrounding grounds. The text includes a cover letter from the local epistates and instructions to the strategos Dioscorides to ensure the boundaries are marked and the decree is engraved on a stele. It highlights the intersection of royal authority, local administration, and temple privileges in late Ptolemaic Egypt.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 57 BC ",
+  "date_min": -57.0,
+  "date_max": -57.0,
+  "date_circa": false
+}

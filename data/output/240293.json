@@ -1,0 +1,152 @@
+{
+  "phi_id": 240293,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text explicitly identifies itself as a decree of the city of Delphi, using the standard formula 'it seemed good to the city'.",
+      "confidence": 1.0,
+      "quote": "[ δοξε τ ι π] λει τ ν δελφ ν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Official Letters",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Official Letters",
+        "subcategory": null
+      },
+      "rationale": "The decree is a response to an official letter sent by King Seleucus to the city of Delphi regarding the status of Smyrna.",
+      "confidence": 1.0,
+      "quote": "βασιλε ς σ λευκος ... ποστε λας γρ μματα ποτ τ ν π λιν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Oracular and Prophetic Texts",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Oracular and Prophetic Texts",
+        "subcategory": null
+      },
+      "rationale": "The king's request and the city's decision are explicitly linked to an oracle of the god (Apollo), which the king followed.",
+      "confidence": 1.0,
+      "quote": "πεπεισμ νος τ ι το θεο χρησμ ι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The decree includes a formal commendation of King Seleucus for his piety and his actions toward the city and sanctuary.",
+      "confidence": 1.0,
+      "quote": "παιν σαι τ ν βασιλ α σ λευκον π τε το[ τοις] κα τ ι ε σεβε αι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Asylia and Inviolability",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Grants of Privileges",
+        "subcategory": "Asylia"
+      },
+      "rationale": "The central purpose of the decree is the recognition of the sanctuary of Aphrodite Stratonikis and the city of Smyrna as sacred and inviolable (asylos).",
+      "confidence": 1.0,
+      "quote": "ερ ν κα συλον ε μεν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Seleucus II",
+        "role": "King",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Seleucus%20II",
+        "confidence": 1.0
+      },
+      {
+        "name": "Antiochus",
+        "role": "King (father of Seleucus)",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antiochus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hermodorus",
+        "role": "Ambassador",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hermodorus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Demetrius",
+        "role": "Ambassador",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demetrius",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Delphi",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/540726",
+        "confidence": 1.0
+      },
+      {
+        "name": "Smyrna",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/550893",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Aphrodite Stratonikis",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Apollo",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Phokis",
+      "type": "Region",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Delphi",
+      "type": "Site",
+      "uri": "https://pleiades.stoa.org/places/540726",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a Delphic decree from the mid-3rd century BC. It records the city's acceptance of King Seleucus II's request to recognize the sanctuary of Aphrodite Stratonikis and the city of Smyrna as sacred and inviolable (asylia). The text mentions the king's adherence to an oracle, the dispatch of ambassadors from Smyrna, and the granting of freedom and tax-exempt status to the city. It also provides instructions for the public display of the decree in the sanctuary of Apollo and the archiving of the king's letter.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 246 or 242 BC ",
+  "date_min": -242.0,
+  "date_max": -242.0,
+  "date_circa": true
+}

@@ -1,0 +1,173 @@
+{
+  "phi_id": 232771,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The inscription begins with the standard Athenian decree formula 'ἔδοξεν τῆι βολῆι καὶ τῶι δήμωι', indicating it is an official legislative act passed by the Council and the People.",
+      "confidence": 1.0,
+      "quote": "δοξεν τ ι βολ ι κα τ ι δ μωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Laws and Regulations",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Laws and Regulations",
+        "subcategory": null
+      },
+      "rationale": "The text contains specific regulations regarding the status, land, and legal rights of cleruchs (Athenian settlers) on the island of Lemnos, including provisions for confiscation and legal disputes.",
+      "confidence": 1.0,
+      "quote": "δεδ] χθαι τ ι δ μωι πρ ς τ ς [κληρ χος τ ς ο] κοντας ν [λ μνωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The inscription mentions financial matters such as leasing (misthosis), public property (demosioi), and the pentakosiomedimnoi, which was the highest wealth class in Athens.",
+      "confidence": 0.9,
+      "quote": "της α τ μ σθωσις π πρα[ται",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Sacred Laws and Rules",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Sacred Laws and Rules",
+        "subcategory": null
+      },
+      "rationale": "The decree includes instructions for religious activities, specifically mentioning a herald making a prayer and the performance of a sacrifice and procession to the Twelve Gods.",
+      "confidence": 1.0,
+      "quote": "ε ξασθαι μ ν τ ν κ ρυκα α τ κα μ λα ---------ι κα το [ς] δ δεκα θεο ς",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The text explicitly mentions the setting up of the record on the Acropolis, which was typically done on a stone stele.",
+      "confidence": 0.9,
+      "quote": "στησ] τω ν κροπ [λει",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "Athenian public decrees of this period were almost exclusively inscribed on marble slabs.",
+      "confidence": 0.8,
+      "quote": "στησ] τω ν κροπ [λει",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The inscription is highly broken with significant portions of the text missing, as indicated by the brackets and dashes in the transcription.",
+      "confidence": 1.0,
+      "quote": "[ δοξεν τ ι βολ ι κα τ ι δ μωι θε δοτος ρχε ----------]ις πρυτ νευεν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Theodotus",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theodotus",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Lemnos",
+        "type": "Island",
+        "uri": "https://pleiades.stoa.org/places/550693",
+        "confidence": 1.0
+      },
+      {
+        "name": "Athens",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 0.9
+      },
+      {
+        "name": "Salamis",
+        "type": "Island",
+        "uri": "https://pleiades.stoa.org/places/707617",
+        "confidence": 1.0
+      },
+      {
+        "name": "Acropolis",
+        "type": "Site",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      },
+      {
+        "name": "Theseion",
+        "type": "Sanctuary",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Twelve Gods",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Theseus",
+        "uri": null,
+        "confidence": 0.8
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579885",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This is an Athenian decree from the archonship of Theodotus (387/6 BCE). It concerns the administrative and legal status of Athenian cleruchs (settlers) on the island of Lemnos. The text outlines religious duties (sacrifices to the Twelve Gods), financial regulations (leasing of confiscated property), and legal procedures for disputes involving the settlers. It references the treatment of settlers on Salamis as a precedent and specifies that the decree be erected on the Acropolis.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 387/6 a. ",
+  "date_min": -387.0,
+  "date_max": -386.0,
+  "date_circa": false
+}

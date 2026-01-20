@@ -1,0 +1,133 @@
+{
+  "phi_id": 349006,
+  "themes": [
+    {
+      "label": "Official Letters",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Official Letters",
+        "subcategory": null
+      },
+      "rationale": "The inscription records a formal petition (hiketeia) submitted by a village community to the Roman emperors, followed by an imperial rescript or response.",
+      "confidence": 1.0,
+      "quote": "τ [ν κετε]αν προσενενκε ν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Laws and Regulations",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Laws and Regulations",
+        "subcategory": null
+      },
+      "rationale": "The text explicitly references the 'laws of our ancestors' and 'your legislations' as the basis for the legal complaint and the requested imperial intervention.",
+      "confidence": 1.0,
+      "quote": "[τα]ς μετ ραις νομοθεσ αις",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Edicts and Ordinances",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Edicts and Ordinances",
+        "subcategory": null
+      },
+      "rationale": "The emperors issue a command to 'order and transact' business, which functions as an administrative ordinance to regulate the conduct of officials.",
+      "confidence": 0.9,
+      "quote": "κελε σαι κα χρηματ σαι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The petition employs highly stylized honorific language, addressing the emperors as the 'greatest and most divine' to ever rule.",
+      "confidence": 0.8,
+      "quote": "μ[ γιστ]οι κα θει τατοι τ ν π ποτε α τοκρατ ρων",
+      "is_ambiguous": false,
+      "ambiguity_note": "While the document is a legal petition, it utilizes the standard honorific formulas of the imperial cult."
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Roman Emperors",
+        "role": "Addressees and authors of the rescript",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Roman%20Emperors",
+        "confidence": 1.0
+      },
+      {
+        "name": "Governor",
+        "role": "Provincial administrator with judicial authority",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Governor",
+        "confidence": 1.0
+      },
+      {
+        "name": "Frumentarii",
+        "role": "Military officials accused of extortion",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Frumentarii",
+        "confidence": 1.0
+      },
+      {
+        "name": "Colletiones",
+        "role": "Tax or administrative officials accused of abuse",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Colletiones",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Mendechora",
+        "type": "Village",
+        "uri": null,
+        "confidence": 0.8
+      },
+      {
+        "name": "Philadelphia",
+        "type": "City",
+        "uri": null,
+        "confidence": 0.8
+      },
+      {
+        "name": "Lydia",
+        "type": "Region",
+        "uri": "https://pleiades.stoa.org/places/550701",
+        "confidence": 0.8
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Lydia",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/550701",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Philadelphia",
+      "type": "City",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a significant legal document, known as the Mendechora (or Aragua) petition, recording a grievance from a village to the Roman Emperors (likely during the 3rd century AD). The villagers complain about the 'diaseismos' (extortion) and abuses committed by military officials, specifically frumentarii and colletiones, who were bypassing the authority of the provincial governor to harass the community. The emperors respond by reaffirming that legal accusations must follow the 'laws of the ancestors' and the jurisdiction of the governor, rather than arbitrary military force.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 198-212 or 221/222 AD ",
+  "date_min": 221.0,
+  "date_max": 222.0,
+  "date_circa": true
+}

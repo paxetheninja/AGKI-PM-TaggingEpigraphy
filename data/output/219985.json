@@ -1,0 +1,131 @@
+{
+  "phi_id": 219985,
+  "themes": [
+    {
+      "label": "Official Correspondence",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Official Letters",
+        "subcategory": null
+      },
+      "rationale": "The document is structured as an official letter from the monarchs to the strategos of the Herakleopolite nome, beginning with the standard greeting 'chairein' and ending with the farewell 'errōso'.",
+      "confidence": 1.0,
+      "quote": "βασίλισσα κλειοπάτρα θεὰ φιλοπάτωρ βασιλεὺς πτολεμαῖος καὶ καῖσαρ θεὸς φιλοπάτωρ καὶ φιλομήτωρ τῶι στρατηγῶι τοῦ Ἡρακλεοπολίτου χαίρειν... ἔρρωσο.",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Royal Ordinances",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Edicts and Ordinances",
+        "subcategory": null
+      },
+      "rationale": "The text contains a royal ordinance (prostagma) issued by Cleopatra VII and Ptolemy XV Caesarion, which is to be published in both Greek and Egyptian scripts.",
+      "confidence": 1.0,
+      "quote": "τὸ ὑποκείμενον πρόσταγμα σὺν τῶι χρηματισμῶι μεταγραφήτωι τοῖς τε ἑλληνικοῖς καὶ ἐγχωρίοις γράμμασιν.",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Legal and Administrative Regulations",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Laws and Regulations",
+        "subcategory": null
+      },
+      "rationale": "The decree establishes legal protections for farmers, prohibiting officials from imposing new or unauthorized taxes and extractions.",
+      "confidence": 1.0,
+      "quote": "προστετάχαμεν τοὺς γεωργοῦντας... μὴ γίνεσθαι συνεισφόρους τοῖς κατὰ καιροὺς καὶ περιστάσεις ἱσταμένοις ἐν τοῖς νομοῖς στεφάνοις καὶ τὰς ἐπιγραφὰς.",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fiscal and Tax Regulations",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The text details specific financial obligations and taxes, such as crown taxes (stephanoi) and grain and money payments (sitika kai argyrika telesmata).",
+      "confidence": 1.0,
+      "quote": "τὰς ἐπιγραφὰς μηδὲ τὰ ὑπάρχοντα αὐτῶν εἰς τοὺς τοιούτους γείνεσθαι μερισμοὺς μηδὲ τέλεσμα ἐπ' αὐτῶν καινίζειν... σιτικὰ καὶ ἀργυρικὰ γνήσια τελέσματα.",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Cleopatra VII Philopator",
+        "role": "Queen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Cleopatra%20VII%20Philopator",
+        "confidence": 1.0
+      },
+      {
+        "name": "Ptolemy XV Caesarion",
+        "role": "King",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ptolemy%20XV%20Caesarion",
+        "confidence": 1.0
+      },
+      {
+        "name": "Theon",
+        "role": "Official",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theon",
+        "confidence": 0.8
+      }
+    ],
+    "places": [
+      {
+        "name": "Herakleopolite Nome",
+        "type": "Nome",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Prosopite Nome",
+        "type": "Nome",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Bubastite Nome",
+        "type": "Nome",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Cleopatra VII Philopator",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Ptolemy XV Caesarion",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Herakleopolis Magna",
+      "type": "Region",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a royal ordinance (prostagma) from 41 BC issued by Cleopatra VII and her son Ptolemy XV Caesarion (Caesarion). It is an official letter addressed to the strategos of the Herakleopolite nome, intended to protect farmers in the Prosopite and Bubastite nomes from illegal tax exactions and administrative abuses. The decree mandates its own publication in both Greek and Egyptian (Demotic) scripts in prominent locations within the district.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 41 BC ",
+  "date_min": -41.0,
+  "date_max": -41.0,
+  "date_circa": false
+}

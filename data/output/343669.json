@@ -1,0 +1,119 @@
+{
+  "phi_id": 343669,
+  "themes": [
+    {
+      "label": "Funerary Inscriptions (Epitaphs)",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Funerary Inscriptions (Epitaphs)",
+        "subcategory": null
+      },
+      "rationale": "The text is a metrical funerary epigram for a young man named Epimachus, addressing the passerby and describing his life, death, and burial instructions.",
+      "confidence": 1.0,
+      "quote": "τὸν Ἐπιμάχου με παῖδα μὴ παραδράμῃς",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Burial Rites and Instructions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Social Practices",
+        "category": "Burial Rites",
+        "subcategory": "Mourning Customs"
+      },
+      "rationale": "The deceased provides explicit instructions to his brother to avoid traditional mourning practices such as the use of cedar oil and professional mourners, preferring a simple burial.",
+      "confidence": 1.0,
+      "quote": "χωρὶς κεδρίας καὶ τῆς δυσώδους ἀποφορᾶς",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Social Status and Civic Office",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Social History",
+        "category": "Civic Identity",
+        "subcategory": "Magistracies"
+      },
+      "rationale": "The text highlights the family's high social standing, mentioning the grandfather's role as an Agoranomos and the father's involvement in horse-breeding.",
+      "confidence": 1.0,
+      "quote": "ἀγορανομίαν ἔδωκε τῇ πόλει καλῶς",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Epimachus",
+        "role": "The deceased, a youth who died at the age of twelve.",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Epimachus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Epimachus",
+        "role": "Father of the deceased, noted for his wealth and horse-breeding.",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Epimachus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Epimachus",
+        "role": "Grandfather of the deceased, a former Agoranomos (market overseer).",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Epimachus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Philermon",
+        "role": "Brother of the deceased, entrusted with the burial instructions.",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philermon",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Hermoupolis Magna",
+        "type": "City",
+        "uri": null,
+        "confidence": 0.9
+      },
+      {
+        "name": "Tuna el-Gebel",
+        "type": "Necropolis",
+        "uri": "https://pleiades.stoa.org/places/756662",
+        "confidence": 0.9
+      }
+    ],
+    "deities": [
+      {
+        "name": "Hades",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "intact",
+  "provenance": [
+    {
+      "name": "Egypt",
+      "type": "Region",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Hermoupolis Magna",
+      "type": "City",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This is a complete and sophisticated funerary epigram from 2nd-century AD Egypt. It provides significant biographical detail, including the grandfather's role as an Agoranomos and the father's social standing through horse-breeding (hippotrophia). Uniquely, the deceased gives specific instructions to his brother Philermon to avoid expensive or traditional mourning rituals like cedar oil (kedria) and professional mourners (threnetriai), preferring a simple burial to avoid the 'stench' associated with typical embalming. The cause of death is identified as a cough or respiratory ailment (bech). The text is well-preserved and follows a coherent metrical structure.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 2nd c. AD ",
+  "date_min": 101.0,
+  "date_max": 200.0,
+  "date_circa": false
+}

@@ -1,0 +1,108 @@
+{
+  "phi_id": 2886,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text follows the standard formula for an Athenian decree, including the formal resolution of the council and the people and the instruction to the presiding officers.",
+      "confidence": 1.0,
+      "quote": "δεδ χθαι τε βουλε το ς προ δρ[ους ο ν λ χωσιν προεδρε ειν ν τ]ι δ μωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription honors Strombichos for his virtue and goodwill toward the Athenian people, awarding him a golden crown and citizenship.",
+      "confidence": 1.0,
+      "quote": "παιν σαι στρ μβιχον κα στ]εφαν σαι χρυ[σ ι στεφ νωι κατ τ ν ν μον ρετ]ς νεκα κα φ[ιλοτιμ ας",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The decree's format and the mention of the publication process imply it was intended for a stone stele, the standard medium for Athenian public records.",
+      "confidence": 0.8,
+      "quote": "κατ τ ν ν[ μον το ς δ πρυτ νεις δο ναι περ α]το τ ν ψ φ[ον",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The text contains numerous lacunae and bracketed reconstructions, indicating it is a fragmentary survival of the original inscription.",
+      "confidence": 1.0,
+      "quote": "[------------ ο μενος δε ν μ ν στασθαι τ ι τ ς π λεως συμφ] ρον",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Strombichos",
+        "role": "Honorand and military commander",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Strombichos",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Athens",
+        "type": "City-state",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      },
+      {
+        "name": "Mouseion",
+        "type": "Hill and fortress",
+        "uri": "https://pleiades.stoa.org/places/968858713",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Tyche",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Attica",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579888",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is an Athenian honorary decree for Strombichos, dating to 282/1 BC. It recognizes his military contributions, specifically his participation in the siege of the Mouseion hill alongside the Athenian people. As a reward for his loyalty and service during the war, the decree grants him a golden crown and Athenian citizenship, including the right to be enrolled in a tribe, deme, and phratry of his choice, subject to a judicial scrutiny (dokimasia).",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

@@ -1,0 +1,150 @@
+{
+  "phi_id": 75508,
+  "themes": [
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The text is an honorific decree praising an individual for his diplomatic missions, financial contributions, and religious services for the benefit of the city.",
+      "confidence": 1.0,
+      "quote": "τ] συμφ ροντα τ δ μω διατετ λεκεν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The formal language regarding the 'interests of the people' and the listing of public services is characteristic of a civic decree.",
+      "confidence": 1.0,
+      "quote": "τ συμφ ροντα τ δ μω",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Prayers and Invocations",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Prayers and Invocations",
+        "subcategory": null
+      },
+      "rationale": "The text mentions performing sacrifices and making prayers for the safety of the citizens, women, and inhabitants.",
+      "confidence": 1.0,
+      "quote": "το ς θ οισι π ντεσσι κα πα σαισι π ρ σωτηρ α[ς]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The individual is mentioned as having served in the official capacity of a prytanis, though the document itself is a decree rather than a simple list.",
+      "confidence": 0.5,
+      "quote": "πρ ταν ς τε γεν μενος",
+      "is_ambiguous": true,
+      "ambiguity_note": "The text mentions an official role but is a narrative decree, not a list document."
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "Honorific decrees of this nature were typically inscribed on stone stelae for public display in the city.",
+      "confidence": 0.8,
+      "quote": "τ ν π λιν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Other Stone",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Other Stone"
+      },
+      "rationale": "The inscription is carved on stone, likely local marble or limestone common in Lesbos.",
+      "confidence": 0.8,
+      "quote": "τ ν π λιν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The text contains numerous lacunae and reconstructed sections.",
+      "confidence": 1.0,
+      "quote": "[------------------------------]αντ-",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [],
+    "places": [
+      {
+        "name": "Eresos",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/550533",
+        "confidence": 1.0
+      },
+      {
+        "name": "Rome",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/423025",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "All Gods and Goddesses",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Lesbos",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/550696",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Eresos",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/550533",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This 2nd-century BC inscription from Eresos, Lesbos, is an honorific decree for a prominent citizen. The text details his diplomatic efforts as an ambassador to Rome (referred to as 'common benefactors'), his financial generosity toward the city's needs, and his religious piety. It specifically mentions his service as a prytanis and his performance of sacrifices and prayers for the safety of the citizens, women, and all inhabitants of the territory.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 2nd c. BC",
+  "date_min": -200.0,
+  "date_max": -101.0,
+  "date_circa": false
+}

@@ -1,0 +1,211 @@
+{
+  "phi_id": 240635,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The inscription consists of multiple official decrees issued by the city of Delphi, indicated by the formula 'the Delphians gave'.",
+      "confidence": 1.0,
+      "quote": "δελφοὶ ἔδωκαν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The text records the granting of honors and privileges such as proxeny, tax exemption, and priority in consulting the oracle to specific individuals.",
+      "confidence": 1.0,
+      "quote": "προξενίαν προμαντείαν προεδρίαν προδικίαν ἀσυλίαν ἀτέλειαν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The decrees are dated by the names of the presiding archons and the members of the council (bouleutai).",
+      "confidence": 1.0,
+      "quote": "ἄρχοντος διοδώρου βουλευόντων ἀριστοκράτεος ἀριστομάχου δαμέα",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Oracular and Prophetic Texts",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Oracular and Prophetic Texts",
+        "subcategory": null
+      },
+      "rationale": "The grant of 'promanteia' refers to the religious privilege of priority in consulting the Delphic Oracle.",
+      "confidence": 0.8,
+      "quote": "προμαντείαν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Diodorus",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Diodorus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristocrates",
+        "role": "Councilor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristocrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristomachus",
+        "role": "Councilor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristomachus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dameas",
+        "role": "Councilor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dameas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristas",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Agathanos",
+        "role": "Councilor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Agathanos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sylachos",
+        "role": "Councilor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sylachos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hermaphilus",
+        "role": "Recipient of honors",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hermaphilus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Charixenus",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Charixenus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Craton",
+        "role": "Councilor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Craton",
+        "confidence": 1.0
+      },
+      {
+        "name": "Ornichidas",
+        "role": "Councilor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ornichidas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Callicles",
+        "role": "Councilor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Callicles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Nicodorus",
+        "role": "Councilor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nicodorus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Demetrius",
+        "role": "Recipient of honors",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demetrius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Nicodemus",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nicodemus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Mentas",
+        "role": "Councilor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Mentas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Xenocles",
+        "role": "Recipient of honors",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Xenocles",
+        "confidence": 0.8
+      }
+    ],
+    "places": [
+      {
+        "name": "Delphi",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/540726",
+        "confidence": 1.0
+      },
+      {
+        "name": "Macedonia",
+        "type": "Region",
+        "uri": "https://pleiades.stoa.org/places/491656",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "The Gods",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Delphi",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/540726",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Phokis",
+      "type": "Region",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a compilation of several honorary decrees from Delphi. Each decree follows a standard administrative formula, granting a suite of privileges (proxeny, priority in consulting the oracle, front-row seating at games, right of legal action, and tax exemption) to foreign individuals and their descendants. The text is heavily reconstructed in parts but clearly shows the dating mechanisms of the Delphic state through archons and council members.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

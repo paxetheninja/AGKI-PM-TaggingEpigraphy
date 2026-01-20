@@ -1,0 +1,149 @@
+{
+  "phi_id": 287868,
+  "themes": [
+    {
+      "label": "Official Letters",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Official Letters",
+        "subcategory": null
+      },
+      "rationale": "The document is a formal diplomatic letter from Antigonus I Monophthalmus to the citizens of Skepsis, detailing the terms of the Peace of 311 BC.",
+      "confidence": 1.0,
+      "quote": "γεγρ φαμεν δ ν τ ι μολογ αι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Treaties and Agreements",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Treaties and Agreements",
+        "subcategory": null
+      },
+      "rationale": "The text explicitly discusses the conclusion of a peace treaty and the mutual agreements between the Diadochi regarding the freedom and autonomy of the Greeks.",
+      "confidence": 1.0,
+      "quote": "τ ν ε ρ νην γεγενημ νην",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The author mentions the significant financial expenditures and resources spent in the pursuit of the diplomatic and military goals related to the freedom of the Greeks.",
+      "confidence": 0.8,
+      "quote": "χρ ματα πολλ νηλ καμεν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Cassander",
+        "role": "General",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Cassander",
+        "confidence": 1.0
+      },
+      {
+        "name": "Ptolemy",
+        "role": "General",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ptolemy",
+        "confidence": 1.0
+      },
+      {
+        "name": "Prepelaus",
+        "role": "Envoy",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Prepelaus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristodemus",
+        "role": "Envoy",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristodemus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lysimachus",
+        "role": "General",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lysimachus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristobulus",
+        "role": "Envoy",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristobulus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aeschylus",
+        "role": "Envoy",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aeschylus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hegesias",
+        "role": "Envoy",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hegesias",
+        "confidence": 1.0
+      },
+      {
+        "name": "Akios",
+        "role": "Envoy",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Akios",
+        "confidence": 1.0
+      },
+      {
+        "name": "Polyperchon",
+        "role": "General",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Polyperchon",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Hellespont",
+        "type": "Strait",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Skepsis",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/550890",
+        "confidence": 1.0
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Skepsis",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/550890",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Troad",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/550944",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a letter from Antigonus I Monophthalmus to the city of Skepsis, dated to 311/310 BC. It details the conclusion of the peace treaty between the rival successors of Alexander the Great (the Diadochi), specifically mentioning the 'Freedom of the Greeks' as a central diplomatic point. The text mentions several key historical figures and envoys involved in the negotiations and emphasizes the financial and military efforts made to secure the peace.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

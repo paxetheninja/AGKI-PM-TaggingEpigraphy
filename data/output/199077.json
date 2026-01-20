@@ -1,0 +1,138 @@
+{
+  "phi_id": 199077,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The inscription is a formal resolution by the city and magistrates of Arkades, beginning with the standard formula 'it was decided by the Arkadians, the kosmoi, and the city'.",
+      "confidence": 1.0,
+      "quote": "δοξεν ρκ δων το ς κ σμοις κα τ ι π λει",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Treaties and Agreements",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Treaties and Agreements",
+        "subcategory": null
+      },
+      "rationale": "The text records the renewal of friendship and kinship between Arkades and Teos, confirming asylia (inviolability) and promising mutual military assistance.",
+      "confidence": 1.0,
+      "quote": "νανεωσαμ νων τ ν παρ μ ν πρεσβευτ ν τ ν τε φιλ αν κα συγγ νειαν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The decree praises the ambassadors Herodotus and Menecles for their zeal and grants them the status of proxenos and other civic honors.",
+      "confidence": 1.0,
+      "quote": "παιν ομεν δ κα τ ς πρεσβευτ ς ρ δοτον κα μενεκλ α",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Orations and Praise of Gods",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Orations and Praise of Gods",
+        "subcategory": null
+      },
+      "rationale": "The text praises Dionysus as the 'Archagetas' (founder/leader) of the city and mentions the consecration of the city and territory to him.",
+      "confidence": 1.0,
+      "quote": "δι τε τ ν δι νυσον τ ν ρχαγ ταν μ ων",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Herodotus",
+        "role": "Ambassador and Proxenos",
+        "uri": "https://www.wikidata.org/wiki/Q26825",
+        "confidence": 1.0
+      },
+      {
+        "name": "Menodotus",
+        "role": "Father of Herodotus",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Menodotus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Menecles",
+        "role": "Ambassador and Proxenos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Menecles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dionysius",
+        "role": "Father of Menecles",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dionysius",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Arkades",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/589710",
+        "confidence": 1.0
+      },
+      {
+        "name": "Teos",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/550913",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Dionysus",
+        "uri": "https://www.wikidata.org/wiki/Q41680",
+        "confidence": 1.0
+      },
+      {
+        "name": "Asclepius",
+        "uri": "https://www.wikidata.org/wiki/Q83223",
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Arkades",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/589710",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Crete",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/5066435",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a decree from the Cretan city of Arkades responding to an embassy from Teos. It confirms the ancestral friendship and kinship between the two cities and grants asylia (inviolability) to Teos and its territory, which is consecrated to Dionysus. The decree honors the Teian ambassadors Herodotus and Menecles with the title of proxenos and grants them rights of isopoliteia, enktesis, and ateleia. It also includes a defensive alliance clause promising military aid if the territory of Dionysus is attacked.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " after ca. 170 BC ",
+  "date_min": -170.0,
+  "date_max": -170.0,
+  "date_circa": true
+}

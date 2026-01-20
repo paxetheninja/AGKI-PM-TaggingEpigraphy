@@ -1,0 +1,214 @@
+{
+  "phi_id": 237910,
+  "themes": [
+    {
+      "label": "Hymns and Sacred Poetry",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Hymns and Sacred Poetry",
+        "subcategory": null
+      },
+      "rationale": "The inscription contains the famous Paian of Philodamos, a rhythmic and strophic hymn composed in honor of Dionysus, intended for performance at Delphi.",
+      "confidence": 1.0,
+      "quote": "διθύραμβε Βάκχε ε[ὐιε ταῦρε κ]ισσοχαῖτα",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text concludes with a formal decree by the Delphians granting honors and privileges to the poet Philodamos and his brothers.",
+      "confidence": 1.0,
+      "quote": "Δελφοὶ ἔδωκαν Φιλοδάμωι Αἰνησιδήμου Σκαρφεῖ",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The decree grants specific honors such as proxeny, priority in consulting the oracle, and front-row seating at games to the author of the hymn.",
+      "confidence": 1.0,
+      "quote": "προξενίαν προμαντείαν προεδρίαν προδικίαν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Oracular and Prophetic Texts",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Oracular and Prophetic Texts",
+        "subcategory": null
+      },
+      "rationale": "The inscription mentions that the performance and recording of the hymn were done according to the command of the oracle of Apollo.",
+      "confidence": 1.0,
+      "quote": "κατὰ τὴν μαντείαν τοῦ θεοῦ",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Prayers and Invocations",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Prayers and Invocations",
+        "subcategory": null
+      },
+      "rationale": "The recurring refrain throughout the hymn functions as a prayer for the protection and prosperity of the city of Delphi.",
+      "confidence": 1.0,
+      "quote": "εὔφρων τάνδε πόλιν φύλασσε εὐαίωνι σὺν ὄλβωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Philodamos",
+        "role": "Poet and honoree",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philodamos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Ainesidemos",
+        "role": "Father of Philodamos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ainesidemos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Tymondas",
+        "role": "Archon of Delphi",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Tymondas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pleistion",
+        "role": "Council member",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pleistion",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kallikrates",
+        "role": "Council member",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kallikrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Cadmus",
+        "role": "Mythological founder of Thebes",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Cadmus",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Delphi",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/540726",
+        "confidence": 1.0
+      },
+      {
+        "name": "Thebes",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/541138",
+        "confidence": 1.0
+      },
+      {
+        "name": "Euboea",
+        "type": "Region",
+        "uri": "https://pleiades.stoa.org/places/540775",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eleusis",
+        "type": "Sanctuary",
+        "uri": "https://pleiades.stoa.org/places/579920",
+        "confidence": 1.0
+      },
+      {
+        "name": "Thessaly",
+        "type": "Region",
+        "uri": "https://pleiades.stoa.org/places/1332",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pieria",
+        "type": "Region",
+        "uri": "https://pleiades.stoa.org/places/491696",
+        "confidence": 1.0
+      },
+      {
+        "name": "Parnassus",
+        "type": "Mountain",
+        "uri": "https://pleiades.stoa.org/places/541012",
+        "confidence": 1.0
+      },
+      {
+        "name": "Scarphaia",
+        "type": "City",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Hellas",
+        "type": "Region",
+        "uri": "https://pleiades.stoa.org/places/1001896",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Dionysus",
+        "uri": "https://www.wikidata.org/wiki/Q41680",
+        "confidence": 1.0
+      },
+      {
+        "name": "Apollo",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Zeus",
+        "uri": "https://www.wikidata.org/wiki/Q34201",
+        "confidence": 1.0
+      },
+      {
+        "name": "Muses",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Thyone",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Delphi",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/540726",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a significant cultic and literary document from Delphi, dating to the mid-4th century BC. It preserves the 'Paian to Dionysus' by Philodamos of Scarphaia, which illustrates the integration of Dionysian worship into the Delphic sanctuary of Apollo. The text is structured as a series of stanzas followed by a formal decree of the Delphic polis, which provides historical context regarding the official recognition and reward of the poet for his religious service.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " ca. 340 BC ",
+  "date_min": -340.0,
+  "date_max": -340.0,
+  "date_circa": true
+}

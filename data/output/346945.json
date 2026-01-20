@@ -1,0 +1,203 @@
+{
+  "phi_id": 346945,
+  "themes": [
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription honors a Hierophant from Paiania, detailing his extensive career and noble lineage as recognized by the Council of the Areopagus, the Council of the 500, and the People of Athens.",
+      "confidence": 1.0,
+      "quote": "τ[ὸν Φλ(άβιον) ἱεροφάντην Παιανι]έα",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Votive Dedications",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Votive Dedications",
+        "subcategory": null
+      },
+      "rationale": "The text concludes with a dedicatory formula (anetheken), indicating the monument was set up as a religious offering in gratitude for the subject's piety.",
+      "confidence": 0.8,
+      "quote": "κἀν τούτῳ χάριν ἀνέθηκεν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Cursus Honorum",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The inscription provides a detailed cursus honorum (career summary) of civic and religious offices held by the subject and his ancestors, including Eponymous Archon, Strategos, and Herald.",
+      "confidence": 1.0,
+      "quote": "ἄρξαντα πανηγυριαρχήσαντα γυμνασιαρχήσαντα οἴκοθεν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Agonistic / Victory Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Agonistic / Victory Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The text explicitly mentions the subject's role as an Agonothete (festival organizer) for the Panathenaic Games.",
+      "confidence": 1.0,
+      "quote": "ἀγωνοθε[τήσαν]τος [Παν]αθηναίων",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Statue Base",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Statue Base"
+      },
+      "rationale": "The honorific nature, the mention of 'setting up' (anetheken), and the physical context of such inscriptions at Eleusis suggest this text was inscribed on a statue base.",
+      "confidence": 0.9,
+      "quote": "ἀνέθηκεν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "Marble was the standard material for monumental honorific inscriptions in Roman-era Attica and the sanctuary of Eleusis.",
+      "confidence": 0.8,
+      "quote": "γα[θῇ τύχῃ]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Flavius (Hierophant of Paiania)",
+        "role": "Hierophant and subject of the inscription",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Flavius%20%28Hierophant%20of%20Paiania%29",
+        "confidence": 1.0
+      },
+      {
+        "name": "Flavius Alcibiades",
+        "role": "Father of the subject and former Eponymous Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Flavius%20Alcibiades",
+        "confidence": 1.0
+      },
+      {
+        "name": "Flavius Leosthenes",
+        "role": "Paternal ancestor and former Eponymous Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Flavius%20Leosthenes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hadrian",
+        "role": "Deified Roman Emperor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hadrian",
+        "confidence": 1.0
+      },
+      {
+        "name": "Antoninus Pius",
+        "role": "Deified Roman Emperor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antoninus%20Pius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lucius Aurelius Verus",
+        "role": "Roman Emperor initiated into the Mysteries by the subject",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lucius%20Aurelius%20Verus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Flavia Isidora",
+        "role": "Mother of the subject",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Flavia%20Isidora",
+        "confidence": 1.0
+      },
+      {
+        "name": "Flavius Heracleitus",
+        "role": "Maternal grandfather",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Flavius%20Heracleitus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Domitia Laodameia",
+        "role": "Maternal grandmother",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Domitia%20Laodameia",
+        "confidence": 1.0
+      },
+      {
+        "name": "Craterus",
+        "role": "Maternal great-grandfather",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Craterus",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Athens",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eleusis",
+        "type": "Sanctuary site",
+        "uri": "https://pleiades.stoa.org/places/579920",
+        "confidence": 1.0
+      },
+      {
+        "name": "Paiania",
+        "type": "Deme",
+        "uri": "https://www.wikidata.org/wiki/Q1236193",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Tyche",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Attica",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579888",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Eleusis",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/579920",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription from Eleusis honors a prominent Hierophant from the deme of Paiania and the Eumolpidae clan. It serves as a record of his distinguished career, holding major Athenian offices such as Eponymous Archon, Strategos over the Hoplites, and Herald of the Areopagus. Crucially, it documents his role in the Eleusinian Mysteries, specifically his initiation of the Emperor Lucius Verus. The text also traces his elite lineage through several generations of Athenian officials and mentions his relationship with the Emperors Hadrian and Antoninus Pius.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 162 AD or shortly after ",
+  "date_min": 162.0,
+  "date_max": 162.0,
+  "date_circa": true
+}

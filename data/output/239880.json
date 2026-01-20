@@ -1,0 +1,158 @@
+{
+  "phi_id": 239880,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The inscription utilizes the standard opening formula for a Delphic decree, indicating a formal decision by the city assembly.",
+      "confidence": 1.0,
+      "quote": "[ δοξε τ ι π λ]ει τ ν δελφ ν ν γορ ι τελε ωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The text grants specific civic honors including proxeny, inviolability (asylia), and tax exemption (ateleia) to the named ambassadors and their descendants.",
+      "confidence": 1.0,
+      "quote": "[ παιν σα]ι δ κα το ς πρεσβευτ ς... ε μεν δ κ]α α το ς κα κ[γ] νοις προξεν αν συλ αν τ λειαν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Agonistic Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Agonistic / Victory Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The decree formally recognizes the establishment of musical and gymnastic games, specifically the Panathenaea and Eumeneia, designated as isopythian.",
+      "confidence": 1.0,
+      "quote": "μουσικ ν [τ]ε κα γυμνικ ν ποταγο[ρε οντες παναθ ν]αια κα[ ε]μ ν[εια]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Religious Festivals and Sacrifices",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Sacred Laws and Rules",
+        "subcategory": null
+      },
+      "rationale": "The text details the acceptance of sacrifices and the participation in a panegyris (religious festival) in honor of Athena and King Eumenes.",
+      "confidence": 0.9,
+      "quote": "πο[δ ξα]σθαι τ ς θυσ ας κα τ ν παν γυ[ριν]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Inter-city Relations",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Treaties and Alliances",
+        "subcategory": null
+      },
+      "rationale": "The document emphasizes the ancestral friendship and kinship between the people of Sardis and the city of Delphi.",
+      "confidence": 1.0,
+      "quote": "πειδ δ μος σαρδιαν ν φ λ[ος κα] [ο κε ος δι πρ]ογ νων π ρχων τ ς π λιος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Sosistratus",
+        "role": "Ambassador from Sardis",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sosistratus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sostratus",
+        "role": "Father of Sosistratus",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sostratus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Apollonides",
+        "role": "Ambassador from Sardis",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Apollonides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Asclepiades",
+        "role": "Father of Apollonides",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Asclepiades",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eumenes II",
+        "role": "King of Pergamon and benefactor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eumenes%20II",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Delphi",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/540726",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sardis",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/550867",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Apollo",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Athena",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Delphi",
+      "type": "Site",
+      "uri": "https://pleiades.stoa.org/places/540726",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Phokis",
+      "type": "Region",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This decree, dated to approximately 166 BC, records the Delphic response to an embassy from Sardis. The ambassadors, Sosistratus and Apollonides, announced the establishment of quinquennial games (Panathenaea and Eumeneia) in honor of Athena and King Eumenes II of Pergamon. The Delphians accept the invitation to the festival and grant the ambassadors proxeny and other traditional honors. The text is fragmentary but largely reconstructible based on standard Delphic epigraphic formulae.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 166 BC ",
+  "date_min": -166.0,
+  "date_max": -166.0,
+  "date_circa": false
+}

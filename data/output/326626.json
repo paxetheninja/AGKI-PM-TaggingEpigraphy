@@ -1,0 +1,323 @@
+{
+  "phi_id": 326626,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text contains the standard formula for a civic decree, including the decision of the council and the people to praise and honor specific individuals and groups.",
+      "confidence": 1.0,
+      "quote": "ἔδοξε βουλᾶι καὶ δάμωι ἐπαινέσαι μὲν τοὺς ἄρχοντας τῶν Ἀχαιῶν",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    },
+    {
+      "label": "Treaties and Agreements",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Treaties and Agreements",
+        "subcategory": null
+      },
+      "rationale": "The inscription deals with inter-city arbitration and the resolution of a territorial dispute between Pagai and Aigosthena, involving the Achaean and Boeotian Leagues.",
+      "confidence": 1.0,
+      "quote": "περὶ τῶν τόπων ὧν ἀντεποιήσαντο Αἰγοσθενῖταί τε καὶ Παγαῖοι",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The decree grants honors such as proxeny (public guest status), tax exemption (ateleia), and front-row seating (proedria) to the mediators and judges.",
+      "confidence": 1.0,
+      "quote": "δεδόσθαι δὲ αὐτοῖς καὶ προξενίαν καὶ ἀναγράψαι ἐν τᾶι αὐτᾶι στάλαι ... εἶμεν δὲ αὐτοῖς καὶ ἀτέλειαν ... καὶ ἐν τοις ἀγῶσι προεδρίαν",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The text includes an extensive list of names of the judges and ambassadors sent by the Achaeans and Sicyonians to resolve the dispute.",
+      "confidence": 1.0,
+      "quote": "Στράτωνος Νικάνδρου, Ἀνησίωνα Ξένωνος, Ἀντίφιλον Διοκκλέος, Δαμοτέωνα Ἀριστοδίκου",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The text explicitly mentions that the decree and the judgment are to be inscribed on a stone stele.",
+      "confidence": 1.0,
+      "quote": "ἀναγράψαι ἐν τᾶι αὐτᾶι στάλαι",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The inscription is heavily reconstructed with many lacunae, as indicated by the brackets in the text.",
+      "confidence": 1.0,
+      "quote": "[---------------------------]ς το καλλιγε του πειδ ν[τιποιησαμ νων]",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Straton",
+        "role": "Secretary",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Straton",
+        "confidence": 0.9
+      },
+      {
+        "name": "Theodorus",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theodorus",
+        "confidence": 0.9
+      },
+      {
+        "name": "Python",
+        "role": "Individual",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Python",
+        "confidence": 0.9
+      },
+      {
+        "name": "Pythodorus",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pythodorus",
+        "confidence": 0.9
+      },
+      {
+        "name": "Kalligetus",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kalligetus",
+        "confidence": 0.9
+      },
+      {
+        "name": "Straton son of Nicander",
+        "role": "Judge/Ambassador",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Straton%20son%20of%20Nicander",
+        "confidence": 0.9
+      },
+      {
+        "name": "Nicander",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nicander",
+        "confidence": 0.9
+      },
+      {
+        "name": "Anesion son of Xenon",
+        "role": "Judge/Ambassador",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Anesion%20son%20of%20Xenon",
+        "confidence": 0.9
+      },
+      {
+        "name": "Xenon",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Xenon",
+        "confidence": 0.9
+      },
+      {
+        "name": "Antiphilus son of Dioccles",
+        "role": "Judge/Ambassador",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antiphilus%20son%20of%20Dioccles",
+        "confidence": 0.9
+      },
+      {
+        "name": "Dioccles",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dioccles",
+        "confidence": 0.9
+      },
+      {
+        "name": "Damoteon son of Aristodicus",
+        "role": "Judge/Ambassador",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Damoteon%20son%20of%20Aristodicus",
+        "confidence": 0.9
+      },
+      {
+        "name": "Aristodicus",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristodicus",
+        "confidence": 0.9
+      },
+      {
+        "name": "Pheidolaus son of Daitiphantus",
+        "role": "Judge/Ambassador",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pheidolaus%20son%20of%20Daitiphantus",
+        "confidence": 0.9
+      },
+      {
+        "name": "Daitiphantus",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Daitiphantus",
+        "confidence": 0.9
+      },
+      {
+        "name": "Mnasicles son of Epimachus",
+        "role": "Individual",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Mnasicles%20son%20of%20Epimachus",
+        "confidence": 0.9
+      },
+      {
+        "name": "Epimachus",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Epimachus",
+        "confidence": 0.9
+      },
+      {
+        "name": "Cratidas son of Satyrus",
+        "role": "Individual",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Cratidas%20son%20of%20Satyrus",
+        "confidence": 0.9
+      },
+      {
+        "name": "Satyrus",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Satyrus",
+        "confidence": 0.9
+      },
+      {
+        "name": "Boscon son of Nasimus",
+        "role": "Individual",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Boscon%20son%20of%20Nasimus",
+        "confidence": 0.9
+      },
+      {
+        "name": "Nasimus",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nasimus",
+        "confidence": 0.9
+      },
+      {
+        "name": "Archippus",
+        "role": "Individual",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Archippus",
+        "confidence": 0.9
+      },
+      {
+        "name": "Lyciscus",
+        "role": "Individual",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lyciscus",
+        "confidence": 0.9
+      },
+      {
+        "name": "Sthenon",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sthenon",
+        "confidence": 0.9
+      },
+      {
+        "name": "Sotimus",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sotimus",
+        "confidence": 0.9
+      },
+      {
+        "name": "Achaean League",
+        "role": "Political Entity",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Achaean%20League",
+        "confidence": 1.0
+      },
+      {
+        "name": "Boeotian League",
+        "role": "Political Entity",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Boeotian%20League",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Megara",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/462307",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pagai",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/570543",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aigosthena",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/570051",
+        "confidence": 1.0
+      },
+      {
+        "name": "Thyrrheion",
+        "type": "City",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Kassope",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/530922",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sicyon",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/570668",
+        "confidence": 1.0
+      },
+      {
+        "name": "Panormos",
+        "type": "Harbor",
+        "uri": "https://pleiades.stoa.org/places/639061",
+        "confidence": 0.8
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Megaris",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/570470",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Pagai",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/570543",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a significant historical document from Pagai (ca. 192 BC) recording the resolution of a territorial dispute with neighboring Aigosthena. The process involved the mediation of the Achaean and Boeotian Leagues, who requested neutral judges from the cities of Thyrrheion and Kassope. The decree honors the Achaean League, the city of Sicyon, and the individual judges for their fair arbitration and goodwill, granting them various civic privileges such as proxeny and tax exemptions.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " ca. 192 BC ",
+  "date_min": -192.0,
+  "date_max": -192.0,
+  "date_circa": true
+}

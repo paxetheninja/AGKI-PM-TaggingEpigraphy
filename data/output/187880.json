@@ -1,0 +1,188 @@
+{
+  "phi_id": 187880,
+  "themes": [
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The inscription contains detailed financial information, including amounts in denarii, interest rates, and capital loans.",
+      "confidence": 1.0,
+      "quote": "τὸ δὲ κεφάλαιον δανίζεσθαι καὶ με... ἑκάστῳ γένει δηνάρια εἴκοσι πέντε",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The text lists several high priests (archiereis) and chief secretaries (archigrammateis) of the guild.",
+      "confidence": 1.0,
+      "quote": "Κλ. Πολλίωνος τοῦ γενομένου ἀρχιερέως καὶ μη... καὶ Κλ. Ὀφουλίου τοῦ καὶ Ψαφαρίου υἱοῦ Κλ. Πολλίωνος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription mentions the creation of images and stone statues to honor individuals within the association.",
+      "confidence": 1.0,
+      "quote": "πάντα τὰ δαπανηθέντα εἴς τε τὰς εἰκόνας καὶ τὰ πλάσματα καὶ τοὺς στηθιαίους ἀνδριάντας τοὺς λιθίνους",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Contracts and Private Legal Acts",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Contracts and Private Legal Acts",
+        "subcategory": null
+      },
+      "rationale": "The document records a donation and the legal terms for its management and the distribution of interest.",
+      "confidence": 1.0,
+      "quote": "τὴν δωρεὰν εἰσηνένκαμεν καὶ τὸν τόκον μέχρι σήμερον",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The text explicitly refers to itself and its copies being inscribed on four stelae.",
+      "confidence": 1.0,
+      "quote": "τὰ δὲ ἀντίγραφα τῶν τεσσάρων στηλλῶν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Flavius Constantine",
+        "role": "Emperor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Flavius%20Constantine",
+        "confidence": 1.0
+      },
+      {
+        "name": "Claudius Pollio",
+        "role": "High Priest and Secretary",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Claudius%20Pollio",
+        "confidence": 1.0
+      },
+      {
+        "name": "Claudius Ophulius",
+        "role": "High Priest",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Claudius%20Ophulius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Psapharius",
+        "role": "High Priest",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Psapharius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Carterius",
+        "role": "Individual",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Carterius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Melite",
+        "role": "Individual",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Melite",
+        "confidence": 1.0
+      },
+      {
+        "name": "Claudius Eudoxius",
+        "role": "Chief Secretary",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Claudius%20Eudoxius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Euphronius",
+        "role": "Individual",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Euphronius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Claudius Bassa",
+        "role": "Individual",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Claudius%20Bassa",
+        "confidence": 1.0
+      },
+      {
+        "name": "Alexandra",
+        "role": "Individual",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Alexandra",
+        "confidence": 1.0
+      },
+      {
+        "name": "Zotike",
+        "role": "Woman involved in a loan",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Zotike",
+        "confidence": 1.0
+      },
+      {
+        "name": "Titiane",
+        "role": "Individual",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Titiane",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aurelius Dion",
+        "role": "High Priest",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aurelius%20Dion",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Rome",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/423025",
+        "confidence": 0.8
+      }
+    ],
+    "deities": [
+      {
+        "name": "Athena Promachos",
+        "uri": "https://www.wikidata.org/wiki/Q65131976",
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Rome",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/423025",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a lengthy administrative and honorific record of the Xystic Synod (an international athletic guild) based in Rome. It dates to the reign of Constantine the Great and details the financial endowments provided by high-ranking members of the guild, the commissioning of statues (andriantes), and the legal regulations governing the guild's funds and archives. It mentions the emperor Constantine as 'our master' and provides a rich list of the guild's hierarchy.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " shortly after 313 AD ",
+  "date_min": 313.0,
+  "date_max": 313.0,
+  "date_circa": true
+}

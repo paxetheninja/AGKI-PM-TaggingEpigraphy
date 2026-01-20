@@ -1,0 +1,234 @@
+{
+  "phi_id": 207447,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text explicitly identifies itself as a 'psephisma' (decree) of the Athenians and follows the standard formulaic structure of a public resolution.",
+      "confidence": 1.0,
+      "quote": "[θη]ναίων ψήφισμα",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The decree honors the city of Larisa and several individual judges with crowns and praise for their service in legal matters.",
+      "confidence": 1.0,
+      "quote": "ἐπαινέσαι τὸν δῆμον τὸν Λαρισαίων καὶ στεφανῶσαι χρυσῷ στεφάνῳ",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Treaties and Agreements",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Treaties and Agreements",
+        "subcategory": null
+      },
+      "rationale": "The text mentions a 'symbolon', which refers to a judicial treaty or agreement between cities (Athens and Sicyon) governing legal procedures.",
+      "confidence": 1.0,
+      "quote": "τοῦ κατὰ τὰ πρὸς Σικυωνίους σύμβολον",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "Public decrees of this nature in Athens were traditionally inscribed on stone stelae for public display.",
+      "confidence": 0.8,
+      "quote": "[θη]ναίων ψήφισμα",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "Athenian public decrees from the late Hellenistic period were almost exclusively inscribed on marble.",
+      "confidence": 0.8,
+      "quote": "[θη]ναίων ψήφισμα",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The text contains numerous lacunae and reconstructed sections indicated by brackets.",
+      "confidence": 1.0,
+      "quote": "[ π]ρὸς τὴν πόλιν τῶν Λαρισαίων",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Jason",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Jason",
+        "confidence": 1.0
+      },
+      {
+        "name": "Polyclitus",
+        "role": "Former Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Polyclitus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Epiphanes",
+        "role": "Secretary",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Epiphanes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pandocus",
+        "role": "Judge",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pandocus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Theopropides",
+        "role": "Judge",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theopropides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Alcetas",
+        "role": "Judge",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Alcetas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Philtas",
+        "role": "Judge",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philtas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Ipheras",
+        "role": "Judge",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ipheras",
+        "confidence": 0.5
+      },
+      {
+        "name": "Cephisias",
+        "role": "Judge",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Cephisias",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phanos",
+        "role": "Father of Cephisias",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Phanos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Polydorus",
+        "role": "Judge",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Polydorus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Callias",
+        "role": "Father of Polydorus",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Callias",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Athens",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      },
+      {
+        "name": "Larisa",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/589895",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sicyon",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/570668",
+        "confidence": 1.0
+      },
+      {
+        "name": "Paiania",
+        "type": "Deme",
+        "uri": "https://www.wikidata.org/wiki/Q1236193",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lamptrai",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Tyche",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/579885",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Larisa",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/589895",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Thessaly",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/1332",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This is an Athenian decree dating to the archonship of Jason (109/108 BC). It records the honors bestowed upon the city of Larisa and a group of foreign judges sent by Larisa to adjudicate cases involving Sicyonians, likely under the terms of a judicial treaty (symbolon). The text follows the standard Athenian format including the prescript with archon and secretary names, the body of the decree detailing the embassy and the judges' conduct, and the resolution to award crowns and hospitality (xenia).",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 109/108 BC ",
+  "date_min": -109.0,
+  "date_max": -108.0,
+  "date_circa": false
+}

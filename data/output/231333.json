@@ -1,0 +1,239 @@
+{
+  "phi_id": 231333,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text is a formal resolution passed by the Council of the Areopagus, the Council of Five Hundred, and the Demos of Athens, using standard legislative formulas.",
+      "confidence": 1.0,
+      "quote": "δεδόχθαι τῆι ἐξ Ἀρείου πάγου βουλῆι καὶ τῆι βουλῆι τῶν Φ καὶ τῶι δήμωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The latter part of the inscription contains an extensive list of religious and civic officials, including the Hierophant, Dadouchos, and various secretaries.",
+      "confidence": 1.0,
+      "quote": "ἱεροφάντης μαρα, φαβ. δᾳδοῦχος μαραθ, κλ. ἐπὶ βωμῷ μελι, ἑρμ. ἱεροκῆρυξ ἑρμ",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription honors the Roman imperial family, specifically Septimius Severus and his sons, using high-praise epithets and celebrating their rule.",
+      "confidence": 1.0,
+      "quote": "τῶν θειοτάτων αὐτοκρατόρων... εὐσεβοῦς σεβαστοῦ",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Damnatio Memoriae-like Name Erasure",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Reconstruction and Intervention",
+        "category": "Mutilated / Erased",
+        "subcategory": "Damnatio Memoriae-like Name Erasure"
+      },
+      "rationale": "The name of the emperor Geta has been systematically erased from the inscription, reflecting the official condemnation of his memory after his assassination by Caracalla.",
+      "confidence": 1.0,
+      "quote": "[[τὸν θειότατον αὐτοκράτορα καίσαρα πόπλιον σεπτίμιον γέταν]]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The format and content of the decree are characteristic of a public monumental stele erected in the Athenian Agora.",
+      "confidence": 0.8,
+      "quote": "ἀνεγνώσθη γνώμη τῶν συνεδρίων",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "Official Athenian decrees of this period were typically inscribed on marble slabs.",
+      "confidence": 0.8,
+      "quote": "ἀνεγνώσθη γνώμη τῶν συνεδρίων",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Incomplete / Fragmentary",
+        "subcategory": "Fragmentary"
+      },
+      "rationale": "The text contains numerous lacunae and restored sections, indicating the stone is not fully preserved.",
+      "confidence": 1.0,
+      "quote": "[ἄρχοντος] φλ διογένους μαραθωνίου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Flavius Diogenes",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Flavius%20Diogenes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aedon",
+        "role": "Secretary",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aedon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Julianus",
+        "role": "Proedros",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Julianus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Septimius Severus",
+        "role": "Emperor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Septimius%20Severus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Marcus Aurelius Antoninus",
+        "role": "Emperor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Marcus%20Aurelius%20Antoninus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Publius Septimius Geta",
+        "role": "Emperor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Publius%20Septimius%20Geta",
+        "confidence": 1.0
+      },
+      {
+        "name": "Alcamenes",
+        "role": "Strategos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Alcamenes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Gaius Licinius Telemachus",
+        "role": "Legate and Logistes",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Gaius%20Licinius%20Telemachus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Tryphon",
+        "role": "Agonothete",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Tryphon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Theophilus",
+        "role": "Priest",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theophilus",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Athens",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      },
+      {
+        "name": "Marathon",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580021",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lamprae",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Kydathenaion",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/582862",
+        "confidence": 1.0
+      },
+      {
+        "name": "Steiria",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580110",
+        "confidence": 1.0
+      },
+      {
+        "name": "Anagyrous",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579863",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phlya",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580076",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Hadrian",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Phosphoroi",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579885",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a significant Athenian decree from the Severan period (209/10 AD). It records a joint decision by the city's major governing bodies to honor the imperial family, specifically celebrating the elevation of Geta to the rank of Augustus. However, following Geta's murder and subsequent damnatio memoriae, his name was erased from the stone. The text also provides a valuable list of Athenian religious and administrative officials, illustrating the continuity of traditional civic structures under Roman rule.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

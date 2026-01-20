@@ -1,0 +1,231 @@
+{
+  "phi_id": 187353,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text is a formal decree (psephisma) issued by the people of Calymna and Iasos, using standard legislative formulas such as 'edoxe te boulei kai to demoi'.",
+      "confidence": 1.0,
+      "quote": "κομ ζουσιν ψ φισμα παρ το δ μου το καλυμν ων",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription honors foreign judges for their virtue and goodwill, awarding them golden crowns and other civic privileges.",
+      "confidence": 1.0,
+      "quote": "τι δ μος καλυμν ων στεφανο τ ν δ μον χρυσ ι στεφ νωι ρετ ς νεκεν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The text lists the specific names and patronymics of the judges sent from Iasos to Calymna, as well as local officials involved in the decree's passage.",
+      "confidence": 1.0,
+      "quote": "κλ ανδρον διοδ ρου λ οντα ε βο λου [κ] [φ]αλον δρ κοντος θε δωρον νουμην ου λ οντα δρακοντ δου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Cleandros",
+        "role": "Judge",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Cleandros",
+        "confidence": 1.0
+      },
+      {
+        "name": "Diodoros",
+        "role": "Father of Cleandros",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Diodoros",
+        "confidence": 1.0
+      },
+      {
+        "name": "Leon",
+        "role": "Judge",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Leon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Euboulos",
+        "role": "Father of Leon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Euboulos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Cephalos",
+        "role": "Judge",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Cephalos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dracon",
+        "role": "Father of Cephalos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dracon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Theodoros",
+        "role": "Judge",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theodoros",
+        "confidence": 1.0
+      },
+      {
+        "name": "Noumenios",
+        "role": "Father of Theodoros",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Noumenios",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dracontides",
+        "role": "Father of Leon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dracontides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eumolpos",
+        "role": "Epistates",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eumolpos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Melpos",
+        "role": "Father of Eumolpos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Melpos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Messenios",
+        "role": "Proposer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Messenios",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dion",
+        "role": "Father of Messenios",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dion",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristophanes",
+        "role": "Official",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristophanes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Stesichos",
+        "role": "Official",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Stesichos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Heracleitos",
+        "role": "Father of Stesichos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Heracleitos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Artemidoros",
+        "role": "Official",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Artemidoros",
+        "confidence": 1.0
+      },
+      {
+        "name": "Demophon",
+        "role": "Father of Artemidoros",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demophon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Prytanios",
+        "role": "Official",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Prytanios",
+        "confidence": 1.0
+      },
+      {
+        "name": "Damon",
+        "role": "Father of Prytanios",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Damon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Niphalion",
+        "role": "Father of Damon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Niphalion",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Iasos",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/570335",
+        "confidence": 1.0
+      },
+      {
+        "name": "Calymna",
+        "type": "City",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Zeus",
+        "uri": "https://www.wikidata.org/wiki/Q34201",
+        "confidence": 1.0
+      },
+      {
+        "name": "Artemis",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Dionysus",
+        "uri": "https://www.wikidata.org/wiki/Q41680",
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Iasos",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/570335",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Caria",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/599564",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription from Iasos contains a decree from the people of Calymna honoring five Iasian judges (Cleandros, Leon, Cephalos, Theodoros, and another Leon). The judges were sent to mediate over 350 legal disputes, most of which they settled through persuasion, while the rest were decided by vote according to royal edicts and laws. In gratitude, Calymna awarded the judges golden crowns, citizenship, and the right to own land. The decree was to be inscribed and set up in the Temple of Zeus and Artemis, and announced at the Dionysia festival.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " ca. 250-200 BC ",
+  "date_min": -250.0,
+  "date_max": -200.0,
+  "date_circa": true
+}

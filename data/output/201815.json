@@ -1,0 +1,246 @@
+{
+  "phi_id": 201815,
+  "themes": [
+    {
+      "label": "Treaties and Agreements",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Treaties and Agreements",
+        "subcategory": null
+      },
+      "rationale": "The inscription records a formal treaty and alliance (symmachia) between the cities of Hierapytna and Lato, detailing mutual defense and shared rights.",
+      "confidence": 1.0,
+      "quote": "τάδε συνθέντο --- αραπύτνιοι καὶ Λάτιοι. κοσμιόντων ... συμμαχήσειν ἀλλήλοις",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Boundary Markers (Horoi)",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Identification and Ownership Marks",
+        "category": "Boundary Markers (Horoi)",
+        "subcategory": null
+      },
+      "rationale": "A significant portion of the text is dedicated to defining the precise territorial boundaries between Hierapytna and Lato, listing numerous landmarks.",
+      "confidence": 1.0,
+      "quote": "ὅροι τᾶς χώρας αραπυτνίων καὶ Λατίων ἀπὸ θαλάσσας",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Laws and Regulations",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Laws and Regulations",
+        "subcategory": null
+      },
+      "rationale": "The text references existing laws and establishes new regulations regarding trade, taxes, and legal rights like epigamia (intermarriage) and enktesis (property ownership).",
+      "confidence": 1.0,
+      "quote": "κατὰ τοὺς νόμους τοὺς ἑκατέροι ὑπάρχοντας ... ἐπιγαμίαν καὶ ἔγκτησιν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Sacred Laws and Rules",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Sacred Laws and Rules",
+        "subcategory": null
+      },
+      "rationale": "The inscription includes a detailed religious oath that must be sworn by the citizens and officials, invoking a specific list of deities to witness the agreement.",
+      "confidence": 1.0,
+      "quote": "ὀμνύω τὰν Ζῆνα τὸν Κρηταγενῆ καὶ τὰν Ἥραν καὶ Ζῆνα Δικταῖον καὶ Ζῆνα Ἐρύθριον",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Administrative Records and Lists",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The text mentions the 'kosmoi' (magistrates) of both cities and their specific administrative and religious duties in upholding the treaty.",
+      "confidence": 0.9,
+      "quote": "οἱ κόσμοι οἱ ἐπ' αὐτῶν κοσμιόντων παριόντων",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The text explicitly commands that the treaty and oath be inscribed on stone stelae and set up in specific sanctuaries in both cities and at Lyttos.",
+      "confidence": 1.0,
+      "quote": "ὅρκον δὲ καὶ στάλας ἀναγραψάντων καὶ στασάντων",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Sokles",
+        "role": "Magistrate or Eponymous Official",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sokles",
+        "confidence": 0.8
+      }
+    ],
+    "places": [
+      {
+        "name": "Hierapytna",
+        "type": "City-state",
+        "uri": "https://pleiades.stoa.org/places/589807",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lato",
+        "type": "City-state",
+        "uri": "https://pleiades.stoa.org/places/589899",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lyttos",
+        "type": "City-state",
+        "uri": "https://pleiades.stoa.org/places/589918",
+        "confidence": 1.0
+      },
+      {
+        "name": "Gortyn",
+        "type": "City-state",
+        "uri": "https://pleiades.stoa.org/places/589796",
+        "confidence": 1.0
+      },
+      {
+        "name": "Prytaneion",
+        "type": "Public Building",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Zeus Cretagenes",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Hera",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Zeus Dictaeus",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Zeus Erythrius",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Poseidon",
+        "uri": "https://www.wikidata.org/wiki/Q41127",
+        "confidence": 1.0
+      },
+      {
+        "name": "Amphitrite",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Athena Aleria",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Athena Polias",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Eileithyia",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Apollo Pythius",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Leto",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Artemis",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Ares",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Aphrodite",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Hermes",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Kouretes",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Nymphs",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "The Twelve Gods",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Crete",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/5066435",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Lato",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/589899",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This extensive inscription from the late 2nd century BC documents a comprehensive treaty of alliance (isopoliteia) between Hierapytna and Lato. It covers military cooperation, mutual legal rights (marriage and property ownership), detailed territorial boundaries, and trade regulations involving Alexandrian silver currency. The document concludes with a solemn religious oath invoking the major deities of the Cretan pantheon and specifies the locations where the stelae recording this agreement were to be erected, including the sanctuary of Athena Polias at Lyttos and the sanctuary of the Twelve Gods.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 111-110 BC ",
+  "date_min": -111.0,
+  "date_max": -110.0,
+  "date_circa": false
+}

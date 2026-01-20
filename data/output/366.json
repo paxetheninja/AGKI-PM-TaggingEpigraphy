@@ -1,0 +1,172 @@
+{
+  "phi_id": 366,
+  "themes": [
+    {
+      "label": "Inventories",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Inventories",
+        "subcategory": null
+      },
+      "rationale": "The inscription provides a detailed list of sacred objects, including gold and silver vessels, crowns, and furniture, along with their weights, which were stored in the Parthenon.",
+      "confidence": 1.0,
+      "quote": "[ γραμμ τευε ν τοι παρθενονι στ φαν]ος χρυσος σταθμ[ ν το το 0]δ φι λαι χρυ[σα] 0 σταθμ ν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The text records the formal handover of financial assets (sacred treasures) from one board of treasurers to another, including specific weights and counts.",
+      "confidence": 1.0,
+      "quote": "[τ δε παρ δοσαν ι τ τταρες ρχα δ δ]οσ[αν τ ν λ γον κ πα]ναθενα ον ς παναθ ναια",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The inscription names the treasurers (tamiai) and secretaries (grammateis) responsible for the administration of the treasury during the specified year.",
+      "confidence": 1.0,
+      "quote": "[το ς ταμ αις τεισαμενοι παιανιε κα χ]συν ρχοσι [ ς πολυμ]δες κεφισ ονος τενε ς [γραμμ τευε]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Votive Dedications",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Votive Dedications",
+        "subcategory": null
+      },
+      "rationale": "The items listed are sacred offerings dedicated to deities, specifically Athena and Heracles, kept within the temple precinct.",
+      "confidence": 1.0,
+      "quote": "[ερ ν το ρακλ ος το ν] λ[α]ε σταθμ ν το [το 0] λο δ ο [π]αργ ρο κατ[αχρ σο σταθμ ν το τοιν 0]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Polymedes",
+        "role": "Secretary",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Polymedes",
+        "confidence": 0.8
+      },
+      {
+        "name": "Kephisophon",
+        "role": "Father of Polymedes",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kephisophon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Polyxenides",
+        "role": "Treasurer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Polyxenides",
+        "confidence": 0.8
+      },
+      {
+        "name": "Leukaios",
+        "role": "Secretary",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Leukaios",
+        "confidence": 0.8
+      },
+      {
+        "name": "Komarchos",
+        "role": "Father of Leukaios",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Komarchos",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Paiania",
+        "type": "Deme",
+        "uri": "https://www.wikidata.org/wiki/Q1236193",
+        "confidence": 0.8
+      },
+      {
+        "name": "Atene",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579883",
+        "confidence": 0.8
+      },
+      {
+        "name": "Acharnae",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 0.8
+      },
+      {
+        "name": "Aphidna",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579873",
+        "confidence": 1.0
+      },
+      {
+        "name": "Parthenon",
+        "type": "Temple",
+        "uri": "https://pleiades.stoa.org/places/168254096",
+        "confidence": 0.8
+      },
+      {
+        "name": "Methymna",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/550738",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lesbos",
+        "type": "Island",
+        "uri": "https://pleiades.stoa.org/places/550696",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Athena",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Heracles",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Nike",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579885",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a classic example of an Athenian treasury inventory, specifically for the year 414/3 BC (IG I³ 352). It documents the transfer of sacred property of Athena and other deities from the outgoing board of treasurers to their successors. The text is highly structured, listing items by type (crowns, bowls, furniture), material (gold, silver, ivory), and weight, while identifying the responsible officials by name and deme. The mention of items from Methymna and Lesbos reflects the international reach of the Athenian empire and its religious dedications.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 414/3 a.",
+  "date_min": -414.0,
+  "date_max": -413.0,
+  "date_circa": false
+}

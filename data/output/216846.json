@@ -1,0 +1,147 @@
+{
+  "phi_id": 216846,
+  "themes": [
+    {
+      "label": "Official Letters",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Official Letters",
+        "subcategory": null
+      },
+      "rationale": "The text is framed as a correspondence between the prefect Gnaeus Vergilius Capito and the strategos Posidonius, transmitting official instructions and an imperial letter.",
+      "confidence": 1.0,
+      "quote": "τῆς πεμφθείσης μοι ὑπὸ τοῦ κυρίου ἡγεμόνος ἐπιστολῆς",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Edicts and Ordinances",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Edicts and Ordinances",
+        "subcategory": null
+      },
+      "rationale": "The prefect explicitly mentions an edict (diatagma) that he has issued and ordered to be posted publicly in the metropolis and villages.",
+      "confidence": 1.0,
+      "quote": "ὁ ἐπὶ τῆς πόλεως προέθηκα διατάγματος ἀντίγραφον",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Laws and Regulations",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Laws and Regulations",
+        "subcategory": null
+      },
+      "rationale": "The inscription establishes strict regulations regarding illegal requisitions (angareia) and the conduct of soldiers and officials, including penalties for extortion.",
+      "confidence": 1.0,
+      "quote": "μηδὲν λαμβάνειν μηδὲ ἀνγαρεύειν εἰ μή τινες ἐμὰ διπλώματα ἔχουσιν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The text mandates the reporting of expenses and financial abuses to the audit offices (logisteria) and specific financial officials like Basilides.",
+      "confidence": 1.0,
+      "quote": "εἰς τὰ λογιστήρια καὶ πρὸς Βασιλείδην τὸν Καίσαρος ἀπελεύθερον τὸν ἐπὶ τοῦ λογιστηρίου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The document lists various administrative and military roles, including royal scribes, village scribes, and military officers, who are subject to these regulations.",
+      "confidence": 0.9,
+      "quote": "οἱ δὲ βασιλικοὶ γραμματεῖς καὶ κωμογραμματεῖς καὶ τοπογραμματεῖς κατὰ νομὸν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Posidonius",
+        "role": "Strategos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Posidonius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Gnaeus Vergilius Capito",
+        "role": "Prefect of Egypt",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Gnaeus%20Vergilius%20Capito",
+        "confidence": 1.0
+      },
+      {
+        "name": "Tiberius Claudius Caesar",
+        "role": "Emperor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Tiberius%20Claudius%20Caesar",
+        "confidence": 1.0
+      },
+      {
+        "name": "Basilides",
+        "role": "Imperial Freedman and Auditor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Basilides",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Hibis",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/776181",
+        "confidence": 0.9
+      },
+      {
+        "name": "Thebaid",
+        "type": "Region",
+        "uri": "https://www.wikidata.org/wiki/Q768515",
+        "confidence": 1.0
+      },
+      {
+        "name": "Libya",
+        "type": "Nome",
+        "uri": "https://pleiades.stoa.org/places/716588",
+        "confidence": 0.8
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Hibis",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/776181",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Egypt",
+      "type": "Region",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription, dated to 48 AD, contains an edict from Gnaeus Vergilius Capito, the Roman Prefect of Egypt. It is a significant administrative document aimed at curbing corruption and the abuse of power by Roman soldiers and local officials, specifically regarding the illegal requisitioning of transport and supplies (angareia). The prefect orders that the edict be published in both the metropolis and individual villages to ensure the local population is aware of their rights and the penalties for those who extort them. It also details the process for financial auditing and reporting through the imperial freedman Basilides.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 48 AD",
+  "date_min": 48.0,
+  "date_max": 48.0,
+  "date_circa": false
+}

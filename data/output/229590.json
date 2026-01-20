@@ -1,0 +1,152 @@
+{
+  "phi_id": 229590,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text contains formal decree formulas such as 'it was decided by the assembly' and 'it seemed good to the council and the people'.",
+      "confidence": 1.0,
+      "quote": "δεδόχθαι τῆι ἐκκλησίαι ... ἔδοξε τῆι βουλῆι καὶ τῶι δήμωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription honors an individual for his service, specifically mentioning praise and the award of a golden crown for his integrity and fairness.",
+      "confidence": 1.0,
+      "quote": "ἐπαινέσαι ... καὶ στεφανῶσαι αὐτὸν χρυσίωι στεφάνωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Agonistic / Victory Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Agonistic / Victory Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The decree specifies that the honors should be announced during major athletic and religious festivals including the Dionysia, Asklepieia, and Romaia, specifically during the gymnastic contests.",
+      "confidence": 0.9,
+      "quote": "τῶν Διονυσίων τῶι πρώτωι ἀγῶνι ... καὶ τῶν μεγάλων Ἀσκλαπιείων καὶ Ῥωμαίων ἐν τοῖς γυμνικοῖς ἀγῶσι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Judicial / Legal",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Judicial / Legal",
+        "subcategory": null
+      },
+      "rationale": "The text mentions the escort of judges and the protection of judicial matters, indicating the honored individual served in a legal or judicial capacity.",
+      "confidence": 1.0,
+      "quote": "δικασταγωγὸν διαφυλάξαι ... δικαστοφυλακίαι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The text explicitly orders the decree to be inscribed on a stone stele.",
+      "confidence": 1.0,
+      "quote": "ἀναγράψαι εἰς στήλαν λιθίναν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Sanctuaries",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religion",
+        "category": "Sanctuaries",
+        "subcategory": null
+      },
+      "rationale": "The decree specifies that the stele should be set up in the sanctuary of Asclepius.",
+      "confidence": 1.0,
+      "quote": "ἐν τῶι ἱερῶι τοῦ Ἀσκλαπιοῦ",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Peithenor",
+        "role": "Proposer of the decree",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Peithenor",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phidon",
+        "role": "Father of Peithenor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Phidon",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Kos",
+        "type": "City-state",
+        "uri": "https://pleiades.stoa.org/places/736946",
+        "confidence": 0.9
+      },
+      {
+        "name": "Sanctuary of Asclepius",
+        "type": "Sanctuary",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Asclepius",
+        "uri": "https://www.wikidata.org/wiki/Q83223",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dionysus",
+        "uri": "https://www.wikidata.org/wiki/Q41680",
+        "confidence": 1.0
+      },
+      {
+        "name": "Roma",
+        "uri": null,
+        "confidence": 0.9
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Kos",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/736946",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This is an honorific decree from the island of Kos, likely dating to the 2nd century BC. It honors a judicial official (possibly a foreign judge or an escort of judges) for his fairness, integrity, and personal financial contributions to the city's welfare. The decree mandates the award of a golden crown and public announcements of these honors at the Dionysia, the Great Asklepieia, and the Romaia festivals. The final text was to be inscribed on a stone stele and erected in the sanctuary of Asclepius.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " bef. mid-2nd c. BC ",
+  "date_min": -175.0,
+  "date_max": -126.0,
+  "date_circa": false
+}

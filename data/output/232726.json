@@ -1,0 +1,174 @@
+{
+  "phi_id": 232726,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text explicitly identifies itself as a 'psephisma' (decree) and uses standard Athenian legislative formulas.",
+      "confidence": 1.0,
+      "quote": "τ δε τ [ψ]φισμα",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Treaties and Agreements",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Treaties and Agreements",
+        "subcategory": null
+      },
+      "rationale": "The inscription records a formal oath (horkos) and mutual defense obligations between Athens and the people of Aphytis.",
+      "confidence": 1.0,
+      "quote": "τ νδε τ ν ρ[κον μοσαν] φυτα οι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The decree contains a clause to formally praise the Aphytians for their status as 'good men' toward the Athenian people.",
+      "confidence": 1.0,
+      "quote": "παιν σαι [δ φυ]τα ος [τι νδρες γαθο]σι[ν]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The text regulates grain quantities (medimnoi) and mentions the Hellenotamiai, the financial treasurers of the Athenian Empire.",
+      "confidence": 1.0,
+      "quote": "μ χρι μυρ ων μεδ μνω[ν]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The text includes instructions for the Secretary of the Council to record the decree on a stone stele.",
+      "confidence": 1.0,
+      "quote": "ν στ ληι λιθ νη[ι]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stone",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": null
+      },
+      "rationale": "The inscription explicitly mentions it is to be inscribed on stone (lithine).",
+      "confidence": 1.0,
+      "quote": "λιθ νη[ι]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The inscription is heavily damaged with significant lacunae requiring extensive restoration.",
+      "confidence": 1.0,
+      "quote": "[--]θα[-]σα[----]ι[--------------------------------------]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Hellenotamiai",
+        "role": "Financial officials of the Delian League",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hellenotamiai",
+        "confidence": 1.0
+      },
+      {
+        "name": "Secretary of the Council",
+        "role": "Administrative official",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Secretary%20of%20the%20Council",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Athens",
+        "type": "City-state",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aphytis",
+        "type": "City-state",
+        "uri": "https://pleiades.stoa.org/places/491525",
+        "confidence": 1.0
+      },
+      {
+        "name": "Potidaea",
+        "type": "City-state",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Methone",
+        "type": "City-state",
+        "uri": "https://pleiades.stoa.org/places/540946",
+        "confidence": 1.0
+      },
+      {
+        "name": "Thrambe",
+        "type": "City-state",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Athena",
+        "uri": null,
+        "confidence": 0.9
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579885",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This document is an Athenian decree dating to approximately 426/5 BCE. It concerns the city of Aphytis on the Pallene peninsula. The decree regulates the importation of grain (medimnoi), establishes a mutual defense oath between the Aphytians and Athenian colonists at Potidaea, and honors the Aphytians for their continued loyalty to Athens. The mention of Methone and Thrambe highlights the strategic importance of the Chalcidice region during the Peloponnesian War.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 426/5 a.? ",
+  "date_min": -426.0,
+  "date_max": -425.0,
+  "date_circa": true
+}

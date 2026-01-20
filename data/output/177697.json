@@ -1,0 +1,212 @@
+{
+  "phi_id": 177697,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text explicitly mentions 'psephismata' (decrees) passed by the council (boule) regarding honors and burial arrangements for a priestess.",
+      "confidence": 1.0,
+      "quote": "ψηφ[ σματα]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription honors Tettia Casta for her piety and goodwill towards her fatherland, granting her statues and a golden crown.",
+      "confidence": 1.0,
+      "quote": "τιμ ν νδρι ντι κα σπ δι γγ[εγραμμ νηι τεττ αν κ σταν]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Funerary Inscriptions (Epitaphs)",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Funerary Inscriptions (Epitaphs)",
+        "subcategory": null
+      },
+      "rationale": "The decrees concern the burial (kedeia) of Tettia Casta, the provision of a tomb site, and public funeral expenses.",
+      "confidence": 1.0,
+      "quote": "τ πον ε ς κηδε αν δ δοσθαι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The text contains extensive lists of Roman and local officials, including Caesars, consuls, and archons, who were present or presiding during the decrees.",
+      "confidence": 1.0,
+      "quote": " π π των κα σαρος σεβαστο υ ο δομιτι[ανο κα γα ου] ο αλερ ου φ στου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The text mentions a 'stele' upon which the decrees and burial rights are to be recorded.",
+      "confidence": 1.0,
+      "quote": "π τ ς στ[ λης ε ς πανταχ σε]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Tettia Casta",
+        "role": "Priestess and Honoree",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Tettia%20Casta",
+        "confidence": 1.0
+      },
+      {
+        "name": "Domitian",
+        "role": "Caesar and Consul",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Domitian",
+        "confidence": 1.0
+      },
+      {
+        "name": "Valerius Festus",
+        "role": "Consul",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Valerius%20Festus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lucius Phrygius Cornelius Cerialis",
+        "role": "Official",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lucius%20Phrygius%20Cornelius%20Cerialis",
+        "confidence": 1.0
+      },
+      {
+        "name": "Tranquillius Sophus",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Tranquillius%20Sophus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Granius Sophus",
+        "role": "Official",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Granius%20Sophus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lucius Pudens",
+        "role": "Official",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lucius%20Pudens",
+        "confidence": 1.0
+      },
+      {
+        "name": "Poppaeus Severus",
+        "role": "Official",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Poppaeus%20Severus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Fulvius Probus",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Fulvius%20Probus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lucius Flavius Fimbria",
+        "role": "Consul",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lucius%20Flavius%20Fimbria",
+        "confidence": 1.0
+      },
+      {
+        "name": "Atilius Barbarus",
+        "role": "Consul",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Atilius%20Barbarus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Ariston",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ariston",
+        "confidence": 1.0
+      },
+      {
+        "name": "Julius Arrianus",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Julius%20Arrianus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Horrius Liberalis",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Horrius%20Liberalis",
+        "confidence": 1.0
+      },
+      {
+        "name": "Julius Livianus",
+        "role": "Official",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Julius%20Livianus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Domitius Lepidus",
+        "role": "Relative",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Domitius%20Lepidus",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Neapolis",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/570156",
+        "confidence": 1.0
+      },
+      {
+        "name": "Campania",
+        "type": "Region",
+        "uri": "https://pleiades.stoa.org/places/432742",
+        "confidence": 0.8
+      }
+    ],
+    "deities": [
+      {
+        "name": "The Gods",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Neapolis",
+      "type": "Discovery Site",
+      "uri": "https://pleiades.stoa.org/places/570156",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription from Neapolis, dated to 71 AD, records a series of official decrees by the city council honoring the deceased priestess Tettia Casta. The text details her public contributions, including the dedication of silver statues to the gods, and her general piety. In return, the city grants her a public funeral, a golden crown, and a specific burial site near the city walls. The document is highly structured, listing the Roman consuls and local archons presiding over each session of the council.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 71 AD ",
+  "date_min": 71.0,
+  "date_max": 71.0,
+  "date_circa": false
+}

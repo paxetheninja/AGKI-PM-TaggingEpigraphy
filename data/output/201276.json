@@ -1,0 +1,122 @@
+{
+  "phi_id": 201276,
+  "themes": [
+    {
+      "label": "Treaties and Agreements",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Treaties and Agreements",
+        "subcategory": null
+      },
+      "rationale": "The inscription records a formal treaty between the Lyttians and the Mallians, detailing mutual obligations and legal procedures.",
+      "confidence": 1.0,
+      "quote": "τ ν λυττ ων κα μαλλα ων",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Laws and Regulations",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Laws and Regulations",
+        "subcategory": null
+      },
+      "rationale": "The text contains specific legal regulations regarding the prohibition of seizure (syle) and the duties of the kosmos magistrates.",
+      "confidence": 1.0,
+      "quote": "μ ξ στω δ συλεν [μ τε] τ ν λ ττιον ν τ ι τ ν μαλλα ων",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The document specifies financial penalties and fines measured in staters for violations of the treaty.",
+      "confidence": 0.9,
+      "quote": "στα[τ ρας] πε[ν]τακατ ος τ ι π λι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The text explicitly refers to itself as a stele that must be read annually in public.",
+      "confidence": 1.0,
+      "quote": " ναγινωσκ ντων δ τ ν [σ]τ λαν κατ [νιαυ]τ ν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The inscription is preserved in a fragmentary state with significant lacunae throughout the text.",
+      "confidence": 1.0,
+      "quote": "[--------]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Kosmos",
+        "role": "Magistrate",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kosmos",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Lyttos",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/589918",
+        "confidence": 1.0
+      },
+      {
+        "name": "Malla",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/589921",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "The Gods",
+        "uri": null,
+        "confidence": 0.8
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Crete",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/5066435",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This mid-3rd century BC inscription from Crete represents a diplomatic and legal treaty between the cities of Lyttos and Malla. It outlines regulations for military cooperation, property rights, and the prevention of illegal seizures (syle). The text mandates that the chief magistrates (kosmoi) of both cities enforce fines in staters for violations and ensures the treaty's longevity by requiring an annual public reading of the stele in both jurisdictions. The mention of 'the gods' (restored) follows standard formulaic language for such agreements.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " mid-3rd c. BC? ",
+  "date_min": -275.0,
+  "date_max": -226.0,
+  "date_circa": true
+}

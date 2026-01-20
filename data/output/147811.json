@@ -1,0 +1,133 @@
+{
+  "phi_id": 147811,
+  "themes": [
+    {
+      "label": "Official Letters",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Official Letters",
+        "subcategory": null
+      },
+      "rationale": "The inscription begins with a formal greeting formula addressed to the magistrates and the city, and it mentions the transmission of a copy of a document.",
+      "confidence": 1.0,
+      "quote": "[Ὑπαταίων τοῖς ἄ]ρχουσι καὶ τῆι π[όλει χαίρειν]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text contains the standard enactment formula 'it seemed good to the city' and records a formal decision to grant honors and rights.",
+      "confidence": 1.0,
+      "quote": "ἔδοξε τῆι πόλει",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The document honors Glaukos for his virtuous conduct and grants him the status of proxenos and citizenship.",
+      "confidence": 1.0,
+      "quote": "γλαύκωι εὐδώρου παταίωι προξενίαν καὶ πολιτείαν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Dating Formulas",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Dating Formulas",
+        "subcategory": null
+      },
+      "rationale": "The inscription includes a dating formula that names the presiding strategos and the month, which is standard for administrative records.",
+      "confidence": 1.0,
+      "quote": "στρατηγοῦντος ἀλεξίππου τοῦ ἱππολόχου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Glaukos",
+        "role": "Honoree",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Glaukos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eudorus",
+        "role": "Father of Glaukos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eudorus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Alexippus",
+        "role": "Strategos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Alexippus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hippolochus",
+        "role": "Father of Alexippus",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hippolochus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Theodorus",
+        "role": "Father of a magistrate",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theodorus",
+        "confidence": 0.8
+      }
+    ],
+    "places": [
+      {
+        "name": "Hypata",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/540827",
+        "confidence": 1.0
+      },
+      {
+        "name": "Larissa",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/550683",
+        "confidence": 1.0
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Ainis",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/540611",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Hypata",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/540827",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a composite document from Hypata, consisting of an official letter and a decree. It honors Glaukos, son of Eudorus, for his noble character and his time spent in the city. The text follows standard Hellenistic diplomatic protocols, granting Glaukos proxenia (honorary consulship), citizenship, and security in both war and peace. It is dated by the strategos Alexippus of Larissa, providing a clear chronological and administrative context within the Ainian League or its relations with neighboring powers.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " cf. Corrigenda p. VIII",
+  "date_min": -160.0,
+  "date_max": -159.0,
+  "date_circa": true
+}

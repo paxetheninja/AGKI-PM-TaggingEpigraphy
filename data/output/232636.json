@@ -1,0 +1,240 @@
+{
+  "phi_id": 232636,
+  "themes": [
+    {
+      "label": "Registers and Catalogues",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Registers and Catalogues",
+        "subcategory": null
+      },
+      "rationale": "The inscription records the registration of property (chorion) and land, using the verb 'apegrapsen' (registered), which is characteristic of official registers.",
+      "confidence": 1.0,
+      "quote": " π γραψεν ν λ μνω[ι]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The text begins with a list of individuals identified by their names and demotics, likely acting as officials or representatives of the Council.",
+      "confidence": 1.0,
+      "quote": "ρχοντε[ς φηναν κυρ σα]ντε[ς]ν τ ι βουλ ι το ς πεντηκοσ[ οις]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Land and Property Management",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Legal and Economic Affairs",
+        "category": "Land and Property Management",
+        "subcategory": null
+      },
+      "rationale": "The text contains detailed topographical descriptions used to define the limits of property, including cardinal directions and natural features like rivers, within a land register.",
+      "confidence": 1.0,
+      "quote": "βορρ [θεν] ποταμ ς [κα] κ",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Administrative Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Administrative Records",
+        "subcategory": null
+      },
+      "rationale": "The mention of the Archon and the Council (Boule) indicates that this registration was part of an official administrative act by the Athenian state.",
+      "confidence": 1.0,
+      "quote": "[ π δυ]νν[ικ] το ρχ[ον]τος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The format and find spot in the Athenian Agora are consistent with a public stele used for administrative records.",
+      "confidence": 0.9,
+      "quote": "[ π δυ]νν[ικ] το ρχ[ον]τος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "Public administrative inscriptions in the Athenian Agora from the 4th century BC were typically carved on marble.",
+      "confidence": 0.9,
+      "quote": "[ π δυ]νν[ικ] το ρχ[ον]τος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The text contains numerous lacunae and broken lines, indicating it is a partial survival of the original inscription.",
+      "confidence": 1.0,
+      "quote": "[----] δοτος λαμπτρε ς",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Dysniketos",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dysniketos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Philon",
+        "role": "Official",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Menander",
+        "role": "Official",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Menander",
+        "confidence": 1.0
+      },
+      {
+        "name": "Euboulos",
+        "role": "Official",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Euboulos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Euthykrates",
+        "role": "Official",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Euthykrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Ktesias",
+        "role": "Official",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ktesias",
+        "confidence": 1.0
+      },
+      {
+        "name": "Medon",
+        "role": "Official",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Medon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Theophilos",
+        "role": "Property owner",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theophilos",
+        "confidence": 0.8
+      }
+    ],
+    "places": [
+      {
+        "name": "Athens",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lemnos",
+        "type": "Island/Cleruchy",
+        "uri": "https://pleiades.stoa.org/places/550693",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phlya",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580076",
+        "confidence": 1.0
+      },
+      {
+        "name": "Cholleidai",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/585901",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lamptrai",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Probalinthos",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580091",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eiresidai",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579915",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phyle",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580079",
+        "confidence": 1.0
+      },
+      {
+        "name": "Besa",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579894",
+        "confidence": 1.0
+      },
+      {
+        "name": "Thorikos",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580119",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lakiadai",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580006",
+        "confidence": 1.0
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579885",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is an Athenian administrative record from the archonship of Dysniketos (370/69 BC). It documents the registration (apographe) of land or estates, specifically mentioning property in Lemnos, which was an Athenian cleruchy. The text lists several citizens by name and demotic who were likely involved in the oversight of this process through the Council (Boule). It provides detailed boundary descriptions (north, south, river) for the registered plots.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 370/69 a. ",
+  "date_min": -370.0,
+  "date_max": -369.0,
+  "date_circa": false
+}

@@ -1,0 +1,134 @@
+{
+  "phi_id": 252733,
+  "themes": [
+    {
+      "label": "Calendars and Timetables",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Calendars and Timetables",
+        "subcategory": null
+      },
+      "rationale": "The inscription is a parapegma, an astronomical and meteorological calendar that tracks the rising and setting of stars and associated weather changes.",
+      "confidence": 1.0,
+      "quote": "[ πλει δες σπ ριαι δ νο]υσιν κατ ε [ δοξον]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Catalogues of Knowledge",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Didactic and School Texts",
+        "category": "Catalogues of Knowledge",
+        "subcategory": null
+      },
+      "rationale": "The text compiles scientific observations and astronomical data attributed to various historical authorities such as Eudoxus and Philippus.",
+      "confidence": 1.0,
+      "quote": "κατ φ λιππον ρκτο ρος δ ε[ ται ωθε]ν κα πισημα νει",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "Parapegmata of this scale were typically inscribed on large stone stelae for public display in civic or religious centers.",
+      "confidence": 0.8,
+      "quote": "μετατεθ να[ι] ε ς τ ν [να]γραφ ν τ ν μερ ν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "The physical support for the Miletus parapegma fragments is marble.",
+      "confidence": 0.8,
+      "quote": "[-]ποιε στε λιακ ν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The text consists of multiple non-contiguous fragments with significant lacunae.",
+      "confidence": 1.0,
+      "quote": "[-]τουσ[-]των[-]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Eudoxus",
+        "role": "Astronomer cited as an authority",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eudoxus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Conon",
+        "role": "Astronomer cited as an authority",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Conon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Philippus",
+        "role": "Astronomer cited as an authority",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philippus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Euctemon",
+        "role": "Astronomer cited as an authority",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Euctemon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Epikrates",
+        "role": "Official or individual mentioned in the heading",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Epikrates",
+        "confidence": 0.8
+      }
+    ],
+    "places": [
+      {
+        "name": "Miletus",
+        "type": "City of origin",
+        "uri": "https://pleiades.stoa.org/places/599799",
+        "confidence": 1.0
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Miletus",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/599799",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a famous example of a parapegma from Miletus. It functions as a scientific calendar, correlating the solar year with the stellar phases (risings and settings of constellations like the Pleiades, Scorpio, and Arcturus) and predicting meteorological phenomena like winds (Boreas), thunder, and hail. It cites the comparative observations of famous astronomers like Eudoxus of Cnidus, Conon of Samos, Euctemon, and Philippus of Opus.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

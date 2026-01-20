@@ -1,0 +1,134 @@
+{
+  "phi_id": 260481,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text is a formal resolution (psephisma) passed by a city in response to an embassy from Magnesia, as indicated by the terms 'psephisma' and 'dedochthai'.",
+      "confidence": 1.0,
+      "quote": "[ψήφισμα] [πο]στείλαντες [καθότι ἐψηφισμένοι εἰσὶ]ν",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    },
+    {
+      "label": "Sacred Laws and Rules",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Sacred Laws and Rules",
+        "subcategory": null
+      },
+      "rationale": "The inscription details the regulations for the sacrifice, festival, and sacred truce dedicated to Artemis Leukophryene.",
+      "confidence": 1.0,
+      "quote": "θυσίαν καὶ πανήγυ[ρι]ν καὶ ἐ[κεχειρίαν καὶ ἀ]γῶνα μουσι[κόν] τε καὶ γυμνι[κὸν καὶ ἱ]ππικόν",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    },
+    {
+      "label": "Agonistic / Victory Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Agonistic / Victory Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The text mentions the establishment or recognition of musical, gymnastic, and equestrian competitions (games).",
+      "confidence": 1.0,
+      "quote": "ἀγῶνα μουσι[κόν] τε καὶ γυμνι[κὸν καὶ ἱ]ππικόν",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The decree specifies the amount of money (300 drachmas) to be paid to the theoroi for their mission and travel expenses.",
+      "confidence": 1.0,
+      "quote": "δραχμὰς τριακοσίας καὶ μισθὸν [τὸν εἰ]ς πο--ον μερῶν τριάκοντα",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The text describes the process of electing three theoroi (sacred ambassadors) from the citizen body.",
+      "confidence": 0.9,
+      "quote": "αἱρε[ί]σθω θεωροὺς ἐκ πάντων τρεῖς",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Lampon",
+        "role": "Ambassador",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lampon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Diagoras",
+        "role": "Ambassador",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Diagoras",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pythodemos",
+        "role": "Ambassador",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pythodemos",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Magnesia",
+        "type": "City-state",
+        "uri": "https://pleiades.stoa.org/places/599778",
+        "confidence": 1.0
+      },
+      {
+        "name": "Prytaneion",
+        "type": "Public building",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Artemis Leukophryene",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Magnesia on the Maeander",
+      "type": "City-state",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This decree concerns the recognition of the asylia (inviolability) of Magnesia on the Maeander and the acceptance of the panhellenic games (Leukophryena) in honor of Artemis Leukophryene. It details the appointment of theoroi (sacred envoys), their travel allowance, and the hospitality (xenia) provided to the Magnesian ambassadors at the Prytaneion.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

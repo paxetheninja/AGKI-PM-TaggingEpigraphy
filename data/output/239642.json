@@ -1,0 +1,222 @@
+{
+  "phi_id": 239642,
+  "themes": [
+    {
+      "label": "Manumission Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Manumission Records",
+        "subcategory": null
+      },
+      "rationale": "The inscription records the manumission of a female slave named Lyso through a symbolic sale to the god Apollo Pythios.",
+      "confidence": 1.0,
+      "quote": "π δοτο στ ας μιν α τ ι π λλωνι τ ι πυθ ωι σ μα γυναικε ον ι νομα λυσ ",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Contracts and Private Legal Acts",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Contracts and Private Legal Acts",
+        "subcategory": null
+      },
+      "rationale": "The text functions as a legal contract of sale between a private individual (Estia) and the sanctuary, including terms of price and conditions of service.",
+      "confidence": 1.0,
+      "quote": "π το σδε π δοτο στ ας μιν α τ ι π λλωνι τ ι πυθ ωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The document concludes with an extensive list of witnesses, including priests, archons, and private citizens, serving as a formal register.",
+      "confidence": 0.9,
+      "quote": "μ ρτυροι το ερ]ε ς το π λλωνος πρ[α]ξ [α]ς νδρ νικος κα ο ρχοντες ε δοκος πρα[ξ α κα δι ται καλ]λ νικος κ λλων λε[π]τ να ρ σταρχος στυ χου τιμ κριτος ε νους",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Votive Dedications",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Votive Dedications",
+        "subcategory": null
+      },
+      "rationale": "The manumission is framed as a religious act where the slave is 'sold' to the deity, placing her under the god's protection.",
+      "confidence": 0.8,
+      "quote": "καθ ς π στευσε λυσ τ ι θε ι τ ν ν ν φ ιτε",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Eucleos",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eucleos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eudocus",
+        "role": "Prytanis",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eudocus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Praxiagesilaus",
+        "role": "Father of Eudocus",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Praxiagesilaus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Tarantinus",
+        "role": "Grandfather of Eudocus",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Tarantinus",
+        "confidence": 0.8
+      },
+      {
+        "name": "Politas",
+        "role": "Secretary",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Politas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Syndrus",
+        "role": "Father of Politas",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Syndrus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Estia",
+        "role": "Seller and former owner",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Estia",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aminias",
+        "role": "Father of Estia",
+        "uri": "https://www.wikidata.org/wiki/Q3094544",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lyso",
+        "role": "Manumitted slave",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lyso",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristodamus",
+        "role": "Guarantor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristodamus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sotichus",
+        "role": "Father of Aristodamus",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sotichus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Andronicus",
+        "role": "Priest of Apollo",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Andronicus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Praxias",
+        "role": "Priest of Apollo",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Praxias",
+        "confidence": 1.0
+      },
+      {
+        "name": "Callinicus",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Callinicus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Callon",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Callon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Leptinas",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Leptinas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristarchus",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristarchus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Astychus",
+        "role": "Father of Aristarchus",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Astychus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Timecritus",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Timecritus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eunous",
+        "role": "Father of Timecritus",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eunous",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Delphi",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/540726",
+        "confidence": 1.0
+      },
+      {
+        "name": "Tarentum",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/442810",
+        "confidence": 0.7
+      }
+    ],
+    "deities": [
+      {
+        "name": "Apollo",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Delphi",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/540726",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a classic example of a Delphic manumission by sale to Apollo Pythios. It dates to the mid-2nd century BC and follows the standard legal formula: dating by the local archon (Eucleos), naming the seller (Estia) and the slave (Lyso), stating the price (3 minae), and detailing the 'paramone' clause which requires the freedwoman to remain in service to her former owner until the latter's death. It also includes legal protections against re-enslavement and a comprehensive list of religious and civil witnesses.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " mid-2nd c. BC",
+  "date_min": -175.0,
+  "date_max": -126.0,
+  "date_circa": false
+}

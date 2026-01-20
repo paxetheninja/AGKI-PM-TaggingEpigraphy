@@ -1,0 +1,156 @@
+{
+  "phi_id": 186293,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The inscription begins with the standard formula for a public decree issued by the council and the people of Delos.",
+      "confidence": 1.0,
+      "quote": "δοξε τ ι βουλ ι κα τ ι δ μωι",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The text explicitly mentions honoring a physician named Philippos for his professional services.",
+      "confidence": 1.0,
+      "quote": "ξιο ντι τ ν τιμ ν α ς τετιμ καν[τι φ]λ[ι]ππον τ ν ατρ ν",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    },
+    {
+      "label": "Agonistic / Victory Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Agonistic / Victory Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The decree orders the announcement of the honors during the gymnastic games of the Asklepieia festival.",
+      "confidence": 1.0,
+      "quote": "τ ν σκλαπιε ων ν τ ι γυμνικ ι γ νι",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The inscription contains specific financial instructions, including the payment of fifty drachmas by the treasurers for a sacrifice and costs for the inscription.",
+      "confidence": 1.0,
+      "quote": "το ταμ αι τελεσ ντω ... δραχμ ς πεντ κοντα",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The text explicitly commands that the decree be inscribed on a stone stele and set up in the sanctuary.",
+      "confidence": 1.0,
+      "quote": " ς στ λαν λιθ ναν κα ναθ μεν ς τ ερ ν το σκλαπιο ",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    },
+    {
+      "label": "Other Stone",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Other Stone"
+      },
+      "rationale": "The inscription is described as being on a stone support (lithinan).",
+      "confidence": 1.0,
+      "quote": " ς στ λαν λιθ ναν",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The beginning of the inscription is missing and contains several lacunae throughout the text.",
+      "confidence": 1.0,
+      "quote": "[-----------------------]",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Philippos",
+        "role": "Physician",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philippos",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Delos",
+        "type": "Island",
+        "uri": "https://pleiades.stoa.org/places/599587",
+        "confidence": 1.0
+      },
+      {
+        "name": "Asklepieion",
+        "type": "Sanctuary",
+        "uri": "https://pleiades.stoa.org/places/570127",
+        "confidence": 1.0
+      },
+      {
+        "name": "Prytaneion",
+        "type": "Public Building",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Asclepius",
+        "uri": "https://www.wikidata.org/wiki/Q83223",
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Delos",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/599587",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a Hellenistic decree from the island of Delos. It records the decision of the council and people to honor a physician named Philippos for his services. The decree specifies that his honors should be proclaimed during the gymnastic contests of the Asklepieia festival. It also provides administrative details regarding the cost of the stone stele, its placement in the sanctuary of Asclepius, and the provision of hospitality (xenia) in the Prytaneion and funds for a sacrifice.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " ca. 195 BC?",
+  "date_min": -195.0,
+  "date_max": -195.0,
+  "date_circa": true
+}

@@ -1,0 +1,204 @@
+{
+  "phi_id": 62618,
+  "themes": [
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The inscription is a detailed financial record from Delos, documenting expenditures for public works, wages for labor, and interest on loans.",
+      "confidence": 1.0,
+      "quote": "δραχμαὶ, τόκον, μισθός",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Contracts and Private Legal Acts",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Contracts and Private Legal Acts",
+        "subcategory": null
+      },
+      "rationale": "The text records the re-leasing of properties and the naming of guarantors for these contracts.",
+      "confidence": 1.0,
+      "quote": "ἐνεμισθωσάμεθα, ἔγγυοι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The inscription explicitly mentions that certain works were carried out according to the decree of the people.",
+      "confidence": 1.0,
+      "quote": "κατὰ ψήφισμα τοῦ δήμου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Building Commemoration",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Building Commemoration",
+        "subcategory": null
+      },
+      "rationale": "The record details the construction and repair of specific buildings, including walls, a bathhouse, and a palaestra.",
+      "confidence": 1.0,
+      "quote": "οἰκοδομήσαντι τὸν τοῖχον",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Aristobulus",
+        "role": "Father of children mentioned",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristobulus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Diacritus",
+        "role": "Guarantor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Diacritus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Cleocritus",
+        "role": "Tenant or house owner",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Cleocritus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pistoxenus",
+        "role": "Landowner",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pistoxenus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristarchus",
+        "role": "Worker from Carystus",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristarchus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Craton",
+        "role": "Builder from Syria",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Craton",
+        "confidence": 1.0
+      },
+      {
+        "name": "Socrates",
+        "role": "Builder",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Socrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Callisthenes",
+        "role": "Deceased lessee",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Callisthenes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Polycrates",
+        "role": "New lessee",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Polycrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Theognotus",
+        "role": "Guarantor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theognotus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Deinocrates",
+        "role": "Contractor for the portico",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Deinocrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sosileia",
+        "role": "Property owner",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sosileia",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Delos",
+        "type": "City or Island",
+        "uri": "https://pleiades.stoa.org/places/599587",
+        "confidence": 1.0
+      },
+      {
+        "name": "Carystus",
+        "type": "City",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Syria",
+        "type": "Region",
+        "uri": "https://pleiades.stoa.org/places/29492",
+        "confidence": 1.0
+      },
+      {
+        "name": "Cyzicus",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/511218",
+        "confidence": 1.0
+      },
+      {
+        "name": "Peparethus",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/541024",
+        "confidence": 1.0
+      },
+      {
+        "name": "Asklepieion",
+        "type": "Sanctuary",
+        "uri": "https://pleiades.stoa.org/places/570127",
+        "confidence": 1.0
+      },
+      {
+        "name": "Palaestra",
+        "type": "Building",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Asclepius",
+        "uri": "https://www.wikidata.org/wiki/Q83223",
+        "confidence": 0.8
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Delos",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/599587",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription from Delos, dating to shortly before 282 BC, is a comprehensive administrative and financial document. It records the management of temple properties and public works by the hieropoioi. The text includes detailed accounts of payments for construction materials like bricks and wood, wages for specialized labor such as architects and builders, and the financial terms of property leases, including interest and guarantors. It provides significant insight into the economic administration of the sanctuary of Apollo and the city of Delos.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " shortly bef. 282 BC",
+  "date_min": -282.0,
+  "date_max": -282.0,
+  "date_circa": true
+}

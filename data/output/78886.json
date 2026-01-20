@@ -1,0 +1,169 @@
+{
+  "phi_id": 78886,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text is a formal decree passed by the council and the people of Minoa, using standard formulaic language for such documents.",
+      "confidence": 1.0,
+      "quote": "ἔδοξε τῇ βουλῇ καὶ τῷ δήμῳ γνώμῃ στρατηγῶν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription honors a deceased woman, Abrytis, for her character and family standing, granting her a golden crown and public recognition.",
+      "confidence": 1.0,
+      "quote": "ἀναγορεύεσθαι αὐτὴν ὅτι στεφανοῖ ὁ δῆμος Μεινωητῶν Ἀβρύτιν Ἀγαθόποδος ἡρώων χρυσῷ στεφάνῳ",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Funerary Inscriptions (Epitaphs)",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Funerary Inscriptions (Epitaphs)",
+        "subcategory": null
+      },
+      "rationale": "The decree specifically addresses the death of Abrytis, her burial, and the public mourning following her passing at a young age.",
+      "confidence": 1.0,
+      "quote": "πανδημὶ τὴν πόλιν παρεῖναι ἐπὶ τὴν παραπομπὴν καὶ κηδείαν τοῦ σώματος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The text mentions several civic roles including strategoi, prytaneis, and the office of the dekaprotos.",
+      "confidence": 0.7,
+      "quote": "γνώμῃ στρατηγῶν ἐχόντων δὲ καὶ τὴν πρυτανικὴν ἐξουσίαν ... ἀνδρὸς δεκαπρώτου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Athenaios",
+        "role": "Proposer of the decree, son of Kalotychos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Athenaios",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kalotychos",
+        "role": "Father of Athenaios",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kalotychos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Antiochos",
+        "role": "Chairman (Epipsephisamenos), son of Epigonos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antiochos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Epigonos",
+        "role": "Father of Antiochos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Epigonos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Abrytis",
+        "role": "The deceased honoree, daughter of Agathopous",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Abrytis",
+        "confidence": 1.0
+      },
+      {
+        "name": "Agathopous",
+        "role": "Father of Abrytis",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Agathopous",
+        "confidence": 1.0
+      },
+      {
+        "name": "Philagathos",
+        "role": "Husband of Abrytis, a dekaprotos and archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philagathos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Philoxena",
+        "role": "Mother of Abrytis, daughter of Epinomides",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philoxena",
+        "confidence": 1.0
+      },
+      {
+        "name": "Epinomides",
+        "role": "Brother of Abrytis and son of Agathopous",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Epinomides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Epinomides",
+        "role": "Maternal grandfather of Abrytis",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Epinomides",
+        "confidence": 1.0
+      },
+      {
+        "name": "[...]odoros",
+        "role": "Brother of Abrytis and son of Agathopous",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=%5B...%5Dodoros",
+        "confidence": 0.8
+      }
+    ],
+    "places": [
+      {
+        "name": "Amorgos",
+        "type": "Island",
+        "uri": "https://pleiades.stoa.org/places/535407625",
+        "confidence": 1.0
+      },
+      {
+        "name": "Minoa",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/589933",
+        "confidence": 1.0
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Amorgos",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/535407625",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Minoa",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/589933",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This is a public decree from the city of Minoa on the island of Amorgos. It records the honors bestowed upon Abrytis, daughter of Agathopous, who died prematurely. The text highlights her noble lineage and the status of her husband, Philagathos, who held the office of dekaprotos. The city orders a public funeral and a posthumous golden crown to console her family. The Greek text contains several lacunae and reconstructed letters, particularly in the names of family members.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

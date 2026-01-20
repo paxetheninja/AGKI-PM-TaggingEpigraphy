@@ -1,0 +1,175 @@
+{
+  "phi_id": 345084,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text follows the standard formula for a public decree (edoxe) issued by the council and people of Kaunos.",
+      "confidence": 1.0,
+      "quote": "ἔδοξε Καυνίων τῆι βουλῆι καὶ τῶι δήμωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The document records the granting of honors, including golden crowns and public praise, to foreign judges and a secretary for their service.",
+      "confidence": 1.0,
+      "quote": "στεφανοῦσιν χρυσῶι στεφάνωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The inscription contains explicit instructions to record the decree on a stone stele (stelen lithinen).",
+      "confidence": 1.0,
+      "quote": "εἰς στήλην λιθίνην",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Other Stone",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Other Stone"
+      },
+      "rationale": "The text specifies that the decree is to be inscribed on stone (lithine), though the specific type of stone is not detailed.",
+      "confidence": 1.0,
+      "quote": "στήλην λιθίνην",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Menodorus",
+        "role": "Official",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Menodorus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Theonodorus",
+        "role": "Father of Menodorus",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theonodorus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Alexias",
+        "role": "Grandfather of Menodorus",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Alexias",
+        "confidence": 1.0
+      },
+      {
+        "name": "Antigenes",
+        "role": "Foreign Judge",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antigenes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Apollonius",
+        "role": "Father of Antigenes",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Apollonius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aeneas",
+        "role": "Foreign Judge",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aeneas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Artemidorus",
+        "role": "Father of Aeneas",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Artemidorus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Timouchos",
+        "role": "Foreign Judge",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Timouchos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Euerchos",
+        "role": "Father of Timouchos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Euerchos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pythion",
+        "role": "Secretary",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pythion",
+        "confidence": 1.0
+      },
+      {
+        "name": "Demetrius",
+        "role": "Father of Pythion",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demetrius",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Kaunos",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/638796",
+        "confidence": 1.0
+      },
+      {
+        "name": "Smyrna",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/550893",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Dionysus",
+        "uri": "https://www.wikidata.org/wiki/Q41680",
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Caria",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/599564",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Kaunos",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/638796",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a decree from the city of Kaunos in Caria, dating to the 2nd century BC. It honors a panel of foreign judges (Antigenes, Aeneas, and Timouchos) and their secretary (Pythion) sent from the city of Smyrna. The judges are praised for their fairness and for restoring concord (homonoia) among the citizens. The decree specifies that they are to be awarded golden crowns, which are to be announced during the festival of the Dionysia and at musical contests. The text also includes instructions for the decree to be inscribed on a stone stele and placed in a conspicuous location, and for the ambassador from Smyrna to be invited to hospitality (xenia) at the Prytaneion.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 2nd c. BC ",
+  "date_min": -200.0,
+  "date_max": -101.0,
+  "date_circa": false
+}

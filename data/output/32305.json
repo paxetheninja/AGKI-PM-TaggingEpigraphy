@@ -1,0 +1,162 @@
+{
+  "phi_id": 32305,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text explicitly refers to itself as a decree that is to be inscribed on a stone slab.",
+      "confidence": 1.0,
+      "quote": "ναγρ ψαι δ κα τ δε τ [ψ]φισμα ε ς στ λην",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription is dedicated to praising Julia Eudia for her noble character, generosity, and benefactions to the association of priests.",
+      "confidence": 1.0,
+      "quote": "παιν σαι [ ου]λ αν ε δ αν ε τελε νου θυγατ ρα",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Votive Dedications",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Votive Dedications",
+        "subcategory": null
+      },
+      "rationale": "The decree orders the dedication of a painted image of the honoree within the temple of Asclepius.",
+      "confidence": 1.0,
+      "quote": "ναθε ναι α τ ς ε κ να γραπτ ν ν τ ι να ι το σκλ[η]πιο",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Cultic Regulations",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Cultic Regulations",
+        "subcategory": null
+      },
+      "rationale": "The text outlines specific religious duties, including sacrifices to Asclepius and Hygieia and the organization of sacred banquets for the priests.",
+      "confidence": 1.0,
+      "quote": "θ οντας τ ι σκληπι ι κα τ ι γιε αι... καθ ν δειπν σι ο ερε ς",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The text specifies that the decree should be engraved on a stone slab and set up in the sanctuary.",
+      "confidence": 1.0,
+      "quote": "ναγρ ψαι δ κα τ δε τ [ψ]φισμα ε ς στ λην νχαρ ξαντας",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Julia Eudia",
+        "role": "Benefactor and honoree, daughter of Eutelinos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Julia%20Eudia",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eutelinos",
+        "role": "Father of Julia Eudia",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eutelinos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Gaius Julius Strobilus",
+        "role": "Husband of Julia Eudia",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Gaius%20Julius%20Strobilus",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Mantinea",
+        "type": "City",
+        "uri": null,
+        "confidence": 0.8
+      },
+      {
+        "name": "Hiplos",
+        "type": "Sanctuary location",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Sanctuary of Asclepius",
+        "type": "Sanctuary",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Asclepius",
+        "uri": "https://www.wikidata.org/wiki/Q83223",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hygieia",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Tyche",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Isis",
+        "uri": null,
+        "confidence": 0.8
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Arcadia",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/570102",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Mantinea",
+      "type": "City",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This 1st-century AD inscription from Mantinea records a decree by the association of the priests of Asclepius. It honors Julia Eudia, daughter of Eutelinos, for her magnanimity and her donation of land to the sanctuary. The decree grants her several honors: a public commendation, a painted portrait in the temple, and annual sacrifices to Asclepius and Hygieia on her birthday for the well-being of her and her husband, Gaius Julius Strobilus. Furthermore, she and her descendants are granted the right to participate in the sacred banquets of the priests, specifically the Isiac and pyrophoric banquets. The text also includes a penalty clause for anyone who fails to invite her to these meals, and orders the decree to be inscribed on a stone stele in the sanctuary.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 1st c. AD",
+  "date_min": 1.0,
+  "date_max": 100.0,
+  "date_circa": false
+}

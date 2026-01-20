@@ -1,0 +1,256 @@
+{
+  "phi_id": 241614,
+  "themes": [
+    {
+      "label": "Manumission Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Manumission Records",
+        "subcategory": null
+      },
+      "rationale": "The text contains a clause for the manumission of a female slave named Theutiman, stating she is to be free upon the death of Alkesippos.",
+      "confidence": 1.0,
+      "quote": "θ ευτ μαν τ ν δ αν θερ παιναν στε λευθ ραν ε μεν α τ ν ε τ κα π θη",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Contracts and Private Legal Acts",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Contracts and Private Legal Acts",
+        "subcategory": null
+      },
+      "rationale": "The inscription records a private legal act, specifically a testamentary foundation or will (diatheke), including burial instructions and the management of an estate.",
+      "confidence": 1.0,
+      "quote": "τ ς διαθ κας φυλ σσει θαμβος γ ας πεισ λαος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Votive Dedications",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Votive Dedications",
+        "subcategory": null
+      },
+      "rationale": "Alkesippos makes a significant dedication of gold and silver to the god Apollo and the city of Delphi.",
+      "confidence": 1.0,
+      "quote": "ν θηκε λκ σιππος βουθ ρα καλυδ νιος τ ι θε ι κα τ ι π λει τ ι δελφ ν χρυσο ς",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Sacred Laws and Rules",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Sacred Laws and Rules",
+        "subcategory": null
+      },
+      "rationale": "The text establishes rules for an annual sacrifice and public feast (damothoina) named the Alkesippeia, detailing who should participate and when it should occur.",
+      "confidence": 1.0,
+      "quote": "στε θυσ αν κα δαμοθοιν αν συντελε ν τ ν π λιν τ ν δελφ ν τ ι π λλωνι τ ι πυθ ωι κατ νιαυτ ν ποτονομ ζοντας λκεσ ππεια",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The inscription lists specific financial amounts in gold and silver, including minae and staters, and mentions interest (tokon) to fund the festival.",
+      "confidence": 1.0,
+      "quote": "χρυσο ς κατ ν τρι κοντα κα ργυρ ου μν ς ε κοσι δ ο στατ ρας τρι κοντα",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The text concludes with an extensive list of witnesses, including their names and sometimes their titles or origins.",
+      "confidence": 1.0,
+      "quote": "μ ρτυροι κριτ λαος λ τροπος γ ας πολεμοκρ της γασ δαμος γεννα ος ξενοκρ της μεδε νιος στρ ταγος καλλικλ ς νδρ νικος πισ λαος δεξικρ της χαρ ξενος πολ μαρ[χ]ος παυσαν α",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Damosthenes",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Damosthenes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Alkesippos",
+        "role": "Dedicant and Testator",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Alkesippos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Butheras",
+        "role": "Father of Alkesippos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Butheras",
+        "confidence": 1.0
+      },
+      {
+        "name": "Theutiman",
+        "role": "Slave to be manumitted",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theutiman",
+        "confidence": 1.0
+      },
+      {
+        "name": "Damippos",
+        "role": "Executor of burial",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Damippos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Theutima",
+        "role": "Executor of burial",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theutima",
+        "confidence": 1.0
+      },
+      {
+        "name": "Gias",
+        "role": "Executor, Witness, and Guardian of the will",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Gias",
+        "confidence": 1.0
+      },
+      {
+        "name": "Peisilaos",
+        "role": "Executor, Witness, and Guardian of the will",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Peisilaos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kritolaos",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kritolaos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Altropos",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Altropos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Polemokrates",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Polemokrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Giasidamos",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Giasidamos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Gennaios",
+        "role": "Father of Giasidamos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Gennaios",
+        "confidence": 0.8
+      },
+      {
+        "name": "Xenokrates",
+        "role": "Witness and Strategos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Xenokrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kallikles",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kallikles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Andronikos",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Andronikos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dexikrates",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dexikrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Charoxenos",
+        "role": "Witness and Polemarch",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Charoxenos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pausanias",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pausanias",
+        "confidence": 1.0
+      },
+      {
+        "name": "Thambos",
+        "role": "Guardian of the will",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Thambos",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Delphi",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/540726",
+        "confidence": 1.0
+      },
+      {
+        "name": "Calydon",
+        "type": "City of origin",
+        "uri": "https://pleiades.stoa.org/places/540699",
+        "confidence": 1.0
+      },
+      {
+        "name": "Medion",
+        "type": "City of origin",
+        "uri": "https://pleiades.stoa.org/places/530998",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Apollo Pythios",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "intact",
+  "provenance": [
+    {
+      "name": "Delphi",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/540726",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription from Delphi (182/181 BC) records a complex testamentary foundation by Alkesippos of Calydon. He dedicates a substantial sum of gold and silver to Apollo and the city to establish an annual festival called the Alkesippeia. The document also functions as a will, providing for the manumission of his slave Theutiman, giving instructions for his own burial, and naming guardians and witnesses for the legal act. The list of witnesses includes high-ranking officials such as a Strategos and a Polemarch.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 182/181 BC",
+  "date_min": -182.0,
+  "date_max": -181.0,
+  "date_circa": false
+}

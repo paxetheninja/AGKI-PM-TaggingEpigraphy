@@ -1,0 +1,140 @@
+{
+  "phi_id": 143496,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text follows the standard formula for a public decree, including the decision of the people and instructions for recording the resolution.",
+      "confidence": 1.0,
+      "quote": "ἔδοξε τῷ δήμῳ",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription honors a judge and a secretary with crowns and statues for their service and justice.",
+      "confidence": 1.0,
+      "quote": "στεφανῶσαι τὸν δῆμον τὸν μεγαρέων χρυσῷ στεφάνῳ καὶ εἰκόνι χαλκῇ",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Treaties and Agreements",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Treaties and Agreements",
+        "subcategory": null
+      },
+      "rationale": "The text explicitly mentions existing treaties or agreements made with the Romans which regulate certain legal or administrative conditions.",
+      "confidence": 1.0,
+      "quote": "συνθήκαις ταῖς γενομέναις πρὸς Ῥωμαίους",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Proxeny Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text grants the status of proxenos (public guest/representative) and euergetes (benefactor) to the honored individuals and their descendants.",
+      "confidence": 1.0,
+      "quote": "εἶναι δὲ αὐτοὺς προξένους τῆς πόλεως ἡμῶν καὶ αὐτοὺς καὶ ἐκγόνους",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The decree includes an explicit instruction to engrave the text onto a stone stele for public display in a prominent location.",
+      "confidence": 1.0,
+      "quote": "ἀναγράψαι τὸ γενόμενον ψήφισμα εἰς στήλην",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Abrianos son of Pratichos",
+        "role": "Judge",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Abrianos%20son%20of%20Pratichos",
+        "confidence": 0.9
+      }
+    ],
+    "places": [
+      {
+        "name": "Tanagra",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/580114",
+        "confidence": 1.0
+      },
+      {
+        "name": "Megara",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/462307",
+        "confidence": 1.0
+      },
+      {
+        "name": "Rome",
+        "type": "State",
+        "uri": "https://pleiades.stoa.org/places/423025",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Apollo Delios",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Dionysus",
+        "uri": "https://www.wikidata.org/wiki/Q41680",
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Megara",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/462307",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Megaris",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/570470",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a fragmentary decree from Megara, likely dating to the 2nd century BC. It honors a foreign judge from Tanagra, Abrianos son of Pratichos, for his fair conduct and justice. The decree grants him a golden crown, a bronze statue, and the hereditary status of proxenos and benefactor. It specifies that the honors should be announced at the festivals of Apollo Delios and the Dionysia. Notably, the text references existing treaties with Rome, reflecting the geopolitical reality of the period. The decree was to be inscribed on a stele and set up in a prominent place, with copies sent to Megara and Tanagra.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " not bef. 2nd c. BC",
+  "date_min": -200.0,
+  "date_max": -101.0,
+  "date_circa": false
+}

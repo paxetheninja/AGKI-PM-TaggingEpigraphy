@@ -1,0 +1,162 @@
+{
+  "phi_id": 257995,
+  "themes": [
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The text describes the actions of an ambassador and his sons, likely in the context of a decree or report honoring their successful negotiations with Roman authorities for the benefit of the city.",
+      "confidence": 0.8,
+      "quote": "δικαιότατον ἀνθύπατον",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Official Letters",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Official Letters",
+        "subcategory": null
+      },
+      "rationale": "The inscription records official interactions between a city ambassador (presbeutes), a Roman proconsul, and the Emperor Caesar, typical of official correspondence or reports archived on stone.",
+      "confidence": 0.8,
+      "quote": "πρεσβευτής καὶ μετὰ ἧς τῶν υἱῶν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The text explicitly mentions large sums of money in denarii (ten thousand and fifty thousand), likely referring to tax remissions, city debts, or benefactions negotiated during the embassy.",
+      "confidence": 1.0,
+      "quote": "δεινάρια μύρια ... πεντακισμύρια",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Orations and Praise of Gods",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Orations and Praise of Gods",
+        "subcategory": null
+      },
+      "rationale": "The inscription mentions performing sacrifices and seeking favorable omens for the Emperor Caesar, who is referred to with divine epithets.",
+      "confidence": 0.9,
+      "quote": "θύειν καὶ καλλιερεῖν ... αὐτοκράτορι καίσαρι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The layout and public nature of the decree are consistent with a monumental stone stele used for civic displays in the Roman period.",
+      "confidence": 0.8,
+      "quote": "[-]ς--κου[-]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "Based on the archaeological record for GIBM 892, the inscription is carved on marble, the standard material for high-status civic documents in Knidos.",
+      "confidence": 0.9,
+      "quote": "[-]ς--κου[-]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The text is heavily broken with significant lacunae at the beginning and end of most lines, indicating it is a fragment of a larger original monument.",
+      "confidence": 1.0,
+      "quote": "[-]ς--κου[-]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Caesar",
+        "role": "Emperor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Caesar",
+        "confidence": 1.0
+      },
+      {
+        "name": "Marcus Plautius",
+        "role": "Proconsul",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Marcus%20Plautius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Augustus",
+        "role": "Emperor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Augustus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Drakon",
+        "role": "Ambassador",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Drakon",
+        "confidence": 0.9
+      }
+    ],
+    "places": [
+      {
+        "name": "Knidos",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/707539",
+        "confidence": 0.9
+      }
+    ],
+    "deities": [
+      {
+        "name": "Caesar",
+        "uri": null,
+        "confidence": 0.8
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Knidos",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/707539",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This fragmentary inscription from Knidos (GIBM 892) records a report or decree concerning an embassy led by an individual named Drakon and his sons. The embassy successfully negotiated with the Proconsul Marcus Plautius (likely Marcus Plautius Silvanus, proconsul of Asia) and the Emperor Caesar Augustus regarding significant financial matters, specifically sums of 10,000 and 50,000 denarii. The text also details religious honors, including sacrifices performed for the Emperor, reflecting the integration of the Imperial cult into civic life in Asia Minor during the early Principate.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

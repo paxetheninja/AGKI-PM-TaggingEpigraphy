@@ -1,0 +1,155 @@
+{
+  "phi_id": 199853,
+  "themes": [
+    {
+      "label": "Official Letters",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Official Letters",
+        "subcategory": null
+      },
+      "rationale": "The text is structured as a formal communication from the city and magistrates of Kydonia to the council and people of Teos, using the standard greeting formula 'chairein'.",
+      "confidence": 1.0,
+      "quote": "κυδωνιατῶν πόλις καὶ οἱ ἄρχοντες Τηίων τῆι βωλᾶι καὶ τῶι δήμωι χαίρειν.",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The inscription explicitly mentions the passing of a decree and the presentation of this document to the assembly.",
+      "confidence": 1.0,
+      "quote": "τό τε ψήφισμα ἀπέδωκαν καὶ αὐτοὶ διελέγησαν ἀκολούθως τοῖς γεγραμμένοις",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Treaties and Agreements",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Treaties and Agreements",
+        "subcategory": null
+      },
+      "rationale": "The document records a diplomatic agreement between Kydonia and Teos regarding the formal recognition of the latter's status and territory.",
+      "confidence": 0.9,
+      "quote": "καὶ Τηίων τήν τε πόλιν καὶ τὴν χώραν εἶμεν ἱερὰν καὶ ἄσυλον",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Sacred Laws and Rules",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Sacred Laws and Rules",
+        "subcategory": null
+      },
+      "rationale": "The text establishes the religious status of Teos and its territory as sacred and inviolable in honor of the god Dionysus.",
+      "confidence": 0.9,
+      "quote": "περὶ τοῦ γενέσθαι τὴν καθιέρωσιν τῶι Διονύσωι τῆς τε πόλιος καὶ τῆς χώρας τῆς Τηίων καὶ τὴν ἀσυλίαν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "While the text does not explicitly name the object, diplomatic decrees of this nature were standardly inscribed on stone stelae for public display.",
+      "confidence": 0.5,
+      "quote": "κυδωνιατῶν.",
+      "is_ambiguous": true,
+      "ambiguity_note": "The object type is inferred from the genre and physical context of similar asylia decrees."
+    },
+    {
+      "label": "Damaged but Legible",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Legibility",
+        "category": "Damaged but Legible",
+        "subcategory": null
+      },
+      "rationale": "The text contains several lacunae that have been reconstructed by editors, indicating the stone surface is damaged but the majority of the content is recoverable.",
+      "confidence": 1.0,
+      "quote": "τῆι τε [συγγενείαι καὶ τῆι] ποτὶ τὸν θεὸν εὐσεβείαι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Polydotos",
+        "role": "Ambassador",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Polydotos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kolotas",
+        "role": "Ambassador",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kolotas",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Kydonia",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/589886",
+        "confidence": 1.0
+      },
+      {
+        "name": "Teos",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/550913",
+        "confidence": 1.0
+      },
+      {
+        "name": "Crete",
+        "type": "Region",
+        "uri": "https://pleiades.stoa.org/places/5066435",
+        "confidence": 0.8
+      }
+    ],
+    "deities": [
+      {
+        "name": "Dionysus",
+        "uri": "https://www.wikidata.org/wiki/Q41680",
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Kydonia",
+      "type": "Origin",
+      "uri": "https://pleiades.stoa.org/places/589886",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Teos",
+      "type": "Find-spot",
+      "uri": "https://pleiades.stoa.org/places/550913",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is an official diplomatic letter from the Cretan city of Kydonia to the Ionian city of Teos, dating to approximately 201 BC. It is part of a well-known series of decrees from various Greek cities recognizing the 'asylia' (inviolability) of Teos and its territory as sacred to Dionysus. The text emphasizes the ancestral kinship between the two peoples and confirms that the Kydonians will respect the sacred status of Teos, even providing legal recourse for Teians living among them. The presence of brackets in the transcription indicates that the stone is fragmentary but largely legible through restoration.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 201 BC ",
+  "date_min": -201.0,
+  "date_max": -201.0,
+  "date_circa": false
+}

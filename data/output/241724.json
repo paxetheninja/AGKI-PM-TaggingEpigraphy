@@ -1,0 +1,219 @@
+{
+  "phi_id": 241724,
+  "themes": [
+    {
+      "label": "Manumission Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Manumission Records",
+        "subcategory": null
+      },
+      "rationale": "The inscription records the sale of a slave named Lamia to Apollo Pythios, a standard legal fiction used at Delphi to grant freedom to a slave.",
+      "confidence": 1.0,
+      "quote": "ἀπέδοτο Νίκας ... τῶι Ἀπόλλωνι τῶι Πυθίωι σῶμα γυναικεῖον ... ἐλευθέρα εἶμεν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Contracts and Private Legal Acts",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Contracts and Private Legal Acts",
+        "subcategory": null
+      },
+      "rationale": "The text functions as a legal contract of sale, specifying the price of five silver minae and the conditions of the transaction.",
+      "confidence": 1.0,
+      "quote": "τιμᾶς ἀργυρίου μνᾶν πέντε",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Votive Dedications",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Votive Dedications",
+        "subcategory": null
+      },
+      "rationale": "The manumission is framed as a religious act where the slave is dedicated/sold to the god Apollo to ensure her status as untouchable and free.",
+      "confidence": 1.0,
+      "quote": "ἀπέδοτο ... τῶι Ἀπόλλωνι τῶι Πυθίωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The document is dated by the local archon and concludes with a formal list of witnesses who validate the legal act.",
+      "confidence": 1.0,
+      "quote": "ἄρχοντος Τεισαμενοῦ ... μάρτυροι Ἀρίστων ... Νικήτας ... Σωσίπατρος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Wall or Building Surface",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Wall or Building Surface"
+      },
+      "rationale": "Manumission records at Delphi were typically inscribed on the Polygonal Wall of the Sanctuary of Apollo.",
+      "confidence": 0.8,
+      "quote": "ρχοντος τεισ δα μην ς ποιτροπ ου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Teisamenos",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Teisamenos",
+        "confidence": 0.8
+      },
+      {
+        "name": "Nikas",
+        "role": "Seller",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nikas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Nikon",
+        "role": "Father of Nikas",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nikon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lamia",
+        "role": "Slave",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lamia",
+        "confidence": 1.0
+      },
+      {
+        "name": "Cleon",
+        "role": "Guarantor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Cleon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Thryeus",
+        "role": "Father of Cleon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Thryeus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Ariston",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ariston",
+        "confidence": 1.0
+      },
+      {
+        "name": "Damophanes",
+        "role": "Father of Ariston",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Damophanes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Nicetas",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nicetas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sosipatros",
+        "role": "Father of Nicetas",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sosipatros",
+        "confidence": 1.0
+      },
+      {
+        "name": "Heracleidas",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Heracleidas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eucleidas",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eucleidas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Calleidas",
+        "role": "Father of Eucleidas",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Calleidas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Archon",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Archon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Callicon",
+        "role": "Father of Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Callicon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eucretes",
+        "role": "Grandfather of Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eucretes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Leontis",
+        "role": "Party in penalty clause",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Leontis",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Delphi",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/540726",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Apollo Pythios",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Delphi",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/540726",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Phokis",
+      "type": "Region",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a Delphic manumission record dating to the late 2nd century BC. It documents the fictitious sale of a home-born slave named Lamia by her owner Nikas to the god Apollo Pythios for five silver minae. The contract includes a 'paramone' clause, requiring Lamia to remain in service to Nikas for the duration of the latter's life. The document specifies that Lamia shall be free and untouchable (anephaptos) after Nikas's death, and names Cleon as the legal guarantor (bebaioter) to protect her status against future claims of enslavement.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 140-100 BC",
+  "date_min": -140.0,
+  "date_max": -100.0,
+  "date_circa": false
+}

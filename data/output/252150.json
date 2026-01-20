@@ -1,0 +1,154 @@
+{
+  "phi_id": 252150,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text begins with the standard formula for a public decree 'it seemed good to the people' and outlines official decisions made by the council and assembly.",
+      "confidence": 1.0,
+      "quote": "δοξε τ ι δ μωι ο πρυτ νεις κα ο ε ρημ νοι π τ ς φυλακ ς ε παν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription honors Eirenias for his services to the city, including his diplomatic success and personal generosity.",
+      "confidence": 1.0,
+      "quote": "ψηφισαμ νου τ ς ρμοζο σας π το ς προειρημ νοις τιμ ς τ βασιλε κα πρεσβευτ ν ξαποστε λαντος ε ρην αν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Building Commemoration",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Building Commemoration",
+        "subcategory": null
+      },
+      "rationale": "The text mentions the construction and wood-fitting of a gymnasium funded by a royal gift of grain secured by the honorand.",
+      "confidence": 1.0,
+      "quote": "ε ς κατασκευ ν γυμνασ ου κα ξ λωσιν ε ς τ δεδηλωμ να",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The decree discusses financial matters, including a massive gift of grain (160,000 medimnoi) and tax exemptions (ateleia) for goods imported from Milesia.",
+      "confidence": 1.0,
+      "quote": "δο ναι τ ι π λει δωρε ν πυρ ν μεδ μνων μυρι δας δεκα ξ ... τ λειαν τ ι δ μωι π ντων τ ν κ τ ς μιλησ ας ε σαγομ νων",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Statue Base",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Statue Base"
+      },
+      "rationale": "The text explicitly mentions the erection of a golden statue and the inscription of the decree on its base.",
+      "confidence": 1.0,
+      "quote": "στ σαι δ α το κα ε κ να χρυσ ν ... ναγρ ψαι τ ψ φισμα τ δε ε ς τ ν β σιν τ ς ε κ νος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The text contains several lacunae and reconstructed sections, particularly towards the end.",
+      "confidence": 1.0,
+      "quote": "[- ποι σασθαι τ ν ναγ]γελ αν το ς μ ν γωνοθ [τας - το ς δ] βασιλε ς",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Eirenias",
+        "role": "Ambassador and honorand",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eirenias",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eumenes",
+        "role": "King of Pergamon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eumenes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Antiochus",
+        "role": "King",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antiochus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Antiochus",
+        "role": "Brother of the King",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antiochus",
+        "confidence": 0.8
+      }
+    ],
+    "places": [
+      {
+        "name": "Miletus",
+        "type": "City-state",
+        "uri": "https://pleiades.stoa.org/places/599799",
+        "confidence": 1.0
+      },
+      {
+        "name": "Milesia",
+        "type": "Region/Territory",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Dionysus",
+        "uri": "https://www.wikidata.org/wiki/Q41680",
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Miletus",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/599799",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This is a significant honorific decree from Miletus dating to the Hellenistic period. It honors Eirenias for his successful diplomatic missions to King Eumenes II of Pergamon and King Antiochus (likely Antiochus IV Epiphanes). Eirenias secured a donation of 160,000 medimnoi of grain for the construction of a gymnasium and obtained a tax exemption (ateleia) for Milesian agricultural products imported into the Seleucid kingdom. In recognition, the city awarded him a golden statue to be set up in a prominent place, with the announcement of honors to take place during the Dionysia festival. The text also mentions the role of the brother of King Antiochus in these negotiations.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

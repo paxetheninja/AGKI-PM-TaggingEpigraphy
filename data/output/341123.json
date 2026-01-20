@@ -1,0 +1,140 @@
+{
+  "phi_id": 341123,
+  "themes": [
+    {
+      "label": "Laws and Regulations",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Laws and Regulations",
+        "subcategory": null
+      },
+      "rationale": "The inscription establishes permanent regulations for the maintenance of the gymnasiarchy and the management of its associated funds, including penalties for those who attempt to abolish the office.",
+      "confidence": 1.0,
+      "quote": "[ν] τινες τ ν α νιον [γ]υμν[ασ]ιαρχ αν θελ σωσιν καταλ ειν κα τ χρ ματα α τ ς λαττο ν ναγε ς σ[τωσα]ν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The text details a specific endowment of 400,000 units and mandates the purchase of grain-bearing estates to fund the gymnasium.",
+      "confidence": 1.0,
+      "quote": "τ ν πρ σοδον τ ν τεσσαρ κοντα μυρι δων πρασσ τω δ μος μετ τ ν γυμνασι ρχων κα ξ α τ ς γοραζ τω κτ σεις σειτοφ ρους",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Sacred Laws and Rules",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Sacred Laws and Rules",
+        "subcategory": null
+      },
+      "rationale": "The inscription includes religious sanctions, declaring violators 'impure' (anageis), and mandates annual oaths to be taken by the ephebes and the people.",
+      "confidence": 0.9,
+      "quote": "μν τωσαν δ καθ καστον νιαυτ ν ο φηβοι ν τ ι γυμνασ ωι τ ν π τριον ρκον συνφυλ ξειν τ ν γυμνασιαρχ αν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text represents a formal civic decision or decree by the people (demos) and magistrates regarding the perpetual foundation of the gymnasiarchy.",
+      "confidence": 1.0,
+      "quote": "μν τω δ κα δ μος ν τ ι τ ν κατευχ ν μ ραι δι τ ν ρχ ντων κα το γραμματ [ω]ς το δ μου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription commemorates the generous foundation of Quintus Veranius Philagrus, naming the newly acquired estates after him to honor his legacy.",
+      "confidence": 0.8,
+      "quote": "[τ]ς δ κ[τ]σεις καλε σθαι τα τας γυμνασ[ια]ρχικ ς φιλαγριαν ς",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Quintus Veranius Philagrus",
+        "role": "Benefactor and founder of the endowment",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "The Emperor",
+        "role": "Roman Emperor and guarantor of the foundation",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Kibyra",
+        "type": "City",
+        "uri": null,
+        "confidence": 0.9
+      },
+      {
+        "name": "Gymnasium",
+        "type": "Building/Institution",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "The Augusti",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "The Gods",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Kibyra",
+      "type": "City",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Lycia",
+      "type": "Region",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription from Kibyra records a major foundation by Quintus Veranius Philagrus. It establishes a perpetual fund for the gymnasiarchy, supported by the purchase of agricultural lands. The text is highly legalistic, involving the Roman Emperor and Senate as guarantors of the foundation's integrity, and uses religious oaths and the threat of impurity to prevent future tampering with the funds. The language is formal and administrative, typical of the Roman imperial period in Asia Minor.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 72/73 AD ",
+  "date_min": 72.0,
+  "date_max": 73.0,
+  "date_circa": false
+}

@@ -1,0 +1,282 @@
+{
+  "phi_id": 62527,
+  "themes": [
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The inscription is a detailed financial account of the Amphictyons, recording interest payments, loans of sacred money, and deficits.",
+      "confidence": 1.0,
+      "quote": "ἔλλειμμα τόκου τῶν ἱερῶν χρημάτων ὧν ἐδάνεισαν ἀμφικτύονες",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The text lists various Athenian and Delian officials, including archons and secretaries who served during the accounting period.",
+      "confidence": 1.0,
+      "quote": "Ἀλκισθένους ἄρχοντος... οἷς ἐγραμμάτευεν Λυσίας",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Inventories",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Inventories",
+        "subcategory": null
+      },
+      "rationale": "The inscription mentions sacred objects such as crowns and tripods, which were part of the sanctuary's managed assets.",
+      "confidence": 1.0,
+      "quote": "στέφανος ἀριστεῖον τῶι θεῶι... τρίποδες",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Religious Festivals",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Religious Festivals",
+        "subcategory": null
+      },
+      "rationale": "The text details expenditures for religious festivals, including the transport of sacred ambassadors (theoroi) and choruses.",
+      "confidence": 0.9,
+      "quote": "εἰς κομιδὴν τῶν θεωρῶν καὶ τῶν χορῶν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Registers and Catalogues",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Registers and Catalogues",
+        "subcategory": null
+      },
+      "rationale": "The text includes a register of individuals and cities who paid interest or owed money to the sanctuary.",
+      "confidence": 1.0,
+      "quote": "οἵδε τῶν ἰδιωτῶν τὸν τόκον ἀπέδοσαν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The stoichedon arrangement and the nature of the public financial record indicate it was inscribed on a stone stele.",
+      "confidence": 1.0,
+      "quote": "θεοί",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "Public accounts of this nature in Delos and Athens were typically inscribed on marble.",
+      "confidence": 1.0,
+      "quote": "θεοί",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Alcisthenes",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Alcisthenes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Nausigenes",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nausigenes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Callias",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Callias",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lysias",
+        "role": "Secretary",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lysias",
+        "confidence": 1.0
+      },
+      {
+        "name": "Archippus",
+        "role": "Official",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Archippus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Nicoleos",
+        "role": "Official",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nicoleos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pausanias",
+        "role": "Official",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pausanias",
+        "confidence": 1.0
+      },
+      {
+        "name": "Diodorus",
+        "role": "Secretary",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Diodorus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Thrason",
+        "role": "Debtor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Thrason",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pasicles",
+        "role": "Debtor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pasicles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Artysileos",
+        "role": "Debtor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Artysileos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Theognetus",
+        "role": "Debtor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theognetus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Gryllus",
+        "role": "Debtor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Gryllus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Patrocles",
+        "role": "Debtor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Patrocles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Agasicles",
+        "role": "Debtor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Agasicles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Theocydes",
+        "role": "Debtor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theocydes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hypsocles",
+        "role": "Debtor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hypsocles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Antipatros",
+        "role": "Debtor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antipatros",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Delos",
+        "type": "Sanctuary/Island",
+        "uri": "https://pleiades.stoa.org/places/599587",
+        "confidence": 1.0
+      },
+      {
+        "name": "Athens",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      },
+      {
+        "name": "Tenos",
+        "type": "Island/City",
+        "uri": "https://pleiades.stoa.org/places/590073",
+        "confidence": 1.0
+      },
+      {
+        "name": "Paros",
+        "type": "Island/City",
+        "uri": "https://pleiades.stoa.org/places/599867",
+        "confidence": 1.0
+      },
+      {
+        "name": "Scambonidae",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Sphettus",
+        "type": "Deme",
+        "uri": "https://www.wikidata.org/wiki/Q13446048",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hyperboreans",
+        "type": "Region",
+        "uri": null,
+        "confidence": 0.9
+      }
+    ],
+    "deities": [
+      {
+        "name": "Apollo",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Delos",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/599587",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription represents the financial accounts of the Athenian Amphictyons on Delos between 372 and 367 BC. It records the administration of the sanctuary of Apollo, specifically focusing on the collection of interest from loans made to various Greek cities and private individuals. It also details expenditures for religious festivals, including the purchase of a crown and tripods, and mentions the transport of sacred offerings from the Hyperboreans. The text is a crucial source for understanding the economic and administrative control Athens exercised over the Delian sanctuary during the Second Athenian League.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 372-367 BC",
+  "date_min": -372.0,
+  "date_max": -367.0,
+  "date_circa": false
+}

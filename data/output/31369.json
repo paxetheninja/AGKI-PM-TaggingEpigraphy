@@ -1,0 +1,189 @@
+{
+  "phi_id": 31369,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text is a formal decree issued by the city of Kotyrta, as indicated by the standard formula 'it seemed good to the city'.",
+      "confidence": 1.0,
+      "quote": "δοξε τ ι πλει τ ν κοτυρτατ ν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription honors an individual by granting him the titles of proxenos and euergetes (benefactor) of the city.",
+      "confidence": 1.0,
+      "quote": "πρ]ξενον μεν κα ε εργ τ[αν] τ ς π λιος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The decree records a financial transaction where the honored individual provided an interest-free loan of money to the city.",
+      "confidence": 1.0,
+      "quote": "δανε[ σαι τ ι] π λει ργ ριον",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Agonistic / Victory Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Agonistic / Victory Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The decree mentions the privilege of proedria (front-row seating) at gymnastic games as part of the honors granted.",
+      "confidence": 0.8,
+      "quote": "ε ς προεδρ αν ν το ς [γυ]μνικο ς γ σιν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The text explicitly orders the decree to be inscribed on a stone stele.",
+      "confidence": 1.0,
+      "quote": "ε ς στ λαν λιθ ναν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Other Stone",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Other Stone"
+      },
+      "rationale": "The inscription describes the material as stone (lithinan) without specifying a particular type like marble or limestone.",
+      "confidence": 1.0,
+      "quote": "λιθ ναν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The text contains numerous lacunae and restored sections, indicating it is a fragmentary inscription.",
+      "confidence": 1.0,
+      "quote": "κ[ου] σωπ τας",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Damaged but Legible",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Legibility",
+        "category": "Damaged but Legible",
+        "subcategory": null
+      },
+      "rationale": "Despite the missing letters and surface damage, the core content and legal formulas of the decree remain legible.",
+      "confidence": 1.0,
+      "quote": " σοπο[λιτε]αν κα πινομ αν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Kratesis son of Kousopas",
+        "role": "Benefactor and Proxenos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kratesis%20son%20of%20Kousopas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eucratidas",
+        "role": "Eponymous Ephor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eucratidas",
+        "confidence": 0.9
+      },
+      {
+        "name": "Ephors",
+        "role": "City officials",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ephors",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Kotyrta",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/570378",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sanctuary of Apollo Hyperteleatas",
+        "type": "Sanctuary",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Asopos",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/570129",
+        "confidence": 0.8
+      }
+    ],
+    "deities": [
+      {
+        "name": "Apollo Hyperteleatas",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Laconia",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/570406",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Kotyrta",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/570378",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a proxeny decree from the Laconian city of Kotyrta. It honors a man named Kratesis son of Kousopas for his significant financial contribution to the city in the form of an interest-free loan. In recognition of his and his ancestors' services, the city grants him the titles of proxenos and euergetes. These honors include hereditary privileges such as asylia (inviolability), isopoliteia (equal citizenship rights), ateleia (tax exemption), and proedria (priority seating) at athletic games. The decree was to be inscribed on a stone stele and dedicated in the sanctuary of Apollo Hyperteleatas to ensure public visibility of the city's gratitude. The mention of the ephors 'around Eucratidas' serves as a dating formula.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

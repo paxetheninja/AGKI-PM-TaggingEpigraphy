@@ -1,0 +1,203 @@
+{
+  "phi_id": 283192,
+  "themes": [
+    {
+      "label": "Donor and Subscription Lists",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Donor and Subscription Lists",
+        "subcategory": null
+      },
+      "rationale": "The inscription records a list of individuals who promised or subscribed money for a specific public and religious project, specifically the gilding of statues.",
+      "confidence": 1.0,
+      "quote": "πηγγε λαντο ργ [ρι]ον [ ναπ δοτ]ον ε ς τ ν χρ σωσιν τ ν γαλμ των",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Votive Dedications",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Votive Dedications",
+        "subcategory": null
+      },
+      "rationale": "The funds collected were dedicated to the gilding of statues of the gods Apollo, Artemis, and Leto, reflecting a religious offering and piety.",
+      "confidence": 1.0,
+      "quote": "τ ν το π] λλωνος κα τ ς ρτ μιδος κα το παρθεν [νος κα τ ς] λητο ς",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The text consists primarily of a long list of citizens identified by their names and patronymics, serving as a public record of contributors.",
+      "confidence": 1.0,
+      "quote": "καστος τ ν πογεγραμμ νων [ δημ]οσθ νης λυσ ου πρεσβ τερος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "Subscription lists of this nature in the Letoion of Xanthos were typically inscribed on stone stelae for public display in the sanctuary.",
+      "confidence": 0.8,
+      "quote": "[ π ερ ως]νδροβ ου μην ς α δνα ου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The text contains numerous lacunae and reconstructed sections, indicating the physical state of the support is broken or damaged.",
+      "confidence": 1.0,
+      "quote": "[------]ος σειληνο πολλων δης δημ ου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Androbios",
+        "role": "Priest",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Androbios",
+        "confidence": 1.0
+      },
+      {
+        "name": "Demosthenes son of Lysias",
+        "role": "Donor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demosthenes%20son%20of%20Lysias",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hermenanis son of Hermenanis",
+        "role": "Donor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hermenanis%20son%20of%20Hermenanis",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hermelykos son of Soson",
+        "role": "Donor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hermelykos%20son%20of%20Soson",
+        "confidence": 1.0
+      },
+      {
+        "name": "Themistocles son of Hermaphilos",
+        "role": "Donor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Themistocles%20son%20of%20Hermaphilos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sarpedon",
+        "role": "Donor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sarpedon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Mausolos son of Mausolos",
+        "role": "Donor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Mausolos%20son%20of%20Mausolos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Leonides",
+        "role": "Donor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Leonides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lalla daughter of Leonides",
+        "role": "Donor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lalla%20daughter%20of%20Leonides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Chrysogonos son of Tlepolemos",
+        "role": "Donor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Chrysogonos%20son%20of%20Tlepolemos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lyson son of Ptolemy",
+        "role": "Donor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lyson%20son%20of%20Ptolemy",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Xanthos",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/639166",
+        "confidence": 0.9
+      },
+      {
+        "name": "Lycia",
+        "type": "Region",
+        "uri": "https://pleiades.stoa.org/places/638965",
+        "confidence": 0.9
+      },
+      {
+        "name": "Letoion",
+        "type": "Sanctuary",
+        "uri": null,
+        "confidence": 0.9
+      }
+    ],
+    "deities": [
+      {
+        "name": "Apollo",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Artemis",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Leto",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Athena",
+        "uri": null,
+        "confidence": 0.9
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Xanthos",
+      "type": "Findspot",
+      "uri": "https://pleiades.stoa.org/places/639166",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a subscription list (epidosis) from the sanctuary of Leto (Letoion) near Xanthos. It dates to the 2nd century BC and records contributions from citizens for the 'chrysosis' (gilding) of the cult statues of the Letoid triad: Apollo, Artemis, and Leto, as well as the Parthenos (Athena). The preamble emphasizes the donors' piety (eusebeia) and their honorable disposition toward the people (demos). The list includes many names typical of the Lycian region, some showing Greek influence and others indigenous or Persian-influenced onomastics. The text is dated by the priesthood of Androbios and the month of Audnaios.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " mid. or 2nd half 2nd c. BC ",
+  "date_min": -150.0,
+  "date_max": -101.0,
+  "date_circa": true
+}

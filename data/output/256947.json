@@ -1,0 +1,132 @@
+{
+  "phi_id": 256947,
+  "themes": [
+    {
+      "label": "Official Letters",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Official Letters",
+        "subcategory": null
+      },
+      "rationale": "The text is a formal letter from Marcus Ulpius Appuleius Eurycles, the High Priest of Asia, addressed to the magistrates, council, and people of Aphrodisias regarding administrative matters.",
+      "confidence": 1.0,
+      "quote": "μ ρκος ο λπιος ππουλ ος ε ρυκλ ς ρχιερε ς σ ας ... φροδισ[ι] ων ρχουσι βουλ δ μ χα ρε[ι]ν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The inscription provides a detailed financial breakdown of an endowment, including the principal sum and accumulated interest in denarii for the funding of games.",
+      "confidence": 1.0,
+      "quote": "κεφαλε ου δηναρ ων μυρι δας τρε ς δην ρια χε λια κτωκ σια τρι κοντα νν α",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Agonistic / Victory Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Agonistic / Victory Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The document concerns the establishment and scheduling of musical games (agon) and mentions the Barbilleia games in Ephesus to coordinate the timing.",
+      "confidence": 1.0,
+      "quote": "μουσικ ν γ να καθ τ διαθεμ ν δοξεν ... π [βαρ]βιλλ ων τ ν ν φ σ [ γομ νων]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Contracts and Private Legal Acts",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Contracts and Private Legal Acts",
+        "subcategory": null
+      },
+      "rationale": "The funding for the games is based on the legal provisions found in the will (testament) of Flavius Lysimachus, which the High Priest is implementing.",
+      "confidence": 1.0,
+      "quote": " γ ν μ ν δ κ τ ν φλαβ ου λυσιμ χου διαθηκ ν προελ λυθεν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Marcus Ulpius Appuleius Eurycles",
+        "role": "High Priest of Asia",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Marcus%20Ulpius%20Appuleius%20Eurycles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Marcus Aurelius Commodus Antoninus Augustus",
+        "role": "Roman Emperor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Marcus%20Aurelius%20Commodus%20Antoninus%20Augustus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Flavius Lysimachus",
+        "role": "Testator and Benefactor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Flavius%20Lysimachus",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Aphrodisias",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/638753",
+        "confidence": 1.0
+      },
+      {
+        "name": "Smyrna",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/550893",
+        "confidence": 1.0
+      },
+      {
+        "name": "Ephesus",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/599612",
+        "confidence": 1.0
+      },
+      {
+        "name": "Asia",
+        "type": "Roman Province",
+        "uri": "https://pleiades.stoa.org/places/599527",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Tyche",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Aphrodisias",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/638753",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is an official letter from the High Priest of Asia, Marcus Ulpius Appuleius Eurycles, to the city of Aphrodisias. It deals with the administrative and financial arrangements for a musical contest (agon) established by the will of Flavius Lysimachus. The text includes specific financial figures for the endowment and coordinates the timing of the local games with the prestigious Barbilleia games in Ephesus, while also expressing loyalty to the Emperor Commodus. The text is fragmentary due to several lacunae, though the primary content remains legible.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

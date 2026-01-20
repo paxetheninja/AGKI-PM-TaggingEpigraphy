@@ -1,0 +1,183 @@
+{
+  "phi_id": 3224,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text is a formal decree of the Athenian Demos, indicated by the standard formula 'ἔδοξεν τῶι δήμωι' (it was decided by the people).",
+      "confidence": 1.0,
+      "quote": "δοξεν τ ι δ μωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription honors the prytaneis of the tribe Erechtheis with praise and a golden crown for their service to the state.",
+      "confidence": 1.0,
+      "quote": "[ο τε ν μοι κα τ ψηφ σματα το δ μου παιν σ]αι το ς πρυτ νεις τ ς ρε[χθε δος κα στεφαν σαι α το ς χρυσ ι στεφ νωι κ]ατ τ ν ν μον",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Sacrifices",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Rituals and Ceremonies",
+        "subcategory": "Sacrifices"
+      },
+      "rationale": "The decree reports on the successful performance of sacrifices to Apollo and other gods for the safety of the Council and the People.",
+      "confidence": 1.0,
+      "quote": "[ π ρ ν παγγ λλου]σιν ο πρυτ νεις τ ς ρε[χθε δος π ρ τ ν θυσι ν ν θυον τ πρ τ ν κ]κλησι ν τ ι τε π λλωνι [τ ι προστατηρ ωι κα το ς λλοις θεο ς ο ς π τριον]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The text explicitly commands the recording of the decree on a stone stele to be set up in the Prytanikon.",
+      "confidence": 1.0,
+      "quote": "ναγρ ψ[αι] [δ τ δε τ ψ φισμα τ ν γραμματ α τ ν κατ πρυτ]ανε αν ε ς στ λην λιθ [νην]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "While the text uses the generic term for stone (lithinen), Athenian state decrees of this period were almost exclusively inscribed on marble.",
+      "confidence": 0.8,
+      "quote": "στ λην λιθ [νην]",
+      "is_ambiguous": true,
+      "ambiguity_note": "The text specifies 'stone' (lithinen), but marble is the standard material for Athenian state decrees of this period."
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The text contains significant lacunae and restorations, indicating the original stone is in a fragmentary state.",
+      "confidence": 1.0,
+      "quote": "[ π νικοδ μου ρχοντος π τ ς α γε δος τρ]της πρυτανε ας",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Nikodemos",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nikodemos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Epigenes son of Epigonos",
+        "role": "Secretary",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Epigenes%20son%20of%20Epigonos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Timon son of Theopompos",
+        "role": "Chairman of the Proedroi",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Timon%20son%20of%20Theopompos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aphrodisios son of Aphrodisios",
+        "role": "Proposer of the decree",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aphrodisios%20son%20of%20Aphrodisios",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Athens",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      },
+      {
+        "name": "Oinoe",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580039",
+        "confidence": 1.0
+      },
+      {
+        "name": "Paiania",
+        "type": "Deme",
+        "uri": "https://www.wikidata.org/wiki/Q1236193",
+        "confidence": 1.0
+      },
+      {
+        "name": "Azenia",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579890",
+        "confidence": 1.0
+      },
+      {
+        "name": "Theater of Dionysus",
+        "type": "Building",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Prytanikon",
+        "type": "Building",
+        "uri": "https://pleiades.stoa.org/places/720198157",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Apollo Prostaterios",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Agathe Tyche",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579885",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This is an Athenian honorific decree dated to the archonship of Nikodemos (122/1 BC). It records the report of the prytaneis of the tribe Erechtheis regarding sacrifices made to Apollo Prostaterios and other deities for the welfare of the Council, the People, and their allies. In recognition of their diligent administration and religious duties, the Demos votes to praise and crown the prytaneis, ordering the decree to be set up on a stone stele in the Prytanikon.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

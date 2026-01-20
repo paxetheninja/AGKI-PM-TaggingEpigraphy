@@ -1,0 +1,327 @@
+{
+  "phi_id": 65049,
+  "themes": [
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The inscription contains an extensive list of individuals categorized by their roles, including the gymnasiarch, hieropoioi (sacred officials), and ephebes (young men in training).",
+      "confidence": 1.0,
+      "quote": "[λ]εων δης θηναγ ρου μελιτε ς γυμνασιαρχ σας... το ς εροποι σαντας... φηβος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Commemorative Monuments",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Commemorative Monuments",
+        "subcategory": null
+      },
+      "rationale": "The text serves to commemorate the service of Leonides as gymnasiarch and the participation of the ephebes in religious and civic duties during a specific archonship.",
+      "confidence": 0.8,
+      "quote": "[λ]εων δης θηναγ ρου μελιτε ς γυμνασιαρχ σας ν τ ι π θεαι[τ] του ρχοντος νιαυτ ι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Votive Dedications",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Votive Dedications",
+        "subcategory": null
+      },
+      "rationale": "The inscription records the performance of sacred duties and the carrying of the ritual basket (kanoun) for the gods Heracles and Zeus, likely dedicated within a sanctuary context.",
+      "confidence": 0.8,
+      "quote": "κα ο δε λαβον τ κανο ν το ρακλ ους... το δι ς",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The format and length of the list are characteristic of a public stele erected in a sanctuary or gymnasium, as indicated by the verb 'anegrapsen' (recorded/inscribed).",
+      "confidence": 0.8,
+      "quote": "ν γραψεν το ς εροποι σαντας",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "Inscriptions of this nature on Delos were typically carved on marble slabs or stelae, though the material is not explicitly named in the text.",
+      "confidence": 0.5,
+      "quote": "ν γραψεν",
+      "is_ambiguous": true,
+      "ambiguity_note": "Material is inferred from regional archaeological standards rather than explicit text."
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The text contains numerous lacunae and broken lines, particularly in the latter half of the list.",
+      "confidence": 1.0,
+      "quote": "[---]αν ναφλ σ[τιον] λυ[κ]σ[κον -----]νεων[----]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Leonides",
+        "role": "Gymnasiarch",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Leonides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Athenagoras",
+        "role": "Father of Leonides",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Athenagoras",
+        "confidence": 1.0
+      },
+      {
+        "name": "Theaitetos",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theaitetos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pausanias",
+        "role": "Hieropoios",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pausanias",
+        "confidence": 1.0
+      },
+      {
+        "name": "Zenon",
+        "role": "Hieropoios",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Zenon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Apollonius",
+        "role": "Hieropoios",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Apollonius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Menander",
+        "role": "Hieropoios",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Menander",
+        "confidence": 1.0
+      },
+      {
+        "name": "Metrodorus",
+        "role": "Hieropoios",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Metrodorus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Heracleitus",
+        "role": "Hieropoios",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Heracleitus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dionysius",
+        "role": "Hieropoios",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dionysius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Demostratus",
+        "role": "Ephebe",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demostratus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Diodotus",
+        "role": "Ephebe",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Diodotus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phormion",
+        "role": "Ephebe",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Phormion",
+        "confidence": 1.0
+      },
+      {
+        "name": "Gorgias",
+        "role": "Ephebe",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Gorgias",
+        "confidence": 1.0
+      },
+      {
+        "name": "Gaius",
+        "role": "Ephebe",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Gaius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Spurius",
+        "role": "Ephebe",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Spurius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristonicus",
+        "role": "Ephebe",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristonicus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Theon",
+        "role": "Ephebe",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Agasias",
+        "role": "Ephebe",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Agasias",
+        "confidence": 1.0
+      },
+      {
+        "name": "Asclepiades",
+        "role": "Ephebe",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Asclepiades",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Delos",
+        "type": "Island",
+        "uri": "https://pleiades.stoa.org/places/599587",
+        "confidence": 1.0
+      },
+      {
+        "name": "Melite",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/582863",
+        "confidence": 1.0
+      },
+      {
+        "name": "Marathon",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580021",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sounion",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580107",
+        "confidence": 1.0
+      },
+      {
+        "name": "Paiania",
+        "type": "Deme",
+        "uri": "https://www.wikidata.org/wiki/Q1236193",
+        "confidence": 1.0
+      },
+      {
+        "name": "Myrrhinous",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580030",
+        "confidence": 1.0
+      },
+      {
+        "name": "Anaphlystos",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579866",
+        "confidence": 1.0
+      },
+      {
+        "name": "Smyrna",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/550893",
+        "confidence": 1.0
+      },
+      {
+        "name": "Berytus",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/678060",
+        "confidence": 1.0
+      },
+      {
+        "name": "Megalopolis",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/629075",
+        "confidence": 1.0
+      },
+      {
+        "name": "Nicomedia",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/511337",
+        "confidence": 1.0
+      },
+      {
+        "name": "Antioch",
+        "type": "City",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Byzantium",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/520985",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eleutherna",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/589772",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Heracles",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Zeus",
+        "uri": "https://www.wikidata.org/wiki/Q34201",
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Delos",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/599587",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription from Delos, dated to the archonship of Theaitetos (144/3 BC), records the gymnasiarchy of Leonides. It provides a detailed list of sacred officials (hieropoioi) and ephebes who participated in religious rites, specifically the carrying of the sacred basket (kanoun) for Heracles and Zeus. The list is notable for its inclusion of both Athenian citizens (identified by demes like Melite and Marathon) and foreigners (ethnics from Smyrna, Berytus, and even Roman names like Gaius and Spurius), illustrating the international character of Delian society in the mid-2nd century BC.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 144/3 BC",
+  "date_min": -144.0,
+  "date_max": -143.0,
+  "date_circa": false
+}

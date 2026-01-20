@@ -1,0 +1,258 @@
+{
+  "phi_id": 233181,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The inscription is a formal resolution passed by the Athenian Council (Boule), as indicated by the standard formulaic language of Athenian decrees.",
+      "confidence": 1.0,
+      "quote": "βουλ ς ψηφ σματα",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The text records the decision to crown and praise specific individuals for their justice and virtue in the performance of their duties.",
+      "confidence": 1.0,
+      "quote": "στεφανο ν γαθε τ χει δεδ χθαι τε βουλε[ παιν σαι ... δικαιοσ νης νεκεν κα καλοκαγαθ ας νεκεν]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Inventories",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Inventories",
+        "subcategory": null
+      },
+      "rationale": "The inscription includes a detailed list of items, including cups, tripods, and vessels, some of which were sent by Queen Laodice.",
+      "confidence": 1.0,
+      "quote": "τ π ντα κοτυλ δα τριπ δων κα τ δε τ ν ποσταλ ντων π τ ς βασιλ σσης λαοδ κης",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The text mentions the submission of accounts to the Metroon and the reimbursement of expenses related to the production of the stele.",
+      "confidence": 1.0,
+      "quote": "καταβ βληνται δ κα λ γους ε ς τ μητρ ιον ... το γεν μενον ν λωμα",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The decree explicitly orders the text to be inscribed on a stone stele.",
+      "confidence": 1.0,
+      "quote": "ναγρ ψαι δ τ δε τ ψ φισμα τ ν γραμμ τ α τ ν κατ πρυταν εαν ε ς τ ν στ λην",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "Public decrees in the Athenian Agora during this period were almost exclusively inscribed on marble.",
+      "confidence": 0.8,
+      "quote": "στ λην",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The text contains numerous lacunae and reconstructed sections, indicating the physical state of the support is broken.",
+      "confidence": 1.0,
+      "quote": "[--------] διι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Hippias",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hippias",
+        "confidence": 1.0
+      },
+      {
+        "name": "Theodosius",
+        "role": "Secretary",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theodosius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Xenophantus",
+        "role": "Father of the Secretary",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Xenophantus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Paralus",
+        "role": "Chairman of the Proedroi",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Paralus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Harpalus",
+        "role": "Father of Paralus",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Harpalus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lacrates",
+        "role": "Proposer of the decree",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lacrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Mentor",
+        "role": "Father of Lacrates",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Mentor",
+        "confidence": 1.0
+      },
+      {
+        "name": "Laodice",
+        "role": "Queen and benefactor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Laodice",
+        "confidence": 1.0
+      },
+      {
+        "name": "Monocrates",
+        "role": "Honored official",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Monocrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Simalus",
+        "role": "Honored official",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Simalus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Simus",
+        "role": "Father of Simalus",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Simus",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Athens",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lamptrai",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Sypalettos",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580112",
+        "confidence": 1.0
+      },
+      {
+        "name": "Perithoidai",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580068",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phrearrhioi",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580077",
+        "confidence": 1.0
+      },
+      {
+        "name": "Myrrhinoutta",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Tholos",
+        "type": "Building",
+        "uri": "https://pleiades.stoa.org/places/91288718",
+        "confidence": 1.0
+      },
+      {
+        "name": "Skias",
+        "type": "Building",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Metroon",
+        "type": "Archive/Building",
+        "uri": "https://pleiades.stoa.org/places/845017",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pandionis",
+        "type": "Tribe",
+        "uri": "https://pleiades.stoa.org/places/391233695",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Zeus",
+        "uri": "https://www.wikidata.org/wiki/Q34201",
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579885",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is an Athenian decree from the early 2nd century BC. It honors a committee or group of officials who were responsible for the replacement and maintenance of equipment (specifically bedding/coverings) in the Tholos (also called the Skias), which served as the dining hall for the prytaneis. The text is significant for its inventory of sacred and public property, including luxury items like tripods and cups donated by the Seleucid Queen Laodice, and for its administrative details regarding the filing of accounts in the Metroon.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 181/80 a. ",
+  "date_min": -181.0,
+  "date_max": -180.0,
+  "date_circa": false
+}

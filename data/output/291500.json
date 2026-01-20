@@ -1,0 +1,173 @@
+{
+  "phi_id": 291500,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text is a formal decree of the Council of the Areopagus and the Boule, using standard formulas such as 'it seemed good to' and 'motion'.",
+      "confidence": 1.0,
+      "quote": "ἔδοξεν τῇ ἐξ Ἀρείου Πάγου βουλῇ",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription records extensive honors granted to Marcus Ulpius Eubiotus and his sons, including statues, crowns, and front-row seating.",
+      "confidence": 1.0,
+      "quote": "ἐπαινέσαι τὸν λαμπρότατον ὑπατικὸν... Μᾶρκον Οὔλπιον Εὐβίοτον Λεῦρον Γαργήττιον εὐεργετήσαντα τοὺς πολείτας",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Agonistic / Victory Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Agonistic / Victory Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The text mentions honors related to the Great Panathenaia and Dionysiac games, including the right of proedria (front-row seating).",
+      "confidence": 1.0,
+      "quote": "ἀγωνοθετεῖν τῶν Παναθηναίων τῶν μεγάλων... εἰσκλήσεως εἰς τοὺς Διονυσιακοὺς ἀγῶνας",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The inscription details a massive financial contribution of 250,000 units (likely drachmae or modii) for the grain supply during a shortage.",
+      "confidence": 1.0,
+      "quote": "διασωσάμενον αὐτὴν ἐν σπάνει μεγάλῃ διὰ χρήματα σειτωνικὰ ἀθρόως ἔδωκεν πέντε καὶ εἴκοσι μυριάδας",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The decree explicitly orders the recording of the honors on stone steles.",
+      "confidence": 1.0,
+      "quote": "στήλας λιθίνας δύο ἀναγεγραμμένας",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "The mention of 'lithinas' (stone) steles in an Athenian context of this period typically refers to marble.",
+      "confidence": 0.8,
+      "quote": "στήλας λιθίνας",
+      "is_ambiguous": true,
+      "ambiguity_note": "The text uses the general term for stone, though marble is the standard material for such decrees in Athens."
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The text contains numerous lacunae and reconstructed sections, indicating it is not fully intact.",
+      "confidence": 1.0,
+      "quote": "[------------- καθ’ ἅπαξ ἀνυπέρβ]λητ[ον]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Marcus Ulpius Eubiotus Leurus Gargettius",
+        "role": "Honorand, Consular, Eponymous Archon, and Benefactor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Marcus%20Ulpius%20Eubiotus%20Leurus%20Gargettius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Marcus Ulpius Tisamenus",
+        "role": "Son of the honorand",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Marcus%20Ulpius%20Tisamenus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pupienus Maximus",
+        "role": "Son of the honorand",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pupienus%20Maximus",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Athens",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      },
+      {
+        "name": "Gargettos",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579935",
+        "confidence": 1.0
+      },
+      {
+        "name": "Attica",
+        "type": "Region",
+        "uri": "https://pleiades.stoa.org/places/579888",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Athena",
+        "uri": null,
+        "confidence": 0.8
+      },
+      {
+        "name": "Dionysus",
+        "uri": "https://www.wikidata.org/wiki/Q41680",
+        "confidence": 0.8
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/579885",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This is a significant Athenian decree from the early 3rd century AD honoring Marcus Ulpius Eubiotus, a prominent benefactor and consular. The text highlights his extraordinary generosity during a grain shortage (sitoneia), for which he and his sons received unprecedented honors, including bronze statues in the Synedrion and Prytaneion, and special seating at the Panathenaic and Dionysiac games. It reflects the social and political structure of Roman Athens, mentioning the Areopagus, the Boule, and various religious officials like the Hierophant, Exegetai, and Manteis.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 229/30 or 230/1 AD",
+  "date_min": 230.0,
+  "date_max": 231.0,
+  "date_circa": true
+}

@@ -1,0 +1,158 @@
+{
+  "phi_id": 256418,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text records a formal decision by the people (demos) and mentions the enactment of a decree (psephisma) regarding honors and the status of the city.",
+      "confidence": 1.0,
+      "quote": "τὸ δὲ [ψη]φισ[μένον συν]τελῆται",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription honors King Antiochus and Queen Laodice for their benefactions, including the declaration of the city as sacred and tax-free.",
+      "confidence": 1.0,
+      "quote": "τιμὰς τὰς πρὸς [τ]ούτους κα[τὰ] τὰς εὐεργεσίας",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Official Letters",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Official Letters",
+        "subcategory": null
+      },
+      "rationale": "The text references letters sent by the king to the people regarding the embassy and the city's status.",
+      "confidence": 1.0,
+      "quote": "ἐπιστείλας δὲ πρὸς τὸν δῆμον",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Sacred Laws and Rules",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Sacred Laws and Rules",
+        "subcategory": null
+      },
+      "rationale": "The inscription formally declares the city and its territory to be sacred, inviolable (asylia), and free from taxation.",
+      "confidence": 1.0,
+      "quote": "ἀνῆκε τὴ[ν] πόλιν καὶ τὴν χώραν ἡμῶν ἱερὰν καὶ ἄσυλον καὶ ἀφορολόγητον",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Votive Dedications",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Votive Dedications",
+        "subcategory": null
+      },
+      "rationale": "The decree orders the creation and dedication of marble statues of the king and queen to be placed alongside the statue of Dionysus.",
+      "confidence": 1.0,
+      "quote": "παραστῆσαι τῶι ἀγάλματ[ι] τοῦ Διονύσου ἀγάλματα μαρμάρινα",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Antiochus III",
+        "role": "King",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antiochus%20III",
+        "confidence": 1.0
+      },
+      {
+        "name": "Laodice III",
+        "role": "Queen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Laodice%20III",
+        "confidence": 1.0
+      },
+      {
+        "name": "Attalus I",
+        "role": "King",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Attalus%20I",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dionysius",
+        "role": "Ambassador",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dionysius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hermagoras",
+        "role": "Ambassador",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hermagoras",
+        "confidence": 1.0
+      },
+      {
+        "name": "Epimenes",
+        "role": "Ambassador",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Epimenes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Theodorus son of Zopyrus",
+        "role": "Ambassador",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theodorus%20son%20of%20Zopyrus",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Taurus",
+        "type": "Mountain Range",
+        "uri": "https://pleiades.stoa.org/places/148211",
+        "confidence": 1.0
+      },
+      {
+        "name": "Teos",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/550913",
+        "confidence": 0.8
+      }
+    ],
+    "deities": [
+      {
+        "name": "Dionysus",
+        "uri": "https://www.wikidata.org/wiki/Q41680",
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Teos, Ionia",
+      "type": "Findspot",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a significant Hellenistic decree from Teos concerning the grant of asylia (inviolability) and aphorologia (tax exemption) by King Antiochus III the Great. It details the diplomatic exchange between the city and the Seleucid court, the role of the Artists of Dionysus (technitai), and the subsequent honors, specifically marble statues, voted for the royal couple. The text mentions the transition of the city's obligations from King Attalus I to Antiochus and the restoration of the city's affairs to a beneficial state following continuous wars.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

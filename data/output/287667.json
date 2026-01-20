@@ -1,0 +1,148 @@
+{
+  "phi_id": 287667,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text explicitly mentions the decision of the council and the people (dedochthai tei boulei kai toi demōi) and refers to itself as a decree (psephisma).",
+      "confidence": 1.0,
+      "quote": "δεδ χθαι τ ι βουλ ι κα",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription honors foreign judges and cities with praise, crowns, and the titles of proxenos and benefactor.",
+      "confidence": 1.0,
+      "quote": "[προξ νους κα ε εργ τας το] δ μου το λι ων",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Agonistic / Victory Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Agonistic / Victory Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The decree mandates the public announcement of the honors during a gymnic contest and mentions an agonothete.",
+      "confidence": 1.0,
+      "quote": "[στεφαν σαι δ κα α το ς ν το ς] λι οις ν τ ι γυμνικ [ι] [ γ νι]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The text specifies payments or expenses in Alexandrian drachmas for the judges and the prytaneis.",
+      "confidence": 1.0,
+      "quote": "[ δραχμ ς] λεξανδρε ας",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The decree orders the text to be inscribed on a stele of white stone.",
+      "confidence": 1.0,
+      "quote": "[τ δε τ ψ φισμα ε ς στ]λην λευκο λ θου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "The 'white stone' (leukou lithou) mentioned in the text is a standard epigraphic term for marble.",
+      "confidence": 0.8,
+      "quote": "λευκο λ θου",
+      "is_ambiguous": true,
+      "ambiguity_note": "While 'white stone' usually refers to marble in this region and period, it can occasionally denote high-quality limestone."
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Scythes",
+        "role": "Agonothete",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Scythes",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Ilion",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/530898",
+        "confidence": 1.0
+      },
+      {
+        "name": "Rhodes",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/590031",
+        "confidence": 1.0
+      },
+      {
+        "name": "Chios",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/550496",
+        "confidence": 1.0
+      },
+      {
+        "name": "Delos",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/599587",
+        "confidence": 1.0
+      },
+      {
+        "name": "Paros",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/599867",
+        "confidence": 1.0
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Ilion",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/530898",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This 3rd-century BC decree from Ilion honors foreign judges from Rhodes, Chios, Delos, and Paros for their fair arbitration of legal disputes. It grants them proxeny and benefactor status, orders their crowning at the gymnic games, and provides for the financial costs of their stay (in Alexandrian drachmas) and the publication of the decree on a marble stele.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

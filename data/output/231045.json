@@ -1,0 +1,203 @@
+{
+  "phi_id": 231045,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text is explicitly identified as a 'psephisma' (decree) of the Athenian people, using standard formulas like 'edoxen toi demoi'.",
+      "confidence": 1.0,
+      "quote": "δ μου ψ φισ]μα ... δοξεν [τ ι δ μωι]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The decree honors the prytaneis for their service and piety, awarding them a golden crown.",
+      "confidence": 1.0,
+      "quote": "π[α]ιν σαι το[ ς πρυτ νεις τ ς --- δος] κα στεφαν σαι χρυσ ι στεφ νω[ι]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Sacrifices",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Sacrifices",
+        "subcategory": null
+      },
+      "rationale": "The text records the report of the prytaneis regarding sacrifices performed to Apollo Prostaterios and Artemis Boulaia according to ancestral custom.",
+      "confidence": 1.0,
+      "quote": "π ρ τ ν θυσι ν ν θυον τ τ[ε πρ τ ν κκλησι ν τ ι π λλω]νι τ ι προστατηρ [ωι] κα τε ρτ μ[ιδι τε βουλα αι κα το ς λ]λοις θεο ς [ο ς] π τριον",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The decree specifies that it should be inscribed on a stone stele.",
+      "confidence": 1.0,
+      "quote": "γραμ[μ]ατ α ... ν στ ληι λιθ νηι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stone",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": null
+      },
+      "rationale": "The text explicitly mentions a 'lithine' (stone) stele for the inscription.",
+      "confidence": 1.0,
+      "quote": "ν στ ληι λιθ νηι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The inscription contains numerous lacunae and reconstructed sections, particularly in the opening formulas.",
+      "confidence": 1.0,
+      "quote": "[ π συμμ]χου ρχοντος π [τ ς ---- κτης πρυτανε α]ς",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Damaged but Legible",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Legibility",
+        "category": "Damaged but Legible",
+        "subcategory": null
+      },
+      "rationale": "Despite the damage, the primary administrative and honorific content remains decipherable through standard epigraphic reconstruction.",
+      "confidence": 1.0,
+      "quote": "σουνιε ς ε πεν π ρ ν παγγ λλ[ουσιν ο πρυτ νεις τ ς ---]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Symmachus",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Symmachus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Archicles",
+        "role": "Secretary",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Archicles",
+        "confidence": 0.8
+      },
+      {
+        "name": "Theodorus",
+        "role": "Father of Secretary",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theodorus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Philon",
+        "role": "Presiding Officer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Anonymous speaker from Sunium",
+        "role": "Speaker",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Anonymous%20speaker%20from%20Sunium",
+        "confidence": 0.9
+      }
+    ],
+    "places": [
+      {
+        "name": "Athens",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      },
+      {
+        "name": "Piraeus",
+        "type": "Port",
+        "uri": "https://pleiades.stoa.org/places/580062",
+        "confidence": 1.0
+      },
+      {
+        "name": "Thoricus",
+        "type": "Deme",
+        "uri": "https://www.wikidata.org/wiki/Q353184",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phrearrhioi",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580077",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sunium",
+        "type": "Deme",
+        "uri": "https://www.wikidata.org/wiki/Q1136637",
+        "confidence": 1.0
+      },
+      {
+        "name": "Prytanikon",
+        "type": "Building",
+        "uri": "https://pleiades.stoa.org/places/720198157",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Apollo",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Artemis",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579885",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This is an Athenian honorific decree from the archonship of Symmachus (188/7 BC). It records the report of the prytaneis regarding sacrifices made to Apollo Prostaterios, Artemis Boulaia, and other gods. The people voted to honor the prytaneis with a golden crown for their piety and diligent administration of the assembly and council. The decree was ordered to be set up on a stone stele in the Prytanikon.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

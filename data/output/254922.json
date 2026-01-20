@@ -1,0 +1,820 @@
+{
+  "phi_id": 254922,
+  "themes": [
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The inscription records specific monetary amounts in staters associated with a long list of individuals, concluding with a statement that these sums have been paid or rendered.",
+      "confidence": 1.0,
+      "quote": "στατῆρας ... ταῦτα ἀποδίδοται",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Donor and Subscription Lists",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Donor and Subscription Lists",
+        "subcategory": null
+      },
+      "rationale": "The repetitive structure of names followed by a currency amount is characteristic of a public subscription list (epidosis) where citizens contribute to a common fund or project.",
+      "confidence": 0.8,
+      "quote": "πυθαγόρας δημοκράνου στατῆρας ... διονύσιος πολλοφάνου στατῆρας",
+      "is_ambiguous": true,
+      "ambiguity_note": "While it resembles a subscription list, it could also represent a tax register or a record of fines."
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The text serves as a formal register of citizens, identified by their names and patronymics, participating in a financial transaction.",
+      "confidence": 0.9,
+      "quote": "μνησίλοχος ἀνδροσθένους ... πουλυδάμας πρυτάνιος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Critippus",
+        "role": "Payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Critippus",
+        "confidence": 0.8
+      },
+      {
+        "name": "Pythagoras",
+        "role": "Payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pythagoras",
+        "confidence": 1.0
+      },
+      {
+        "name": "Democranes",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Democranes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dionysius",
+        "role": "Payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dionysius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Apollophanes",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Apollophanes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Leophanes",
+        "role": "Payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Leophanes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lamprus",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lamprus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pelles",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pelles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Mnesilochus",
+        "role": "Payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Mnesilochus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Androsthenes",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Androsthenes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Alexander",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Alexander",
+        "confidence": 1.0
+      },
+      {
+        "name": "Polydamas",
+        "role": "Payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Polydamas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Prytanis",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Prytanis",
+        "confidence": 1.0
+      },
+      {
+        "name": "Menecrates",
+        "role": "Payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Menecrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aspasius",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aspasius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Theocles",
+        "role": "Payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theocles",
+        "confidence": 0.8
+      },
+      {
+        "name": "Perigenes",
+        "role": "Payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Perigenes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hegemon",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hegemon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Leomedon",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Leomedon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Micion",
+        "role": "Payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Micion",
+        "confidence": 1.0
+      },
+      {
+        "name": "Metrodorus",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Metrodorus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Tharsynon",
+        "role": "Payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Tharsynon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Polycharmus",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Polycharmus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Archippus",
+        "role": "Payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Archippus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Polemon",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Polemon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Heracleitus",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Heracleitus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Agesarchus",
+        "role": "Payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Agesarchus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Theognetus",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theognetus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hipponicus",
+        "role": "Payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hipponicus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pyrrhus",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pyrrhus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aganax",
+        "role": "Payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aganax",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hermodromus",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hermodromus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Peirocles",
+        "role": "Payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Peirocles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Menecles",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Menecles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sannion",
+        "role": "Payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sannion",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aesandrus",
+        "role": "Payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aesandrus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Zoilus",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Zoilus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sperchelus",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sperchelus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Crates",
+        "role": "Payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Crates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Charmus",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Charmus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Metiochus",
+        "role": "Payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Metiochus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Euthymachus",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Euthymachus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Demos",
+        "role": "Payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Myrmex",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Myrmex",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristomenes",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristomenes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Adrastus",
+        "role": "Payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Adrastus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Callippus",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Callippus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Deileon",
+        "role": "Payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Deileon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Theutimides",
+        "role": "Payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theutimides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eudemus",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eudemus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Agathocles",
+        "role": "Payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Agathocles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Cleonicus",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Cleonicus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Cleonymus",
+        "role": "Payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Cleonymus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Demophon",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demophon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Leomestor",
+        "role": "Payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Leomestor",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eustratides",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eustratides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pytharchus",
+        "role": "Payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pytharchus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hestiaeus",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hestiaeus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Metritimus",
+        "role": "Payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Metritimus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Apollonides",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Apollonides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lysistratus",
+        "role": "Payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lysistratus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pelys",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pelys",
+        "confidence": 1.0
+      },
+      {
+        "name": "Nicostratus",
+        "role": "Payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nicostratus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hermesianax",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hermesianax",
+        "confidence": 1.0
+      },
+      {
+        "name": "Menon",
+        "role": "Payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Menon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Alcibiades",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Alcibiades",
+        "confidence": 1.0
+      },
+      {
+        "name": "Mnesitheides",
+        "role": "Payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Mnesitheides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hellen",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hellen",
+        "confidence": 1.0
+      },
+      {
+        "name": "Critoleos",
+        "role": "Payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Critoleos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aegialeus",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aegialeus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Polythemis",
+        "role": "Payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Polythemis",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pythes",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pythes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Casius",
+        "role": "Payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Casius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Leophantus",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Leophantus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Philon",
+        "role": "Payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Axinides",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Axinides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Metrobius",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Metrobius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Antilochus",
+        "role": "Payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antilochus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Thales",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Thales",
+        "confidence": 1.0
+      },
+      {
+        "name": "Leostratus",
+        "role": "Father",
+        "uri": "https://www.wikidata.org/wiki/Q3830729",
+        "confidence": 1.0
+      },
+      {
+        "name": "Laiosius",
+        "role": "Payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Laiosius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Olympidorus",
+        "role": "Payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Olympidorus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Theupropidas",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theupropidas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Scymnus",
+        "role": "Payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Scymnus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Arxenandrus",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Arxenandrus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Colotes",
+        "role": "Payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Colotes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Theuxeinides",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theuxeinides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Gnaeus",
+        "role": "Father",
+        "uri": "https://www.wikidata.org/wiki/Q125414",
+        "confidence": 1.0
+      },
+      {
+        "name": "Ariphron",
+        "role": "Payer",
+        "uri": "https://www.wikidata.org/wiki/Q12762590",
+        "confidence": 1.0
+      },
+      {
+        "name": "Mentor",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Mentor",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pausanias",
+        "role": "Payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pausanias",
+        "confidence": 1.0
+      },
+      {
+        "name": "Moschus",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Moschus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hippias",
+        "role": "Payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hippias",
+        "confidence": 1.0
+      },
+      {
+        "name": "Ischomachus",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ischomachus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Posideus",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Posideus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Artemidorus",
+        "role": "Payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Artemidorus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dioscourides",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dioscourides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Arcanius",
+        "role": "Payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Arcanius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Xanthippus",
+        "role": "Payer",
+        "uri": "https://www.wikidata.org/wiki/Q433455",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pythocles",
+        "role": "Father",
+        "uri": "https://www.wikidata.org/wiki/Q18642925",
+        "confidence": 1.0
+      },
+      {
+        "name": "Parmeniscus",
+        "role": "Payer",
+        "uri": "https://www.wikidata.org/wiki/Q125823573",
+        "confidence": 1.0
+      },
+      {
+        "name": "Zopyrus",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Zopyrus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Protogenes",
+        "role": "Payer",
+        "uri": "https://www.wikidata.org/wiki/Q3924304",
+        "confidence": 1.0
+      },
+      {
+        "name": "Moerias",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Moerias",
+        "confidence": 1.0
+      },
+      {
+        "name": "Agathenor",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Agathenor",
+        "confidence": 1.0
+      },
+      {
+        "name": "Apollodorus",
+        "role": "Payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Apollodorus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Poseidonius",
+        "role": "Father",
+        "uri": "https://www.wikidata.org/wiki/Q1239775",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hermocrates",
+        "role": "Payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hermocrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Metronax",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Metronax",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pantaleon",
+        "role": "Payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pantaleon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Bacchius",
+        "role": "Father",
+        "uri": "https://www.wikidata.org/wiki/Q804273",
+        "confidence": 1.0
+      },
+      {
+        "name": "Simylus",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Simylus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lysimachides",
+        "role": "Payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lysimachides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Gorgus",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Gorgus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Nicias",
+        "role": "Father",
+        "uri": "https://www.wikidata.org/wiki/Q315822",
+        "confidence": 1.0
+      },
+      {
+        "name": "Anaxagoras",
+        "role": "Payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Anaxagoras",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aeschrus",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aeschrus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dicaeides",
+        "role": "Payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dicaeides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Cyniscus",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Cyniscus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Moschion",
+        "role": "Payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Moschion",
+        "confidence": 1.0
+      },
+      {
+        "name": "Parmenon",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Parmenon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Thearides",
+        "role": "Payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Thearides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Plutarchus",
+        "role": "Payer",
+        "uri": "https://www.wikidata.org/wiki/Q115921725",
+        "confidence": 1.0
+      },
+      {
+        "name": "Perses",
+        "role": "Payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Perses",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Smyrna",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/550893",
+        "confidence": 0.8
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Smyrna",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/550893",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "The inscription is a detailed financial record from Smyrna, listing numerous citizens and their contributions or payments in staters. The text contains several lacunae and reconstructed names, indicating its fragmentary state. The concluding formula confirms the settlement of these accounts.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

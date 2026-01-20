@@ -1,0 +1,132 @@
+{
+  "phi_id": 265769,
+  "themes": [
+    {
+      "label": "Funerary Inscriptions (Epitaphs)",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Funerary Inscriptions (Epitaphs)",
+        "subcategory": null
+      },
+      "rationale": "The inscription is a funerary imprecation designed to protect a tomb and the body within it from desecration or movement, a standard feature of late antique epitaphs.",
+      "confidence": 1.0,
+      "quote": "πρὸς θεῶν καὶ ἡρώων τῶν τε σεαυτοῦ πατέρων ὅστις ἂν τυγχάνεις... μήποτε λυμήνηι τῶιδε τῶι σώματι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Prayers and Invocations",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Prayers and Invocations",
+        "subcategory": null
+      },
+      "rationale": "The text contains a lengthy invocation of numerous celestial and chthonic deities to witness the curse and ensure the protection of the monument through divine enforcement.",
+      "confidence": 1.0,
+      "quote": "ἡλίου τε τοῦ πάντα ἐφορῶντος καὶ διὸς ὀλυμπίου πλούτωνός τε καὶ τῆς δήμητρος κόρης τῆς τε ἀρτέμιδος ἑκάτης κυνῶν ἐρινύων τε καὶ δαείρας καὶ ἑρμοῦ χθονίου καὶ Ἥρας τῆς πρεσβυτάτης δαιμόνων",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Tombstone (Gravestone)",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Tombstone (Gravestone)"
+      },
+      "rationale": "The inscription refers to the monument as a memorial and tomb, identifying the physical object as a gravestone or tomb monument intended for permanent display.",
+      "confidence": 1.0,
+      "quote": "ὅστις δὲ σῆμα κινήσει τι τῶν ἐν αὐτῶι κειμένων καθόλου τι συνχέας συνθράσας ἀποκρούσας τοῦ μνήματος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [],
+    "places": [
+      {
+        "name": "Neoclaudiopolis",
+        "type": "City",
+        "uri": "https://www.wikidata.org/wiki/Q12328532",
+        "confidence": 0.9
+      },
+      {
+        "name": "Pontus",
+        "type": "Region",
+        "uri": "https://pleiades.stoa.org/places/857287",
+        "confidence": 0.9
+      }
+    ],
+    "deities": [
+      {
+        "name": "Helios",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Zeus Olympios",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Pluto",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Demeter",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Kore",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Artemis Hekate",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Erinyes",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Daeira",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Hermes Chthonios",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Hera",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "intact",
+  "provenance": [
+    {
+      "name": "Neoclaudiopolis",
+      "type": "City",
+      "uri": "https://www.wikidata.org/wiki/Q12328532",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription from Neoclaudiopolis (often associated with the region of Neokaisareia) is a classic example of a funerary imprecation or curse. It addresses any future passerby or owner of the land, warning them under the threat of divine wrath not to disturb the body, the stone structure, the statues, or the inscription itself. The text lists a comprehensive pantheon of gods, particularly those associated with the underworld and justice (Pluto, Demeter, Kore, Hekate, Erinyes, Hermes Chthonios), to enforce the curse. The curse includes the total destruction of the violator's family, lineage, and property, while a blessing is promised to those who respect and maintain the tomb.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 2nd half 2nd c. AD ",
+  "date_min": 151.0,
+  "date_max": 200.0,
+  "date_circa": false
+}

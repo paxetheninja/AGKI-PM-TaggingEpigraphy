@@ -1,0 +1,321 @@
+{
+  "phi_id": 62739,
+  "themes": [
+    {
+      "label": "Inventories",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Inventories",
+        "subcategory": null
+      },
+      "rationale": "The inscription contains a detailed list of precious objects, including rings and necklaces, along with their weights in gold and silver.",
+      "confidence": 1.0,
+      "quote": "δακτύλιον ἀργυροῦν φωσφόριον ἔχοντα ἀργυρίου νομίσματος παντοδαποῦ ἑλκὴ",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The text records financial transactions, including interest payments, debts, and the names of guarantors.",
+      "confidence": 1.0,
+      "quote": "καὶ οἵδε τόκους ἀπέδοσαν Πόλυβος ὑπὲρ Μενελάου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Votive Dedications",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Votive Dedications",
+        "subcategory": null
+      },
+      "rationale": "Several items are explicitly identified as dedications (anathema) to deities, specifically Eileithyia.",
+      "confidence": 1.0,
+      "quote": "καὶ τῇδε ἐν τῷ Εἰλειθυαίῳ ... Κτησυλίδος ἀνάθημα",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Agonistic / Victory Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Agonistic / Victory Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription mentions various athletic competitions such as the stadium race, boxing, and the torch race, along with the names of participants or winners.",
+      "confidence": 1.0,
+      "quote": "λαμπαδάρχοις παίδων ... σταδίου δὲ Ἀριστοδίκῳ καὶ Κοσμίδει πυγμῆς",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The text includes extensive lists of individuals, often with patronymics, involved in the administration of the sanctuary or the games.",
+      "confidence": 1.0,
+      "quote": "Τελέσανδρος Παρμενίωνος ... Δάμακος ἐκ τῶν Σωστράτου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The text explicitly mentions the creation and setting up of the stele on which the records were inscribed.",
+      "confidence": 1.0,
+      "quote": "ἐργασαμένῳ τὴν στήλην ... στήσασι τὴν στήλην",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Polybus",
+        "role": "Payer of interest",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Polybus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Parmenion",
+        "role": "Father of Telesandrus",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Parmenion",
+        "confidence": 1.0
+      },
+      {
+        "name": "Damacus",
+        "role": "Individual listed in accounts",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Damacus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sostratus",
+        "role": "Individual associated with Damacus",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sostratus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Andron",
+        "role": "Individual listed in accounts",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Andron",
+        "confidence": 1.0
+      },
+      {
+        "name": "Geryllus",
+        "role": "Individual listed in accounts",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Geryllus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pistoxenus",
+        "role": "Father of Geryllus",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pistoxenus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phocion",
+        "role": "Individual listed in accounts",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Phocion",
+        "confidence": 1.0
+      },
+      {
+        "name": "Erymanthus",
+        "role": "Individual listed in accounts",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Erymanthus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dexicus",
+        "role": "Individual listed in accounts",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dexicus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Gorgias",
+        "role": "Individual listed in accounts",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Gorgias",
+        "confidence": 0.8
+      },
+      {
+        "name": "Philtes",
+        "role": "Individual listed in accounts",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philtes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Tlepolemus",
+        "role": "Father of Philtes",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Tlepolemus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Polyxenus",
+        "role": "Individual listed in accounts",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Polyxenus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pistos",
+        "role": "Individual listed in accounts",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pistos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Xenon",
+        "role": "Father of Pistos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Xenon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Criton",
+        "role": "Individual listed in accounts",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Criton",
+        "confidence": 1.0
+      },
+      {
+        "name": "Olympiodorus",
+        "role": "Individual listed in accounts",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Olympiodorus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Xenocleides",
+        "role": "Individual listed in accounts",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Xenocleides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Polydorus",
+        "role": "Citizen of Cyzicus",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Polydorus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Euthenes",
+        "role": "Individual listed in accounts",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Euthenes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristides",
+        "role": "Father of Euthenes",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristodicus",
+        "role": "Winner in stadium race",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristodicus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Cosmides",
+        "role": "Winner in boxing",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Cosmides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Telesandrus",
+        "role": "Winner in stadium race and boxing",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Telesandrus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Epicharmus",
+        "role": "Winner in diaulos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Epicharmus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Theognetus",
+        "role": "Winner in boxing",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theognetus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pyrrathus",
+        "role": "Winner in boxing",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pyrrathus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristocles",
+        "role": "Individual associated with the stele",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristocles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Nicaea",
+        "role": "Individual listed in accounts",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nicaea",
+        "confidence": 0.8
+      }
+    ],
+    "places": [
+      {
+        "name": "Delos",
+        "type": "Sanctuary site",
+        "uri": "https://pleiades.stoa.org/places/599587",
+        "confidence": 1.0
+      },
+      {
+        "name": "Cyzicus",
+        "type": "City of origin for Polydorus",
+        "uri": "https://pleiades.stoa.org/places/511218",
+        "confidence": 1.0
+      },
+      {
+        "name": "Rheneia",
+        "type": "Island near Delos",
+        "uri": "https://pleiades.stoa.org/places/599918",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Eileithyia",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Zeus Cynthius",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Delos",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/599587",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a complex administrative document from Delos, functioning as both a temple inventory and a financial account. It lists sacred offerings dedicated to Eileithyia, records interest payments and debts involving numerous citizens, and provides a rare glimpse into the organization of athletic games (lampadedromia, boxing, stadium) by listing winners and associated costs. The mention of the stele's production costs confirms its nature as a public record.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

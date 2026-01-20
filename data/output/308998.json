@@ -1,0 +1,188 @@
+{
+  "phi_id": 308998,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The inscription uses the standard opening formula 'it seemed good to the soldiers', identifying it as a formal decree passed by a military body.",
+      "confidence": 1.0,
+      "quote": "δοξεν το ς στρατι ται[ς]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The text records the decision to praise and crown a general for his virtue and goodwill towards the soldiers.",
+      "confidence": 1.0,
+      "quote": "[δεδ χθαι το ς στρατι ταις παιν] [σα]ι θο κριτ[ον] ... [κα στεφαν] σ[αι] χρυσ[ ι] [στεφ νωι]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The decree includes an explicit instruction to record the text on a stone stele.",
+      "confidence": 1.0,
+      "quote": "ναγρ ψαι δ τ δε τ ψ φισμα ν] στ [ληι] [λιθ νηι]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Other Stone",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Other Stone"
+      },
+      "rationale": "The inscription refers to a stone stele, which is a generic term for a stone monument.",
+      "confidence": 1.0,
+      "quote": "στ [ληι] [λιθ νηι]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The text contains numerous lacunae and reconstructed sections, indicating its fragmentary physical state.",
+      "confidence": 1.0,
+      "quote": "γαθ ι τ χηι δοξεν το ς στρατι ται[ς] το ς τεταγμ νοις π[ 0]ιμ[ο]κρ την",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Theokritos",
+        "role": "General",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theokritos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Alkimachos",
+        "role": "Father of Theokritos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Alkimachos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Argaeus",
+        "role": "Proposer and Committee Member",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Argaeus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Cleon",
+        "role": "Father of Argaeus",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Cleon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Archistratos",
+        "role": "Committee Member",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Archistratos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Xenophilos",
+        "role": "Committee Member",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Xenophilos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Theophilos",
+        "role": "Committee Member",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theophilos",
+        "confidence": 0.8
+      }
+    ],
+    "places": [
+      {
+        "name": "Rhamnous",
+        "type": "Fortress",
+        "uri": "https://pleiades.stoa.org/places/580097",
+        "confidence": 0.8
+      },
+      {
+        "name": "Myrrhinous",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580030",
+        "confidence": 1.0
+      },
+      {
+        "name": "Crete",
+        "type": "Region",
+        "uri": "https://pleiades.stoa.org/places/5066435",
+        "confidence": 1.0
+      },
+      {
+        "name": "Euonymon",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579932",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kydantidai",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579998",
+        "confidence": 1.0
+      },
+      {
+        "name": "Corinth",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/570182",
+        "confidence": 1.0
+      },
+      {
+        "name": "Clazomenae",
+        "type": "City",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Tyche",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Rhamnous",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/580097",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is an honorific decree from Rhamnous, dated to approximately 240 BC. It was issued by the soldiers stationed at the fortress to honor the general Theokritos, son of Alkimachos, for his excellent service and benevolence. The decree specifies that he be awarded a gold crown and that the text be inscribed on a stone stele. A committee of soldiers, including individuals from various regions (Crete, Corinth, Clazomenae) and Athenian demes (Euonymon, Kydantidai), was appointed to oversee the monument's creation.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " ca. 240 BC ",
+  "date_min": -240.0,
+  "date_max": -240.0,
+  "date_circa": true
+}

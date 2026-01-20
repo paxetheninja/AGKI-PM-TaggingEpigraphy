@@ -1,0 +1,168 @@
+{
+  "phi_id": 233050,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text is a formal decree of the Athenian Council and People, as indicated by the mention of 'psephismata' and the standard procedural language regarding the Council and the People.",
+      "confidence": 1.0,
+      "quote": "κατὰ ψηφίσματα τῆς βουλῆς καὶ τοῦ δήμου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription honors specific officials (the grain commissioners) with a golden crown for their justice and ambition in office.",
+      "confidence": 1.0,
+      "quote": "στεφανῶσαι αὐτοὺς χρυσῶι στεφάνωι κατὰ τὸν νόμον φιλοτιμίας ἕνεκα καὶ δικαιοσύνης",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The decree includes a list of the grain commissioners (sitophylakes) and their secretary, identified by their names and demotics.",
+      "confidence": 1.0,
+      "quote": "τοὺς σιτοφύλακας τοὺς ἐπὶ Ἀθηνοδώρου ἄρχοντος ... Ἀρχίαν Ἀρχῖνον Χαρνίαν Ἀγάθαρχον ... Εὔδημον Μελιτέα καὶ τὸν κληρωτὸν γραμματέα Ἐργοκλῆν Κρωπίδην",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The text explicitly orders the recording of the decree on a stone stele.",
+      "confidence": 1.0,
+      "quote": "ἀναγράψαι δὲ τόδε τὸ ψήφισμα τὸν γραμματέα τὸν κατὰ πρυτανείαν ἐν στήλει λιθίνει",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Athenodorus",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Athenodorus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Archias",
+        "role": "Grain Commissioner",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Archias",
+        "confidence": 1.0
+      },
+      {
+        "name": "Archinos",
+        "role": "Grain Commissioner",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Archinos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Charnias",
+        "role": "Grain Commissioner",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Charnias",
+        "confidence": 1.0
+      },
+      {
+        "name": "Agatharchus",
+        "role": "Grain Commissioner",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Agatharchus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eudemus",
+        "role": "Grain Commissioner",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eudemus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Ergocles",
+        "role": "Secretary",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ergocles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Antigonus",
+        "role": "King",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antigonus",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Athens",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      },
+      {
+        "name": "Acharnae",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Lamptrae",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Anaphlystus",
+        "type": "Deme",
+        "uri": "https://www.wikidata.org/wiki/Q110276324",
+        "confidence": 1.0
+      },
+      {
+        "name": "Melite",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/582863",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kropidai",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579996",
+        "confidence": 1.0
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579885",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This is an Athenian honorific decree from the mid-3rd century BCE. It honors the 'sitophylakes' (grain commissioners) who served during the archonship of Athenodorus. The text follows the standard Athenian formula for such decrees: it mentions the Council and People, lists the names and demotics of the officials being honored, specifies the award of a golden crown for their 'philotimia' (ambition/love of honor) and 'dikaiosyne' (justice), and provides instructions for the publication of the decree on a stone stele. The military treasurer is tasked with paying for the inscription. Notably, King Antigonus (likely Antigonus II Gonatas) is also mentioned in the latter part of the fragment.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

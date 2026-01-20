@@ -1,0 +1,183 @@
+{
+  "phi_id": 200625,
+  "themes": [
+    {
+      "label": "Treaties and Agreements",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Treaties and Agreements",
+        "subcategory": null
+      },
+      "rationale": "The inscription records a formal military alliance (symmachia) and treaty of friendship between the cities of Gortyna and Lappa, establishing mutual defense for all time.",
+      "confidence": 1.0,
+      "quote": "συν θεντο γορτ νιοι κα λαππα οι συνμαχησ ν λλ λοις τ ν παντα χρ νον πλ ως κα δ λως",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Laws and Regulations",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Laws and Regulations",
+        "subcategory": null
+      },
+      "rationale": "The text references the established laws of both city-states, particularly concerning harbor regulations and trade duties.",
+      "confidence": 1.0,
+      "quote": "κατ τ νς ν μονς τ νς εκατ ρη κειμ νονς π ρ τ ν νλιμεν ων",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The treaty includes specific economic clauses regarding export rights and the payment of harbor taxes or duties (enlimenia).",
+      "confidence": 1.0,
+      "quote": "ξαγωγ ν δ μεν τ ι τε γορτυν ωι λ ππαθεν κα τ ι λαππα ωι γορτ ναθεν π ντων... καταβ λλοντανς τ λη",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Prayers and Invocations",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Prayers and Invocations",
+        "subcategory": null
+      },
+      "rationale": "The document begins with the standard religious invocation to Good Fortune, common in official Greek decrees and treaties.",
+      "confidence": 1.0,
+      "quote": "γαθ ι θ χαι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Military Infrastructure",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Treaties and Agreements",
+        "subcategory": null
+      },
+      "rationale": "The treaty includes provisions for the mutual defense and occupation of strategic locations such as fortresses and harbors.",
+      "confidence": 1.0,
+      "quote": "φρ ρια λιμ νας καταλαμβ νηται βοαθι ντων",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "Public treaties of this nature in Crete were typically inscribed on stone steles for permanent display in sacred or civic spaces.",
+      "confidence": 0.8,
+      "quote": "συν θεντο γορτ νιοι κα λαππα οι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Limestone",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Limestone"
+      },
+      "rationale": "Inscriptions from Gortyna are almost exclusively carved on the local grey limestone.",
+      "confidence": 0.5,
+      "quote": "γορτ νιοι",
+      "is_ambiguous": true,
+      "ambiguity_note": "Material is inferred from archaeological context rather than explicit text."
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The text contains several lacunae and missing sections, particularly at the beginning and end of the document.",
+      "confidence": 1.0,
+      "quote": "[-----------------------]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Euryton",
+        "role": "Eponymous Official (Kosmos)",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Euryton",
+        "confidence": 1.0
+      },
+      {
+        "name": "Archon",
+        "role": "Eponymous Official (Kosmos)",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Archon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Antiochus",
+        "role": "Father of Official",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antiochus",
+        "confidence": 0.8
+      }
+    ],
+    "places": [
+      {
+        "name": "Gortyna",
+        "type": "City-state",
+        "uri": "https://pleiades.stoa.org/places/570267",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lappa",
+        "type": "City-state",
+        "uri": "https://pleiades.stoa.org/places/589894",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Tyche",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Crete",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/5066435",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Gortyna",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/570267",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a significant Hellenistic treaty between Gortyna and Lappa. It outlines a military alliance (symmachia) with provisions for mutual defense by land and sea, shared enemies and friends, and economic regulations regarding trade and harbor duties (enlimenia). The dating is provided by the mention of eponymous officials (kosmoi), and the text reflects the complex interstate relations in Crete during the 2nd century BC.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " ca. 200-150 BC",
+  "date_min": -200.0,
+  "date_max": -150.0,
+  "date_circa": true
+}

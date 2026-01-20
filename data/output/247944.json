@@ -1,0 +1,120 @@
+{
+  "phi_id": 247944,
+  "themes": [
+    {
+      "label": "Official Letters",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Official Letters",
+        "subcategory": null
+      },
+      "rationale": "The text is a formal correspondence from the Emperors Marcus Aurelius and Lucius Verus to Ulpius Eurycles, using the standard greeting 'chairein'.",
+      "confidence": 1.0,
+      "quote": "αὐτοκράτωρ καῖσαρ μᾶρκος αὐρήλιος ἀντωνεῖνος σεβαστὸς καὶ αὐτοκράτωρ καῖσαρ λούκιος αὐρήλιος οὐῆρος σεβαστὸς ἀρμενιακὸς οὐλπίῳ εὐρυκλεῖ χαίρειν.",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The letter discusses the financial administration of the Gerousia, including the collection of debts from debtors and the management of funds by a logistes (auditor).",
+      "confidence": 1.0,
+      "quote": "τῶν χρεωστῶν τοῦ συνεδρίου πολλὰ κεκομίσθαι λέγεις χρήματα μὴ προσηκούσης τῆς εἰσπράξεως.",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The emperors provide specific instructions regarding the preservation and restoration of silver statues (eikonon) dedicated to them, emphasizing that their names and forms should be maintained.",
+      "confidence": 1.0,
+      "quote": "τὰς οὖν εἰκόνας τῶν αὐτοκρατόρων ἃς ἀποκεῖσθαι λέγεις ἐν τῷ συνεδρίῳ τῷ παλαιῷ ἐν μὲν λόγῳ πάσας δοκιμάζομεν φυλαχθῆναι τοῖς ὀνόμασιν ἐφ' οἷς γέγονεν αὐτῶν ἑκάστη.",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The inscription contains numerous lacunae and reconstructed passages, particularly in the latter half of the text.",
+      "confidence": 1.0,
+      "quote": "[μ]εταφέρειν οὐ γὰρ [οὐ] [τ]ὰ ἄλλως [εἰς τ]ὰς με[τ]έρας τιμὰς ἐσμὲν [π]ρόχειρο[ι πολὺ] δὲ τ[ῖ]τ[τον ἂν].",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Marcus Aurelius Antoninus",
+        "role": "Emperor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Marcus%20Aurelius%20Antoninus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lucius Aurelius Verus",
+        "role": "Emperor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lucius%20Aurelius%20Verus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Ulpius Eurycles",
+        "role": "Logistes (Auditor) of the Gerousia",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ulpius%20Eurycles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Saturninus",
+        "role": "Public slave or official",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Saturninus",
+        "confidence": 0.8
+      },
+      {
+        "name": "Sabinus",
+        "role": "Grandfather",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sabinus",
+        "confidence": 0.8
+      }
+    ],
+    "places": [
+      {
+        "name": "Ephesus",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/599612",
+        "confidence": 1.0
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Ephesus",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/599612",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is an imperial rescript from the joint reign of Marcus Aurelius and Lucius Verus (dated between 161-169 AD). It is addressed to Ulpius Eurycles, who served as the logistes (financial auditor) of the Gerousia of Ephesus. The document is a crucial source for understanding Roman imperial intervention in local civic finances and the management of the imperial cult, specifically regarding the maintenance of silver statues and the recovery of outstanding debts owed to the council of elders.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

@@ -1,0 +1,108 @@
+{
+  "phi_id": 201279,
+  "themes": [
+    {
+      "label": "Treaties and Agreements",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Treaties and Agreements",
+        "subcategory": null
+      },
+      "rationale": "The text records a treaty of isopoliteia or sympoliteia between Hierapytna and Arkades (Arcadia), establishing mutual rights and obligations.",
+      "confidence": 1.0,
+      "quote": "[--- ε δ κα ν μηι μ ν εραπ τνιος ν τ ι ρκ]δων ρκ ς ν [τ ι εραπυτν ων χ ραι]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Laws and Regulations",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Laws and Regulations",
+        "subcategory": null
+      },
+      "rationale": "The inscription references existing laws and the imposition of penalties for violations of the agreement.",
+      "confidence": 1.0,
+      "quote": "ποτιν ν[των τ πιτ]μια κατ τ ς ν μος τ ς κατερ]κειμ νος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Sacred Laws and Rules",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Sacred Laws and Rules",
+        "subcategory": null
+      },
+      "rationale": "The treaty regulates participation in religious festivals and sacrifices, specifically the Theudaisia and Asklepieia.",
+      "confidence": 1.0,
+      "quote": "ς τ θευδα σια κα ο[----- ο δ εραπ τνιοι]ς ρκ [δ]ας ς τ σκλαπι[ε α",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Magistrates and Offices",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Magistrates and Offices",
+        "subcategory": null
+      },
+      "rationale": "The text mentions the 'kosmoi', the chief magistrates of Cretan cities, and their administrative duties regarding the treaty.",
+      "confidence": 1.0,
+      "quote": "παραγγελ ντων δ κα ο κ σμοι ξ]κατ ρας τ ς π λιος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [],
+    "places": [
+      {
+        "name": "Hierapytna",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/589807",
+        "confidence": 1.0
+      },
+      {
+        "name": "Arkades",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/589710",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Asclepius",
+        "uri": "https://www.wikidata.org/wiki/Q83223",
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Hierapytna",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/589807",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Crete",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/5066435",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a significant legal document from Hellenistic Crete, detailing a treaty between Hierapytna and the Cretan city of Arkades (Arcadia). It covers a wide range of civic and religious interactions, including intermarriage (epigamia), residency rights, shared participation in festivals, and regulations for the export of grain. The mention of the 'agela' (youth groups) and 'kosmoi' (magistrates) provides insight into Cretan social and political structures. The text is highly fragmentary but follows the standard formula for Cretan interstate agreements.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " ca. 227-221 BC ",
+  "date_min": -227.0,
+  "date_max": -221.0,
+  "date_circa": true
+}

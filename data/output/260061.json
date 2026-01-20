@@ -1,0 +1,180 @@
+{
+  "phi_id": 260061,
+  "themes": [
+    {
+      "label": "Official Letters",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Official Letters",
+        "subcategory": null
+      },
+      "rationale": "The inscription is a formal royal letter from King Philip V of Macedon to the council and people of Mylasa, following standard Hellenistic diplomatic protocols.",
+      "confidence": 1.0,
+      "quote": "βασιλεὺς Φίλιππος Μυλασέων τῆι βουλῆι καὶ τῶι δήμωι χαίρειν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text explicitly mentions a decree passed by the city of Mylasa that was delivered to the king by an envoy.",
+      "confidence": 1.0,
+      "quote": "τό τε ψήφισμα ἀπέδωκαν καθ’ ὃ ἐψηφίσασθε",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Sacred Laws and Rules",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Sacred Laws and Rules",
+        "subcategory": null
+      },
+      "rationale": "The document defines the legal and religious status of the sanctuary of Zeus Labraundos, including the priesthood, security, and tax exemptions.",
+      "confidence": 1.0,
+      "quote": "περὶ τῆς ἱερωσύνης αὐτῶι καὶ τὴν τοῦ τόπου ἀσφάλειαν ὑπάρχειν καὶ τὴν ἀτέλειαν τῆς χώρας",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The text refers to the financial administration of the sanctuary, specifically mentioning revenues and lease agreements for sacred lands.",
+      "confidence": 1.0,
+      "quote": "τῆς προσόδου παρά τε τοῦ ἱερέως καὶ τῶν μεμισθωμένων τὰς κτήσεις τὰς καθηκούσας τῶι θεῶι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The inscription confirms that residents of the sanctuary are citizens and are organized into tribes, which is a key administrative classification.",
+      "confidence": 0.8,
+      "quote": "τοὺς ἐν τῶι ἱερῶι διατρίβοντας πολίτας μὲν εἶναι καὶ φυλὰς νέμειν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Treaties and Agreements",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Treaties and Agreements",
+        "subcategory": null
+      },
+      "rationale": "The text references previous royal concessions and the taking of oaths to confirm the rights of the sanctuary.",
+      "confidence": 1.0,
+      "quote": "κατὰ δὲ τὰ ὑπ’ αὐτοῦ συγκεχωρημένα ὅρκον τινὰ ποιηθῆναί τε καὶ ἀναγεγράφθαι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The king commands that the agreements and the letter be inscribed on stone stelae and placed in the sanctuaries.",
+      "confidence": 1.0,
+      "quote": "ἀναγεγράφθαι ἐν στήλαις καὶ ἀνατεθῆναι ἐν τοῖς ἱεροῖς",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Philip V",
+        "role": "King of Macedon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philip%20V",
+        "confidence": 1.0
+      },
+      {
+        "name": "Callistratus",
+        "role": "Ambassador",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Callistratus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Seleucus",
+        "role": "King",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Seleucus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Olympichus",
+        "role": "General or Dynast",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Olympichus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Demetrius II",
+        "role": "King of Macedon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demetrius%20II",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Mylasa",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/599809",
+        "confidence": 1.0
+      },
+      {
+        "name": "Labraunda",
+        "type": "Sanctuary",
+        "uri": "https://pleiades.stoa.org/places/599745",
+        "confidence": 1.0
+      },
+      {
+        "name": "Chrysaoreans",
+        "type": "Federation",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Zeus Labraundos",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Mylasa",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/599809",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a royal letter from Philip V of Macedon to the city of Mylasa, resolving a dispute over the sanctuary of Zeus Labraundos. It addresses claims made by the Chrysaoreans and confirms the rights, tax exemptions (ateleia), and territorial integrity of the sanctuary as established by previous kings (Seleucus, Demetrius II) and the city's own decrees. The text provides significant detail on the administrative and financial life of the sanctuary, including tribal membership for residents and the management of sacred land leases.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

@@ -1,0 +1,147 @@
+{
+  "phi_id": 240,
+  "themes": [
+    {
+      "label": "Sacred Laws and Rules",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Sacred Laws and Rules",
+        "subcategory": null
+      },
+      "rationale": "The inscription contains regulations regarding ritual offerings, mentioning initiates (mystai) and specific quantities of food items like barley, honey, and wine intended for religious use.",
+      "confidence": 1.0,
+      "quote": "[--- μ]υστε ------. [--- βασι]λε σι.",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The text lists precise measurements of various commodities (choenikes, kotylai, hemi-hekteon), functioning as an administrative record of ritual supplies or costs.",
+      "confidence": 0.9,
+      "quote": "[--- τρ] ς χ[ο νικες --] [--- μι]κ τυλα. [ πτ ---] [--- μ]ιτεταρ[τ] ον τυρο",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Calendars and Timetables",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Calendars and Timetables",
+        "subcategory": null
+      },
+      "rationale": "Sacred laws of this type often served as sacrificial calendars, detailing what offerings were due at specific times or for specific festivals.",
+      "confidence": 0.8,
+      "quote": "[--- χριθον. μ]ιεκτ α πτ. ο[ νο. χ ες]χς.",
+      "is_ambiguous": true,
+      "ambiguity_note": "While the text lists quantities, the specific temporal markers are fragmentary."
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The format and content are characteristic of a public regulatory stele erected in a sanctuary or civic space.",
+      "confidence": 1.0,
+      "quote": "--- ---- ----- ------ -----",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "The metadata indicates an Attic inscription from the late 6th to early 5th century BC, a period when marble was the standard material for such public records in Athens.",
+      "confidence": 1.0,
+      "quote": "--- ---- ----- ------ -----",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The text is highly broken with numerous lacunae and reconstructed sections.",
+      "confidence": 1.0,
+      "quote": "[---]λφ τον. --------. συ------------ δ- ------ ρα ----- ον",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Basileus",
+        "role": "Magistrate or King responsible for religious affairs",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Basileus",
+        "confidence": 0.9
+      },
+      {
+        "name": "Herald",
+        "role": "Religious official",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Herald",
+        "confidence": 0.8
+      },
+      {
+        "name": "Initiates",
+        "role": "Participants in mystery cults",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Initiates",
+        "confidence": 0.9
+      }
+    ],
+    "places": [
+      {
+        "name": "Athens",
+        "type": "City-state",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Erechtheus",
+        "uri": null,
+        "confidence": 0.8
+      },
+      {
+        "name": "Oineus",
+        "uri": null,
+        "confidence": 0.8
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579885",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This archaic Attic inscription, written in boustrophedon style, appears to be a sacred law or a sacrificial calendar. It details the distribution or requirement of various foodstuffs (barley, wine, honey, cheese, beans, sesame) for ritual purposes. The mention of 'mystai' (initiates) and the 'Basileus' (the archon in charge of religious matters) suggests a connection to the Eleusinian Mysteries or a similar state-sponsored cultic activity in Athens. The presence of measures like the choenix and kotyle confirms its administrative and regulatory nature.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

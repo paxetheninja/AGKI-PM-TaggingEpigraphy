@@ -1,0 +1,315 @@
+{
+  "phi_id": 62937,
+  "themes": [
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The inscription records detailed financial transactions including interest (tokoi), rents (enoikion), and loans (daneion) managed by temple officials.",
+      "confidence": 1.0,
+      "quote": "[τ]ελ ν τ κων νο[ικ ων] -- ωι περι ν ν ι λοιπ[ ν] -- ν τ κους ο ς κατ βαλε",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The text lists groups of officials, specifically the Hieropoioi (sacred overseers) and Tamiai (treasurers), who were responsible for the temple's administration.",
+      "confidence": 1.0,
+      "quote": "ο εροποιο ριστ βουλος λυσ ς δημοχ ρης δημ δοκος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Contracts and Private Legal Acts",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Contracts and Private Legal Acts",
+        "subcategory": null
+      },
+      "rationale": "The inscription explicitly mentions written contracts (syngraphai) that govern the financial agreements and loans recorded.",
+      "confidence": 1.0,
+      "quote": "κατ συγγραφ ν τ ν τεθε σαν παρ μεν λλωι πολ βου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Votive Dedications",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Votive Dedications",
+        "subcategory": null
+      },
+      "rationale": "The phrase 'ethesan eis to hieron' (they placed/dedicated in the temple) indicates the formal deposition of funds or objects into the sacred treasury.",
+      "confidence": 0.8,
+      "quote": "θεσαν ε ς τ ερ ν ριστ βου[λος λυσ ς δημοχ ρης δημ δοκος]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Nymphodorus",
+        "role": "Banker or official",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nymphodorus",
+        "confidence": 0.9
+      },
+      {
+        "name": "Heracleides",
+        "role": "Banker or official",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Heracleides",
+        "confidence": 0.9
+      },
+      {
+        "name": "Meilichides",
+        "role": "Hieropoios",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Meilichides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Demetrius",
+        "role": "Hieropoios and Treasurer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demetrius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristobulus",
+        "role": "Hieropoios",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristobulus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lysis",
+        "role": "Hieropoios",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lysis",
+        "confidence": 1.0
+      },
+      {
+        "name": "Demochares",
+        "role": "Hieropoios",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demochares",
+        "confidence": 1.0
+      },
+      {
+        "name": "Demodocus",
+        "role": "Hieropoios",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demodocus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Boethus",
+        "role": "Treasurer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Boethus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phanos",
+        "role": "Treasurer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Phanos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Polyxenus",
+        "role": "Eponymous official",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Polyxenus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Charalas",
+        "role": "Hieropoios",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Charalas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Charicleides",
+        "role": "Hieropoios",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Charicleides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Gerallus",
+        "role": "Hieropoios",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Gerallus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristodicus",
+        "role": "Treasurer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristodicus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kridon",
+        "role": "Hieropoios",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kridon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kratabios",
+        "role": "Hieropoios",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kratabios",
+        "confidence": 1.0
+      },
+      {
+        "name": "Antigonus",
+        "role": "Hieropoios",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antigonus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Xenon",
+        "role": "Debtor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Xenon",
+        "confidence": 0.9
+      },
+      {
+        "name": "Pherecleides",
+        "role": "Father of Xenon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pherecleides",
+        "confidence": 0.9
+      },
+      {
+        "name": "Parmenon",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Parmenon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Glaucon",
+        "role": "Hieropoios",
+        "uri": "https://www.wikidata.org/wiki/Q1364945",
+        "confidence": 1.0
+      },
+      {
+        "name": "Andromenes",
+        "role": "Hieropoios",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Andromenes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Mnesicleides",
+        "role": "Hieropoios",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Mnesicleides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Polybulus",
+        "role": "Hieropoios",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Polybulus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Euthyteme",
+        "role": "Borrower",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Euthyteme",
+        "confidence": 0.9
+      },
+      {
+        "name": "Diodotus",
+        "role": "Father of Euthyteme",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Diodotus",
+        "confidence": 0.9
+      },
+      {
+        "name": "Timocles",
+        "role": "Guardian of Euthyteme",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Timocles",
+        "confidence": 0.9
+      },
+      {
+        "name": "Timoxenus",
+        "role": "Official or payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Timoxenus",
+        "confidence": 0.9
+      },
+      {
+        "name": "Mikthos",
+        "role": "Official or payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Mikthos",
+        "confidence": 0.9
+      },
+      {
+        "name": "Rhitymenos",
+        "role": "Official or payer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Rhitymenos",
+        "confidence": 0.9
+      },
+      {
+        "name": "Philon",
+        "role": "Official or associated person",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philon",
+        "confidence": 0.9
+      }
+    ],
+    "places": [
+      {
+        "name": "Delos",
+        "type": "Sanctuary and city",
+        "uri": "https://pleiades.stoa.org/places/599587",
+        "confidence": 1.0
+      },
+      {
+        "name": "Syracuse",
+        "type": "City of origin",
+        "uri": "https://pleiades.stoa.org/places/462503",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sarapieion",
+        "type": "Temple complex",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Apollo",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Sarapis",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Zeus",
+        "uri": "https://www.wikidata.org/wiki/Q34201",
+        "confidence": 0.9
+      },
+      {
+        "name": "Artemis",
+        "uri": null,
+        "confidence": 0.8
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Delos",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/599587",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a fragment of the financial accounts of the sanctuary of Apollo on Delos, dating to approximately 172 BC. It documents the administrative and fiscal activities of the Hieropoioi and Tamiai, including the collection of interest from loans, rents from sacred properties, and the repayment of debts. The text mentions specific legal contracts (syngraphai) and provides a prosopography of Delian officials during the archonships of Parmenon and Polyxenus.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " ca. 172 BC",
+  "date_min": -172.0,
+  "date_max": -172.0,
+  "date_circa": true
+}

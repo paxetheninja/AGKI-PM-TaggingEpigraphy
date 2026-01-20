@@ -1,0 +1,188 @@
+{
+  "phi_id": 3531,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text is a formal resolution passed by a religious association (orgeones), as indicated by the formulaic language 'dedochthai tois orgeosin' (it was decided by the orgeones).",
+      "confidence": 1.0,
+      "quote": "δεδ χθαι το ς ργε σιν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription honors Agathon and his wife Zeuxion for their virtuous service and management of the sanctuary, awarding them golden crowns.",
+      "confidence": 1.0,
+      "quote": "παι ν σαι γ θωνα ... κα στεφ αν σαι χρυσ ι στεφ νωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Votive Dedications",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Votive Dedications",
+        "subcategory": null
+      },
+      "rationale": "The decree mentions that the honorees made dedications (anathemata) to the gods during their tenure.",
+      "confidence": 0.8,
+      "quote": "τ ναθ ματα τ φ α τ ν νατεθ ντα",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The text discusses the management of income (prosodon) and expenses made from private funds (idion analomaton) for the association.",
+      "confidence": 0.8,
+      "quote": "πεμελ θησαν δ κα τ ν ργε νων κ τ ν δ ων ναλωμ των",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Prayers and Invocations",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Prayers and Invocations",
+        "subcategory": null
+      },
+      "rationale": "The inscription includes the standard religious invocation 'Agathe Tyche' (Good Fortune).",
+      "confidence": 1.0,
+      "quote": "γαθ ι τ χηι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The decree explicitly orders the text to be inscribed on a stone stele (stelen lithinen).",
+      "confidence": 1.0,
+      "quote": "ε ς στ λην λιθ νην",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Other Stone",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Other Stone"
+      },
+      "rationale": "The text specifies the material as stone (lithine).",
+      "confidence": 1.0,
+      "quote": "λιθ νην",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The inscription is preserved with significant lacunae requiring restoration, particularly in the middle and concluding parts of the decree.",
+      "confidence": 1.0,
+      "quote": "[ψ φισμα] ε ς στ λην λιθ νην",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Lysitheides",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lysitheides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Socles",
+        "role": "Proposer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Socles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Agathon",
+        "role": "Priest and Honoree",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Agathon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Agathocles",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Agathocles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Zeuxion",
+        "role": "Priestess and Honoree",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Zeuxion",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Phlya",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580076",
+        "confidence": 1.0
+      },
+      {
+        "name": "Attica",
+        "type": "Region",
+        "uri": "https://pleiades.stoa.org/places/579888",
+        "confidence": 0.8
+      }
+    ],
+    "deities": [
+      {
+        "name": "Tyche",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Attica",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579888",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a late 3rd-century BC decree from Attica, issued by a religious association (orgeones). It honors Agathon of Phlya and his wife Zeuxion for their pious and diligent service as priest and priestess. The text highlights their financial integrity, their management of the association's resources, and their personal dedications to the gods. As a reward, they are granted praise and golden crowns. The decree concludes with instructions for its publication on a stone stele to be placed in the sanctuary.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " fin. s. III a.",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

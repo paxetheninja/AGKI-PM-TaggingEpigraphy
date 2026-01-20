@@ -1,0 +1,218 @@
+{
+  "phi_id": 230991,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text is a formal decree of the Athenian Council and People, indicated by the standard formula 'edoxen toi demoi'.",
+      "confidence": 1.0,
+      "quote": "[δο]ξεν τ ι δ μωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription honors the prytaneis of the tribe Kekropis for their service and piety, awarding them a gold crown.",
+      "confidence": 1.0,
+      "quote": "παιν σαι το ς πρυτνεις τ ς κεκροπ δος κα στεφαν σαι χρυσ[ ι] στεφ νωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The text identifies various officials including the archon, the secretary, the proedroi, and the treasurer of the council.",
+      "confidence": 1.0,
+      "quote": "π λεωχ ρου ρχοντος ... θεοκρ σιος πασ ωνος ξ ο ου γραμμ τευεν ... τ ν ταμ αν τ ς βουλ ς πυθ δωρον ρχι α",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Sacrifices",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Cultic Inscriptions",
+        "category": "Sacrifices",
+        "subcategory": null
+      },
+      "rationale": "The decree mentions sacrifices performed by the prytaneis to Apollo Prostaterios, Artemis Boulaia, and other gods.",
+      "confidence": 1.0,
+      "quote": "π ρ τ ν θυσι ν ν θυον τ  πρ τ ν κκλησι ν τ ι τε π λλωνι τ ι προσστατηρ ωι κα τε ρτ μιδι τε βουλα αι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The decree explicitly orders its own publication on a stone stele to be set up in the Prytanikon.",
+      "confidence": 1.0,
+      "quote": "ναγρ ψαι δ τ δε τ ψ φισμα τ ν γραμματ α τ ν κατ π[ρυτα]νε αν ν στ λει λιθ νει",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Other Stone",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Other Stone"
+      },
+      "rationale": "The inscription specifies it is to be written on a stone stele, using the general term for stone (lithinei).",
+      "confidence": 0.8,
+      "quote": "ν στ λει λιθ νει",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Leochares",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Leochares",
+        "confidence": 1.0
+      },
+      {
+        "name": "Theokrisios son of Pasion",
+        "role": "Secretary",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theokrisios%20son%20of%20Pasion",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pasion",
+        "role": "Father of Secretary",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pasion",
+        "confidence": 1.0
+      },
+      {
+        "name": "Nikon son of Nikon",
+        "role": "Chairman of the Proedroi",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nikon%20son%20of%20Nikon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Chares son of Eucharistos",
+        "role": "Proposer of the decree",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Chares%20son%20of%20Eucharistos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eucharistos",
+        "role": "Father of the proposer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eucharistos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pythodoros son of Archias",
+        "role": "Treasurer of the Council",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pythodoros%20son%20of%20Archias",
+        "confidence": 1.0
+      },
+      {
+        "name": "Archias",
+        "role": "Father of the treasurer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Archias",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Athens",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      },
+      {
+        "name": "Xypete",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580134",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aphidna",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579873",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phlya",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580076",
+        "confidence": 1.0
+      },
+      {
+        "name": "Thria",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580120",
+        "confidence": 0.8
+      },
+      {
+        "name": "Theater",
+        "type": "Meeting place",
+        "uri": "https://www.wikidata.org/wiki/Q11635",
+        "confidence": 1.0
+      },
+      {
+        "name": "Prytanikon",
+        "type": "Location of stele",
+        "uri": "https://pleiades.stoa.org/places/720198157",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Apollo Prostaterios",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Artemis Boulaia",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Agathe Tyche",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579885",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This is a standard Athenian prytany decree from the archonship of Leochares (228/7 BC). It records the honors granted to the prytaneis of the tribe Kekropis for their successful administration and their performance of sacrifices to Apollo Prostaterios and Artemis Boulaia. The text follows the typical formulaic structure of Hellenistic Athenian decrees, including dating by archon and prytany, the naming of officials, the record of the assembly meeting in the theater, and instructions for the publication of the decree on a stone stele in the Prytanikon.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

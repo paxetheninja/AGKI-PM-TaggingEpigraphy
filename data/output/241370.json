@@ -1,0 +1,291 @@
+{
+  "phi_id": 241370,
+  "themes": [
+    {
+      "label": "Manumission Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Manumission Records",
+        "subcategory": null
+      },
+      "rationale": "The inscription records the sale of a female slave named Aphrodisia to Apollo Pythios for the purpose of her freedom, a standard form of manumission at Delphi.",
+      "confidence": 1.0,
+      "quote": "ἀπέδοτο Χέμηλος Ἀριστοτέλεος Δελφὸς τῷ Ἀπόλλωνι τῷ Πυθίῳ σῶμα γυναικεῖον ᾧ ὄνομα Ἀφροδισία τιμῆς ἀργυρίου μνᾶν δύο ... ἐλευθέραν εἶμεν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Contracts and Private Legal Acts",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Contracts and Private Legal Acts",
+        "subcategory": null
+      },
+      "rationale": "The document functions as a legal contract specifying a price, guarantors, and a paramone clause requiring the manumitted person to remain in service for a specific period.",
+      "confidence": 1.0,
+      "quote": "τιμῆς ἀργυρίου μνᾶν δύο ... παραμεινάτω δὲ Ἀφροδισία παρὰ Χέμηλον ἄχρι κα ζώη Χέμηλος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Votive Dedications",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Votive Dedications",
+        "subcategory": null
+      },
+      "rationale": "The manumission is framed as a religious act where the slave is dedicated/sold to the god Apollo Pythios.",
+      "confidence": 1.0,
+      "quote": "τῷ Ἀπόλλωνι τῷ Πυθίῳ ... καθὼς ἐπίστευσε Ἀφροδισία τῷ θεῷ τὴν ὠνάν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The text includes a comprehensive list of witnesses, including priests and local officials, as well as the presiding archon.",
+      "confidence": 1.0,
+      "quote": "ἄρχοντος Κλευδάμου ... μάρτυρες τοί τε ἱερεῖς τοῦ Ἀπόλλωνος ... καὶ τῶν ρχόντων Ἀνδρόνικος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Calendars and Timetables",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Calendars and Timetables",
+        "subcategory": null
+      },
+      "rationale": "The inscription is dated using the specific Delphic month Bysios.",
+      "confidence": 1.0,
+      "quote": "μηνὸς Βυσίου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Laws and Regulations",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Laws and Regulations",
+        "subcategory": null
+      },
+      "rationale": "The text explicitly references the law in relation to the duties of the guarantors and the validity of the manumission.",
+      "confidence": 1.0,
+      "quote": "βεβαιωτῆρες κατὰ τὸν νόμον ... κατὰ τὸν νόμον",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Sacred Laws and Rules",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Sacred Laws and Rules",
+        "subcategory": null
+      },
+      "rationale": "The involvement of the priests of Apollo and the sacred context of the temple suggest adherence to sacred regulations governing manumissions.",
+      "confidence": 0.8,
+      "quote": "μάρτυρες τοί τε ἱερεῖς τοῦ Ἀπόλλωνος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Registers and Catalogues",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Registers and Catalogues",
+        "subcategory": null
+      },
+      "rationale": "This inscription serves as a public register of a legal status change, intended for permanent display on the temple wall.",
+      "confidence": 0.8,
+      "quote": "ἀπέδοτο Χέμηλος ... τῷ Ἀπόλλωνι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Kleudamos",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kleudamos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Chemelos",
+        "role": "Seller and former owner",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Chemelos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristoteles",
+        "role": "Father of Chemelos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristoteles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aphrodisia",
+        "role": "Manumitted slave",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aphrodisia",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eukrates",
+        "role": "Guarantor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eukrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Epikrates",
+        "role": "Father of Eukrates",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Epikrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kleon",
+        "role": "Guarantor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kleon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dion",
+        "role": "Father of Kleon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dion",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristoteles",
+        "role": "Guarantor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristoteles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Echemylos",
+        "role": "Father of Aristoteles the guarantor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Echemylos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Mentas",
+        "role": "Witness and Priest",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Mentas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Diotaios",
+        "role": "Witness and Priest",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Diotaios",
+        "confidence": 1.0
+      },
+      {
+        "name": "Alkon",
+        "role": "Father of Diotaios",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Alkon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Thambos",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Thambos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Thanon",
+        "role": "Father of Thambos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Thanon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kalledas",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kalledas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eukleidas",
+        "role": "Father of Kalledas",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eukleidas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Xenon",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Xenon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Peithagoras",
+        "role": "Father of Xenon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Peithagoras",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eukleidas",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eukleidas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Andronikos",
+        "role": "Official",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Andronikos",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Delphi",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/540726",
+        "confidence": 1.0
+      },
+      {
+        "name": "Tarentum",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/442810",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Apollo Pythios",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "intact",
+  "provenance": [
+    {
+      "name": "Phokis",
+      "type": "Region",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Delphi",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/540726",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription from Delphi, dated to the archonship of Kleudamos in the month of Bysios, records the manumission of a female slave named Aphrodisia. The process is framed as a fictitious sale to Apollo Pythios for the price of two silver minae. The document includes a paramone clause, requiring Aphrodisia to remain in service to her former owner, Chemelos, for the duration of his life. It also specifies the legal protections for her freedom after his death and lists several witnesses, including priests of Apollo and local officials. All entity names have been transliterated to English/Latinized forms as required.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 168 BC",
+  "date_min": -168.0,
+  "date_max": -168.0,
+  "date_circa": false
+}

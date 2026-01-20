@@ -1,0 +1,180 @@
+{
+  "phi_id": 240168,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text is a formal decree issued by the city of Delphi, as indicated by the opening formula 'it seemed good to the city of Delphi'.",
+      "confidence": 1.0,
+      "quote": "δοξε τ ι π λει τν δελφ ν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription honors Aristodamos for his piety and goodwill, granting him a crown, a statue, and the title of proxenos and benefactor.",
+      "confidence": 1.0,
+      "quote": "παιν σα[ι]ριστ δαμον λυκ νου πατρ π τ ι ποτ τ ν θε ν ε σεβ[ε]αι κα τ ι ποτ τ ν π λιν ε νο αι κα στεφαν σαι α τ ν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Agonistic / Victory Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Agonistic / Victory Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The decree specifies that the proclamation of the honors should take place during the Pythian and Soteria games.",
+      "confidence": 0.8,
+      "quote": "τ [ν]ναγ ρευσιν ποι σ[ασθ]αι το στεφ νου κ[α τ ς] ε κ νος ν τ ι γ [νι] τ ν πυθ ων [ μ]ο ως δ κα ν τ ι γ νι τ ν σωτηρ ων",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The inscription concludes with a list of the presiding officials, including the archon, councilors, and the secretary of the council.",
+      "confidence": 1.0,
+      "quote": "ρχοντος γ ωνος βουλευ ντων τ ν δευτ ραν ξ[ μ]ηνον π τρωνος το ριστοβο λου ρ στωνος το δαμοφ νε[ος γραμ]ματε οντος δ βουλ ς ρακλε δα το ριστοδ μου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Aristodamos",
+        "role": "Honoree",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristodamos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lykanos",
+        "role": "Father of Aristodamos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lykanos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Teison",
+        "role": "Ambassador",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Teison",
+        "confidence": 1.0
+      },
+      {
+        "name": "Theocharios",
+        "role": "Father of Teison",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theocharios",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kleon",
+        "role": "Ambassador",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kleon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eryos",
+        "role": "Father of Kleon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eryos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Agon",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Agon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Petron",
+        "role": "Councilor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Petron",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristoboulos",
+        "role": "Father of Petron",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristoboulos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Ariston",
+        "role": "Councilor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ariston",
+        "confidence": 1.0
+      },
+      {
+        "name": "Damophanes",
+        "role": "Father of Ariston",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Damophanes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Herakleidas",
+        "role": "Secretary",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Herakleidas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristodemos",
+        "role": "Father of Herakleidas",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristodemos",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Delphi",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/540726",
+        "confidence": 1.0
+      },
+      {
+        "name": "Patrae",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/570567",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Apollo",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Delphi",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/540726",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a formal honorific decree from Delphi dating to approximately 104 BC. It honors Aristodamos, son of Lykanos, a citizen of Patrae, for his piety toward Apollo and his services to the city of Delphi. The decree grants him proxeny, a bronze statue, and a crown, with the honors to be proclaimed at the Pythian and Soteria games. It concludes with a standard dating formula listing the local magistrates. The text contains several lacunae that have been restored based on standard Delphic formulas.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " ca. 104 BC",
+  "date_min": -104.0,
+  "date_max": -104.0,
+  "date_circa": true
+}

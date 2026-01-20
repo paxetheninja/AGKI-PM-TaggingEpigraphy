@@ -1,0 +1,190 @@
+{
+  "phi_id": 3243,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text is a formal resolution passed by the Council and the People of Athens.",
+      "confidence": 1.0,
+      "quote": "ἀναγράψαι δὲ τόδε τὸ ψήφισμα",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription honors Sosandros for his piety, goodwill, and public services to the Athenian state.",
+      "confidence": 1.0,
+      "quote": "ἐπαινέσαι Σώσανδρον Φιλίστου συπαλήττιον",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Building Commemoration",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Building Commemoration",
+        "subcategory": null
+      },
+      "rationale": "The honoree is praised for his contributions to the decoration and maintenance of gymnasia and temples.",
+      "confidence": 0.8,
+      "quote": "τῶν γυμνασίων τε καὶ ἱερῶν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The decree includes instructions for recording the expenses of the stele and its inscription in the public accounts.",
+      "confidence": 0.8,
+      "quote": "ἐνενεγκεῖν ἐν τοῖς λόγοις",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The text explicitly states that the decree is to be inscribed on a stone stele.",
+      "confidence": 1.0,
+      "quote": "εἰς στήλην λιθίνην",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Other Stone",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Other Stone"
+      },
+      "rationale": "The inscription is carved on a stone support, explicitly described as stone in the text.",
+      "confidence": 1.0,
+      "quote": "στήλην λιθίνην",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Gold",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Metal",
+        "subcategory": "Gold"
+      },
+      "rationale": "The honoree is awarded a golden crown as a mark of distinction.",
+      "confidence": 1.0,
+      "quote": "χρυσῷ στεφάνῳ",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The inscription contains several lacunae and restored sections, particularly at the beginning.",
+      "confidence": 1.0,
+      "quote": "[----------------------------- ν]εστρ",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Damaged but Legible",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Legibility",
+        "category": "Damaged but Legible",
+        "subcategory": null
+      },
+      "rationale": "Despite the missing fragments, the majority of the decree's operative text is preserved and readable.",
+      "confidence": 1.0,
+      "quote": "καὶ τἆλλα πάντα ἔπραξεν δωρεὰν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Sosandros",
+        "role": "Honoree",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sosandros",
+        "confidence": 1.0
+      },
+      {
+        "name": "Philistos",
+        "role": "Father of the honoree",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philistos",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Sypalettos",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580112",
+        "confidence": 1.0
+      },
+      {
+        "name": "Athens",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      },
+      {
+        "name": "Acropolis",
+        "type": "Sanctuary",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Athena",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Attica",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579888",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is an Athenian honorific decree dating to the late 2nd century BC. It honors Sosandros, son of Philistos, from the deme of Sypalettos, for his exemplary service, piety, and financial contributions (liturgies) towards the Athenian state, specifically regarding the decoration and maintenance of gymnasia and temples. The decree mandates that he be awarded a golden crown and that the text be inscribed on a stone stele to be placed on the Acropolis near the temple of Athena. It also includes administrative instructions for the recording of the associated costs.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " fin. s. II a.",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

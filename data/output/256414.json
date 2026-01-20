@@ -1,0 +1,148 @@
+{
+  "phi_id": 256414,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text begins with the formal resolution of the association, indicating it is a decree passed by the group.",
+      "confidence": 1.0,
+      "quote": "γνώμη τοῦ κοινοῦ τῶν Ἀτταλιστῶν",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription praises the priest Kraton for his goodwill, philanthropy, and dedication to the association.",
+      "confidence": 1.0,
+      "quote": "πολλὰς καὶ μεγάλας ἀποδείξεις ἐποιεῖτο τῆς πρὸς τοὺς Ἀτταλιστὰς εὐνοίας",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    },
+    {
+      "label": "Sacred Laws and Rules",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Sacred Laws and Rules",
+        "subcategory": null
+      },
+      "rationale": "The text explicitly mentions a sacred law left by Kraton regarding the regulations of the association and its rituals.",
+      "confidence": 1.0,
+      "quote": "κυρῶσαι μὲν τὸν ἱερὸν νόμον τὸν πολελειμμένον ὑπὸ Κράτωνος",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The inscription records a specific endowment of 10,500 Alexandrian drachmas and discusses the use of the resulting income.",
+      "confidence": 1.0,
+      "quote": "ἀργυρίου Ἀλεξανδρείου δραχμὰς μυρίας καὶ πεντακοσίας ὧν ἐκ τῆς προσόδου θυσίας τε καὶ συνόδους [πε]ποιήμεθα",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    },
+    {
+      "label": "Building Commemoration",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Building Commemoration",
+        "subcategory": null
+      },
+      "rationale": "The text records the dedication of specific buildings, including the Attaleion and a housing complex, to the association.",
+      "confidence": 1.0,
+      "quote": "τό τε Ἀττάλειον τὸ πρὸς τῶι θεάτρωι... καὶ τὴν συνοικίαν τὴν πρὸς τῶι βασιλείωι",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    },
+    {
+      "label": "Official Letters",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Official Letters",
+        "subcategory": null
+      },
+      "rationale": "The inscription mentions a letter written by Kraton and sent to the association by King Attalus.",
+      "confidence": 1.0,
+      "quote": "γράψας ἐπιστολὴν πρὸς τοὺς Ἀτταλιστὰς... ἣν ἐξαπέστειλεν ἡμῖν βασιλεὺς Ἄτταλος",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Kraton",
+        "role": "Priest of the association and benefactor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kraton",
+        "confidence": 1.0
+      },
+      {
+        "name": "Zotichos",
+        "role": "Father of Kraton",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Zotichos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Attalus",
+        "role": "King of Pergamum",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Attalus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Alexander",
+        "role": "Referenced in the context of Alexandrian currency",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Alexander",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Pergamum",
+        "type": "City where Kraton died",
+        "uri": "https://pleiades.stoa.org/places/550812",
+        "confidence": 1.0
+      },
+      {
+        "name": "Attaleion",
+        "type": "Sanctuary or building dedicated to the association",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Teos",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/550913",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "The inscription is a detailed decree from the association of the Attalistai in Teos, honoring their deceased priest Kraton. It outlines his significant financial and architectural benefactions, including an endowment of 10,500 drachmas and the dedication of the Attaleion. It also confirms the legal status of a sacred law he left behind to govern the group's activities. The text contains several lacunae and restored sections, indicating its fragmentary state.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

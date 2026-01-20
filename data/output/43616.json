@@ -1,0 +1,135 @@
+{
+  "phi_id": 43616,
+  "themes": [
+    {
+      "label": "Laws and Regulations",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Laws and Regulations",
+        "subcategory": null
+      },
+      "rationale": "The inscription contains a detailed set of legal provisions and regulations governing the new settlement at Naupaktos, including inheritance, taxation, and judicial procedures.",
+      "confidence": 1.0,
+      "quote": "το ς α τον νομ οις χρεσται",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    },
+    {
+      "label": "Treaties and Agreements",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Treaties and Agreements",
+        "subcategory": null
+      },
+      "rationale": "The text represents a formal agreement or foundation charter between the mother city of the Opuntian Lokrians and the colonists establishing the settlement at Naupaktos.",
+      "confidence": 1.0,
+      "quote": "ν να πακτον κ τ τονδε πι οικ α",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    },
+    {
+      "label": "Bronze Tablets",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Portable Objects",
+        "subcategory": "Lead or Metal Tablets > Bronze Tablets"
+      },
+      "rationale": "The inscription is historically known as the 'Bronze Tablet of the Lokrian Settlers' and the text mentions Chaleion, a site famous for such metal legal documents.",
+      "confidence": 1.0,
+      "quote": "χαλει οις το ς σ ν ντιφ ται οικετα ς",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    },
+    {
+      "label": "Bronze",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Metal",
+        "subcategory": "Bronze"
+      },
+      "rationale": "The physical support of this legal document is a bronze tablet, typical for West Lokrian legal records of the 5th century BC.",
+      "confidence": 1.0,
+      "quote": "χαλει οις",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    },
+    {
+      "label": "Intact",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Complete / Intact",
+        "category": "Intact",
+        "subcategory": null
+      },
+      "rationale": "The inscription is largely preserved in its entirety, allowing for a comprehensive understanding of the legal pact.",
+      "confidence": 1.0,
+      "quote": "ν να πακτον κ τ τονδε πι οικ α... τα τ τ λεον ε μεν χαλει οις",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Antiphates",
+        "role": "Leader of a group of settlers",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antiphates",
+        "confidence": 0.8
+      }
+    ],
+    "places": [
+      {
+        "name": "Naupaktos",
+        "type": "City",
+        "uri": "https://www.wikidata.org/wiki/Q56398924",
+        "confidence": 1.0
+      },
+      {
+        "name": "Chaleion",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/540704",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hypocnemidian Lokris",
+        "type": "Region",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Western Lokris",
+        "type": "Region",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "intact",
+  "provenance": [
+    {
+      "name": "Lokris",
+      "type": "Region",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Chaleion",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/540704",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription, known as the 'Statute of the Lokrian Settlers at Naupaktos', is a foundational legal document. It outlines the rights and obligations of the colonists (epioikoi) from Opuntian Lokris who settled in Naupaktos. It covers complex legal ground including dual citizenship, inheritance laws for those dying in the colony, tax exemptions, and the specific judicial procedures to be followed in disputes between the colonists and the mother city. The mention of Antiphates at the end suggests a specific group or sub-settlement associated with him.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 500-450 BC",
+  "date_min": -500.0,
+  "date_max": -450.0,
+  "date_circa": false
+}

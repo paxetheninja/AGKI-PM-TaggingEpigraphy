@@ -1,0 +1,468 @@
+{
+  "phi_id": 138538,
+  "themes": [
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The inscription consists of a long, repetitive list of names, many with Roman gentilic names and patronymics, characteristic of a civic or religious membership list or a catalog of magistrates from the Roman Imperial period.",
+      "confidence": 1.0,
+      "quote": "ο λιος φαιν λας μοιων δευς",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "Long administrative lists of this nature in Rhodes were typically inscribed on stone stelae for public display in sanctuaries or civic centers.",
+      "confidence": 0.8,
+      "quote": "ο λιος φαιν λας μοιων δευς",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "Marble was the standard material for monumental inscriptions in Rhodes during the Roman Imperial period, particularly for extensive catalogs.",
+      "confidence": 0.8,
+      "quote": "ο λιος φαιν λας μοιων δευς",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The text contains numerous lacunae and reconstructed sections, indicating the physical support is broken and significant portions of the list are lost.",
+      "confidence": 1.0,
+      "quote": "[--]υ [--] [---]θους.",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Aurelius Phainilas",
+        "role": "Official",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aurelius%20Phainilas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Claudius Psicles",
+        "role": "Official",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Claudius%20Psicles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Flavius Moiragenes",
+        "role": "Official",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Flavius%20Moiragenes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Claudius Antipater",
+        "role": "Official",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Claudius%20Antipater",
+        "confidence": 1.0
+      },
+      {
+        "name": "Flavia Artemisia",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Flavia%20Artemisia",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dionysius",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dionysius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Python",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Python",
+        "confidence": 1.0
+      },
+      {
+        "name": "Menander",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Menander",
+        "confidence": 1.0
+      },
+      {
+        "name": "Gorgus",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Gorgus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Damacharis",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Damacharis",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristippus",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristippus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Euphranor",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Euphranor",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phanostratus",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Phanostratus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Gaius Sabidius",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Gaius%20Sabidius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Artemidorus",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Artemidorus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Zeno",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Zeno",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eratophanes",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eratophanes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Apollonius",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Apollonius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hermocrates",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hermocrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristidas",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristidas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Callicrates",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Callicrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dositheus",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dositheus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Cleucrates",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Cleucrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Callistratus",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Callistratus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pythagoras",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pythagoras",
+        "confidence": 1.0
+      },
+      {
+        "name": "Damocratidas",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Damocratidas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Antileon",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antileon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Melanthius",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Melanthius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Philocrates",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philocrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Glaucrates",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Glaucrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Draco",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Draco",
+        "confidence": 1.0
+      },
+      {
+        "name": "Demetrius",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demetrius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Cassitas",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Cassitas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Bybus",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Bybus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Theon",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Thebron",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Thebron",
+        "confidence": 1.0
+      },
+      {
+        "name": "Agetus",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Agetus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Clisimbrotus",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Clisimbrotus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Glauchartus",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Glauchartus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Timasarchus",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Timasarchus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Thrasymedes",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Thrasymedes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Praxon",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Praxon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pharnaces",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pharnaces",
+        "confidence": 1.0
+      },
+      {
+        "name": "Timodocus",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Timodocus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Damagoras",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Damagoras",
+        "confidence": 1.0
+      },
+      {
+        "name": "Nicasimachus",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nicasimachus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hierocles",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hierocles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Meicylaus",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Meicylaus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Satyra",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Satyra",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phanes",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Phanes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Euclees",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Euclees",
+        "confidence": 1.0
+      },
+      {
+        "name": "Timonax",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Timonax",
+        "confidence": 1.0
+      },
+      {
+        "name": "Timopolis",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Timopolis",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hegesidamus",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hegesidamus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Diodotus",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Diodotus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristomenes",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristomenes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Libuscidius",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Libuscidius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Nausicrates",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nausicrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Menecrates",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Menecrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Alexander",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Alexander",
+        "confidence": 1.0
+      },
+      {
+        "name": "Moschion",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Moschion",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Rhodes",
+        "type": "Island",
+        "uri": "https://pleiades.stoa.org/places/590031",
+        "confidence": 1.0
+      },
+      {
+        "name": "Karpathos",
+        "type": "Island",
+        "uri": "https://pleiades.stoa.org/places/589841",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Poseidon",
+        "uri": "https://www.wikidata.org/wiki/Q41127",
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Rhodes",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/590031",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription from Rhodes, dating to the Roman Imperial period (likely 2nd century AD), is a catalog of names. It features a high concentration of individuals with Roman citizenship (Aurelii, Claudii, Flavii), reflecting the social integration of the Rhodian elite into the Roman administrative system. The frequent use of the abbreviation 'καθ' (for καθ' υἱοθεσίαν) highlights the local importance of recording both biological and adoptive lineage, a hallmark of Rhodian social structure.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " after 69 AD",
+  "date_min": 69.0,
+  "date_max": 69.0,
+  "date_circa": false
+}

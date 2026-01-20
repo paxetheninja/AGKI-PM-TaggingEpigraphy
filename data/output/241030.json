@@ -1,0 +1,313 @@
+{
+  "phi_id": 241030,
+  "themes": [
+    {
+      "label": "Manumission Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Manumission Records",
+        "subcategory": null
+      },
+      "rationale": "The inscription records the sale of a slave to Apollo Pythios for the purpose of manumission, a common legal fiction in Delphi.",
+      "confidence": 1.0,
+      "quote": "π δοντο πολλ νιος κα φ λα τ ι π λλωνι τ ι πυθ ωι σ μα νδρε ον ι νομα θεοδ σιος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Contracts and Private Legal Acts",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Contracts and Private Legal Acts",
+        "subcategory": null
+      },
+      "rationale": "The text specifies a purchase price and conditions of service (paramone) between the sellers and the manumitted individual.",
+      "confidence": 1.0,
+      "quote": "τιμ ς ργυρ ου μν ν τρι ν [κα] τ ν τιμ ν χοντι π σαν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The document begins with a dating formula naming the archon and lists the council members and witnesses present.",
+      "confidence": 1.0,
+      "quote": "ρχοντος διο[δ ρο]υ μην ς νδυσποιτροπ ου βουλευ ντων [τ ν] δευτ ραν ξ μη[ν]ον καλλιδ μου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Votive Dedications",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Votive Dedications",
+        "subcategory": null
+      },
+      "rationale": "The slave is formally sold to the god Apollo, placing him under the protection of the sanctuary.",
+      "confidence": 1.0,
+      "quote": "π δοντο πολλ νιος κα φ λα τ ι π λλωνι τ ι πυθ ωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Laws and Regulations",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Laws and Regulations",
+        "subcategory": null
+      },
+      "rationale": "The text explicitly references the laws of the city regarding the validity of the manumission and the role of the guarantors.",
+      "confidence": 0.8,
+      "quote": "ο βεβαιωτ ρες κατ το ς ν μους τ ς π λιος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Calendars and Timetables",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Calendars and Timetables",
+        "subcategory": null
+      },
+      "rationale": "The inscription is dated by the Delphic month Endyspoitropios.",
+      "confidence": 0.8,
+      "quote": "μην ς νδυσποιτροπ ου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Rock-cut / Rupestral Inscriptions",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Wall or Building Surface"
+      },
+      "rationale": "Delphic manumissions of this period were typically inscribed on the Polygonal Wall of the sanctuary of Apollo.",
+      "confidence": 0.8,
+      "quote": "ρχοντος διο[δ ρο]υ",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Diodorus",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Diodorus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kallidemos",
+        "role": "Council member and Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kallidemos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Amphistratos",
+        "role": "Father of Kallidemos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Amphistratos",
+        "confidence": 0.8
+      },
+      {
+        "name": "Sotelos",
+        "role": "Council member and Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sotelos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sostratos",
+        "role": "Father of Sotelos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sostratos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Philonikos",
+        "role": "Secretary and Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philonikos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Menedemos",
+        "role": "Father of Philonikos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Menedemos",
+        "confidence": 0.8
+      },
+      {
+        "name": "Apollonios",
+        "role": "Seller",
+        "uri": "https://www.wikidata.org/wiki/Q3620717",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phila",
+        "role": "Seller",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Phila",
+        "confidence": 1.0
+      },
+      {
+        "name": "Theodosios",
+        "role": "Manumitted slave",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theodosios",
+        "confidence": 1.0
+      },
+      {
+        "name": "Mnasitheos",
+        "role": "Guarantor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Mnasitheos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Diodorus",
+        "role": "Father of Mnasitheos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Diodorus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aegon",
+        "role": "Guarantor, son of Polykleitos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aegon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Polykleitos",
+        "role": "Father of Aegon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Polykleitos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Atreas",
+        "role": "Priest of Apollo",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Atreas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Andronikos",
+        "role": "Father of Atreas",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Andronikos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aegon",
+        "role": "Priest of Apollo, son of Kephalos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aegon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kephalos",
+        "role": "Father of Aegon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kephalos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sostratos",
+        "role": "Arbitrator, son of Sotelos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sostratos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phanis",
+        "role": "Arbitrator",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Phanis",
+        "confidence": 0.8
+      },
+      {
+        "name": "Gorgylos",
+        "role": "Father of Phanis",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Gorgylos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Onesimos",
+        "role": "Arbitrator",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Onesimos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Antiochos",
+        "role": "Father of Onesimos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antiochos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Xenokrates",
+        "role": "Arbitrator",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Xenokrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hegesilaos",
+        "role": "Father of Xenokrates",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hegesilaos",
+        "confidence": 0.8
+      },
+      {
+        "name": "Xenokritos",
+        "role": "Arbitrator",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Xenokritos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Stesimenes",
+        "role": "Father of Xenokritos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Stesimenes",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Delphi",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/540726",
+        "confidence": 1.0
+      },
+      {
+        "name": "Galatia",
+        "type": "Region of origin",
+        "uri": "https://pleiades.stoa.org/places/619161",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Apollo Pythios",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Phokis",
+      "type": "Region",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Delphi",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/540726",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This is a standard Delphic manumission record from the late 2nd century BC. It follows the legal formula of a 'sale' to Apollo Pythios, ensuring the slave's freedom while imposing a 'paramone' clause requiring him to stay with his former owners until their death. The text is well-preserved but contains several lacunae restored by epigraphists. The list of witnesses includes priests, council members, and arbitrators (diaitetai).",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 121-108 BC",
+  "date_min": -121.0,
+  "date_max": -108.0,
+  "date_circa": false
+}

@@ -1,0 +1,215 @@
+{
+  "phi_id": 347831,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The inscription follows the standard Athenian formula for a public decree passed by the Council and the People.",
+      "confidence": 1.0,
+      "quote": "ἔδοξεν τῆι βουλῆι καὶ τῶι δήμωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The text is dedicated to honoring Strombichos for his military service and loyalty to the Athenian state.",
+      "confidence": 1.0,
+      "quote": "ἐπειδὴ Στρόμβιχος στρατευόμενος πρότερον",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The preamble identifies the archon, the secretary, and the presiding officers of the assembly.",
+      "confidence": 1.0,
+      "quote": "ἐπὶ Νικίου ἄρχοντος... Ἰσοκράτης Σωκράτους Ἀλωπεκῆθεν ἐγραμμάτευεν... τῶν προέδρων ἐπεψήφιζεν Σωσίστρατος Σωσίππου Κυδαθηναιεὺς",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "Public decrees in Athens during this period were typically inscribed on stone stelae for public display.",
+      "confidence": 0.8,
+      "quote": "ἐπὶ Νικίου ἄρχοντος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "The metadata and historical context of Athenian decrees from the Akropolis indicate the use of marble.",
+      "confidence": 0.8,
+      "quote": "ἐπὶ Νικίου ἄρχοντος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The text contains numerous lacunae and reconstructed sections indicated by brackets.",
+      "confidence": 1.0,
+      "quote": "[ἐπὶ Νικίου ἄρχοντο]ς",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Nicias",
+        "role": "Archon",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Isocrates",
+        "role": "Secretary",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Socrates",
+        "role": "Father of Isocrates",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Sosistratus",
+        "role": "Chairman of the Proedroi",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Sosippus",
+        "role": "Father of Sosistratus",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Photius",
+        "role": "Proposer of the decree",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Pamphilus",
+        "role": "Father of Photius",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Strombichos",
+        "role": "Honoree and soldier",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Demetrius",
+        "role": "Ruler or General",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Spintharus",
+        "role": "Associate of Strombichos",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Athens",
+        "type": "City",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Alopeke",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Kydathenaion",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Thorikos",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Mouseion",
+        "type": "Hill and fortress",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Otryne",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "Region",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Attica",
+      "type": "Region",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is an Athenian honorary decree dating to 266/5 BC, during the archonship of Nicias of Otryne. It honors Strombichos, a soldier who had previously served under Demetrius but joined the Athenian cause during the struggle for the city's liberty. The text specifically mentions his participation in the siege of the Mouseion hill and his continued goodwill toward the Athenian people. The document provides significant administrative detail, including the names of the secretary, the proposer, and the presiding officers.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 266/5 BC ",
+  "date_min": -266.0,
+  "date_max": -265.0,
+  "date_circa": false
+}

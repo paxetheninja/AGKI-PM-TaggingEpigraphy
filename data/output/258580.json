@@ -1,0 +1,195 @@
+{
+  "phi_id": 258580,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text is explicitly identified as a decree passed by the people regarding honors and administrative actions.",
+      "confidence": 1.0,
+      "quote": "τῶι δήμωι τῶι Κνιδίων ψήφισμα ἐνενεγκεῖν εἰς Κνίδον",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription records honors for foreign judges, including crowns, statues, and the right of front-row seating.",
+      "confidence": 1.0,
+      "quote": "στεφανωθῶσιν παρ’ αὐτοῖς ἐν τῶι θεάτρωι Διονυσίων τῶι ἀγῶνι τοῖς στεφάνοις οἷς ὁ δῆμος ἐψήφισται",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The text contains specific instructions for the treasurer regarding the purchase of gold and the costs associated with making the crowns.",
+      "confidence": 1.0,
+      "quote": "εἰς δὲ τοὺς στεφάνους ἀγοράσαι τὸν ταμίαν τῶν ὁσίων μετὰ τῶν στρατηγῶν χρυσοῦς εἴκοσι",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The decree specifies that it should be inscribed on a stone stele.",
+      "confidence": 1.0,
+      "quote": "ὅπως τὸ ψήφισμα τόδε ἀναγραφῆι εἰς στήλην λιθίνην",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    },
+    {
+      "label": "Statue Base",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Statue Base"
+      },
+      "rationale": "The text mentions the erection of a bronze statue on a marble base.",
+      "confidence": 1.0,
+      "quote": "στῆσαι δὲ ἑκατέρου αὐτῶν εἰκόνα χαλκῆν ἐπὶ βήματος μαρμαρίνου",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "The base for the statues is specified to be made of marble.",
+      "confidence": 1.0,
+      "quote": "βήματος μαρμαρίνου",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    },
+    {
+      "label": "Bronze",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Metal",
+        "subcategory": "Bronze"
+      },
+      "rationale": "The statues to be erected are specified as being made of bronze.",
+      "confidence": 1.0,
+      "quote": "εἰκόνα χαλκῆν",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    },
+    {
+      "label": "Gold",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Metal",
+        "subcategory": "Gold"
+      },
+      "rationale": "The crowns awarded are to be made of gold, with a specific weight or value mentioned.",
+      "confidence": 1.0,
+      "quote": "χρυσοῦς εἴκοσι",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The text contains numerous lacunae that have been reconstructed by editors.",
+      "confidence": 1.0,
+      "quote": "[καλεῖν δὲ αὐτοὺς καὶ εἰς προεδρίαν ὑπάρχειν διὰ παντός]",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Xenocritus",
+        "role": "Judge and envoy from Knidos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Xenocritus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Xenocrates",
+        "role": "Father of Xenocritus",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Xenocrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hegesicrates",
+        "role": "Judge and envoy from Knidos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hegesicrates",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Knidos",
+        "type": "City-state",
+        "uri": "https://pleiades.stoa.org/places/707539",
+        "confidence": 1.0
+      },
+      {
+        "name": "Smyrna",
+        "type": "City-state issuing the decree",
+        "uri": "https://pleiades.stoa.org/places/550893",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Aphrodite Stratonikis",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Dionysus",
+        "uri": "https://www.wikidata.org/wiki/Q41680",
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Knidos",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/707539",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a formal honorific decree issued by the people of Smyrna to honor two judges from Knidos, Xenocritus and Hegesicrates. It follows the standard Hellenistic formula for such decrees, detailing the virtues of the individuals (virtue and justice), the specific honors granted (bronze statues in the sanctuary of Aphrodite Stratonikis, gold crowns, and front-row seating), and the administrative and financial procedures for implementing these honors. The mention of the Dionysia festival indicates the public context for the proclamation of these honors.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

@@ -6,6 +6,7 @@ from pathlib import Path
 from .config import INPUT_DIR, OUTPUT_DIR, TAXONOMY_DIR, DATA_DIR
 from .data_loader import load_inscriptions
 
+ROOT_INDEX = Path("index.html")
 WEBSITE_DIR = Path("website")
 INSCRIPTIONS_DIR = WEBSITE_DIR / "inscriptions"
 ASSETS_DIR = WEBSITE_DIR / "assets"
@@ -110,7 +111,10 @@ def load_taxonomy():
     with open(TAXONOMY_DIR / "taxonomy.json", 'r', encoding='utf-8') as f: return json.load(f)
 
 def sync_static_pages():
-    for name in ("index.html", "search.html", "explore.html"):
+    index_template = TEMPLATES_DIR / "index.html"
+    if index_template.exists():
+        ROOT_INDEX.write_text(index_template.read_text(encoding="utf-8"), encoding="utf-8")
+    for name in ("search.html", "explore.html"):
         template = TEMPLATES_DIR / name
         if not template.exists():
             continue
@@ -291,9 +295,9 @@ def generate_detail_page(merged_data):
     html_body = r"""
 <body>
   <header class="site-header">
-    <div class="brand"><h1><a href="../index.html">AGKI Tagging Tool</a></h1></div>
+    <div class="brand"><h1><a href="../../index.html">AGKI Tagging Tool</a></h1></div>
     <nav class="nav-links">
-        <a href="../index.html" class="nav-item">Home</a>
+        <a href="../../index.html" class="nav-item">Home</a>
         <a href="../search.html" class="nav-item">Search</a>
         <a href="../explore.html" class="nav-item">Explore</a>
         <a href="../compare.html" class="nav-item">Compare</a>
@@ -471,9 +475,9 @@ def generate_indices_page(deities, persons, places):
 </head>
 <body>
   <header class="site-header">
-    <div class="brand"><h1><a href="index.html">AGKI Tagging Tool</a></h1></div>
+    <div class="brand"><h1><a href="../index.html">AGKI Tagging Tool</a></h1></div>
     <nav class="nav-links">
-        <a href="index.html" class="nav-item">Home</a>
+        <a href="../index.html" class="nav-item">Home</a>
         <a href="search.html" class="nav-item">Search</a>
         <a href="explore.html" class="nav-item">Explore</a>
         <a href="compare.html" class="nav-item">Compare</a>

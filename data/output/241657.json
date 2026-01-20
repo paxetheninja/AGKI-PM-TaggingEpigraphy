@@ -1,0 +1,275 @@
+{
+  "phi_id": 241657,
+  "themes": [
+    {
+      "label": "Manumission Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Manumission Records",
+        "subcategory": null
+      },
+      "rationale": "The inscription records the sale of a female slave to the god Apollo, a standard legal fiction used for manumission in Delphi.",
+      "confidence": 1.0,
+      "quote": "ἀπέδοτο Ἀρίστων Ἀριστομήδεος καὶ Πολυκράτηα Μνασιθέου τῶι Ἀπόλλωνι τῶι Πυθίωι σῶμα γυναικεῖον",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Contracts and Private Legal Acts",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Contracts and Private Legal Acts",
+        "subcategory": null
+      },
+      "rationale": "The text details a financial transaction involving a price of four minae and legal conditions for the transfer of ownership.",
+      "confidence": 1.0,
+      "quote": "τιμᾶς ἀργυρίου μνᾶν τεσσάρων καὶ τὰν τιμὰν [ἔχει] πᾶσαν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The inscription begins with a dating formula naming the archons and prytaneis, and concludes with a list of witnesses.",
+      "confidence": 1.0,
+      "quote": "ἄρχοντος ... βουλευόντων τῶν πρυτανίων ... μάρτυροι οἱ ἱερεῖς τοῦ Ἀπόλλωνος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Votive Dedications",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Votive Dedications",
+        "subcategory": null
+      },
+      "rationale": "The manumission is framed as a dedication/sale to Pythian Apollo, placing the former slave under the god's protection.",
+      "confidence": 0.8,
+      "quote": "τῶι Ἀπόλλωνι τῶι Πυθίωι ... καθὼς ἐπίστευσε Ζωπυρ[ὶς] τῶι θεῶι τὰν ὠνάν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Wall Inscription",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Wall or Building Surface"
+      },
+      "rationale": "Delphic manumissions of this period were typically inscribed on the Polygonal Wall of the Sanctuary of Apollo.",
+      "confidence": 0.9,
+      "quote": "ἐν Δελφοῖς",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Limestone",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Limestone"
+      },
+      "rationale": "The Polygonal Wall at Delphi, where these records are found, is constructed from local limestone.",
+      "confidence": 0.8,
+      "quote": "ἐν Δελφοῖς",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Ariston",
+        "role": "Seller",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ariston",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristomedes",
+        "role": "Father of Ariston",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristomedes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Polykrateia",
+        "role": "Seller",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Polykrateia",
+        "confidence": 1.0
+      },
+      {
+        "name": "Mnasitheos",
+        "role": "Father of Polykrateia",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Mnasitheos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Zopyris",
+        "role": "Manumitted slave",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Zopyris",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristoboulos",
+        "role": "Guarantor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristoboulos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Callicrates",
+        "role": "Archon of Delphi",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Callicrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Diodorus",
+        "role": "Father of Callicrates",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Diodorus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Cleon",
+        "role": "Archon of Erineos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Cleon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sostratos",
+        "role": "Father of Cleon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sostratos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Philon",
+        "role": "Prytanis",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Atadas",
+        "role": "Father of Philon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Atadas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Mnasidamos",
+        "role": "Prytanis",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Mnasidamos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Xenocrates",
+        "role": "Father of Mnasidamos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Xenocrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kleuxenidas",
+        "role": "Prytanis",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kleuxenidas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Thaneon",
+        "role": "Father of Kleuxenidas",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Thaneon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Callias",
+        "role": "Priest of Apollo",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Callias",
+        "confidence": 1.0
+      },
+      {
+        "name": "Thambos",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Thambos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Bromichos",
+        "role": "Father of Thambos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Bromichos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Timocritus",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Timocritus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eucleidas",
+        "role": "Father of Timocritus",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eucleidas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Damocles",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Damocles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Epimachos",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Epimachos",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Delphi",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/540726",
+        "confidence": 1.0
+      },
+      {
+        "name": "Erineos",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/570236",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Apollo Pythios",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Phokis",
+      "type": "Region",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Delphi",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/540726",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This is a formal manumission record from Delphi, dated by the archonship of Callicrates in Delphi and Cleon in Erineos. It follows the standard 'sale to the god' formula where Ariston and Polykrateia sell a home-born slave named Zopyris to Pythian Apollo for four silver minae. The text specifies that Zopyris is to be free (eleuthera) and protected from any attempt at re-enslavement (anephaptos). It includes a guarantor (bebaioter) and a list of witnesses including priests and other officials. The presence of square brackets indicates some textual loss and restoration.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 140-100 BC",
+  "date_min": -140.0,
+  "date_max": -100.0,
+  "date_circa": false
+}

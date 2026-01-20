@@ -1,0 +1,132 @@
+{
+  "phi_id": 229533,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text contains multiple fragments of official decrees, indicated by the standard formula 'it was decided by the council and the people'.",
+      "confidence": 1.0,
+      "quote": "δοξε τ ι βουλ[ ι κα] τ ι δ μω[ι]",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    },
+    {
+      "label": "Sacred Laws and Rules",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Sacred Laws and Rules",
+        "subcategory": null
+      },
+      "rationale": "The inscription deals with the recognition of the asylia (inviolability) of the sanctuary of Asklepios, a matter of sacred law.",
+      "confidence": 1.0,
+      "quote": " π ρχειν δ κα συλον τ ερ ν το] σ[κ]ληπιο",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    },
+    {
+      "label": "Agonistic / Victory Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Agonistic / Victory Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The text mentions the announcement of sacrifices and games (agones) held every five years (penteteris) in honor of Asklepios.",
+      "confidence": 1.0,
+      "quote": "τ ν [γ]να ν συντ[ελο σιν τ ι]σκληπι ι δι πεντ[αετη]ρ δος",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The decree specifies that it should be inscribed on a stone stele and set up in the sanctuary.",
+      "confidence": 1.0,
+      "quote": "ναγρ ψαι τ δε τ[ ψ φισμα ν στ ληι λιθ νηι κα στ σαι ε ς τ ερ] ν το σκ[λη]πιο",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Aischron",
+        "role": "Theoros (sacred envoy)",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aischron",
+        "confidence": 1.0
+      },
+      {
+        "name": "Theudotos",
+        "role": "Father of Aischron",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theudotos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hippotas",
+        "role": "Architheoros (chief sacred envoy)",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hippotas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hippokrates",
+        "role": "Father of Hippotas",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hippokrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Gorakratos",
+        "role": "Surname or byname of Aischron",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Gorakratos",
+        "confidence": 0.8
+      },
+      {
+        "name": "Athenagoras",
+        "role": "Proposer of the decree",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Athenagoras",
+        "confidence": 0.8
+      }
+    ],
+    "places": [
+      {
+        "name": "Kos",
+        "type": "Island and City",
+        "uri": "https://pleiades.stoa.org/places/736946",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Asklepios",
+        "uri": "https://www.wikidata.org/wiki/Q83223",
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Kos",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/736946",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription consists of several fragmentary decrees from various Greek cities sent to Kos in 242 BC. These decrees respond to the Koan invitation to recognize the sanctuary of Asklepios as inviolable (asylos) and to acknowledge the panhellenic status of the Asklepieia festival, which included sacrifices and athletic contests held every five years. The text mentions the sacred envoys (theoroi) sent by the cities to announce their participation and acceptance of the sacred truce (ekecheiria).",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 242 BC ",
+  "date_min": -242.0,
+  "date_max": -242.0,
+  "date_circa": false
+}

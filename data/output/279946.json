@@ -1,0 +1,264 @@
+{
+  "phi_id": 279946,
+  "themes": [
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription honors Ulpius Domitius Paulianus Falco, describing him with various virtues and high-ranking titles such as senator and consular.",
+      "confidence": 1.0,
+      "quote": "τὸν σεβαστὸν γνώστην καὶ πανάρετον καὶ ἐπὶ γένους σύγκριτον καὶ υἱὸν ἐπαρχείας καὶ γένους συνκλητικοῦ καὶ ὑπατικοῦ Οὐ. Δομίτιον Παυλιανὸν Φάλκωνα",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The text contains an extensive list of phylarchs (tribal leaders) organized by their respective tribes (phylai).",
+      "confidence": 1.0,
+      "quote": "οἱ τούτους αὐτοὶ τῆς ἀρχῆς ᾑρημένοι φύλαρχοι. φυλῆς σεβαστηνῆς... φυλῆς θηβαΐδος... φυλῆς γερμανικῆς... φυλῆς σαβεινιανῆς... φυλῆς φαυστεινιανῆς... φυλῆς διονυσιάδος... φυλῆς τιβεριανῆς... φυλῆς προυσιάδος... φυλῆς ἁδριανῆς... φυλῆς μεγαρίδος... φυλῆς ἰουλιανῆς... φυλῆς ἀντωνιανῆς",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Agonistic / Victory Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Agonistic / Victory Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The honoree is identified as an agonothete (organizer of games) for life of Olympian Zeus.",
+      "confidence": 1.0,
+      "quote": "ἀγωνοθέτην δι' αἰῶνος Ὀλυμπίου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Votive Dedications",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Votive Dedications",
+        "subcategory": null
+      },
+      "rationale": "The inscription mentions the honoree's role as a priest of Olympian Zeus, indicating a religious context for his public service.",
+      "confidence": 0.8,
+      "quote": "ἱερέα καὶ ἀγωνοθέτην δι' αἰῶνος Ὀλυμπίου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Ulpius Domitius Paulianus Falco",
+        "role": "Senator, Consular, First Archon, Priest, Agonothete",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ulpius%20Domitius%20Paulianus%20Falco",
+        "confidence": 1.0
+      },
+      {
+        "name": "Ulpius Domitius Stratocles",
+        "role": "Bithyniarch, Helladarch, Epistates, Logistes",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ulpius%20Domitius%20Stratocles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aurelius Domitianus Achilles",
+        "role": "Phylarch",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aurelius%20Domitianus%20Achilles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aurelius Caecilianus Caecilius",
+        "role": "Phylarch",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aurelius%20Caecilianus%20Caecilius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Vetillianus Tyrannius",
+        "role": "Phylarch",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Vetillianus%20Tyrannius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aurelius Atticianus Symphorus",
+        "role": "Phylarch",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aurelius%20Atticianus%20Symphorus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Tiberius Claudius Eugenes",
+        "role": "Phylarch",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Tiberius%20Claudius%20Eugenes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aurelius Aphrodisius",
+        "role": "Phylarch",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aurelius%20Aphrodisius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aurelius Papianus Severus",
+        "role": "Phylarch",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aurelius%20Papianus%20Severus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aurelius Pphoutianus Staphylus",
+        "role": "Phylarch",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aurelius%20Pphoutianus%20Staphylus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aurelius Memnonianus Memnon",
+        "role": "Phylarch",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aurelius%20Memnonianus%20Memnon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aurelius Iulianus",
+        "role": "Phylarch",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aurelius%20Iulianus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Domitius Phocion",
+        "role": "Phylarch",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Domitius%20Phocion",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aelius Telesinus",
+        "role": "Phylarch",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aelius%20Telesinus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aurelius Aristaeus son of Iulianus",
+        "role": "Phylarch",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aurelius%20Aristaeus%20son%20of%20Iulianus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Peisonianus Bassus",
+        "role": "Phylarch",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Peisonianus%20Bassus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Demetrianus Demetrius",
+        "role": "Phylarch",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demetrianus%20Demetrius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aurelius Varianus Heliodorus",
+        "role": "Phylarch",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aurelius%20Varianus%20Heliodorus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aurelius Musonianus Eucrates",
+        "role": "Phylarch",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aurelius%20Musonianus%20Eucrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aurelius Socratianus Socrates",
+        "role": "Phylarch",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aurelius%20Socratianus%20Socrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aurelius Papianus Timocrates son of Aristides",
+        "role": "Phylarch",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aurelius%20Papianus%20Timocrates%20son%20of%20Aristides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Calpurnius Myrocles",
+        "role": "Phylarch",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Calpurnius%20Myrocles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Domitianus Asclepiades",
+        "role": "Phylarch",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Domitianus%20Asclepiades",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aurelius Olympius Phinus",
+        "role": "Phylarch",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aurelius%20Olympius%20Phinus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Claudius Cornelius Symphorus",
+        "role": "Phylarch",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Claudius%20Cornelius%20Symphorus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aurelius Sozomenes",
+        "role": "Phylarch",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aurelius%20Sozomenes",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Prusias ad Hypium",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/845049",
+        "confidence": 1.0
+      },
+      {
+        "name": "Bithynia",
+        "type": "Region",
+        "uri": "https://pleiades.stoa.org/places/511189",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hellas",
+        "type": "Region",
+        "uri": "https://pleiades.stoa.org/places/1001896",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Zeus",
+        "uri": "https://www.wikidata.org/wiki/Q34201",
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Prusias ad Hypium",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/845049",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription from Prusias ad Hypium honors Ulpius Domitius Paulianus Falco, a prominent figure of senatorial and consular rank. He is celebrated for his civic and religious roles, including serving as the first archon and a lifelong priest and agonothete of Olympian Zeus. The monument was dedicated by the phylarchs (tribal leaders) of the city's twelve tribes, whose names are listed under their respective tribal headings. The text provides significant evidence for the tribal organization and local administration of Prusias ad Hypium in the early 3rd century AD.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " aft. 212 AD",
+  "date_min": 212.0,
+  "date_max": 212.0,
+  "date_circa": false
+}

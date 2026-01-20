@@ -1,0 +1,128 @@
+{
+  "phi_id": 349601,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text follows the standard formulaic structure of a public decree, specifically using the phrase 'dedochthai toi damoi' (it was resolved by the people).",
+      "confidence": 1.0,
+      "quote": "δεδ χθαι τ ι δ μωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription is dedicated to honoring Xenotimos for his services, awarding him a golden crown for his goodwill and diligence.",
+      "confidence": 1.0,
+      "quote": " παιν σαι ξεν τιμον τιμοξ νου κα στεφαν σαι χρυσ ι στεφ νωι ε νο ας νεκεν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Medicine and Physicians",
+      "hierarchy": {
+        "domain": "Social Life",
+        "subdomain": "Professions",
+        "category": "Medicine",
+        "subcategory": "Physicians"
+      },
+      "rationale": "The text explicitly mentions the 'medical art' (iatrike techne) and the role of public physicians (iatroi damosieuontes) in the city.",
+      "confidence": 1.0,
+      "quote": "κατ τ ν τ [χ]ναν τ ν ατρικ ν παρ χων α τοσαυ[τ]ν π[ρ] [θυμ]ον ε ς τ ν σωτηρ αν τ ν νοσε ντ[ων]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Public Health and Epidemics",
+      "hierarchy": {
+        "domain": "Social Life",
+        "subdomain": "Public Welfare",
+        "category": "Public Health",
+        "subcategory": "Epidemics"
+      },
+      "rationale": "The decree describes a period of many and great illnesses (arrhostemata) where the honoree provided aid even when other doctors were incapacitated.",
+      "confidence": 1.0,
+      "quote": "ν[π]ετ [ν]των πολλ ν κ[α μεγ λ]ων [ ρρω]στ[η]μ των",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Festivals",
+      "hierarchy": {
+        "domain": "Social Life",
+        "subdomain": "Religion and Cult",
+        "category": "Festivals",
+        "subcategory": "Dionysia"
+      },
+      "rationale": "The decree mandates that the honors be announced by the sacred herald during the festival of the Dionysia.",
+      "confidence": 1.0,
+      "quote": "δ εροκ ρυξ το ς διονυσ οις ναγγειλ τ[ω]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Praximenes",
+        "role": "Proposer of the decree",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Praximenes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Xenotimos son of Timoxenos",
+        "role": "Physician and honoree",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Xenotimos%20son%20of%20Timoxenos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Timoxenos",
+        "role": "Father of the honoree",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Timoxenos",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Kos",
+        "type": "City-state and Island",
+        "uri": "https://pleiades.stoa.org/places/736946",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Dionysus",
+        "uri": "https://www.wikidata.org/wiki/Q41680",
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Kos",
+      "type": "Island",
+      "uri": "https://pleiades.stoa.org/places/736946",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This is a mid-3rd century BC honorific decree from Kos. It is a significant document for the history of ancient medicine, as it details the actions of a physician, Xenotimos, during a public health crisis. The text distinguishes between private practice and the 'public physicians' (iatroi damosieuontes) who were salaried by the state. Xenotimos is praised for his selflessness in treating the citizens and his fellow doctors without making distinctions, leading to the award of a gold crown and a public proclamation at the Dionysia festival.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " ca. mid-3rd c. BC ",
+  "date_min": -275.0,
+  "date_max": -226.0,
+  "date_circa": true
+}

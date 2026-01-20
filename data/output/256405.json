@@ -1,0 +1,130 @@
+{
+  "phi_id": 256405,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The inscription begins with the standard resolution formula, indicating it is a public decree issued by the city and its magistrates.",
+      "confidence": 1.0,
+      "quote": "δοξεν ρκ δων το ς κ σμοις κα τ ι π λει",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The text grants the status of proxenos (public representative) and other honors to the ambassadors Herodotus and Menekles.",
+      "confidence": 1.0,
+      "quote": "προξ νος τ ς π λεος μ ν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Treaties and Agreements",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Treaties and Agreements",
+        "subcategory": null
+      },
+      "rationale": "The decree establishes diplomatic relations, including the recognition of asylia (inviolability) and the granting of isopoliteia (equal citizenship) and enktesis (right to own property).",
+      "confidence": 1.0,
+      "quote": "δο ναι μ ν σοπολιτε αν κα νκτησιν γ ς κα ο κ ας",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Herodotus",
+        "role": "Ambassador and Proxenos",
+        "uri": "https://www.wikidata.org/wiki/Q26825",
+        "confidence": 1.0
+      },
+      {
+        "name": "Menodotus",
+        "role": "Father of Herodotus",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Menodotus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Menekles",
+        "role": "Ambassador and Proxenos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Menekles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dionysius",
+        "role": "Father of Menekles",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dionysius",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Arcadia",
+        "type": "City in Crete",
+        "uri": "https://pleiades.stoa.org/places/570102",
+        "confidence": 1.0
+      },
+      {
+        "name": "Teos",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/550913",
+        "confidence": 1.0
+      },
+      {
+        "name": "Crete",
+        "type": "Region",
+        "uri": "https://pleiades.stoa.org/places/5066435",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Dionysus",
+        "uri": "https://www.wikidata.org/wiki/Q41680",
+        "confidence": 1.0
+      },
+      {
+        "name": "Asclepius",
+        "uri": "https://www.wikidata.org/wiki/Q83223",
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Arcadia",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/570102",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Crete",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/5066435",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a diplomatic decree from the city of Arcadia in Crete (identified by the mention of 'kosmoi' magistrates). It honors the city of Teos and its ambassadors, Herodotus and Menekles, by confirming the sacred status and asylia (inviolability) of Teos and its territory, which is dedicated to Dionysus. The decree also grants the ambassadors proxeny and civic rights such as isopoliteia and the right to own land and houses, while ordering the text to be displayed in the temple of Asclepius.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

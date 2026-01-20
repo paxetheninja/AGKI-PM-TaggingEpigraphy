@@ -1,0 +1,195 @@
+{
+  "phi_id": 290774,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text explicitly identifies itself as a decree passed by the soldiers stationed at Rhamnous.",
+      "confidence": 1.0,
+      "quote": "ἀναγράψαι δὲ τόδε τὸ ψήφισμα ἐν στήλει",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription honors Demostratos and the overseer Leon for their virtue, goodwill, and service to the soldiers and the city.",
+      "confidence": 1.0,
+      "quote": "ἐπαινέσαι Δημόστρατον... ἀρετῆς ἕνεκεν καὶ εὐνοίας",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    },
+    {
+      "label": "Votive Dedications",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Votive Dedications",
+        "subcategory": null
+      },
+      "rationale": "The text records sacrifices made to Zeus Soter, Athena Soteira, and other gods as part of the ancestral religious duties.",
+      "confidence": 1.0,
+      "quote": "ἔθυσε δὲ τῶι Διὶ τῶι Σωτῆρι καὶ τῆι Ἀθηνᾶι τῆι Σωτείραι",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The decree specifies that it is to be inscribed on a stone stele.",
+      "confidence": 1.0,
+      "quote": "ἀναγράψαι δὲ τόδε τὸ ψήφισμα ἐν στήλει λιθίνει",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    },
+    {
+      "label": "Other Stone",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Other Stone"
+      },
+      "rationale": "The inscription is carved on a stone support, described as being made of stone.",
+      "confidence": 1.0,
+      "quote": "στήλει λιθίνει",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The text contains several lacunae and reconstructed sections, indicating it is not fully intact.",
+      "confidence": 1.0,
+      "quote": "[-- θυσε δὲ τῶι Διὶ τῶι σωτ]ῆρι",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Demostratos",
+        "role": "Honored citizen of Phlya",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demostratos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Leon",
+        "role": "Overseer from Aithalidai",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Leon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Gnon",
+        "role": "Father of Leon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Gnon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Antiphanes",
+        "role": "Committee member from Oion",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antiphanes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Xenophilos",
+        "role": "Committee member from Kydantidai",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Xenophilos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Theogeiton",
+        "role": "Committee member from Rhamnous",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theogeiton",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Rhamnous",
+        "type": "Deme and fortress",
+        "uri": "https://pleiades.stoa.org/places/580097",
+        "confidence": 1.0
+      },
+      {
+        "name": "Athens",
+        "type": "City-state",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phlya",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580076",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aithalidai",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579854",
+        "confidence": 1.0
+      },
+      {
+        "name": "Oion",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/540977",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kydantidai",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579998",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Zeus Soter",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Athena Soteira",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Rhamnous",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/580097",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is an honorific decree issued by soldiers stationed at the fortress of Rhamnous in 229/8 BC. It honors Demostratos of Phlya and the overseer Leon for their piety toward the gods and their ambition and honor toward the citizens. The text mentions the recovery of ancestral liberty and the performance of traditional sacrifices and a torch race. It concludes with administrative instructions for the publication of the decree on a stone stele and the names of the committee members responsible for its execution.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 229/8 BC ",
+  "date_min": -229.0,
+  "date_max": -228.0,
+  "date_circa": false
+}

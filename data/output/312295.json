@@ -1,0 +1,139 @@
+{
+  "phi_id": 312295,
+  "themes": [
+    {
+      "label": "Treaties and Agreements",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Treaties and Agreements",
+        "subcategory": null
+      },
+      "rationale": "The inscription explicitly records an oath and a defensive alliance between the city of Sinope, the ruler Satyrus, and the sons of Clearchus.",
+      "confidence": 1.0,
+      "quote": "τ ρκιον κα τ ν συμμα[χ ην]",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The text contains detailed provisions for the payment of military wages and the reimbursement of expenses incurred by the allies during campaigns.",
+      "confidence": 1.0,
+      "quote": "μισθ ν δ ε ναι το ς σ[τρα]τευομ νο[ις]",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    },
+    {
+      "label": "Laws and Regulations",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Laws and Regulations",
+        "subcategory": null
+      },
+      "rationale": "The document outlines the legal procedures and obligations for mutual defense, diplomatic conduct with the Persian King, and the handling of exiles.",
+      "confidence": 1.0,
+      "quote": "βοηθε ν λλ λοι[ς π]αντ σθ νει κατ τ δυνατ ν",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "Official treaties and alliances of this length and period in Sinope were typically inscribed on stone stelae for public display.",
+      "confidence": 0.8,
+      "quote": "π το σδε τ ρκιον",
+      "is_ambiguous": true,
+      "ambiguity_note": "The object type is inferred from the monumental nature of the inscription and the opening formula."
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Satyrus",
+        "role": "Ally and ruler involved in the treaty",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Satyrus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Clearchus",
+        "role": "Tyrant of Heraclea Pontica, mentioned as the father of the allies",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Clearchus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sons of Clearchus",
+        "role": "Rulers of Heraclea Pontica (Timotheus and Dionysius)",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sons%20of%20Clearchus",
+        "confidence": 1.0
+      },
+      {
+        "name": "The King",
+        "role": "The Persian Monarch (likely Artaxerxes III)",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=The%20King",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Sinope",
+        "type": "City-state",
+        "uri": "https://pleiades.stoa.org/places/857321",
+        "confidence": 1.0
+      },
+      {
+        "name": "Heraclea",
+        "type": "City-state",
+        "uri": "https://pleiades.stoa.org/places/844944",
+        "confidence": 1.0
+      },
+      {
+        "name": "Cromna",
+        "type": "Town",
+        "uri": "https://pleiades.stoa.org/places/844994",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sesamus",
+        "type": "Town",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Sinope",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/857321",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Paphlagonia",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/845034",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a significant historical document recording a defensive alliance between the city of Sinope and the tyrants of Heraclea Pontica (the sons of Clearchus), along with a ruler named Satyrus. It is highly detailed regarding military logistics, specifying that aid must be provided 'with all strength', and includes specific financial clauses for mercenary pay (three staters per month). It also reflects the complex geopolitical reality of the Black Sea region, where local powers had to coordinate their actions with the Persian King.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 353/2-346/5 BC",
+  "date_min": -353.0,
+  "date_max": -345.0,
+  "date_circa": false
+}

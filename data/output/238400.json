@@ -1,0 +1,117 @@
+{
+  "phi_id": 238400,
+  "themes": [
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The inscription is a detailed financial record listing expenditures, totals, and specific monetary amounts in drachmas and obols for construction work, including the deduction of the ten-percent tax (epidekaton).",
+      "confidence": 1.0,
+      "quote": "κεφ λωμα ναλ ματος τα της τ ς πυλα ας α γ[ινα ου δραχμα μ ριαι ----ακισχιλ]αι νακ[ τιαι ----------- βολο",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Public Works and Construction",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Public Works and Construction",
+        "subcategory": null
+      },
+      "rationale": "The text records the procurement and preparation of building materials, specifically poros stone and bricks, for a public construction project in Delphi, likely the Temple of Apollo.",
+      "confidence": 1.0,
+      "quote": "δ ξατο πο ρου τεμε ν πλ νθους κατι τ ν πλ νθον κ σταν δραχμ ν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Archidamos",
+        "role": "Contractor from Corinth",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Archidamos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pancrates",
+        "role": "Contractor from Argos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pancrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dios",
+        "role": "Contractor from Megara",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dios",
+        "confidence": 0.9
+      },
+      {
+        "name": "Heracleidas",
+        "role": "Individual mentioned in the accounts",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Heracleidas",
+        "confidence": 0.8
+      }
+    ],
+    "places": [
+      {
+        "name": "Delphi",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/540726",
+        "confidence": 1.0
+      },
+      {
+        "name": "Corinth",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/570182",
+        "confidence": 1.0
+      },
+      {
+        "name": "Argos",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/599516",
+        "confidence": 1.0
+      },
+      {
+        "name": "Megara",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/462307",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aegina",
+        "type": "City/Region (referencing currency)",
+        "uri": "https://pleiades.stoa.org/places/579844",
+        "confidence": 1.0
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Delphi",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/540726",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Phokis",
+      "type": "Region",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription belongs to the financial accounts of the Delphic Amphictyony during the mid-4th century BC, specifically related to the reconstruction of the Temple of Apollo. It documents payments made to various contractors from different Greek city-states for the supply and cutting of building materials like poros stone and bricks. The text follows a formulaic structure for financial reporting, including the deduction of a ten-percent tax (epidekaton) and references to the Pylaia meetings.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " mid 4th c. BC",
+  "date_min": -375.0,
+  "date_max": -326.0,
+  "date_circa": false
+}

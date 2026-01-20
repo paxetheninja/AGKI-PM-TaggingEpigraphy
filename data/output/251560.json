@@ -1,0 +1,165 @@
+{
+  "phi_id": 251560,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text is a formal resolution by the people (demos) and council (boule), using the standard formula 'dedochthai toi demoi'.",
+      "confidence": 1.0,
+      "quote": "δεδ χθαι τ ι δ μωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription honors foreign judges and officials with golden crowns, public praise, and invitations to the town hall (Prytaneion).",
+      "confidence": 1.0,
+      "quote": "στεφανωθε η ν το ς διονυσ οις χρυσ ωι στεφ νωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The end of the inscription contains a summary list of the names of the individuals and groups honored by the decree.",
+      "confidence": 0.9,
+      "quote": "θε πομπον πολλοδ του κατα ον δημητρ ου δι δοτον κλεων μου γ μαχον γελ ου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Polydeuces",
+        "role": "General",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Polydeuces",
+        "confidence": 1.0
+      },
+      {
+        "name": "Megon",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Megon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aeschyles",
+        "role": "Controller",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aeschyles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Themisteus",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Themisteus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kataios",
+        "role": "Judge",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kataios",
+        "confidence": 1.0
+      },
+      {
+        "name": "Demetrius",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demetrius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Diodotus",
+        "role": "Judge",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Diodotus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Cleonymus",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Cleonymus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Theopompus",
+        "role": "Secretary",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theopompus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pollodotus",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pollodotus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Agemachus",
+        "role": "Judge-escort",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Agemachus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Gelaeus",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Gelaeus",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Erythrae",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/373785",
+        "confidence": 1.0
+      },
+      {
+        "name": "Prytaneion",
+        "type": "Public Building",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Dionysus",
+        "uri": "https://www.wikidata.org/wiki/Q41680",
+        "confidence": 1.0
+      },
+      {
+        "name": "Tyche",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Erythrae",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/373785",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a decree from a Greek city (likely Chios) honoring a panel of foreign judges from Erythrae. It commends their fairness and diligence in settling local disputes. The decree grants them golden crowns to be awarded at the Dionysia festival, invitations to the Prytaneion, and potential citizenship or proxeny. It also honors the supporting staff, including the secretary and the official responsible for bringing the judges.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

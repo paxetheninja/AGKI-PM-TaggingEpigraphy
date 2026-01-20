@@ -1,0 +1,236 @@
+{
+  "phi_id": 241773,
+  "themes": [
+    {
+      "label": "Manumission Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Manumission Records",
+        "subcategory": null
+      },
+      "rationale": "The inscription records the sale of a slave to the god Apollo, a standard legal fiction used in Delphi to grant freedom to a slave.",
+      "confidence": 1.0,
+      "quote": "ἀπέδοτο Ἀστόξενος Διονυσίου... τῶι Ἀπόλλωνι τῶι Πυθίωι σῶμα γυναικεῖον ὧι ὄνομα Αἵρεσις",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Contracts and Private Legal Acts",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Contracts and Private Legal Acts",
+        "subcategory": null
+      },
+      "rationale": "The text details a legal transaction involving a price, witnesses, and a guarantor to ensure the validity of the manumission.",
+      "confidence": 1.0,
+      "quote": "τιμᾶς ἀργυρίου μνᾶν τεττάρων καὶ μιμναίου καὶ τὰν τιμὰν ἔχει πᾶσαν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Votive Dedications",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Votive Dedications",
+        "subcategory": null
+      },
+      "rationale": "The manumission is framed as a sale to the deity Apollo Pythios, placing the former slave under the god's protection.",
+      "confidence": 0.8,
+      "quote": "καθὼς ἐπίστευσε Αἵρεσις τῶι Ἀπόλλωνι τὰν ὠνὰν ἐφ' ὧιτε ἐλευθέρα εἶμεν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The inscription begins with a dating formula naming the archon, councilors, and secretary, and concludes with a list of witnesses including priests.",
+      "confidence": 1.0,
+      "quote": "ἄρχοντος Κλεοδήμου... βουλευόντων τὰν δευτέραν ἑξάμηνον Ἀριστοκλέος... Ξένωνος... γραμματεύοντος δὲ βουλᾶς Δικαιάρχου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Calendars and Timetables",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Calendars and Timetables",
+        "subcategory": null
+      },
+      "rationale": "The text specifies the month and the specific half-year term of the councilors for dating purposes.",
+      "confidence": 0.8,
+      "quote": "μηνὸς Ἡρακλείου βουλευόντων τὰν δευτέραν ἑξάμηνον",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Kleodemos",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kleodemos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kleon",
+        "role": "Father of Kleodemos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kleon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristokles",
+        "role": "Councilor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristokles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Rekon",
+        "role": "Father of Aristokles",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Rekon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Xenon",
+        "role": "Councilor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Xenon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Glaukos",
+        "role": "Father of Xenon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Glaukos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dikaiarchos",
+        "role": "Secretary and Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dikaiarchos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pytheas",
+        "role": "Priest and Father of Dikaiarchos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pytheas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Astoxenos",
+        "role": "Seller and Manumittor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Astoxenos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dionysios",
+        "role": "Father of Astoxenos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dionysios",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hairesis",
+        "role": "Manumitted slave",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hairesis",
+        "confidence": 1.0
+      },
+      {
+        "name": "Polytas",
+        "role": "Guarantor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Polytas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sandros",
+        "role": "Father of Polytas",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sandros",
+        "confidence": 1.0
+      },
+      {
+        "name": "Agion",
+        "role": "Priest of Apollo",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Agion",
+        "confidence": 1.0
+      },
+      {
+        "name": "Bromachos",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Bromachos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Thambos",
+        "role": "Father of Bromachos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Thambos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Herakleidas",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Herakleidas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristodamos",
+        "role": "Father of Herakleidas",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristodamos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kallikrates",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kallikrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sosikrates",
+        "role": "Father of Kallikrates",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sosikrates",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Delphi",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/540726",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phokis",
+        "type": "Region",
+        "uri": null,
+        "confidence": 0.8
+      }
+    ],
+    "deities": [
+      {
+        "name": "Apollo Pythios",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Delphi",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/540726",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a formal manumission record from Delphi, dated to the archonship of Kleodemos (c. 91 BC). It follows the standard Delphic formula where a slave (Hairesis) is sold to Apollo Pythios by her owner (Astoxenos) to achieve the status of 'eleuthera' (free). The document includes a detailed dating formula, the price paid (4.5 minae), conditions of freedom (the slave is to be free and 'anaphapton' - untouchable), and a list of witnesses including local priests and officials.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 91 BC",
+  "date_min": -91.0,
+  "date_max": -91.0,
+  "date_circa": false
+}

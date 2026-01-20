@@ -1,0 +1,136 @@
+{
+  "phi_id": 319046,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text is a formal public decree (psephisma) issued by the city of Chalcis to honor foreign judges from Kos.",
+      "confidence": 1.0,
+      "quote": "τ δε τ ψ φισμα τ δημοσ αι σφραγ δι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription honors judges for their fair conduct and service to the city, granting them golden crowns and other civic privileges.",
+      "confidence": 1.0,
+      "quote": "στεφαν σαι [α τ ν χρυσ στεφ]ν παιν σαι δ [κ]α ρθαγ ρ[αν]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Agonistic / Victory Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Agonistic / Victory Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The decree specifies that the honors are to be publicly announced during major athletic and dramatic festivals, including the Dionysia, Asklepieia, and Romaia.",
+      "confidence": 0.8,
+      "quote": "παρ α το ς διονυσ οις κα ν το ς μεγ λοις σκλαπιε οις κα ωμα οις",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The text explicitly orders the decree to be inscribed on stone stelae for public display in the Agora and the Sanctuary of Asclepius.",
+      "confidence": 1.0,
+      "quote": "ναγραφ δ κα ε ς στ λας τ δε τ ψ φισμα",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Orthagoras",
+        "role": "Judge",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Orthagoras",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hippocrates",
+        "role": "Father of Orthagoras",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hippocrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Timarchos",
+        "role": "Judge",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Timarchos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Timides",
+        "role": "Father of Timarchos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Timides",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Kos",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/736946",
+        "confidence": 1.0
+      },
+      {
+        "name": "Chalcis",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/540703",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Asclepius",
+        "uri": "https://www.wikidata.org/wiki/Q83223",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dionysus",
+        "uri": "https://www.wikidata.org/wiki/Q41680",
+        "confidence": 1.0
+      },
+      {
+        "name": "Roma",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Kos",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/736946",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a mid-2nd century BC honorific decree from the people of Chalcis for judges sent from Kos. The text details the judges' successful mediation of legal disputes and their virtuous conduct. It prescribes honors such as golden crowns, invitations to the Prytaneion, and public proclamations at the Dionysia, Asklepieia, and Romaia festivals. The decree was to be set up in the Agora and the Sanctuary of Asclepius in Kos.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " ca. mid-2nd c. BC ",
+  "date_min": -175.0,
+  "date_max": -126.0,
+  "date_circa": true
+}

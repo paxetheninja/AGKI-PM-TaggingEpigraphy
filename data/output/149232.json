@@ -1,0 +1,180 @@
+{
+  "phi_id": 149232,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text is a formal public decision from the city of Phalanna, using the standard decree formula 'it was decided' and referring to itself as a 'psephisma'.",
+      "confidence": 1.0,
+      "quote": "δοξε γο[ρ --]οι πλε ονες το ν πολιτ ν ... τ νε τ ψ φισμα",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Sacred Laws and Rules",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Sacred Laws and Rules",
+        "subcategory": null
+      },
+      "rationale": "The decree establishes regulations for the use of and construction on land dedicated to the gods Pluto and Persephone, asserting the land belongs to the god.",
+      "confidence": 1.0,
+      "quote": "δι κι δε το θεο χο ρα στ ν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The text mentions the allocation of public funds to cover the costs of the inscription and the stone column, ensuring the magistrates are not held liable.",
+      "confidence": 0.9,
+      "quote": "τ ν δαπ ναν τ ν σσομ [ν]αν ... δ ντες π τ ν κοιν ν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Boundary Markers (Horoi)",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Identification and Ownership Marks",
+        "category": "Boundary Markers (Horoi)",
+        "subcategory": null
+      },
+      "rationale": "The text defines and clarifies the boundaries of the sacred land (chora) belonging to Pluto and Persephone to make it visible to all.",
+      "confidence": 0.8,
+      "quote": "διεσαφειμ να χο ρα ερ στι το πλο τουνος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The decree specifies that it should be inscribed on a stone column (kiona) to be placed in the sanctuary.",
+      "confidence": 1.0,
+      "quote": "ν [κι]ν[α]ν λιθ ναν νγραφ ν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Other Stone",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Other Stone"
+      },
+      "rationale": "The inscription is made on a stone support, explicitly described as 'lithinan' (of stone).",
+      "confidence": 1.0,
+      "quote": "λιθ ναν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The text contains several lacunae and restored sections, particularly at the beginning of lines, though the core meaning remains clear.",
+      "confidence": 1.0,
+      "quote": "[----]α-α τ ν χο ραν τ ν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Asclepius",
+        "role": "Eponymous Priest",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Asclepius",
+        "confidence": 0.8
+      },
+      {
+        "name": "Philolaus",
+        "role": "Magistrate",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philolaus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eumeneion",
+        "role": "Father of Philolaus",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eumeneion",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Phalanna",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/589988",
+        "confidence": 0.9
+      },
+      {
+        "name": "Perrhaibia",
+        "type": "Region",
+        "uri": "https://www.wikidata.org/wiki/Q7169613",
+        "confidence": 0.9
+      },
+      {
+        "name": "Tyrnavos",
+        "type": "Modern Findspot",
+        "uri": "https://www.wikidata.org/wiki/Q950532",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Pluto",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Persephone",
+        "uri": "https://www.wikidata.org/wiki/Q45967",
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Perrhaibia",
+      "type": "Region",
+      "uri": "https://www.wikidata.org/wiki/Q7169613",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Phalanna",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/589988",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a significant decree from the city of Phalanna in Perrhaibia, dating to the early 2nd century BC. It serves as a sacred law regulating the management and protection of the 'chora' (sacred land) belonging to Pluto and Persephone. The text addresses illegal construction within the sanctuary (temenos), mandates the demolition of unauthorized structures, and orders the publication of the decree on a stone column to ensure the boundaries are 'clear to all'. It also details the administrative process involving the tagoi (Thessalian magistrates) and the use of public funds for the monument's creation.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " cf. Corrigenda p. XVI",
+  "date_min": -200.0,
+  "date_max": -151.0,
+  "date_circa": false
+}

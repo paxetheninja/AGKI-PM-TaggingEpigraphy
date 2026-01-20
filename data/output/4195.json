@@ -1,0 +1,572 @@
+{
+  "phi_id": 4195,
+  "themes": [
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The inscription consists of a systematic catalogue of names, patronymics, and demotics organized under the headings of the Athenian tribes.",
+      "confidence": 1.0,
+      "quote": "πανδιονίδος ... λεωντίδος ... πτολεμαΐδος ... ἀκαμαντίδος ... οἰνηΐδος ... κεκροπίδος ... ἱπποθωντίδος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The text explicitly mentions the Council and the People honoring a gymnastics trainer (paidotribes) named Nikon.",
+      "confidence": 1.0,
+      "quote": "βουλὴ δῆμος τὸν παιδοτρίβην Νίκωνα Ἀλέξιδος Βηρύτιον",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The layout and content are characteristic of an Athenian honorific stele containing a list of ephebes or citizens.",
+      "confidence": 0.8,
+      "quote": "βουλὴ δῆμος τὸν παιδοτρίβην",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "Standard material for official Athenian inscriptions and honorific lists in the 2nd century BC.",
+      "confidence": 0.8,
+      "quote": "βουλὴ δῆμος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The text contains numerous brackets and missing sections, particularly at the beginning and end of lines.",
+      "confidence": 1.0,
+      "quote": "[πανδιονίδος] ... [------ παια]νιεῖς",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Nikon",
+        "role": "Gymnastics trainer (Paidotribes)",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nikon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Alexis",
+        "role": "Father of Nikon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Alexis",
+        "confidence": 1.0
+      },
+      {
+        "name": "Menodoros",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Menodoros",
+        "confidence": 1.0
+      },
+      {
+        "name": "Herakleides",
+        "role": "Father of Menodoros",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Herakleides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Nikias",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nikias",
+        "confidence": 1.0
+      },
+      {
+        "name": "Ephemidas",
+        "role": "Father of Nikias",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ephemidas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Agelaos",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Agelaos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Polyanetos",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Polyanetos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Mikylos",
+        "role": "Father of Polyanetos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Mikylos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Apollodotos",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Apollodotos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sthenias",
+        "role": "Father of Apollodotos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sthenias",
+        "confidence": 1.0
+      },
+      {
+        "name": "Timokrates",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Timokrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Alexandros",
+        "role": "Father of Timokrates",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Alexandros",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aischylos",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aischylos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sosibios",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sosibios",
+        "confidence": 1.0
+      },
+      {
+        "name": "Telon",
+        "role": "Father of Sosibios",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Telon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dioskorides",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dioskorides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristokles",
+        "role": "Father of Dioskorides",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristokles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Athenagoras",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Athenagoras",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pyrrhinos",
+        "role": "Father of Athenagoras",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pyrrhinos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Neon",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Neon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Philokrates",
+        "role": "Father of Neon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philokrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Theokles",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theokles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Euthykles",
+        "role": "Father of Theokles",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Euthykles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Nikokles",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nikokles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Demetrios",
+        "role": "Father of Nikokles",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demetrios",
+        "confidence": 1.0
+      },
+      {
+        "name": "Philonides",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philonides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristomenes",
+        "role": "Father of Philonides",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristomenes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Emachides",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Emachides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristandros",
+        "role": "Father of Emachides",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristandros",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dionysios",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dionysios",
+        "confidence": 1.0
+      },
+      {
+        "name": "Theodoros",
+        "role": "Father of Timokrates",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theodoros",
+        "confidence": 1.0
+      },
+      {
+        "name": "Menekrates",
+        "role": "Citizen",
+        "uri": "https://www.wikidata.org/wiki/Q81655865",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lykophron",
+        "role": "Father of Menekrates",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lykophron",
+        "confidence": 1.0
+      },
+      {
+        "name": "Olympiodoros",
+        "role": "Citizen",
+        "uri": "https://www.wikidata.org/wiki/Q3351663",
+        "confidence": 1.0
+      },
+      {
+        "name": "Autokles",
+        "role": "Father of Olympiodoros",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Autokles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eunikides",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eunikides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Stratonikos",
+        "role": "Citizen",
+        "uri": "https://www.wikidata.org/wiki/Q1300271",
+        "confidence": 1.0
+      },
+      {
+        "name": "Theogenes",
+        "role": "Father of Stratonikos",
+        "uri": "https://www.wikidata.org/wiki/Q1388775",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kephisodoros",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kephisodoros",
+        "confidence": 1.0
+      },
+      {
+        "name": "Didotos",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Didotos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Zenodotos",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Zenodotos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Attalos",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Attalos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Adrastos",
+        "role": "Father of Attalos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Adrastos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Apollonios",
+        "role": "Citizen",
+        "uri": "https://www.wikidata.org/wiki/Q3620717",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristion",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristion",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eudoxos",
+        "role": "Father of Aristion",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eudoxos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Deinokles",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Deinokles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Philostratos",
+        "role": "Father of Deinokles",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philostratos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phanokles",
+        "role": "Citizen",
+        "uri": "https://www.wikidata.org/wiki/Q1862344",
+        "confidence": 1.0
+      },
+      {
+        "name": "Protogenes",
+        "role": "Father of Phanokles",
+        "uri": "https://www.wikidata.org/wiki/Q3924304",
+        "confidence": 1.0
+      },
+      {
+        "name": "Ophontides",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ophontides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hipparchos",
+        "role": "Father of Ophontides",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hipparchos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristonikos",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristonikos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lysimachos",
+        "role": "Father of Aristonikos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lysimachos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Teisis",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Teisis",
+        "confidence": 1.0
+      },
+      {
+        "name": "Demagoras",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demagoras",
+        "confidence": 1.0
+      },
+      {
+        "name": "Euthydemos",
+        "role": "Father of Demagoras",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Euthydemos",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Athens",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      },
+      {
+        "name": "Berytus",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/678060",
+        "confidence": 1.0
+      },
+      {
+        "name": "Paiania",
+        "type": "Deme",
+        "uri": "https://www.wikidata.org/wiki/Q1236193",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kolonai",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579983",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kropidai",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579996",
+        "confidence": 1.0
+      },
+      {
+        "name": "Xypete",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580134",
+        "confidence": 1.0
+      },
+      {
+        "name": "Skambonidai",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/582865",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kettos",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579978",
+        "confidence": 1.0
+      },
+      {
+        "name": "Potamos",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/590008",
+        "confidence": 1.0
+      },
+      {
+        "name": "Oa",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Phlya",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580076",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kydantidai",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579998",
+        "confidence": 1.0
+      },
+      {
+        "name": "Oinoe",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580039",
+        "confidence": 1.0
+      },
+      {
+        "name": "Berenikidai",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/585895",
+        "confidence": 1.0
+      },
+      {
+        "name": "Prospalta",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580092",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kephale",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579971",
+        "confidence": 1.0
+      },
+      {
+        "name": "Cholargos",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579902",
+        "confidence": 1.0
+      },
+      {
+        "name": "Thorikos",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580119",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eitea",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579916",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hermos",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579949",
+        "confidence": 1.0
+      },
+      {
+        "name": "Melite",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/582863",
+        "confidence": 1.0
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Attica",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579888",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a list of Athenian citizens, likely ephebes, organized by their tribes (Pandionis, Leontis, Ptolemais, Akamantis, Oineis, Kekropis, and Hippothontis). It includes an honorific decree by the Council and the People for a gymnastics trainer named Nikon, son of Alexis, from Berytus. The text is dated to approximately 128/7 BC based on the metadata.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

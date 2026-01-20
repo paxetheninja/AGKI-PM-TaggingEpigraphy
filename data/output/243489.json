@@ -1,0 +1,293 @@
+{
+  "phi_id": 243489,
+  "themes": [
+    {
+      "label": "Agonistic / Victory Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Agonistic / Victory Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription is a comprehensive record of the athletic career and victories of Aurelius Septimius Eutychus, listing numerous wins in boxing and pancration across various prestigious games.",
+      "confidence": 1.0,
+      "quote": "ἀγωνισάμενος καὶ νεικήσας τοὺς ὑποτεταγμένους ἀγῶνας",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The text honors the athlete by detailing his status as a citizen of multiple cities and his success in international competitions, reflecting his high social standing.",
+      "confidence": 1.0,
+      "quote": "Αὐρήλιος Σεπτίμιος Εὐτύχης ... κολωνείας Λαοδικείας μητροπολείτης καὶ ἄλλων πόλεων πολείτης",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Calendars and Timetables",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Calendars and Timetables",
+        "subcategory": null
+      },
+      "rationale": "The inscription includes precise dating information, referencing the Roman calendar (Kalends of January) and the five-year cycle (pentaeteris) of the games, as well as local eponymous officials.",
+      "confidence": 1.0,
+      "quote": "πρὸ τριῶν καλανδῶν Ἰανουαρίων ἐπὶ τῆς πενταετηρίδος Μεσσάλα καὶ Σαβείνου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Registers and Catalogues",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Registers and Catalogues",
+        "subcategory": null
+      },
+      "rationale": "The latter part of the inscription serves as a catalogue of cities and the specific types of athletic events (boxing, running, pancration) won by the individual, including talent-prize games.",
+      "confidence": 1.0,
+      "quote": "ταλαντιαίους Ἀσκάλωνα Σκυθόπολιν Σειδῶνα τρὶς Τρίπολιν δὶς Λευκάδα πυγμὴν δρόμον",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Aurelius Septimius Eutychus",
+        "role": "Athlete and citizen of Laodicea",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aurelius%20Septimius%20Eutychus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Irenaeus",
+        "role": "Father of the athlete",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Irenaeus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Messalla",
+        "role": "Roman Consul (dating)",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Messalla",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sabinus",
+        "role": "Roman Consul (dating)",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sabinus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Epitynchanon",
+        "role": "Local official (dating)",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Epitynchanon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Gratus",
+        "role": "Father of local official",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Gratus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Vitellius Seleucus",
+        "role": "Local official (dating)",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Vitellius%20Seleucus",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Laodicea",
+        "type": "City/Metropolis",
+        "uri": "https://pleiades.stoa.org/places/668290",
+        "confidence": 1.0
+      },
+      {
+        "name": "Nicopolis",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/857248",
+        "confidence": 1.0
+      },
+      {
+        "name": "Tarsus",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/648789",
+        "confidence": 1.0
+      },
+      {
+        "name": "Heracleia",
+        "type": "City",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Nicomedia",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/511337",
+        "confidence": 1.0
+      },
+      {
+        "name": "Beroea",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/491546",
+        "confidence": 1.0
+      },
+      {
+        "name": "Zeugma",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/658636",
+        "confidence": 1.0
+      },
+      {
+        "name": "Apamea",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/912806",
+        "confidence": 1.0
+      },
+      {
+        "name": "Chalcis",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/540703",
+        "confidence": 1.0
+      },
+      {
+        "name": "Salamis",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/707617",
+        "confidence": 1.0
+      },
+      {
+        "name": "Mazaca",
+        "type": "City",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Antioch",
+        "type": "City",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Petra",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/697725",
+        "confidence": 1.0
+      },
+      {
+        "name": "Tyre",
+        "type": "City",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Aegae",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/550404",
+        "confidence": 1.0
+      },
+      {
+        "name": "Adana",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/39268",
+        "confidence": 1.0
+      },
+      {
+        "name": "Mopsuestia",
+        "type": "City",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Ascalon",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/687839",
+        "confidence": 1.0
+      },
+      {
+        "name": "Scythopolis",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/678378",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sidon",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/678393",
+        "confidence": 1.0
+      },
+      {
+        "name": "Tripolis",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/857360",
+        "confidence": 1.0
+      },
+      {
+        "name": "Leucas",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/530974",
+        "confidence": 1.0
+      },
+      {
+        "name": "Irenopolis",
+        "type": "City",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Pella",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/678326",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kition",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/707534",
+        "confidence": 1.0
+      },
+      {
+        "name": "Iconium",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/648647",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Apollo",
+        "uri": null,
+        "confidence": 0.8
+      },
+      {
+        "name": "Zeus",
+        "uri": "https://www.wikidata.org/wiki/Q34201",
+        "confidence": 0.8
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Laodicea",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/668290",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a classic example of an agonistic victory list from the Roman Imperial period (dated to 214 AD). It documents the career of Aurelius Septimius Eutychus, a boxer and pancratiast from Laodicea. The text is highly structured, moving from his titles and major 'sacred' games (Pythian, Actian, Olympian) to a long list of 'talent-prize' (talantiaioi) games in various cities across Syria, Phoenicia, and Cilicia. It concludes with a precise date using both Roman consular dating and local eponymous officials.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 214 AD ",
+  "date_min": 214.0,
+  "date_max": 214.0,
+  "date_circa": false
+}

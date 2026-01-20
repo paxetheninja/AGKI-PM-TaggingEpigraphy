@@ -1,0 +1,198 @@
+{
+  "phi_id": 309018,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text begins with the standard formula for a decree, indicating a formal decision made by the people of Rhamnous.",
+      "confidence": 1.0,
+      "quote": "ἔδοξεν Ῥαμνουσίοις",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription honors Menandros for his service as a trierarch, his financial contributions, and his care for the crew and the youth.",
+      "confidence": 1.0,
+      "quote": "ἐπαινέσαι Μένανδρον Τεισάνδρου Εἰτεαῖον καὶ στεφανῶσαι χρυσῶι στεφάνωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Votive Dedications",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Votive Dedications",
+        "subcategory": null
+      },
+      "rationale": "The text records sacrifices made by Menandros to various deities for the health and safety of the crew.",
+      "confidence": 1.0,
+      "quote": "ἔθυσεν δὲ καὶ τῶι Διὶ τῶι Σωτῆρι καὶ τῆι Ἀθηνᾶι τῆι Σωτείραι ὑπὲρ ὑγιείας καὶ σωτηρίας",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The decree explicitly orders the text to be inscribed on a stone stele.",
+      "confidence": 1.0,
+      "quote": "ἀναγράψαι δὲ τὸ ψήφισμα ἐν στήλει λιθίνει",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Other Stone",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Other Stone"
+      },
+      "rationale": "The inscription is carved on a stone support, identified as a stone stele in the text.",
+      "confidence": 1.0,
+      "quote": "στήλει λιθίνει",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Menandros",
+        "role": "Trierarch and honoree",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Menandros",
+        "confidence": 1.0
+      },
+      {
+        "name": "Teisandros",
+        "role": "Father of Menandros",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Teisandros",
+        "confidence": 1.0
+      },
+      {
+        "name": "Timokrates",
+        "role": "Proposer of the decree",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Timokrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Epigonos",
+        "role": "Father of Timokrates",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Epigonos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Niketes",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Niketes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Archistratos",
+        "role": "Committee member",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Archistratos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aischines",
+        "role": "Father of Archistratos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aischines",
+        "confidence": 1.0
+      },
+      {
+        "name": "Diokles",
+        "role": "Committee member",
+        "uri": "https://www.wikidata.org/wiki/Q905833",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dion",
+        "role": "Father of Diokles",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dion",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Rhamnous",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580097",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eitea",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579916",
+        "confidence": 1.0
+      },
+      {
+        "name": "Oethen",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Hamaxanteia",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/585916",
+        "confidence": 1.0
+      },
+      {
+        "name": "Erchia",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579924",
+        "confidence": 0.8
+      }
+    ],
+    "deities": [
+      {
+        "name": "Zeus Soter",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Athena Soteira",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Nemesis",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Rhamnous",
+      "type": "Deme",
+      "uri": "https://pleiades.stoa.org/places/580097",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a formal honorific decree from the deme of Rhamnous dating to the archonship of Niketes (225/224 BC). It honors Menandros, son of Teisandros of Eitea, for his exemplary service as a trierarch. The text details his financial generosity, including paying for ship repairs from his own funds, providing oil for the training of young men (neaniskoi), and performing sacrifices to Zeus Soter, Athena Soteira, and Nemesis for the welfare and concord of his crew. The decree concludes with instructions for its publication on a stone stele and the appointment of a committee (Timokrates, Archistratos, and Diokles) to oversee the expenses.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 225/224 BC ",
+  "date_min": -225.0,
+  "date_max": -224.0,
+  "date_circa": false
+}

@@ -1,0 +1,112 @@
+{
+  "phi_id": 256906,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text begins with the standard formula for a public decree, indicating a formal decision made by the council and the people.",
+      "confidence": 1.0,
+      "quote": "ἔδοξεν τῇ βουλῇ καὶ τῷ δήμῳ",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Military Alliances",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Treaties and Alliances",
+        "subcategory": "Military Support"
+      },
+      "rationale": "The decree details the city's decision to provide military aid and mobilize its population, including resident aliens and slaves, to assist the Roman proconsul.",
+      "confidence": 1.0,
+      "quote": "βοηθεῖν κατὰ πλῆθος συνεκπορεύεσθαι δὲ καὶ τοὺς παροίκους καὶ τοὺς δούλους",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The text praises Artemidorus for his honor and military virtue, and describes the Romans as saviors and benefactors.",
+      "confidence": 0.9,
+      "quote": "Ἀρτεμίδωρον τὸν στεφανηφόρον ἄνδρα τῶν τειμωμένων καὶ πίστιν ἐχόντων καὶ τῶν τοῖς ὅπλοις ἀρετῇ διαφέροντα",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Quintus Oppius",
+        "role": "Proconsul and General",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Quintus%20Oppius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Artemidorus",
+        "role": "Stephanophoros and Envoy",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Artemidorus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Attalus",
+        "role": "General of the Territory",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Attalus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Menander",
+        "role": "Father of Attalus",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Menander",
+        "confidence": 1.0
+      },
+      {
+        "name": "Antiochus",
+        "role": "Secretary of the People",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antiochus",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Laodicea",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/668290",
+        "confidence": 1.0
+      },
+      {
+        "name": "Rome",
+        "type": "State",
+        "uri": "https://pleiades.stoa.org/places/423025",
+        "confidence": 1.0
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Aphrodisias",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/638753",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a decree from Aphrodisias dating to the First Mithridatic War (c. 88 BC). It records the city's formal decision to send military aid to the Roman proconsul Quintus Oppius, who was besieged in Laodicea. The text emphasizes the city's total commitment to the Roman cause, noting that the entire population—including women, children, resident aliens, and slaves—is ready to risk everything for Rome, as they consider life without Roman hegemony not worth living.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

@@ -1,0 +1,220 @@
+{
+  "phi_id": 180539,
+  "themes": [
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription records the crowning (stephanosis) of various military and civic officials by the ephebes, a standard honorific practice in Athens.",
+      "confidence": 1.0,
+      "quote": "το[σ]δε στεφάνωσαν οἱ ἔφηβοι στρατηγὸν ... κοσμητὴν ... σωφρονιστὴν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The text contains a comprehensive list of ephebes (young citizens in training) and their supervising officials, including generals and moral overseers.",
+      "confidence": 1.0,
+      "quote": "λοχαγοὶ ... οἱ ἔφηβοι ... στρατηγὸν ... κοσμητὴν ... σωφρονιστὴν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Registers and Catalogues",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Registers and Catalogues",
+        "subcategory": null
+      },
+      "rationale": "The ephebes are systematically catalogued according to their respective demes (local districts), such as Cholleidai, Potamioi, and Sunieis.",
+      "confidence": 1.0,
+      "quote": "χολλεῖδαι ... πήληκες ... κύττιοι ... ποτάμιοι ... σουνιεῖς",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Leosthenes",
+        "role": "General of the Countryside",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Leosthenes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dikaiogenes",
+        "role": "General of Piraeus",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dikaiogenes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Philokles",
+        "role": "Kosmetes",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philokles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pherekleides",
+        "role": "General of the Coast",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pherekleides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Thymochares",
+        "role": "Sophronistes",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Thymochares",
+        "confidence": 1.0
+      },
+      {
+        "name": "Nikodoros",
+        "role": "Epimeletes",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nikodoros",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lysistratos",
+        "role": "Epimeletes",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lysistratos",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Piraeus",
+        "type": "Port",
+        "uri": "https://pleiades.stoa.org/places/580062",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kephale",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579971",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kydathenaion",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/582862",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eroiadai",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579927",
+        "confidence": 1.0
+      },
+      {
+        "name": "Perithoidai",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580068",
+        "confidence": 1.0
+      },
+      {
+        "name": "Leukonoe",
+        "type": "Deme",
+        "uri": "https://www.wikidata.org/wiki/Q136705059",
+        "confidence": 1.0
+      },
+      {
+        "name": "Acharnai",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579842",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kyttos",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Sunion",
+        "type": "Deme",
+        "uri": "https://www.wikidata.org/wiki/Q110833779",
+        "confidence": 1.0
+      },
+      {
+        "name": "Cholleidai",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/585901",
+        "confidence": 1.0
+      },
+      {
+        "name": "Potamioi",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Skambonidai",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/582865",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aithalidai",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579854",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pelekes",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580063",
+        "confidence": 1.0
+      },
+      {
+        "name": "Deiradiotai",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579906",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eupyridai",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579933",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kolonos",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579985",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dekeleia",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579907",
+        "confidence": 1.0
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Oropos",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/580044",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a detailed record of the Athenian ephebeia from the year 324/323 BC, found at the Amphiareion in Oropos. It lists the ephebes by their demes and commemorates the crowning of their military and educational supervisors, including generals (strategoi) assigned to specific regions, the kosmetes (director), sophronistai (moral overseers), and epimeletai (garrison supervisors).",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 324/323 BC ",
+  "date_min": -324.0,
+  "date_max": -323.0,
+  "date_circa": false
+}

@@ -1,0 +1,162 @@
+{
+  "phi_id": 233282,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The inscription follows the standard formula for an Athenian decree, including the resolution by the People and the Council.",
+      "confidence": 1.0,
+      "quote": "ἔδοξεν τῶι δήμωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Laws and Regulations",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Laws and Regulations",
+        "subcategory": null
+      },
+      "rationale": "The text explicitly mentions ancient laws and the regulation of the allotment of offices, which are central to the legal framework of the city.",
+      "confidence": 1.0,
+      "quote": "κατὰ τοὺς παλαιοὺς νόμους",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Democracy",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Political Systems",
+        "category": "Democracy",
+        "subcategory": null
+      },
+      "rationale": "The text explicitly mentions the state of democracy and the desire to maintain traditional democratic procedures like allotment.",
+      "confidence": 1.0,
+      "quote": "ἐν δημοκρατίαι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Public Administration",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Governance",
+        "category": "Public Administration",
+        "subcategory": "Allotment of Offices"
+      },
+      "rationale": "The decree focuses on the 'klerotai archai' (allotted offices) and the procedures for selecting officials.",
+      "confidence": 1.0,
+      "quote": "τὰς κληρωτὰς ἀρχάς",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "Public decrees in the Athenian Agora were traditionally inscribed on stone stelae for public display, though the word itself is reconstructed or implied.",
+      "confidence": 0.8,
+      "quote": "[---]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "The standard material for monumental public inscriptions in Athens during this period was marble.",
+      "confidence": 0.8,
+      "quote": "[---]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The inscription is heavily damaged with significant portions of the text missing and reconstructed.",
+      "confidence": 1.0,
+      "quote": "[---]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Dorotheus",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dorotheus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Demeas son of Demas of Azenia",
+        "role": "Proposer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demeas%20son%20of%20Demas%20of%20Azenia",
+        "confidence": 1.0
+      },
+      {
+        "name": "Demetrios",
+        "role": "Secretary",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demetrios",
+        "confidence": 0.8
+      }
+    ],
+    "places": [
+      {
+        "name": "Athens",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      },
+      {
+        "name": "Areopagus",
+        "type": "Hill and Council Location",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Tyche",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579885",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is an Athenian decree or law dating to the mid-1st century BC, likely following the Sullan sack of Athens. It concerns the restoration of traditional democratic practices, specifically the allotment of offices (archai) by lot and election according to 'ancient laws.' The text highlights the role of the Council of the Areopagus and the Assembly of the People in maintaining the constitutional order during a period of political transition and restoration.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " c. 86 a. ",
+  "date_min": -86.0,
+  "date_max": -86.0,
+  "date_circa": false
+}

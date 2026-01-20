@@ -1,0 +1,225 @@
+{
+  "phi_id": 291540,
+  "themes": [
+    {
+      "label": "Inventories",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Inventories",
+        "subcategory": null
+      },
+      "rationale": "The inscription lists various precious objects such as gold and silver phialai, oinochoai, and strigils, along with their weights, which is characteristic of temple or state inventories.",
+      "confidence": 1.0,
+      "quote": "χρ]υσ ν φι λην σταθμ ν ... ο νοχ η γει σταθμ [ν ... στλεγ[γ]ς χ[ρυσ]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Votive Dedications",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Votive Dedications",
+        "subcategory": null
+      },
+      "rationale": "The text records items dedicated to deities, specifically mentioning gifts placed for the gods and dedications to Ammon and Athena.",
+      "confidence": 1.0,
+      "quote": "θ[εο ς ν θηκεν δ ρα παρ] ... βωμ ν θ[ην ι τριτογενε αι] ... ν θηκεν μμωνι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The mention of specific weights (stathmon) and currency (drachmas) indicates a formal accounting of the value of the dedicated items.",
+      "confidence": 1.0,
+      "quote": "ε] λκον δ κα δραχ[μ] [ς] ... χρυσ σταθμ ν ... ο σ] μο μνα πεντ κον[τα]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "Based on the metadata and the nature of Attic administrative records from this period, this text was inscribed on a stone stele.",
+      "confidence": 0.8,
+      "quote": "IG II² 1642",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "Attic inscriptions of this period and type were almost exclusively carved on marble.",
+      "confidence": 0.8,
+      "quote": "IG II² 1642",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The text contains numerous lacunae and broken lines, indicating it is a fragmentary survival of the original inscription.",
+      "confidence": 1.0,
+      "quote": "-----------------νος θηνα ο[ς θεωρ σας ----------]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Epipolemos",
+        "role": "Donor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Epipolemos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Oinochares",
+        "role": "Donor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Oinochares",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hieronymos",
+        "role": "Donor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hieronymos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Xenophon",
+        "role": "Father of Hieronymos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Xenophon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Chairekrates",
+        "role": "Donor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Chairekrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sotelos",
+        "role": "Father of Chairekrates",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sotelos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Nikoxenos",
+        "role": "Donor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nikoxenos",
+        "confidence": 0.8
+      },
+      {
+        "name": "Chabrias",
+        "role": "Donor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Chabrias",
+        "confidence": 1.0
+      },
+      {
+        "name": "Ktesippos",
+        "role": "Father of Chabrias",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ktesippos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Demodokos",
+        "role": "Individual mentioned",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demodokos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Telokles",
+        "role": "Individual mentioned",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Telokles",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Athens",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      },
+      {
+        "name": "Probalinthos",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580091",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pergase",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Aixone",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579855",
+        "confidence": 1.0
+      },
+      {
+        "name": "Keiriadai",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579970",
+        "confidence": 1.0
+      },
+      {
+        "name": "Propylaion",
+        "type": "Architectural Structure",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Ammon",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Athena",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579885",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is an inventory of sacred offerings dedicated by Athenian sacred envoys (theoroi) to the god Ammon. It lists various vessels and items made of gold and silver, recording the names of the donors (often with their demotics and patronymics) and the precise weights of the objects. The text also references an altar to Athena Tritogeneia and the location of items near the Propylaion.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " ca. 360 BC ",
+  "date_min": -360.0,
+  "date_max": -360.0,
+  "date_circa": true
+}

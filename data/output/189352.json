@@ -1,0 +1,124 @@
+{
+  "phi_id": 189352,
+  "themes": [
+    {
+      "label": "Curse Tablets (Defixiones)",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Curses and Magic",
+        "subcategory": "Curse Tablets (Defixiones)"
+      },
+      "rationale": "The text is a classic magical curse or defixio, using adjurations and binding formulas to sabotage opponents in a chariot race. It employs standard 'katadesmos' (binding) terminology.",
+      "confidence": 1.0,
+      "quote": "ξορκίζω σε στις ποτ ο ν ε νεκυδαίμων ... κατ δησον το ς ππους",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Agonistic / Victory Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Agonistic / Victory Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription is directly related to athletic competition in the hippodrome, specifically targeting the performance of the Green faction (Prasinoi) to prevent their victory.",
+      "confidence": 1.0,
+      "quote": "μήτε νεικῆσαι μηδὲ ἐξελθεῖν τοὺς πυλῶνας τῶν ἱππαφέων",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lead Tablets",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Portable Objects",
+        "subcategory": "Lead or Metal Tablets"
+      },
+      "rationale": "Based on the formulaic language and the archaeological context of circus curses from Carthage, this text was inscribed on a lead tablet, though the text mentions sea-shells as a deposition medium.",
+      "confidence": 0.9,
+      "quote": "κατ δησον το ς ππους το ο εν του κα το συνζ γ[ου] α το πρασ νου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Dionysius",
+        "role": "Charioteer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dionysius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lamyrus",
+        "role": "Charioteer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lamyrus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Estoutianus",
+        "role": "Charioteer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Estoutianus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Protus",
+        "role": "Charioteer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Protus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phelekes",
+        "role": "Charioteer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Phelekes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Narcissus",
+        "role": "Charioteer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Narcissus",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Carthage",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/314921",
+        "confidence": 0.8
+      },
+      {
+        "name": "Hippodrome",
+        "type": "Venue",
+        "uri": "https://www.wikidata.org/wiki/Q11822917",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Nekydaimon",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Carthage",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/314921",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a detailed circus curse (defixio) likely from Carthage, dating to the 2nd or 3rd century AD. It targets the Green faction (Prasinoi), specifically naming several charioteers and calling upon a spirit of the dead (nekydaimon) and various magical names (voces magicae) to bind the horses and drivers. The curse seeks to physically disable the competitors, preventing them from winning, turning the posts (kampteres), or even leaving the starting gates (hippaphesis). The text mentions depositing the curse in sea-shells (ostrakois thalassiois), a specific ritual practice.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 2nd/3rd c. AD ",
+  "date_min": 101.0,
+  "date_max": 300.0,
+  "date_circa": false
+}

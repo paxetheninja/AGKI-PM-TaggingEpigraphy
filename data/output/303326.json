@@ -1,0 +1,197 @@
+{
+  "phi_id": 303326,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text is explicitly identified as a dogma (decree) of the Amphictyonic Council.",
+      "confidence": 1.0,
+      "quote": "δ γμ[α τ ν μφικτι ν]ων",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription honors Callistus of Cnidus for his virtuous conduct and services to the Greeks, granting him proxeny and a golden crown.",
+      "confidence": 1.0,
+      "quote": "παιν σαι τε κ λλιστον πιγ νους κν διον φ [ ι] χων ε νο διατελε πρ ς τε τ ς λλην δας π λεις",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Agonistic / Victory Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Agonistic / Victory Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The decree grants the honoree the right of proedria (front seating) at the Pythian games and public proclamation at the gymnastic contests.",
+      "confidence": 1.0,
+      "quote": "προεδρ αν ν πυθ οις κα ναγορε εσθαι α [τ ν ν τ ι γυ]μνικ ι γ νι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The text concludes with a list of the ambassadors appointed to communicate the honors to the recipient.",
+      "confidence": 1.0,
+      "quote": "πρεσβευτα ε ρ θησαν ντιγ νης κα γησ λαος [ο ---]ολ ου πρωτο[γ]νης πρωτ ρχου καλλε δας ε ξιθ ου δι δωρος δωροθ ου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The inscription is a monumental decree typically inscribed on a stone stele or block for public display in a sanctuary, though it also mentions a bronze statue.",
+      "confidence": 0.8,
+      "quote": "στ σαι δ α το κα ε κ να χαλκ ν ν δελφο ς",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "Delphic decrees of this importance were commonly inscribed on high-quality stone such as marble, though the material is not explicitly named in the text.",
+      "confidence": 0.5,
+      "quote": "δ γμ[α τ ν μφικτι ν]ων",
+      "is_ambiguous": true,
+      "ambiguity_note": "Material is inferred from archaeological context rather than the text itself."
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Callistus",
+        "role": "Honoree",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Callistus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Epigonus",
+        "role": "Father of honoree",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Epigonus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Antigones",
+        "role": "Ambassador",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antigones",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hegesilaus",
+        "role": "Ambassador",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hegesilaus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Protogenes",
+        "role": "Ambassador",
+        "uri": "https://www.wikidata.org/wiki/Q3924304",
+        "confidence": 1.0
+      },
+      {
+        "name": "Protarchus",
+        "role": "Father of ambassador",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Protarchus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kalleidas",
+        "role": "Ambassador",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kalleidas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Euxitheus",
+        "role": "Father of ambassador",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Euxitheus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Diodorus",
+        "role": "Ambassador",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Diodorus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dorotheus",
+        "role": "Father of ambassador",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dorotheus",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Cnidus",
+        "type": "City of origin",
+        "uri": "https://pleiades.stoa.org/places/599575",
+        "confidence": 1.0
+      },
+      {
+        "name": "Delphi",
+        "type": "Location of monument",
+        "uri": "https://pleiades.stoa.org/places/540726",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Apollo",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Phokis",
+      "type": "Region",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Delphi",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/540726",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This is a decree of the Amphictyonic Council from Delphi, dating to approximately 48 BC. It honors Callistus, son of Epigonus, a citizen of Cnidus, for his virtuous conduct and assistance to Greek cities while serving alongside Roman officials (the Emperor and legates). The honors include the title of proxenos and benefactor, a golden crown, a bronze statue in the sanctuary of Apollo, and special privileges at the Pythian games. The text concludes with the names of the ambassadors chosen to deliver the decree.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 48 BC? ",
+  "date_min": -48.0,
+  "date_max": -48.0,
+  "date_circa": true
+}

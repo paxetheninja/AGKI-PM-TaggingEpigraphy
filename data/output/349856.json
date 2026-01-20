@@ -1,0 +1,171 @@
+{
+  "phi_id": 349856,
+  "themes": [
+    {
+      "label": "Sacred Laws and Rules",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Sacred Laws and Rules",
+        "subcategory": null
+      },
+      "rationale": "The inscription provides detailed regulations for the performance of sacrifices and the organization of a religious festival (panegyris), including the specific animals to be sacrificed to various deities and the ritual procedures involved.",
+      "confidence": 1.0,
+      "quote": "παν γυρις συντελ ται καλ ς κα ξ ως το θεο το ταμ αι διδ]ντω ς τ ς θυσ ας",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The text specifies exact monetary amounts in Alexandrian drachmas for the purchase of sacrificial animals and for payments to officials involved in the festival, demonstrating strict financial oversight.",
+      "confidence": 1.0,
+      "quote": "δραχμ ς χιλ] ας πεντακοσ ας",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Laws and Regulations",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Laws and Regulations",
+        "subcategory": null
+      },
+      "rationale": "The document functions as a public regulation or law governing the conduct of civic-religious duties and the allocation of public funds by the city and its demes.",
+      "confidence": 1.0,
+      "quote": "το δ εροποιο νε σθων ---------- βο ς δ ο χρυσ]οκ ρως",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The inscription mentions various civic and religious officials such as the monarch, hieropoioi, treasurers, and damarchs, as well as representatives from specific demes who are to be selected.",
+      "confidence": 1.0,
+      "quote": "μ ναρχος κα το ε[ροποιο καθ κ σταν παν γυριν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Monarch",
+        "role": "Eponymous official of Kos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Monarch",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hieropoioi",
+        "role": "Sacred officials responsible for sacrifices",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hieropoioi",
+        "confidence": 1.0
+      },
+      {
+        "name": "Treasurers",
+        "role": "Financial officials (Tamiai)",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Treasurers",
+        "confidence": 1.0
+      },
+      {
+        "name": "Damarchs",
+        "role": "Deme officials",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Damarchs",
+        "confidence": 1.0
+      },
+      {
+        "name": "Prostatai",
+        "role": "Civic magistrates",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Prostatai",
+        "confidence": 1.0
+      },
+      {
+        "name": "Priest",
+        "role": "Religious official performing libations",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Priest",
+        "confidence": 1.0
+      },
+      {
+        "name": "Epimenioi",
+        "role": "Monthly officials selected from demes",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Epimenioi",
+        "confidence": 0.8
+      }
+    ],
+    "places": [
+      {
+        "name": "Isthmia",
+        "type": "Deme of Kos",
+        "uri": "https://pleiades.stoa.org/places/570316",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hippia",
+        "type": "Deme of Kos",
+        "uri": "https://www.wikidata.org/wiki/Q5768321",
+        "confidence": 1.0
+      },
+      {
+        "name": "Agela",
+        "type": "Deme of Kos",
+        "uri": "https://pleiades.stoa.org/places/462214",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pyxea",
+        "type": "Deme of Kos",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Asklepios",
+        "uri": "https://www.wikidata.org/wiki/Q83223",
+        "confidence": 1.0
+      },
+      {
+        "name": "Apollo Kyparissios",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Hygieia",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Epione",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Kos",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/736946",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription from the Asklepieion of Kos is a sacred law regulating the funding and execution of a major festival. It details the financial responsibilities of the treasurers (tamiai), the selection of sacrificial animals (including golden-horned oxen), and the participation of various demes (Isthmia, Hippia, Agela, Pyxea). The text specifies the use of Alexandrian drachmas and outlines the roles of the Monarch, Hieropoioi, and Damarchs in the civic-religious administration of the island.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " mid-3rd c. BC ",
+  "date_min": -275.0,
+  "date_max": -226.0,
+  "date_circa": false
+}

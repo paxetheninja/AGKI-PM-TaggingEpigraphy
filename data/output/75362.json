@@ -1,0 +1,129 @@
+{
+  "phi_id": 75362,
+  "themes": [
+    {
+      "label": "Official Letters",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Official Letters",
+        "subcategory": null
+      },
+      "rationale": "The text contains references to embassies and communications from Roman authorities (autokrator/emperor) to the city of Mytilene.",
+      "confidence": 0.8,
+      "quote": "πρ ς πρεσ[βε αν ------]πεφευγ ναι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The mention of the 'opinion of the council' (symbouliou gnome) is a standard formula for recording official decrees or senatus consulta in the Greek East.",
+      "confidence": 1.0,
+      "quote": "π συμ]βουλ ου γν μη[ς γν μην πεφην μεθα]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Treaties and Agreements",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Treaties and Agreements",
+        "subcategory": null
+      },
+      "rationale": "The inscription discusses the legal status of the city, specifically its autonomy and the possession of land, which are typical subjects of treaties and diplomatic settlements between Rome and Greek cities.",
+      "confidence": 0.8,
+      "quote": "[---------- α τον]ομ αν το τοις το [ς ------------]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The text mentions honors and benefactions granted, likely in the context of the city's relationship with Roman patrons or the rewards for its loyalty.",
+      "confidence": 0.8,
+      "quote": "αν τειμ ς φιλα[----------] α σοι δωκαν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Administrative Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Administrative Records",
+        "subcategory": null
+      },
+      "rationale": "The text mentions 'timetai' (censors) and public property, referring to Roman or local administrative actions regarding land and status.",
+      "confidence": 0.8,
+      "quote": "[--------- τ ν] τιμητ ν κ τ ς δημοσ[ ας -----------]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Cornelius Sulla",
+        "role": "Roman General and Dictator",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Cornelius%20Sulla",
+        "confidence": 1.0
+      },
+      {
+        "name": "Gnaeus Pompeius",
+        "role": "Roman General and Statesman",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Gnaeus%20Pompeius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Servilius",
+        "role": "Roman Censor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Servilius",
+        "confidence": 0.8
+      }
+    ],
+    "places": [
+      {
+        "name": "Mytilene",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/550763",
+        "confidence": 1.0
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Mytilene",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/550763",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Lesbos",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/550696",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a dossier of Roman official documents, including senatus consulta and letters from Roman commanders such as Sulla and Pompey the Great. It concerns the restoration of privileges, land rights, and autonomy to the city of Mytilene following the Mithridatic Wars. The text mentions specific Roman officials like Servilius and refers to the city's territory and the honors bestowed upon it by the Roman state.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " after 66 BC",
+  "date_min": -66.0,
+  "date_max": -66.0,
+  "date_circa": false
+}

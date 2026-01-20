@@ -1,0 +1,156 @@
+{
+  "phi_id": 1349,
+  "themes": [
+    {
+      "label": "Funerary Inscriptions (Epitaphs)",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Funerary Inscriptions (Epitaphs)",
+        "subcategory": null
+      },
+      "rationale": "This inscription is a public casualty list from Athens, commemorating soldiers and citizens who died in war, a specific sub-type of funerary monument.",
+      "confidence": 1.0,
+      "quote": "λυκ νο[ς] ... τρι ραρχος ... το[χσ] ται ... [β] ρβαροι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The text is structured as a formal list of individuals organized by their Athenian tribes and military roles, serving as an administrative record of the war dead.",
+      "confidence": 1.0,
+      "quote": "λεοντ δος ρι[σ]τε δες ... καμαντ[ δ]ος λυνπι ρατος ... ο νε δος διοκλε δες ... κεκροπ δος τελεσ γορος ... πποθοντ δος πυθ δορος φ λαρχος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "Casualty lists in Athens were traditionally inscribed on large marble stelae erected in the Kerameikos or other public spaces.",
+      "confidence": 1.0,
+      "quote": "[λ]υκ νο[ς]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "Public Athenian inscriptions of this period were almost exclusively carved on Pentelic or Hymettian marble.",
+      "confidence": 1.0,
+      "quote": "[λ]υκ νο[ς]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Lykon",
+        "role": "Trierarch",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lykon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phokion",
+        "role": "Trierarch",
+        "uri": "https://www.wikidata.org/wiki/Q12165896",
+        "confidence": 1.0
+      },
+      {
+        "name": "Thucydides",
+        "role": "Citizen",
+        "uri": "https://www.wikidata.org/wiki/Q41683",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristeides",
+        "role": "Citizen of Leontis tribe",
+        "uri": "https://www.wikidata.org/wiki/Q265462",
+        "confidence": 1.0
+      },
+      {
+        "name": "Diokles",
+        "role": "Physikos",
+        "uri": "https://www.wikidata.org/wiki/Q905833",
+        "confidence": 0.8
+      },
+      {
+        "name": "Olympiodoros",
+        "role": "Citizen of Akamantis tribe",
+        "uri": "https://www.wikidata.org/wiki/Q3351663",
+        "confidence": 0.8
+      },
+      {
+        "name": "Diokleides",
+        "role": "Citizen of Oineis tribe",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Diokleides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Telesagoros",
+        "role": "Citizen of Kekropis tribe",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Telesagoros",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pythodoros",
+        "role": "Phylarch of Hippothontis tribe",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pythodoros",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sostratos",
+        "role": "Foreigner/Barbarian",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sostratos",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Athens",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eretria",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/540767",
+        "confidence": 1.0
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579885",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This is a significant Athenian casualty list (IG I³ 1191) dating to approximately 411 BC, during the Peloponnesian War. It lists the names of the fallen organized by their respective tribes (Leontis, Akamantis, Oineis, Kekropis, Hippothontis, Antiochis). The list is notable for including various military ranks and categories, such as trierarchs (naval commanders), phylarchs (cavalry commanders), archers (toxotai), and even foreign combatants (barbaroi). The presence of an Eretrian suggests the inclusion of allies or residents. The stoichedon style and the specific tribal organization are characteristic of Athenian public funerary monuments of the 5th century BC.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " c. 411 a. ",
+  "date_min": -411.0,
+  "date_max": -411.0,
+  "date_circa": false
+}

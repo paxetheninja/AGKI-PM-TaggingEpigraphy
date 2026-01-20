@@ -1,0 +1,224 @@
+{
+  "phi_id": 241059,
+  "themes": [
+    {
+      "label": "Manumission Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Manumission Records",
+        "subcategory": null
+      },
+      "rationale": "The inscription records the manumission of a slave woman named Sosila through a fictitious sale to Pythian Apollo, a standard legal procedure in Delphi.",
+      "confidence": 1.0,
+      "quote": "ἀπέδοτο τῷ Ἀπόλλωνι τῷ Πυθίῳ ἐλευθέραν γυναῖκα Σωσίλαν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Contracts and Private Legal Acts",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Contracts and Private Legal Acts",
+        "subcategory": null
+      },
+      "rationale": "The manumission is structured as a legal contract of sale for a specific price of three silver minae, including clauses for the protection of the freed person.",
+      "confidence": 1.0,
+      "quote": "τιμῆς ἀργυρίου μνῶν τριῶν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Registers and Catalogues",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Registers and Catalogues",
+        "subcategory": null
+      },
+      "rationale": "The text explicitly mentions that the act was deposited in the public archives of the city of Delphi.",
+      "confidence": 1.0,
+      "quote": "ἔθηκα εἰς τὰ δαμόσια τῆς πόλιος γράμματα",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The inscription provides a detailed dating formula listing the local archon, council members, and priests acting as witnesses.",
+      "confidence": 1.0,
+      "quote": "ἄρχοντος ἐν Δελφοῖς Φλαβίου Πωλλιανοῦ ... βουλευόντων δὲ τῆς πόλιος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Votive Dedications",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Votive Dedications",
+        "subcategory": null
+      },
+      "rationale": "The manumission is performed as a sale to the god Apollo, effectively placing the freed person under the protection of the deity.",
+      "confidence": 0.8,
+      "quote": "ἀπέδοτο τῷ Ἀπόλλωνι τῷ Πυθίῳ",
+      "is_ambiguous": false,
+      "ambiguity_note": "While religious in form, the primary function is legal manumission."
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Flavius Pollianus",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Flavius%20Pollianus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Epineicus",
+        "role": "Council member",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Epineicus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eudorus",
+        "role": "Father of Epineicus",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eudorus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Socrates",
+        "role": "Council member",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Socrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Cosmus",
+        "role": "Father of Socrates",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Cosmus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Tiberius Julius Leon",
+        "role": "Council member",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Tiberius%20Julius%20Leon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Anatolicus",
+        "role": "Council member",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Anatolicus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Nicasis",
+        "role": "Seller and daughter of Sosilus",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nicasis",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sosilus",
+        "role": "Father of Nicasis",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sosilus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Laida",
+        "role": "Guardian or manager",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Laida",
+        "confidence": 0.8
+      },
+      {
+        "name": "Sosila",
+        "role": "Manumitted slave",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sosila",
+        "confidence": 1.0
+      },
+      {
+        "name": "Tiberius Julius Lycarion",
+        "role": "Secretary",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Tiberius%20Julius%20Lycarion",
+        "confidence": 1.0
+      },
+      {
+        "name": "Gaius Memmius Euthydamus",
+        "role": "Priest and witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Gaius%20Memmius%20Euthydamus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eucleidas",
+        "role": "Priest and witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eucleidas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Stoxenus",
+        "role": "Father of Eucleidas",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Stoxenus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Polemarchus",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Polemarchus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Demon",
+        "role": "Father of Polemarchus",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Mnestheus",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Mnestheus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Antigonus",
+        "role": "Father of Mnestheus",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antigonus",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Delphi",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/540726",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Apollo",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Delphi",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/540726",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a formal manumission record from Delphi, dated to the late 2nd century AD. It follows the standard Delphic formula where a slave is sold to Pythian Apollo to secure their freedom. The text includes a dating formula by the local archon, a list of council members, the terms of the sale (3 minae), the legal status of the freedwoman (Sosila), and a list of witnesses including priests and private citizens. It also notes the deposition of the record in the city's public archives via the secretary Tiberius Julius Lycarion.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " end 2nd c. AD ",
+  "date_min": 151.0,
+  "date_max": 200.0,
+  "date_circa": false
+}

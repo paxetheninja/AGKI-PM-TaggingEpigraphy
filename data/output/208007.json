@@ -1,0 +1,224 @@
+{
+  "phi_id": 208007,
+  "themes": [
+    {
+      "label": "Sacred Laws and Rules",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Sacred Laws and Rules",
+        "subcategory": null
+      },
+      "rationale": "The inscription contains extensive regulations regarding ritual purity, purifications (katharmoi), and the conduct of the priestess and citizens in relation to the cult of Demeter.",
+      "confidence": 1.0,
+      "quote": "το ς ερο ς κα πατρ ους ν μους συντελ νται",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text includes the standard enactment formula for a public decree by the council and assembly of Kos.",
+      "confidence": 1.0,
+      "quote": "δοξε τ ι βουλ[ ι κα τ ι κκλησ αι]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The text specifies that the treasurers (tamiai) are responsible for the expenditure related to the creation of the stelae and the performance of sacrifices.",
+      "confidence": 1.0,
+      "quote": "τ δ γεν μενον ν [λωμα τελεσ ντω το ταμ αι]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The decree explicitly orders the manufacture of two stone stelae to record the sacred laws.",
+      "confidence": 1.0,
+      "quote": "στ λας ργ ξασθαι δ ο",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The inscription contains numerous lacunae and restored sections, indicating it is not fully intact.",
+      "confidence": 1.0,
+      "quote": "α δ τ ς κα ν ρ ς τ ερ ν μ χαιραν σιδαρ]αν σεν γκηι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Theukles",
+        "role": "Monarchos (Eponymous Magistrate)",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theukles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Philondas",
+        "role": "Prostates (Official)",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philondas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Philistos",
+        "role": "Father of Philondas",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philistos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Anaxikles",
+        "role": "Prostates (Official)",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Anaxikles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Rhodotos",
+        "role": "Prostates (Official)",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Rhodotos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Herakleitos",
+        "role": "Prostates (Official)",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Herakleitos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Epikrates",
+        "role": "Father of Herakleitos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Epikrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Philon",
+        "role": "Grandfather of Herakleitos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Exagetos",
+        "role": "Proposer of the decree",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Exagetos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Theudoros",
+        "role": "Official",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theudoros",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Kos",
+        "type": "Region",
+        "uri": "https://pleiades.stoa.org/places/736946",
+        "confidence": 1.0
+      },
+      {
+        "name": "Asklepieion",
+        "type": "Sanctuary",
+        "uri": "https://pleiades.stoa.org/places/570127",
+        "confidence": 1.0
+      },
+      {
+        "name": "Isthmos",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/599539",
+        "confidence": 1.0
+      },
+      {
+        "name": "Halasarna",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/599634",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kos (City)",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/259245",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Demeter",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Demeter Olympia",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Asklepios",
+        "uri": "https://www.wikidata.org/wiki/Q83223",
+        "confidence": 1.0
+      },
+      {
+        "name": "Artemis Toxitis",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Lochia",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Aphrodite",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Kourotrophos",
+        "uri": "https://www.wikidata.org/wiki/Q1785582",
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Kos",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/736946",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription from the Asklepieion of Kos is a significant sacred law (lex sacra) ratified as a public decree. It details the ritual requirements for the cult of Demeter, including purifications necessary after birth, death, or suicide, and the handling of sacred objects. The analysis has been corrected to identify 'Olympia' as an epithet of Demeter rather than a priestess. It also identifies the eponymous magistrate (monarchos), the board of Prostatai, and the proposer Exagetos.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " ca. 270-260 BC ",
+  "date_min": -270.0,
+  "date_max": -260.0,
+  "date_circa": true
+}

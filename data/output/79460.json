@@ -1,0 +1,114 @@
+{
+  "phi_id": 79460,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text contains formal decree terminology, including the submission of a proposal and the recording of a resolution to be deposited in the archives.",
+      "confidence": 1.0,
+      "quote": "τ τε ψ φισμα ναδο ναι ε ς τ ρχε ον [κα πι] ντα π τ ν βουλ ν κα τ ν δ μον διαλεγ ναι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription honors the people of Smyrna and specific individuals with golden crowns for their virtue and justice, a standard practice in honorific decrees for foreign judges.",
+      "confidence": 1.0,
+      "quote": "στεφαν σαι [α]τ ν χρυσ ι στεφ νωι ν το ς πρ τοις συντελεσθησομ νο[ις] ... ρετ ς νεκεν κα δικαιοσ ν[ης]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Foreign Judges",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text explicitly mentions the dispatch of judges and their conduct in trials, identifying it as a decree for foreign judges (xenika dikasteria).",
+      "confidence": 1.0,
+      "quote": "[δικαιοσ νης κα δι τ] ν ξαποστολ ν τ ν δικαστ ν [ παινε δ κα το ς] παραγενομ νους δικαστ ς",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Agonistic Context",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Agonistic / Victory Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The decree specifies that the honors are to be publicly announced during the Dionysia festival, specifically during the tragic competitions, which provides an agonistic venue for the proclamation.",
+      "confidence": 0.8,
+      "quote": "διονυσιε οις τραγωιδ ν τ ι γ νι ρετ ς νεκεν κα δικαιοσ ν[ης]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Demetrius",
+        "role": "Foreign judge from Smyrna",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demetrius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Archeas",
+        "role": "Father of Demetrius",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Archeas",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Smyrna",
+        "type": "City of origin for the judges",
+        "uri": "https://pleiades.stoa.org/places/550893",
+        "confidence": 1.0
+      },
+      {
+        "name": "Thasos",
+        "type": "City issuing the decree",
+        "uri": "https://pleiades.stoa.org/places/501634",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Dionysus",
+        "uri": "https://www.wikidata.org/wiki/Q41680",
+        "confidence": 0.8
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Thasos",
+      "type": "City/Region",
+      "uri": "https://pleiades.stoa.org/places/501634",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a fragmentary honorific decree from the city of Thasos. It honors the people of Smyrna and a specific judge, Demetrius son of Archeas, for their service in judicial matters. The text follows the standard formula for decrees concerning foreign judges, awarding golden crowns for virtue and justice and granting privileges such as front-row seating at games and access to the council and assembly. The honors were to be proclaimed during the Dionysia festival during the tragic contests.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

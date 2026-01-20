@@ -1,0 +1,169 @@
+{
+  "phi_id": 323665,
+  "themes": [
+    {
+      "label": "Official Letters",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Official Letters",
+        "subcategory": null
+      },
+      "rationale": "The inscription opens with a formal diplomatic letter from the generals of Lampsacus to the magistrates of Thasos, utilizing the standard epistolary greeting 'chairein'.",
+      "confidence": 1.0,
+      "quote": "λαμψακην ν στρατηγο θασ ων ρχουσι χα ρειν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text incorporates two distinct decrees (psephismata) ratified by the council (boule) and the assembly (demos) of Lampsacus.",
+      "confidence": 1.0,
+      "quote": "ψηφ σματα κ βουλ ς... δοξεν τ βουλ ι κα τ ι δ μωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The primary objective of the document is to confer the status of proxenos and other honors upon Dionysodorus for his benevolence toward Lampsacene citizens.",
+      "confidence": 1.0,
+      "quote": "καθ τιμηθ σεται προξεν αι διονυσ δωρος... ε ναι πρ ξενον τ ς π λεως",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The document records the names of several civic officials, including secretaries, proposers, and their patronymics, which serves an administrative and legal function.",
+      "confidence": 0.9,
+      "quote": " γραμμ τευεν διον σιος ληνα ου ε πεν ππων μνησιθ ου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Calendars and Timetables",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Calendars and Timetables",
+        "subcategory": null
+      },
+      "rationale": "The decrees are dated according to the local calendar of Lampsacus, specifically mentioning the months of Areion and Apatourion, as well as the eponymous prytanies.",
+      "confidence": 0.9,
+      "quote": "πρυτανε οντος πρι που... ραι νος... πρυτανευο σης φροδ της... πατουρι νος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Dionysodorus",
+        "role": "Honoree and Thasian citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dionysodorus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pempides",
+        "role": "Father of Dionysodorus",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pempides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hippon",
+        "role": "Proposer of the first decree",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hippon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Mnesitheus",
+        "role": "Father of Hippon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Mnesitheus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dionysius",
+        "role": "Secretary of the council",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dionysius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lenaeus",
+        "role": "Father of Dionysius",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lenaeus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Paeonius",
+        "role": "Proposer of the second decree",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Paeonius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phitus",
+        "role": "Father of Paeonius",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Phitus",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Lampsacus",
+        "type": "Issuing city-state",
+        "uri": "https://pleiades.stoa.org/places/501570",
+        "confidence": 1.0
+      },
+      {
+        "name": "Thasos",
+        "type": "Recipient city-state and home of the honoree",
+        "uri": "https://pleiades.stoa.org/places/501634",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Aphrodite",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Priapus",
+        "uri": null,
+        "confidence": 0.9
+      }
+    ]
+  },
+  "completeness": "intact",
+  "provenance": [
+    {
+      "name": "Thasos",
+      "type": "Findspot",
+      "uri": "https://pleiades.stoa.org/places/501634",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription represents a diplomatic dossier from the Hellenistic period, likely the 2nd century BCE. It consists of a cover letter from the city of Lampsacus to Thasos, followed by two decrees passed in the months of Areion and Apatourion. The decrees honor Dionysodorus, son of Pempides, a Thasian, for his assistance to Lampsacene citizens. He is granted the title of proxenos and euergetes, along with rights of asylia (inviolability), the right to enter and leave the harbor during peace and war, and the privilege of priority access to the council and assembly (proedria/ephodos). The text is a prime example of inter-city relations and the administrative procedures of the Lampsacene boule and demos.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 2nd/1st c. BC ",
+  "date_min": -200.0,
+  "date_max": -1.0,
+  "date_circa": false
+}

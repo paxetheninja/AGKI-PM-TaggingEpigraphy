@@ -1,0 +1,238 @@
+{
+  "phi_id": 217887,
+  "themes": [
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription is dedicated to the Emperor Marcus Aurelius Antoninus, using his full imperial titles and victory epithets.",
+      "confidence": 1.0,
+      "quote": "αὐτοκράτορα καίσαρα μᾶρκον αὐρήλιον ἀντωνῖνον σεβαστὸν ἀρμενιακὸν μηδικὸν παρθικὸν μέγιστον",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The text contains an extensive list of local officials, including high priests, gymnasiarchs, agoranomoi, and strategoi, along with their family lineages.",
+      "confidence": 1.0,
+      "quote": "διὰ ἀπόλλωνος ἐνάρχου ἀρχιερέως τῶν κυρίων σεβαστῶν υἱοῦ ἀπολλωνίου τοῦ καὶ λεωνίδου γενομένου ἀρχιερέως τῶν κυρίων σεβαστῶν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Votive Dedications",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Votive Dedications",
+        "subcategory": null
+      },
+      "rationale": "The inscription is a formal dedication made by 'the city' (he polis) to the Emperor, mediated through the high priest of the imperial cult.",
+      "confidence": 1.0,
+      "quote": "ἡ πόλις διὰ ἀπόλλωνος ἐνάρχου ἀρχιερέως τῶν κυρίων σεβαστῶν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Registers and Catalogues",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Registers and Catalogues",
+        "subcategory": null
+      },
+      "rationale": "The document serves as a genealogical and professional register of the elite families holding civic and religious offices in various Egyptian nomes.",
+      "confidence": 0.8,
+      "quote": "πάντων γενομένων ἀρχιερέων τῶν κυρίων σεβαστῶν δελφιδοῦ ἱέρακος νεωτέρου γενομένου ἀρχιερέως",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Marcus Aurelius Antoninus",
+        "role": "Emperor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Marcus%20Aurelius%20Antoninus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Apollonius",
+        "role": "High Priest",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Apollonius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Leonides",
+        "role": "High Priest",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Leonides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Seleucus",
+        "role": "High Priest",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Seleucus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hierax",
+        "role": "High Priest",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hierax",
+        "confidence": 1.0
+      },
+      {
+        "name": "Alexander",
+        "role": "Gymnasiarch and Strategos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Alexander",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aurelius Polycles",
+        "role": "High Priest and Royal Scribe",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aurelius%20Polycles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Achillammon",
+        "role": "High Priest and Agoranomos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Achillammon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aurelius Asclepiades",
+        "role": "Gymnasiarch and Strategos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aurelius%20Asclepiades",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sarapion Serenus",
+        "role": "Gymnasiarch",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sarapion%20Serenus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Herennius Polycles Titianus",
+        "role": "Gymnasiarch",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Herennius%20Polycles%20Titianus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Isidorus Zosimus",
+        "role": "High Priest and Strategos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Isidorus%20Zosimus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Areius",
+        "role": "High Priest and Royal Scribe",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Areius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sarapion Ammonius",
+        "role": "High Priest",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sarapion%20Ammonius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hierax Hieraskos",
+        "role": "High Priest",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hierax%20Hieraskos",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Apollonopolite Nome",
+        "type": "Region",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Sethroite Nome",
+        "type": "Region",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Mareote Nome",
+        "type": "Region",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Heracleopolite Nome",
+        "type": "Region",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Busirite Nome",
+        "type": "Region",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Bubastite Nome",
+        "type": "Region",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Sebennyte Nome",
+        "type": "Region",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Alexandria",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/29457",
+        "confidence": 0.7
+      }
+    ],
+    "deities": [
+      {
+        "name": "Hadrian",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Antoninus Pius",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "The Augusti",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Alexandria",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/29457",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription from 170 AD is a monumental dedication by the city to Emperor Marcus Aurelius. It is remarkable for its prosopographical detail, listing a large network of elite individuals who held multiple civic and religious offices (gymnasiarchy, agoranomia, strategy, and high priesthoods of the imperial cult) across various Egyptian nomes. It highlights the interconnectedness of the Romano-Egyptian administration and the prominence of the imperial cult, specifically mentioning the Hadrianeion and the cult of the deified Antoninus Pius.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 170 AD ",
+  "date_min": 170.0,
+  "date_max": 170.0,
+  "date_circa": false
+}

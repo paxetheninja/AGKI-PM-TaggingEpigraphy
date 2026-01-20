@@ -1,0 +1,165 @@
+{
+  "phi_id": 287664,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text contains formal resolutions using the standard formula 'dedochthai' and is explicitly identified as a 'psephisma' (decree) issued by the council or synedrion.",
+      "confidence": 1.0,
+      "quote": "γαθ ι τ χηι δεδ χθαι το ς συν δροις παιν σαι μαλο σιον",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription honors Malousios for his virtue (arete) and goodwill (eunoia), awarding him golden crowns, tax exemptions, and front-row seating at games.",
+      "confidence": 1.0,
+      "quote": "στεφαν σαι α τ ν ν τ ι γυμνικ ι γ νι χρυσ ι στεφ νωι π δραχμ ν χιλ ων ρετ ς νεκεν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Building Commemoration",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Building Commemoration",
+        "subcategory": null
+      },
+      "rationale": "The text records Malousios's significant financial contributions specifically for the construction of the theater and other sanctuary infrastructure.",
+      "confidence": 1.0,
+      "quote": "κα ε ς [τ ν το] θε τρου κατασσκευ ν χρ ματα κομ σας ε ς λιον δωκεν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The decree includes detailed financial data, specifying amounts in gold coins and interest (tokous) provided for public works and diplomatic missions.",
+      "confidence": 0.9,
+      "quote": "δωκεν χρυσο ς διακοσ ους τ κους κα ε ς [τ ν το] θε τρου κατασσκευ ν χρ ματα",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Agonistic / Victory Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Agonistic / Victory Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The decree mandates that the honors be publicly proclaimed during the gymnic games, linking the civic honor to the athletic festival context.",
+      "confidence": 0.9,
+      "quote": "στεφαν σαι α τ ν ν τ ι γυμνικ ι γ νι χρυσ ι στεφ νωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The text contains the standard publication clause ordering the decree to be inscribed on a stone stele and placed within the sanctuary of Athena.",
+      "confidence": 1.0,
+      "quote": "τ δ ψ φισμα τ δε ναγρ ψαντας ε ς στ λην θε ναι ε ς τ ερ ν τ ς θην ς",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Malousios",
+        "role": "Benefactor and Honorand",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Malousios",
+        "confidence": 1.0
+      },
+      {
+        "name": "Bakchios",
+        "role": "Father of Malousios",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Bakchios",
+        "confidence": 1.0
+      },
+      {
+        "name": "Antigonus",
+        "role": "King",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antigonus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Samalos",
+        "role": "Proposer of the decree",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Samalos",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Gargara",
+        "type": "City of origin of the benefactor",
+        "uri": "https://pleiades.stoa.org/places/550544",
+        "confidence": 1.0
+      },
+      {
+        "name": "Ilion",
+        "type": "City and site of the sanctuary",
+        "uri": "https://pleiades.stoa.org/places/530898",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lampsacus",
+        "type": "City of origin of the proposer",
+        "uri": "https://pleiades.stoa.org/places/501570",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Athena Ilias",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Tyche",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Ilion",
+      "type": "Findspot/Region",
+      "uri": "https://pleiades.stoa.org/places/530898",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This complex inscription preserves a series of decrees issued by the synedrion (council) of the league of cities associated with the sanctuary of Athena Ilias. It honors Malousios of Gargara for his extraordinary financial liturgy, which funded embassies to King Antigonus (likely Antigonus I Monophthalmus) regarding the freedom and autonomy of the cities, the construction of the theater at Ilion, and the support of the panegyris (festival). The text provides a detailed look at the intersection of private wealth, regional religious leagues, and Hellenistic royal diplomacy.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

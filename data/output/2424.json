@@ -1,0 +1,202 @@
+{
+  "phi_id": 2424,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The inscription is a formal decree of the Athenian Boule and Demos, using the standard formula 'edoxen tei boulei kai toi demoi'.",
+      "confidence": 1.0,
+      "quote": "[ δ]οξεν τ ι βουλ ι κα τ ι δ μωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The text honors Theogenes of Naukratis for his services to the Athenian people, granting him the titles of proxenos and euergetes.",
+      "confidence": 1.0,
+      "quote": "θεογ νην ξε[ν]οκλ ους ναυκ[ρατ τη]ν πρ ξενον [κα] ε [ερ]γ την",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The decree specifies the payment of 10 drachmas from the treasury for the production and engraving of the stone stele.",
+      "confidence": 1.0,
+      "quote": "δ τ ν ναγραφ [ν τ ς στ λης δο να]ι τ ν [τ]αμ αν το [δ μου 0 δραχμ ς]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The inscription begins with a list of officials in power, including the prytany, the secretary, the chairman (epistates), and the eponymous archon.",
+      "confidence": 1.0,
+      "quote": "π τ ς πανδιον δος ν της π[ρυτα]νε ας ι διε χης δημ ρχου φρε[ ρρ]ιος γραμμ τευεν. σωκ ρδης λα[ιε] ς πεστ τει καλλ μαχος ρχεν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The text explicitly mentions the recording of the decree on a stone stele to be set up on the Acropolis.",
+      "confidence": 1.0,
+      "quote": "ναγραφ [ν τ ς στ λης]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "Athenian decrees of the 4th century BC, especially those set up on the Acropolis, were almost exclusively inscribed on Pentelic or Hymettian marble.",
+      "confidence": 0.8,
+      "quote": "ναγραφ [ν τ ς στ λης]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Kallimachos",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kallimachos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sokydes of Halai",
+        "role": "Epistates",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sokydes%20of%20Halai",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hierokleides son of Timostratos",
+        "role": "Proposer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hierokleides%20son%20of%20Timostratos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Timostratos of Alopeke",
+        "role": "Father of proposer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Timostratos%20of%20Alopeke",
+        "confidence": 1.0
+      },
+      {
+        "name": "Theogenes of Naukratis",
+        "role": "Honoree",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theogenes%20of%20Naukratis",
+        "confidence": 1.0
+      },
+      {
+        "name": "Xenokles",
+        "role": "Father of honoree",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Xenokles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dieuches son of Demarchos",
+        "role": "Secretary",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dieuches%20son%20of%20Demarchos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Demarchos of Phrearrhioi",
+        "role": "Father of secretary",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demarchos%20of%20Phrearrhioi",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Athens",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      },
+      {
+        "name": "Naukratis",
+        "type": "City",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Acropolis",
+        "type": "Sanctuary",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      },
+      {
+        "name": "Prytaneion",
+        "type": "Public Building",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Halai",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/540800",
+        "confidence": 1.0
+      },
+      {
+        "name": "Alopeke",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579858",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phrearrhioi",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580077",
+        "confidence": 1.0
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579885",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This is an Athenian honorific decree dated to the archonship of Kallimachos (349/8 BC). It honors Theogenes of Naukratis for his ongoing support of the Athenian people. The decree grants him the titles of proxenos and euergetes, the right to own property (enktesis), and invites him to hospitality in the Prytaneion. The text includes a standard prescript naming the tribe Pandionis, the secretary Dieuches, and the epistates Sokydes. It also specifies a publication cost of 10 drachmas for the stele to be erected on the Acropolis.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

@@ -1,0 +1,173 @@
+{
+  "phi_id": 31524,
+  "themes": [
+    {
+      "label": "Edicts and Ordinances",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Edicts and Ordinances",
+        "subcategory": null
+      },
+      "rationale": "The text is a fragment of the Edict of Diocletian on Maximum Prices, an imperial ordinance issued in 301 AD to control inflation across the Roman Empire.",
+      "confidence": 1.0,
+      "quote": "περ δερμ των βαβυλωνικ ν τοι τραλλιαν ν φοινικ ν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The inscription lists specific monetary values and wages for various professions and commodities, functioning as a financial regulation document.",
+      "confidence": 1.0,
+      "quote": "τορι τοι σοφιστ ... δικολ γ τοι νομικ μισθ ν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Registers and Catalogues",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Registers and Catalogues",
+        "subcategory": null
+      },
+      "rationale": "The text provides an extensive catalogue of goods, including leather, footwear, wood, tools, and textiles, organized by category.",
+      "confidence": 1.0,
+      "quote": "περ βυρσ ν βοε ων ... περ σανδαλ ων ... περ λ νου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Sophist",
+        "role": "Educator",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sophist",
+        "confidence": 1.0
+      },
+      {
+        "name": "Advocate",
+        "role": "Legal professional",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Advocate",
+        "confidence": 1.0
+      },
+      {
+        "name": "Jurist",
+        "role": "Legal professional",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Jurist",
+        "confidence": 1.0
+      },
+      {
+        "name": "Architect",
+        "role": "Professional",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Architect",
+        "confidence": 1.0
+      },
+      {
+        "name": "Teacher",
+        "role": "Educator",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Teacher",
+        "confidence": 1.0
+      },
+      {
+        "name": "Bath attendant",
+        "role": "Service worker",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Bath%20attendant",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Babylon",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/727082",
+        "confidence": 1.0
+      },
+      {
+        "name": "Tralles",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/599987",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phoenicia",
+        "type": "Region",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Alexandria",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/29457",
+        "confidence": 1.0
+      },
+      {
+        "name": "Tarsus",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/648789",
+        "confidence": 1.0
+      },
+      {
+        "name": "Laodicea",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/668290",
+        "confidence": 1.0
+      },
+      {
+        "name": "Scythopolis",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/678378",
+        "confidence": 1.0
+      },
+      {
+        "name": "Antinoopolis",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/756518",
+        "confidence": 1.0
+      },
+      {
+        "name": "Damascus",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/678106",
+        "confidence": 1.0
+      },
+      {
+        "name": "Cyprus",
+        "type": "Island",
+        "uri": "https://pleiades.stoa.org/places/707498",
+        "confidence": 1.0
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Geronthrai",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/570263",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Laconia",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/570406",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a significant fragment of the Edict of Diocletian on Maximum Prices (301 AD) found in Geronthrai. It contains several chapters of the edict, specifically those dealing with the wages of teachers and legal professionals, the prices of various types of leather and hides, footwear (including military and civilian styles), wooden tools and vehicles, and a very detailed section on linen textiles from famous production centers like Tarsus, Laodicea, and Scythopolis. The text reflects the complex economic administration of the Tetrarchy.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 301 AD",
+  "date_min": 301.0,
+  "date_max": 301.0,
+  "date_circa": false
+}

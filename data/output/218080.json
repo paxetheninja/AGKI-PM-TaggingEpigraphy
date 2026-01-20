@@ -1,0 +1,126 @@
+{
+  "phi_id": 218080,
+  "themes": [
+    {
+      "label": "Official Letters",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Official Letters",
+        "subcategory": null
+      },
+      "rationale": "The text is an imperial communication from the Tetrarchs addressed to the citizens of Elephantine and Syene, explicitly mentioning the sending of letters (grammata) to provincial officials.",
+      "confidence": 1.0,
+      "quote": "γράμματα πρὸς τὸν τῆς ἐπαρχείας ἡγούμενον δοθῆναι ἐκελεύσαμεν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Edicts and Ordinances",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Edicts and Ordinances",
+        "subcategory": null
+      },
+      "rationale": "The inscription contains formal imperial commands and decisions regarding privileges and administrative regulations issued by the Emperors to resolve local disputes.",
+      "confidence": 1.0,
+      "quote": "τὸ τῆς μετέρας ἀξιώσεως παράλογος κατάστασις ἐναντιωθῇ τῇ τοῦ καθολικοῦ κελεύσει",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The text discusses customary contributions or taxes (synteleia) and financial obligations of the local populations in the Thebaid.",
+      "confidence": 0.9,
+      "quote": "ὑπὲρ τῶν ἐξ ἔθους συντελειῶν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Laws and Regulations",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Laws and Regulations",
+        "subcategory": null
+      },
+      "rationale": "The document references legal boundaries and regulations established during the reign of Diocletian regarding land ownership and customary practices.",
+      "confidence": 1.0,
+      "quote": "εἴ τινες ἐξ ὑμῶν ὑπὲρ τοὺς ὅρους τοὺς ἐπὶ ἐμοῦ τοῦ Διοκλητιανοῦ Σεβαστοῦ",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Diocletian",
+        "role": "Emperor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Diocletian",
+        "confidence": 1.0
+      },
+      {
+        "name": "Maximian",
+        "role": "Emperor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Maximian",
+        "confidence": 1.0
+      },
+      {
+        "name": "Constantius",
+        "role": "Caesar",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Constantius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Galerius",
+        "role": "Caesar",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Galerius",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Elephantine",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/786021",
+        "confidence": 1.0
+      },
+      {
+        "name": "Syene",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/786123",
+        "confidence": 1.0
+      },
+      {
+        "name": "Thebes",
+        "type": "Region",
+        "uri": "https://pleiades.stoa.org/places/541138",
+        "confidence": 1.0
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Elephantine",
+      "type": "Discovery Site",
+      "uri": "https://pleiades.stoa.org/places/786021",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a significant imperial rescript or letter from the First Tetrarchy (Diocletian, Maximian, Constantius, and Galerius) dating between 293 and 305 AD. It addresses the inhabitants of Elephantine and Syene in the Thebaid region of Egypt. The text deals with administrative matters, specifically the confirmation of privileges (pronomia), land issues (gedia), and the regulation of customary taxes (synteleia). It reflects the centralized administrative reforms and the direct communication between the imperial court and provincial communities during the late Roman Empire.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 293-305 AD ",
+  "date_min": 293.0,
+  "date_max": 305.0,
+  "date_circa": false
+}

@@ -1,0 +1,109 @@
+{
+  "phi_id": 260075,
+  "themes": [
+    {
+      "label": "Contracts and Private Legal Acts",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Contracts and Private Legal Acts",
+        "subcategory": null
+      },
+      "rationale": "The inscription contains explicit legal terminology related to leasing (misthosis), inheritance (kleronomia), and testamentary dispositions (diatheke), indicating a formal legal agreement or foundation.",
+      "confidence": 1.0,
+      "quote": "μισθ[------------------------------------- παραχ]ωρε [ν] ... κληρονομ α μου ... διαθ κης",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The text records financial obligations, specifically the payment of rent (phoros) and specific monetary amounts in silver denarii.",
+      "confidence": 1.0,
+      "quote": "ε σ [νενκε τ ν φ ρον ... δην] ρια ργυρ ω",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The mention of a 'dogma' (decree) of the 'demos' (people) suggests that this private arrangement was ratified or governed by a public resolution of the city.",
+      "confidence": 0.8,
+      "quote": "δ γμ]ατος τ[ο δ μ]ου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Sacred Laws and Rules",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Sacred Laws and Rules",
+        "subcategory": null
+      },
+      "rationale": "The legal arrangement is explicitly linked to the sanctuary of Zeus Labraundos, indicating that the property or the endowment was under the protection or jurisdiction of the temple.",
+      "confidence": 0.8,
+      "quote": "ν τ ερ το λ[αβρα νδου δι ς]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Aristius",
+        "role": "Veteran",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristius",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Labraunda",
+        "type": "Sanctuary",
+        "uri": "https://pleiades.stoa.org/places/599745",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Zeus Labraundos",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Labraunda",
+      "type": "Site",
+      "uri": "https://pleiades.stoa.org/places/599745",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Caria",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/599564",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription from Labraunda is a complex legal document, likely a lease or a testamentary foundation established by a veteran named Aristius. It details the transfer of property, inheritance rights for descendants, and financial obligations (rent in denarii) to the sanctuary of Zeus Labraundos. The mention of a public decree (dogma) and the involvement of city magistrates (archontes) and the council (boule) indicates the official nature of this private-public legal arrangement, typical of the Roman Imperial period in Caria.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

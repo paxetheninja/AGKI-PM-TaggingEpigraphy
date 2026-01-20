@@ -1,0 +1,192 @@
+{
+  "phi_id": 241394,
+  "themes": [
+    {
+      "label": "Manumission Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Manumission Records",
+        "subcategory": null
+      },
+      "rationale": "The inscription is a formal record of manumission through the fictitious sale of a slave to the god Apollo Pythios, a standard legal procedure in Delphi.",
+      "confidence": 1.0,
+      "quote": "π δοτο κλ ων φιλιστ δου ρ πιος τ ι π λλωνι τ ι πυθ ωι σ μα νδρε ον ι νομα γαθ ας",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Contracts and Private Legal Acts",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Contracts and Private Legal Acts",
+        "subcategory": null
+      },
+      "rationale": "The text outlines a legal contract including a purchase price, conditions of service (paramone), and penalties for breach of the agreement.",
+      "confidence": 1.0,
+      "quote": "τιμ ς ργυρ ου μν ν τρι ν καθ ς π στευσ[ε] γαθ ας τ ι θε ι τ ν ν ν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Votive Dedications",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Votive Dedications",
+        "subcategory": null
+      },
+      "rationale": "The manumission is framed as a religious dedication or sale to the deity Apollo Pythios, placing the former slave under the god's protection.",
+      "confidence": 1.0,
+      "quote": "τ ι π λλωνι τ ι πυθ ωι σ μα νδρε ον ι νομα γαθ ας",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The document lists the eponymous archon, the priests of Apollo, and several citizen witnesses, serving as a record of local officials and residents.",
+      "confidence": 0.9,
+      "quote": "ρχοντος μ νητος ... μ ρτυρες το ερε ς το π λλωνος θαμβος μ ντας",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Amnitos",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Amnitos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Cleon",
+        "role": "Seller",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Cleon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Philistides",
+        "role": "Father of Cleon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philistides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Agathias",
+        "role": "Slave being manumitted",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Agathias",
+        "confidence": 1.0
+      },
+      {
+        "name": "Amynias",
+        "role": "Guarantor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Amynias",
+        "confidence": 1.0
+      },
+      {
+        "name": "Charixenus",
+        "role": "Father of Amynias",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Charixenus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dion",
+        "role": "Guarantor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dion",
+        "confidence": 1.0
+      },
+      {
+        "name": "Alexon",
+        "role": "Father of Dion",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Alexon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Thambos",
+        "role": "Priest of Apollo",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Thambos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Mantas",
+        "role": "Priest of Apollo",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Mantas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Diotaias",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Diotaias",
+        "confidence": 0.9
+      },
+      {
+        "name": "Eucleidas",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eucleidas",
+        "confidence": 0.9
+      },
+      {
+        "name": "Archon",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Archon",
+        "confidence": 0.9
+      },
+      {
+        "name": "Engeglos",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Engeglos",
+        "confidence": 0.9
+      },
+      {
+        "name": "Kallieros",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kallieros",
+        "confidence": 0.9
+      }
+    ],
+    "places": [
+      {
+        "name": "Delphi",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/540726",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phokis",
+        "type": "Region",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Apollo Pythios",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "intact",
+  "provenance": [
+    {
+      "name": "Delphi",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/540726",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription from Delphi records the manumission of a male slave named Agathias by his master Cleon. The process is conducted via a fictitious sale to the god Apollo Pythios for three minae. The text includes a paramone clause, requiring Agathias to remain in service to Cleon for the duration of the master's life. It also specifies that Agathias shall be free and untouchable (anaphaptos) after Cleon's death, and provides legal protections against re-enslavement, supported by named guarantors and witnesses, including the priests of Apollo and the eponymous archon Amnitos.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 170 BC",
+  "date_min": -170.0,
+  "date_max": -170.0,
+  "date_circa": false
+}
