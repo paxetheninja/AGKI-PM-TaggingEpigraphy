@@ -30,20 +30,6 @@
       "ambiguity_note": null
     },
     {
-      "label": "Agonistic Epigrams",
-      "hierarchy": {
-        "domain": "Content",
-        "subdomain": "Honorific and Commemorative Inscriptions",
-        "category": "Agonistic Epigrams",
-        "subcategory": null
-      },
-      "rationale": "The first part of the inscription is composed in verse (metrical epigram) to commemorate the athlete's achievements, which is a standard form for victory monuments.",
-      "confidence": 1.0,
-      "quote": "[ ρ ν με] ν σ[τα]δοις τ ν ε[-]",
-      "is_ambiguous": false,
-      "ambiguity_note": null
-    },
-    {
       "label": "Statue Base",
       "hierarchy": {
         "domain": "Type",

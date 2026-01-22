@@ -1,0 +1,260 @@
+{
+  "phi_id": 4338,
+  "themes": [
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The inscription is a formal catalogue of ephebic officials, including supervisors (sophronistai), trainers (paidotribai), and teachers (didaskaloi), as well as the ephebes themselves.",
+      "confidence": 1.0,
+      "quote": "[σωφρονιστα] ... παιδοτρ βης μ ρκος ... γραμματε ς τε κρος ... διδ σκαλος πελλ ς φλυε",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Registers and Catalogues",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Registers and Catalogues",
+        "subcategory": null
+      },
+      "rationale": "The text is structured as a systematic register of names organized by the thirteen Athenian tribes, which was a standard administrative practice for ephebic lists.",
+      "confidence": 1.0,
+      "quote": " ρεχθε δος ... α γε δος ... [πανδιον δος] ... [λε]οντ δος ... πτολεμα δος ...  καμαντ δος ...  δριαν δος ... [ο ν]ε δος ... κεκροπ δος ... [ πποθωντ δος] ... [α αντ δος] ... [ ν]τιοχ δος ...  τταλ δος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "Ephebic catalogues of this length and formal tribal organization were typically inscribed on marble stelae for public display in gymnasia or sanctuaries.",
+      "confidence": 0.8,
+      "quote": "[σωφρονιστα] ...  τταλ δος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "The inscription is from Attica and follows the standard format for monumental ephebic lists, which were almost exclusively carved on marble.",
+      "confidence": 0.8,
+      "quote": "[σωφρονιστα] ...  τταλ δος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The text contains numerous lacunae and brackets, indicating that the original stone is broken and parts of the names and headers are lost.",
+      "confidence": 1.0,
+      "quote": "[--- φ]α δρος ... [πα]μμ νης δημητρ ου ... [γ]λαυκ ας ε --",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Marcus",
+        "role": "Physical Trainer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Marcus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Herakleon",
+        "role": "Assistant Physical Trainer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Herakleon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Teukros",
+        "role": "Secretary",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Teukros",
+        "confidence": 1.0
+      },
+      {
+        "name": "Daphnos",
+        "role": "Weapon Instructor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Daphnos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pelles",
+        "role": "Teacher",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pelles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Philos",
+        "role": "Leader",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Philias",
+        "role": "Missile Guard",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philias",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eurybiades",
+        "role": "Doorkeeper",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eurybiades",
+        "confidence": 1.0
+      },
+      {
+        "name": "Attalus",
+        "role": "Gymnasiarch",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Attalus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phaedrus",
+        "role": "Gymnasiarch",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Phaedrus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Antonius Claudianus",
+        "role": "Ephebe",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antonius%20Claudianus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Proclus",
+        "role": "Ephebe",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Proclus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pericles",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pericles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Demetrius",
+        "role": "Ephebe",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demetrius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dionysius",
+        "role": "Ephebe",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dionysius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Valerius",
+        "role": "Ephebe",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Valerius",
+        "confidence": 0.9
+      },
+      {
+        "name": "Rufus",
+        "role": "Ephebe",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Rufus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Publius Aelius",
+        "role": "Ephebe",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Publius%20Aelius",
+        "confidence": 0.8
+      },
+      {
+        "name": "Carinas Demedes",
+        "role": "Ephebe",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Carinas%20Demedes",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Marathon",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580021",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phegaia",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580074",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pallene",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580051",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phlya",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580076",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eleusis",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579920",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sphettos",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580109",
+        "confidence": 1.0
+      },
+      {
+        "name": "Anagyrous",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579863",
+        "confidence": 1.0
+      },
+      {
+        "name": "Thorai",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580118",
+        "confidence": 1.0
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579885",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a comprehensive ephebic catalogue from Athens, dating to the late 2nd century AD (post 169/70 AD). It lists the administrative and instructional staff of the ephebeia, followed by a tribal list of the ephebes. The text reflects the integration of Roman citizens into Athenian civic life, as evidenced by the mix of Greek and Roman names (e.g., Marcus, Antonius, Valerius).",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " p. post 169/70 p. ",
+  "date_min": 169.0,
+  "date_max": 170.0,
+  "date_circa": false
+}

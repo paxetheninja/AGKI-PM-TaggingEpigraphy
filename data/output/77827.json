@@ -1,0 +1,94 @@
+{
+  "phi_id": 77827,
+  "themes": [
+    {
+      "label": "Sacred Laws and Rules",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Sacred Laws and Rules",
+        "subcategory": null
+      },
+      "rationale": "The inscription provides detailed regulations regarding ritual purity, the management of death-related pollution (miasma), and the specific religious procedures for purifying a house after a funeral.",
+      "confidence": 1.0,
+      "quote": "καθαρὸν εἶναι τὴν οἰκίαν καὶ θύειν ἐφεστίαι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Laws and Regulations",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Laws and Regulations",
+        "subcategory": null
+      },
+      "rationale": "The text functions as a sumptuary law, placing legal limits on the cost of burial clothes and the conduct of mourners during the funeral procession.",
+      "confidence": 1.0,
+      "quote": "μὴ πλέονος ἐξίοις τοῖς τρισὶ κατὰ ἑκατὸν δραχμῶν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text includes the standard legislative formula indicating it was a formal decision made by the council and the assembly of the city.",
+      "confidence": 1.0,
+      "quote": "ἔδοξεν τῆι βουλῆι καὶ τῶι δήμωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [],
+    "places": [
+      {
+        "name": "Ceos",
+        "type": "Region",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Iulis",
+        "type": "City",
+        "uri": "https://www.wikidata.org/wiki/Q56399452",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Hestia",
+        "uri": null,
+        "confidence": 0.9
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Ceos",
+      "type": "Region",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Iulis",
+      "type": "City",
+      "uri": "https://www.wikidata.org/wiki/Q56399452",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a well-known funerary law from Iulis on the island of Ceos. It is a primary source for understanding Greek concepts of 'miasma' (pollution) and the civic regulation of private mourning. It specifies the number of garments allowed for the deceased, the silence required during the procession, and the specific family members who are considered polluted by the death. The text also outlines the purification of the home using sea water and hyssop, and the subsequent sacrifice to the hearth (Hestia).",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 5th c. BC ",
+  "date_min": -500.0,
+  "date_max": -401.0,
+  "date_circa": false
+}

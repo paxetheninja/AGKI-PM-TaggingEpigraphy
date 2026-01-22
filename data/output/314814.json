@@ -1,0 +1,152 @@
+{
+  "phi_id": 314814,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The inscription begins with the standard formula for a public decree, indicating a formal decision made by the people of Miletus.",
+      "confidence": 1.0,
+      "quote": "δοξε τ ι δ μωι γν μη συν δρων",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The text details various honors granted to Antiochus, including a bronze statue on horseback, front-row seating at festivals, and tax exemptions.",
+      "confidence": 1.0,
+      "quote": "παιν σαι μ ν [ ντ οχον τ]ς περ τ ν θε ν ε σεβε ας κα τ ς [πρ ς το ς λλην]ας ε νο ας",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    },
+    {
+      "label": "Building Commemoration",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Building Commemoration",
+        "subcategory": null
+      },
+      "rationale": "The inscription records the promise and planning for the construction of a stoa (colonnade) at the sanctuary of Didyma by Antiochus.",
+      "confidence": 1.0,
+      "quote": "στο ν ο κοδο[μ σειν σταδια αν τ ι θε] ι κατ π λιν",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The decree includes instructions for treasurers regarding the management of revenues and the funding for the honors and construction.",
+      "confidence": 1.0,
+      "quote": "το ς δ ταμ α[ς πωλε ν κ]α το ς [ ε] καθισταμ νους πρυτ νης [παρα]δ χεσθαι [τ ν] γινομ νην [ π] α τ ς πρ σ[οδον]",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    },
+    {
+      "label": "Votive Dedications",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Votive Dedications",
+        "subcategory": null
+      },
+      "rationale": "The construction of the stoa is framed as a religious offering to the god at Didyma, reflecting the piety of the royal family.",
+      "confidence": 1.0,
+      "quote": "περ τ ερ ν [τ]ν διδ μοις καλ ς χειν",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Demodamas",
+        "role": "Proposer of the decree",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demodamas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristides",
+        "role": "Father of Demodamas",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Antiochus",
+        "role": "Honoree, son of King Seleucus",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antiochus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Seleucus",
+        "role": "King, father of Antiochus",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Seleucus",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Miletus",
+        "type": "City-state",
+        "uri": "https://pleiades.stoa.org/places/599799",
+        "confidence": 1.0
+      },
+      {
+        "name": "Didyma",
+        "type": "Sanctuary site",
+        "uri": "https://pleiades.stoa.org/places/599593",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Dionysus",
+        "uri": "https://www.wikidata.org/wiki/Q41680",
+        "confidence": 1.0
+      },
+      {
+        "name": "Apollo",
+        "uri": null,
+        "confidence": 0.8
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Miletus",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/599799",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Didyma",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/599593",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a significant Hellenistic decree from Miletus, dated to approximately 300/299 BC. It records the honors bestowed upon Antiochus (the future Antiochus I Soter), son of Seleucus I Nicator, in recognition of his promise to build a large stoa at the sanctuary of Apollo in Didyma. The text is a classic example of the relationship between Hellenistic monarchs and Greek cities, involving reciprocal benefaction (euergetism) and religious piety. It mentions specific civic offices like treasurers (tamiai) and prytaneis, and religious festivals like the Dionysia and Didymeia.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 300/299 BC ",
+  "date_min": -300.0,
+  "date_max": -299.0,
+  "date_circa": false
+}

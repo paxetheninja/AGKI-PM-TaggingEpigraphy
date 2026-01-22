@@ -1,0 +1,154 @@
+{
+  "phi_id": 233036,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text is a formal resolution passed by the Council and the People of Athens, following the standard decree formula.",
+      "confidence": 1.0,
+      "quote": "ἔδοξεν τεῖ βουλεῖ καὶ τῶι δήμωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription honors the taxiarchs (military officers) for their service, virtue, and bravery with a golden crown and front-row seating.",
+      "confidence": 1.0,
+      "quote": "ἐπαινέσαι τοὺς ταξιἀρχους ... καὶ στεφανῶσαι αὐτοὺς χρυσῶι στεφάνωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The decree explicitly orders the text to be inscribed on a stone stele and set up in a public location.",
+      "confidence": 1.0,
+      "quote": "ἀναγράψαι δὲ τόδε τὸ ψήφισμα ... ἐν στήλει λιθίνει",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Olbius",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Olbius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eudias",
+        "role": "Secretary",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eudias",
+        "confidence": 1.0
+      },
+      {
+        "name": "Timonides",
+        "role": "Father of Eudias",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Timonides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aeschines",
+        "role": "Proedros",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aeschines",
+        "confidence": 1.0
+      },
+      {
+        "name": "Anticrates",
+        "role": "Father of Aeschines",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Anticrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Leon",
+        "role": "Proposer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Leon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kichesias",
+        "role": "Father of Leon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kichesias",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Athens",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      },
+      {
+        "name": "Euonymon",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579932",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phaleron",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580072",
+        "confidence": 1.0
+      },
+      {
+        "name": "Axone",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Strategion",
+        "type": "Public Building",
+        "uri": "https://www.wikidata.org/wiki/Q125624025",
+        "confidence": 1.0
+      },
+      {
+        "name": "Leontis",
+        "type": "Tribe",
+        "uri": "https://pleiades.stoa.org/places/482653002",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Tyche",
+        "uri": null,
+        "confidence": 0.8
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579885",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is an Athenian honorary decree dating to the archonship of Olbius (275/4 BC). It honors the taxiarchs of the previous year for their diligent performance of duties, including the performance of sacrifices, the maintenance of military equipment, and their obedience to the generals. The text follows the standard Athenian legislative format, including the dating formula, the names of the presiding officials, and the specific honors granted (a golden crown and proedria). The text is fragmentary with significant reconstructions in the latter half.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 275/4 a. ",
+  "date_min": -275.0,
+  "date_max": -274.0,
+  "date_circa": false
+}

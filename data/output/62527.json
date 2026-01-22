@@ -44,20 +44,6 @@
       "ambiguity_note": null
     },
     {
-      "label": "Religious Festivals",
-      "hierarchy": {
-        "domain": "Content",
-        "subdomain": "Religious and Dedicatory Texts",
-        "category": "Religious Festivals",
-        "subcategory": null
-      },
-      "rationale": "The text details expenditures for religious festivals, including the transport of sacred ambassadors (theoroi) and choruses.",
-      "confidence": 0.9,
-      "quote": "εἰς κομιδὴν τῶν θεωρῶν καὶ τῶν χορῶν",
-      "is_ambiguous": false,
-      "ambiguity_note": null
-    },
-    {
       "label": "Registers and Catalogues",
       "hierarchy": {
         "domain": "Content",

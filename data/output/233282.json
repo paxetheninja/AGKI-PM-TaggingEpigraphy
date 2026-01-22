@@ -30,34 +30,6 @@
       "ambiguity_note": null
     },
     {
-      "label": "Democracy",
-      "hierarchy": {
-        "domain": "Content",
-        "subdomain": "Political Systems",
-        "category": "Democracy",
-        "subcategory": null
-      },
-      "rationale": "The text explicitly mentions the state of democracy and the desire to maintain traditional democratic procedures like allotment.",
-      "confidence": 1.0,
-      "quote": "ἐν δημοκρατίαι",
-      "is_ambiguous": false,
-      "ambiguity_note": null
-    },
-    {
-      "label": "Public Administration",
-      "hierarchy": {
-        "domain": "Content",
-        "subdomain": "Governance",
-        "category": "Public Administration",
-        "subcategory": "Allotment of Offices"
-      },
-      "rationale": "The decree focuses on the 'klerotai archai' (allotted offices) and the procedures for selecting officials.",
-      "confidence": 1.0,
-      "quote": "τὰς κληρωτὰς ἀρχάς",
-      "is_ambiguous": false,
-      "ambiguity_note": null
-    },
-    {
       "label": "Stele",
       "hierarchy": {
         "domain": "Type",

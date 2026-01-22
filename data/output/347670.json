@@ -1,0 +1,145 @@
+{
+  "phi_id": 347670,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The inscription follows the standard Athenian formula for a formal decree issued by the Council (Boule) and the People (Demos).",
+      "confidence": 1.0,
+      "quote": "[ δοξεν τ ι βουλ ι κ]α τ [ι] δ μ[ωι]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The text explicitly honors Timarchus, son of Timarchus, for his services and goodwill, awarding him a crown and the titles of proxenos and benefactor.",
+      "confidence": 1.0,
+      "quote": " παιν σαι τ μαρχον τιμ ρχου σαλαμ νιον κα στεφαν σαι α τ ν θαλλο στεφ νωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The decree specifies that the text is to be inscribed on stone stelae (stelai lithinai).",
+      "confidence": 1.0,
+      "quote": "ν στ λαις λιθ ναις",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "While the text uses the general term for stone, Athenian decrees of this nature and period were almost exclusively inscribed on marble stelae.",
+      "confidence": 0.8,
+      "quote": "ν στ λαις λιθ ναις",
+      "is_ambiguous": true,
+      "ambiguity_note": "The text explicitly mentions 'stone' (lithos), but the specific material is inferred from archaeological context."
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The inscription is preserved with significant lacunae and missing sections, requiring extensive epigraphic reconstruction.",
+      "confidence": 1.0,
+      "quote": "[----------------------]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Timarchus",
+        "role": "Honoree, Proxenos, and Benefactor",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Timarchus",
+        "role": "Father of the honoree",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Athens",
+        "type": "City-state",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Salamis",
+        "type": "Island and Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Sanctuary of the Demos and the Graces",
+        "type": "Sanctuary",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Sanctuary of Athena",
+        "type": "Sanctuary",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Athena",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Graces",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "Region",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This document is a classic Hellenistic Athenian honorific decree, likely dating to the early 2nd century BC. It recognizes Timarchus of Salamis for his hospitality and assistance to Athenian citizens visiting the island. The decree grants him the high honors of proxeny and the title of euergetes (benefactor). It mandates the publication of the decree on two separate stelae to be erected in prominent religious and civic spaces: the Sanctuary of the Demos and the Graces in the Athenian Agora and the Sanctuary of Athena in Salamis. The text is reconstructed based on standard diplomatic formulas of the period.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " ca. 180 BC ",
+  "date_min": -180.0,
+  "date_max": -180.0,
+  "date_circa": true
+}

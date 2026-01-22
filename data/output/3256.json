@@ -1,0 +1,248 @@
+{
+  "phi_id": 3256,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text follows the formal structure of an Athenian state decree, including the enactment formula 'it was decided by the council and the people'.",
+      "confidence": 1.0,
+      "quote": "δοξεν τ ι βουλ ι κα τ ι δ μωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Votive Dedications",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Votive Dedications",
+        "subcategory": null
+      },
+      "rationale": "The inscription records the request of the maidens to dedicate a silver bowl (phiale) to the goddess Athena as a memorial of their piety.",
+      "confidence": 1.0,
+      "quote": "ναθε ναι τ ν φι]λην ν κατεσκευ κασιν α παρθ [νοι τ ι θην ι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The decree praises the maidens (ergastinai) for their service and crowns each of them with an olive wreath for their piety and zeal.",
+      "confidence": 1.0,
+      "quote": "παιν σαι δ τ ς παρθ νους κα στεφαν σαι κ στην α τ ν θαλλο στεφ νωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The inscription includes an extensive list of the names of the maidens who wove the peplos, organized by their respective Athenian tribes.",
+      "confidence": 1.0,
+      "quote": " ρεχθε δος ... α γε δος ... λ[εωντ δος] ... φ [τολεμα δος]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Calendars and Timetables",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Calendars and Timetables",
+        "subcategory": null
+      },
+      "rationale": "The text provides precise dating information, including the archonship, the month Metageitnion, and the specific day of the prytany.",
+      "confidence": 1.0,
+      "quote": " π δημοχ ρους ρχοντος ... μεταγειτνι νος νδεκ τηι νδεκ] τηι τ ς πρυτανε ας",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Demochares",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demochares",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dionysodorus",
+        "role": "Secretary",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dionysodorus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Timollus",
+        "role": "Proedros",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Timollus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Themistocles",
+        "role": "Agonothetes of the Panathenaia",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Themistocles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Nike",
+        "role": "Maiden (Ergastine)",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nike",
+        "confidence": 0.8
+      },
+      {
+        "name": "Dionysia",
+        "role": "Maiden (Ergastine)",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dionysia",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lysistrate",
+        "role": "Maiden (Ergastine)",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lysistrate",
+        "confidence": 0.8
+      },
+      {
+        "name": "Xenostrate",
+        "role": "Maiden (Ergastine)",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Xenostrate",
+        "confidence": 0.8
+      },
+      {
+        "name": "Agathocleia",
+        "role": "Maiden (Ergastine)",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Agathocleia",
+        "confidence": 1.0
+      },
+      {
+        "name": "Mnesis",
+        "role": "Maiden (Ergastine)",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Mnesis",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Athens",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      },
+      {
+        "name": "Acropolis",
+        "type": "Sanctuary",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      },
+      {
+        "name": "Cephisia",
+        "type": "Deme",
+        "uri": "https://www.wikidata.org/wiki/Q13415481",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lamptrae",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Ancyle",
+        "type": "Deme",
+        "uri": "https://www.wikidata.org/wiki/Q19341278",
+        "confidence": 1.0
+      },
+      {
+        "name": "Myrrhinoutta",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Phegaea",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Bate",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579892",
+        "confidence": 1.0
+      },
+      {
+        "name": "Trinemeia",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580126",
+        "confidence": 1.0
+      },
+      {
+        "name": "Gargettus",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Euonymon",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579932",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pergase",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Berenicidae",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Phlya",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580076",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Athena",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579885",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is an Athenian decree from the 1st century BC honoring the ergastinai, the maidens responsible for weaving the sacred peplos for Athena Polias. It details their religious service during the Panathenaic festival, their request to dedicate a silver phiale, and provides a catalog of the participants organized by tribe and deme. The text is fragmentary but preserves significant administrative and prosopographical data.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

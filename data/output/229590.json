@@ -44,20 +44,6 @@
       "ambiguity_note": null
     },
     {
-      "label": "Judicial / Legal",
-      "hierarchy": {
-        "domain": "Content",
-        "subdomain": "Official and Legal Documents",
-        "category": "Judicial / Legal",
-        "subcategory": null
-      },
-      "rationale": "The text mentions the escort of judges and the protection of judicial matters, indicating the honored individual served in a legal or judicial capacity.",
-      "confidence": 1.0,
-      "quote": "δικασταγωγὸν διαφυλάξαι ... δικαστοφυλακίαι",
-      "is_ambiguous": false,
-      "ambiguity_note": null
-    },
-    {
       "label": "Stele",
       "hierarchy": {
         "domain": "Type",
@@ -68,20 +54,6 @@
       "rationale": "The text explicitly orders the decree to be inscribed on a stone stele.",
       "confidence": 1.0,
       "quote": "ἀναγράψαι εἰς στήλαν λιθίναν",
-      "is_ambiguous": false,
-      "ambiguity_note": null
-    },
-    {
-      "label": "Sanctuaries",
-      "hierarchy": {
-        "domain": "Content",
-        "subdomain": "Religion",
-        "category": "Sanctuaries",
-        "subcategory": null
-      },
-      "rationale": "The decree specifies that the stele should be set up in the sanctuary of Asclepius.",
-      "confidence": 1.0,
-      "quote": "ἐν τῶι ἱερῶι τοῦ Ἀσκλαπιοῦ",
       "is_ambiguous": false,
       "ambiguity_note": null
     }

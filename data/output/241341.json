@@ -1,0 +1,289 @@
+{
+  "phi_id": 241341,
+  "themes": [
+    {
+      "label": "Manumission Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Manumission Records",
+        "subcategory": null
+      },
+      "rationale": "The inscription records the legal process of manumission through a fictitious sale to the god Apollo, granting freedom to a slave named Straton.",
+      "confidence": 1.0,
+      "quote": "π δοτο θε ξενος τ χνωνος μφισσε ς τ ι π λλωνι τ ι πυθ ωι σ μα γυναικε ον ι νομα στρ τιον",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Contracts and Private Legal Acts",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Contracts and Private Legal Acts",
+        "subcategory": null
+      },
+      "rationale": "The text functions as a legal contract specifying the price of the slave, the conditions of her remaining service (paramone), and the penalties for breach of contract.",
+      "confidence": 1.0,
+      "quote": "τιμ ς ργυρ ου μν ν π ντε καθ ς π στευσε στρ τιον τ ι θε ι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The document includes a comprehensive list of witnesses, including priests and local officials, to validate the legal transaction.",
+      "confidence": 1.0,
+      "quote": "μ ρτυρες ερε ς το π λλωνος ταραντ νος κα το ρχοντες θαμβος θαν ωνος ρχ λαος κα δι ται δρομοκλε δας π τρων σανδρος ξενοκρ της δελφο τιμοκρ της δ ων ε βουλ δας δι τιμος τ μων γ σανδρος λ κωπος μφισσε ς",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Votive Dedications",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Votive Dedications",
+        "subcategory": null
+      },
+      "rationale": "The manumission is framed as a religious dedication or sale to Apollo Pythios, placing the freed person under the god's protection.",
+      "confidence": 1.0,
+      "quote": "π δοτο θε ξενος τ χνωνος μφισσε ς τ ι π λλωνι τ ι πυθ ωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Calendars and Timetables",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Calendars and Timetables",
+        "subcategory": null
+      },
+      "rationale": "The inscription is precisely dated using the local months of the Delphic and Amphissan calendars.",
+      "confidence": 1.0,
+      "quote": "μην ς παναγυρ ου ν δελφο ς δ ρχοντος π ρρου μην ς ποιτροπ ου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The text records a specific financial transaction involving the payment of five silver minae for the slave's freedom.",
+      "confidence": 1.0,
+      "quote": "τιμ ς ργυρ ου μν ν π ντε",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Registers and Catalogues",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Registers and Catalogues",
+        "subcategory": null
+      },
+      "rationale": "This inscription belongs to the extensive registers of manumissions recorded on the walls of the Sanctuary of Apollo at Delphi.",
+      "confidence": 0.8,
+      "quote": "καθ ς γ γραπται",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Theagenes",
+        "role": "Archon of Amphissa",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theagenes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pyrrhus",
+        "role": "Archon of Delphi",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pyrrhus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Theoxenos",
+        "role": "Seller and former owner",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theoxenos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Tychnon",
+        "role": "Father of Theoxenos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Tychnon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Straton",
+        "role": "Manumitted slave",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Straton",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pasinos",
+        "role": "Guarantor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pasinos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Archilaus",
+        "role": "Guarantor, Archon, and Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Archilaus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Prachus",
+        "role": "Father of Archilaus",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Prachus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Tarantinus",
+        "role": "Priest of Apollo",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Tarantinus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Thambos",
+        "role": "Archon and Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Thambos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Thanon",
+        "role": "Father of Thambos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Thanon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dromocleidas",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dromocleidas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Petron",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Petron",
+        "confidence": 1.0
+      },
+      {
+        "name": "Asandros",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Asandros",
+        "confidence": 1.0
+      },
+      {
+        "name": "Xenocrates",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Xenocrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Timocrates",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Timocrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dion",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dion",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eubulidas",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eubulidas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Diotimos",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Diotimos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Timon",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Timon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Agasandros",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Agasandros",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lycopus",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lycopus",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Amphissa",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/540630",
+        "confidence": 1.0
+      },
+      {
+        "name": "Delphi",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/540726",
+        "confidence": 1.0
+      },
+      {
+        "name": "Apamea",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/912806",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Apollo Pythios",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "intact",
+  "provenance": [
+    {
+      "name": "Delphi",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/540726",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Phokis",
+      "type": "Region",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "The inscription is a standard and complete manumission record from Delphi, dated to the mid-2nd century BC. It follows the typical formula of a 'sale to the god' (Apollo Pythios), including the names of the archons for dating, the identification of the seller (Theoxenos of Amphissa), the slave (Straton of Apamea), the price (5 minae), and the conditions of paramone (remaining service). It concludes with a detailed list of witnesses and guarantors, ensuring the legal validity of the act.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 170-157/156 BC",
+  "date_min": -157.0,
+  "date_max": -156.0,
+  "date_circa": false
+}

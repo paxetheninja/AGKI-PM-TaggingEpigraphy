@@ -1,0 +1,325 @@
+{
+  "phi_id": 219946,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text begins with the standard formula for a decree (edoxen), issued by the guild of the artists of Dionysus.",
+      "confidence": 1.0,
+      "quote": "δοξεν τεχν ταις το ς περ τ ν δι νυσον",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription honors Lysimachus for his virtue, piety, and benevolence towards the guild and the royal family, awarding him an ivy crown and a painted image.",
+      "confidence": 1.0,
+      "quote": "στεφαν σαι λυσ μαχον κιττο στεφ νωι κατ τ π τρια",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The inscription contains an extensive list of guild members categorized by their professional roles, such as tragic poets, comic poets, and musicians.",
+      "confidence": 1.0,
+      "quote": "τραγ δι ποιητα ... κωμωιδι ν ποιητα ... κιθαρ δ ς ... κιθαριστ ς ... ρχηστ ς",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The text explicitly orders the decree to be inscribed on a stone stele and set up in front of the temple of Dionysus.",
+      "confidence": 1.0,
+      "quote": "ναγρ ψαι δ ... τ ψ φισμα τ δε ε ς στ λην",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The decree mentions the allocation of funds for the expenses of the inscription, to be provided by the oikonomos Sosibios.",
+      "confidence": 1.0,
+      "quote": "τ δ ε ς τα τ ν λωμα δο ναι τ ν ο κον μον σωσ βιον",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Lysimachus",
+        "role": "Honoree, Hipparch, and Prytanis",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lysimachus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Ptolemy",
+        "role": "Father of Lysimachus",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ptolemy",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sostratos",
+        "role": "Grandfather of Lysimachus",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sostratos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Ptolemy II Philadelphus",
+        "role": "King",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ptolemy%20II%20Philadelphus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sosibios",
+        "role": "Oikonomos (Financial Administrator)",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sosibios",
+        "confidence": 1.0
+      },
+      {
+        "name": "Demarchos",
+        "role": "Secretary of the Guild",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demarchos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Zopyros",
+        "role": "Official of the trieteric and amphieteric festivals",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Zopyros",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dionysios",
+        "role": "Tragic Poet",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dionysios",
+        "confidence": 1.0
+      },
+      {
+        "name": "Taurinos",
+        "role": "Tragic Poet",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Taurinos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phaenippos",
+        "role": "Comic Poet",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Phaenippos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Diegnetos",
+        "role": "Comic Poet",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Diegnetos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Musaios",
+        "role": "Epic Poet",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Musaios",
+        "confidence": 1.0
+      },
+      {
+        "name": "Theogenes",
+        "role": "Demarchos",
+        "uri": "https://www.wikidata.org/wiki/Q1388775",
+        "confidence": 1.0
+      },
+      {
+        "name": "Artemidoros",
+        "role": "Demarchos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Artemidoros",
+        "confidence": 1.0
+      },
+      {
+        "name": "Menippos",
+        "role": "Citharode",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Menippos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Herakleitos",
+        "role": "Citharist",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Herakleitos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Ptolemy",
+        "role": "Dancer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ptolemy",
+        "confidence": 1.0
+      },
+      {
+        "name": "Metrodoros",
+        "role": "Tragedian",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Metrodoros",
+        "confidence": 1.0
+      },
+      {
+        "name": "Telemachos",
+        "role": "Comedian",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Telemachos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Agathodoros",
+        "role": "Comedian",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Agathodoros",
+        "confidence": 1.0
+      },
+      {
+        "name": "Apollonios",
+        "role": "Comedian",
+        "uri": "https://www.wikidata.org/wiki/Q3620717",
+        "confidence": 1.0
+      },
+      {
+        "name": "Asklepiodoros",
+        "role": "Comedian",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Asklepiodoros",
+        "confidence": 1.0
+      },
+      {
+        "name": "Apollonides",
+        "role": "Tragic Synagonist",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Apollonides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kleitos",
+        "role": "Tragic Synagonist",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kleitos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Thraikides",
+        "role": "Tragic Flute-player",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Thraikides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Thrasymachos",
+        "role": "Trumpeter",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Thrasymachos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Biton",
+        "role": "Property Master",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Biton",
+        "confidence": 1.0
+      },
+      {
+        "name": "Demetrios",
+        "role": "Proxenos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demetrios",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phaidimos",
+        "role": "Proxenos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Phaidimos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Spoudas",
+        "role": "Proxenos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Spoudas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Stephanos",
+        "role": "Philotechnites",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Stephanos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Leon",
+        "role": "Philotechnites",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Leon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristonous",
+        "role": "Philotechnites",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristonous",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Ptolemais Hermiou",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/756635",
+        "confidence": 0.8
+      },
+      {
+        "name": "Prytaneion",
+        "type": "Public Building",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Temple of Dionysus",
+        "type": "Temple",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Dionysus",
+        "uri": "https://www.wikidata.org/wiki/Q41680",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sibling Gods",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "intact",
+  "provenance": [
+    {
+      "name": "Ptolemais Hermiou",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/756635",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a formal decree from the Hellenistic period issued by the Guild of the Artists of Dionysus in Ptolemais Hermiou, Egypt. It honors Lysimachus, a high-ranking official, for his support of the guild and his loyalty to King Ptolemy II Philadelphus and the royal family. The text is significant for its detailed list of guild members, providing a rare glimpse into the organization and professional diversity of theatrical and musical performers in Ptolemaic Egypt, including poets, actors, musicians, and support staff.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 285-246 BC ",
+  "date_min": -285.0,
+  "date_max": -246.0,
+  "date_circa": false
+}

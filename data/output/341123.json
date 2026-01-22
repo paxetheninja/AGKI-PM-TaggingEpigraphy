@@ -77,13 +77,13 @@
       {
         "name": "Quintus Veranius Philagrus",
         "role": "Benefactor and founder of the endowment",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Quintus%20Veranius%20Philagrus",
         "confidence": 1.0
       },
       {
         "name": "The Emperor",
         "role": "Roman Emperor and guarantor of the foundation",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=The%20Emperor",
         "confidence": 1.0
       }
     ],
@@ -91,13 +91,13 @@
       {
         "name": "Kibyra",
         "type": "City",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/638804",
         "confidence": 0.9
       },
       {
         "name": "Gymnasium",
         "type": "Building/Institution",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/830186655",
         "confidence": 1.0
       }
     ],
@@ -119,14 +119,14 @@
     {
       "name": "Kibyra",
       "type": "City",
-      "uri": null,
+      "uri": "https://pleiades.stoa.org/places/638804",
       "role": null,
       "confidence": 1.0
     },
     {
       "name": "Lycia",
       "type": "Region",
-      "uri": null,
+      "uri": "https://pleiades.stoa.org/places/638965",
       "role": null,
       "confidence": 1.0
     }

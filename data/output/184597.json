@@ -1,0 +1,154 @@
+{
+  "phi_id": 184597,
+  "themes": [
+    {
+      "label": "Treaties and Agreements",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Treaties and Agreements",
+        "subcategory": null
+      },
+      "rationale": "The inscription records a formal alliance and mutual defense treaty between King Pharnaces I of Pontus and the city of Chersonesos.",
+      "confidence": 1.0,
+      "quote": "ὅρκος ὃν ὤμοσε βασιλεὺς Φαρνάκης πρεσβευσάντων παρ’ αὐτῶν Δημητρίου καὶ Ἡρακλεου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Prayers and Invocations",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Prayers and Invocations",
+        "subcategory": null
+      },
+      "rationale": "The document contains a formal religious oath invoking the gods to witness the treaty and calling for blessings or curses based on its fulfillment.",
+      "confidence": 1.0,
+      "quote": "ὀμνύω Δία Γῆν Ἥλιον θεοὺς Ὀλυμπίους πάντας καὶ πάσας... εὐορκοῦσι μὲν ἡμῖν εἴη ἐπιορκοῦσι δὲ τἀναντία",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Calendars and Timetables",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Calendars and Timetables",
+        "subcategory": null
+      },
+      "rationale": "The text includes specific dating formulas, including the month and the year of the Pontic era.",
+      "confidence": 1.0,
+      "quote": "μηνὸς Ἡρακλείου πεντεκαιδεκάται... ἐν τῶι ἑβδόμωι καὶ πεντηκοστῶι καὶ ἑκατοστῶι ἔτει μηνὸς Δαισίου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text functions as an official state document regulating the city's foreign policy and democratic preservation, though it is specifically a sworn oath.",
+      "confidence": 0.8,
+      "quote": "συνδιαφυλάξω τὴν δημοκρατίαν κατὰ τὸ δυνατόν",
+      "is_ambiguous": true,
+      "ambiguity_note": "While it contains decree-like language regarding democracy, the primary form is a sworn oath (horkos) rather than a standard psephisma."
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Pharnaces I",
+        "role": "King of Pontus",
+        "uri": "https://www.wikidata.org/wiki/Q975898",
+        "confidence": 1.0
+      },
+      {
+        "name": "Demetrios",
+        "role": "Ambassador",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demetrios",
+        "confidence": 1.0
+      },
+      {
+        "name": "Herakleos",
+        "role": "Ambassador",
+        "uri": "https://www.wikidata.org/wiki/Q41852",
+        "confidence": 1.0
+      },
+      {
+        "name": "Apollodoros",
+        "role": "Eponymous official",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Apollodoros",
+        "confidence": 0.9
+      },
+      {
+        "name": "Rhodotos",
+        "role": "Secretary",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Rhodotos",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Chersonesos",
+        "type": "City-state",
+        "uri": "https://pleiades.stoa.org/places/216765",
+        "confidence": 1.0
+      },
+      {
+        "name": "Rome",
+        "type": "State",
+        "uri": "https://pleiades.stoa.org/places/423025",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Zeus",
+        "uri": "https://www.wikidata.org/wiki/Q34201",
+        "confidence": 1.0
+      },
+      {
+        "name": "Gaia",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Helios",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Olympian Gods",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Chersonesos",
+      "type": "Findspot",
+      "uri": "https://pleiades.stoa.org/places/216765",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Northern Black Sea",
+      "type": "Region",
+      "uri": "https://www.wikidata.org/wiki/Q1985193",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a significant historical document from 179 BC recording a sworn oath between King Pharnaces I of Pontus and the citizens of Chersonesos. The text details a mutual defense pact against local barbarian tribes, the king's promise to protect the city's democracy, and the maintenance of friendly relations with the Romans. It is dated by both a local month (Herakleios) and a year (157 of the Pontic era), and it concludes with a traditional religious oath formula invoking the Olympian pantheon.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 179 BC",
+  "date_min": -179.0,
+  "date_max": -179.0,
+  "date_circa": false
+}

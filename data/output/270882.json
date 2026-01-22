@@ -1,0 +1,173 @@
+{
+  "phi_id": 270882,
+  "themes": [
+    {
+      "label": "Official Letters",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Official Letters",
+        "subcategory": null
+      },
+      "rationale": "The inscription preserves a formal epistolary dossier, including a cover letter from a high official and a primary letter from King Antiochus III, utilizing standard Hellenistic diplomatic formulas.",
+      "confidence": 1.0,
+      "quote": "βασιλεὺς Ἀντίοχος Ἀναξιμβρότωι χαίρειν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Edicts and Ordinances",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Edicts and Ordinances",
+        "subcategory": null
+      },
+      "rationale": "The text explicitly references a royal ordinance (prostagma) issued by the king regarding the appointment of a high priestess.",
+      "confidence": 1.0,
+      "quote": "τοῦ γρα[φέντ]ος παρὰ τοῦ βασιλέως προστάγματος [περὶ] τὸ ἀποδεδέχθαι τῆς βασιλίσσης ἀρχιέρειαν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The king expresses a specific intent to increase the honors (timas) bestowed upon Queen Laodice, framing the administrative act as an honorific gesture.",
+      "confidence": 1.0,
+      "quote": "βουλόμενοι τῆς ἀδελφῆς βασιλίσσης Λαοδίκης [τ]ὰς τιμὰς ἐπὶ πλεῖον αὔξειν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The text contains explicit instructions for the letters to be inscribed on a stone stele and displayed in a prominent location.",
+      "confidence": 1.0,
+      "quote": "ἀναγραφέντα εἰς στήλην λιθίνην ἀνατεθῆι ἐν τῶι ἐπιφανεστάτωι τόπωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Other Stone",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Other Stone"
+      },
+      "rationale": "The inscription identifies the material as stone (lithine), which is the standard medium for such royal decrees.",
+      "confidence": 1.0,
+      "quote": "στήλην λιθίνην",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The presence of numerous lacunae and restored text within brackets indicates that the physical carrier is not fully preserved.",
+      "confidence": 1.0,
+      "quote": "[ναξίμ]βροτος διονυσίωι χαίρειν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Antiochus III",
+        "role": "King",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antiochus%20III",
+        "confidence": 1.0
+      },
+      {
+        "name": "Laodice III",
+        "role": "Queen and sister of the King",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Laodice%20III",
+        "confidence": 1.0
+      },
+      {
+        "name": "Anaximbrotus",
+        "role": "Satrap/Official",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Anaximbrotus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Berenice",
+        "role": "High Priestess, daughter of Ptolemy",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Berenice",
+        "confidence": 1.0
+      },
+      {
+        "name": "Ptolemy",
+        "role": "Father of Berenice",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ptolemy",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lysimachus",
+        "role": "Grandfather of Berenice",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lysimachus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dionysius",
+        "role": "Official",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dionysius",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Phrygia",
+        "type": "Region",
+        "uri": "https://pleiades.stoa.org/places/609502",
+        "confidence": 0.9
+      },
+      {
+        "name": "Dodurga",
+        "type": "Findspot",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Phrygia",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/609502",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Dodurga",
+      "type": "Findspot",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription, dated to 193 BC, is a vital document of Seleucid administration and religious policy. It records a dossier of correspondence: a cover letter from the official Anaximbrotus to Dionysius, and the primary letter from King Antiochus III to Anaximbrotus. The decree establishes a high priesthood for Queen Laodice III within the satrapy, appointing Berenice (daughter of Ptolemy, son of Lysimachus) to the position. The text details specific cultic honors, including the wearing of golden crowns with the Queen's image and the requirement that her name be included in legal contracts alongside the King's ancestors, illustrating the systematic integration of the royal cult into the civic and legal life of the empire.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 193 BC ",
+  "date_min": -193.0,
+  "date_max": -193.0,
+  "date_circa": false
+}

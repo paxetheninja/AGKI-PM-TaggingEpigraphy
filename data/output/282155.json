@@ -1,0 +1,160 @@
+{
+  "phi_id": 282155,
+  "themes": [
+    {
+      "label": "Votive Dedications",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Votive Dedications",
+        "subcategory": null
+      },
+      "rationale": "The inscription records the dedication of a statue, bronze objects, and ritual vessels to Great Artemis and the Tyche of the Emperor.",
+      "confidence": 1.0,
+      "quote": "[ π ρ τ ς κυρ]ου σ[εβ] τ χης μεγ λη ρτεμις [ξ νοι τεκμο]ρε οι πο ησαν φι λην [κα το κυρ ου νδ]ρει ντα κα χ λκωμα",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Donor and Subscription Lists",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Donor and Subscription Lists",
+        "subcategory": null
+      },
+      "rationale": "The text contains an extensive list of individuals who contributed to the religious dedication from their own private funds.",
+      "confidence": 1.0,
+      "quote": " κ τ ν δ ων ναλωμ των.",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The inscription lists the members of the religious association known as the Xenoi Tekmoreioi, including their names, patronymics, and local origins.",
+      "confidence": 1.0,
+      "quote": "[ξ νοι τεκμο]ρε οι πο ησαν φι λην",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Aurelius Demetrius",
+        "role": "Member of the association",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aurelius%20Demetrius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aurelius Alexander",
+        "role": "Brabeutes (official)",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aurelius%20Alexander",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aurelius Zoticus",
+        "role": "Member of the association",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aurelius%20Zoticus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lucretius Quintus",
+        "role": "Member of the association",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lucretius%20Quintus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aurelius Timotheus",
+        "role": "Member of the association",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aurelius%20Timotheus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Marcus Septimius",
+        "role": "Member of the association",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Marcus%20Septimius",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Antioch",
+        "type": "City",
+        "uri": null,
+        "confidence": 0.8
+      },
+      {
+        "name": "Pisidia",
+        "type": "Region",
+        "uri": "https://pleiades.stoa.org/places/639060",
+        "confidence": 0.8
+      },
+      {
+        "name": "Kinnerabora",
+        "type": "Village",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Ptagia",
+        "type": "Village",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Nesos",
+        "type": "Village",
+        "uri": "https://pleiades.stoa.org/places/550841",
+        "confidence": 1.0
+      },
+      {
+        "name": "Thyrsos",
+        "type": "Village",
+        "uri": "https://pleiades.stoa.org/places/472033",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Artemis",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Tyche",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Pisidia",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/639060",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Antioch",
+      "type": "City",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This 3rd-century AD inscription from Pisidia records a collective dedication by the 'Xenoi Tekmoreioi', a religious association. The members funded the creation of a statue (andreias), a bronze vessel (chalkoma), a phiale, and an incense burner (libanotris) for the goddess Artemis and the Tyche of the Emperor. The text is primarily composed of a long list of members, many bearing the nomen Aurelius, indicating the period following the Constitutio Antoniniana.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 3rd c. AD ",
+  "date_min": 201.0,
+  "date_max": 300.0,
+  "date_circa": false
+}

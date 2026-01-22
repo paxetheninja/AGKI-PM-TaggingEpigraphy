@@ -1,0 +1,125 @@
+{
+  "phi_id": 288308,
+  "themes": [
+    {
+      "label": "Funerary Inscriptions (Epitaphs)",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Funerary Inscriptions (Epitaphs)",
+        "subcategory": null
+      },
+      "rationale": "The text is a poetic epitaph for Glycon and his wife Pantheia, explicitly mentioning a tomb and the death of both individuals.",
+      "confidence": 1.0,
+      "quote": "τ μβον μ ν ... χα ρε γ ναι π νθεια ... γαμ της ς γε κα θ[αν]τοιο δ μας κε θει",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Tombstone (Gravestone)",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Tombstone (Gravestone)"
+      },
+      "rationale": "The text refers to itself as a tomb or monument for the deceased couple and their students.",
+      "confidence": 1.0,
+      "quote": "τ μβον μ ν ... σοι δε μαθ τα[ ρος] ... ντε λ πες",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "Based on the archaeological context of Pergamon (AvP), high-status funerary monuments of this nature were typically carved in marble.",
+      "confidence": 0.5,
+      "quote": "τ μβον μ ν",
+      "is_ambiguous": true,
+      "ambiguity_note": "The material is not explicitly stated in the text but is inferred from the archaeological context of Pergamon."
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The text contains several lacunae and reconstructed sections indicated by brackets and missing characters.",
+      "confidence": 1.0,
+      "quote": "φ[ιλ δελφε γλ κων] ... μαθ τα[ ρος] ... τ ς [σ ς ξιον]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Glycon",
+        "role": "Physician and husband of Pantheia",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Glycon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pantheia",
+        "role": "Wife of Glycon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pantheia",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hippocrates",
+        "role": "Famous ancient physician used as a standard of comparison for Glycon's skill",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hippocrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Philadelphus",
+        "role": "Epithet or cognomen of the deceased Glycon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philadelphus",
+        "confidence": 0.9
+      }
+    ],
+    "places": [
+      {
+        "name": "Pergamon",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/550812",
+        "confidence": 0.8
+      }
+    ],
+    "deities": [
+      {
+        "name": "Daimones",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Makares",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Pergamon",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/550812",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This is a sophisticated funerary monument from the Pergamon region. It commemorates Glycon, a highly skilled physician who compares himself to the legendary Hippocrates, and his wife Pantheia. The text is notable for its philosophical and religious reflections on the immortality of the soul and its ascent to the realm of the blessed while the mortal body remains in the earth. It also highlights the professional pride of the medical community in Roman-era Asia Minor. Note that the junior scholar's identification of 'Kaikos' was a misreading of 'akos' (cure).",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

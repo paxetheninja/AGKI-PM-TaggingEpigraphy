@@ -44,20 +44,6 @@
       "ambiguity_note": null
     },
     {
-      "label": "Sacrifices",
-      "hierarchy": {
-        "domain": "Content",
-        "subdomain": "Religious and Cultic Inscriptions",
-        "category": "Sacrifices",
-        "subcategory": null
-      },
-      "rationale": "The decree mentions sacrifices performed by the prytaneis to Apollo Prostaterios, Artemis Boulaia, and other gods.",
-      "confidence": 1.0,
-      "quote": "π ρ τ ν θυσι ν ν θυον τ  πρ τ ν κκλησι ν τ ι τε π λλωνι τ ι προσστατηρ ωι κα τε ρτ μιδι τε βουλα αι",
-      "is_ambiguous": false,
-      "ambiguity_note": null
-    },
-    {
       "label": "Stele",
       "hierarchy": {
         "domain": "Type",

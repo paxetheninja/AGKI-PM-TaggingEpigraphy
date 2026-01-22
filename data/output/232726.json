@@ -72,20 +72,6 @@
       "ambiguity_note": null
     },
     {
-      "label": "Stone",
-      "hierarchy": {
-        "domain": "Type",
-        "subdomain": "Material",
-        "category": "Stone",
-        "subcategory": null
-      },
-      "rationale": "The inscription explicitly mentions it is to be inscribed on stone (lithine).",
-      "confidence": 1.0,
-      "quote": "λιθ νη[ι]",
-      "is_ambiguous": false,
-      "ambiguity_note": null
-    },
-    {
       "label": "Fragmentary",
       "hierarchy": {
         "domain": "State",

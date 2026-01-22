@@ -84,20 +84,6 @@
       "quote": "ἀνεγνώσθη γνώμη τῶν συνεδρίων",
       "is_ambiguous": false,
       "ambiguity_note": null
-    },
-    {
-      "label": "Fragmentary",
-      "hierarchy": {
-        "domain": "State",
-        "subdomain": "Incomplete / Fragmentary",
-        "category": "Incomplete / Fragmentary",
-        "subcategory": "Fragmentary"
-      },
-      "rationale": "The text contains numerous lacunae and restored sections, indicating the stone is not fully preserved.",
-      "confidence": 1.0,
-      "quote": "[ἄρχοντος] φλ διογένους μαραθωνίου",
-      "is_ambiguous": false,
-      "ambiguity_note": null
     }
   ],
   "entities": {

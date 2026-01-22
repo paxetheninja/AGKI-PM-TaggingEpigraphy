@@ -1,0 +1,179 @@
+{
+  "phi_id": 148076,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text is a formal public resolution passed by the city of Thaumakoi, using the standard formula 'edoxe te polei' (it seemed good to the city) and referring to itself as a 'psephisma'.",
+      "confidence": 1.0,
+      "quote": "δοξε τ π λει τ θαυμακ ν ... τ ντ γραφον το ψηφ σματος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription honors Androsthenes for his services and goodwill toward the city, granting him specific titles and privileges such as proxenos and euergetes.",
+      "confidence": 1.0,
+      "quote": "ε ναι α τ ν πλεως τ ς θαυμακ ν πρ ξενον κα ε εργ την",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The preamble of the decree lists the presiding officials, including the strategos of the Thessalian League and the local archons of Thaumakoi, to date the document.",
+      "confidence": 1.0,
+      "quote": "στραταγ οντος τ ν θεσσαλ ν  σαγ ρα μην δρομ ---- δευτ ρχ ντων",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The text contains several lacunae and reconstructed sections, particularly in the opening lines and names.",
+      "confidence": 1.0,
+      "quote": "[στραταγ οντος] τ [ν] θ[ε]σσαλ ν [ σ]αγ ρα",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Damaged but Legible",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Legibility",
+        "category": "Damaged but Legible",
+        "subcategory": null
+      },
+      "rationale": "Despite the missing portions, the majority of the decree's legal and honorific content is preserved and readable.",
+      "confidence": 0.9,
+      "quote": "ε ναι α τ ν πλεως τ ς θαυμακ ν πρ ξενον κα ε εργ την",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Other Stone",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Other Stone"
+      },
+      "rationale": "The inscription is carved on stone, which is the standard medium for public decrees in this region and period, as evidenced by the instruction to inscribe the decree.",
+      "confidence": 0.9,
+      "quote": "ναγραφ τ ψ φισμα",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Isagoras",
+        "role": "Strategos of the Thessalian League",
+        "uri": "https://www.wikidata.org/wiki/Q529472",
+        "confidence": 0.8
+      },
+      {
+        "name": "Kleagenes",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kleagenes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Periander",
+        "role": "Father of Kleagenes",
+        "uri": "https://www.wikidata.org/wiki/Q328793",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lampon",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lampon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Nicobulus",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nicobulus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Androsthenes",
+        "role": "Honoree and Proxenos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Androsthenes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Themistogenes",
+        "role": "Father of Androsthenes",
+        "uri": "https://www.wikidata.org/wiki/Q1320051",
+        "confidence": 0.8
+      }
+    ],
+    "places": [
+      {
+        "name": "Thessaly",
+        "type": "Region",
+        "uri": "https://pleiades.stoa.org/places/1332",
+        "confidence": 1.0
+      },
+      {
+        "name": "Thaumakoi",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/541136",
+        "confidence": 1.0
+      },
+      {
+        "name": "Gyrtone",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/540798",
+        "confidence": 0.8
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Achaia Phthiotis",
+      "type": "Region",
+      "uri": "https://www.wikidata.org/wiki/Q2089144",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Thaumakoi",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/541136",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This is a mid-1st century BC proxeny decree from the city of Thaumakoi in Achaia Phthiotis. It honors Androsthenes, son of Themistogenes, a citizen of Gyrtone, for his consistent goodwill and services to the city. The text follows standard diplomatic protocols, granting him the hereditary titles of proxenos and benefactor (euergetes), along with the right to enjoy all honors typically accorded to such individuals. The decree also instructs the local tagoi (magistrates) to send a copy of the resolution to Gyrtone and ensure its public inscription.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " cf. Corrigenda p. XII",
+  "date_min": -50.0,
+  "date_max": -50.0,
+  "date_circa": true
+}

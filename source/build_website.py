@@ -186,13 +186,18 @@ def generate_detail_page(merged_data):
     entities = merged_data.get('output', {}).get('entities', {})
     persons_html = ""
     for p in entities.get('persons', []):
-        persons_html += '<a href="../search.html?q={}" class="tag entity-tag" style="text-decoration:none;">👤 {} <small>({})</small></a>'.format(html.escape(p["name"]), html.escape(p["name"]), html.escape(p.get("role", "")))
+        p_name = p.get("name") or "Unknown"
+        p_role = p.get("role") or ""
+        persons_html += '<a href="../search.html?q={}" class="tag entity-tag" style="text-decoration:none;">👤 {} <small>({})</small></a>'.format(html.escape(p_name), html.escape(p_name), html.escape(p_role))
     places_html = ""
     for p in entities.get('places', []):
-        places_html += '<a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 {} <small>({})</small></a>'.format(html.escape(p["name"]), html.escape(p.get("type", "")))
+        p_name = p.get("name") or "Unknown"
+        p_type = p.get("type") or ""
+        places_html += '<a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 {} <small>({})</small></a>'.format(html.escape(p_name), html.escape(p_name), html.escape(p_type))
     deities_html = ""
     for d in entities.get('deities', []):
         name = d['name'] if isinstance(d, dict) else d
+        name = name or "Unknown"
         deities_html += '<a href="../index_deities.html" class="tag entity-tag" style="text-decoration:none;">⚡ {}</a>'.format(html.escape(name))
 
     # Global Analysis Summary

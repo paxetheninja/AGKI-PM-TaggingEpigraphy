@@ -1,0 +1,156 @@
+{
+  "phi_id": 232915,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text contains standard Athenian decree formulas such as 'it was decided' and 'it seemed good to the people'.",
+      "confidence": 1.0,
+      "quote": "[--- δεδ] χθαι [-----] ... [------- δ]οξεν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Treaties and Agreements",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Treaties and Agreements",
+        "subcategory": null
+      },
+      "rationale": "The inscription explicitly mentions an alliance and the status of being a friend and ally between Athens and Sicyon.",
+      "confidence": 1.0,
+      "quote": "[--- τ ν συμ]μαχ αν ... [-----]σομαι φ λος [κα σ μμαχος -------]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The text includes instructions to praise and crown individuals with a golden crown, a hallmark of honorific decrees.",
+      "confidence": 1.0,
+      "quote": "[------ σ]νπασιν παιν [σαι ----------] [--- κα στεφαν σαι χρυ]σ ι στεφ νωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The decree specifies the payment of drachmas by the treasurer for the production and engraving of the stone stele.",
+      "confidence": 1.0,
+      "quote": "[-------- ε]ς δ τ [ν ναγραφ ν τ ς στ λης δο ναι τ ν ταμ αν το δ μου ---] δραχμ ς",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The text explicitly mentions the recording of the decree on a stone stele.",
+      "confidence": 1.0,
+      "quote": "ν στ [ληι λιθ νηι -------]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "Athenian public decrees from the Agora in the 4th century BC were almost exclusively inscribed on marble steles.",
+      "confidence": 0.8,
+      "quote": "ν στ [ληι λιθ νηι -------]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The inscription is highly broken with significant lacunae throughout the text.",
+      "confidence": 1.0,
+      "quote": "[----------------------]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Demetrius Poliorcetes",
+        "role": "King and Benefactor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demetrius%20Poliorcetes",
+        "confidence": 0.8
+      }
+    ],
+    "places": [
+      {
+        "name": "Athens",
+        "type": "City-state",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sicyon",
+        "type": "City-state",
+        "uri": "https://pleiades.stoa.org/places/570668",
+        "confidence": 1.0
+      },
+      {
+        "name": "Cholargos",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579902",
+        "confidence": 0.9
+      }
+    ],
+    "deities": [
+      {
+        "name": "The Saviors",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579885",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a fragmentary Athenian decree dating to 303 BC, concerning a treaty and alliance between Athens and Sicyon. It follows the standard administrative procedures of the period, including the swearing of oaths, the dispatch of envoys, and the awarding of honors (golden crowns). The text also contains the typical publication clause, directing the treasurer to pay for the inscription on a stone stele from the fund for decrees. The mention of 'The Saviors' (Soteres) refers to the Antigonid kings, Antigonus and Demetrius, who were worshipped in Athens at this time.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 303 a. ",
+  "date_min": -303.0,
+  "date_max": -303.0,
+  "date_circa": false
+}

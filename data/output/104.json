@@ -1,0 +1,190 @@
+{
+  "phi_id": 104,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text is a formal public enactment by the Athenian Council (Boule) and Assembly (Demos), using the standard formula 'it seemed good to the council and the people'.",
+      "confidence": 1.0,
+      "quote": "[ ἔδοχσεν τει] βολει κα τοι δ μοι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription honors Thrasybulus and others for being 'good men' toward the Athenian people, awarding them crowns and citizenship.",
+      "confidence": 1.0,
+      "quote": "[παιν σα]ι θρασ βολον ς ντα νδρα γαθ [ν περ τ ν δεμ]ον",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The text begins with the standard dating formula naming the archon and the secretary of the year.",
+      "confidence": 0.8,
+      "quote": "[ π γλαυκ]ππο [ρ]χον[τ]ος. [λ βον κ] κεδον γραμμ τευε.",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The decree explicitly commands the secretary to record the decision on a stone stele.",
+      "confidence": 1.0,
+      "quote": "ναγρ φσαι μ π λε[ι ν στ λει λ]ιθ νει",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "Public decrees in 5th-century Athens were almost exclusively inscribed on marble slabs, as implied by the term for stone used here.",
+      "confidence": 0.8,
+      "quote": "λ]ιθ νει",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The text contains numerous lacunae and reconstructed sections, indicating the physical state of the stone is broken.",
+      "confidence": 1.0,
+      "quote": "[---]ιν κα γ ρατον κα κ μονα [κα ------]ο[-]ο[----]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Glaukippos",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Glaukippos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lobon",
+        "role": "Secretary",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lobon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Philistides",
+        "role": "Proposer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philistides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Thrasybulus",
+        "role": "Honoree",
+        "uri": "https://www.wikidata.org/wiki/Q354403",
+        "confidence": 1.0
+      },
+      {
+        "name": "Diocles",
+        "role": "Proposer of amendment",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Diocles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Agoratus",
+        "role": "Benefactor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Agoratus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Komon",
+        "role": "Benefactor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Komon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Simos",
+        "role": "Benefactor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Simos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Philinos",
+        "role": "Benefactor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philinos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eudikos",
+        "role": "Proposer of amendment",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eudikos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Polydorus",
+        "role": "Subject of investigation",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Polydorus",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Athens",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kedoi",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579969",
+        "confidence": 1.0
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579885",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a significant Athenian decree from 410/09 BC honoring Thrasybulus of Calydon and his associates for their role in the assassination of the oligarch Phrynichus. It details the granting of Athenian citizenship, the award of a golden crown worth 1000 drachmas, and the right to own property (enktesis). Uniquely, the later amendments by Diocles and Eudikos initiate a judicial inquiry into potential bribery (dorodokia) related to the decree, reflecting the volatile political climate of the restored democracy after the coup of the Four Hundred.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 410/09 a.",
+  "date_min": -410.0,
+  "date_max": -409.0,
+  "date_circa": false
+}

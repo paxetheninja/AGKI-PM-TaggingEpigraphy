@@ -1,0 +1,154 @@
+{
+  "phi_id": 79467,
+  "themes": [
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The inscription consists of a long catalogue of male names accompanied by their patronymics, which is characteristic of a civic register, a list of magistrates, or a military roll from the polis of Thasos.",
+      "confidence": 1.0,
+      "quote": "πυρρ ης ε φρ λλου πρηξαγ ρης τετρ χου κλεανακτ δης ντιχαρ νου πρηξ πολις πρυλ ου",
+      "is_ambiguous": true,
+      "ambiguity_note": "While clearly a list of names, the specific administrative function (e.g., theoroi, archons, or ephebes) is not explicitly stated in this fragment."
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "Long lists of citizens or officials in Thasos were typically inscribed on stone stelae for public display in the agora or religious sanctuaries.",
+      "confidence": 0.8,
+      "quote": "πυρρ ης ε φρ λλου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The text contains numerous lacunae and missing sections, particularly in the middle and towards the end of the list.",
+      "confidence": 1.0,
+      "quote": "πυ[θ ν]αξ λυκ νου ... [τελεσαγ ρης μεγακλε δευς]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Pyrrhes",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pyrrhes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Euphrillus",
+        "role": "Father",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Euphrillus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Praxagores",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Praxagores",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kleanaktides",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kleanaktides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phaenippus",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Phaenippus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristocles",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristocles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pythagoras",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pythagoras",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kratistoleos",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kratistoleos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Polygnotus",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Polygnotus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lysistratus",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lysistratus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristophanes",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristophanes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Demetrius",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demetrius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Python",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Python",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Thasos",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/501634",
+        "confidence": 0.9
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Thasos",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/501634",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a significant prosopographical document from Thasos, listing a large number of individuals. The names are typical of the Thasian onomasticon, featuring many names related to 'Praxis', 'Pythos', and 'Hegesis'. The structure of the list suggests it was an official document, likely recording the names of citizens serving in a specific capacity or belonging to a particular administrative division.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

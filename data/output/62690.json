@@ -1,0 +1,174 @@
+{
+  "phi_id": 62690,
+  "themes": [
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The inscription details specific financial outlays in drachmae for labor, materials, and services rendered to the sanctuary, typical of the Delian hieropoioi accounts.",
+      "confidence": 1.0,
+      "quote": "δραχμα ιι μ κρωνι ιιιι κο - [κρ]ατ ρος τ ν πυθμ να ξυλ σαντ[ι] δ λ --- -ου π τ ς ροφ ς ξεν γκαντι [δρ]αχμα - [δρ]αχμ ν - πελλικ ντι μισ[θ] ς δραχμ[α]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Inventories",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Inventories",
+        "subcategory": null
+      },
+      "rationale": "A significant portion of the text is a catalog of dedicated objects, primarily golden crowns, recording their weight (helke) and the identity of the dedicators.",
+      "confidence": 1.0,
+      "quote": "στ φανος χρυσο]ς ν πτολεμα ος ν [θ]ηκε λκ ηδδδδ στ φα[νος δ φνης χρυσο ς δημητρ ου ν θημα λκ σ ν λ νωι κα κηρ] ι δδδ",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Votive Dedications",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Votive Dedications",
+        "subcategory": null
+      },
+      "rationale": "The text explicitly records items dedicated (anetheke) to the god by various Hellenistic rulers, officials, and the Delian community.",
+      "confidence": 1.0,
+      "quote": "στ φανος χρυσο ς ν ν θηκε δ μ]ος δηλ ων [ λκ δδδδ -------]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Sanctuary Maintenance",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The accounts specify payments for physical upkeep of the Pythion, including roofing work, cleaning, and the purchase of tiles and wood.",
+      "confidence": 1.0,
+      "quote": "στεγν σαι τ ν ροφ [ν] το πυθ ου - του [----- μισθ]ωτο ς τ κλ σ[μ]ατα το κει - πρ ς τ ι ρα ωι καθ ραντι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Ptolemy",
+        "role": "Donor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ptolemy",
+        "confidence": 1.0
+      },
+      {
+        "name": "Demetrius",
+        "role": "Donor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demetrius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Antipatros son of Balagros",
+        "role": "Donor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antipatros%20son%20of%20Balagros",
+        "confidence": 1.0
+      },
+      {
+        "name": "Philokles",
+        "role": "Donor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philokles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Polykleitos",
+        "role": "Donor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Polykleitos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Ktesikles",
+        "role": "Donor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ktesikles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Nikokreon",
+        "role": "Donor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nikokreon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sotion",
+        "role": "Worker",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sotion",
+        "confidence": 0.8
+      },
+      {
+        "name": "Prokles",
+        "role": "Worker",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Prokles",
+        "confidence": 0.8
+      },
+      {
+        "name": "Glaukos",
+        "role": "Donor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Glaukos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lucimus",
+        "role": "Recipient of payment",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lucimus",
+        "confidence": 0.8
+      },
+      {
+        "name": "Mikron",
+        "role": "Worker",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Mikron",
+        "confidence": 0.8
+      }
+    ],
+    "places": [
+      {
+        "name": "Delos",
+        "type": "City-state",
+        "uri": "https://pleiades.stoa.org/places/599587",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pythion",
+        "type": "Sanctuary",
+        "uri": "https://pleiades.stoa.org/places/491705",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Apollo",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Delos",
+      "type": "Island",
+      "uri": "https://pleiades.stoa.org/places/599587",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This document represents the administrative records of the Delian hieropoioi. It is divided into two primary functional sections: a set of financial accounts detailing expenditures for the physical maintenance and repair of the sanctuary of Apollo (specifically the Pythion), and a detailed inventory of votive offerings. The inventory focuses on golden crowns dedicated by prominent Hellenistic figures such as Ptolemy, Demetrius, and Nikokreon, as well as the Delian demos, providing precise weights for each object.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 265-255 BC",
+  "date_min": -265.0,
+  "date_max": -255.0,
+  "date_circa": false
+}

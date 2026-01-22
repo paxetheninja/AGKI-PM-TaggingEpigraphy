@@ -1,0 +1,188 @@
+{
+  "phi_id": 79034,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The inscription follows the standard formula for a public decree passed by the council and the people of the city.",
+      "confidence": 1.0,
+      "quote": "[δο]ξεν τῆι βουλῆι καὶ τῶι δήμωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The text honors Hegesippos and Antipappos for their virtue and efforts in ransoming citizens captured by pirates.",
+      "confidence": 1.0,
+      "quote": "στεφανῶσαι Ἡγήσιππον καὶ Ἀντίπαππον ἑκάτερον θαλλοῦ στε[φ]άνωι ἀρετῆς ἕνεκεν καὶ φιλοτιμί[α]ς",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The decree specifies that the text is to be inscribed on a stone stele.",
+      "confidence": 1.0,
+      "quote": "[δ]ὲ τόδε τὸ ψήφισμα εἰς στήλην",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The inscription contains several missing sections and brackets indicating reconstructed text.",
+      "confidence": 1.0,
+      "quote": "[δο]ξεν τῆι βουλῆι καὶ τῶι δήμωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Damaged but Legible",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Legibility",
+        "category": "Damaged but Legible",
+        "subcategory": null
+      },
+      "rationale": "While there are lacunae, the majority of the narrative regarding the pirate raid and the subsequent honors is legible.",
+      "confidence": 1.0,
+      "quote": "[λ]ῃστὰς ἐπεὶ πειρατῶν εἰς [τ]ὴν χώραν ἐμβαλόντων",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Hegesippos",
+        "role": "Honoree and son of Hegesistratos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hegesippos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Antipappos",
+        "role": "Honoree and son of Hegesistratos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antipappos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hegesistratos",
+        "role": "Father of the honorees",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hegesistratos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sokleidas",
+        "role": "Pirate leader",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sokleidas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Soterides",
+        "role": "Official or secretary",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Soterides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phedios",
+        "role": "Father of Soterides",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Phedios",
+        "confidence": 1.0
+      },
+      {
+        "name": "Philoxenos",
+        "role": "Presiding official",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philoxenos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Philothymios",
+        "role": "Father of Philoxenos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philothymios",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lysites",
+        "role": "Proposer of the decree",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lysites",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dorieus",
+        "role": "Owner of the captured ship",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dorieus",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Amorgos",
+        "type": "Island",
+        "uri": "https://pleiades.stoa.org/places/535407625",
+        "confidence": 0.9
+      },
+      {
+        "name": "Aegiale",
+        "type": "City",
+        "uri": null,
+        "confidence": 0.9
+      }
+    ],
+    "deities": [
+      {
+        "name": "Athena",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Dionysus",
+        "uri": "https://www.wikidata.org/wiki/Q41680",
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Amorgos",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/535407625",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Aegiale",
+      "type": "City",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This 3rd-century BC decree from Aegiale on Amorgos records a pirate raid where over thirty people (including women, girls, free citizens, and slaves) were captured. Two brothers, Hegesippos and Antipappos, who were also taken captive, successfully negotiated with the pirate leader Sokleidas to ransom the captives. For their bravery and 'philotimia' (ambition/generosity), the city honors them with crowns to be announced at the Dionysia festival and sets up a stele in the temple of Athena Polias.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 3rd c. BC",
+  "date_min": -300.0,
+  "date_max": -201.0,
+  "date_circa": false
+}

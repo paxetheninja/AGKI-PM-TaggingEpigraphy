@@ -1,0 +1,110 @@
+{
+  "phi_id": 32505,
+  "themes": [
+    {
+      "label": "Laws and Regulations",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Laws and Regulations",
+        "subcategory": null
+      },
+      "rationale": "The inscription outlines specific penalties and procedures for individuals providing false testimony in court, a core component of legal regulations.",
+      "confidence": 1.0,
+      "quote": "ψευδομαρτυρ α[ν δ] ποταγ τω τ ν τερον τ ν ψευδομ ρτυρα π[ρ] τ ς δικα ας δ κας",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Treaties and Agreements",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Treaties and Agreements",
+        "subcategory": null
+      },
+      "rationale": "The explicit mention of a 'symbolon' (judicial treaty) confirms this document is a bilateral agreement between two states regarding legal cooperation.",
+      "confidence": 1.0,
+      "quote": "κ τ τ ν συνβολ ν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The text explicitly refers to the recording of these laws or agreements on stone stelae.",
+      "confidence": 1.0,
+      "quote": "το ς νγραψ[ ντοις ε ς στ]λας",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Other Stone",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Other Stone"
+      },
+      "rationale": "The mention of stelae indicates that the physical medium of the inscription is stone.",
+      "confidence": 1.0,
+      "quote": "το ς νγραψ[ ντοις ε ς στ]λας",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The inscription is heavily damaged with numerous lacunae and missing sections throughout the text.",
+      "confidence": 1.0,
+      "quote": "[----------------------------------]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [],
+    "places": [
+      {
+        "name": "Stymphalos",
+        "type": "city",
+        "uri": "https://pleiades.stoa.org/places/570696",
+        "confidence": 1.0
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Arcadia",
+      "type": "region",
+      "uri": "https://pleiades.stoa.org/places/570102",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Stymphalos",
+      "type": "city",
+      "uri": "https://pleiades.stoa.org/places/570696",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a significant example of a 'symbolon' or judicial treaty, likely between Stymphalos and another Peloponnesian city. It provides a detailed legal framework for handling cross-border disputes, focusing on the prosecution of perjury (false testimony), the appointment of reconcilers (synlytai), and the specific roles of magistrates like the demiurges, generals (stratagoi), and archons. The text also mentions the use of Aeginetan drachmas for fines and the requirement to publish the agreement on stelae.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " bef. 234 BC",
+  "date_min": -234.0,
+  "date_max": -234.0,
+  "date_circa": false
+}

@@ -1,0 +1,136 @@
+{
+  "phi_id": 301785,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The inscription uses the standard formula indicating it was decided by the people, identifying it as a public decree.",
+      "confidence": 1.0,
+      "quote": "δεδ χθαι τ ι δ μωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Treaties and Agreements",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Treaties and Agreements",
+        "subcategory": null
+      },
+      "rationale": "The text discusses citizenship and kinship between Pergamon and Tegea, indicating a formal agreement or treaty between the two cities regarding mutual rights.",
+      "confidence": 1.0,
+      "quote": "πολιτε αν ... περ τ ς συγγενε ας",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The decree includes instructions to praise and crown the city of the Tegeans with a golden crown for their goodwill and kinship.",
+      "confidence": 1.0,
+      "quote": "παιν σαι μ ν τ ν π λιν τ ν τεγεατ ν ... στεφαν σαι δ κα παναθηνα οις χρυσ ι στεφ νωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The inscription explicitly orders the text to be inscribed on a stele of white stone.",
+      "confidence": 1.0,
+      "quote": "ναγρ ψαι α τ ε ς στ λην λευκο λ θου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "The mention of white stone in the context of Hellenistic Pergamon typically refers to marble.",
+      "confidence": 0.8,
+      "quote": "στ λην λευκο λ θου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The text contains numerous lacunae and reconstructed sections, indicating it is a fragmentary survival.",
+      "confidence": 1.0,
+      "quote": "[--------------------------------]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Auge",
+        "role": "Mythological founder of the sanctuary",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Auge",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Pergamon",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/550812",
+        "confidence": 1.0
+      },
+      {
+        "name": "Tegea",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/570707",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Athena",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Pergamon",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/550812",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This Hellenistic decree from Pergamon concerns the diplomatic relationship between Pergamon and Tegea. It reaffirms their ancestral kinship and grants mutual citizenship rights. The decree honors the Tegeans with a golden crown to be announced at the Panathenaea festival. It specifies that the decree should be inscribed on a marble stele and placed in the sanctuary of Athena, which was traditionally founded by Auge. The administrative details involve the generals and treasurers for the publication and funding from public revenues.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " Hellenistic period",
+  "date_min": -323.0,
+  "date_max": -31.0,
+  "date_circa": false
+}

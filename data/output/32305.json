@@ -44,20 +44,6 @@
       "ambiguity_note": null
     },
     {
-      "label": "Cultic Regulations",
-      "hierarchy": {
-        "domain": "Content",
-        "subdomain": "Religious and Dedicatory Texts",
-        "category": "Cultic Regulations",
-        "subcategory": null
-      },
-      "rationale": "The text outlines specific religious duties, including sacrifices to Asclepius and Hygieia and the organization of sacred banquets for the priests.",
-      "confidence": 1.0,
-      "quote": "θ οντας τ ι σκληπι ι κα τ ι γιε αι... καθ ν δειπν σι ο ερε ς",
-      "is_ambiguous": false,
-      "ambiguity_note": null
-    },
-    {
       "label": "Stele",
       "hierarchy": {
         "domain": "Type",

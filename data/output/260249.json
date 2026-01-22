@@ -1,0 +1,114 @@
+{
+  "phi_id": 260249,
+  "themes": [
+    {
+      "label": "Edicts and Ordinances",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Edicts and Ordinances",
+        "subcategory": null
+      },
+      "rationale": "The text is explicitly identified as a 'prosgramma', which refers to a public notice, edict, or ordinance issued by an official, in this case the stephanephoros Marcus Ulpius Dionysocles.",
+      "confidence": 1.0,
+      "quote": "πρ σγραμμα [ π ερ]ως κα στεφανηφ ρου μ ρκου ο λπ ου διονυσ[οκλ ους]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Sacred Laws and Rules",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Sacred Laws and Rules",
+        "subcategory": null
+      },
+      "rationale": "The inscription contains specific regulations and prohibitions regarding the protection of a sacred grove (alsos) dedicated to Hecate, including bans on grazing livestock and mandates for maintenance.",
+      "confidence": 1.0,
+      "quote": "μηδ ερ βοσκ ματα ιεμειν... τ πον μηδ [σ]αγαγε ν π βλ[ β το λσους]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text uses the standard formula for a decree of the council (boule), indicating that the regulations were formally voted upon by the civic body.",
+      "confidence": 1.0,
+      "quote": "[ δοξεν τ] βουλ μηδεν ξε ναι κτ νη",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Administrative Roles",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The inscription mentions several civic and religious offices, including the stephanephoros, prytaneis, archons, secretaries, priests, and eunuchs, who are responsible for the oversight of the sanctuary and enforcement of the rules.",
+      "confidence": 0.9,
+      "quote": "ο πρυτ νεις... τ ν [ν]εστ των ρχ ντων κα το γ[ραμματ ως]... το ς τε καθ καστον νιαυτ ν γεινομ νους ερε ς... το ς ε νο χους",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Marcus Ulpius Dionysocles",
+        "role": "Priest and Stephanephoros",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Marcus%20Ulpius%20Dionysocles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Mentor",
+        "role": "Father of Marcus Ulpius Dionysocles",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Mentor",
+        "confidence": 0.8
+      }
+    ],
+    "places": [
+      {
+        "name": "Stratonikeia",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/599947",
+        "confidence": 0.9
+      },
+      {
+        "name": "Sacred Grove of Hecate",
+        "type": "Sanctuary feature",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Hecate",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Stratonikeia",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/599947",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription from Stratonikeia (likely from the sanctuary at Lagina) is a public notice (prosgramma) and a decree concerning the management and protection of the sacred grove of the goddess Hecate. It establishes strict rules against the introduction of livestock into the grove to prevent damage to the trees and plants. It also outlines the administrative duties of the annual priests and the eunuchs in maintaining the site, and specifies fines and procedures for those who violate the sacred laws, including the public sale of confiscated animals by the treasurers.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

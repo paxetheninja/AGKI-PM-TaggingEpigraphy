@@ -1,0 +1,484 @@
+{
+  "phi_id": 232659,
+  "themes": [
+    {
+      "label": "Registers and Catalogues",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Registers and Catalogues",
+        "subcategory": null
+      },
+      "rationale": "The inscription is a formal register of mining leases in the Laurion district, recording the names of lessees, the names of the mines, and their locations.",
+      "confidence": 1.0,
+      "quote": "πεγρ ψατο μ ταλλον",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Contracts and Private Legal Acts",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Contracts and Private Legal Acts",
+        "subcategory": null
+      },
+      "rationale": "These records represent legal contracts between the Athenian state and private individuals for the exploitation of silver mines.",
+      "confidence": 1.0,
+      "quote": "πεγρ ψατο μ ταλλον",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The registration of mines was part of the financial administration of Athens, as the state received payments for these leases.",
+      "confidence": 0.9,
+      "quote": "μ ταλλον ργ σιμον β σησι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The text explicitly mentions the presence of a stele, which served as a boundary marker or a record-bearing monument.",
+      "confidence": 1.0,
+      "quote": "στ λην χον",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "Public administrative records in the Athenian Agora were typically inscribed on marble stelae.",
+      "confidence": 0.8,
+      "quote": "Att. — Athens: Agora",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Diokles",
+        "role": "Lessee or neighbor",
+        "uri": "https://www.wikidata.org/wiki/Q905833",
+        "confidence": 0.8
+      },
+      {
+        "name": "Androkles",
+        "role": "Lessee",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Androkles",
+        "confidence": 0.8
+      },
+      {
+        "name": "Glaukos",
+        "role": "Lessee or neighbor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Glaukos",
+        "confidence": 0.8
+      },
+      {
+        "name": "Nausikles",
+        "role": "Lessee",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nausikles",
+        "confidence": 0.8
+      },
+      {
+        "name": "Stratokles",
+        "role": "Lessee",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Stratokles",
+        "confidence": 0.8
+      },
+      {
+        "name": "Diphilos",
+        "role": "Father of a lessee",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Diphilos",
+        "confidence": 0.8
+      },
+      {
+        "name": "Euthydikos",
+        "role": "Lessee",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Euthydikos",
+        "confidence": 0.8
+      },
+      {
+        "name": "Mnesitheos",
+        "role": "Father of Euthydikos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Mnesitheos",
+        "confidence": 0.8
+      },
+      {
+        "name": "Nikandrides",
+        "role": "Neighbor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nikandrides",
+        "confidence": 0.8
+      },
+      {
+        "name": "Speusippos",
+        "role": "Neighbor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Speusippos",
+        "confidence": 0.8
+      },
+      {
+        "name": "Sostratos",
+        "role": "Father of a lessee",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sostratos",
+        "confidence": 0.8
+      },
+      {
+        "name": "Kallikratides",
+        "role": "Lessee",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kallikratides",
+        "confidence": 0.8
+      },
+      {
+        "name": "Lysikles",
+        "role": "Lessee",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lysikles",
+        "confidence": 0.8
+      },
+      {
+        "name": "Zelarchos",
+        "role": "Father of Lysikles",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Zelarchos",
+        "confidence": 0.8
+      },
+      {
+        "name": "Antisthenes",
+        "role": "Neighbor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antisthenes",
+        "confidence": 0.8
+      },
+      {
+        "name": "Phanotheos",
+        "role": "Lessee",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Phanotheos",
+        "confidence": 0.8
+      },
+      {
+        "name": "Lysippos",
+        "role": "Father of Phanotheos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lysippos",
+        "confidence": 0.8
+      },
+      {
+        "name": "Euthykrates",
+        "role": "Lessee",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Euthykrates",
+        "confidence": 0.8
+      },
+      {
+        "name": "Antidotos",
+        "role": "Father of Euthykrates",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antidotos",
+        "confidence": 0.8
+      },
+      {
+        "name": "Theodosios",
+        "role": "Name of a mine",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theodosios",
+        "confidence": 0.8
+      },
+      {
+        "name": "Philophron",
+        "role": "Lessee",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philophron",
+        "confidence": 0.8
+      },
+      {
+        "name": "Pheidippos",
+        "role": "Lessee",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pheidippos",
+        "confidence": 0.8
+      },
+      {
+        "name": "Phaullos",
+        "role": "Father of Pheidippos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Phaullos",
+        "confidence": 0.8
+      },
+      {
+        "name": "Chaireas",
+        "role": "Lessee",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Chaireas",
+        "confidence": 0.8
+      },
+      {
+        "name": "Kallias",
+        "role": "Neighbor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kallias",
+        "confidence": 0.8
+      },
+      {
+        "name": "Simon",
+        "role": "Lessee",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Simon",
+        "confidence": 0.8
+      },
+      {
+        "name": "Philas",
+        "role": "Neighbor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philas",
+        "confidence": 0.8
+      },
+      {
+        "name": "Diochares",
+        "role": "Lessee",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Diochares",
+        "confidence": 0.8
+      },
+      {
+        "name": "Kleitophon",
+        "role": "Lessee",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kleitophon",
+        "confidence": 0.8
+      },
+      {
+        "name": "Kephisodotos",
+        "role": "Neighbor or workshop owner",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kephisodotos",
+        "confidence": 0.8
+      },
+      {
+        "name": "Hierokles",
+        "role": "Lessee",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hierokles",
+        "confidence": 0.8
+      },
+      {
+        "name": "Lysitheides",
+        "role": "Neighbor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lysitheides",
+        "confidence": 0.8
+      },
+      {
+        "name": "Edron",
+        "role": "Lessee",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Edron",
+        "confidence": 0.8
+      },
+      {
+        "name": "Smikros",
+        "role": "Lessee",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Smikros",
+        "confidence": 0.8
+      },
+      {
+        "name": "Sophilos",
+        "role": "Neighbor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sophilos",
+        "confidence": 0.8
+      },
+      {
+        "name": "Theoros",
+        "role": "Lessee",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theoros",
+        "confidence": 0.8
+      },
+      {
+        "name": "Theias",
+        "role": "Father of Theoros",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theias",
+        "confidence": 0.8
+      },
+      {
+        "name": "Timokles",
+        "role": "Lessee",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Timokles",
+        "confidence": 0.8
+      },
+      {
+        "name": "Theodotos",
+        "role": "Father of Timokles",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theodotos",
+        "confidence": 0.8
+      }
+    ],
+    "places": [
+      {
+        "name": "Besa",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579894",
+        "confidence": 1.0
+      },
+      {
+        "name": "Amphitrope",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579862",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sypalettos",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580112",
+        "confidence": 1.0
+      },
+      {
+        "name": "Gargettos",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579935",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sphettos",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580109",
+        "confidence": 1.0
+      },
+      {
+        "name": "Euonymon",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579932",
+        "confidence": 1.0
+      },
+      {
+        "name": "Potamos",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/590008",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lamptrai",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Phaleron",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580072",
+        "confidence": 1.0
+      },
+      {
+        "name": "Laia",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/825345",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kropidai",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579996",
+        "confidence": 1.0
+      },
+      {
+        "name": "Piraeus",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580062",
+        "confidence": 1.0
+      },
+      {
+        "name": "Thorikos",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580119",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pithos",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/585949",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eleusis",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579920",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sybridai",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/585965",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phegaia",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580074",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pallene",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580051",
+        "confidence": 1.0
+      },
+      {
+        "name": "Anaphlystos",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579866",
+        "confidence": 1.0
+      },
+      {
+        "name": "Melite",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/582863",
+        "confidence": 1.0
+      },
+      {
+        "name": "Herakleion",
+        "type": "Sanctuary",
+        "uri": "https://pleiades.stoa.org/places/432873",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Herakles",
+        "uri": null,
+        "confidence": 0.9
+      },
+      {
+        "name": "Artemis",
+        "uri": null,
+        "confidence": 0.9
+      },
+      {
+        "name": "Poseidon",
+        "uri": "https://www.wikidata.org/wiki/Q41127",
+        "confidence": 0.9
+      },
+      {
+        "name": "Apollo",
+        "uri": null,
+        "confidence": 0.9
+      },
+      {
+        "name": "Aphrodite",
+        "uri": null,
+        "confidence": 0.9
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579885",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a detailed record of mining leases from the Laurion silver mines, dated to the mid-4th century BC. It follows a standard formula: the name of the lessee (using the verb 'apegrapsato'), the type of mine (working, old, or re-workable), its name (often named after a deity like Artemis or Poseidon), its location (usually in the demes of Besa or Thorikos), and its boundaries defined by neighboring properties, workshops (ergasteria), or sanctuaries (like the Herakleion).",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 341/0? a. ",
+  "date_min": -341.0,
+  "date_max": -340.0,
+  "date_circa": true
+}

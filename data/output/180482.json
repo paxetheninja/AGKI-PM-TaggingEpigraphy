@@ -1,0 +1,185 @@
+{
+  "phi_id": 180482,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text is a formal decree of the Athenian people, indicated by the standard formula 'edoxen toi demoi' (it seemed good to the people).",
+      "confidence": 1.0,
+      "quote": "ἔδοξεν τῶι δήμωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The decree is passed to honor the god Amphiaraos with a golden crown for his care of the Athenians and visitors to his sanctuary.",
+      "confidence": 1.0,
+      "quote": "στεφανῶσαι τὸν Ἀμφιάραον χρυσῶι στεφάνωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Votive Dedications",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Votive Dedications",
+        "subcategory": null
+      },
+      "rationale": "The inscription records the dedication of a golden crown to the god Amphiaraos for the health and safety of the Athenian people.",
+      "confidence": 1.0,
+      "quote": "ἀναθεῖναι τὸν στέφανον τῶι θεῶι ἐφ’ ὑγιείαι καὶ σωτηρίαι τοῦ δήμου τοῦ Ἀθηναίων",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The text lists several Athenian officials including the Archon, the Secretary, and the Proedros (chairman) of the assembly.",
+      "confidence": 1.0,
+      "quote": "ἐπὶ Νικήτου ἄρχοντος... Ἀριστοφῶντος Ἀριστοφῶντος Ἀναγυράσιος ἐγραμμάτευεν... ἐπεψήφιζεν Ἐπιχάρης Ἁγνούσιος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The decree explicitly commands that the text be inscribed on a stone stele and set up in the sanctuary.",
+      "confidence": 1.0,
+      "quote": "ἀναγράψαι δὲ τόδε τὸ ψήφισμα ἐν στήληι λιθίνει καὶ στῆσαι ἐν τῶι ἱερῶι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Other Stone",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Other Stone"
+      },
+      "rationale": "The inscription specifies that it is to be recorded on a stone (lithinei) support.",
+      "confidence": 1.0,
+      "quote": "στήληι λιθίνει",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Niketes",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Niketes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristophon son of Aristophon of Anagyrous",
+        "role": "Secretary",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristophon%20son%20of%20Aristophon%20of%20Anagyrous",
+        "confidence": 1.0
+      },
+      {
+        "name": "Epichares of Agnous",
+        "role": "Chairman of the assembly",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Epichares%20of%20Agnous",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phanodemos son of Diyllos of Thymaitadai",
+        "role": "Proposer of the decree",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Phanodemos%20son%20of%20Diyllos%20of%20Thymaitadai",
+        "confidence": 1.0
+      },
+      {
+        "name": "Diyllos",
+        "role": "Father of Phanodemos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Diyllos",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Athens",
+        "type": "City-state",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      },
+      {
+        "name": "Anagyrous",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579863",
+        "confidence": 1.0
+      },
+      {
+        "name": "Agnous",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Thymaitadai",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580123",
+        "confidence": 1.0
+      },
+      {
+        "name": "Oropos",
+        "type": "Sanctuary location",
+        "uri": "https://pleiades.stoa.org/places/580044",
+        "confidence": 0.8
+      }
+    ],
+    "deities": [
+      {
+        "name": "Amphiaraos",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "intact",
+  "provenance": [
+    {
+      "name": "Boiotia",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/540689",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Oropos",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/580044",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This is a complete Athenian decree from the archonship of Niketes (332/1 BC), found at the Amphiareion of Oropos. It follows the standard formulaic structure of the period, including the dating by archon and prytany, the names of the secretary and proposer, and the specific instructions for the dedication of a crown and the publication of the decree on a stone stele. The decree honors the god Amphiaraos for his divine protection and care of visitors to the sanctuary, specifically for the health and safety of the Athenian people, their children, and their wives.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 332/331 BC ",
+  "date_min": -332.0,
+  "date_max": -331.0,
+  "date_circa": false
+}

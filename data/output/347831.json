@@ -91,61 +91,61 @@
       {
         "name": "Nicias",
         "role": "Archon",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q315822",
         "confidence": 1.0
       },
       {
         "name": "Isocrates",
         "role": "Secretary",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Isocrates",
         "confidence": 1.0
       },
       {
         "name": "Socrates",
         "role": "Father of Isocrates",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Socrates",
         "confidence": 1.0
       },
       {
         "name": "Sosistratus",
         "role": "Chairman of the Proedroi",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sosistratus",
         "confidence": 1.0
       },
       {
         "name": "Sosippus",
         "role": "Father of Sosistratus",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sosippus",
         "confidence": 1.0
       },
       {
         "name": "Photius",
         "role": "Proposer of the decree",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Photius",
         "confidence": 1.0
       },
       {
         "name": "Pamphilus",
         "role": "Father of Photius",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pamphilus",
         "confidence": 1.0
       },
       {
         "name": "Strombichos",
         "role": "Honoree and soldier",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Strombichos",
         "confidence": 1.0
       },
       {
         "name": "Demetrius",
         "role": "Ruler or General",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demetrius",
         "confidence": 1.0
       },
       {
         "name": "Spintharus",
         "role": "Associate of Strombichos",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Spintharus",
         "confidence": 1.0
       }
     ],
@@ -153,37 +153,37 @@
       {
         "name": "Athens",
         "type": "City",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/579885",
         "confidence": 1.0
       },
       {
         "name": "Alopeke",
         "type": "Deme",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/579858",
         "confidence": 1.0
       },
       {
         "name": "Kydathenaion",
         "type": "Deme",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/582862",
         "confidence": 1.0
       },
       {
         "name": "Thorikos",
         "type": "Deme",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/580119",
         "confidence": 1.0
       },
       {
         "name": "Mouseion",
         "type": "Hill and fortress",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/968858713",
         "confidence": 1.0
       },
       {
         "name": "Otryne",
         "type": "Deme",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/585938",
         "confidence": 1.0
       }
     ],
@@ -194,14 +194,14 @@
     {
       "name": "Athens",
       "type": "Region",
-      "uri": null,
+      "uri": "https://pleiades.stoa.org/places/579885",
       "role": null,
       "confidence": 1.0
     },
     {
       "name": "Attica",
       "type": "Region",
-      "uri": null,
+      "uri": "https://pleiades.stoa.org/places/579888",
       "role": null,
       "confidence": 1.0
     }

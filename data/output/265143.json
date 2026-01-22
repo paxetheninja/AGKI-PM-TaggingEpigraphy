@@ -1,0 +1,118 @@
+{
+  "phi_id": 265143,
+  "themes": [
+    {
+      "label": "Agonistic / Victory Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Agonistic / Victory Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription provides a detailed list of competitions (themata) for both musical and athletic contests, including specific categories for trumpeters, poets, wrestlers, and runners.",
+      "confidence": 1.0,
+      "quote": "μου]σικοῦ τῶν ἐπὶ τῆς συνόδου θέ[μ]α[τα",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The text functions as a financial record, listing prize money (themata), salaries (misthos) for officials, and expenses for items like oil and starting machines.",
+      "confidence": 1.0,
+      "quote": "μισθὸς ... εἰς ἔλαιον ... θέματα γυμνικὰ",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Registers and Catalogues",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Registers and Catalogues",
+        "subcategory": null
+      },
+      "rationale": "The inscription is a systematic catalogue of the events and prize categories associated with a specific festival or synod.",
+      "confidence": 1.0,
+      "quote": "τὰ ὑπογεγραμμένα",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Xystarches",
+        "role": "Official in charge of the gymnasium",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Xystarches",
+        "confidence": 1.0
+      },
+      {
+        "name": "Panegyriarches",
+        "role": "Festival director",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Panegyriarches",
+        "confidence": 1.0
+      },
+      {
+        "name": "Secretaries",
+        "role": "Administrative officials",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Secretaries",
+        "confidence": 1.0
+      },
+      {
+        "name": "Statue Makers",
+        "role": "Sculptors",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Statue%20Makers",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Aphrodisias",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/638753",
+        "confidence": 0.8
+      },
+      {
+        "name": "Caria",
+        "type": "Region",
+        "uri": "https://pleiades.stoa.org/places/599564",
+        "confidence": 0.8
+      },
+      {
+        "name": "Rome",
+        "type": "City/Empire",
+        "uri": "https://pleiades.stoa.org/places/423025",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Apollo",
+        "uri": null,
+        "confidence": 0.8
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Aphrodisias",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/638753",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This extensive inscription from Aphrodisias records the prize money and administrative costs for a major festival. It is divided into musical (mousikos) and athletic (gymnikos) sections. The musical section includes trumpeters, heralds, poets, and various types of flute players and actors. The athletic section covers stadium running, wrestling, boxing, and the pancration, categorized by age groups (boys, youths, men). It also details equestrian events and logistical costs for the stadium, theater, and officials.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

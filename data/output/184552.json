@@ -1,0 +1,166 @@
+{
+  "phi_id": 184552,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text is a formal resolution passed by the council and the people of Chersonesos, as indicated by the standard formula 'it seemed good to the council and the people'.",
+      "confidence": 1.0,
+      "quote": "δοξε γεν σθαι δι δεδ χθαι τ [ι] βουλ ι κα τ ι δ μ[ωι]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The decree is issued to honor Thrasymedes for his virtue, noble conduct, and services to the city, granting him citizenship and proxeny.",
+      "confidence": 1.0,
+      "quote": "θρασυμ δην θρασυμ δους το σατ ρου ρακλε ταν δ μεν δ α τ προξεν ας πολειτε αν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Citizenship Grant",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The decree explicitly grants citizenship (politeia) to the honorand.",
+      "confidence": 1.0,
+      "quote": "δ μεν δ α τ προξεν ας πολειτε αν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Proxeny Grant",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The decree grants the status of proxenos to Thrasymedes.",
+      "confidence": 1.0,
+      "quote": "δ μεν δ α τ προξεν ας",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The inscription explicitly mentions that the decree is to be recorded on a stele made of white stone.",
+      "confidence": 1.0,
+      "quote": "ναγραφ μεν λευκολ θου στ λ",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Limestone",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Limestone"
+      },
+      "rationale": "The text refers to 'white stone' (leukolithos), which in the context of Chersonesos typically refers to the local white limestone used for public monuments.",
+      "confidence": 0.8,
+      "quote": "λευκολ θου στ λ",
+      "is_ambiguous": true,
+      "ambiguity_note": "While 'white stone' usually implies limestone in this region, it could theoretically refer to marble, though less likely for local decrees."
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Thrasymedes son of Thrasymedes",
+        "role": "Honorand",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Thrasymedes%20son%20of%20Thrasymedes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Satyros",
+        "role": "Grandfather of the honorand",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Satyros",
+        "confidence": 1.0
+      },
+      {
+        "name": "Flavius Ariston",
+        "role": "Priest and eponymous official",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Flavius%20Ariston",
+        "confidence": 1.0
+      },
+      {
+        "name": "Flavius Agepolis",
+        "role": "Father of Ariston",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Flavius%20Agepolis",
+        "confidence": 1.0
+      },
+      {
+        "name": "Apollonides",
+        "role": "Secretary",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Apollonides",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Chersonesos Taurica",
+        "type": "City",
+        "uri": "https://www.wikidata.org/wiki/Q638445",
+        "confidence": 1.0
+      },
+      {
+        "name": "Heraclea Pontica",
+        "type": "Metropolis",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Acropolis",
+        "type": "Site of display",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Parthenos",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Chersonesos",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/216765",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This is an honorific decree from Chersonesos Taurica, dating to the Roman period (late 1st or early 2nd century AD). It honors Thrasymedes, a citizen of the mother-city Heraclea Pontica, for his distinguished character and goodwill. The decree grants him proxeny, citizenship, and the right of entry and exit (eisplous and ekplous). It also includes a dating formula that names local officials and refers to the goddess Parthenos as the symbolic 'Queen' (Basilissa) of the city, a unique feature of Chersonesian civic identity. The text specifies that the decree be inscribed on a white stone stele and placed in the most conspicuous part of the acropolis.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " late 1st/early 2nd c. AD",
+  "date_min": 51.0,
+  "date_max": 150.0,
+  "date_circa": false
+}

@@ -1,0 +1,125 @@
+{
+  "phi_id": 290247,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The inscription contains the formal resolution formula 'dedochthai tei boulei' (it was resolved by the Council), identifying it as an official Athenian decree.",
+      "confidence": 1.0,
+      "quote": "δεδ χθαι τ ι βουλ ι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The text explicitly praises and crowns individuals as benefactors of the city, awarding them golden crowns and bronze statues.",
+      "confidence": 1.0,
+      "quote": " παιν[ σαι ς ε εργ[ τας τ ν π[ολιτ ν ντας",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The inscription specifies that the decree should be recorded on a stone stele.",
+      "confidence": 1.0,
+      "quote": " στ λ λιθ ν ",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "Public decrees in 2nd-century Athens were typically inscribed on marble steles, though the text only specifies 'stone'.",
+      "confidence": 0.8,
+      "quote": " στ λ λιθ ν ",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Tiberius Claudius Atticus",
+        "role": "High Priest of the Augusti, Treasurer, and Benefactor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Tiberius%20Claudius%20Atticus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Vibullia Alcia",
+        "role": "Benefactor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Vibullia%20Alcia",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hadrian",
+        "role": "Emperor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hadrian",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Athens",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      },
+      {
+        "name": "Marathon",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580021",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Augusti",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Tyche",
+        "uri": null,
+        "confidence": 0.8
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579885",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This Athenian decree, dated to approximately 120 AD during the reign of Hadrian, honors Tiberius Claudius Atticus of Marathon and his wife Vibullia Alcia. It recognizes Atticus's service as High Priest of the Imperial Cult and Treasurer, specifically noting his performance of sacrifices for the Emperor's well-being and his generous gymnasiarchy. The Council resolved to crown them with golden crowns and erect bronze statues in their honor, with the decree itself to be displayed on a stone stele.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " ca. 120 AD ",
+  "date_min": 120.0,
+  "date_max": 120.0,
+  "date_circa": true
+}

@@ -1,0 +1,135 @@
+{
+  "phi_id": 85,
+  "themes": [
+    {
+      "label": "Treaties and Agreements",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Treaties and Agreements",
+        "subcategory": null
+      },
+      "rationale": "The inscription records a formal treaty (spondai) and alliance (symmachia) between Athens, Argos, Mantinea, and Elis.",
+      "confidence": 1.0,
+      "quote": "σπονδ ς ποι σαντο κατ ν θενα οι τε κα ργε οι κα μαντινες κα λε ο]ι",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    },
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text is an official state decree outlining the terms of a quadruple alliance.",
+      "confidence": 1.0,
+      "quote": "κατ τ δε χσυμμ χος ε ναι θενα ος κα ργε ος κα μα]ντιν ας κα λ[ε ος",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The text specifies the daily pay for soldiers (infantry and cavalry) in Aeginetan obols and drachmas.",
+      "confidence": 1.0,
+      "quote": "τρε ς βολ] ς α γιν[α ος] τες μ ρας κ στες τοι δ ππε δραχμ ν α γινα αν",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "Official Athenian treaties and decrees of this period were typically inscribed on stone stelae.",
+      "confidence": 0.8,
+      "quote": "[ ργε ον. μαντιν ον. λ]εον.",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "Athenian state documents from the 5th century BC were almost exclusively carved on marble.",
+      "confidence": 0.8,
+      "quote": "θενα οι μ ν π ρ τε σφον α τον",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The text contains numerous lacunae and reconstructed sections, indicating it is a fragmentary survival.",
+      "confidence": 1.0,
+      "quote": "[σπονδ ς ποι σαντο κατ ν θενα οι τε κα ργε οι κα μαντινες κα λε ο]ι",
+      "is_ambiguous": false,
+      "ambiguity_note": ""
+    }
+  ],
+  "entities": {
+    "persons": [],
+    "places": [
+      {
+        "name": "Athens",
+        "type": null,
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      },
+      {
+        "name": "Argos",
+        "type": null,
+        "uri": "https://pleiades.stoa.org/places/599516",
+        "confidence": 1.0
+      },
+      {
+        "name": "Mantinea",
+        "type": null,
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Elis",
+        "type": null,
+        "uri": "https://pleiades.stoa.org/places/570220",
+        "confidence": 1.0
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579885",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is the epigraphic record of the quadruple alliance of 420 BC between Athens, Argos, Mantinea, and Elis, as described by Thucydides (5.47). It details the terms of mutual defense, the prohibition of separate peace treaties, the rules for military leadership (hegemony) during joint campaigns, and the specific financial compensation (pay) for different types of troops (hoplites, light-armed troops, archers, and cavalry) provided by the allies.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 420 a.",
+  "date_min": -420.0,
+  "date_max": -420.0,
+  "date_circa": false
+}

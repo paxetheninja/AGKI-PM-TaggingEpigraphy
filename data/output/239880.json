@@ -56,20 +56,6 @@
       "quote": "πο[δ ξα]σθαι τ ς θυσ ας κα τ ν παν γυ[ριν]",
       "is_ambiguous": false,
       "ambiguity_note": null
-    },
-    {
-      "label": "Inter-city Relations",
-      "hierarchy": {
-        "domain": "Content",
-        "subdomain": "Official and Legal Documents",
-        "category": "Treaties and Alliances",
-        "subcategory": null
-      },
-      "rationale": "The document emphasizes the ancestral friendship and kinship between the people of Sardis and the city of Delphi.",
-      "confidence": 1.0,
-      "quote": "πειδ δ μος σαρδιαν ν φ λ[ος κα] [ο κε ος δι πρ]ογ νων π ρχων τ ς π λιος",
-      "is_ambiguous": false,
-      "ambiguity_note": null
     }
   ],
   "entities": {

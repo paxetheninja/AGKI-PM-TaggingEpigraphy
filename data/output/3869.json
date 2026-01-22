@@ -1,0 +1,148 @@
+{
+  "phi_id": 3869,
+  "themes": [
+    {
+      "label": "Inventories",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Inventories",
+        "subcategory": null
+      },
+      "rationale": "The inscription provides a detailed list of precious metal objects, including necklaces, rings, and vessels, which is characteristic of a temple treasury inventory.",
+      "confidence": 1.0,
+      "quote": "ρμος χρυσο]ς... δακτ λιος... στ φα]νος... φι λη ργυρ",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The text records the weights (stathmon) of the items and mentions specific currencies like Attic and Phocian drachmas, indicating its function as a financial record.",
+      "confidence": 1.0,
+      "quote": "σταθμ ν... δραχμ ς... ττικ ς... φωκικ ν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Votive Dedications",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Votive Dedications",
+        "subcategory": null
+      },
+      "rationale": "The items listed are described as being dedicated (anetheke) by individuals or groups, identifying them as votive offerings to a deity.",
+      "confidence": 1.0,
+      "quote": "ν θηκε... ν θεσαν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "Public administrative records and inventories in 4th-century Athens were typically inscribed on marble stelae for public display.",
+      "confidence": 0.8,
+      "quote": "στατον... ν ξ λωι νηρμοσμ νη",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "The metadata and context of an Athenian public record from the mid-4th century BC imply the use of marble as the primary material.",
+      "confidence": 0.8,
+      "quote": "ττικ ς... ττικ ν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The text contains numerous lacunae and reconstructed sections, indicating that the original stone is broken and incomplete.",
+      "confidence": 1.0,
+      "quote": "[----- ρμος χρυσο]ς",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Philotas",
+        "role": "Donor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philotas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eriphyle",
+        "role": "Mythological figure associated with a necklace",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eriphyle",
+        "confidence": 0.9
+      }
+    ],
+    "places": [
+      {
+        "name": "Sicyon",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/570668",
+        "confidence": 1.0
+      },
+      {
+        "name": "Leontini",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/462279",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phocis",
+        "type": "Region",
+        "uri": "https://pleiades.stoa.org/places/541048",
+        "confidence": 1.0
+      },
+      {
+        "name": "Attica",
+        "type": "Region",
+        "uri": "https://pleiades.stoa.org/places/579888",
+        "confidence": 1.0
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Attica",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579888",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a classic example of an Athenian temple inventory from the mid-4th century BC. It provides a meticulous record of sacred treasures, likely from the Parthenon or a similar sanctuary, listing gold and silver objects, their precise weights, and the names of the donors (such as Philotas of Sicyon and the Leontinians). The inclusion of different regional currencies (Attic and Phocian) highlights the administrative and financial oversight of the sanctuary's assets. The mention of the 'Necklace of Eriphyle' refers to a specific type of jewelry or a replica of the mythological object.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " med. s. IV a.",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

@@ -30,20 +30,6 @@
       "ambiguity_note": ""
     },
     {
-      "label": "Bronze Tablets",
-      "hierarchy": {
-        "domain": "Type",
-        "subdomain": "Object Type",
-        "category": "Portable Objects",
-        "subcategory": "Lead or Metal Tablets > Bronze Tablets"
-      },
-      "rationale": "The inscription is historically known as the 'Bronze Tablet of the Lokrian Settlers' and the text mentions Chaleion, a site famous for such metal legal documents.",
-      "confidence": 1.0,
-      "quote": "χαλει οις το ς σ ν ντιφ ται οικετα ς",
-      "is_ambiguous": false,
-      "ambiguity_note": ""
-    },
-    {
       "label": "Bronze",
       "hierarchy": {
         "domain": "Type",

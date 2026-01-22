@@ -14,34 +14,6 @@
       "quote": "τὸν Ἐπιμάχου με παῖδα μὴ παραδράμῃς",
       "is_ambiguous": false,
       "ambiguity_note": null
-    },
-    {
-      "label": "Burial Rites and Instructions",
-      "hierarchy": {
-        "domain": "Content",
-        "subdomain": "Social Practices",
-        "category": "Burial Rites",
-        "subcategory": "Mourning Customs"
-      },
-      "rationale": "The deceased provides explicit instructions to his brother to avoid traditional mourning practices such as the use of cedar oil and professional mourners, preferring a simple burial.",
-      "confidence": 1.0,
-      "quote": "χωρὶς κεδρίας καὶ τῆς δυσώδους ἀποφορᾶς",
-      "is_ambiguous": false,
-      "ambiguity_note": null
-    },
-    {
-      "label": "Social Status and Civic Office",
-      "hierarchy": {
-        "domain": "Content",
-        "subdomain": "Social History",
-        "category": "Civic Identity",
-        "subcategory": "Magistracies"
-      },
-      "rationale": "The text highlights the family's high social standing, mentioning the grandfather's role as an Agoranomos and the father's involvement in horse-breeding.",
-      "confidence": 1.0,
-      "quote": "ἀγορανομίαν ἔδωκε τῇ πόλει καλῶς",
-      "is_ambiguous": false,
-      "ambiguity_note": null
     }
   ],
   "entities": {

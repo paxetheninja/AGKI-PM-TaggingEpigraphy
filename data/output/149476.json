@@ -1,0 +1,122 @@
+{
+  "phi_id": 149476,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text is a formal resolution (psephisma) passed by the council and the people to honor an individual, using standard formulaic language like 'edoxen' (it was decided).",
+      "confidence": 1.0,
+      "quote": "δοξεν παιν σαι τε τ ν ρπαλον π  το τοις κα στεφαν σαι α τ ν θαλλο στεφ ν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription is dedicated to praising Harpalos for his services to the city, including his diplomatic missions, priesthood, and financial contributions to public monuments.",
+      "confidence": 1.0,
+      "quote": "πως ρπαλος ξ ως τιμηθ ι τ ν γεγενημ νων π α το ε ς τ ν πατρ δα",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The text explicitly orders the decree to be inscribed on a stone stele (stelen lithinen).",
+      "confidence": 1.0,
+      "quote": "ναγραφ ναι δ α τ ε ς στ λην λιθ νην",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Other Stone",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Other Stone"
+      },
+      "rationale": "The inscription mentions a 'stone stele' (stelen lithinen) without specifying the exact type of stone like marble or limestone.",
+      "confidence": 1.0,
+      "quote": "ναγραφ ναι δ α τ ε ς στ λην λιθ νην",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The text contains numerous lacunae and missing sections, particularly in the middle portion of the inscription.",
+      "confidence": 1.0,
+      "quote": "πλ[------]λυσασα[-----------]ατας",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Harpalos",
+        "role": "Honoree and benefactor",
+        "uri": "https://www.wikidata.org/wiki/Q653625",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Beroea",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/491546",
+        "confidence": 0.9
+      },
+      {
+        "name": "Macedonia",
+        "type": "Region",
+        "uri": "https://pleiades.stoa.org/places/491656",
+        "confidence": 0.9
+      }
+    ],
+    "deities": [
+      {
+        "name": "Benefactor Gods",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Beroea",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/491546",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is an honorific decree from the city of Beroea for a citizen named Harpalos. It highlights his noble lineage, his service as a priest of the 'Benefactor Gods' (Theoi Euergetai), his diplomatic embassies on behalf of the city, and his financial generosity in maintaining public monuments. The decree grants him a crown and a bronze statue, and mandates that the text be recorded on a stone stele to be placed near the statue. The text is fragmentary with significant gaps in the middle section.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " late 2nd/early 1st c. BC ",
+  "date_min": -150.0,
+  "date_max": -51.0,
+  "date_circa": false
+}

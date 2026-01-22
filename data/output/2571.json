@@ -1,0 +1,201 @@
+{
+  "phi_id": 2571,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text is a formal Athenian decree (psephisma) passed by the assembly (ekklesia) and the council (boule) during the archonship of Euthykritos.",
+      "confidence": 1.0,
+      "quote": "ἔδοξεν τῶι δήμωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The decree honors the priest Dendrokles for his virtuous service, piety, and management of the sanctuary of Asclepius.",
+      "confidence": 1.0,
+      "quote": "ἐπαινέσαι Δενδροκλέα Κλεινίου ἐκ Κεραμέων τὸν ἱερέα τοῦ Ἀσκληπιοῦ",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Sacred Laws and Rules",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Sacred Laws and Rules",
+        "subcategory": null
+      },
+      "rationale": "The inscription references the religious duties of the priest as prescribed by the laws (nomoi), including the care of the sanctuary.",
+      "confidence": 0.8,
+      "quote": "ἐπιμελεῖται τοῦ τε ἱεροῦ καὶ τῶν ἄλλων ἐν αὐτῶι οἱ νόμοι προστάττουσιν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The text specifies financial allocations for a golden crown and the cost of the stele, to be paid by the treasurer of the people.",
+      "confidence": 0.9,
+      "quote": "δοῦναι αὐτῶι τὸν ταμίαν τοῦ δήμου ... δραχμὰς εἰς θυσίαν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The decree explicitly commands that the text be inscribed on a stone stele and set up in the sanctuary of Asclepius.",
+      "confidence": 1.0,
+      "quote": "ἀναγράψαι τόδε τὸ ψήφισμα ἐν στήληι λιθίνηι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "Public Athenian decrees of the late 4th century BCE were almost exclusively inscribed on marble stelae, though the text uses the general term for stone.",
+      "confidence": 0.8,
+      "quote": "στήληι λιθίνηι",
+      "is_ambiguous": true,
+      "ambiguity_note": "The text specifies 'stone' (lithine), but marble is the standard material for such Athenian monuments."
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Euthykritos",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Euthykritos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dendrokles",
+        "role": "Priest of Asclepius",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dendrokles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kleinias",
+        "role": "Father of Dendrokles",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kleinias",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pythodelos",
+        "role": "Secretary",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pythodelos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Epigenes",
+        "role": "Chairman of the Proedroi",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Epigenes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Prokleides",
+        "role": "Proposer of the decree",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Prokleides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pantaleon",
+        "role": "Father of Prokleides",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pantaleon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eetion",
+        "role": "Proposer of the amendment",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eetion",
+        "confidence": 1.0
+      },
+      {
+        "name": "Autokleides",
+        "role": "Father of Eetion",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Autokleides",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Athens",
+        "type": "City-state",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kerameis",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579975",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sphettos",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580109",
+        "confidence": 1.0
+      },
+      {
+        "name": "Antiochis",
+        "type": "Tribe",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Asclepius",
+        "uri": "https://www.wikidata.org/wiki/Q83223",
+        "confidence": 1.0
+      },
+      {
+        "name": "Tyche",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579885",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This is a formal Athenian decree from the archonship of Euthykritos (328/7 BCE). It honors Dendrokles, the priest of Asclepius, for his diligent and pious management of the sanctuary and the theater. The text includes typical administrative formulas regarding the prytany, the secretary, and the funding for the monument's creation and the priest's reward, which includes a golden crown worth 500 drachmae.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

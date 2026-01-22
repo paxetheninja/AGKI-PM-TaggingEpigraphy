@@ -1,0 +1,161 @@
+{
+  "phi_id": 199538,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The inscription contains multiple official decrees issued by the city of Olous, using the standard formula 'edoxe' (it was decided) by the kosmoi and the city.",
+      "confidence": 1.0,
+      "quote": "ἔδοξε Ὀλουντίων τοῖς κόσμοις καὶ τᾶι πόλει",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The text grants the titles of proxenos (public representative) and euergetes (benefactor) to several individuals from other cities in recognition of their services.",
+      "confidence": 1.0,
+      "quote": "πρόξενον εἶμεν καὶ εὐεργέταν αὐτῶν καὶ ἐγγόνους",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "Decrees of this nature in Crete were typically inscribed on stone stelae for public display, and the grouping of multiple decrees suggests a single monumental object.",
+      "confidence": 0.9,
+      "quote": "ἐπὶ δαμιοργοῦ Ἀριστοσθένευς",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Aristosthenes",
+        "role": "Demiurge",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristosthenes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Didymarchos",
+        "role": "Benefactor and Proxenos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Didymarchos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Chaton",
+        "role": "Father of Didymarchos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Chaton",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eudamos",
+        "role": "Benefactor and Proxenos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eudamos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sosigenes",
+        "role": "Father of Eudamos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sosigenes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sotadas",
+        "role": "Demiurge",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sotadas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Demetrios",
+        "role": "Benefactor, Proxenos, and Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demetrios",
+        "confidence": 1.0
+      },
+      {
+        "name": "Arsinoas",
+        "role": "Demiurge",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Arsinoas",
+        "confidence": 0.8
+      },
+      {
+        "name": "Gemon",
+        "role": "Benefactor, Proxenos, and Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Gemon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lysimachos",
+        "role": "Father of Gemon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lysimachos",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Olous",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/589959",
+        "confidence": 1.0
+      },
+      {
+        "name": "Idion",
+        "type": "City",
+        "uri": "https://www.wikidata.org/wiki/Q1975510",
+        "confidence": 0.8
+      },
+      {
+        "name": "Astypalaia",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/599535",
+        "confidence": 1.0
+      },
+      {
+        "name": "Knidos",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/707539",
+        "confidence": 1.0
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Olous",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/589959",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Crete",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/5066435",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "The inscription consists of a series of honorific decrees from the Cretan city of Olous dating to the early 2nd century BC. It records the granting of proxeny, citizenship, and specific legal privileges—such as tax exemption (ateleia) and the right of entry and exit (esplous and ekplous) during both war and peace—to foreign individuals. The text is organized by the eponymous demiurges (magistrates) of the city.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " beg. 2nd c. BC",
+  "date_min": -200.0,
+  "date_max": -151.0,
+  "date_circa": false
+}

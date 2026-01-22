@@ -1,0 +1,144 @@
+{
+  "phi_id": 3476,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text follows the standard formula for a decree issued by a collective body, beginning with the archon's name and the phrase 'it seemed good to the thiasotai'.",
+      "confidence": 1.0,
+      "quote": "ἔδοξεν τοῖς θιασώταις",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription honors Stephanos for his service as a supervisor and sacred official, citing his love of honor (philotimia) and goodness (andragathia).",
+      "confidence": 1.0,
+      "quote": "ἐπαινέσαι Στέφανον τὸν ἐπιμελητήν φιλοτιμίας ἕνεκεν καὶ ἀνδραγαθίας",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Votive Dedications",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Votive Dedications",
+        "subcategory": null
+      },
+      "rationale": "The decree concludes with instructions for the honoree to set up a dedication (anathema) in the sanctuary of the goddess using a monetary award.",
+      "confidence": 1.0,
+      "quote": "ἀναθεῖναι ἀνάθημα ἐν τῶι ἱερῶι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The text refers to the act of inscribing the decree on stone for public display, implying a stone stele.",
+      "confidence": 0.9,
+      "quote": "ἐπιγράψαντα τόδε τὸ ψήφισμα",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Nikokles",
+        "role": "Eponymous Archon of Athens (302/1 BC)",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nikokles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Stephanos",
+        "role": "Honoree, official (epimeletes and hieropoios), breastplate-maker, and miller",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Stephanos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Klearchos",
+        "role": "Eponymous Archon of Athens (301/0 BC)",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Klearchos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hegemachos",
+        "role": "Eponymous Archon of Athens (300/299 BC)",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hegemachos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sokles",
+        "role": "Proposer of the decree",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sokles",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Athens",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      },
+      {
+        "name": "Attica",
+        "type": "Region",
+        "uri": "https://pleiades.stoa.org/places/579888",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Aphrodite",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Demeter",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/579885",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Attica",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579888",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This document records three consecutive annual decrees (302/1–300/299 BC) by an Athenian thiasos (religious association) honoring a member named Stephanos. Stephanos, identified as both a breastplate-maker and a miller, is praised for his service as a supervisor and sacred official, specifically for his care of sacrifices and processions for Aphrodite and Demeter. The text illustrates the internal administration of private cultic groups in early Hellenistic Athens, including the awarding of crowns and the requirement to set up a stone dedication.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

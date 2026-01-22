@@ -1,0 +1,133 @@
+{
+  "phi_id": 359265,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The inscription follows the standard formula for a public decree issued by the council and the people of Kalymna.",
+      "confidence": 1.0,
+      "quote": "[ δο]ξε τ[ ι βουλ ι κα τ ι δ μωι γν μα προστατ ν]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The text honors Theukrates for his goodwill, friendship, and benefactions toward the city, including financial support for soldiers.",
+      "confidence": 1.0,
+      "quote": "φα νηται χ ριν κα]ταξ αν ποδιδο ς α τ ι τ [ν ε εργετημ των]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Citizenship Grants",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The decree explicitly grants citizenship to Theukrates and specifies his enrollment into a tribe and other civic subdivisions like the triakas and pentekoste.",
+      "confidence": 1.0,
+      "quote": "δεδ χθαι τ ι δ[ μωι πολ ταν μεν] θευκρ τη νασιγ νευς... [πι]κλαρωσ [ντω α το ς ς φυλ ν] κα τρια[κ δα κα πεν]τηκοστ [ν]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The text mentions the physical medium of the decree, which is to be inscribed on a stone stele.",
+      "confidence": 1.0,
+      "quote": "[------- σ]τ λαν ς [ ν ------]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The inscription contains numerous lacunae and reconstructed sections, indicating it is not fully preserved.",
+      "confidence": 1.0,
+      "quote": "[ δο]ξε τ[ ι βουλ ι κα τ ι δ μωι γν μα προστατ ν]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Theukrates",
+        "role": "Honoree and benefactor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theukrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Nasigenes",
+        "role": "Father of the honoree",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nasigenes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Antigonus",
+        "role": "King",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antigonus",
+        "confidence": 0.8
+      }
+    ],
+    "places": [
+      {
+        "name": "Kalymna",
+        "type": "City-state",
+        "uri": "https://pleiades.stoa.org/places/599684",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Apollo",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Agathe Tyche",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Kalymna",
+      "type": "Island",
+      "uri": "https://pleiades.stoa.org/places/599684",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This is an honorific decree from Kalymna dating to the late 3rd century BC (c. 227 BC), honoring Theukrates, son of Nasigenes. The text records his benefactions, including financial support for soldiers and contributions related to King Antigonus. It grants him citizenship, specifying his assignment to a tribe and other civic divisions (triakas and pentekoste). The decree was to be inscribed on a stele and placed in the Sanctuary of Apollo.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 227 BC ",
+  "date_min": -227.0,
+  "date_max": -227.0,
+  "date_circa": false
+}

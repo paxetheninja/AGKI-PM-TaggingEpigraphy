@@ -1,0 +1,142 @@
+{
+  "phi_id": 189370,
+  "themes": [
+    {
+      "label": "Curse Tablets (Defixiones)",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Curses and Magic",
+        "subcategory": "Curse Tablets (Defixiones)"
+      },
+      "rationale": "The inscription is a classic binding spell or defixio, using specific verbs like 'katadeson' (bind) and 'katasches' (seize) to target an individual.",
+      "confidence": 1.0,
+      "quote": "κατάδησον π ταξον προσκλ σον τ ν σ[α]παυ[το]λ[ον]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Prayers and Invocations",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Prayers and Invocations",
+        "subcategory": null
+      },
+      "rationale": "The text contains numerous invocations of magical names (voces magicae) and deities to empower the curse.",
+      "confidence": 1.0,
+      "quote": "ιωερβηθ ιωπακερβηθ ιωβ[ο]λχωσηθ βολκοδηφ",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lead",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Metal",
+        "subcategory": "Lead"
+      },
+      "rationale": "The material used for such magical binding spells in the Roman period was almost exclusively lead.",
+      "confidence": 0.9,
+      "quote": "σχυρο ς α ων οις δαμαντ νοις",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The text contains several lacunae and reconstructed sections indicated by brackets.",
+      "confidence": 1.0,
+      "quote": "αραρα[χ]αραρα εφθισικεκε",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Sapautolus",
+        "role": "Target of the curse",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sapautolus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Januaria",
+        "role": "Mentioned individual",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Januaria",
+        "confidence": 0.9
+      },
+      {
+        "name": "Lacinia",
+        "role": "Mentioned individual",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lacinia",
+        "confidence": 0.8
+      },
+      {
+        "name": "Ursellus",
+        "role": "Mentioned individual",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ursellus",
+        "confidence": 0.9
+      },
+      {
+        "name": "Pomponius",
+        "role": "Mentioned individual",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pomponius",
+        "confidence": 0.8
+      }
+    ],
+    "places": [
+      {
+        "name": "Carthage",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/314921",
+        "confidence": 0.9
+      },
+      {
+        "name": "Amphitheater",
+        "type": "Building",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Abrasax",
+        "uri": "https://www.wikidata.org/wiki/Q24260627",
+        "confidence": 1.0
+      },
+      {
+        "name": "Iao",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Seth",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Carthage",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/314921",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a complex magical curse tablet (defixio) from the amphitheater of Carthage, dating to the 2nd or 3rd century AD. It is directed against an individual named Sapautolus. The text is notable for its extensive use of 'voces magicae' (magical names like Abrasax and Erbeth/Seth) and its bilingual nature, where Latin legalistic and magical terms (e.g., 'implicentur', 'obligentur', 'vulneretur') are transliterated into Greek script. The curse seeks to bind the target's soul, heart, and limbs, likely in the context of amphitheater performances or competitions.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 2nd/3rd c. AD ",
+  "date_min": 101.0,
+  "date_max": 300.0,
+  "date_circa": false
+}

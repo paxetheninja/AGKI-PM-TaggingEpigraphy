@@ -1,0 +1,234 @@
+{
+  "phi_id": 241229,
+  "themes": [
+    {
+      "label": "Manumission Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Manumission Records",
+        "subcategory": null
+      },
+      "rationale": "The inscription records the sale of a female slave named Nikata to Pythian Apollo for the purpose of her manumission, a standard legal procedure in Delphi.",
+      "confidence": 1.0,
+      "quote": "ἀπέδοτο Μνασίξενος Πηλεκλέα Ἀριναῖος τῶι Ἀπόλλωνι τῶι Πυθίωι σῶμα γυναικεῖον ᾧ ὄνομα Νικάτα",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Contracts and Private Legal Acts",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Contracts and Private Legal Acts",
+        "subcategory": null
+      },
+      "rationale": "The text details a contract of sale including a price (three minae), conditions of service (paramone), and penalties for breach of contract.",
+      "confidence": 1.0,
+      "quote": "τιμᾶς ἀργυρίου μνᾶν τριῶν καθὼς ἐπίστευσε Νικάτα τῶι θεῶι τὰν ὠνάν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The document lists several officials, including the archons of Delphi and the priests of Apollo, who serve as witnesses to the act.",
+      "confidence": 1.0,
+      "quote": "μάρτυρες τοὶ ἱερεῖς τοῦ Ἀπόλλωνος Μάντας Ταρατῖνος καὶ τῶν ἀρχόντων Νικόμαχος Δίαιται Ξεναγόρας Εὐκλείδας Μάνης Κάρπος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Votive Dedications",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Votive Dedications",
+        "subcategory": null
+      },
+      "rationale": "The manumission is framed as a religious dedication or sale to the god Apollo, placing the former slave under the protection of the deity.",
+      "confidence": 1.0,
+      "quote": "ἐπὶ τοῖσδε ἀπέδοτο Μνασίξενος ... τῶι Ἀπόλλωνι τῶι Πυθίωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Antimachos",
+        "role": "Archon of Delphi",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antimachos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Andronikos",
+        "role": "Archon of Phocis",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Andronikos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Mnasixenos",
+        "role": "Seller and former owner",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Mnasixenos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pelekleas",
+        "role": "Father of the seller",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pelekleas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Nikata",
+        "role": "Manumitted slave",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nikata",
+        "confidence": 1.0
+      },
+      {
+        "name": "Nikias",
+        "role": "Guarantor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nikias",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sosixenos",
+        "role": "Father of Nikias",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sosixenos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Nikomachos",
+        "role": "Guarantor and Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nikomachos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dexippos",
+        "role": "Father of Nikomachos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dexippos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Mantas",
+        "role": "Priest of Apollo",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Mantas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Taratinos",
+        "role": "Priest of Apollo",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Taratinos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Diaitas",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Diaitas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Xenagoras",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Xenagoras",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eukleidas",
+        "role": "Archon and Scribe",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eukleidas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Menes",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Menes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Karpos",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Karpos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Xenias",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Xenias",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kallieros",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kallieros",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kallistratos",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kallistratos",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Delphi",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/540726",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phocis",
+        "type": "Region",
+        "uri": "https://pleiades.stoa.org/places/541048",
+        "confidence": 1.0
+      },
+      {
+        "name": "Thrace",
+        "type": "Region of origin for the slave",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Amphissa",
+        "type": "City of origin for Kallistratos",
+        "uri": "https://pleiades.stoa.org/places/540630",
+        "confidence": 1.0
+      },
+      {
+        "name": "Arinaia",
+        "type": "City of origin for Mnasixenos",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Apollo Pythios",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "intact",
+  "provenance": [
+    {
+      "name": "Delphi",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/540726",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This is a well-preserved example of a Delphic manumission by 'sale to the god'. It includes the standard dating by local archons (Antimachos in Delphi and Andronikos in Phocis), the identification of the seller (Mnasixenos) and the slave (Nikata, a Thracian), the price of three silver minae, and a 'paramone' clause requiring the slave to remain with the seller for a period and raise two children. It concludes with a list of religious and civic officials acting as witnesses and names Eukleidas as the scribe.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 170-157/6 BC",
+  "date_min": -170.0,
+  "date_max": -156.0,
+  "date_circa": false
+}

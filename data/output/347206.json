@@ -1,0 +1,204 @@
+{
+  "phi_id": 347206,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text is a formal decree passed by the Athenian assembly, indicated by the standard formula 'it seemed good to the people'.",
+      "confidence": 1.0,
+      "quote": "ἔδοξεν τῶι δήμωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The decree is passed to honor the god Amphiaraus with a golden crown for his care of the Athenians and visitors to his sanctuary.",
+      "confidence": 1.0,
+      "quote": "στεφανῶσαι τὸν Ἀμφιάραον χρυσῶι στεφάνωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Votive Dedications",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Votive Dedications",
+        "subcategory": null
+      },
+      "rationale": "The decree orders the dedication of a golden crown to the god within the sanctuary for the health and safety of the people.",
+      "confidence": 1.0,
+      "quote": "ἀναθεῖναι τὸν στέφανον τῶι θεῶι ἐφ᾽ ὑγιεῖαι καὶ σωτηρίαι τοῦ δήμου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The text contains specific financial instructions, directing the military treasurer and the treasurer of the people to provide funds for the crown and the stele.",
+      "confidence": 1.0,
+      "quote": "τὸ δὲ ἀργύριον τὸ εἰς τὸν στέφανον δοῦναι τὸν ταμίαν τῶν στρατιωτικῶν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The preamble lists several Athenian officials, including the archon, the secretary, and the presiding officers (proedroi).",
+      "confidence": 1.0,
+      "quote": "ἐπὶ Νικήτου ἄρχοντος ... Ἀριστόνους Ἀριστόνου Ἀναγυράσιος ἐγραμμάτευεν ... Ἐπιχάρης Ἀγνούσιος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The decree explicitly commands that the text be inscribed on a stone stele.",
+      "confidence": 1.0,
+      "quote": "ἀναγράψαι δὲ τόδε τὸ ψήφισμα ἐν στήληι λιθίνει",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Gold",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Metal",
+        "subcategory": "Gold"
+      },
+      "rationale": "The inscription mentions a golden crown to be dedicated to the god.",
+      "confidence": 1.0,
+      "quote": "χρυσῶι στεφάνωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Niketes",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Niketes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristonous son of Aristonous",
+        "role": "Secretary",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristonous%20son%20of%20Aristonous",
+        "confidence": 1.0
+      },
+      {
+        "name": "Epichares of Agnous",
+        "role": "Presiding Officer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Epichares%20of%20Agnous",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phanodemos son of Diyllos",
+        "role": "Proposer of the decree",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Phanodemos%20son%20of%20Diyllos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Diyllos",
+        "role": "Father of Phanodemos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Diyllos",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Athens",
+        "type": "City-state",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      },
+      {
+        "name": "Anagyrous",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579863",
+        "confidence": 1.0
+      },
+      {
+        "name": "Agnous",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Thymaitadai",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580123",
+        "confidence": 1.0
+      },
+      {
+        "name": "Amphiareion",
+        "type": "Sanctuary",
+        "uri": "https://pleiades.stoa.org/places/540628",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Amphiaraus",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Tyche",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "intact",
+  "provenance": [
+    {
+      "name": "Oropia",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/580043",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Oropos",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/580044",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This is a well-preserved Athenian decree from 332/1 BC, found at the Amphiareion in Oropos. It follows the standard Athenian formulaic structure for decrees, including an invocation, dating by archon and prytany, identification of the secretary and proposer, and the formal resolution. The decree honors the local hero-god Amphiaraus for his benevolence toward the Athenians and visitors to his sanctuary, ordering a golden crown and the erection of a stone stele to commemorate the honor. It provides valuable insight into Athenian administration of the sanctuary during a period of Athenian control over Oropos.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 332/1 BC ",
+  "date_min": -332.0,
+  "date_max": -331.0,
+  "date_circa": false
+}

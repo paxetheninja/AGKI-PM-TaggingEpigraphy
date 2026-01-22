@@ -1,0 +1,181 @@
+{
+  "phi_id": 259734,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text is a formal resolution passed by the council and the people (Boule and Demos) of Smyrna regarding honors for foreign judges.",
+      "confidence": 1.0,
+      "quote": "[β]ουλὴν καὶ τὸν δῆμον ... ψήφισμα",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription honors specific individuals for their virtue, justice, and goodwill towards the city.",
+      "confidence": 1.0,
+      "quote": "ἀρετῆς ἕνεκεν καὶ δικαιοσύνης καὶ εὐνοίας",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The decree includes specific instructions for the treasurer regarding the purchase of gold crowns and the allocation of funds for the monument.",
+      "confidence": 1.0,
+      "quote": "ἀγοράσαι τὸν ταμίαν ... τὴν δὲ τιμὴν τοῦ χρυσίου ... δοῦναι τὸν ταμίαν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The text explicitly orders the decree to be inscribed on a stone stele.",
+      "confidence": 1.0,
+      "quote": "εἰς στήλην [λιθίν]ην ἀνατεθ[ῆι]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Statue Base",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Statue Base"
+      },
+      "rationale": "The decree mentions setting up a bronze image on a marble base.",
+      "confidence": 1.0,
+      "quote": "ἐπὶ βήματος μαρμαρίνου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "The inscription mentions a marble base for the statue.",
+      "confidence": 1.0,
+      "quote": "μαρμαρίνου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Bronze",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Metal",
+        "subcategory": "Bronze"
+      },
+      "rationale": "The decree grants a bronze image (statue) as an honor.",
+      "confidence": 1.0,
+      "quote": "εἰκόνα χαλκῆν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Gold",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Metal",
+        "subcategory": "Gold"
+      },
+      "rationale": "The text mentions the purchase of gold crowns for the honorees.",
+      "confidence": 1.0,
+      "quote": "χρυσοῦς εἴκοσι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Xenokritos",
+        "role": "Judge from Knidos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Xenokritos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hegesikrates",
+        "role": "Judge from Knidos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hegesikrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Xenokrates",
+        "role": "Father of Xenokritos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Xenokrates",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Knidos",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/707539",
+        "confidence": 1.0
+      },
+      {
+        "name": "Smyrna",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/550893",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Aphrodite Stratonikis",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Dionysus",
+        "uri": "https://www.wikidata.org/wiki/Q41680",
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Smyrna",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/550893",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is an honorific decree from the city of Smyrna for two judges, Xenokritos and Hegesikrates, who were sent from Knidos. The text details the honors bestowed upon them, including gold crowns and a bronze statue to be placed in the sanctuary of Aphrodite Stratonikis. It also describes the public announcement of these honors during the Dionysia festival and provides administrative details for the treasurer to fund the production of the crowns and the stele. The father of Xenokritos is identified as Xenokrates.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

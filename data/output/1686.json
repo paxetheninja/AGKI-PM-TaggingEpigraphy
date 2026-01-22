@@ -1,0 +1,133 @@
+{
+  "phi_id": 1686,
+  "themes": [
+    {
+      "label": "Inventories",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Inventories",
+        "subcategory": null
+      },
+      "rationale": "The text is a detailed list of temple equipment, furniture, and votive offerings, typical of a sanctuary inventory.",
+      "confidence": 1.0,
+      "quote": "ν τοι τες μν ας θυμιατ ρ[ι]α χαλκ. λυχνε ον χαλκον ν κρατρ ρ χαλκος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Votive Dedications",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Votive Dedications",
+        "subcategory": null
+      },
+      "rationale": "The items listed, such as statues, shields, and phialai, are characteristic of votive offerings dedicated to deities in a sanctuary.",
+      "confidence": 1.0,
+      "quote": "χαλκον ν γαλμα π τες τραπ ζες",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Bronze",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Metal",
+        "subcategory": "Bronze"
+      },
+      "rationale": "Numerous items in the inventory are explicitly described as being made of bronze (chalkos).",
+      "confidence": 1.0,
+      "quote": "θυμιατ ρ[ι]α χαλκ. λυχνε ον χαλκον",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Iron",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Metal",
+        "subcategory": "Iron"
+      },
+      "rationale": "The text mentions several items made of iron, specifically pins (peronai) and stands.",
+      "confidence": 1.0,
+      "quote": "σιδερα ε κοσι κα κατ ν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Wood",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Organic Materials",
+        "subcategory": "Wood"
+      },
+      "rationale": "The inventory includes items made of wood, such as cypress wood statues and wooden thrones.",
+      "confidence": 1.0,
+      "quote": "κυφαρ σινον ν μικρ ν γαλμα",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Shields",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Portable Objects",
+        "subcategory": "Weapons and Armor"
+      },
+      "rationale": "The list includes bronze and white shields (aspis) as part of the temple's possessions.",
+      "confidence": 1.0,
+      "quote": "μ α σπ ς π χαλκος μ α σπ ς λευκ μ α",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [],
+    "places": [
+      {
+        "name": "Aegina",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/579844",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Mnia",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Azesia",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Dionysus",
+        "uri": "https://www.wikidata.org/wiki/Q41680",
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Aegina",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579844",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a temple inventory from Aegina, dating to the late 5th century BC. It provides a comprehensive list of ritual objects, furniture, and votive offerings belonging to the local cults of Mnia and Azesia, as well as Dionysus. The inventory specifies materials such as bronze, iron, and cypress wood, and lists items like incense burners, lampstands, kraters, statues, iron pins, shields, and thrones, some of which were kept in the opisthodomos (back room) of the temple. The text is fragmentary with several lacunae but the nature of the list is clear.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 430-404 a. ",
+  "date_min": -430.0,
+  "date_max": -404.0,
+  "date_circa": false
+}

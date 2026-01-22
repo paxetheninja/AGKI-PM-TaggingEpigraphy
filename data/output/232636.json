@@ -30,34 +30,6 @@
       "ambiguity_note": null
     },
     {
-      "label": "Land and Property Management",
-      "hierarchy": {
-        "domain": "Content",
-        "subdomain": "Legal and Economic Affairs",
-        "category": "Land and Property Management",
-        "subcategory": null
-      },
-      "rationale": "The text contains detailed topographical descriptions used to define the limits of property, including cardinal directions and natural features like rivers, within a land register.",
-      "confidence": 1.0,
-      "quote": "βορρ [θεν] ποταμ ς [κα] κ",
-      "is_ambiguous": false,
-      "ambiguity_note": null
-    },
-    {
-      "label": "Administrative Records",
-      "hierarchy": {
-        "domain": "Content",
-        "subdomain": "Official and Legal Documents",
-        "category": "Administrative Records",
-        "subcategory": null
-      },
-      "rationale": "The mention of the Archon and the Council (Boule) indicates that this registration was part of an official administrative act by the Athenian state.",
-      "confidence": 1.0,
-      "quote": "[ π δυ]νν[ικ] το ρχ[ον]τος",
-      "is_ambiguous": false,
-      "ambiguity_note": null
-    },
-    {
       "label": "Stele",
       "hierarchy": {
         "domain": "Type",

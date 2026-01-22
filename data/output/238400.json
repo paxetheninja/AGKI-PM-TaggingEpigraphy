@@ -14,20 +14,6 @@
       "quote": "κεφ λωμα ναλ ματος τα της τ ς πυλα ας α γ[ινα ου δραχμα μ ριαι ----ακισχιλ]αι νακ[ τιαι ----------- βολο",
       "is_ambiguous": false,
       "ambiguity_note": null
-    },
-    {
-      "label": "Public Works and Construction",
-      "hierarchy": {
-        "domain": "Content",
-        "subdomain": "Administrative Records and Lists",
-        "category": "Public Works and Construction",
-        "subcategory": null
-      },
-      "rationale": "The text records the procurement and preparation of building materials, specifically poros stone and bricks, for a public construction project in Delphi, likely the Temple of Apollo.",
-      "confidence": 1.0,
-      "quote": "δ ξατο πο ρου τεμε ν πλ νθους κατι τ ν πλ νθον κ σταν δραχμ ν",
-      "is_ambiguous": false,
-      "ambiguity_note": null
     }
   ],
   "entities": {

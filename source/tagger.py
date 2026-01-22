@@ -3,7 +3,7 @@ import logging
 from .data_loader import InputInscription
 from .schema import TaggedInscription
 from .llm_client import LLMProvider
-from .taxonomy_utils import format_taxonomy_for_prompt, validate_taxonomy_compliance, correct_hallucinated_subcategories
+from .taxonomy_utils import format_taxonomy_for_prompt, validate_taxonomy_compliance, enforce_taxonomy_compliance
 
 logger = logging.getLogger(__name__)
 
@@ -224,21 +224,15 @@ Proposed Analysis to Review:
     )
 
     # --- Post-Validation: Taxonomy Compliance ---
-    logger.info(f"ID {inscription.id}: Validating taxonomy compliance...")
+    logger.info(f"ID {inscription.id}: Enforcing taxonomy compliance...")
 
-    # Check for taxonomy violations
-    is_valid, errors = validate_taxonomy_compliance(final_data, taxonomy)
-    if not is_valid:
-        logger.warning(f"ID {inscription.id}: Taxonomy violations found:")
-        for err in errors:
-            logger.warning(f"  - {err}")
-
-        # Auto-correct hallucinated subcategories
-        final_data, corrections = correct_hallucinated_subcategories(final_data, taxonomy)
-        if corrections:
-            logger.info(f"ID {inscription.id}: Auto-corrected {len(corrections)} hallucinated subcategories")
-            for corr in corrections:
-                logger.info(f"  - {corr}")
+    # Strict enforcement (Prune or Remove)
+    final_data, corrections = enforce_taxonomy_compliance(final_data, taxonomy)
+    
+    if corrections:
+        logger.warning(f"ID {inscription.id}: Taxonomy corrections applied:")
+        for corr in corrections:
+            logger.warning(f"  - {corr}")
 
     # Merge Metadata (Date is not handled by LLM)
     merged_data = {

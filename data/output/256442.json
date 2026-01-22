@@ -1,0 +1,78 @@
+{
+  "phi_id": 256442,
+  "themes": [
+    {
+      "label": "Official Letters",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Official Letters",
+        "subcategory": null
+      },
+      "rationale": "The text is a formal letter from a Roman magistrate (Marcus Valerius), the tribunes, and the Senate to the council and people of Teos.",
+      "confidence": 1.0,
+      "quote": "μ ρκος ο αλ ριος μ ρκου στρατηγ ς κα δ μαρχοι κα σ νκλητος τη ων τ ι βουλ ι κα τ ι δ μωι χα ρειν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Marcus Valerius",
+        "role": "Praetor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Marcus%20Valerius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Menippus",
+        "role": "Envoy",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Menippus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Antiochus III",
+        "role": "King",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antiochus%20III",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Teos",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/550913",
+        "confidence": 1.0
+      },
+      {
+        "name": "Rome",
+        "type": "State",
+        "uri": "https://pleiades.stoa.org/places/423025",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "The Gods",
+        "uri": null,
+        "confidence": 0.9
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Teos",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/550913",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a significant diplomatic document from the early 2nd century BC. It contains a letter from the Roman Praetor Marcus Valerius and the Roman Senate to the city of Teos. The letter responds to an embassy led by Menippus, who was sent by King Antiochus III, and confirms the city's status as sacred, inviolable, and tax-exempt under Roman authority. It emphasizes Roman piety and their desire to maintain goodwill with the Greek city.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

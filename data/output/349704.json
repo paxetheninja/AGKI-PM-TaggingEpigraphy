@@ -1,0 +1,166 @@
+{
+  "phi_id": 349704,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text contains formal decree language, including the decision-making formula of the assembly and the people of Kos.",
+      "confidence": 1.0,
+      "quote": "[------ δοξε --------- κκλησ] αι πειδ [--------------] ... δεδ χθαι τ ι δ [μωι]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Treaties and Agreements",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Treaties and Agreements",
+        "subcategory": null
+      },
+      "rationale": "The inscription explicitly mentions an alliance (symmachia) and the recording of this alliance on a stone stele.",
+      "confidence": 1.0,
+      "quote": "[---------------- ναγρ ψαι --- τ ν συμμα]χ αν ε ς στ[ λην λιθ νην ---]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The decree honors the Thessalian people with a golden crown for their virtue and goodwill toward the people of Kos.",
+      "confidence": 1.0,
+      "quote": "[στεφαν σαι π ν τ θνος χρ]υσ ωι στεφ νωι ... ρετ ς νεκ[ε κα φιλοτιμ ας]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The text specifies that the document is to be inscribed on a stone stele.",
+      "confidence": 1.0,
+      "quote": "ε ς στ[ λην λιθ νην ---]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Other Stone",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Other Stone"
+      },
+      "rationale": "The inscription refers to a stone support (lithine) for the text.",
+      "confidence": 1.0,
+      "quote": "στ[ λην λιθ νην ---]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The inscription is highly broken with significant portions of the text missing and reconstructed.",
+      "confidence": 1.0,
+      "quote": "[-----------------------------------------]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Diogenes",
+        "role": "Ally",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Diogenes",
+        "confidence": 0.8
+      },
+      {
+        "name": "Aristomenes",
+        "role": "Individual",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristomenes",
+        "confidence": 0.8
+      },
+      {
+        "name": "Antiphilus",
+        "role": "Individual",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antiphilus",
+        "confidence": 0.8
+      },
+      {
+        "name": "Athenagoras",
+        "role": "Individual",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Athenagoras",
+        "confidence": 0.8
+      },
+      {
+        "name": "Parmenides",
+        "role": "Individual",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Parmenides",
+        "confidence": 0.5
+      }
+    ],
+    "places": [
+      {
+        "name": "Kos",
+        "type": "City-state",
+        "uri": "https://pleiades.stoa.org/places/736946",
+        "confidence": 1.0
+      },
+      {
+        "name": "Thessaly",
+        "type": "Region",
+        "uri": "https://pleiades.stoa.org/places/1332",
+        "confidence": 1.0
+      },
+      {
+        "name": "Alexandria",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/29457",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Tyche",
+        "uri": null,
+        "confidence": 0.9
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Kos",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/736946",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This is a fragmentary honorific decree from the island of Kos, dating to the early 3rd century BC. It records the gratitude of the Koan people toward the Thessalian League (the Koinon of the Thessalians) for their assistance during a period of grain shortage (sitodeia). The text mentions the dispatch of ambassadors, the existence of an alliance and kinship (syngeneia) between the two parties, and the granting of honors, including a golden crown worth 300 Alexandrian drachmas. It also touches upon the granting of citizenship rights and the public proclamation of these honors.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " ca. 294-288 BC ",
+  "date_min": -294.0,
+  "date_max": -288.0,
+  "date_circa": true
+}

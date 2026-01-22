@@ -1,0 +1,116 @@
+{
+  "phi_id": 3674,
+  "themes": [
+    {
+      "label": "Inventories",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Inventories",
+        "subcategory": null
+      },
+      "rationale": "The inscription is a detailed list of physical objects, including jewelry, seals, and architectural elements, held in a temple treasury.",
+      "confidence": 1.0,
+      "quote": "[----------------- τα τα] π ξυλα κατακεχρυ[σωμ να ----] ------------------νια δ ο χ[ρ]υσ α χον π ρ[γυρα ------]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The text records the official handover (paradosis) of items between different boards of treasurers (tamiai) under specific archons.",
+      "confidence": 1.0,
+      "quote": "τα ε σιν παρ το ς ταμ αις ν τ ι παρα[δ σει] [π] το πρ του λου τ ς δεξι ς θ ρας",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Votive Dedications",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Votive Dedications",
+        "subcategory": null
+      },
+      "rationale": "The items listed, such as rings, shields, and statues of deities, are sacred offerings dedicated to the goddess Athena.",
+      "confidence": 1.0,
+      "quote": "τ ς θην ς σαρ[δ α ----------------------]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Theophrastus",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theophrastus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Philocles",
+        "role": "Treasurer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philocles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lysimachides",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lysimachides",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Athens",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hekatompedon",
+        "type": "Temple building",
+        "uri": "https://pleiades.stoa.org/places/481859",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Athena",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Dionysus",
+        "uri": "https://www.wikidata.org/wiki/Q41680",
+        "confidence": 1.0
+      },
+      {
+        "name": "Apollo",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579885",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a fragment of an Athenian treasure inventory from 340/39 BC. It documents the transfer of sacred property from the outgoing treasurers of Athena to the incoming board. The text describes various luxury items, including gilded wood, silver and gold rings, seals, and shields, and mentions specific locations within the Hekatompedon (part of the Parthenon) where these items were kept. It also references small statues or representations of Dionysus and Apollo.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

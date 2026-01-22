@@ -167,12 +167,19 @@ def validate_taxonomy_compliance(
     return len(errors) == 0, errors
 
 
-def correct_hallucinated_subcategories(
+def enforce_taxonomy_compliance(
     tagged_data: dict,
     taxonomy: dict
 ) -> Tuple[dict, List[str]]:
     """
-    Automatically corrects hallucinated subcategories by setting them to null.
+    Strictly enforces taxonomy compliance by pruning invalid levels or removing invalid themes.
+    
+    Logic:
+    1. Check if full path (domain, subdomain, category, subcategory) is valid.
+    2. If not, try pruning 'subcategory'.
+    3. If still not valid, try pruning 'category'.
+    4. If still not valid, try pruning 'subdomain'.
+    5. If still not valid, REMOVE the theme entirely.
 
     Args:
         tagged_data: The full tagged inscription dict
@@ -183,6 +190,7 @@ def correct_hallucinated_subcategories(
     """
     _, valid_tuples = flatten_taxonomy(taxonomy)
     corrections = []
+    valid_themes = []
 
     themes = tagged_data.get("themes", [])
 
@@ -190,23 +198,54 @@ def correct_hallucinated_subcategories(
         hierarchy = theme.get("hierarchy", {})
         label = theme.get("label", "Unknown")
 
-        domain = hierarchy.get("domain")
-        subdomain = hierarchy.get("subdomain")
-        category = hierarchy.get("category")
-        subcategory = hierarchy.get("subcategory")
+        # Extract current path
+        d = hierarchy.get("domain")
+        sd = hierarchy.get("subdomain")
+        c = hierarchy.get("category")
+        sc = hierarchy.get("subcategory")
+        
+        # Normalize to None if empty string or None
+        d = d if d else None
+        sd = sd if sd else None
+        c = c if c else None
+        sc = sc if sc else None
 
-        if subcategory:
-            # Check if base path (without subcategory) is valid but with subcategory is not
-            base_tuple = (domain, subdomain, category, None)
-            full_tuple = (domain, subdomain, category, subcategory)
+        # 1. Check exact match
+        if (d, sd, c, sc) in valid_tuples:
+            valid_themes.append(theme)
+            continue
 
-            if base_tuple in valid_tuples and full_tuple not in valid_tuples:
-                # Hallucinated subcategory - correct it
-                corrections.append(
-                    f"Theme '{label}': Removed hallucinated subcategory '{subcategory}'"
-                )
-                hierarchy["subcategory"] = None
+        # 2. Try pruning subcategory
+        if (d, sd, c, None) in valid_tuples:
+            corrections.append(f"Theme '{label}': Pruned invalid subcategory '{sc}' -> kept category '{c}'")
+            hierarchy["subcategory"] = None
+            theme["hierarchy"] = hierarchy
+            valid_themes.append(theme)
+            continue
 
+        # 3. Try pruning category
+        if (d, sd, None, None) in valid_tuples:
+            corrections.append(f"Theme '{label}': Pruned invalid category '{c}' -> kept subdomain '{sd}'")
+            hierarchy["subcategory"] = None
+            hierarchy["category"] = None
+            theme["hierarchy"] = hierarchy
+            valid_themes.append(theme)
+            continue
+            
+        # 4. Try pruning subdomain
+        if (d, None, None, None) in valid_tuples:
+            corrections.append(f"Theme '{label}': Pruned invalid subdomain '{sd}' -> kept domain '{d}'")
+            hierarchy["subcategory"] = None
+            hierarchy["category"] = None
+            hierarchy["subdomain"] = None
+            theme["hierarchy"] = hierarchy
+            valid_themes.append(theme)
+            continue
+
+        # 5. Drop theme if nothing fits
+        corrections.append(f"Theme '{label}': REMOVED entire theme. Path {d}>{sd}>{c}>{sc} is invalid.")
+    
+    tagged_data["themes"] = valid_themes
     return tagged_data, corrections
 
 

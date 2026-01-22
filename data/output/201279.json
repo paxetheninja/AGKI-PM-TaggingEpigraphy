@@ -42,20 +42,6 @@
       "quote": "ς τ θευδα σια κα ο[----- ο δ εραπ τνιοι]ς ρκ [δ]ας ς τ σκλαπι[ε α",
       "is_ambiguous": false,
       "ambiguity_note": null
-    },
-    {
-      "label": "Magistrates and Offices",
-      "hierarchy": {
-        "domain": "Content",
-        "subdomain": "Administrative Records and Lists",
-        "category": "Magistrates and Offices",
-        "subcategory": null
-      },
-      "rationale": "The text mentions the 'kosmoi', the chief magistrates of Cretan cities, and their administrative duties regarding the treaty.",
-      "confidence": 1.0,
-      "quote": "παραγγελ ντων δ κα ο κ σμοι ξ]κατ ρας τ ς π λιος",
-      "is_ambiguous": false,
-      "ambiguity_note": null
     }
   ],
   "entities": {

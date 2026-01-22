@@ -30,20 +30,6 @@
       "ambiguity_note": ""
     },
     {
-      "label": "Fines and Penalties",
-      "hierarchy": {
-        "domain": "Content",
-        "subdomain": "Official and Legal Documents",
-        "category": "Fines and Penalties",
-        "subcategory": null
-      },
-      "rationale": "The decree specifies a financial penalty of 100 drachmas to be paid to the god Apollo for any violation of the established rules.",
-      "confidence": 1.0,
-      "quote": "ὀφειλόντω ἐπιτίμιον ἱερὸν Ἀπόλλωνος δραχμὰς ἑκατόν",
-      "is_ambiguous": false,
-      "ambiguity_note": ""
-    },
-    {
       "label": "Wall or Building Surface",
       "hierarchy": {
         "domain": "Type",

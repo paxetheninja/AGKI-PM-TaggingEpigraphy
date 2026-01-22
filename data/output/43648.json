@@ -1,0 +1,142 @@
+{
+  "phi_id": 43648,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text is a formal public decree issued by the city of Amphissa, utilizing standard legislative formulas such as 'dedochthai toi damoi' (it was resolved by the people) to enact honors.",
+      "confidence": 1.0,
+      "quote": "δεδ χθαι τ δ μ παιν σαι τε α τ ν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription honors a physician named Menophantus for his professional services and virtuous conduct, granting him the titles of proxenos and benefactor of the city.",
+      "confidence": 1.0,
+      "quote": "προξ νοις κ[α ε εργ ταις] [τ]ς π[ λιο]ς π ρ[χ]ει",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The text names several specific officials, including archons and boularchs, to date the decree and identify the responsible magistrates and guarantors.",
+      "confidence": 0.9,
+      "quote": "βουλαρχ οντος λυσιπ νου το[ ------- γγυοι] τ ς προξεν ας λυσ πονος κα χαρ ξενο[ς]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Menophantus",
+        "role": "Physician and honorand",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Menophantus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Artemidorus",
+        "role": "Father of Menophantus",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Artemidorus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lysippus",
+        "role": "Boularch (magistrate)",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lysippus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lysiponus",
+        "role": "Guarantor of the proxeny",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lysiponus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Charoxenus",
+        "role": "Guarantor of the proxeny",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Charoxenus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Antigenes",
+        "role": "Boularch (magistrate)",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antigenes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Bion",
+        "role": "Father of Antigenes",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Bion",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Amphissa",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/540630",
+        "confidence": 1.0
+      },
+      {
+        "name": "Scarpheia",
+        "type": "City",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Hyrcania",
+        "type": "Region/City",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Opus",
+        "type": "City",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Tyche",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Amphissa",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/540630",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a detailed honorific decree from the city of Amphissa for a foreign physician, Menophantus of Hyrcania. It describes his medical skill (philotechnos), his dedication to saving those in danger, and his orderly conduct (eutakton kai sophrona) during his stay. The decree grants him proxeny, isopolity, the right to own property, and security in both war and peace. It also mentions the dispatch of copies of the decree to Scarpheia and Opus to ensure the honors are recognized elsewhere.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 200-150 BC",
+  "date_min": -200.0,
+  "date_max": -150.0,
+  "date_circa": false
+}

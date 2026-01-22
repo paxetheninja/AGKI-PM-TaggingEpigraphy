@@ -56,20 +56,6 @@
       "quote": "παιν μεν δ[ι] [τι κα]λ ς κα νδ ξως κα καταξ ως τ [ ι] θε [ ι] προεστ καντι",
       "is_ambiguous": false,
       "ambiguity_note": null
-    },
-    {
-      "label": "Kinship",
-      "hierarchy": {
-        "domain": "Content",
-        "subdomain": "Diplomatic Relations",
-        "category": "Kinship",
-        "subcategory": null
-      },
-      "rationale": "The text emphasizes the ancestral kinship (syngeneia) between Cydonia and Teos as a justification for the diplomatic honors and recognition.",
-      "confidence": 1.0,
-      "quote": "πειδ [τ]οι φ λοι κα συγγενε ς π ρχοντες δι προγ νων",
-      "is_ambiguous": false,
-      "ambiguity_note": null
     }
   ],
   "entities": {

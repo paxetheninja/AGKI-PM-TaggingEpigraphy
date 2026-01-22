@@ -1,0 +1,132 @@
+{
+  "phi_id": 280140,
+  "themes": [
+    {
+      "label": "Oracular and Prophetic Texts",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Oracular and Prophetic Texts",
+        "subcategory": null
+      },
+      "rationale": "The inscription is a dice oracle (astragalomanteia) providing prophetic responses and divine signs based on the results of throwing knuckle-bones.",
+      "confidence": 1.0,
+      "quote": "χρησμ[ο σι]ν τ τυμα θ σφα[τα φα νοις]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Catalogues of Knowledge",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Didactic and School Texts",
+        "category": "Catalogues of Knowledge",
+        "subcategory": null
+      },
+      "rationale": "The text systematically lists various combinations of dice throws and their corresponding interpretations, serving as a reference catalogue for divination.",
+      "confidence": 0.8,
+      "quote": "χε ων στραγ λω[ν] μοθυμαδ ν υδ πεσ ντων",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Other Stone",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Other Stone"
+      },
+      "rationale": "The inscription is carved on stone, likely the local limestone characteristic of the Termessos region.",
+      "confidence": 1.0,
+      "quote": "μουσο[π λ θ]ε ς ρμ ς π [λλωνος ποφ τ]ης",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The text contains numerous lacunae and missing characters, as indicated by the brackets in the transcription.",
+      "confidence": 1.0,
+      "quote": "μουσο[π λ θ]ε ς ρμ ς π [λλωνος ποφ τ]ης",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Damaged but Legible",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Legibility",
+        "category": "Damaged but Legible",
+        "subcategory": null
+      },
+      "rationale": "Despite the physical damage and missing sections, the oracular formulas and the names of the deities remain legible and understandable.",
+      "confidence": 1.0,
+      "quote": "ζ να μ γαν βασιλ α σ βου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [],
+    "places": [
+      {
+        "name": "Termessos",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/639139",
+        "confidence": 0.8
+      },
+      {
+        "name": "Pisidia",
+        "type": "Region",
+        "uri": "https://pleiades.stoa.org/places/639060",
+        "confidence": 0.8
+      }
+    ],
+    "deities": [
+      {
+        "name": "Apollo",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Hermes",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Zeus",
+        "uri": "https://www.wikidata.org/wiki/Q34201",
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Termessos",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/639139",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Pisidia",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/639060",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a classic example of an astragalos oracle (astragalomanteia) from Termessos in Pisidia. It consists of a series of verses that interpret the numerical outcomes of throwing dice (astragaloi). The text invokes Apollo and Hermes as patrons of the oracle and provides specific advice on matters such as commerce, travel, health, and general success. It specifically mentions the 'Chian' throw and other numerical combinations, concluding with an exhortation to revere Zeus the Great King.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

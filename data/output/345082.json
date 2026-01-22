@@ -1,0 +1,165 @@
+{
+  "phi_id": 345082,
+  "themes": [
+    {
+      "label": "Decree",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text follows the standard formula for a public decree, beginning with the decision of the council and the people.",
+      "confidence": 1.0,
+      "quote": "ἔδοξε τῆι βουλῆι καὶ τῶι δήμωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscription",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription honors the city of Kaunos and the judges for their virtue, justice, and goodwill.",
+      "confidence": 1.0,
+      "quote": "στεφανῶσαι αὐτὸν χρυσῶι στεφάνωι ... ἀρετῆς ἕνεκεν καὶ δικαιοσύνης",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "List of Officials",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The text lists the specific names and patronymics of the judges and the secretary appointed for the mission.",
+      "confidence": 1.0,
+      "quote": "δικαστὰς Ἀντιγένην Ἀπολλωνίου Αἰνέαν Ἀρτεμιδώρου Τιμοῦχον Εὐέρχου τὸν γραμματέα Πυθίωνα Δημητρίου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Agonistic Context",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Agonistic / Victory Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The decree specifies that the honors are to be proclaimed during the Dionysia festival, specifically during the tragic competitions.",
+      "confidence": 0.8,
+      "quote": "ἐν τοῖς πρώτοις συντελεσθησομένοις Διονυσίοις τραγωιδῶν τῶι ἀγῶνι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The text explicitly orders the decree to be inscribed on a stele of white stone.",
+      "confidence": 1.0,
+      "quote": "ἀνατεθήσεται στήλη λευκοῦ λίθου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "The mention of 'white stone' (leukos lithos) in this region and period typically refers to marble.",
+      "confidence": 0.9,
+      "quote": "στήλη λευκοῦ λίθου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Antigenes son of Apollonios",
+        "role": "Judge",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antigenes%20son%20of%20Apollonios",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aineas son of Artemidoros",
+        "role": "Judge",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aineas%20son%20of%20Artemidoros",
+        "confidence": 1.0
+      },
+      {
+        "name": "Timouchos son of Euerchos",
+        "role": "Judge",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Timouchos%20son%20of%20Euerchos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pythion son of Demetrios",
+        "role": "Secretary",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pythion%20son%20of%20Demetrios",
+        "confidence": 1.0
+      },
+      {
+        "name": "Athenodoros son of Menekrates",
+        "role": "Proposer and Ambassador",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Athenodoros%20son%20of%20Menekrates",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Smyrna",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/550893",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kaunos",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/638796",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Dionysus",
+        "uri": "https://www.wikidata.org/wiki/Q41680",
+        "confidence": 1.0
+      },
+      {
+        "name": "Tyche",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Kaunos",
+      "type": "Findspot",
+      "uri": "https://pleiades.stoa.org/places/638796",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This is a significant honorific decree from the 2nd century BC, documenting the practice of 'foreign judges' (xenodikai). The city of Smyrna honors the city of Kaunos and the specific judges sent to resolve local disputes. It provides detailed information on the diplomatic relations between the two cities, the legal procedures involved in inter-city arbitration, and the specific honors (gold crowns, front-row seating at games, and citizenship rights) granted to the participants. The text mentions the Dionysia festival as the venue for public recognition.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 2nd c. BC ",
+  "date_min": -200.0,
+  "date_max": -101.0,
+  "date_circa": false
+}

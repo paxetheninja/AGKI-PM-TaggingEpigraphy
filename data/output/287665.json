@@ -1,0 +1,153 @@
+{
+  "phi_id": 287665,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text uses the standard formula for a civic decree, indicating a decision made by the council and the people of Ilion.",
+      "confidence": 1.0,
+      "quote": "δεδόχθαι τῇ βουλῇ καὶ τῷ δήμῳ",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription honors King Antiochus for his virtue, bravery, and his role as a benefactor and savior of the city.",
+      "confidence": 1.0,
+      "quote": "ἐπαινέσαι μὲν αὐτὸν ἐπί τε τῇ ἀρετῇ καὶ τῇ ἀνδραγαθίᾳ... εὐεργέτην καὶ σωτῆρα γεγονότα τοῦ δήμου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Prayers and Invocations",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Prayers and Invocations",
+        "subcategory": null
+      },
+      "rationale": "The decree mandates that the priests and officials offer prayers and vows to Athena Ilias and other gods for the well-being of the king and his family.",
+      "confidence": 1.0,
+      "quote": "εὔξασθαι τῇ Ἀθηνᾷ τῇ Ἰλιάδι μετὰ τῶν πρεσβευτῶν... εὔξασθαι δὲ καὶ τοὺς ἄλλους ἱερεῖς καὶ ἱερείας",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The provided text contains numerous brackets and missing characters, indicating the inscription is not fully preserved.",
+      "confidence": 1.0,
+      "quote": "δεδόχθαι τῇ β[ου]λῇ καὶ τῷ δήμῳ... [ὅπως δὲ τ]ὰ εἰς τὴν τιμὴν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Antiochus",
+        "role": "King",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antiochus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Seleucus",
+        "role": "King, father of Antiochus",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Seleucus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Nymphous",
+        "role": "Official (epimenios)",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nymphous",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dionysius",
+        "role": "Official (epistates)",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dionysius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Demetrius",
+        "role": "Proposer of the decree",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demetrius",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Ilion",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/530898",
+        "confidence": 1.0
+      },
+      {
+        "name": "Taurus",
+        "type": "Mountain range",
+        "uri": "https://pleiades.stoa.org/places/148211",
+        "confidence": 1.0
+      },
+      {
+        "name": "Seleucis",
+        "type": "Region",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Athena Ilias",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Apollo",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Nike",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Dike",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Ilion",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/530898",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This is a significant Hellenistic decree from the city of Ilion (Troy) honoring King Antiochus (likely Antiochus I Soter). The text details the king's efforts to restore peace and order to the cities of Seleucis after a period of difficulty. In recognition of his military success and piety, the city decrees various honors, including public prayers, sacrifices to Athena Ilias and Apollo (the ancestor of the Seleucid dynasty), and the erection of a golden equestrian statue in the sanctuary of Athena. The decree also mentions the king's sister/queen and his children, emphasizing the dynastic nature of the honors.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

@@ -1,0 +1,231 @@
+{
+  "phi_id": 346669,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text is a formal decree of the Athenian Council and People, indicated by the standard opening formula.",
+      "confidence": 1.0,
+      "quote": "δοξεν τε βουλε κα τ ι δ μωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription honors the superintendents of the Mysteries for their pious service and crowns them with myrtle wreaths.",
+      "confidence": 1.0,
+      "quote": "παιν σαι το ς πιμελητ ς τ ν μυστηρ ων ... κα στεφαν σαι κ τερον α τ ν μυρρ νης στεφ νωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The text mentions that the officials submitted their accounts to the auditors and the Metroon archive and underwent their audits in court.",
+      "confidence": 1.0,
+      "quote": "το ς τε λ γους πενην χασιν πρ ς το ς λογιστ ς κα ε ς τ μητρ ιον κα τ ς ε θ νας δεδ κασιν ν τ ι δικαστηρ ωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The decree specifies that it should be inscribed on stone stelae.",
+      "confidence": 1.0,
+      "quote": "ναγρ ψαι δ τ δε τ ψ φισμα ... ν στ λαις λιθ ναις",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "Athenian decrees of this period were typically inscribed on marble stelae, referred to here as stone stelae.",
+      "confidence": 0.8,
+      "quote": "ν στ λαις λιθ ναις",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The inscription contains several lacunae and restored sections, such as the names of the officials, indicating it is not fully intact.",
+      "confidence": 1.0,
+      "quote": "θρασυκλ ν [--------] α ρ δην",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Diocles",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Diocles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristophanes",
+        "role": "Secretary",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristophanes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Stratocles",
+        "role": "Father of Aristophanes",
+        "uri": "https://www.wikidata.org/wiki/Q16062078",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phanocles",
+        "role": "Presiding officer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Phanocles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hippomachus",
+        "role": "Father of Phanocles",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hippomachus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Democrates",
+        "role": "Proposer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Democrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Thrasycles",
+        "role": "Superintendent of the Mysteries",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Thrasycles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Nicetes",
+        "role": "Superintendent of the Mysteries",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nicetes",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Eleusis",
+        "type": "Sanctuary and Deme",
+        "uri": "https://pleiades.stoa.org/places/579920",
+        "confidence": 1.0
+      },
+      {
+        "name": "Keiriadai",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579970",
+        "confidence": 1.0
+      },
+      {
+        "name": "Angele",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579867",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sunium",
+        "type": "Deme",
+        "uri": "https://www.wikidata.org/wiki/Q1136637",
+        "confidence": 1.0
+      },
+      {
+        "name": "Agrae",
+        "type": "Location of Lesser Mysteries",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Ergasia",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 0.5
+      },
+      {
+        "name": "Metroon",
+        "type": "Archive building",
+        "uri": "https://pleiades.stoa.org/places/845017",
+        "confidence": 1.0
+      },
+      {
+        "name": "Athens",
+        "type": "City-state",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Demeter",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Kore",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Iacchus",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Eleusis",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579920",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Attica",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579888",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This is an Athenian honorific decree from 214/3 BC, during the archonship of Diocles. It honors the superintendents of the Mysteries for their successful management of the religious festivals at Eleusis and Agrae. The text details their performance of sacrifices to Demeter, Kore, and Iacchus, their provision of equipment at their own expense, and their administrative diligence in submitting financial accounts to the state auditors and the Metroon archive.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 214/3 BC ",
+  "date_min": -214.0,
+  "date_max": -213.0,
+  "date_circa": false
+}

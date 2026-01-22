@@ -30,20 +30,6 @@
       "ambiguity_note": null
     },
     {
-      "label": "Sacrifices",
-      "hierarchy": {
-        "domain": "Content",
-        "subdomain": "Religious and Dedicatory Texts",
-        "category": "Sacrifices",
-        "subcategory": null
-      },
-      "rationale": "The text records the report of the prytaneis regarding sacrifices performed to Apollo Prostaterios and Artemis Boulaia according to ancestral custom.",
-      "confidence": 1.0,
-      "quote": "π ρ τ ν θυσι ν ν θυον τ τ[ε πρ τ ν κκλησι ν τ ι π λλω]νι τ ι προστατηρ [ωι] κα τε ρτ μ[ιδι τε βουλα αι κα το ς λ]λοις θεο ς [ο ς] π τριον",
-      "is_ambiguous": false,
-      "ambiguity_note": null
-    },
-    {
       "label": "Stele",
       "hierarchy": {
         "domain": "Type",
@@ -54,20 +40,6 @@
       "rationale": "The decree specifies that it should be inscribed on a stone stele.",
       "confidence": 1.0,
       "quote": "γραμ[μ]ατ α ... ν στ ληι λιθ νηι",
-      "is_ambiguous": false,
-      "ambiguity_note": null
-    },
-    {
-      "label": "Stone",
-      "hierarchy": {
-        "domain": "Type",
-        "subdomain": "Material",
-        "category": "Stone",
-        "subcategory": null
-      },
-      "rationale": "The text explicitly mentions a 'lithine' (stone) stele for the inscription.",
-      "confidence": 1.0,
-      "quote": "ν στ ληι λιθ νηι",
       "is_ambiguous": false,
       "ambiguity_note": null
     },

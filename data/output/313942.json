@@ -1,0 +1,222 @@
+{
+  "phi_id": 313942,
+  "themes": [
+    {
+      "label": "Oracular and Prophetic Texts",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Oracular and Prophetic Texts",
+        "subcategory": null
+      },
+      "rationale": "The inscription is a dice oracle (astragalomanteia), providing prophetic responses based on the results of dice throws, each associated with a specific deity.",
+      "confidence": 1.0,
+      "quote": "μαντείαν ἀγαθήν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "Public dice oracles of this type in Pamphylia and Pisidia were typically inscribed on large stone stelae for public consultation.",
+      "confidence": 0.8,
+      "quote": "[--- κατ' ἐπι]ταγήν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stone",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Other Stone"
+      },
+      "rationale": "The inscription is carved on a stone monument found in Perge.",
+      "confidence": 0.8,
+      "quote": "[--- κατ' ἐπι]ταγήν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The text contains numerous lacunae and reconstructed sections, particularly at the beginning and end of lines.",
+      "confidence": 1.0,
+      "quote": "[--- κατ' ἐπι]ταγήν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [],
+    "places": [
+      {
+        "name": "Perge",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/639048",
+        "confidence": 0.9
+      }
+    ],
+    "deities": [
+      {
+        "name": "Athena Phosphoros",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Zeus Soterios",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Zeus Ktesios",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Zeus Keraunios",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Zeus Katachthonios",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Demeter",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Asclepius",
+        "uri": "https://www.wikidata.org/wiki/Q83223",
+        "confidence": 1.0
+      },
+      {
+        "name": "Apollo Delphikos",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Isis Sotira",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Hermes Soter",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Hermes Kerdenporos",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Serapis",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Nemesis",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Adrasteia",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Tyche",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Cronus",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Aphrodite",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Dioscuri",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Hephaestus",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Mother of the Gods",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Nike",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Helios",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Fates",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Daimon Megistos",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Daimon Ikesios",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Pamphylia",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/639034",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Perge",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/639048",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a significant example of an astragalomanteia, or dice oracle, from Perge in Pamphylia, dating to the late Antonine or Severan period. It lists various combinations of dice throws (using astragaloi or knucklebones), each linked to a specific deity and a poetic prophecy. These oracles were common in Roman Asia Minor, serving as a form of public divination where individuals could cast dice and read the corresponding divine advice regarding travel, business, health, or marriage. The text mentions a wide pantheon of Greek and Egyptian deities, reflecting the religious syncretism of the era.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " late Antonine-Severan period ",
+  "date_min": 193.0,
+  "date_max": 235.0,
+  "date_circa": false
+}

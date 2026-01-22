@@ -1,0 +1,271 @@
+{
+  "phi_id": 347608,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text follows the standard Athenian decree formula, including the decision of the Council (Boule) and the People (Demos).",
+      "confidence": 1.0,
+      "quote": "ἔδοξεν τῇ βουλῇ καὶ τῷ δήμῳ",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription honors the ephebes and their cosmetes for their piety, discipline, and service to the state.",
+      "confidence": 1.0,
+      "quote": "ἐπαινέσαι τοὺς ἐφήβους τοὺς ἐπὶ Ἱππάκου ἄρχοντος καὶ στεφανῶσαι χρυσῷ στεφάνῳ εὐσεβείας ἕνεκεν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The inscription contains an extensive catalogue of the ephebes who served during the archonship of Hippakos, organized by their respective tribes.",
+      "confidence": 1.0,
+      "quote": "οἱ ἐφηβεύσαντες ἐπὶ Ἱππάκου ἄρχοντος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Agonistic / Victory Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Agonistic / Victory Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The text mentions the ephebes' participation in athletic contests, specifically torch races and running events in the gymnasia.",
+      "confidence": 1.0,
+      "quote": "ἔδραμον δὲ καὶ τὰς λαμπάδας καὶ τοὺς δρόμους τοὺς ἐν τοῖς γυμνασίοις",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The decree explicitly orders the text to be inscribed on a stone stele and set up in the Agora.",
+      "confidence": 1.0,
+      "quote": "ἀναγράψαι δὲ τόδε τὸ ψήφισμα τὸν γραμματέα τὸν κατὰ πρυτανείαν ἐν στήλῃ λιθίνῃ",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "Based on the archaeological context of the Athenian Agora and the mention of a stone stele, the material is marble.",
+      "confidence": 0.8,
+      "quote": "ἐν στήλῃ λιθίνῃ",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The text contains numerous lacunae and restored sections, indicating it is preserved in a fragmentary state.",
+      "confidence": 1.0,
+      "quote": "[τ]ὸν προέδρων ἐπε[ψήφι]ζεν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Hippakos",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hippakos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pisonikos",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pisonikos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aiantides",
+        "role": "Cosmetes",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aiantides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Xenetimos",
+        "role": "Proposer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Xenetimos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Harmodoros",
+        "role": "Paidotribes",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Harmodoros",
+        "confidence": 1.0
+      },
+      {
+        "name": "Persaios",
+        "role": "Hoplomachos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Persaios",
+        "confidence": 1.0
+      },
+      {
+        "name": "Nikomachos",
+        "role": "Akontistes",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nikomachos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Soson",
+        "role": "Toxotes",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Soson",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pedias",
+        "role": "Katapeltaphetes",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pedias",
+        "confidence": 1.0
+      },
+      {
+        "name": "Olympiodoros",
+        "role": "Secretary",
+        "uri": "https://www.wikidata.org/wiki/Q3351663",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristomenes",
+        "role": "Proedros",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristomenes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Charmostratos",
+        "role": "Proposer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Charmostratos",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Athens",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      },
+      {
+        "name": "Piraeus",
+        "type": "Port",
+        "uri": "https://pleiades.stoa.org/places/580062",
+        "confidence": 1.0
+      },
+      {
+        "name": "Marathon",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580021",
+        "confidence": 1.0
+      },
+      {
+        "name": "Salamis",
+        "type": "Island",
+        "uri": "https://pleiades.stoa.org/places/707617",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eleusis",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579920",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lyceum",
+        "type": "Gymnasium",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Amphiaraion",
+        "type": "Sanctuary",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Dionysus",
+        "uri": "https://www.wikidata.org/wiki/Q41680",
+        "confidence": 1.0
+      },
+      {
+        "name": "Ajax",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Asclepius",
+        "uri": "https://www.wikidata.org/wiki/Q83223",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hermes",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Amphiaraus",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Athena",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579885",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a complex honorific decree from the Athenian Agora, dating to the mid-2nd century BC. It details the activities of the ephebes (young men in military training) during the archonship of Hippakos. The text records their participation in religious sacrifices, processions, and military training, including the use of catapults. It also lists the names of the ephebes organized by their tribes and honors their supervisor, the cosmetes Aiantides, and various instructors. The document provides significant insight into the religious and civic life of Athenian youth during the Hellenistic period.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 175/4 BC ",
+  "date_min": -175.0,
+  "date_max": -174.0,
+  "date_circa": false
+}

@@ -1,0 +1,266 @@
+{
+  "phi_id": 252250,
+  "themes": [
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The inscription consists of an extensive list of individuals and their families, likely representing a register of new citizens or residents in Miletus.",
+      "confidence": 1.0,
+      "quote": "[ π στεφανηφ]ρου πρωταγ ρου το γελ χου μην ς ταυ [ρε νος -]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Registers and Catalogues",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Registers and Catalogues",
+        "subcategory": null
+      },
+      "rationale": "The text systematically records family units, including wives and children, often categorized by their city of origin (Cretan ethnics).",
+      "confidence": 1.0,
+      "quote": "[κλ]ε δαμος σωδ μου φα στιος. ε ξι-ο[ς 0] κ[ρ]ιδος δρ ριος γυν στασιλ--- β ργιος.",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The preamble mentions the prytaneis and the demos, indicating that the recording of these names was mandated by an official decree of the Milesian assembly.",
+      "confidence": 0.9,
+      "quote": "π τ ν π[ρυτ νεων] ... α ρεθ ντων π το δ μου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The length and administrative nature of the text are characteristic of a public stele erected in a civic space.",
+      "confidence": 0.8,
+      "quote": "ναγραφη",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "Administrative inscriptions of this scale in Miletus were typically carved on marble slabs or stelae.",
+      "confidence": 0.8,
+      "quote": "ναγραφη",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Protagoras",
+        "role": "Stephanephoros",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Protagoras",
+        "confidence": 1.0
+      },
+      {
+        "name": "Gelokhos",
+        "role": "Father of Protagoras",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Gelokhos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Damagetus",
+        "role": "Official",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Damagetus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Orthokles",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Orthokles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Ariston",
+        "role": "Father of Orthokles",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ariston",
+        "confidence": 1.0
+      },
+      {
+        "name": "Meka",
+        "role": "Wife",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Meka",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dexios",
+        "role": "Father of Meka",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dexios",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kleidamos",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kleidamos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sodemos",
+        "role": "Father of Kleidamos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sodemos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pelesimos",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pelesimos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Mesidas",
+        "role": "Father of Pelesimos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Mesidas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pyrgias",
+        "role": "Citizen",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pyrgias",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kallidikos",
+        "role": "Father of Pyrgias",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kallidikos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Artemis",
+        "role": "Wife",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Artemis",
+        "confidence": 1.0
+      },
+      {
+        "name": "Leon",
+        "role": "Father of Artemis",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Leon",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Miletus",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/599799",
+        "confidence": 1.0
+      },
+      {
+        "name": "Knossos",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/589872",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phaistos",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/589987",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dreros",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/589767",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lappa",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/589894",
+        "confidence": 1.0
+      },
+      {
+        "name": "Itanos",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/589824",
+        "confidence": 0.8
+      },
+      {
+        "name": "Priansos",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/590013",
+        "confidence": 1.0
+      },
+      {
+        "name": "Gortyn",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/589796",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lyttos",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/589918",
+        "confidence": 1.0
+      },
+      {
+        "name": "Axos",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/590095",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eleutherna",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/589772",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kasos",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/589845",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hierapytna",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/589807",
+        "confidence": 1.0
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Miletus",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/599799",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription from Miletus is a monumental register of individuals, primarily of Cretan origin, who were being integrated into the Milesian citizen body. The text is organized by family units and original city-states (ethnics), recorded under the eponymous magistrate Protagoras and the executive prytaneis. It reflects a significant administrative effort to document new residents or citizens following a formal decree.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

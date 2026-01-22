@@ -1,0 +1,373 @@
+{
+  "phi_id": 282170,
+  "themes": [
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The inscription consists of a long list of individuals, many identified by titles such as bouleutes (councilor), hiereus (priest), and brabeutes (official or judge), indicating a formal register of civic or religious officials. The abbreviation 'ar.' likely refers to 'Aurelius', a common nomen for citizens in this period.",
+      "confidence": 1.0,
+      "quote": "[ π] ναγραφ ως α [ρ.] [μην]οδ ρου λουκε ο[υ βουλευτο]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Registers and Catalogues",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Registers and Catalogues",
+        "subcategory": null
+      },
+      "rationale": "The text functions as a catalogue of names, patronymics, and ethnonyms, recording the membership of a specific association or board of officials in the region of Pisidian Antioch.",
+      "confidence": 1.0,
+      "quote": "π βραιβευτ ν αρ. λκ μου λκ μου παπα ηνο",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The format of the list and its length are characteristic of a monumental stone stele used for public display of official records.",
+      "confidence": 0.8,
+      "quote": "[--- πρ] κ[αλ] μα α[ς]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The inscription contains numerous lacunae and brackets, particularly at the beginning and end of lines, indicating it is not fully preserved.",
+      "confidence": 1.0,
+      "quote": "[---------]νβοκ[---]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Menodoros son of Loukeios",
+        "role": "Councilor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Menodoros%20son%20of%20Loukeios",
+        "confidence": 1.0
+      },
+      {
+        "name": "Antiochos",
+        "role": "Aurelius",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antiochos",
+        "confidence": 0.9
+      },
+      {
+        "name": "Protanakletos",
+        "role": "Official",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Protanakletos",
+        "confidence": 0.8
+      },
+      {
+        "name": "Zotikos son of Karpos",
+        "role": "Synadeis",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Zotikos%20son%20of%20Karpos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Karikos son of Menas",
+        "role": "Aurelius",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Karikos%20son%20of%20Menas",
+        "confidence": 0.9
+      },
+      {
+        "name": "Domnios son of Mentos",
+        "role": "Aurelius",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Domnios%20son%20of%20Mentos",
+        "confidence": 0.9
+      },
+      {
+        "name": "Sokrates son of Kouseanos",
+        "role": "Priest",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sokrates%20son%20of%20Kouseanos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Zotikos son of Kokotas",
+        "role": "Aurelius",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Zotikos%20son%20of%20Kokotas",
+        "confidence": 0.9
+      },
+      {
+        "name": "Alkimus son of Alkimus",
+        "role": "Judge",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Alkimus%20son%20of%20Alkimus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pappas son of Gaios",
+        "role": "Aurelius",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pappas%20son%20of%20Gaios",
+        "confidence": 0.9
+      },
+      {
+        "name": "Diokles son of Diokles",
+        "role": "Aurelius",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Diokles%20son%20of%20Diokles",
+        "confidence": 0.9
+      },
+      {
+        "name": "Attalos son of Karikos",
+        "role": "Aurelius",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Attalos%20son%20of%20Karikos",
+        "confidence": 0.9
+      },
+      {
+        "name": "Ariston son of Lykidas",
+        "role": "Aurelius",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ariston%20son%20of%20Lykidas",
+        "confidence": 0.9
+      },
+      {
+        "name": "Alexandros son of Alexandros",
+        "role": "Aurelius",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Alexandros%20son%20of%20Alexandros",
+        "confidence": 0.9
+      },
+      {
+        "name": "Dionysios son of Zotikos",
+        "role": "Aurelius",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dionysios%20son%20of%20Zotikos",
+        "confidence": 0.9
+      },
+      {
+        "name": "Poseidonios",
+        "role": "Aurelius",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Poseidonios",
+        "confidence": 0.9
+      },
+      {
+        "name": "Auxenon",
+        "role": "Aurelius",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Auxenon",
+        "confidence": 0.9
+      },
+      {
+        "name": "Baskantos son of Moschos",
+        "role": "Aurelius",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Baskantos%20son%20of%20Moschos",
+        "confidence": 0.9
+      },
+      {
+        "name": "Xenon son of Glykon",
+        "role": "Aurelius",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Xenon%20son%20of%20Glykon",
+        "confidence": 0.9
+      },
+      {
+        "name": "Gaios son of Gaeios",
+        "role": "Aurelius",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Gaios%20son%20of%20Gaeios",
+        "confidence": 0.9
+      },
+      {
+        "name": "Xenon son of Asklepiades",
+        "role": "Aurelius",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Xenon%20son%20of%20Asklepiades",
+        "confidence": 0.9
+      },
+      {
+        "name": "Pappas son of Mennas",
+        "role": "Aurelius",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pappas%20son%20of%20Mennas",
+        "confidence": 0.9
+      },
+      {
+        "name": "Isidoros son of Menandros",
+        "role": "Aurelius",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Isidoros%20son%20of%20Menandros",
+        "confidence": 0.9
+      },
+      {
+        "name": "Attalos son of Paphros",
+        "role": "Aurelius",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Attalos%20son%20of%20Paphros",
+        "confidence": 0.9
+      },
+      {
+        "name": "Menekrates son of Menophilos",
+        "role": "Aurelius",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Menekrates%20son%20of%20Menophilos",
+        "confidence": 0.9
+      }
+    ],
+    "places": [
+      {
+        "name": "Antioch",
+        "type": "City",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Synada",
+        "type": "City",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Metropolis",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/550741",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hermokome",
+        "type": "Village",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Karmene",
+        "type": "Village",
+        "uri": null,
+        "confidence": 0.9
+      },
+      {
+        "name": "Souakome",
+        "type": "Village",
+        "uri": null,
+        "confidence": 0.9
+      },
+      {
+        "name": "Papa",
+        "type": "Village",
+        "uri": "https://pleiades.stoa.org/places/736992",
+        "confidence": 0.9
+      },
+      {
+        "name": "Lapistra",
+        "type": "Village",
+        "uri": null,
+        "confidence": 0.9
+      },
+      {
+        "name": "Kelela",
+        "type": "Village",
+        "uri": null,
+        "confidence": 0.9
+      },
+      {
+        "name": "Malos",
+        "type": "Village",
+        "uri": "https://pleiades.stoa.org/places/845009",
+        "confidence": 0.9
+      },
+      {
+        "name": "Saka",
+        "type": "Village",
+        "uri": null,
+        "confidence": 0.9
+      },
+      {
+        "name": "Iatora",
+        "type": "Village",
+        "uri": null,
+        "confidence": 0.9
+      },
+      {
+        "name": "Tettha",
+        "type": "Village",
+        "uri": null,
+        "confidence": 0.9
+      },
+      {
+        "name": "Kinnanabora",
+        "type": "Village",
+        "uri": null,
+        "confidence": 0.9
+      },
+      {
+        "name": "Neideia",
+        "type": "Village",
+        "uri": null,
+        "confidence": 0.9
+      },
+      {
+        "name": "Mouza",
+        "type": "Village",
+        "uri": "https://www.wikidata.org/wiki/Q116843723",
+        "confidence": 0.9
+      },
+      {
+        "name": "Pierokia",
+        "type": "Village",
+        "uri": null,
+        "confidence": 0.9
+      },
+      {
+        "name": "Tyita",
+        "type": "Village",
+        "uri": null,
+        "confidence": 0.9
+      },
+      {
+        "name": "Karsenda",
+        "type": "Village",
+        "uri": "https://www.wikidata.org/wiki/Q136471941",
+        "confidence": 0.9
+      },
+      {
+        "name": "Nazoula",
+        "type": "Village",
+        "uri": null,
+        "confidence": 0.9
+      },
+      {
+        "name": "Kamarga",
+        "type": "Village",
+        "uri": "https://www.wikidata.org/wiki/Q24908043",
+        "confidence": 0.9
+      },
+      {
+        "name": "Sourbia",
+        "type": "Village",
+        "uri": null,
+        "confidence": 0.9
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Antioch",
+      "type": "City",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Pisidia",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/639060",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This 3rd-century AD inscription from Pisidian Antioch contains a formal list of individuals, likely members of a civic or religious board. The abbreviation 'ar.' (αὐρ.) refers to 'Aurelius', indicating the text dates after the Constitutio Antoniniana of 212 AD. The list includes specific titles such as 'bouleutes' (councilor), 'hiereus' (priest), and 'brabeutai' (judges/officials). The individuals are identified by their names, patronymics, and ethnonyms, representing a wide network of villages and cities in the region of Pisidia and Phrygia.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 3rd c. AD ",
+  "date_min": 201.0,
+  "date_max": 300.0,
+  "date_circa": false
+}

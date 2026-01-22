@@ -1,0 +1,251 @@
+{
+  "phi_id": 2555,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text is a formal Athenian decree, indicated by the standard formula 'edoxen toi demoi' (it seemed good to the people).",
+      "confidence": 1.0,
+      "quote": "δοξεν τ ι δ μωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription honors Pytheas for his service, awarding him a golden crown for his virtue and justice.",
+      "confidence": 1.0,
+      "quote": "παιν σαι πυθ αν... στεφαν σαι α τ ν χρυσ ι στεφ νωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Building Commemoration",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Building Commemoration",
+        "subcategory": null
+      },
+      "rationale": "The decree specifically commemorates the construction and repair of fountains at the sanctuary of Ammon and the Amphiaraion.",
+      "confidence": 1.0,
+      "quote": "πρ ς τ ι το μμωνος ερ ι κρ νηγ καιν ν ξωικοδ μηκεν κα τ ν ν μφιαρ ου κρ νην κατεσκε ακεν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The text lists several Athenian officials, including the archon, the secretary, the proedros, and the proposer of the decree.",
+      "confidence": 1.0,
+      "quote": "νικοκρ τους ρχοντος... ι ρχ λας χαιρ ου παλληνε ς γραμμ τυεν... νικ ας θημακειε ς... χαιριων δης λυσαν ου φλυε ς ε πεν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The decree includes financial instructions for the payment of the stelae by the treasurer of the people.",
+      "confidence": 1.0,
+      "quote": "δ τω ταμ ας το δ μου 0 δραχμ ς κατ ρας τ ς στ λης",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Calendars and Timetables",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Calendars and Timetables",
+        "subcategory": null
+      },
+      "rationale": "The inscription records the specific date of the decree within the Athenian calendar, mentioning the month Metageitnion and the day of the prytany.",
+      "confidence": 1.0,
+      "quote": "μεταγειτνι νος ν τηι σταμ νου ν τηι κα τριακοστ ι τ ς πρυτανε ας",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The text explicitly orders the decree to be inscribed on two stone stelae.",
+      "confidence": 1.0,
+      "quote": "ναγρ ψαι δ τ δε τ ψ φισμα... ε ς στ λας λιθ νας δ ο",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "Athenian decrees of this period were typically inscribed on marble stelae, though the text only specifies 'stone'.",
+      "confidence": 0.8,
+      "quote": "στ λας λιθ νας",
+      "is_ambiguous": true,
+      "ambiguity_note": "The text uses the general term for stone (lithinas) rather than specifically marble."
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The inscription contains several lacunae and reconstructed sections, particularly at the beginning and end.",
+      "confidence": 1.0,
+      "quote": "[ δοξεν τ ι βουλ ι γ]δ ηι κα τριακοστ ι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Damaged but Legible",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Legibility",
+        "category": "Damaged but Legible",
+        "subcategory": null
+      },
+      "rationale": "While there are missing parts, the majority of the decree's content regarding the honors and the work on the fountains is legible.",
+      "confidence": 1.0,
+      "quote": "πιμελε ται καλ ς κα φιλοτ μως",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Nikokrates",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nikokrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Archilas son of Chaireas of Pallene",
+        "role": "Secretary",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Archilas%20son%20of%20Chaireas%20of%20Pallene",
+        "confidence": 1.0
+      },
+      {
+        "name": "Nikias of Themake",
+        "role": "Proedros",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nikias%20of%20Themake",
+        "confidence": 1.0
+      },
+      {
+        "name": "Chairionides son of Lysanias of Phlya",
+        "role": "Proposer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Chairionides%20son%20of%20Lysanias%20of%20Phlya",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pytheas son of Sosidemos of Alopeke",
+        "role": "Superintendent of Fountains",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pytheas%20son%20of%20Sosidemos%20of%20Alopeke",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sosidemos",
+        "role": "Father of Pytheas",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sosidemos",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Pallene",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580051",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phlya",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580076",
+        "confidence": 1.0
+      },
+      {
+        "name": "Themake",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Alopeke",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579858",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sanctuary of Ammon",
+        "type": "Sanctuary",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Amphiaraion",
+        "type": "Sanctuary",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Ammon",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Amphiaraos",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Attica",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579888",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This is an Athenian decree from 333/2 BC honoring Pytheas of Alopeke for his diligent work as the superintendent of fountains. He is specifically praised for constructing a new fountain at the sanctuary of Ammon and repairing the fountain at the Amphiaraion. The decree provides details on the Athenian administrative process, including the names of the archon, secretary, and proposer, and specifies the cost and placement of the commemorative stelae.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

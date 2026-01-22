@@ -56,20 +56,6 @@
       "quote": "παιν σαι τ ν βασιλ α σ λευκον π τε το[ τοις] κα τ ι ε σεβε αι",
       "is_ambiguous": false,
       "ambiguity_note": null
-    },
-    {
-      "label": "Asylia and Inviolability",
-      "hierarchy": {
-        "domain": "Content",
-        "subdomain": "Official and Legal Documents",
-        "category": "Grants of Privileges",
-        "subcategory": "Asylia"
-      },
-      "rationale": "The central purpose of the decree is the recognition of the sanctuary of Aphrodite Stratonikis and the city of Smyrna as sacred and inviolable (asylos).",
-      "confidence": 1.0,
-      "quote": "ερ ν κα συλον ε μεν",
-      "is_ambiguous": false,
-      "ambiguity_note": null
     }
   ],
   "entities": {

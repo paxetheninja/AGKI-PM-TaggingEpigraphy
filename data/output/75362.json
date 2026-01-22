@@ -56,20 +56,6 @@
       "quote": "αν τειμ ς φιλα[----------] α σοι δωκαν",
       "is_ambiguous": false,
       "ambiguity_note": null
-    },
-    {
-      "label": "Administrative Records",
-      "hierarchy": {
-        "domain": "Content",
-        "subdomain": "Administrative Records and Lists",
-        "category": "Administrative Records",
-        "subcategory": null
-      },
-      "rationale": "The text mentions 'timetai' (censors) and public property, referring to Roman or local administrative actions regarding land and status.",
-      "confidence": 0.8,
-      "quote": "[--------- τ ν] τιμητ ν κ τ ς δημοσ[ ας -----------]",
-      "is_ambiguous": false,
-      "ambiguity_note": null
     }
   ],
   "entities": {

@@ -28,48 +28,6 @@
       "quote": " παιν σαι ξεν τιμον τιμοξ νου κα στεφαν σαι χρυσ ι στεφ νωι ε νο ας νεκεν",
       "is_ambiguous": false,
       "ambiguity_note": null
-    },
-    {
-      "label": "Medicine and Physicians",
-      "hierarchy": {
-        "domain": "Social Life",
-        "subdomain": "Professions",
-        "category": "Medicine",
-        "subcategory": "Physicians"
-      },
-      "rationale": "The text explicitly mentions the 'medical art' (iatrike techne) and the role of public physicians (iatroi damosieuontes) in the city.",
-      "confidence": 1.0,
-      "quote": "κατ τ ν τ [χ]ναν τ ν ατρικ ν παρ χων α τοσαυ[τ]ν π[ρ] [θυμ]ον ε ς τ ν σωτηρ αν τ ν νοσε ντ[ων]",
-      "is_ambiguous": false,
-      "ambiguity_note": null
-    },
-    {
-      "label": "Public Health and Epidemics",
-      "hierarchy": {
-        "domain": "Social Life",
-        "subdomain": "Public Welfare",
-        "category": "Public Health",
-        "subcategory": "Epidemics"
-      },
-      "rationale": "The decree describes a period of many and great illnesses (arrhostemata) where the honoree provided aid even when other doctors were incapacitated.",
-      "confidence": 1.0,
-      "quote": "ν[π]ετ [ν]των πολλ ν κ[α μεγ λ]ων [ ρρω]στ[η]μ των",
-      "is_ambiguous": false,
-      "ambiguity_note": null
-    },
-    {
-      "label": "Festivals",
-      "hierarchy": {
-        "domain": "Social Life",
-        "subdomain": "Religion and Cult",
-        "category": "Festivals",
-        "subcategory": "Dionysia"
-      },
-      "rationale": "The decree mandates that the honors be announced by the sacred herald during the festival of the Dionysia.",
-      "confidence": 1.0,
-      "quote": "δ εροκ ρυξ το ς διονυσ οις ναγγειλ τ[ω]",
-      "is_ambiguous": false,
-      "ambiguity_note": null
     }
   ],
   "entities": {

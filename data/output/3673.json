@@ -1,0 +1,167 @@
+{
+  "phi_id": 3673,
+  "themes": [
+    {
+      "label": "Inventories",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Inventories",
+        "subcategory": null
+      },
+      "rationale": "The inscription is a detailed list of sacred objects, including their materials and weights, managed by officials.",
+      "confidence": 1.0,
+      "quote": "ταμ αι ο π νικομ [χου π α τ ν νατε]θ ντα",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Votive Dedications",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Votive Dedications",
+        "subcategory": null
+      },
+      "rationale": "The text repeatedly uses the verb 'anetheken' (dedicated) to describe the origin of the items in the inventory.",
+      "confidence": 1.0,
+      "quote": "φι λη λε α ν θηκεν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The inscription records the weights of precious metal objects, which is a standard feature of Athenian financial administration of temple treasures.",
+      "confidence": 1.0,
+      "quote": "σταθμ ν πιγ [γραπται]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Ivory",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Organic Materials",
+        "subcategory": "Ivory"
+      },
+      "rationale": "Several items in the inventory, including statuettes and a knife handle, are explicitly described as being made of ivory.",
+      "confidence": 1.0,
+      "quote": "χειρ ς μ χαιρα λεφ[αντ νη]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Silver",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Metal",
+        "subcategory": "Silver"
+      },
+      "rationale": "The text lists numerous silver objects, specifically phialai (bowls).",
+      "confidence": 1.0,
+      "quote": "φι λη ργυρ λε α",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Gold",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Metal",
+        "subcategory": "Gold"
+      },
+      "rationale": "The inventory includes items made of gold or gilded (epichrysos).",
+      "confidence": 1.0,
+      "quote": "θυμιατ] ριον χρυσο ν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Wood",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Organic Materials",
+        "subcategory": "Wood"
+      },
+      "rationale": "The text mentions wooden objects, possibly furniture or supports for other dedications.",
+      "confidence": 1.0,
+      "quote": "η-αι ξ λιναι [μβος ξ λ]ινος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Nicomachus",
+        "role": "Treasurer",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nicomachus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phanostrate",
+        "role": "Dedicator",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Phanostrate",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phylarchos",
+        "role": "Dedicator",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Phylarchos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Anax...",
+        "role": "Father of Phanostrate",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Anax...",
+        "confidence": 0.5
+      }
+    ],
+    "places": [
+      {
+        "name": "Athens",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 0.8
+      }
+    ],
+    "deities": [
+      {
+        "name": "Dionysus",
+        "uri": "https://www.wikidata.org/wiki/Q41680",
+        "confidence": 1.0
+      },
+      {
+        "name": "Athena",
+        "uri": null,
+        "confidence": 0.8
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579885",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a fragment of an Athenian temple inventory, likely from the Acropolis. It dates to the mid-4th century BC and records the transfer of sacred objects between boards of treasurers (tamiai). The items listed include silver bowls (phialai), ivory statuettes (zoidia), and gilded objects. The mention of weights and specific dedicators like Phanostrate and Phylarchos is typical for these administrative records which ensured the accountability of the city's sacred wealth. The reference to Phoenician letters on an object is a notable epigraphic detail.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

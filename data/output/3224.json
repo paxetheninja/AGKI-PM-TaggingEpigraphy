@@ -30,20 +30,6 @@
       "ambiguity_note": null
     },
     {
-      "label": "Sacrifices",
-      "hierarchy": {
-        "domain": "Content",
-        "subdomain": "Religious and Dedicatory Texts",
-        "category": "Rituals and Ceremonies",
-        "subcategory": "Sacrifices"
-      },
-      "rationale": "The decree reports on the successful performance of sacrifices to Apollo and other gods for the safety of the Council and the People.",
-      "confidence": 1.0,
-      "quote": "[ π ρ ν παγγ λλου]σιν ο πρυτ νεις τ ς ρε[χθε δος π ρ τ ν θυσι ν ν θυον τ πρ τ ν κ]κλησι ν τ ι τε π λλωνι [τ ι προστατηρ ωι κα το ς λλοις θεο ς ο ς π τριον]",
-      "is_ambiguous": false,
-      "ambiguity_note": null
-    },
-    {
       "label": "Stele",
       "hierarchy": {
         "domain": "Type",

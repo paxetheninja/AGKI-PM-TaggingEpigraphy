@@ -1,0 +1,173 @@
+{
+  "phi_id": 219989,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text explicitly identifies itself as a decree and outlines the formal decisions made by the association of landowners regarding honors and building maintenance.",
+      "confidence": 1.0,
+      "quote": "τ δ γμα το το δισσ ν πογραφ ν στω κ ριον κα β βαιον",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription is dedicated to honoring Apollonius for his virtue, benevolence, and financial contributions to the community, granting him specific privileges like crowning and a shield-monument.",
+      "confidence": 1.0,
+      "quote": "τιμ σαι α τ ν χωρ ς ν προ χει τιμ ν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Building Commemoration",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Building Commemoration",
+        "subcategory": null
+      },
+      "rationale": "A significant portion of the text commemorates the reconstruction of the association's house and its facilities after a flood, detailing the plastering and paving work.",
+      "confidence": 1.0,
+      "quote": "τ ν ο κον νωικοδ μησε κα τ χρηστ ρια π ντα",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The text records specific financial transactions, including a 500-drachma contribution for building expenses and a 3000-drachma fine for non-compliance with the decree.",
+      "confidence": 1.0,
+      "quote": "ργυρ ου δραχμ ς πεντακοσ ας",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Votive Dedications",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Votive Dedications",
+        "subcategory": null
+      },
+      "rationale": "The inscription begins with a standard invocation to Good Fortune, which is a common religious formula in official and dedicatory texts.",
+      "confidence": 0.8,
+      "quote": "γαθ ι τ χηι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The decree specifies that the text should be engraved on a stone stele and placed on one of the doorposts of the building.",
+      "confidence": 1.0,
+      "quote": "νχαρ ξαντα ε ς στ λην",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Apollonius",
+        "role": "Priest, President, and Village Head",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Apollonius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Theon",
+        "role": "Former High Priest and father of Apollonius",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Theon",
+        "role": "Son of Apollonius",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristion",
+        "role": "Namesake of the association building",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristion",
+        "confidence": 1.0
+      },
+      {
+        "name": "Cleopatra",
+        "role": "Namesake of the association building",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Cleopatra",
+        "confidence": 1.0
+      },
+      {
+        "name": "Caesar",
+        "role": "Roman Emperor Augustus, used for dating",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Caesar",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Psenemphaia",
+        "type": "Village",
+        "uri": "https://pleiades.stoa.org/places/727208",
+        "confidence": 1.0
+      },
+      {
+        "name": "Ptolemaic Nome",
+        "type": "Administrative District",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Tyche",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "intact",
+  "provenance": [
+    {
+      "name": "Psenemphaia",
+      "type": "Village",
+      "uri": "https://pleiades.stoa.org/places/727208",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Egypt",
+      "type": "Region",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a comprehensive decree from an association of landowners in Psenemphaia, Egypt, dated to 5 BC (Year 25 of Caesar). It honors Apollonius, son of Theon, for his exceptional generosity in rebuilding the association's meeting house and its facilities at his own expense after they were destroyed by a flood. The decree outlines specific honors, such as the right to wear a crown and the placement of a shield-monument, and establishes a heavy fine of 3000 drachmas for anyone attempting to rescind these honors. The text concludes with instructions for the decree to be recorded in the association's books and engraved on a stele.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 5 BC ",
+  "date_min": -5.0,
+  "date_max": -5.0,
+  "date_circa": false
+}

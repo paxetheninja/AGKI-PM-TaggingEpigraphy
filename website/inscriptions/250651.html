@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PHI-250651 - AGKI</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <style>
+    /* Custom Scrollbar Styling */
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: rgba(0,0,0,0.05); }
+    ::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #aaa; }
+
+    .page-container { max-width: 1400px; margin: 0 auto; padding: 2rem; }
+    .back-link { display: inline-block; margin-bottom: 1rem; color: var(--primary); font-weight: 600; }
+    .text-viewer-original { display: grid; grid-template-columns: 40px 1fr; gap: 2rem; font-family: "New Athena Unicode", "Gentium Plus", "Times New Roman", serif; font-size: 1.25rem; line-height: 1.6; background: var(--panel); padding: 2rem; border: 1px solid var(--border); border-radius: 4px; margin-bottom: 2rem; color: var(--text); }
+    .line-numbers { text-align: right; color: var(--muted); font-size: 1.25rem; line-height: 1.6; user-select: none; opacity: 0.5; font-family: inherit; white-space: pre; padding-right: 1rem; border-right: 1px solid var(--border); }
+    .greek-content { white-space: pre-wrap; word-break: break-word; padding-left: 1rem; }
+    .highlight-evidence { background-color: var(--accent); color: white; border-radius: 2px; padding: 0 2px; }
+    .theme-card { background: var(--panel); padding: 1rem 1.5rem; border-left: 4px solid var(--primary); margin-bottom: 0.75rem; border: 1px solid var(--border); border-left-width: 4px; }
+    .ai-analysis-box { background: rgba(31, 167, 163, 0.05); padding: 2rem; border-radius: 8px; border: 1px solid var(--border); margin-top: 2rem; }
+    .evidence-box { max-width: 500px; text-align: right; }
+    .evidence-quote { font-size: 0.85rem; font-style: italic; color: var(--muted); margin: 0; }
+    .badge.green { background: #e6f4ea; color: #137333; border-color: #137333; }
+    .badge.orange { background: #fef7e0; color: #b06000; border-color: #b06000; }
+    .badge.red { background: #fce8e6; color: #c5221f; border-color: #c5221f; }
+    .entity-tag { background: rgba(217, 123, 61, 0.1); color: var(--accent-2); margin-right: 0.5rem; margin-bottom: 0.5rem; display: inline-block; padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.9rem; border: 1px solid rgba(217, 123, 61, 0.2); }
+    .split-container { display: block; }
+    .split-container.active { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+    .split-container.active .split-col-right { position: sticky; top: 20px; max-height: 90vh; overflow-y: auto; padding-right: 10px; }
+  </style>
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+
+    function toggleSplitView() {
+        const container = document.getElementById('main-content');
+        const btn = document.getElementById('splitViewBtn');
+        container.classList.toggle('active');
+        btn.textContent = container.classList.contains('active') ? 'View: Split' : 'View: Standard';
+    }
+
+    function copyCitation() {
+        const citation = "AGKI Project. (2026). Inscription PHI-250651 . Retrieved from " + window.location.href;
+        navigator.clipboard.writeText(citation);
+        alert("Citation copied to clipboard!");
+    }
+
+    function highlightQuote(quote) {
+        const container = document.querySelector('.greek-content');
+        if (!container || !quote) return;
+        if (!container.dataset.original) container.dataset.original = container.innerHTML;
+        else container.innerHTML = container.dataset.original;
+        
+        const regex = new RegExp(quote.trim().replace(/\s+/g, '\\s+'), 'g');
+        container.innerHTML = container.innerHTML.replace(regex, match => `<mark class="highlight-evidence">${match}</mark>`);
+    }
+
+    function clearHighlight() {
+        const container = document.querySelector('.greek-content');
+        if (container && container.dataset.original) container.innerHTML = container.dataset.original;
+    }
+
+    function updateFontSize(size) {
+        const v = document.getElementById('original-view');
+        if(v) v.style.fontSize = size + 'px';
+    }
+
+    function openReportModal() { document.getElementById('reportModal').style.display = 'block'; }
+    function closeReportModal() { document.getElementById('reportModal').style.display = 'none'; }
+    function sendReport() {
+        const category = document.getElementById('reportCategory').value;
+        const desc = document.getElementById('reportDesc').value;
+        const fix = document.getElementById('reportFix').value;
+        const subject = `AGKI Error Report: PHI-250651`;
+        const body = `Category: ${category}%0D%0ADescription: ${desc}%0D%0AProposed Fix: ${fix}`;
+        window.location.href = `mailto:admin@agki-project.org?subject=${encodeURIComponent(subject)}&body=${body}`;
+        closeReportModal();
+    }
+  </script>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="brand"><h1><a href="../../index.html">AGKI Tagging Tool</a></h1></div>
+    <nav class="nav-links">
+        <a href="../../index.html" class="nav-item">Home</a>
+        <a href="../search.html" class="nav-item">Search</a>
+        <a href="../explore.html" class="nav-item">Explore</a>
+        <a href="../compare.html" class="nav-item">Compare</a>
+        <a href="../network.html" class="nav-item">Network</a>
+        <a href="../matrix.html" class="nav-item">Matrix</a>
+        <a href="../indices.html" class="nav-item">Indices</a>
+    </nav>
+    <div class="header-controls">
+        <button class="theme-toggle-btn" onclick="toggleTheme()" id="themeBtn">Dark Mode</button>
+    </div>
+  </header>
+
+  <script>
+    const themeBtn = document.getElementById('themeBtn');
+    function updateThemeBtn() {
+        const current = document.documentElement.getAttribute('data-theme');
+        if(themeBtn) themeBtn.textContent = current === 'light' ? 'Dark Mode' : 'Light Mode';
+    }
+    updateThemeBtn();
+    window.toggleTheme = function() {
+        const current = document.documentElement.getAttribute('data-theme');
+        const next = current === 'light' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        updateThemeBtn();
+    }
+  </script>
+
+  <main class="page-container inscription-page">
+    <div class="inscription-toolbar">
+        <a href="../search.html" class="back-link"><- Back to Dashboard</a>
+        <div class="inscription-actions">
+            <button id="splitViewBtn" onclick="toggleSplitView()" class="button secondary compact">View: Standard</button>
+            <button onclick="openReportModal()" class="button error compact">Report Error</button>
+        </div>
+    </div>
+
+    <!-- Report Modal -->
+    <div id="reportModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:1000;">
+        <div style="background:var(--panel); width:90%; max-width:500px; margin:10% auto; padding:2rem; border-radius:8px; border:1px solid var(--border);">
+            <h3>Report Error for PHI-250651</h3>
+            <label>Error Category</label>
+            <select id="reportCategory" style="width:100%; padding:0.5rem; margin-bottom:1rem;">
+                <option value="Incorrect Tag">Incorrect Tag / Theme</option>
+                <option value="Missing Entity">Missing Person / Place</option>
+                <option value="Translation Error">Translation / Text Issue</option>
+                <option value="Other">Other</option>
+            </select>
+            <label>Description</label>
+            <textarea id="reportDesc" rows="3" style="width:100%; margin-bottom:1rem;"></textarea>
+            <label>Proposed Fix</label>
+            <textarea id="reportFix" rows="2" style="width:100%; margin-bottom:1.5rem;"></textarea>
+            <div style="display:flex; justify-content:flex-end; gap:0.5rem;">
+                <button onclick="closeReportModal()" class="button secondary">Cancel</button>
+                <button onclick="sendReport()" class="button">Create Email Report</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="main-content" class="split-container">
+        <div class="split-col-left">
+            <section class="inscription-hero">
+                <div class="inscription-title-row">
+                    <h2>Inscription PHI-250651</h2>
+                    <div class="inscription-actions">
+                        <button onclick="copyCitation()" class="button secondary compact">Cite</button>
+                        <a href="https://epigraphy.packhum.org/text/250651" target="_blank" class="button secondary compact">View on PHI</a>
+                    </div>
+                </div>
+                <div class="inscription-meta">
+                    <div class="meta-item"><div class="label">Provenance</div><div class="meta-value"><a href="https://pleiades.stoa.org/places/599612" target="_blank" title="View in Pleiades">Ephesus</a></div></div>
+                    <div class="meta-item"><div class="label">Date</div><div class="meta-value"></div></div>
+                    <div class="meta-item"><div class="label">Completeness</div><div class="meta-value"><span class="badge info">intact</span></div></div>
+                    <div class="meta-item"><div class="label">Tagged by</div><div class="meta-value"><span class="badge" style="background:rgba(12,140,136,0.15); color:#0c8c88; border:1px solid #0c8c88;">gemini-3-flash-preview (Proposer+Judge)</span></div></div>
+                </div>
+            </section>
+            <div class="inscription-title-row">
+                <h3>Original Text</h3>
+                <div class="font-size-control">
+                    <input type="range" min="14" max="32" value="20" oninput="updateFontSize(this.value)">
+                </div>
+            </div>
+            <div id="original-view" class="text-viewer-original">
+                <div class="line-numbers">1
+
+
+
+5
+
+
+
+
+10
+
+
+
+
+15
+
+
+
+
+20
+
+</div>
+                <div class="greek-content">το ς κατ τ ν φεσ ων πιστο ς π τιος
+ λ χιστος ν κυρ χα ρειν. π σαν
+ π ρ μ ν κουσ ως πομε νας τρ πτως
+κ νωσιν ησο ς χριστ ς θε ς μ ν ταπε νωσεν [α]υτ ν ς φησιν θε ος π στολος χρι θαν του [θ]αν του δ σταυρο 
+κα μετ τ ν ζωοποι ν α το σταυρ ν κα 
+θ νατον ς τ ν ε αγγελ ων φηγε ται παρ δοσις π ρ φ του φιλανθρωπε ας γυμν ς κα ταφος ποριπτε ται
+κα πρ ς το ωσ φ κηδε εται κα ν τ μνημε τ κε νου τ θεται μ χρι το του κατ 
+π ντα μ ν το ς ταπεινο ς μοιωθε ς χωρ ς
+ μαρτ ας. ε τις ο ν πιμελησε η τ ν σ αν
+τα την θεραπε αν τε κα τιμ ν π το ς
+προαναπαυσαμ νοις μ ν δελφο ς γινωσκ τω τα τα περ τ ν κ ριον ποι ν κα 
+γ ρ κα γιωτ τη μ ν κκλησ α τ ς παναγ ας νδ ξου θεοτ κου κα ειπαρθ νου μαρ ας κα τ ς τιμ ας α τ ν κφορ ς
+προεν ησεν κα το ς ε ς το το διακονουμ νους ε αγε ς δεκανο ς κα τ ς ε λαβεστ τας κανονικ ς παραμ θειαν χειν
+ κ τ ν αυτ ς διετ πωσεν πραγμ των 
+ ς μηδεν περιληφθ ναι φιλαργυρ ας ουδα κ ς πρ φασιν κα ε τις π το ν ν
+ π ρ κκομιδ ς τι λ βοι παρ τινος 
+ δ τινι τ ν κκομιζ ντων 
+ περιφρον σοι τ ς α τ ν τιμ ας κκομιδ ς τοιο τ τι γεγον ς μαθ ν μ 
+προσαγγε λ πρ τον μ ν στω τ ν τοια την σ βειαν ε ς α τ τ το κυρ ου σ μα
+τολμ σας πειτα κα μ ν κα πασ ν
+τ ν γιωτ των μ ν κκλησι ν
+ λλ τριος σται.</div>
+            </div>
+        </div>
+        <div class="split-col-right">
+            <h3>Thematic Analysis</h3>
+            
+        <div class="theme-card" onmouseover="highlightQuote('τοῖς κατὰ τὴν Ἐφεσίων πιστοῖς ... χαίρειν')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Content/Official and Legal Documents/Official Letters" class="tag domain-tag" style="text-decoration:none;">Content</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
+                    <div class="theme-path">Content > Official and Legal Documents > Official Letters</div>
+                    <div class="theme-label">Official Letters</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "τοῖς κατὰ τὴν Ἐφεσίων πιστοῖς ... χαίρειν"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('εἴ τις οὖν ἐπιμελήσεται τὴν ὁσίαν ταύτην θεραπείαν τε καὶ τιμὴν ... γινωσκέτω ταῦτα περὶ τὸν κύριον ποιῶν')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Content/Religious and Dedicatory Texts/Sacred Laws and Rules" class="tag domain-tag" style="text-decoration:none;">Content</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
+                    <div class="theme-path">Content > Religious and Dedicatory Texts > Sacred Laws and Rules</div>
+                    <div class="theme-label">Sacred Laws and Rules</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "εἴ τις οὖν ἐπιμελήσεται τὴν ὁσίαν ταύτην θεραπείαν τε καὶ τιμὴν ... γινωσκέτω ταῦτα περὶ τὸν κύριον ποιῶν"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('καὶ μετὰ τὴν ζωοποιὸν αὐτοῦ σταυρὸν καὶ θάνατον ... γυμνὸς καὶ τάφος ἀπορρίπτεται')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Content/Religious and Dedicatory Texts/Sacred Laws and Rules" class="tag domain-tag" style="text-decoration:none;">Content</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
+                    <div class="theme-path">Content > Religious and Dedicatory Texts > Sacred Laws and Rules</div>
+                    <div class="theme-label">Funerary Regulations</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "καὶ μετὰ τὴν ζωοποιὸν αὐτοῦ σταυρὸν καὶ θάνατον ... γυμνὸς καὶ τάφος ἀπορρίπτεται"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('Ἰησοῦς Χριστὸς θεὸς ἡμῶν ταπείνωσεν [α]ὐτὸν ὥς φησιν θεῖος ἀπόστολος ἄχρι θανάτου θανάτου δὲ σταυροῦ')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Content/Religious and Dedicatory Texts/Orations and Praise of Gods" class="tag domain-tag" style="text-decoration:none;">Content</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">90% Conf.</span>
+                    
+                    <div class="theme-path">Content > Religious and Dedicatory Texts > Orations and Praise of Gods</div>
+                    <div class="theme-label">Theological Discourse</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "Ἰησοῦς Χριστὸς θεὸς ἡμῶν ταπείνωσεν [α]ὐτὸν ὥς φησιν θεῖος ἀπόστολος ἄχρι θανάτου θανάτου δὲ σταυροῦ"</p>
+                </div>
+            </div>
+        </div>
+        
+            <div style="margin-top:2rem;"><h3>Entities</h3><div><a href="../search.html?q=Hypatios" class="tag entity-tag" style="text-decoration:none;">👤 Hypatios <small>(Bishop and Author)</small></a><a href="../search.html?q=Jesus Christ" class="tag entity-tag" style="text-decoration:none;">👤 Jesus Christ <small>(God and Savior)</small></a><a href="../search.html?q=Mary" class="tag entity-tag" style="text-decoration:none;">👤 Mary <small>(Theotokos and Ever-Virgin)</small></a><a href="../search.html?q=Paul" class="tag entity-tag" style="text-decoration:none;">👤 Paul <small>(Apostle)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Ephesus <small>(Ephesus)</small></a><a href="../index_deities.html" class="tag entity-tag" style="text-decoration:none;">⚡ Jesus Christ</a><a href="../index_deities.html" class="tag entity-tag" style="text-decoration:none;">⚡ God</a><a href="../index_deities.html" class="tag entity-tag" style="text-decoration:none;">⚡ Mary</a></div></div>
+            <div class="ai-analysis-box"><h3>AI Analysis Summary</h3><p>This inscription from Ephesus is a late antique ecclesiastical ordinance or official letter issued by Hypatios. It begins with a theological reflection on the humility and passion of Jesus Christ, referencing the &#x27;divine apostle&#x27; (Paul). The text transitions into practical regulations for the Church of the Virgin Mary (Theotokos) in Ephesus, specifically addressing the &#x27;dekanoi&#x27; (deacons) and &#x27;kanonikai&#x27; (canonesses). It strictly forbids charging money for the burial of the dead, characterizing such greed as impiety and threatening those who accept payment or neglect the poor with excommunication from the holy churches.</p></div>
+        </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      © 2026 Florian Wachter | Private Non-Profit Research Project | 
+      <a href="https://github.com/paxetheninja/AGKI-PM-TaggingEpigraphy" target="_blank">GitHub</a>
+    </div>
+    <div class="footer-legal">
+      Impressum: Privates Forschungsprojekt. Verantwortlich: Florian Wachter, Institut für Antike, Goethestraße 19, 8010 Graz. Kontakt: florian.wachter@uni-graz.at. Keine Gewähr für die Richtigkeit der Daten.
+    </div>
+  </footer>
+</body>
+</html>
+    

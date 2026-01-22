@@ -1,0 +1,357 @@
+{
+  "phi_id": 293845,
+  "themes": [
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The inscription contains a detailed list of individuals identified by their names and demotics, specifically referring to them as archons.",
+      "confidence": 1.0,
+      "quote": "[ ρχοντ]ες",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Votive Dedications",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Votive Dedications",
+        "subcategory": null
+      },
+      "rationale": "The text includes the verb 'anithesan', which is the standard formula for a religious dedication made by a group or individual to a deity.",
+      "confidence": 1.0,
+      "quote": "[ο πογεγραμμ νοι ν θ]ε[σαν]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The mention of being 'crowned' (stephanothentes) indicates that the officials listed were being honored for their service.",
+      "confidence": 1.0,
+      "quote": "[στεφανωθ ντες]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The format of the list and the historical context of Attic administrative records suggest this was inscribed on a stone stele.",
+      "confidence": 0.8,
+      "quote": "[-----------]ε[----]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "Attic inscriptions of this period and type were almost exclusively carved on marble.",
+      "confidence": 0.8,
+      "quote": "[-----------]ε[----]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Olympiodoros",
+        "role": "Archon",
+        "uri": "https://www.wikidata.org/wiki/Q3351663",
+        "confidence": 0.8
+      },
+      {
+        "name": "Nikostratos",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nikostratos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kallias",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kallias",
+        "confidence": 0.8
+      },
+      {
+        "name": "Timastheos",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Timastheos",
+        "confidence": 0.8
+      },
+      {
+        "name": "Demokritos",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demokritos",
+        "confidence": 0.8
+      },
+      {
+        "name": "Deinokrates",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Deinokrates",
+        "confidence": 0.8
+      },
+      {
+        "name": "Nikokles",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nikokles",
+        "confidence": 0.8
+      },
+      {
+        "name": "Theodoros",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theodoros",
+        "confidence": 0.8
+      },
+      {
+        "name": "Chareas",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Chareas",
+        "confidence": 0.8
+      },
+      {
+        "name": "Eorthades",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eorthades",
+        "confidence": 0.8
+      },
+      {
+        "name": "Sokles",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sokles",
+        "confidence": 0.8
+      },
+      {
+        "name": "Ethykles",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ethykles",
+        "confidence": 0.8
+      },
+      {
+        "name": "Simos",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Simos",
+        "confidence": 0.8
+      },
+      {
+        "name": "Semias",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Semias",
+        "confidence": 0.8
+      },
+      {
+        "name": "Konon",
+        "role": "Archon, son of Timotheos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Konon",
+        "confidence": 0.9
+      },
+      {
+        "name": "Timotheos",
+        "role": "Father of Konon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Timotheos",
+        "confidence": 0.9
+      },
+      {
+        "name": "Prokles",
+        "role": "Archon, son of Protokles",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Prokles",
+        "confidence": 0.8
+      },
+      {
+        "name": "Protokles",
+        "role": "Father of Prokles",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Protokles",
+        "confidence": 0.8
+      },
+      {
+        "name": "Kephisodoros",
+        "role": "Archon, son of Melesias",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kephisodoros",
+        "confidence": 0.8
+      },
+      {
+        "name": "Melesias",
+        "role": "Father of Kephisodoros",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Melesias",
+        "confidence": 0.8
+      },
+      {
+        "name": "Hemedemos",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hemedemos",
+        "confidence": 0.5
+      },
+      {
+        "name": "Idymeas",
+        "role": "Archon, son of Kriton",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Idymeas",
+        "confidence": 0.8
+      },
+      {
+        "name": "Kriton",
+        "role": "Father of Idymeas",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kriton",
+        "confidence": 0.8
+      },
+      {
+        "name": "Antikles",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antikles",
+        "confidence": 0.8
+      },
+      {
+        "name": "Euthydemos",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Euthydemos",
+        "confidence": 0.8
+      },
+      {
+        "name": "Euboulides",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Euboulides",
+        "confidence": 0.8
+      },
+      {
+        "name": "Chairedemos",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Chairedemos",
+        "confidence": 0.8
+      },
+      {
+        "name": "Androtion",
+        "role": "Official, son of Saos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Androtion",
+        "confidence": 0.8
+      },
+      {
+        "name": "Saos",
+        "role": "Father of Androtion",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Saos",
+        "confidence": 0.8
+      }
+    ],
+    "places": [
+      {
+        "name": "Pallene",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580051",
+        "confidence": 1.0
+      },
+      {
+        "name": "Gargettos",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579935",
+        "confidence": 1.0
+      },
+      {
+        "name": "Acharnai",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579842",
+        "confidence": 1.0
+      },
+      {
+        "name": "Paiania",
+        "type": "Deme",
+        "uri": "https://www.wikidata.org/wiki/Q1236193",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kydantidai",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579998",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lamptrai",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Plotheia",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580082",
+        "confidence": 1.0
+      },
+      {
+        "name": "Oa",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Kolonai",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579983",
+        "confidence": 1.0
+      },
+      {
+        "name": "Leukonoion",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580013",
+        "confidence": 1.0
+      },
+      {
+        "name": "Anakaia",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579864",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kephisia",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579972",
+        "confidence": 1.0
+      },
+      {
+        "name": "Agryle",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Pallene",
+      "type": "Deme/Findspot",
+      "uri": "https://pleiades.stoa.org/places/580051",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Attica",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579888",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a list of Athenian archons and parasitoi from various demes who were honored with crowns and subsequently made a dedication. It is a classic example of an administrative and honorific document from 4th-century BC Attica. The presence of names like Konon son of Timotheos and Androtion suggests individuals from prominent Athenian families.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " ca. 350 BC",
+  "date_min": -350.0,
+  "date_max": -350.0,
+  "date_circa": true
+}

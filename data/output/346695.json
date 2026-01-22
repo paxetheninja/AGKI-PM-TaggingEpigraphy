@@ -1,0 +1,151 @@
+{
+  "phi_id": 346695,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text explicitly mentions a decree (psephisma) and the process of recording it on a stone stele, which is characteristic of official Athenian legislative acts.",
+      "confidence": 1.0,
+      "quote": "κατὰ τὸ ψήφισμα Φιλονάτου καὶ κατὰ τὰ ἄλλα ψηφίσματα",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription praises an individual (the Hierophant) for his goodwill and zeal in performing his religious duties and managing sacrifices.",
+      "confidence": 1.0,
+      "quote": "εὐνοῦς τε ὢν διατελεῖ... μετὰ πάσης παρασκευῆς καὶ φιλοτιμίας",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Sacred Laws and Rules",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Sacred Laws and Rules",
+        "subcategory": null
+      },
+      "rationale": "The text discusses the performance of sacrifices and religious duties according to ancestral customs and the management of sacred records.",
+      "confidence": 0.8,
+      "quote": "τοῖς θεοῖς κατὰ τὰ πάτρια... ἐκ τῶν ἀρχαίων γραμματείων",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The inscription contains a specific instruction to record the text on a stone stele to be set up in the Eleusinion.",
+      "confidence": 1.0,
+      "quote": "ἀναγραφῆι εἰς εἰσαγωγὴν στήληι λιθίνηι ἐν τῶι Ἐλευσινίωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Lysiades",
+        "role": "Eponymous Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lysiades",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristocles of Perithoidae",
+        "role": "Proposer of the decree",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristocles%20of%20Perithoidae",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hermogenes",
+        "role": "Eponymous Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hermogenes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Philonatus",
+        "role": "Author of a previous decree",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philonatus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hierophant",
+        "role": "Priestly official being honored",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hierophant",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eumolpidae",
+        "role": "Priestly clan involved in the decree",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eumolpidae",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Athens",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eleusis",
+        "type": "Sanctuary and Deme",
+        "uri": "https://pleiades.stoa.org/places/579920",
+        "confidence": 1.0
+      },
+      {
+        "name": "Perithoidae",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "The Gods",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579885",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Attica",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579888",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is an Athenian decree dating to the mid-2nd century BC. It honors a Hierophant, a high-ranking priest of the Eleusinian Mysteries belonging to the Eumolpidae clan. The text details his efforts in organizing sacrifices, consulting the Council (Boule), and ensuring that religious protocols are recorded on a stone stele according to ancestral traditions and previous legislative acts. The presence of multiple archon names (Lysiades and Hermogenes) helps date the events and the administrative context.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " ca. 149/8 BC ",
+  "date_min": -149.0,
+  "date_max": -148.0,
+  "date_circa": true
+}

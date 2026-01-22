@@ -1,0 +1,265 @@
+{
+  "phi_id": 239536,
+  "themes": [
+    {
+      "label": "Manumission Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Manumission Records",
+        "subcategory": null
+      },
+      "rationale": "The inscription records the sale of a slave to Apollo Pythios, a standard legal fiction used in Delphi for manumission.",
+      "confidence": 1.0,
+      "quote": "π δοτο ε νους ... τ ι π λλ[ω]νι τ ι πυθ ωι σ[ μα γυ]ναικε ον ι νομα ζωπ ρα",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Contracts and Private Legal Acts",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Contracts and Private Legal Acts",
+        "subcategory": null
+      },
+      "rationale": "The document is structured as a contract of sale between a private individual and the temple, including price and conditions.",
+      "confidence": 1.0,
+      "quote": "τιμ ς ργυ[ρ] ου μν ν τεττ ρων κα [στατ]ρων π ντε",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The text contains a detailed list of civic and religious officials, including the archon, councilors, and witnesses.",
+      "confidence": 1.0,
+      "quote": "ρχοντος καλλιδ μου ... βουλευντω[ν] ... γραμματευοντος ... μ ρτ[υρ]οι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Votive Dedications",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Votive Dedications",
+        "subcategory": null
+      },
+      "rationale": "The manumission is framed as a religious act where the slave is dedicated/sold to the god Apollo.",
+      "confidence": 1.0,
+      "quote": "κα τ ν τιμ ν χει π σαν καθ ς π στευ[σε] ζωπ ρα τ ι θε ι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Kallidemos",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kallidemos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Amphistratos",
+        "role": "Father of Kallidemos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Amphistratos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Mnasitheos",
+        "role": "Councilor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Mnasitheos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Diodoros",
+        "role": "Father of Mnasitheos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Diodoros",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kleodemos",
+        "role": "Councilor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kleodemos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Mantias",
+        "role": "Father of Kleodemos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Mantias",
+        "confidence": 1.0
+      },
+      {
+        "name": "Agon",
+        "role": "Secretary",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Agon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristion",
+        "role": "Father of Agon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristion",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eunous",
+        "role": "Seller",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eunous",
+        "confidence": 1.0
+      },
+      {
+        "name": "Zopyra",
+        "role": "Slave",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Zopyra",
+        "confidence": 1.0
+      },
+      {
+        "name": "Habrias",
+        "role": "Guarantor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Habrias",
+        "confidence": 1.0
+      },
+      {
+        "name": "Xenon",
+        "role": "Father of Habrias",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Xenon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Xenokritos",
+        "role": "Guarantor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Xenokritos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Stesimeneos",
+        "role": "Father of Xenokritos",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Stesimeneos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Thambos",
+        "role": "Priest",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Thambos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Teisidas",
+        "role": "Neokoros",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Teisidas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Peisistratos",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Peisistratos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Spinthar",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Spinthar",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sophilos",
+        "role": "Father of Spinthar",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sophilos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Demosthenes",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demosthenes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Archon",
+        "role": "Father of Demosthenes",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Archon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lykos",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lykos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lykiskos",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lykiskos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dromon",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dromon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Atidas",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Atidas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Timokritos",
+        "role": "Witness",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Timokritos",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Delphi",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/540726",
+        "confidence": 1.0
+      },
+      {
+        "name": "Syria",
+        "type": "Region of origin",
+        "uri": "https://pleiades.stoa.org/places/29492",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Apollo Pythios",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Delphi",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/540726",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Phokis",
+      "type": "Region",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This is a typical Delphic manumission record from the late 2nd century BC. It documents the sale of a female slave of Syrian origin, Zopyra, to Apollo Pythios by her owner Eunous. The text follows the standard formula: dating by the local archon and council, the terms of the sale (four silver minae and five staters), the guarantee of freedom (eleuthera), and a list of witnesses including religious officials like the neokoros and priests.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " ca. 124 BC",
+  "date_min": -124.0,
+  "date_max": -124.0,
+  "date_circa": true
+}

@@ -1,0 +1,130 @@
+{
+  "phi_id": 250651,
+  "themes": [
+    {
+      "label": "Official Letters",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Official Letters",
+        "subcategory": null
+      },
+      "rationale": "The document is framed as a formal letter from Hypatios to the faithful of Ephesus, utilizing standard epistolary formulas such as the greeting 'chairein'.",
+      "confidence": 1.0,
+      "quote": "τοῖς κατὰ τὴν Ἐφεσίων πιστοῖς ... χαίρειν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Sacred Laws and Rules",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Sacred Laws and Rules",
+        "subcategory": null
+      },
+      "rationale": "The inscription establishes binding ecclesiastical regulations for deacons and canonesses, including prohibitions against financial exploitation and penalties for disobedience.",
+      "confidence": 1.0,
+      "quote": "εἴ τις οὖν ἐπιμελήσεται τὴν ὁσίαν ταύτην θεραπείαν τε καὶ τιμὴν ... γινωσκέτω ταῦτα περὶ τὸν κύριον ποιῶν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Funerary Regulations",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Sacred Laws and Rules",
+        "subcategory": null
+      },
+      "rationale": "A major portion of the text is dedicated to the proper conduct of burials (ekkomide) and the theological significance of the tomb, specifically forbidding the charging of fees for these services.",
+      "confidence": 1.0,
+      "quote": "καὶ μετὰ τὴν ζωοποιὸν αὐτοῦ σταυρὸν καὶ θάνατον ... γυμνὸς καὶ τάφος ἀπορρίπτεται",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Theological Discourse",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Orations and Praise of Gods",
+        "subcategory": null
+      },
+      "rationale": "The text contains a significant theological preamble regarding the kenosis (humility) and passion of Jesus Christ, citing apostolic authority to justify the subsequent rules.",
+      "confidence": 0.9,
+      "quote": "Ἰησοῦς Χριστὸς θεὸς ἡμῶν ταπείνωσεν [α]ὐτὸν ὥς φησιν θεῖος ἀπόστολος ἄχρι θανάτου θανάτου δὲ σταυροῦ",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Hypatios",
+        "role": "Bishop and Author",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hypatios",
+        "confidence": 1.0
+      },
+      {
+        "name": "Jesus Christ",
+        "role": "God and Savior",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Jesus%20Christ",
+        "confidence": 1.0
+      },
+      {
+        "name": "Mary",
+        "role": "Theotokos and Ever-Virgin",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Mary",
+        "confidence": 1.0
+      },
+      {
+        "name": "Paul",
+        "role": "Apostle",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Paul",
+        "confidence": 0.8
+      }
+    ],
+    "places": [
+      {
+        "name": "Ephesus",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/599612",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Jesus Christ",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "God",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Mary",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "intact",
+  "provenance": [
+    {
+      "name": "Ephesus",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/599612",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription from Ephesus is a late antique ecclesiastical ordinance or official letter issued by Hypatios. It begins with a theological reflection on the humility and passion of Jesus Christ, referencing the 'divine apostle' (Paul). The text transitions into practical regulations for the Church of the Virgin Mary (Theotokos) in Ephesus, specifically addressing the 'dekanoi' (deacons) and 'kanonikai' (canonesses). It strictly forbids charging money for the burial of the dead, characterizing such greed as impiety and threatening those who accept payment or neglect the poor with excommunication from the holy churches.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

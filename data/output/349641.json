@@ -1,0 +1,206 @@
+{
+  "phi_id": 349641,
+  "themes": [
+    {
+      "label": "Donor and Subscription Lists",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Donor and Subscription Lists",
+        "subcategory": null
+      },
+      "rationale": "The inscription consists of a long list of individuals followed by specific monetary amounts (e.g., 1000, 100, 50 drachmae), which is the standard format for a voluntary subscription list (epidosis).",
+      "confidence": 1.0,
+      "quote": "χιλ ας ... πεντ κοντα ... κατ ν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The introductory section contains formal decree language, including the resolution formula 'dedochthai' (it was resolved).",
+      "confidence": 1.0,
+      "quote": "δεδ χθαι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Agonistic / Victory Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Agonistic / Victory Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The text explicitly mentions 'gymnic games' (gymnikous agonas), indicating that the subscription was likely intended to fund athletic competitions or festivals.",
+      "confidence": 1.0,
+      "quote": "πρ ς το ς γυμ[νικο ς γ νας]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The inscription serves as a public record of financial contributions and the leasing of property related to the sanctuary.",
+      "confidence": 0.8,
+      "quote": "τ ς δ] μισθ σι[ος]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The format and length of the inscription are characteristic of a public record inscribed on a stone stele, as indicated by the mention of the recording process.",
+      "confidence": 0.8,
+      "quote": "τ ν ν]αγραφ ν ποησασ",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Charmanos",
+        "role": "Contributor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Charmanos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Charmipos",
+        "role": "Contributor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Charmipos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristolochos",
+        "role": "Contributor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristolochos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Alexander",
+        "role": "Contributor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Alexander",
+        "confidence": 1.0
+      },
+      {
+        "name": "Ptolemaios",
+        "role": "Contributor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ptolemaios",
+        "confidence": 1.0
+      },
+      {
+        "name": "Ariston",
+        "role": "Contributor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ariston",
+        "confidence": 1.0
+      },
+      {
+        "name": "Theodoros",
+        "role": "Contributor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theodoros",
+        "confidence": 1.0
+      },
+      {
+        "name": "Nikagoras",
+        "role": "Contributor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nikagoras",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pythagoras",
+        "role": "Contributor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pythagoras",
+        "confidence": 1.0
+      },
+      {
+        "name": "Philippos",
+        "role": "Contributor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philippos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Demetrios",
+        "role": "Contributor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demetrios",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristagoras",
+        "role": "Contributor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristagoras",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Kos",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/736946",
+        "confidence": 0.8
+      },
+      {
+        "name": "Alexandria",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/29457",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kalymnos",
+        "type": "Island",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Priene",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/599905",
+        "confidence": 1.0
+      },
+      {
+        "name": "Asklepieion",
+        "type": "Sanctuary",
+        "uri": "https://pleiades.stoa.org/places/570127",
+        "confidence": 0.8
+      }
+    ],
+    "deities": [
+      {
+        "name": "Asklepios",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Kos",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/736946",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription from the Asklepieion of Kos is a significant subscription list (epidosis) dating to approximately 242 BC. It records voluntary contributions from citizens and foreigners (including individuals from Alexandria, Kalymnos, and Priene) to fund the gymnic games or sanctuary maintenance. The text follows a standard decree format followed by a catalog of names and amounts in drachmae, ranging from small sums to 1000 drachmae.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " ca. 242 BC ",
+  "date_min": -242.0,
+  "date_max": -242.0,
+  "date_circa": true
+}

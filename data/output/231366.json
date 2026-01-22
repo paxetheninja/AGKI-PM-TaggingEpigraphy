@@ -1,0 +1,410 @@
+{
+  "phi_id": 231366,
+  "themes": [
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The inscription is a formal list of the members of the Athenian Council (Boule), organized by their respective tribes and demes.",
+      "confidence": 1.0,
+      "quote": "βουλευταὶ ἔθεσαν ἐπὶ Πυθοδότου ἄρχοντος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The text explicitly mentions that the councilors were crowned by the people as a reward for their justice and service.",
+      "confidence": 1.0,
+      "quote": "στεφανωθέντες ὑπὸ τοῦ δήμου δικαιοσύνης ἕνεκα",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "This type of administrative list was traditionally inscribed on a stone stele and displayed in the Athenian Agora.",
+      "confidence": 0.8,
+      "quote": "βουλευταὶ ἔθεσαν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "Public Athenian documents of this period were almost exclusively inscribed on Pentelic marble.",
+      "confidence": 0.8,
+      "quote": "βουλευταὶ ἔθεσαν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The inscription contains numerous lacunae and missing names, particularly in the tribal headings and individual entries.",
+      "confidence": 1.0,
+      "quote": "------ ιος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Pythodotus",
+        "role": "Archon",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pythodotus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Gnathius",
+        "role": "Councilor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Gnathius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Elpias",
+        "role": "Councilor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Elpias",
+        "confidence": 1.0
+      },
+      {
+        "name": "Polystratus",
+        "role": "Councilor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Polystratus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Charsius",
+        "role": "Councilor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Charsius",
+        "confidence": 0.8
+      },
+      {
+        "name": "Tychyllus",
+        "role": "Councilor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Tychyllus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sogenes",
+        "role": "Councilor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sogenes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dromocleides",
+        "role": "Councilor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dromocleides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hieron",
+        "role": "Councilor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hieron",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eudemus",
+        "role": "Councilor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eudemus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sostratus",
+        "role": "Councilor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sostratus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Conon",
+        "role": "Councilor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Conon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Timarchus",
+        "role": "Councilor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Timarchus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Philagrus",
+        "role": "Councilor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philagrus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Cedicrates",
+        "role": "Councilor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Cedicrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Polycrates",
+        "role": "Councilor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Polycrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Leocrates",
+        "role": "Councilor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Leocrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Soteles",
+        "role": "Councilor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Soteles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Cleophantus",
+        "role": "Councilor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Cleophantus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Theodotus",
+        "role": "Councilor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theodotus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Mnesiphilus",
+        "role": "Councilor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Mnesiphilus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Tharsippus",
+        "role": "Councilor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Tharsippus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hierocles",
+        "role": "Councilor",
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hierocles",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Athens",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      },
+      {
+        "name": "Icaria",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/599667",
+        "confidence": 1.0
+      },
+      {
+        "name": "Gargettus",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Cydathenaeum",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Angyle",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Piraeus",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580062",
+        "confidence": 1.0
+      },
+      {
+        "name": "Cettus",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Paeania",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Eupyridae",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Thoricus",
+        "type": "Deme",
+        "uri": "https://www.wikidata.org/wiki/Q353184",
+        "confidence": 1.0
+      },
+      {
+        "name": "Cerameis",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Cholargus",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Prospalta",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580092",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sphettus",
+        "type": "Deme",
+        "uri": "https://www.wikidata.org/wiki/Q13446048",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phlya",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580076",
+        "confidence": 1.0
+      },
+      {
+        "name": "Athmonum",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Trinemeia",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580126",
+        "confidence": 1.0
+      },
+      {
+        "name": "Axone",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Eleusis",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579920",
+        "confidence": 1.0
+      },
+      {
+        "name": "Decelea",
+        "type": "Deme",
+        "uri": "https://www.wikidata.org/wiki/Q5248896",
+        "confidence": 1.0
+      },
+      {
+        "name": "Erechtheis",
+        "type": "Tribe",
+        "uri": "https://pleiades.stoa.org/places/844310646",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pandionis",
+        "type": "Tribe",
+        "uri": "https://pleiades.stoa.org/places/391233695",
+        "confidence": 1.0
+      },
+      {
+        "name": "Leontis",
+        "type": "Tribe",
+        "uri": "https://pleiades.stoa.org/places/482653002",
+        "confidence": 1.0
+      },
+      {
+        "name": "Acamantis",
+        "type": "Tribe",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Oineis",
+        "type": "Tribe",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Cecropis",
+        "type": "Tribe",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Hippothontis",
+        "type": "Tribe",
+        "uri": "https://pleiades.stoa.org/places/908290183",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aeantis",
+        "type": "Tribe",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Antiochis",
+        "type": "Tribe",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579885",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a catalog of the Athenian Council (Boule) for the archonship of Pythodotus (343/2 BC). It lists the councilors by their ten tribes and respective demes. The heading indicates that the councilors, along with the treasurers and secretaries, were honored with crowns by the Athenian people for their conduct and justice during their year of office. The text is a significant administrative record from the Late Classical period, providing a snapshot of Athenian civic participation and the honorific culture of the city's democratic institutions.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 343/2 a. ",
+  "date_min": -343.0,
+  "date_max": -342.0,
+  "date_circa": false
+}

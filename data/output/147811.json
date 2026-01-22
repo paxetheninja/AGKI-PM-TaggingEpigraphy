@@ -42,20 +42,6 @@
       "quote": "γλαύκωι εὐδώρου παταίωι προξενίαν καὶ πολιτείαν",
       "is_ambiguous": false,
       "ambiguity_note": null
-    },
-    {
-      "label": "Dating Formulas",
-      "hierarchy": {
-        "domain": "Content",
-        "subdomain": "Administrative Records and Lists",
-        "category": "Dating Formulas",
-        "subcategory": null
-      },
-      "rationale": "The inscription includes a dating formula that names the presiding strategos and the month, which is standard for administrative records.",
-      "confidence": 1.0,
-      "quote": "στρατηγοῦντος ἀλεξίππου τοῦ ἱππολόχου",
-      "is_ambiguous": false,
-      "ambiguity_note": null
     }
   ],
   "entities": {

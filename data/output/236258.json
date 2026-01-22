@@ -30,20 +30,6 @@
       "ambiguity_note": null
     },
     {
-      "label": "Lead Tablets",
-      "hierarchy": {
-        "domain": "Type",
-        "subdomain": "Object Type",
-        "category": "Portable Objects",
-        "subcategory": "Lead or Metal Tablets > Lead Tablets"
-      },
-      "rationale": "Based on the archaeological context of the Kerameikos and the nature of the text as a defixio, the support is identified as a lead tablet.",
-      "confidence": 0.8,
-      "quote": "καταδ. καταδ στ φανον",
-      "is_ambiguous": false,
-      "ambiguity_note": null
-    },
-    {
       "label": "Lead",
       "hierarchy": {
         "domain": "Type",

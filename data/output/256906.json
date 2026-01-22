@@ -16,20 +16,6 @@
       "ambiguity_note": null
     },
     {
-      "label": "Military Alliances",
-      "hierarchy": {
-        "domain": "Content",
-        "subdomain": "Official and Legal Documents",
-        "category": "Treaties and Alliances",
-        "subcategory": "Military Support"
-      },
-      "rationale": "The decree details the city's decision to provide military aid and mobilize its population, including resident aliens and slaves, to assist the Roman proconsul.",
-      "confidence": 1.0,
-      "quote": "βοηθεῖν κατὰ πλῆθος συνεκπορεύεσθαι δὲ καὶ τοὺς παροίκους καὶ τοὺς δούλους",
-      "is_ambiguous": false,
-      "ambiguity_note": null
-    },
-    {
       "label": "Honorific Inscriptions",
       "hierarchy": {
         "domain": "Content",
