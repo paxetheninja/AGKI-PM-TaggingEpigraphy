@@ -77,13 +77,13 @@
       {
         "name": "Antiochus",
         "role": "Benefactor",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antiochus",
         "confidence": 1.0
       },
       {
         "name": "Phanosthenes",
         "role": "Benefactor",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q11921564",
         "confidence": 1.0
       }
     ],
@@ -91,7 +91,7 @@
       {
         "name": "Athens",
         "type": "City-state",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/579885",
         "confidence": 1.0
       }
     ],
@@ -102,7 +102,7 @@
     {
       "name": "Athens",
       "type": "Region",
-      "uri": null,
+      "uri": "https://pleiades.stoa.org/places/579885",
       "role": null,
       "confidence": 1.0
     }

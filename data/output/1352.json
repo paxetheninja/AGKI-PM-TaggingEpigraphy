@@ -91,103 +91,103 @@
       {
         "name": "Charicles",
         "role": "Citizen",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q3271893",
         "confidence": 1.0
       },
       {
         "name": "Nausistratus",
         "role": "Citizen",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nausistratus",
         "confidence": 1.0
       },
       {
         "name": "Diophanes",
         "role": "Citizen",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Diophanes",
         "confidence": 1.0
       },
       {
         "name": "Theophanes",
         "role": "Citizen",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q319403",
         "confidence": 1.0
       },
       {
         "name": "Timonides",
         "role": "Citizen",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Timonides",
         "confidence": 1.0
       },
       {
         "name": "Pistoxenus",
         "role": "Citizen",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pistoxenus",
         "confidence": 1.0
       },
       {
         "name": "Diodorus",
         "role": "Citizen",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Diodorus",
         "confidence": 1.0
       },
       {
         "name": "Anticles",
         "role": "Citizen",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q4774639",
         "confidence": 1.0
       },
       {
         "name": "Apollodorus",
         "role": "Citizen",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Apollodorus",
         "confidence": 1.0
       },
       {
         "name": "Ctesippus",
         "role": "Citizen",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ctesippus",
         "confidence": 1.0
       },
       {
         "name": "Xenocles",
         "role": "Citizen",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Xenocles",
         "confidence": 1.0
       },
       {
         "name": "Xenarchus",
         "role": "Citizen",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q2597894",
         "confidence": 1.0
       },
       {
         "name": "Theopompus",
         "role": "Citizen",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theopompus",
         "confidence": 1.0
       },
       {
         "name": "Nausicles",
         "role": "Citizen",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nausicles",
         "confidence": 1.0
       },
       {
         "name": "Aristion",
         "role": "Citizen",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristion",
         "confidence": 1.0
       },
       {
         "name": "Nicodemus",
         "role": "Citizen",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nicodemus",
         "confidence": 1.0
       },
       {
         "name": "Cleanetus",
         "role": "Citizen",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Cleanetus",
         "confidence": 1.0
       }
     ],
@@ -195,19 +195,19 @@
       {
         "name": "Athens",
         "type": "City",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/579885",
         "confidence": 0.8
       },
       {
         "name": "Pandionis",
         "type": "Tribe",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/391233695",
         "confidence": 1.0
       },
       {
         "name": "Leontis",
         "type": "Tribe",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/482653002",
         "confidence": 1.0
       }
     ],
@@ -218,7 +218,7 @@
     {
       "name": "Athens",
       "type": "Region",
-      "uri": null,
+      "uri": "https://pleiades.stoa.org/places/579885",
       "role": null,
       "confidence": 1.0
     }

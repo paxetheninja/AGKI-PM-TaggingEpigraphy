@@ -49,19 +49,19 @@
       {
         "name": "Pylos",
         "role": "Honorand and new citizen",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pylos",
         "confidence": 1.0
       },
       {
         "name": "Sosigenes",
         "role": "Father of the honorand",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sosigenes",
         "confidence": 1.0
       },
       {
         "name": "Demoretos",
         "role": "Proposer of the decree",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demoretos",
         "confidence": 1.0
       }
     ],
@@ -69,19 +69,19 @@
       {
         "name": "Samos",
         "type": "City-state",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/599925",
         "confidence": 1.0
       },
       {
         "name": "Heraion",
         "type": "Sanctuary of Hera",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/570288",
         "confidence": 1.0
       },
       {
         "name": "Aegina",
         "type": "City of origin of the honorand",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/579844",
         "confidence": 1.0
       }
     ],
@@ -93,7 +93,7 @@
       },
       {
         "name": "Dionysus",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q41680",
         "confidence": 1.0
       }
     ]
@@ -103,7 +103,7 @@
     {
       "name": "Samos",
       "type": "Region",
-      "uri": null,
+      "uri": "https://pleiades.stoa.org/places/599925",
       "role": null,
       "confidence": 1.0
     }

@@ -105,31 +105,31 @@
       {
         "name": "Polyxendes of Acharnae",
         "role": "Treasurer",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Polyxendes%20of%20Acharnae",
         "confidence": 1.0
       },
       {
         "name": "Leukaios son of Komarchos of Aphidna",
         "role": "Secretary",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Leukaios%20son%20of%20Komarchos%20of%20Aphidna",
         "confidence": 1.0
       },
       {
         "name": "Autokleides son of Sostratos of Phrearrhioi",
         "role": "Secretary",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Autokleides%20son%20of%20Sostratos%20of%20Phrearrhioi",
         "confidence": 1.0
       },
       {
         "name": "Polymedes son of Kephisophon of Atene",
         "role": "Treasurer",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Polymedes%20son%20of%20Kephisophon%20of%20Atene",
         "confidence": 1.0
       },
       {
         "name": "Kallaschros son of Eupyreides",
         "role": "Treasurer",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kallaschros%20son%20of%20Eupyreides",
         "confidence": 1.0
       }
     ],
@@ -137,7 +137,7 @@
       {
         "name": "Athens",
         "type": "City",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/579885",
         "confidence": 1.0
       },
       {
@@ -149,19 +149,19 @@
       {
         "name": "Aphidna",
         "type": "Deme",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/579873",
         "confidence": 1.0
       },
       {
         "name": "Phrearrhioi",
         "type": "Deme",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/580077",
         "confidence": 1.0
       },
       {
         "name": "Atene",
         "type": "Deme",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/579883",
         "confidence": 1.0
       }
     ],
@@ -178,7 +178,7 @@
     {
       "name": "Athens",
       "type": "Region",
-      "uri": null,
+      "uri": "https://pleiades.stoa.org/places/579885",
       "role": null,
       "confidence": 1.0
     }

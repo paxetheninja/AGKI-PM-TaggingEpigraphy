@@ -77,91 +77,91 @@
       {
         "name": "Euthydemus",
         "role": "Citizen",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Euthydemus",
         "confidence": 1.0
       },
       {
         "name": "Anticharmus",
         "role": "Citizen",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Anticharmus",
         "confidence": 1.0
       },
       {
         "name": "Eudoxus",
         "role": "Father",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eudoxus",
         "confidence": 1.0
       },
       {
         "name": "Dionysius",
         "role": "Citizen",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dionysius",
         "confidence": 1.0
       },
       {
         "name": "Demostratus",
         "role": "Citizen",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demostratus",
         "confidence": 1.0
       },
       {
         "name": "Kleinias",
         "role": "Citizen",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kleinias",
         "confidence": 1.0
       },
       {
         "name": "Timotheus",
         "role": "Citizen",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Timotheus",
         "confidence": 1.0
       },
       {
         "name": "Aristophon",
         "role": "Citizen",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristophon",
         "confidence": 0.8
       },
       {
         "name": "Nicostratus",
         "role": "Citizen",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nicostratus",
         "confidence": 1.0
       },
       {
         "name": "Eucrates",
         "role": "Citizen",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eucrates",
         "confidence": 1.0
       },
       {
         "name": "Menecles",
         "role": "Citizen",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Menecles",
         "confidence": 1.0
       },
       {
         "name": "Apollodorus",
         "role": "Citizen",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Apollodorus",
         "confidence": 1.0
       },
       {
         "name": "Lysicrates",
         "role": "Citizen",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lysicrates",
         "confidence": 1.0
       },
       {
         "name": "Theodorus",
         "role": "Citizen",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theodorus",
         "confidence": 1.0
       },
       {
         "name": "Pheidias",
         "role": "Citizen",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pheidias",
         "confidence": 1.0
       }
     ],
@@ -175,7 +175,7 @@
       {
         "name": "Hippothontis",
         "type": "Tribe",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/908290183",
         "confidence": 1.0
       },
       {
@@ -193,61 +193,61 @@
       {
         "name": "Melite",
         "type": "Deme",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/582863",
         "confidence": 1.0
       },
       {
         "name": "Xypete",
         "type": "Deme",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/580134",
         "confidence": 1.0
       },
       {
         "name": "Phlya",
         "type": "Deme",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/580076",
         "confidence": 0.8
       },
       {
         "name": "Piraeus",
         "type": "Deme",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/580062",
         "confidence": 1.0
       },
       {
         "name": "Eleusis",
         "type": "Deme",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/579920",
         "confidence": 1.0
       },
       {
         "name": "Marathon",
         "type": "Deme",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/580021",
         "confidence": 1.0
       },
       {
         "name": "Phaleron",
         "type": "Deme",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/580072",
         "confidence": 1.0
       },
       {
         "name": "Aphidna",
         "type": "Deme",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/579873",
         "confidence": 1.0
       },
       {
         "name": "Alopeke",
         "type": "Deme",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/579858",
         "confidence": 1.0
       },
       {
         "name": "Pallene",
         "type": "Deme",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/580051",
         "confidence": 1.0
       }
     ],
@@ -258,7 +258,7 @@
     {
       "name": "Attica",
       "type": "Region",
-      "uri": null,
+      "uri": "https://pleiades.stoa.org/places/579888",
       "role": null,
       "confidence": 1.0
     }

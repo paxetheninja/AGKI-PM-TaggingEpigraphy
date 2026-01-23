@@ -91,97 +91,97 @@
       {
         "name": "Polydorus",
         "role": "Archon",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Polydorus",
         "confidence": 1.0
       },
       {
         "name": "Piodotus",
         "role": "Archon",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Piodotus",
         "confidence": 1.0
       },
       {
         "name": "Thrason",
         "role": "Secretary",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Thrason",
         "confidence": 1.0
       },
       {
         "name": "Nicostratus son of Menemachus",
         "role": "Proedros",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nicostratus%20son%20of%20Menemachus",
         "confidence": 1.0
       },
       {
         "name": "Sosigenes",
         "role": "Proposer",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sosigenes",
         "confidence": 1.0
       },
       {
         "name": "Nicobulus son of Ergochares",
         "role": "Kosmetes",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nicobulus%20son%20of%20Ergochares",
         "confidence": 1.0
       },
       {
         "name": "Harmodorus son of Ortas",
         "role": "Paidotribes",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Harmodorus%20son%20of%20Ortas",
         "confidence": 1.0
       },
       {
         "name": "Eukritos son of Eukritos",
         "role": "Ephebe",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eukritos%20son%20of%20Eukritos",
         "confidence": 1.0
       },
       {
         "name": "Ergochares son of Nicobulus",
         "role": "Ephebe",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ergochares%20son%20of%20Nicobulus",
         "confidence": 1.0
       },
       {
         "name": "Stesileos son of Nicobulus",
         "role": "Ephebe",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Stesileos%20son%20of%20Nicobulus",
         "confidence": 1.0
       },
       {
         "name": "Anthemion son of Theophantos",
         "role": "Ephebe",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Anthemion%20son%20of%20Theophantos",
         "confidence": 1.0
       },
       {
         "name": "Oinobios son of Oinobios",
         "role": "Ephebe",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Oinobios%20son%20of%20Oinobios",
         "confidence": 1.0
       },
       {
         "name": "Demetrius son of Menophilus",
         "role": "Ephebe",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demetrius%20son%20of%20Menophilus",
         "confidence": 1.0
       },
       {
         "name": "Lysinos son of Cephisophon",
         "role": "Ephebe",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lysinos%20son%20of%20Cephisophon",
         "confidence": 1.0
       },
       {
         "name": "Konon son of Xenophon",
         "role": "Ephebe",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Konon%20son%20of%20Xenophon",
         "confidence": 1.0
       },
       {
         "name": "Abas son of Cleander",
         "role": "Ephebe",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Abas%20son%20of%20Cleander",
         "confidence": 1.0
       }
     ],
@@ -189,25 +189,25 @@
       {
         "name": "Athens",
         "type": "City",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/579885",
         "confidence": 1.0
       },
       {
         "name": "Eleusis",
         "type": "Sanctuary and Deme",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/579920",
         "confidence": 1.0
       },
       {
         "name": "Acropolis",
         "type": "Sanctuary",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/579885",
         "confidence": 1.0
       },
       {
         "name": "Agora",
         "type": "Public Space",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/501332",
         "confidence": 1.0
       },
       {
@@ -219,7 +219,7 @@
       {
         "name": "Oion",
         "type": "Deme",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/540977",
         "confidence": 1.0
       },
       {
@@ -231,25 +231,25 @@
       {
         "name": "Phyle",
         "type": "Deme",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/580079",
         "confidence": 1.0
       },
       {
         "name": "Melite",
         "type": "Deme",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/582863",
         "confidence": 1.0
       },
       {
         "name": "Cephisia",
         "type": "Deme",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q13415481",
         "confidence": 1.0
       },
       {
         "name": "Erchia",
         "type": "Deme",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/579924",
         "confidence": 1.0
       },
       {
@@ -267,7 +267,7 @@
       {
         "name": "Athmonon",
         "type": "Deme",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/579887",
         "confidence": 1.0
       },
       {
@@ -279,7 +279,7 @@
       {
         "name": "Hamaxanteia",
         "type": "Deme",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/585916",
         "confidence": 1.0
       },
       {
@@ -291,7 +291,7 @@
       {
         "name": "Tenos",
         "type": "Island",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/590073",
         "confidence": 1.0
       }
     ],
@@ -313,7 +313,7 @@
     {
       "name": "Athens",
       "type": "Region",
-      "uri": null,
+      "uri": "https://pleiades.stoa.org/places/579885",
       "role": null,
       "confidence": 1.0
     }

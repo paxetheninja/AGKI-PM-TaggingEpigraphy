@@ -77,25 +77,25 @@
       {
         "name": "Orthagoras",
         "role": "Koan Judge",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Orthagoras",
         "confidence": 1.0
       },
       {
         "name": "Hippocrates",
         "role": "Father of Orthagoras",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hippocrates",
         "confidence": 1.0
       },
       {
         "name": "Timarchus",
         "role": "Koan Judge",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Timarchus",
         "confidence": 1.0
       },
       {
         "name": "Timides",
         "role": "Father of Timarchus",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Timides",
         "confidence": 1.0
       }
     ],
@@ -103,19 +103,19 @@
       {
         "name": "Kos",
         "type": "City-state",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/736946",
         "confidence": 1.0
       },
       {
         "name": "Chalcis",
         "type": "City-state",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/540703",
         "confidence": 1.0
       },
       {
         "name": "Agora",
         "type": "Public space",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/501332",
         "confidence": 1.0
       },
       {
@@ -133,19 +133,19 @@
       {
         "name": "Rome",
         "type": "State",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/423025",
         "confidence": 0.9
       }
     ],
     "deities": [
       {
         "name": "Asclepius",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q83223",
         "confidence": 1.0
       },
       {
         "name": "Dionysus",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q41680",
         "confidence": 1.0
       },
       {
@@ -160,7 +160,7 @@
     {
       "name": "Kos",
       "type": "Findspot",
-      "uri": null,
+      "uri": "https://pleiades.stoa.org/places/736946",
       "role": null,
       "confidence": 1.0
     }

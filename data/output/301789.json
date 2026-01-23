@@ -77,7 +77,7 @@
       {
         "name": "Demarch",
         "role": "Local official involved in land administration",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demarch",
         "confidence": 0.8
       }
     ],
@@ -85,13 +85,13 @@
       {
         "name": "Pergamon",
         "type": "City",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/550812",
         "confidence": 0.8
       },
       {
         "name": "Gryneion",
         "type": "Sanctuary",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/550555",
         "confidence": 1.0
       }
     ],
@@ -113,7 +113,7 @@
     {
       "name": "Pergamon",
       "type": "Region",
-      "uri": null,
+      "uri": "https://pleiades.stoa.org/places/550812",
       "role": null,
       "confidence": 1.0
     }

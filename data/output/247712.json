@@ -77,43 +77,43 @@
       {
         "name": "Prytanis",
         "role": "Chief magistrate and religious official",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Prytanis",
         "confidence": 1.0
       },
       {
         "name": "Hierophant",
         "role": "Religious official who reveals sacred mysteries",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hierophant",
         "confidence": 1.0
       },
       {
         "name": "Hierokeryx",
         "role": "Sacred Herald",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q137036416",
         "confidence": 1.0
       },
       {
         "name": "Aulete",
         "role": "Flute player",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aulete",
         "confidence": 1.0
       },
       {
         "name": "Salpinktes",
         "role": "Trumpeter",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Salpinktes",
         "confidence": 1.0
       },
       {
         "name": "Hieroskopos",
         "role": "Sacred observer or diviner",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hieroskopos",
         "confidence": 1.0
       },
       {
         "name": "Hebdomokouretis",
         "role": "Member of the college of Kouretes",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hebdomokouretis",
         "confidence": 1.0
       }
     ],
@@ -121,13 +121,13 @@
       {
         "name": "Ephesus",
         "type": "City",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/599612",
         "confidence": 1.0
       },
       {
         "name": "Rome",
         "type": "City or State",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/423025",
         "confidence": 1.0
       },
       {
@@ -155,7 +155,7 @@
     {
       "name": "Ephesus",
       "type": "Region",
-      "uri": null,
+      "uri": "https://pleiades.stoa.org/places/599612",
       "role": null,
       "confidence": 1.0
     }

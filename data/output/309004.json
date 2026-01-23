@@ -91,91 +91,91 @@
       {
         "name": "Dikaiarchos",
         "role": "Honoree and military commander",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dikaiarchos",
         "confidence": 1.0
       },
       {
         "name": "Apollonios",
         "role": "Father of Dikaiarchos",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q3620717",
         "confidence": 1.0
       },
       {
         "name": "Antigonus",
         "role": "King Antigonus II Gonatas",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antigonus",
         "confidence": 1.0
       },
       {
         "name": "Demetrius",
         "role": "King Demetrius II Aetolicus",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demetrius",
         "confidence": 1.0
       },
       {
         "name": "Philokydes",
         "role": "General (Strategos)",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philokydes",
         "confidence": 1.0
       },
       {
         "name": "Elpinikos",
         "role": "Proposer of the decree and committee member",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Elpinikos",
         "confidence": 1.0
       },
       {
         "name": "Mnesippos",
         "role": "Father of Elpinikos",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Mnesippos",
         "confidence": 1.0
       },
       {
         "name": "Lykias",
         "role": "Committee member",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lykias",
         "confidence": 1.0
       },
       {
         "name": "Hierokles",
         "role": "Father of Lykias",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hierokles",
         "confidence": 1.0
       },
       {
         "name": "Strombichos",
         "role": "Committee member",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Strombichos",
         "confidence": 1.0
       },
       {
         "name": "Kleodorides",
         "role": "Father of Strombichos",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kleodorides",
         "confidence": 1.0
       },
       {
         "name": "Thrasymachos",
         "role": "Committee member",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Thrasymachos",
         "confidence": 1.0
       },
       {
         "name": "Antimachos",
         "role": "Father of Thrasymachos",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antimachos",
         "confidence": 1.0
       },
       {
         "name": "Lysitheos",
         "role": "Committee member",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lysitheos",
         "confidence": 1.0
       },
       {
         "name": "Diokles",
         "role": "Father of Lysitheos",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q905833",
         "confidence": 1.0
       }
     ],
@@ -183,43 +183,43 @@
       {
         "name": "Rhamnous",
         "type": "Deme and fortress",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/580097",
         "confidence": 1.0
       },
       {
         "name": "Athens",
         "type": "City-state",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/579885",
         "confidence": 1.0
       },
       {
         "name": "Eleusis",
         "type": "Deme and fortress",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/579920",
         "confidence": 1.0
       },
       {
         "name": "Panakton",
         "type": "Fortress",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/580053",
         "confidence": 1.0
       },
       {
         "name": "Attica",
         "type": "Region",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/579888",
         "confidence": 1.0
       },
       {
         "name": "Eretria",
         "type": "City",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/540767",
         "confidence": 1.0
       },
       {
         "name": "Thria",
         "type": "Deme",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/580120",
         "confidence": 1.0
       }
     ],
@@ -231,7 +231,7 @@
       },
       {
         "name": "Dionysus",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q41680",
         "confidence": 1.0
       }
     ]
@@ -241,7 +241,7 @@
     {
       "name": "Rhamnous",
       "type": "Deme",
-      "uri": null,
+      "uri": "https://pleiades.stoa.org/places/580097",
       "role": null,
       "confidence": 1.0
     }

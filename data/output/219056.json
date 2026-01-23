@@ -119,19 +119,19 @@
       {
         "name": "Ezana",
         "role": "King of Aksum",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ezana",
         "confidence": 1.0
       },
       {
         "name": "Sazanas",
         "role": "Brother of the King",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sazanas",
         "confidence": 1.0
       },
       {
         "name": "Adiphas",
         "role": "Brother of the King",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Adiphas",
         "confidence": 1.0
       }
     ],
@@ -139,31 +139,31 @@
       {
         "name": "Aksum",
         "type": "City/Kingdom",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/39303",
         "confidence": 1.0
       },
       {
         "name": "Matlia",
         "type": "Settlement",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/9652034",
         "confidence": 1.0
       },
       {
         "name": "Kush",
         "type": "Region",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/827790769",
         "confidence": 1.0
       },
       {
         "name": "Himyar",
         "type": "Kingdom",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q289577",
         "confidence": 1.0
       },
       {
         "name": "Saba",
         "type": "Kingdom",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/39379",
         "confidence": 1.0
       }
     ],
@@ -185,7 +185,7 @@
     {
       "name": "Aksum",
       "type": "Region",
-      "uri": null,
+      "uri": "https://pleiades.stoa.org/places/39303",
       "role": null,
       "confidence": 1.0
     }

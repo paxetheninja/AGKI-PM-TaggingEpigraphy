@@ -63,67 +63,67 @@
       {
         "name": "Philiscus",
         "role": "Monarchos",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philiscus",
         "confidence": 1.0
       },
       {
         "name": "Onasander",
         "role": "Physician",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Onasander",
         "confidence": 1.0
       },
       {
         "name": "Onesimus",
         "role": "Father of Onasander",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Onesimus",
         "confidence": 1.0
       },
       {
         "name": "Antipater",
         "role": "Teacher of Onasander",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antipater",
         "confidence": 1.0
       },
       {
         "name": "Nicarchus",
         "role": "Proposer",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nicarchus",
         "confidence": 1.0
       },
       {
         "name": "Teisarchus",
         "role": "Father of Nicarchus",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Teisarchus",
         "confidence": 1.0
       },
       {
         "name": "Ariston",
         "role": "Proposer",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ariston",
         "confidence": 1.0
       },
       {
         "name": "Charmylus",
         "role": "Father of Ariston",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Charmylus",
         "confidence": 1.0
       },
       {
         "name": "Philondas",
         "role": "Proposer",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philondas",
         "confidence": 1.0
       },
       {
         "name": "Didymarchus",
         "role": "Father of Philondas",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Didymarchus",
         "confidence": 1.0
       },
       {
         "name": "Dioscorides",
         "role": "Medical Authority",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dioscorides",
         "confidence": 0.8
       }
     ],
@@ -131,13 +131,13 @@
       {
         "name": "Halasarna",
         "type": "Deme",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/599634",
         "confidence": 1.0
       },
       {
         "name": "Kos",
         "type": "Island",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/736946",
         "confidence": 1.0
       }
     ],
@@ -154,14 +154,14 @@
     {
       "name": "Kos",
       "type": "Region",
-      "uri": null,
+      "uri": "https://pleiades.stoa.org/places/736946",
       "role": null,
       "confidence": 1.0
     },
     {
       "name": "Halasarna",
       "type": "City",
-      "uri": null,
+      "uri": "https://pleiades.stoa.org/places/599634",
       "role": null,
       "confidence": 1.0
     }

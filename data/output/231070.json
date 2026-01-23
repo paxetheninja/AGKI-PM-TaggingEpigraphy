@@ -63,43 +63,43 @@
       {
         "name": "Sonikos",
         "role": "Archon",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sonikos",
         "confidence": 1.0
       },
       {
         "name": "Pausanias",
         "role": "Secretary",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pausanias",
         "confidence": 1.0
       },
       {
         "name": "Biotolos",
         "role": "Father of Pausanias",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Biotolos",
         "confidence": 1.0
       },
       {
         "name": "Antichares",
         "role": "Chairman of the Proedroi",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antichares",
         "confidence": 1.0
       },
       {
         "name": "Epizelos",
         "role": "Father of Antichares",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Epizelos",
         "confidence": 1.0
       },
       {
         "name": "Lysandros",
         "role": "Proposer",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lysandros",
         "confidence": 1.0
       },
       {
         "name": "Nestor",
         "role": "Father of Lysandros",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nestor",
         "confidence": 1.0
       }
     ],
@@ -107,13 +107,13 @@
       {
         "name": "Athens",
         "type": "City",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/579885",
         "confidence": 1.0
       },
       {
         "name": "Piraeus",
         "type": "Port and location of Assembly",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/580062",
         "confidence": 1.0
       },
       {
@@ -125,19 +125,19 @@
       {
         "name": "Perithoidai",
         "type": "Deme",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/580068",
         "confidence": 1.0
       },
       {
         "name": "Angelai",
         "type": "Deme",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q4025201",
         "confidence": 1.0
       },
       {
         "name": "Kydathenaion",
         "type": "Deme",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/582862",
         "confidence": 1.0
       }
     ],
@@ -164,14 +164,14 @@
     {
       "name": "Athens",
       "type": "Region",
-      "uri": null,
+      "uri": "https://pleiades.stoa.org/places/579885",
       "role": null,
       "confidence": 1.0
     },
     {
       "name": "Agora",
       "type": "Site",
-      "uri": null,
+      "uri": "https://pleiades.stoa.org/places/501332",
       "role": null,
       "confidence": 1.0
     }

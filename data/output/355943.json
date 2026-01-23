@@ -91,73 +91,73 @@
       {
         "name": "Seleucus",
         "role": "King and benefactor",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Seleucus",
         "confidence": 1.0
       },
       {
         "name": "Antiochus",
         "role": "King and benefactor",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antiochus",
         "confidence": 1.0
       },
       {
         "name": "Apelles son of Polydorus",
         "role": "Committee member",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Apelles%20son%20of%20Polydorus",
         "confidence": 1.0
       },
       {
         "name": "Pelles son of Dionysius",
         "role": "Committee member",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pelles%20son%20of%20Dionysius",
         "confidence": 1.0
       },
       {
         "name": "Metrobios",
         "role": "Committee member",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Metrobios",
         "confidence": 1.0
       },
       {
         "name": "Pellichos son of Athenaeus",
         "role": "Committee member",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pellichos%20son%20of%20Athenaeus",
         "confidence": 1.0
       },
       {
         "name": "Athenaeus son of Polydorus",
         "role": "Committee member",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Athenaeus%20son%20of%20Polydorus",
         "confidence": 1.0
       },
       {
         "name": "Proteros son of Phaitas",
         "role": "Committee member",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Proteros%20son%20of%20Phaitas",
         "confidence": 1.0
       },
       {
         "name": "Thanos son of Mikkos",
         "role": "Committee member",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Thanos%20son%20of%20Mikkos",
         "confidence": 1.0
       },
       {
         "name": "Cleomenes son of Hermagoras",
         "role": "Committee member",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Cleomenes%20son%20of%20Hermagoras",
         "confidence": 1.0
       },
       {
         "name": "Aristagoras son of Athenaeus",
         "role": "Committee member",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristagoras%20son%20of%20Athenaeus",
         "confidence": 1.0
       },
       {
         "name": "Apollonides son of Kakos",
         "role": "Committee member",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Apollonides%20son%20of%20Kakos",
         "confidence": 1.0
       }
     ],
@@ -165,7 +165,7 @@
       {
         "name": "Aigai",
         "type": "City",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/570040",
         "confidence": 1.0
       },
       {
@@ -177,7 +177,7 @@
       {
         "name": "Strategion",
         "type": "Public building",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q125624025",
         "confidence": 1.0
       },
       {
@@ -195,7 +195,7 @@
       {
         "name": "Seleukis",
         "type": "Tribe",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/658592",
         "confidence": 1.0
       },
       {
@@ -223,7 +223,7 @@
       },
       {
         "name": "Dionysus",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q41680",
         "confidence": 1.0
       }
     ]
@@ -233,14 +233,14 @@
     {
       "name": "Aeolis",
       "type": "Region",
-      "uri": null,
+      "uri": "https://pleiades.stoa.org/places/550406",
       "role": null,
       "confidence": 1.0
     },
     {
       "name": "Aigai",
       "type": "City",
-      "uri": null,
+      "uri": "https://pleiades.stoa.org/places/570040",
       "role": null,
       "confidence": 1.0
     }

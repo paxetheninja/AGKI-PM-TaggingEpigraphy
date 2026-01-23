@@ -77,37 +77,37 @@
       {
         "name": "Lucius Calpurnius Piso",
         "role": "Roman Magistrate",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lucius%20Calpurnius%20Piso",
         "confidence": 1.0
       },
       {
         "name": "Servius Sulpicius",
         "role": "Roman Envoy",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Servius%20Sulpicius",
         "confidence": 1.0
       },
       {
         "name": "Ptolemy Philometor",
         "role": "King of Egypt",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ptolemy%20Philometor",
         "confidence": 1.0
       },
       {
         "name": "Quintus Fabius",
         "role": "Roman Envoy",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Quintus%20Fabius",
         "confidence": 1.0
       },
       {
         "name": "Euphemus son of Pausanias",
         "role": "Chief Judge from Magnesia",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Euphemus%20son%20of%20Pausanias",
         "confidence": 1.0
       },
       {
         "name": "Aristagoras son of Demetrius",
         "role": "Judge from Magnesia",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristagoras%20son%20of%20Demetrius",
         "confidence": 1.0
       }
     ],
@@ -115,31 +115,31 @@
       {
         "name": "Itanos",
         "type": "City",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/589824",
         "confidence": 1.0
       },
       {
         "name": "Hierapytna",
         "type": "City",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/589807",
         "confidence": 1.0
       },
       {
         "name": "Praisos",
         "type": "City",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/590011",
         "confidence": 1.0
       },
       {
         "name": "Leuke",
         "type": "Island",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/589909",
         "confidence": 1.0
       },
       {
         "name": "Crete",
         "type": "Region",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/5066435",
         "confidence": 1.0
       },
       {
@@ -151,13 +151,13 @@
       {
         "name": "Gortyn",
         "type": "City",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/589796",
         "confidence": 0.9
       },
       {
         "name": "Dragmos",
         "type": "City",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/589765",
         "confidence": 0.9
       }
     ],
@@ -179,7 +179,7 @@
     {
       "name": "Itanos",
       "type": "Region",
-      "uri": null,
+      "uri": "https://pleiades.stoa.org/places/589824",
       "role": null,
       "confidence": 1.0
     }

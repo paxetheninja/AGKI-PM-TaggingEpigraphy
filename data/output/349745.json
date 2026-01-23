@@ -49,25 +49,25 @@
       {
         "name": "Judges",
         "role": "Foreign judges sent to adjudicate legal cases fairly",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Judges",
         "confidence": 1.0
       },
       {
         "name": "Secretary",
         "role": "Official responsible for administrative duties and documentation",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Secretary",
         "confidence": 1.0
       },
       {
         "name": "Envoy",
         "role": "Representative sent to communicate the decree to the people of Kos",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Envoy",
         "confidence": 1.0
       },
       {
         "name": "Agonothetes",
         "role": "Organizers of the musical games and festival",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Agonothetes",
         "confidence": 1.0
       }
     ],
@@ -75,14 +75,14 @@
       {
         "name": "Kos",
         "type": "City",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/736946",
         "confidence": 1.0
       }
     ],
     "deities": [
       {
         "name": "Dionysus",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q41680",
         "confidence": 1.0
       }
     ]
@@ -92,7 +92,7 @@
     {
       "name": "Kos",
       "type": "Region",
-      "uri": null,
+      "uri": "https://pleiades.stoa.org/places/736946",
       "role": null,
       "confidence": 1.0
     }

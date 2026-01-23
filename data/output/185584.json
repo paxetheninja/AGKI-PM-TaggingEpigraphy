@@ -63,19 +63,19 @@
       {
         "name": "Priestess",
         "role": "Religious official receiving sacrificial portions",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Priestess",
         "confidence": 1.0
       },
       {
         "name": "Hieropoioi",
         "role": "Sacred officials responsible for overseeing sacrifices",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hieropoioi",
         "confidence": 1.0
       },
       {
         "name": "Treasurers",
         "role": "Financial officials involved in leasing or fines",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Treasurers",
         "confidence": 1.0
       }
     ],
@@ -83,13 +83,13 @@
       {
         "name": "Aphrodision",
         "type": "Sanctuary of Aphrodite",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/570093",
         "confidence": 1.0
       },
       {
         "name": "Kos",
         "type": "City-state",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/736946",
         "confidence": 1.0
       }
     ],
@@ -106,7 +106,7 @@
     {
       "name": "Kos",
       "type": "Region",
-      "uri": null,
+      "uri": "https://pleiades.stoa.org/places/736946",
       "role": null,
       "confidence": 1.0
     }

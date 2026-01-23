@@ -147,37 +147,37 @@
       {
         "name": "Antiochus",
         "role": "Prytanis",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antiochus",
         "confidence": 1.0
       },
       {
         "name": "Dracontides",
         "role": "Epistates",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dracontides",
         "confidence": 1.0
       },
       {
         "name": "Diognetus",
         "role": "Proposer",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Diognetus",
         "confidence": 1.0
       },
       {
         "name": "Anticles",
         "role": "Proposer",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q4774639",
         "confidence": 1.0
       },
       {
         "name": "Archestratus",
         "role": "Proposer",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Archestratus",
         "confidence": 1.0
       },
       {
         "name": "Hierocles",
         "role": "Religious official",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hierocles",
         "confidence": 1.0
       }
     ],
@@ -185,25 +185,25 @@
       {
         "name": "Athens",
         "type": "City",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/579885",
         "confidence": 1.0
       },
       {
         "name": "Chalcis",
         "type": "City",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/540703",
         "confidence": 1.0
       },
       {
         "name": "Eretria",
         "type": "City",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/540767",
         "confidence": 1.0
       },
       {
         "name": "Euboea",
         "type": "Region",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/540775",
         "confidence": 1.0
       }
     ],
@@ -220,14 +220,14 @@
     {
       "name": "Attica",
       "type": "Region",
-      "uri": null,
+      "uri": "https://pleiades.stoa.org/places/579888",
       "role": null,
       "confidence": 1.0
     },
     {
       "name": "Athens",
       "type": "City",
-      "uri": null,
+      "uri": "https://pleiades.stoa.org/places/579885",
       "role": null,
       "confidence": 1.0
     }

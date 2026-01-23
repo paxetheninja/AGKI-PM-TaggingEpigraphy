@@ -91,49 +91,49 @@
       {
         "name": "Dieitrephes",
         "role": "Archon",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q1528083",
         "confidence": 1.0
       },
       {
         "name": "Cephalus",
         "role": "Ambassador",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q1109324",
         "confidence": 1.0
       },
       {
         "name": "Aesimus",
         "role": "Ambassador",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aesimus",
         "confidence": 1.0
       },
       {
         "name": "Democleides",
         "role": "Ambassador",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Democleides",
         "confidence": 1.0
       },
       {
         "name": "Bryon",
         "role": "Chian Ambassador",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Bryon",
         "confidence": 1.0
       },
       {
         "name": "Archilas",
         "role": "Chian Ambassador",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Archilas",
         "confidence": 1.0
       },
       {
         "name": "Stephanus",
         "role": "Father of the Secretary",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Stephanus",
         "confidence": 1.0
       },
       {
         "name": "King of Persia",
         "role": "Monarch",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=King%20of%20Persia",
         "confidence": 1.0
       }
     ],
@@ -141,25 +141,25 @@
       {
         "name": "Athens",
         "type": "City",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/579885",
         "confidence": 1.0
       },
       {
         "name": "Chios",
         "type": "Island",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/550496",
         "confidence": 1.0
       },
       {
         "name": "Lacedaemon",
         "type": "City-state",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/570406",
         "confidence": 1.0
       },
       {
         "name": "Acropolis",
         "type": "Sanctuary",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/579885",
         "confidence": 1.0
       },
       {
@@ -171,13 +171,13 @@
       {
         "name": "Alopece",
         "type": "Deme",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/828240",
         "confidence": 1.0
       },
       {
         "name": "Phrearrhioi",
         "type": "Deme",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/580077",
         "confidence": 1.0
       },
       {
@@ -194,7 +194,7 @@
     {
       "name": "Athens",
       "type": "Region",
-      "uri": null,
+      "uri": "https://pleiades.stoa.org/places/579885",
       "role": null,
       "confidence": 1.0
     }

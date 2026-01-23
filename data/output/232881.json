@@ -91,37 +91,37 @@
       {
         "name": "Apollodoros",
         "role": "Archon",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Apollodoros",
         "confidence": 1.0
       },
       {
         "name": "Kadmos",
         "role": "Secretary",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q13053204",
         "confidence": 1.0
       },
       {
         "name": "Ainetos",
         "role": "Honoree",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q405989",
         "confidence": 1.0
       },
       {
         "name": "Damon",
         "role": "Father of honoree",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Damon",
         "confidence": 1.0
       },
       {
         "name": "Alexander the Great",
         "role": "King",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q8409",
         "confidence": 1.0
       },
       {
         "name": "Kteson",
         "role": "Father of proposer",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kteson",
         "confidence": 1.0
       }
     ],
@@ -129,25 +129,25 @@
       {
         "name": "Athens",
         "type": "City",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/579885",
         "confidence": 1.0
       },
       {
         "name": "Asia",
         "type": "Region",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/599527",
         "confidence": 1.0
       },
       {
         "name": "Kerameis",
         "type": "Deme",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/579975",
         "confidence": 1.0
       },
       {
         "name": "Lakiadai",
         "type": "Deme",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/580006",
         "confidence": 0.8
       }
     ],
@@ -169,7 +169,7 @@
     {
       "name": "Athens",
       "type": "Region",
-      "uri": null,
+      "uri": "https://pleiades.stoa.org/places/579885",
       "role": null,
       "confidence": 1.0
     }

@@ -77,13 +77,13 @@
       {
         "name": "Ariarathes",
         "role": "King",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q112996336",
         "confidence": 1.0
       },
       {
         "name": "Antiochis",
         "role": "Queen",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q451051",
         "confidence": 1.0
       }
     ],
@@ -91,7 +91,7 @@
       {
         "name": "Kos",
         "type": "City",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/736946",
         "confidence": 1.0
       },
       {
@@ -104,7 +104,7 @@
     "deities": [
       {
         "name": "Zeus",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q34201",
         "confidence": 1.0
       },
       {
@@ -114,12 +114,12 @@
       },
       {
         "name": "Asclepius",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q83223",
         "confidence": 1.0
       },
       {
         "name": "Homonoia",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q5891490",
         "confidence": 1.0
       },
       {
@@ -129,7 +129,7 @@
       },
       {
         "name": "Ploutos",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q205251",
         "confidence": 1.0
       }
     ]
@@ -139,7 +139,7 @@
     {
       "name": "Kos",
       "type": "Region",
-      "uri": null,
+      "uri": "https://pleiades.stoa.org/places/736946",
       "role": null,
       "confidence": 1.0
     }

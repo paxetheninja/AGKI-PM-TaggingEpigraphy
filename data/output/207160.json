@@ -49,97 +49,97 @@
       {
         "name": "Simos",
         "role": "Manumitted person",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Simos",
         "confidence": 1.0
       },
       {
         "name": "Ptolemaios",
         "role": "Former owner",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ptolemaios",
         "confidence": 1.0
       },
       {
         "name": "Aristarchos",
         "role": "Father of treasurer",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristarchos",
         "confidence": 1.0
       },
       {
         "name": "Herminos",
         "role": "Treasurer",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q3732053",
         "confidence": 1.0
       },
       {
         "name": "Philoxenides",
         "role": "Strategos",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philoxenides",
         "confidence": 1.0
       },
       {
         "name": "Mnesimachos",
         "role": "Former owner",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Mnesimachos",
         "confidence": 1.0
       },
       {
         "name": "Brous",
         "role": "Father of former owner",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Brous",
         "confidence": 1.0
       },
       {
         "name": "Publius Sextius",
         "role": "Treasurer",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Publius%20Sextius",
         "confidence": 1.0
       },
       {
         "name": "Aristokrates",
         "role": "Manumitted person",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristokrates",
         "confidence": 1.0
       },
       {
         "name": "Philippos",
         "role": "Former owner",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philippos",
         "confidence": 1.0
       },
       {
         "name": "Parmonides",
         "role": "Father of former owner",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Parmonides",
         "confidence": 1.0
       },
       {
         "name": "Leonides",
         "role": "Former owner by adoption",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Leonides",
         "confidence": 1.0
       },
       {
         "name": "Soteris",
         "role": "Manumitted person",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Soteris",
         "confidence": 1.0
       },
       {
         "name": "Polycharmos",
         "role": "Former owner",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Polycharmos",
         "confidence": 1.0
       },
       {
         "name": "Nikaresta",
         "role": "Former owner",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nikaresta",
         "confidence": 1.0
       },
       {
         "name": "Pothion",
         "role": "Father of former owner",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pothion",
         "confidence": 1.0
       }
     ],
@@ -147,13 +147,13 @@
       {
         "name": "Chyretiai",
         "type": "City",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/540712",
         "confidence": 0.8
       },
       {
         "name": "Thessaly",
         "type": "Region",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/1332",
         "confidence": 0.8
       }
     ],
@@ -164,7 +164,7 @@
     {
       "name": "Chyretiai",
       "type": "City",
-      "uri": null,
+      "uri": "https://pleiades.stoa.org/places/540712",
       "role": null,
       "confidence": 1.0
     }

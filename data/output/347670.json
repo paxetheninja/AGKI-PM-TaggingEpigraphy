@@ -77,13 +77,13 @@
       {
         "name": "Timarchus",
         "role": "Honoree, Proxenos, and Benefactor",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Timarchus",
         "confidence": 1.0
       },
       {
         "name": "Timarchus",
         "role": "Father of the honoree",
-        "uri": null,
+        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Timarchus",
         "confidence": 1.0
       }
     ],
@@ -91,13 +91,13 @@
       {
         "name": "Athens",
         "type": "City-state",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/579885",
         "confidence": 1.0
       },
       {
         "name": "Salamis",
         "type": "Island and Deme",
-        "uri": null,
+        "uri": "https://pleiades.stoa.org/places/707617",
         "confidence": 1.0
       },
       {
@@ -131,7 +131,7 @@
     {
       "name": "Athens",
       "type": "Region",
-      "uri": null,
+      "uri": "https://pleiades.stoa.org/places/579885",
       "role": null,
       "confidence": 1.0
     }
