@@ -886,6 +886,11 @@
             sections.push(buildSection(`Mentioned (${menIds.length})`, buildMentionList(entry.mentioned)));
         }
 
+        const allIds = Array.from(new Set([...provIds, ...menIds]));
+        if (allIds.length > 0) {
+            sections.push(`<div style="margin-top:0.5rem; text-align:center;"><button class="button tiny primary" onclick="window.basket.addMany([${allIds.join(',')}])">Add All (${allIds.length}) to Basket</button></div>`);
+        }
+
         return `<div class="popup-content">${caption}${sections.join('')}</div>`;
     }
 

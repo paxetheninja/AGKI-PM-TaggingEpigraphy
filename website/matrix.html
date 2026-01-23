@@ -25,7 +25,7 @@
     .matrix-table th { background: var(--panel); position: sticky; top: 0; z-index: 2; }
     .matrix-table th.row-header { position: sticky; left: 0; z-index: 3; text-align: right; padding-right: 6px; width: auto; white-space: nowrap; font-size: 0.7rem; }
     .matrix-table th.corner { position: sticky; top: 0; left: 0; z-index: 4; background: var(--panel); }
-    .matrix-table th.col-header { writing-mode: vertical-lr; text-orientation: mixed; transform: rotate(180deg); padding: 4px 2px; white-space: nowrap; font-size: 0.7rem; }
+    .matrix-table th.col-header { writing-mode: vertical-lr; text-orientation: mixed; transform: rotate(180deg); padding: 4px 2px; white-space: nowrap; font-size: 0.75rem; height: 180px; text-align: left; }
 
     .matrix-cell { cursor: pointer; transition: transform 0.15s; }
     .matrix-cell:hover { transform: scale(1.5); z-index: 10; position: relative; }
@@ -104,6 +104,10 @@
                 <select id="categoryFilter">
                     <option value="">All Categories</option>
                 </select>
+            </div>
+            <div class="control-group">
+                <label for="maxTags">Max Tags:</label>
+                <input type="number" id="maxTags" value="50" min="10" max="500" style="width:70px;">
             </div>
             <button class="button" onclick="updateMatrix()">Update</button>
         </div>
@@ -240,6 +244,7 @@
 
     function updateMatrix() {
         const minCount = parseInt(document.getElementById('minCount').value) || 2;
+        const maxTags = parseInt(document.getElementById('maxTags').value) || 50;
         const categoryFilter = document.getElementById('categoryFilter').value;
 
         const data = buildCooccurrenceData(minCount, categoryFilter);
@@ -247,7 +252,7 @@
         allTags = data.tags;
 
         updateStats(data);
-        renderMatrix(data);
+        renderMatrix(data, maxTags);
     }
 
     function updateStats(data) {
@@ -290,7 +295,7 @@
         document.getElementById('legendMax').textContent = maxCount || 10;
     }
 
-    function renderMatrix(data) {
+    function renderMatrix(data, limit = 50) {
         const container = document.getElementById('matrixContainer');
 
         if (data.tags.length === 0) {
@@ -298,8 +303,8 @@
             return;
         }
 
-        // Limit to top 40 tags for readability
-        const tags = data.tags.slice(0, 40);
+        // Limit tags for readability/performance
+        const tags = data.tags.slice(0, limit);
         const maxCount = Math.max(...Array.from(data.pairs.values()));
 
         let html = '<div class="matrix-wrapper"><table class="matrix-table">';
@@ -307,14 +312,14 @@
         // Header row
         html += '<tr><th class="corner"></th>';
         tags.forEach(tag => {
-            const shortTag = tag.length > 20 ? tag.substring(0, 17) + '...' : tag;
+            const shortTag = tag.length > 40 ? tag.substring(0, 37) + '...' : tag;
             html += `<th class="col-header" title="${tag}">${shortTag}</th>`;
         });
         html += '</tr>';
 
         // Data rows
         tags.forEach((rowTag, i) => {
-            const shortRowTag = rowTag.length > 25 ? rowTag.substring(0, 22) + '...' : rowTag;
+            const shortRowTag = rowTag.length > 40 ? rowTag.substring(0, 37) + '...' : rowTag;
             html += `<tr><th class="row-header" title="${rowTag}">${shortRowTag}</th>`;
 
             tags.forEach((colTag, j) => {
