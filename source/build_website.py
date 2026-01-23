@@ -5,6 +5,7 @@ import concurrent.futures
 from pathlib import Path
 from .config import INPUT_DIR, OUTPUT_DIR, TAXONOMY_DIR, DATA_DIR
 from .data_loader import load_inscriptions
+from .preprocessing import clean_metadata
 
 ROOT_INDEX = Path("index.html")
 WEBSITE_DIR = Path("website")
@@ -656,6 +657,8 @@ def build_website(mode=None):
     print("Building website...")
     INSCRIPTIONS_DIR.mkdir(parents=True, exist_ok=True)
     inputs = load_inscriptions(INPUT_DIR)
+    # Clean metadata (e.g. prune corpus citations from regions)
+    inputs = [clean_metadata(i) for i in inputs]
     inputs_map = {i.id: i.model_dump() for i in inputs}
     
     outputs = []
