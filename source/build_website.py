@@ -305,6 +305,7 @@ def generate_detail_page(merged_data):
         <a href="../../index.html" class="nav-item">Home</a>
         <a href="../search.html" class="nav-item">Search</a>
         <a href="../explore.html" class="nav-item">Explore</a>
+        <a href="../basket.html" class="nav-item">Databasket</a>
         <a href="../compare.html" class="nav-item">Compare</a>
         <a href="../network.html" class="nav-item">Network</a>
         <a href="../matrix.html" class="nav-item">Matrix</a>
@@ -491,6 +492,7 @@ def generate_indices_page(deities, persons, places):
         <a href="../index.html" class="nav-item">Home</a>
         <a href="search.html" class="nav-item">Search</a>
         <a href="explore.html" class="nav-item">Explore</a>
+        <a href="basket.html" class="nav-item">Databasket</a>
         <a href="compare.html" class="nav-item">Compare</a>
         <a href="network.html" class="nav-item">Network</a>
         <a href="matrix.html" class="nav-item">Matrix</a>

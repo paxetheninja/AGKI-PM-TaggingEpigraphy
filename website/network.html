@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Prosopography Network - AGKI Epigraphy Tool</title>
   <link rel="stylesheet" href="assets/css/main.css">
+  <script src="assets/js/basket.js"></script>
 
   <!-- D3.js for network visualization -->
   <script src="https://d3js.org/d3.v7.min.js"></script>
@@ -149,7 +150,7 @@
         <div class="viz-card">
             <h3 class="viz-title">Prosopography Network - Co-mentioned Persons</h3>
             <div id="networkContainer">
-                <svg id="networkSvg"></svg>
+                <canvas id="networkCanvas"></canvas>
             </div>
         </div>
     </div>
@@ -167,9 +168,19 @@
 
   <script src="assets/js/data.js"></script>
   <script>
-    let simulation, svg, g, link, node;
+    let simulation, canvas, ctx, transform;
+    let width, height;
     let networkData = { nodes: [], links: [] };
     let allNetworkData = { nodes: [], links: [] };
+    let hoveredNode = null;
+    let selectedNode = null;
+
+    // Define colors
+    const COLOR_HIGH = '#c1683c';
+    const COLOR_MED = '#0c8c88';
+    const COLOR_LOW = '#888';
+    const COLOR_BG = getComputedStyle(document.documentElement).getPropertyValue('--panel').trim();
+    const COLOR_TEXT = getComputedStyle(document.documentElement).getPropertyValue('--text').trim();
 
     function init() {
         // Build region select
@@ -182,10 +193,14 @@
             regSelect.appendChild(opt);
         });
 
+        // Set default weight to 2 to improve initial perf
+        document.getElementById('minEdgeWeight').value = 2;
+        document.getElementById('edgeWeightDisplay').textContent = "2";
+
         // Build network data
         buildNetworkData(APP_DATA.inscriptions);
 
-        // Initialize SVG
+        // Initialize Canvas
         initNetwork();
 
         // Event listeners
@@ -201,6 +216,22 @@
                 : APP_DATA.inscriptions;
             buildNetworkData(filtered);
             filterNetwork();
+        });
+        
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            if (canvas && document.getElementById('networkContainer')) {
+                const container = document.getElementById('networkContainer');
+                width = container.clientWidth;
+                height = container.clientHeight;
+                canvas.width = width;
+                canvas.height = height;
+                if (simulation) {
+                    simulation.force('center', d3.forceCenter(width / 2, height / 2));
+                    simulation.alpha(0.3).restart();
+                }
+                render();
+            }
         });
     }
 
@@ -248,8 +279,9 @@
             }
         });
 
-        // Count connections per node
+        // Count connections per node (degree)
         edges.forEach(edge => {
+            // Note: edge.source/target are just strings here
             if (nodeSet.has(edge.source)) nodeSet.get(edge.source).connections++;
             if (nodeSet.has(edge.target)) nodeSet.get(edge.target).connections++;
         });
@@ -264,16 +296,18 @@
         const minWeight = parseInt(document.getElementById('minEdgeWeight').value);
 
         // Filter links by weight
-        const filteredLinks = allNetworkData.links.filter(l => l.weight >= minWeight);
+        const filteredLinks = allNetworkData.links.filter(l => l.weight >= minWeight).map(l => ({...l})); // shallow copy
 
-        // Get nodes that have at least one connection
-        const connectedNodes = new Set();
+        // Get nodes that have at least one connection in the filtered set
+        const connectedNodeIds = new Set();
         filteredLinks.forEach(l => {
-            connectedNodes.add(l.source.id || l.source);
-            connectedNodes.add(l.target.id || l.target);
+            connectedNodeIds.add(l.source); // string id
+            connectedNodeIds.add(l.target); // string id
         });
 
-        const filteredNodes = allNetworkData.nodes.filter(n => connectedNodes.has(n.id));
+        const filteredNodes = allNetworkData.nodes
+            .filter(n => connectedNodeIds.has(n.id))
+            .map(n => ({...n})); // shallow copy to reset simulation state if needed
 
         networkData = { nodes: filteredNodes, links: filteredLinks };
 
@@ -281,144 +315,203 @@
         document.getElementById('nodeCount').textContent = filteredNodes.length;
         document.getElementById('edgeCount').textContent = filteredLinks.length;
 
-        updateNetwork();
+        updateSimulation();
     }
 
     function initNetwork() {
         const container = document.getElementById('networkContainer');
-        const width = container.clientWidth;
-        const height = container.clientHeight;
+        width = container.clientWidth;
+        height = container.clientHeight;
 
-        svg = d3.select('#networkSvg')
-            .attr('width', width)
-            .attr('height', height);
+        canvas = document.getElementById('networkCanvas');
+        canvas.width = width;
+        canvas.height = height;
+        ctx = canvas.getContext('2d');
 
-        // Add zoom behavior
-        const zoom = d3.zoom()
-            .scaleExtent([0.1, 4])
+        // Setup Zoom
+        transform = d3.zoomIdentity;
+        d3.select(canvas).call(d3.zoom()
+            .scaleExtent([0.1, 8])
             .on('zoom', (event) => {
-                g.attr('transform', event.transform);
-            });
+                transform = event.transform;
+                render();
+            }))
+            .on('dblclick.zoom', null); // Disable double click zoom
 
-        svg.call(zoom);
+        // Setup Drag
+        d3.select(canvas).call(d3.drag()
+            .subject(dragSubject)
+            .on('start', dragStarted)
+            .on('drag', dragged)
+            .on('end', dragEnded));
 
-        g = svg.append('g');
-
-        // Create link and node groups
-        link = g.append('g').attr('class', 'links').selectAll('line');
-        node = g.append('g').attr('class', 'nodes').selectAll('g');
+        // Setup Mouse Interaction
+        d3.select(canvas)
+            .on('mousemove', mouseMoved)
+            .on('click', mouseClicked);
 
         simulation = d3.forceSimulation()
-            .force('link', d3.forceLink().id(d => d.id).distance(100))
-            .force('charge', d3.forceManyBody().strength(-200))
+            .force('charge', d3.forceManyBody().strength(-100))
             .force('center', d3.forceCenter(width / 2, height / 2))
-            .force('collision', d3.forceCollide().radius(30));
+            .force('collision', d3.forceCollide().radius(d => Math.min(5 + d.count * 2, 20) + 2))
+            .force('link', d3.forceLink().id(d => d.id).distance(100));
 
-        window.zoomBehavior = zoom;
         filterNetwork();
     }
 
-    function updateNetwork() {
-        // Update links
-        link = link.data(networkData.links, d => `${d.source.id || d.source}-${d.target.id || d.target}`);
-        link.exit().remove();
-        link = link.enter()
-            .append('line')
-            .attr('class', 'link')
-            .attr('stroke-width', d => Math.min(d.weight, 5))
-            .merge(link);
-
-        // Update nodes
-        node = node.data(networkData.nodes, d => d.id);
-        node.exit().remove();
-
-        const nodeEnter = node.enter()
-            .append('g')
-            .attr('class', 'node')
-            .call(d3.drag()
-                .on('start', dragstarted)
-                .on('drag', dragged)
-                .on('end', dragended))
-            .on('click', (event, d) => showNodeInfo(d))
-            .on('mouseover', (event, d) => highlightConnections(d, true))
-            .on('mouseout', (event, d) => highlightConnections(d, false));
-
-        nodeEnter.append('circle')
-            .attr('r', d => Math.min(5 + d.count * 2, 20))
-            .attr('fill', d => {
-                if (d.connections >= 5) return '#c1683c';
-                if (d.connections >= 2) return '#0c8c88';
-                return '#888';
-            });
-
-        nodeEnter.append('text')
-            .attr('dx', 12)
-            .attr('dy', 4)
-            .text(d => d.id.length > 20 ? d.id.substring(0, 20) + '...' : d.id);
-
-        node = nodeEnter.merge(node);
-
-        // Update simulation
-        simulation.nodes(networkData.nodes).on('tick', ticked);
+    function updateSimulation() {
+        simulation.nodes(networkData.nodes);
         simulation.force('link').links(networkData.links);
         simulation.alpha(1).restart();
+        simulation.on('tick', render);
     }
 
-    function ticked() {
-        link
-            .attr('x1', d => d.source.x)
-            .attr('y1', d => d.source.y)
-            .attr('x2', d => d.target.x)
-            .attr('y2', d => d.target.y);
+    function render() {
+        ctx.save();
+        ctx.clearRect(0, 0, width, height);
+        ctx.translate(transform.x, transform.y);
+        ctx.scale(transform.k, transform.k);
 
-        node.attr('transform', d => `translate(${d.x},${d.y})`);
-    }
+        // Draw Links
+        ctx.globalAlpha = 0.6;
+        networkData.links.forEach(d => {
+            const isHighlighted = hoveredNode && (d.source.id === hoveredNode.id || d.target.id === hoveredNode.id);
+            const isSelected = selectedNode && (d.source.id === selectedNode.id || d.target.id === selectedNode.id);
+            
+            ctx.beginPath();
+            ctx.moveTo(d.source.x, d.source.y);
+            ctx.lineTo(d.target.x, d.target.y);
+            
+            if (isHighlighted || isSelected) {
+                ctx.strokeStyle = COLOR_HIGH; // Highlight color
+                ctx.lineWidth = Math.min(d.weight, 5) * 1.5;
+                ctx.globalAlpha = 1;
+            } else {
+                ctx.strokeStyle = '#ccc';
+                ctx.lineWidth = Math.min(d.weight, 5);
+                ctx.globalAlpha = hoveredNode ? 0.1 : 0.6; // Fade others if hovering
+            }
+            ctx.stroke();
+        });
 
-    function dragstarted(event, d) {
-        if (!event.active) simulation.alphaTarget(0.3).restart();
-        d.fx = d.x;
-        d.fy = d.y;
-    }
+        // Draw Nodes
+        networkData.nodes.forEach(d => {
+            const isHighlighted = hoveredNode && (d.id === hoveredNode.id || isConnected(d, hoveredNode));
+            const isSelected = selectedNode && d.id === selectedNode.id;
+            
+            if (hoveredNode && !isHighlighted && !isSelected) {
+                ctx.globalAlpha = 0.1; // Fade unrelated nodes
+            } else {
+                ctx.globalAlpha = 1;
+            }
 
-    function dragged(event, d) {
-        d.fx = event.x;
-        d.fy = event.y;
-    }
+            ctx.beginPath();
+            const r = Math.min(5 + d.count * 2, 20);
+            ctx.arc(d.x, d.y, r, 0, 2 * Math.PI);
+            
+            // Fill Color based on connections
+            if (d.connections >= 5) ctx.fillStyle = COLOR_HIGH;
+            else if (d.connections >= 2) ctx.fillStyle = COLOR_MED;
+            else ctx.fillStyle = COLOR_LOW;
+            
+            if (isSelected) {
+                ctx.strokeStyle = COLOR_TEXT;
+                ctx.lineWidth = 3;
+                ctx.stroke();
+            } else if (isHighlighted) {
+                ctx.strokeStyle = COLOR_TEXT;
+                ctx.lineWidth = 1;
+                ctx.stroke();
+            }
+            
+            ctx.fill();
 
-    function dragended(event, d) {
-        if (!event.active) simulation.alphaTarget(0);
-        d.fx = null;
-        d.fy = null;
-    }
-
-    function highlightConnections(d, highlight) {
-        const connectedNodes = new Set();
-        connectedNodes.add(d.id);
-
-        link.each(function(l) {
-            const sourceId = l.source.id || l.source;
-            const targetId = l.target.id || l.target;
-            if (sourceId === d.id || targetId === d.id) {
-                connectedNodes.add(sourceId);
-                connectedNodes.add(targetId);
-                d3.select(this).classed('highlighted', highlight);
+            // Text Label (only draw if zoomed in or highlighted)
+            if (transform.k > 1.2 || isHighlighted || isSelected || r > 10) {
+                ctx.fillStyle = COLOR_TEXT;
+                ctx.font = '10px sans-serif';
+                ctx.fillText(d.id.length > 20 ? d.id.substring(0, 20) + '...' : d.id, d.x + r + 2, d.y + 3);
             }
         });
 
-        node.classed('highlighted', n => highlight && connectedNodes.has(n.id));
+        ctx.restore();
+    }
+
+    // --- Interaction Helpers ---
+
+    function isConnected(a, b) {
+        if (!a || !b) return false;
+        return networkData.links.some(l => 
+            (l.source.id === a.id && l.target.id === b.id) || 
+            (l.source.id === b.id && l.target.id === a.id)
+        );
+    }
+
+    function getMousePos(event) {
+        const rect = canvas.getBoundingClientRect();
+        const x = transform.invertX(event.clientX - rect.left);
+        const y = transform.invertY(event.clientY - rect.top);
+        return [x, y];
+    }
+
+    function dragSubject(event) {
+        const [x, y] = getMousePos(event);
+        return simulation.find(x, y, 20);
+    }
+
+    function dragStarted(event) {
+        if (!event.active) simulation.alphaTarget(0.3).restart();
+        event.subject.fx = event.subject.x;
+        event.subject.fy = event.subject.y;
+    }
+
+    function dragged(event) {
+        const [x, y] = getMousePos(event);
+        event.subject.fx = x;
+        event.subject.fy = y;
+    }
+
+    function dragEnded(event) {
+        if (!event.active) simulation.alphaTarget(0);
+        event.subject.fx = null;
+        event.subject.fy = null;
+    }
+
+    function mouseMoved(event) {
+        const [x, y] = getMousePos(event);
+        const node = simulation.find(x, y, 20);
+        
+        if (node !== hoveredNode) {
+            hoveredNode = node;
+            canvas.style.cursor = node ? 'pointer' : 'move';
+            render();
+        }
+    }
+
+    function mouseClicked(event) {
+        const [x, y] = getMousePos(event);
+        const node = simulation.find(x, y, 20);
+        
+        if (node) {
+            selectedNode = node;
+            showNodeInfo(node);
+            render();
+        } else {
+            selectedNode = null;
+            document.getElementById('nodeInfo').classList.remove('active');
+            render();
+        }
     }
 
     function showNodeInfo(d) {
         const infoDiv = document.getElementById('nodeInfo');
         const connections = networkData.links.filter(l =>
-            (l.source.id || l.source) === d.id || (l.target.id || l.target) === d.id
+            l.source.id === d.id || l.target.id === d.id
         );
 
-        const connectedNames = connections.map(l => {
-            const sourceId = l.source.id || l.source;
-            const targetId = l.target.id || l.target;
-            return sourceId === d.id ? targetId : sourceId;
-        }).slice(0, 5);
+        const connectedNames = connections.map(l => 
+            l.source.id === d.id ? l.target.id : l.source.id
+        ).slice(0, 5);
 
         infoDiv.innerHTML = `
             <h4>${d.id}</h4>
@@ -435,23 +528,17 @@
     }
 
     function resetZoom() {
-        const container = document.getElementById('networkContainer');
-        svg.transition().duration(750).call(
-            window.zoomBehavior.transform,
-            d3.zoomIdentity.translate(container.clientWidth / 2, container.clientHeight / 2).scale(1)
+        d3.select(canvas).transition().duration(750).call(
+            d3.zoom().transform,
+            d3.zoomIdentity
         );
     }
 
     function exportNetwork() {
-        const svgElement = document.getElementById('networkSvg');
-        const svgData = new XMLSerializer().serializeToString(svgElement);
-        const blob = new Blob([svgData], { type: 'image/svg+xml' });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = 'prosopography_network.svg';
-        a.click();
-        URL.revokeObjectURL(url);
+        const link = document.createElement('a');
+        link.download = 'network.png';
+        link.href = canvas.toDataURL();
+        link.click();
     }
 
     // Initialize Tour
