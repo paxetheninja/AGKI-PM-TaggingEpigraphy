@@ -26,6 +26,25 @@ function addToBasket(id) {
     }
 }
 
+function addManyToBasket(ids) {
+    const basket = getBasket();
+    let changed = false;
+    // Ensure ids is an array (handle single ID passed by mistake if any)
+    const idArray = Array.isArray(ids) ? ids : [ids];
+    
+    idArray.forEach(id => {
+        // loose comparison for string/number safety
+        if (!basket.some(existing => existing == id)) {
+            basket.push(id);
+            changed = true;
+        }
+    });
+
+    if (changed) {
+        setBasket(basket);
+    }
+}
+
 function removeFromBasket(id) {
     let basket = getBasket();
     basket = basket.filter(itemId => itemId != id);
