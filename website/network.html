@@ -220,10 +220,14 @@
                         id: name,
                         role: person?.role || '',
                         count: 0,
-                        connections: 0
+                        connections: 0,
+                        inscriptions: []
                     });
                 }
                 nodeSet.get(name).count++;
+                if (!nodeSet.get(name).inscriptions.includes(item.id)) {
+                    nodeSet.get(name).inscriptions.push(item.id);
+                }
             });
 
             // Add edges (co-occurrences)
@@ -422,7 +426,10 @@
             <p><strong>Mentions:</strong> ${d.count}</p>
             <p><strong>Connections:</strong> ${d.connections}</p>
             <p><strong>Connected to:</strong> ${connectedNames.join(', ')}${connections.length > 5 ? '...' : ''}</p>
-            <a href="search.html?q=${encodeURIComponent(d.id)}" class="button compact" style="margin-top:0.5rem;">View Inscriptions</a>
+            <div style="display:flex; gap:0.5rem; margin-top:0.5rem;">
+                <a href="search.html?q=${encodeURIComponent(d.id)}" class="button compact">View Inscriptions</a>
+                <button onclick="window.basket.addMany([${d.inscriptions.join(',')}])" class="button secondary compact">Add to Basket</button>
+            </div>
         `;
         infoDiv.classList.add('active');
     }

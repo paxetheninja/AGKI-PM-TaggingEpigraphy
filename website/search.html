@@ -256,10 +256,11 @@
                         <span class="label">Filtered Results</span>
                         <strong id="countDisplay">0</strong>/<span id="totalDisplay">0</span>
                     </div>
-                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-bottom: 0.5rem;">
                         <button onclick="exportData('json')" class="button block compact">JSON</button>
                         <button onclick="exportData('csv')" class="button secondary block compact">CSV</button>
                     </div>
+                    <button onclick="addAllResultsToBasket()" class="button primary block compact" style="width:100%;">Add All to Basket</button>
                 </div>
             </aside>
     
@@ -913,6 +914,20 @@
         link.click();
         document.body.removeChild(link);
     }
+
+    window.addAllResultsToBasket = function() {
+        const data = window.currentFilteredData || [];
+        if (data.length === 0) {
+            alert('No results to add.');
+            return;
+        }
+        const ids = data.map(item => item.id);
+        if (window.basket && window.basket.addMany) {
+            window.basket.addMany(ids);
+            // Refresh results to show stars
+            renderResults(data);
+        }
+    };
 
     // Initialize tour
     document.addEventListener('DOMContentLoaded', () => {

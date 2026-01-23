@@ -280,5 +280,6 @@ window.basket = {
     init: initBasketPage,
     get: getBasket,
     add: addToBasket,
+    addMany: addManyToBasket,
     remove: removeFromBasket
 };

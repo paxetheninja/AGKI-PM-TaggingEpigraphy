@@ -434,6 +434,9 @@ def generate_indices_page(deities, persons, places):
         for k in sorted_keys:
             val = d[k]
             count = val if isinstance(val, int) else val['count']
+            ids = val.get('ids', []) if isinstance(val, dict) else []
+            ids_str = ",".join(map(str, ids))
+            
             extra = ""
             if is_person:
                 extra = f"<td>{html.escape(val['role'] or '')}</td>"
@@ -443,7 +446,10 @@ def generate_indices_page(deities, persons, places):
             uri = val.get('uri') if isinstance(val, dict) else None
             if uri:
                 uri_link = f' <a href="{uri}" target="_blank" class="index-link">Link</a>'
-            rows += f"<tr><td>{html.escape(k)}{uri_link}</td>{extra}<td>{count}</td></tr>"
+            
+            action_btn = f'<button onclick="window.basket.addMany([{ids_str}])" class="button tiny secondary" title="Add all {count} items to basket">Add to Basket</button>'
+            
+            rows += f"<tr><td>{html.escape(k)}{uri_link}</td>{extra}<td>{count}</td><td>{action_btn}</td></tr>"
         return rows
 
     def get_template(title, content, active_sub=""):
@@ -593,7 +599,7 @@ def generate_indices_page(deities, persons, places):
         </div>
         <div class="index-table">
             <table id="indexTable">
-                <thead><tr><th>Name</th><th>Mentions</th></tr></thead>
+                <thead><tr><th>Name</th><th>Mentions</th><th>Action</th></tr></thead>
                 <tbody>{dict_to_rows(deities)}</tbody>
             </table>
             <div class="index-empty" id="indexEmpty">No entries match this filter.</div>
@@ -613,7 +619,7 @@ def generate_indices_page(deities, persons, places):
         </div>
         <div class="index-table">
             <table id="indexTable">
-                <thead><tr><th>Name</th><th>Role</th><th>Mentions</th></tr></thead>
+                <thead><tr><th>Name</th><th>Role</th><th>Mentions</th><th>Action</th></tr></thead>
                 <tbody>{dict_to_rows(persons, is_person=True)}</tbody>
             </table>
             <div class="index-empty" id="indexEmpty">No entries match this filter.</div>
@@ -633,7 +639,7 @@ def generate_indices_page(deities, persons, places):
         </div>
         <div class="index-table">
             <table id="indexTable">
-                <thead><tr><th>Name</th><th>Type</th><th>Mentions</th></tr></thead>
+                <thead><tr><th>Name</th><th>Type</th><th>Mentions</th><th>Action</th></tr></thead>
                 <tbody>{dict_to_rows(places, is_place=True)}</tbody>
             </table>
             <div class="index-empty" id="indexEmpty">No entries match this filter.</div>
@@ -700,14 +706,17 @@ def build_website(mode=None):
         ents = out.get('entities', {})
         for d in ents.get('deities', []):
             name = d['name'] if isinstance(d, dict) else d
-            if name not in all_deities: all_deities[name] = {"uri": d.get('uri') if isinstance(d, dict) else None, "count": 0}
+            if name not in all_deities: all_deities[name] = {"uri": d.get('uri') if isinstance(d, dict) else None, "count": 0, "ids": []}
             all_deities[name]["count"] += 1
+            all_deities[name]["ids"].append(phi_id)
         for p in ents.get('persons', []):
-            if p['name'] not in all_persons: all_persons[p['name']] = {"role": p.get('role'), "uri": p.get('uri'), "count": 0}
+            if p['name'] not in all_persons: all_persons[p['name']] = {"role": p.get('role'), "uri": p.get('uri'), "count": 0, "ids": []}
             all_persons[p['name']]["count"] += 1
+            all_persons[p['name']]["ids"].append(phi_id)
         for pl in ents.get('places', []):
-            if pl['name'] not in all_places: all_places[pl['name']] = {"type": pl.get('type'), "uri": pl.get('uri'), "count": 0}
+            if pl['name'] not in all_places: all_places[pl['name']] = {"type": pl.get('type'), "uri": pl.get('uri'), "count": 0, "ids": []}
             all_places[pl['name']]["count"] += 1
+            all_places[pl['name']]["ids"].append(phi_id)
 
         with open(INSCRIPTIONS_DIR / f"{phi_id}.html", 'w', encoding='utf-8') as f:
             f.write(generate_detail_page(merged))
