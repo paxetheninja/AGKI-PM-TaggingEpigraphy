@@ -1,0 +1,241 @@
+{
+  "phi_id": 40,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text follows the standard Athenian legislative formula 'it seemed good to the council and the people'.",
+      "confidence": 1.0,
+      "quote": "δοχσεν τε[ι β]ολει κα τοι δ μοι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Treaties and Agreements",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Treaties and Agreements",
+        "subcategory": null
+      },
+      "rationale": "The inscription records a formal oath of alliance and the terms of a political settlement between Athens and Chalcis.",
+      "confidence": 1.0,
+      "quote": "κατ τ δε τ ν ρκον μ σαι θενα ον",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Laws and Regulations",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Laws and Regulations",
+        "subcategory": null
+      },
+      "rationale": "The text specifies judicial procedures, including the jurisdiction of the Heliaia and the role of the Thesmothetai.",
+      "confidence": 1.0,
+      "quote": "λια αν τ ν τον θεσμοθετον",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Sacred Laws and Rules",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Sacred Laws and Rules",
+        "subcategory": null
+      },
+      "rationale": "The decree mandates specific religious sacrifices to be performed by three men chosen by the council.",
+      "confidence": 1.0,
+      "quote": "τ δ ερ τ κ τον χρεσμον π ρ ε βο ας θ σαι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Oracular and Prophetic Texts",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Oracular and Prophetic Texts",
+        "subcategory": null
+      },
+      "rationale": "The inscription refers to a specific oracle (chresmon) concerning Euboea that dictates the timing and nature of sacrifices.",
+      "confidence": 1.0,
+      "quote": "τ κ τον χρεσμον",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The text mentions the payment of tribute (phoros) and the allocation of funds for religious rites.",
+      "confidence": 1.0,
+      "quote": "τ ν φ ρον ποτελο θενα οισιν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The decree names the presiding prytanis, the epistates, and the proposers of the various motions.",
+      "confidence": 1.0,
+      "quote": "ντιοχ ς [πρυτ] νευε δρακ[ον]τ δες πεστ τε",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The text explicitly orders the decree to be inscribed on a stone stele.",
+      "confidence": 1.0,
+      "quote": "στ λει λιθ νει",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "Public decrees in Athens during this period were typically inscribed on marble stelae, though the text only specifies 'stone'.",
+      "confidence": 0.8,
+      "quote": "στ λει λιθ νει",
+      "is_ambiguous": true,
+      "ambiguity_note": "The text specifies 'stone' (lithinei), but historical context confirms Pentelic marble."
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The inscription contains several lacunae and reconstructed sections indicated by brackets.",
+      "confidence": 1.0,
+      "quote": "δοχσεν τε[ι β]ολει",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Antiochus",
+        "role": "Prytanis",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Dracontides",
+        "role": "Epistates",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Diognetus",
+        "role": "Proposer",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Anticles",
+        "role": "Proposer",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Archestratus",
+        "role": "Proposer",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Hierocles",
+        "role": "Religious official",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Athens",
+        "type": "City",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Chalcis",
+        "type": "City",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Eretria",
+        "type": "City",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Euboea",
+        "type": "Region",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Zeus Olympius",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Attica",
+      "type": "Region",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Athens",
+      "type": "City",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription, known as the Chalcis Decree (IG I³ 40), is a pivotal document from 446/5 BCE. It records the terms of the settlement imposed by Athens on the city of Chalcis following the suppression of the Euboean revolt. The text includes the specific oaths of loyalty required from the Chalcidians, the reciprocal promises of the Athenians, judicial arrangements involving the Heliaia and Thesmothetai, and instructions for religious sacrifices based on an oracle regarding Euboea.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 446/5 a.",
+  "date_min": -446.0,
+  "date_max": -445.0,
+  "date_circa": false
+}

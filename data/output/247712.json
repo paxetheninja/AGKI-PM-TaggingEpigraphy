@@ -1,0 +1,169 @@
+{
+  "phi_id": 247712,
+  "themes": [
+    {
+      "label": "Laws and Regulations",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Laws and Regulations",
+        "subcategory": null
+      },
+      "rationale": "The text explicitly identifies itself as a chapter of ancestral law (kephalaion nomou patriou).",
+      "confidence": 1.0,
+      "quote": "κεφ λαιον ν μου πατρ ου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Sacred Laws and Rules",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Sacred Laws and Rules",
+        "subcategory": null
+      },
+      "rationale": "The inscription prescribes specific religious duties, including sacrifices, incense offerings, and the conduct of processions and festivals.",
+      "confidence": 1.0,
+      "quote": "τ ν πρ τανιν α θειν π ρ π τ ν βωμ ν π ντων κα πιθυμι ν τ ν λιβανωτ ν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Hymns and Sacred Poetry",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Hymns and Sacred Poetry",
+        "subcategory": null
+      },
+      "rationale": "The law mandates the singing of paeans (hymns) during sacrifices, processions, and all-night festivals.",
+      "confidence": 1.0,
+      "quote": "το ς παι νας δειν ν τα ς θυσ αις κα ν τα ς πο[μ]πα ς κα ν τα ς παννυχ σιν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The text mentions financial obligations and fines measured in daric staters for the maintenance of the Prytaneion and the temple of Demeter.",
+      "confidence": 1.0,
+      "quote": "ε ς πισκευ ν το πρυτανε ου στατ ρας δαρικο ς",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Prayers and Invocations",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Prayers and Invocations",
+        "subcategory": null
+      },
+      "rationale": "The inscription requires prayers to be made on behalf of the Roman Senate, the Roman people, and the Ephesian people.",
+      "confidence": 1.0,
+      "quote": "ε χεσθαι π ρ ερ ς συνκλ του κα το δ μου το ωμα ων κα το δ μου το φεσ ων",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Prytanis",
+        "role": "Chief magistrate and religious official",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Hierophant",
+        "role": "Religious official who reveals sacred mysteries",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Hierokeryx",
+        "role": "Sacred Herald",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Aulete",
+        "role": "Flute player",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Salpinktes",
+        "role": "Trumpeter",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Hieroskopos",
+        "role": "Sacred observer or diviner",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Hebdomokouretis",
+        "role": "Member of the college of Kouretes",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Ephesus",
+        "type": "City",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Rome",
+        "type": "City or State",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Prytaneion",
+        "type": "Civic building",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Demeter Karpophoros",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Agathe Tyche",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Ephesus",
+      "type": "Region",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription from Ephesus preserves a section of ancestral law concerning the religious duties of the Prytanis. It outlines the requirements for sacrifices (incense and animal victims), the participation of various cult officials like the Hierophant and Kouretes, and the performance of paeans. It also includes a political dimension, mandating prayers for the Roman Senate and the people of Ephesus, and establishes financial regulations for the upkeep of the Prytaneion and the temple of Demeter Karpophoros.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

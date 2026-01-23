@@ -1,0 +1,117 @@
+{
+  "phi_id": 254217,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The inscription follows the standard formula for a public decree, beginning with the decision of the council and the people.",
+      "confidence": 1.0,
+      "quote": "ἔδοξε τῆι βουλῆι καὶ τῶι δήμωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The text honors Pylos, son of Sosigenes, for his virtue and zeal toward the city, granting him various privileges and honors.",
+      "confidence": 1.0,
+      "quote": "ἐπαινῆσθαι μὲν Πύλον ἀρετῆς ἕνεκεν καὶ προθυμίας",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The decree commands that the text be inscribed on a stone stele for public display.",
+      "confidence": 1.0,
+      "quote": "ἀναγράψαι εἰς στήλην λιθίνην",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Pylos",
+        "role": "Honorand and new citizen",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Sosigenes",
+        "role": "Father of the honorand",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Demoretos",
+        "role": "Proposer of the decree",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Samos",
+        "type": "City-state",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Heraion",
+        "type": "Sanctuary of Hera",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Aegina",
+        "type": "City of origin of the honorand",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Hera",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Dionysus",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Samos",
+      "type": "Region",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This is a Samian decree from the late 4th century BC honoring Pylos of Aegina, son of Sosigenes. The text is significant for its mention of the festivals Antigoneia and Demetreia, which date the inscription to the period of Antigonid influence over Samos. The decree grants Pylos citizenship, proxeny, and the right to own property, and records his enrollment into the tribe Chesieus, the chiliastys Oinopes, and the hekatostys Elandridai. The document was to be set up in the Heraion, the sanctuary of Hera on Samos. The transcription provided contains numerous lacunae, justifying a fragmentary classification.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

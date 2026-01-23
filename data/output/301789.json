@@ -1,0 +1,127 @@
+{
+  "phi_id": 301789,
+  "themes": [
+    {
+      "label": "Royal Correspondence",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Official Letters",
+        "subcategory": null
+      },
+      "rationale": "The text is a royal letter or ordinance from a Pergamene king concerning the administration of land and taxes, evidenced by the mention of royal officials.",
+      "confidence": 0.9,
+      "quote": "βασιλικῶν πραγματευ[ομένων]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Royal Ordinances",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Edicts and Ordinances",
+        "subcategory": null
+      },
+      "rationale": "The inscription contains formal regulations regarding land allotments, house building, and legal ownership rights issued by a central authority.",
+      "confidence": 1.0,
+      "quote": "ἔσονται αἵ τε κτήσεις κ[ύριαι]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Taxation and Revenue",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The text specifies tax obligations, such as the tithe (dekate) on wine, grain, and other crops, as well as tax exemptions (ateleia).",
+      "confidence": 1.0,
+      "quote": "δεκάτην τ[ῶν ... ἀ]τέλειαν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The inscription explicitly commands that the text be recorded on two stelae to be set up in sacred locations for public display.",
+      "confidence": 1.0,
+      "quote": "στή[λας δύο ἀναστῆσαι]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The inscription is highly fragmentary with significant portions of the text missing at the beginning and within lines, requiring extensive restoration.",
+      "confidence": 1.0,
+      "quote": "[------------------]μενος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Demarch",
+        "role": "Local official involved in land administration",
+        "uri": null,
+        "confidence": 0.8
+      }
+    ],
+    "places": [
+      {
+        "name": "Pergamon",
+        "type": "City",
+        "uri": null,
+        "confidence": 0.8
+      },
+      {
+        "name": "Gryneion",
+        "type": "Sanctuary",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Athena",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Apollo",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Pergamon",
+      "type": "Region",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a royal ordinance from the Hellenistic period, likely issued by one of the Attalid kings of Pergamon. It deals with the complex socio-economic reorganization of land, specifically addressing the distribution of allotments (kleroi) to settlers or mercenaries (misthophoroi). It distinguishes between 'bare' land (psile) and vineyards (ampeloi), and between those who have built houses (stegnopoiemenois) and those who have not. It also regulates the payment of tithes on agricultural produce and confirms the validity of property holdings and tax exemptions. The text concludes with instructions to publish the decree on two stelae, one in the temple of Athena (likely at Pergamon) and another in the sanctuary of Apollo at Gryneion.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " Hellenistic period ",
+  "date_min": -323.0,
+  "date_max": -31.0,
+  "date_circa": false
+}

@@ -1,0 +1,254 @@
+{
+  "phi_id": 355943,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text explicitly identifies itself as a decree (psephisma) passed by the city to honor the kings and establish specific civic and religious protocols.",
+      "confidence": 1.0,
+      "quote": "τὸ δὲ ψήφισμα τοῦτο ἀναγράψαι εἰς στήλας δύο",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription is dedicated to honoring Seleucus and Antiochus for their benefactions to the city, granting them the title of Saviors.",
+      "confidence": 1.0,
+      "quote": "τιμῶνται Σέλευκος καὶ Ἀντίοχος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Sacred Laws and Rules",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Sacred Laws and Rules",
+        "subcategory": null
+      },
+      "rationale": "The decree establishes specific religious protocols, including sacrifices, priesthoods, and the creation of altars and temples for the kings as part of a ruler cult.",
+      "confidence": 1.0,
+      "quote": "θύειν καθάπερ καὶ τῶι Ἀπόλλωνι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Building Commemoration",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Building Commemoration",
+        "subcategory": null
+      },
+      "rationale": "The text orders the construction and renaming of public buildings, specifically the Prytaneion and the Strategion, in honor of the kings.",
+      "confidence": 1.0,
+      "quote": "οἰκοδομῆσαι δὲ καὶ τὸ πρυτανεῖον καὶ τὸ στρατήγιον",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The end of the inscription contains a list of specific citizens appointed to oversee the implementation of the decree's provisions.",
+      "confidence": 1.0,
+      "quote": "ἐδείχθησαν ἄνδρες Ἀπελλῆς Πολυδώρου Πέλλης Διονυσίου Μητρόβιος Πέλλιχος Ἀθηναίου Ἀθήναιος Πολυδώρου Πρότερος Φαίτα Θάνος Μίκκου Κλεομένης Ἑρμαγόρου Ἀρισταγόρας Ἀθηναίου Ἀπολλωνίδης Κακοῦ",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The decree specifies that it is to be inscribed on two stone stelae to be set up in the sanctuary of Apollo and the sanctuary of Athena.",
+      "confidence": 1.0,
+      "quote": "ἀναγράψαι εἰς στήλας δύο",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Seleucus",
+        "role": "King and benefactor",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Antiochus",
+        "role": "King and benefactor",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Apelles son of Polydorus",
+        "role": "Committee member",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Pelles son of Dionysius",
+        "role": "Committee member",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Metrobios",
+        "role": "Committee member",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Pellichos son of Athenaeus",
+        "role": "Committee member",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Athenaeus son of Polydorus",
+        "role": "Committee member",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Proteros son of Phaitas",
+        "role": "Committee member",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Thanos son of Mikkos",
+        "role": "Committee member",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Cleomenes son of Hermagoras",
+        "role": "Committee member",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristagoras son of Athenaeus",
+        "role": "Committee member",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Apollonides son of Kakos",
+        "role": "Committee member",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Aigai",
+        "type": "City",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Prytaneion",
+        "type": "Public building",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Strategion",
+        "type": "Public building",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Seleukeion",
+        "type": "Renamed public building",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Antiocheion",
+        "type": "Renamed public building",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Seleukis",
+        "type": "Tribe",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Antiochis",
+        "type": "Tribe",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Apollo",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Athena",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Zeus Soter",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Dionysus",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Aeolis",
+      "type": "Region",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Aigai",
+      "type": "City",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a significant civic decree from the city of Aigai in Aeolis, dating to the early 3rd century BC. It documents the establishment of a ruler cult for the Seleucid kings Seleucus I Nicator and Antiochus I Soter, who are honored as 'Saviors' (Soteres). The decree outlines extensive honors, including the construction of a temple and altars, the establishment of annual sacrifices, the creation of two new tribes (Seleukis and Antiochis), and the renaming of the city's administrative buildings (the Prytaneion and Strategion) after the kings. The text concludes with a list of ten citizens appointed to ensure the decree's rapid execution, demonstrating the city's diplomatic efforts to maintain royal favor.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 281 BC or shortly after ",
+  "date_min": -281.0,
+  "date_max": -281.0,
+  "date_circa": true
+}

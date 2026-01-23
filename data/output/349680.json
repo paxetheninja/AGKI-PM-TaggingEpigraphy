@@ -1,0 +1,175 @@
+{
+  "phi_id": 349680,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text is a formal resolution passed by the people of Halasarna, using the standard formula 'dedochthai toi damoi' (it was decided by the people).",
+      "confidence": 1.0,
+      "quote": "δεδ χθαι τ ι δ μωι τ ι λασαρνιτ ν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription honors the physician Onasander for his professional skill, his character, and his selfless service to the community.",
+      "confidence": 1.0,
+      "quote": "παιν σθαι ν σα[ν]δρον νησ μου ατρ ν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The inscription begins by dating the decree via the monarchos Philiscus and lists the Anapoioi (officials) who proposed the motion.",
+      "confidence": 1.0,
+      "quote": "π μον ρχου φιλ σκου μην ς παν μου γδ ι ξ ε κ δος ναπο αι ε παν ν καρχος τεισ α ρ στων χαρμ λου φιλων δας διδυμ ρχου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The text explicitly mentions the creation and placement of a stone stele to record the decree in the sanctuary of Apollo.",
+      "confidence": 1.0,
+      "quote": " ς τε τ ν στ λαν κα τ ν ναγραφ ν π τ ν παρχ ντων το ς θεο ς χρημ των",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Philiscus",
+        "role": "Monarchos",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Onasander",
+        "role": "Physician",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Onesimus",
+        "role": "Father of Onasander",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Antipater",
+        "role": "Teacher of Onasander",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Nicarchus",
+        "role": "Proposer",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Teisarchus",
+        "role": "Father of Nicarchus",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Ariston",
+        "role": "Proposer",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Charmylus",
+        "role": "Father of Ariston",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Philondas",
+        "role": "Proposer",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Didymarchus",
+        "role": "Father of Philondas",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Dioscorides",
+        "role": "Medical Authority",
+        "uri": null,
+        "confidence": 0.8
+      }
+    ],
+    "places": [
+      {
+        "name": "Halasarna",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Kos",
+        "type": "Island",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Apollo",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "intact",
+  "provenance": [
+    {
+      "name": "Kos",
+      "type": "Region",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Halasarna",
+      "type": "City",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This is a complete honorific decree from the mid-2nd century BC, originating from the deme of Halasarna on Kos. It honors the physician Onasander, son of Onesimus, for his medical skill and philanthropy. The text is structurally complete, including the dating formula (Monarchos Philiscus), the list of proposers (Anapoioi), the detailed praise of the honoree's medical practice (refusing fees, treating the poor), the formal resolution, and the final vote count (248 in favor, 0 against). It also specifies the location for the stele next to the stele of his teacher, Antipater, in the sanctuary of Apollo.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " mid-2nd c. BC ",
+  "date_min": -175.0,
+  "date_max": -126.0,
+  "date_circa": false
+}

@@ -1,0 +1,141 @@
+{
+  "phi_id": 261875,
+  "themes": [
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription honors the generosity and piety of priests and priestesses who provided banquets, wine, and oil to the community, including citizens, foreigners, and slaves.",
+      "confidence": 1.0,
+      "quote": "ε σεβ[ ς] μ ν πρ ς τ ν θε ν φιλοτε μως δ πρ ς το ς νθρ που]ς δ ξαντο το ς νελθ ντας π τ ς τρ[απ] ζας πλουσ ως",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The text lists specific individuals holding the offices of priest, priestess, and gymnasiarch, detailing their specific liturgical services.",
+      "confidence": 0.9,
+      "quote": "ερε ς ... ε ρεια ... γυμνασι ρχησαν δ κα τ παραλαβ ντες τ ν θε ν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Religious and Dedicatory Texts",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Orations and Praise of Gods",
+        "subcategory": null
+      },
+      "rationale": "The text emphasizes the piety shown towards the goddess Hecate and the 'Greatest Goddess' during the Panamara festivals.",
+      "confidence": 1.0,
+      "quote": "ε κλιδοφ ρος τ ς μεγ στης] θε ς κ της ερατε σαντες ε σεβ[ ς] μ ν πρ ς τ ν θε ν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Myonides son of Demetrios Damalas",
+        "role": "Priest",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Menekles",
+        "role": "Priest",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Orphaina daughter of Demetrios",
+        "role": "Priestess",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Apollonides",
+        "role": "Relative of the priestess",
+        "uri": null,
+        "confidence": 0.8
+      },
+      {
+        "name": "Drakon",
+        "role": "Relative of the priestess",
+        "uri": null,
+        "confidence": 0.8
+      },
+      {
+        "name": "Apphas",
+        "role": "Mother of the priest",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Phaedros",
+        "role": "Relative",
+        "uri": null,
+        "confidence": 0.8
+      },
+      {
+        "name": "Phloristolada",
+        "role": "Relative",
+        "uri": null,
+        "confidence": 0.8
+      }
+    ],
+    "places": [
+      {
+        "name": "Panamara",
+        "type": "Sanctuary",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Stratonikeia",
+        "type": "City",
+        "uri": null,
+        "confidence": 0.9
+      }
+    ],
+    "deities": [
+      {
+        "name": "Hecate",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "The Greatest Goddess",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Stratonikeia",
+      "type": "Region",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription from the sanctuary of Panamara (near Stratonikeia) records the liturgical services and benefactions of a family of priests. It details their performance of religious duties for Hecate, including the provision of meals (trapezai), wine, and oil for the entire population, including citizens, foreigners, and slaves. The text also mentions their service as gymnasiarchs and their distribution of resources during the Panamara festivals, highlighting their piety and desire for public glory (philotimia).",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

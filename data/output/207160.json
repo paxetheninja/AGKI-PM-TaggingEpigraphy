@@ -1,0 +1,178 @@
+{
+  "phi_id": 207160,
+  "themes": [
+    {
+      "label": "Manumission Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Manumission Records",
+        "subcategory": null
+      },
+      "rationale": "The text explicitly records the process of individuals being freed from slavery, using the term 'apeleutherosthai' and 'apeleutherothentes'.",
+      "confidence": 1.0,
+      "quote": "πελευθερωθέντες ἀπὸ αὐτῶν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The inscription details specific monetary payments made to the city treasury in denarii and obols as part of the manumission process.",
+      "confidence": 1.0,
+      "quote": "δωκεν τὰ γινόμενα τῇ πόλει δηνάρια εἴκοσι δύο ὀβολοὺς τέσσαρας",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The document dates the legal acts by naming the serving treasurers (tamiai) and strategoi of the Thessalian League.",
+      "confidence": 1.0,
+      "quote": "ταμιεύοντος τῆς πόλεως τὴν δευτέραν ἑξάμηνον τὴν ἐπὶ στρατηγοῦ",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Simos",
+        "role": "Manumitted person",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Ptolemaios",
+        "role": "Former owner",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristarchos",
+        "role": "Father of treasurer",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Herminos",
+        "role": "Treasurer",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Philoxenides",
+        "role": "Strategos",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Mnesimachos",
+        "role": "Former owner",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Brous",
+        "role": "Father of former owner",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Publius Sextius",
+        "role": "Treasurer",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristokrates",
+        "role": "Manumitted person",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Philippos",
+        "role": "Former owner",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Parmonides",
+        "role": "Father of former owner",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Leonides",
+        "role": "Former owner by adoption",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Soteris",
+        "role": "Manumitted person",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Polycharmos",
+        "role": "Former owner",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Nikaresta",
+        "role": "Former owner",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Pothion",
+        "role": "Father of former owner",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Chyretiai",
+        "type": "City",
+        "uri": null,
+        "confidence": 0.8
+      },
+      {
+        "name": "Thessaly",
+        "type": "Region",
+        "uri": null,
+        "confidence": 0.8
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Chyretiai",
+      "type": "City",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription from Chyretiai in Thessaly dates to the Roman period. It consists of a series of manumission records where individuals pay a fee of 22 denarii and 4 obols to the city upon their release from slavery. The records are organized chronologically by the terms of local officials, specifically the treasurers (tamiai) and the federal strategos of the Thessalian League.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " after 27 BC ",
+  "date_min": -27.0,
+  "date_max": -27.0,
+  "date_circa": false
+}

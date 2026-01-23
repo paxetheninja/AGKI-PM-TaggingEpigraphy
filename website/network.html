@@ -64,6 +64,7 @@
         <a href="../index.html" class="nav-item">Home</a>
         <a href="search.html" class="nav-item">Search</a>
         <a href="explore.html" class="nav-item">Explore</a>
+        <a href="basket.html" class="nav-item">Databasket</a>
         <a href="compare.html" class="nav-item">Compare</a>
         <a href="network.html" class="nav-item active">Network</a>
         <a href="matrix.html" class="nav-item">Matrix</a>
@@ -164,13 +165,8 @@
     </div>
   </footer>
 
+  <script src="assets/js/data.js"></script>
   <script>
-    // Load data
-    const script = document.createElement('script');
-    script.src = 'assets/js/data.js';
-    script.onload = () => init();
-    document.body.appendChild(script);
-
     let simulation, svg, g, link, node;
     let networkData = { nodes: [], links: [] };
     let allNetworkData = { nodes: [], links: [] };
@@ -453,6 +449,7 @@
 
     // Initialize Tour
     document.addEventListener('DOMContentLoaded', () => {
+        init();
         if (window.AGKI_Tour) AGKI_Tour.init('network');
     });
   </script>

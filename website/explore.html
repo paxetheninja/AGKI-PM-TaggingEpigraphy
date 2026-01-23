@@ -183,6 +183,7 @@
         <a href="../index.html" class="nav-item">Home</a>
         <a href="search.html" class="nav-item">Search</a>
         <a href="explore.html" class="nav-item active">Explore</a>
+        <a href="basket.html" class="nav-item">Databasket</a>
         <a href="compare.html" class="nav-item">Compare</a>
         <a href="network.html" class="nav-item">Network</a>
         <a href="matrix.html" class="nav-item">Matrix</a>
@@ -250,6 +251,7 @@
                     <!-- Populated by JS -->
                     <li class="muted" style="font-size:0.85rem;">No starred items.</li>
                 </ul>
+                <a href="basket.html" class="button compact secondary block" style="margin-top:0.5rem;">Manage in Databasket</a>
             </div>
             <div class="filter-group">
                 <h4 class="eyebrow">Search History</h4>
@@ -328,10 +330,10 @@
 
   <script>
     // --- Data Handling ---
-    const script = document.createElement('script');
-    script.src = `assets/js/data.js`;
-    script.onload = () => init();
-    document.body.appendChild(script);
+  </script>
+  <script src="assets/js/basket.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script>
 
     // --- Utilities ---
     function debounce(func, wait) {
@@ -1408,11 +1410,8 @@ window.exportData = function(format) {
     // Initialize tour
     document.addEventListener('DOMContentLoaded', () => {
         if (window.AGKI_Tour) AGKI_Tour.init('explore');
+        init();
     });
   </script>
 </body>
 </html>
-
-
-
-

@@ -723,7 +723,9 @@ def build_website(mode=None):
         theme_data = [{
             "label": t['label'],
             "path": "/".join(filter(None, [t['hierarchy'].get(k) for k in ['domain', 'subdomain', 'category', 'subcategory']])),
-            "confidence": t.get('confidence', 1.0)
+            "confidence": t.get('confidence', 1.0),
+            "category": t['hierarchy'].get('category'),
+            "domain": t['hierarchy'].get('domain')
         } for t in themes]
         
         # Determine coordinates: Check provenance (most specific first), then region_main

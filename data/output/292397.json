@@ -1,0 +1,327 @@
+{
+  "phi_id": 292397,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text is a formal resolution passed by the Council and the People of Athens, indicated by the standard formula 'it seemed good to the council and the people'.",
+      "confidence": 1.0,
+      "quote": "[δο]ξεν τε βουλε κα τ ι δ μωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription honors the ephebes and their officials with golden crowns and public praise for their service and piety.",
+      "confidence": 1.0,
+      "quote": "παι [ν σαι το ς π διοδ του φ]ηβε σαντας κα στεφαν σαι χρυσ ι στεφ νωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The inscription includes a detailed catalogue of the ephebes who served during the archonship of Piodotus, organized by their respective tribes.",
+      "confidence": 1.0,
+      "quote": "[ο φ]ηβε σαντες π διοδ του ρχοντος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Agonistic / Victory Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Agonistic / Victory Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The text mentions the ephebes' participation and competition in various games and torch races, such as the Panathenaia and Eleusinia.",
+      "confidence": 1.0,
+      "quote": "δραμον δ κα τ ς λαμπ δας [ π σας κα το ς λλους γ]νας γων σαντο",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The decree specifies that it is to be inscribed on a stone stele and set up in the Agora.",
+      "confidence": 1.0,
+      "quote": "[ ν στ λ]ει λιθ νει κα στ σαι ν τε γορ ι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "Athenian decrees of this period were almost exclusively inscribed on marble stelae.",
+      "confidence": 0.8,
+      "quote": "[ ν στ λ]ει λιθ νει",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Polydorus",
+        "role": "Archon",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Piodotus",
+        "role": "Archon",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Thrason",
+        "role": "Secretary",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Nicostratus son of Menemachus",
+        "role": "Proedros",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Sosigenes",
+        "role": "Proposer",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Nicobulus son of Ergochares",
+        "role": "Kosmetes",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Harmodorus son of Ortas",
+        "role": "Paidotribes",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Eukritos son of Eukritos",
+        "role": "Ephebe",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Ergochares son of Nicobulus",
+        "role": "Ephebe",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Stesileos son of Nicobulus",
+        "role": "Ephebe",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Anthemion son of Theophantos",
+        "role": "Ephebe",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Oinobios son of Oinobios",
+        "role": "Ephebe",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Demetrius son of Menophilus",
+        "role": "Ephebe",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Lysinos son of Cephisophon",
+        "role": "Ephebe",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Konon son of Xenophon",
+        "role": "Ephebe",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Abas son of Cleander",
+        "role": "Ephebe",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Athens",
+        "type": "City",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Eleusis",
+        "type": "Sanctuary and Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Acropolis",
+        "type": "Sanctuary",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Agora",
+        "type": "Public Space",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Acharnae",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Oion",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Lamptrae",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Phyle",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Melite",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Cephisia",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Erchia",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Epicephisia",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Perithoidae",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Athmonon",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Keiriadae",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Hamaxanteia",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Gryttus",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Tenos",
+        "type": "Island",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Iacchus",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Semnai Theai",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "Region",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a classic Athenian ephebic decree from the late 3rd century BC (archonship of Polydorus/Piodotus). It follows a standard structure: a preamble dating the decree by archon and secretary, a narrative section detailing the pious and military activities of the ephebes (including sacrifices, processions to Eleusis, and military training), a formal resolution to honor them and their supervisors, and finally a catalogue of the ephebes listed by their tribes. The text is fragmentary but largely restorable through parallel inscriptions.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " late 3rd c. BC",
+  "date_min": -250.0,
+  "date_max": -201.0,
+  "date_circa": false
+}

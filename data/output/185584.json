@@ -1,0 +1,120 @@
+{
+  "phi_id": 185584,
+  "themes": [
+    {
+      "label": "Sacred Laws and Rules",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Sacred Laws and Rules",
+        "subcategory": null
+      },
+      "rationale": "The text contains specific regulations regarding sacrifices, the distribution of sacrificial portions (perquisites), and the conduct of religious officials.",
+      "confidence": 1.0,
+      "quote": "τα [ς] θυσ[ αις -----------] ... [------- ρ]εια γ ρη δ ρμα κα σκ [λος -------]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Laws and Regulations",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Laws and Regulations",
+        "subcategory": null
+      },
+      "rationale": "The inscription prescribes legal penalties (fines) for violations of the established religious procedures.",
+      "confidence": 1.0,
+      "quote": "[-- τ ερ θυτα α] το ς στω κα π[οτεισ ντω -------] [---- δραχμ ς πεν]τ κοντα",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Calendars and Timetables",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Calendars and Timetables",
+        "subcategory": null
+      },
+      "rationale": "The text references specific months and days in the local calendar for the performance of rituals or administrative actions.",
+      "confidence": 1.0,
+      "quote": "[------- μην] δευτ ρωι παν μ[ωι -------] [----------] τ ι σχ τωι μην[",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Contracts and Private Legal Acts",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Contracts and Private Legal Acts",
+        "subcategory": null
+      },
+      "rationale": "The mention of leasing (misthosis) suggests the administrative management of sacred property or revenues.",
+      "confidence": 0.8,
+      "quote": "[--------- μ]ισθ σιος π τ ς τα[μ ας -----] [--------] π λιος νε μενοι μ[ισθωσ μενοι --]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Priestess",
+        "role": "Religious official receiving sacrificial portions",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Hieropoioi",
+        "role": "Sacred officials responsible for overseeing sacrifices",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Treasurers",
+        "role": "Financial officials involved in leasing or fines",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Aphrodision",
+        "type": "Sanctuary of Aphrodite",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Kos",
+        "type": "City-state",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Aphrodite",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Kos",
+      "type": "Region",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a sacred law from the island of Kos, dating to the late Hellenistic period. It regulates the cultic activities at the Aphrodision (Sanctuary of Aphrodite). The text specifies the 'gera' (honorary portions) such as the skin and leg of sacrificed animals that are to be given to the priestess and other officials like the hieropoioi. It also establishes a fine of fifty drachmas for those who sacrifice improperly and mentions the leasing of sacred revenues or lands under the supervision of the treasurers (tamiai). The mention of the month Panamos indicates the timing of these religious and administrative obligations.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " ca. 200-150 BC",
+  "date_min": -200.0,
+  "date_max": -150.0,
+  "date_circa": true
+}

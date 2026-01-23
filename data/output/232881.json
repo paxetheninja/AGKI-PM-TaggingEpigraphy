@@ -1,0 +1,183 @@
+{
+  "phi_id": 232881,
+  "themes": [
+    {
+      "label": "Decree",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text follows the standard Athenian legislative formula for a public decree, including the archon, prytany, and the resolution of the council and people.",
+      "confidence": 1.0,
+      "quote": "δοξεν τ ι βουλ ι [κα τ ι] δ μωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscription",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription honors an individual for his services and virtue, awarding him a gold crown and citizenship.",
+      "confidence": 1.0,
+      "quote": "παιν σαι α ν[η]τον δα μονος διον κα στεφαν σαι χρυσ ι στεφνωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The text explicitly orders the decree to be inscribed on a stone stele.",
+      "confidence": 1.0,
+      "quote": "ναγρ ψ]αι [δ] τ δε τ[ ψ] φισ[μα ν στ ληι λιθ ν]ηι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "Public decrees in the Athenian Agora during this period were typically inscribed on marble stelae, though the text only specifies 'stone'.",
+      "confidence": 0.8,
+      "quote": "ν στ ληι λιθ ν]ηι",
+      "is_ambiguous": true,
+      "ambiguity_note": "The text specifies stone (lithine), but marble is the standard material for such Athenian decrees."
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The inscription contains numerous lacunae and missing sections that require reconstruction.",
+      "confidence": 1.0,
+      "quote": "[---]ντ δος τετ ρτης πρυτανε ας",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Invocation",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Prayers and Invocations",
+        "subcategory": null
+      },
+      "rationale": "The inscription begins with an invocation to the gods and includes a formula for Good Fortune (Agathe Tyche).",
+      "confidence": 1.0,
+      "quote": "θεο. ... [ε πεν γ]αθ ι τ χηι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Apollodoros",
+        "role": "Archon",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Kadmos",
+        "role": "Secretary",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Ainetos",
+        "role": "Honoree",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Damon",
+        "role": "Father of honoree",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Alexander the Great",
+        "role": "King",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Kteson",
+        "role": "Father of proposer",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Athens",
+        "type": "City",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Asia",
+        "type": "Region",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Kerameis",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Lakiadai",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 0.8
+      }
+    ],
+    "deities": [
+      {
+        "name": "Gods",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Tyche",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "Region",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This is an Athenian citizenship decree dated to 319/8 BC during the archonship of Apollodoros. It honors Ainetos, son of Damon, for his military service and conduct during the war in Asia alongside King Alexander the Great. The decree grants him Athenian citizenship, including the right to enroll in a tribe, deme, and phratry, and awards him a gold crown worth 500 drachmae for his virtue and goodwill toward the Athenian people.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 319/8 a. ",
+  "date_min": -319.0,
+  "date_max": -318.0,
+  "date_circa": false
+}

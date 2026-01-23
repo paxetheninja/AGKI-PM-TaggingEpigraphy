@@ -171,6 +171,7 @@
         <a href="../index.html" class="nav-item">Home</a>
         <a href="search.html" class="nav-item active">Search</a>
         <a href="explore.html" class="nav-item">Explore</a>
+        <a href="basket.html" class="nav-item">Databasket</a>
         <a href="compare.html" class="nav-item">Compare</a>
         <a href="network.html" class="nav-item">Network</a>
         <a href="matrix.html" class="nav-item">Matrix</a>
@@ -278,13 +279,15 @@
                   Impressum: Privates Forschungsprojekt. Verantwortlich: Florian Wachter, Institut für Antike, Goethestraße 19, 8010 Graz. Kontakt: florian.wachter@uni-graz.at. Keine Gewähr für die Richtigkeit der Daten.
                 </div>          </footer>
         
-          <script>        // --- Data Handling ---
-        const script = document.createElement('script');
-        script.src = `assets/js/data.js`;
-        script.onload = () => init();
-        document.body.appendChild(script);
+          <script>
+        // --- Data Handling ---
+  </script>
+  <script src="assets/js/basket.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script>
     
-        // --- Utils & Theme ---    const themeBtn = document.getElementById('themeBtn');
+        // --- Utils & Theme ---
+    const themeBtn = document.getElementById('themeBtn');
     function updateThemeBtn() {
         const current = document.documentElement.getAttribute('data-theme');
         themeBtn.textContent = current === 'light' ? 'Dark Mode' : 'Light Mode';
@@ -736,11 +739,14 @@
             container.innerHTML = '<div class="empty-state">No results found.</div>';
             return;
         }
+
+        const basketIds = window.basket && window.basket.get ? window.basket.get() : (JSON.parse(localStorage.getItem('myCollection') || '[]'));
         
         data.forEach(item => {
-            const card = document.createElement('a');
-            card.href = `inscriptions/${item.id}.html`;
+            const isStarred = basketIds.includes(item.id);
+            const card = document.createElement('div');
             card.className = 'inscription-card';
+            card.style.position = 'relative'; 
             
             // Show top tags with their confidence
             const tagsHtml = item.themes.slice(0, 5).map(t => {
@@ -748,13 +754,23 @@
             }).join('');
             
             card.innerHTML = `
-                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.5rem;">
-                    <strong style="font-size: 1.1rem; color: var(--primary);">PHI-${item.id}</strong>
-                    <small class="muted">${item.date_str || 'Undated'} • ${item.region || 'Unknown'}</small>
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+                    <div>
+                        <a href="inscriptions/${item.id}.html" style="text-decoration:none; color:inherit;">
+                            <strong style="font-size: 1.1rem; color: var(--primary);">PHI-${item.id}</strong>
+                        </a>
+                        <small class="muted" style="display:block;">${item.date_str || 'Undated'} • ${item.region || 'Unknown'}</small>
+                    </div>
+                    <button class="button tiny ${isStarred ? '' : 'secondary outline'}" 
+                            onclick="toggleSearchStar(event, ${item.id}, this)">
+                        ${isStarred ? '★ In Basket' : '☆ Add'}
+                    </button>
                 </div>
-                <div style="font-family: 'Times New Roman', serif; color: var(--text); margin-bottom: 0.75rem; font-size: 0.95rem; line-height:1.4;">
-                    "${item.preview_text}"
-                </div>
+                <a href="inscriptions/${item.id}.html" style="text-decoration:none; color:inherit; display:block;">
+                    <div style="font-family: 'Times New Roman', serif; color: var(--text); margin-bottom: 0.75rem; font-size: 0.95rem; line-height:1.4;">
+                        "${item.preview_text}"
+                    </div>
+                </a>
                 <div style="display:flex; justify-content:space-between; align-items:end;">
                     <div style="display:flex; flex-wrap:wrap; gap:4px;">${tagsHtml}</div>
                     <span class="badge info" style="font-size:0.75rem;">${item.completeness || 'frag.'}</span>
@@ -762,6 +778,22 @@
             `;
             container.appendChild(card);
         });
+    }
+
+    function toggleSearchStar(e, id, btn) {
+        e.stopPropagation();
+        e.preventDefault();
+        
+        const current = window.basket && window.basket.get ? window.basket.get() : (JSON.parse(localStorage.getItem('myCollection') || '[]'));
+        if (current.includes(id)) {
+            if(window.basket && window.basket.remove) window.basket.remove(id);
+            btn.className = 'button tiny secondary outline';
+            btn.innerHTML = '☆ Add';
+        } else {
+            if(window.basket && window.basket.add) window.basket.add(id);
+            btn.className = 'button tiny';
+            btn.innerHTML = '★ In Basket';
+        }
     }
 
         // --- Taxonomy Tree ---
@@ -889,6 +921,3 @@
   </script>
 </body>
 </html>
-
-
-

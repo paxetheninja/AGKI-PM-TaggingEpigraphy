@@ -1,0 +1,185 @@
+{
+  "phi_id": 231070,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text is a formal decree of the Athenian Demos, indicated by the standard formula 'edoxen tei boulei kai toi demoi' (it was decided by the council and the people).",
+      "confidence": 1.0,
+      "quote": "δοξεν τ ι δ μωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription honors the prytaneis of the tribe Kekropis for their religious piety and administrative diligence, awarding them a golden crown.",
+      "confidence": 1.0,
+      "quote": " παιν σαι το ς πρυτ νεις τ ς κεκροπ δος κα στεφαν σαι α το ς χρυσ ι στεφ νωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The decree explicitly orders its own publication on a stone stele to be set up in the Prytanikon.",
+      "confidence": 1.0,
+      "quote": " ν στ λει λιθ νει κα στ σαι ν τ ι πρυτανικ ι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The text contains numerous lacunae and restored sections, indicating the physical support is broken or damaged.",
+      "confidence": 1.0,
+      "quote": "[ π] σων κου ρχοντος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Sonikos",
+        "role": "Archon",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Pausanias",
+        "role": "Secretary",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Biotolos",
+        "role": "Father of Pausanias",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Antichares",
+        "role": "Chairman of the Proedroi",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Epizelos",
+        "role": "Father of Antichares",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Lysandros",
+        "role": "Proposer",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Nestor",
+        "role": "Father of Lysandros",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Athens",
+        "type": "City",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Piraeus",
+        "type": "Port and location of Assembly",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Kekropis",
+        "type": "Athenian Tribe",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Perithoidai",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Angelai",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Kydathenaion",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Apollo Prostaterios",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Artemis Boulaia",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Artemis Phosphoros",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "Region",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Agora",
+      "type": "Site",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This is a typical Athenian prytany decree from the 2nd century BC. It follows a rigid formula: dating by archon and secretary, recording the assembly meeting in Piraeus, the proposal by Lysandros, and the commendation of the outgoing prytaneis of the tribe Kekropis. The honors are granted for their successful performance of sacrifices to Apollo and Artemis, and for their general administrative efficiency. The text concludes with instructions for the publication of the decree on a stone stele.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

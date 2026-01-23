@@ -1,0 +1,153 @@
+{
+  "phi_id": 195613,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text is an official regulation or decree from the city of Kos, prescribing public actions, processions, and religious observances for the citizens and residents.",
+      "confidence": 1.0,
+      "quote": "στεφανηφορεῖν μὲν τοὺς πολίτας καὶ τοὺς παροίκους",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Sacred Laws and Rules",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Sacred Laws and Rules",
+        "subcategory": null
+      },
+      "rationale": "The inscription provides specific instructions on how sacrifices should be performed, which deities should be honored, and the order of the religious procession.",
+      "confidence": 1.0,
+      "quote": "θυσάντω τῶι τε Διὶ καὶ τᾶι Ἀθάναι τᾶι Βουλαίαι καὶ τῶι Διὶ τῶι Μεγίστωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Prayers and Invocations",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Prayers and Invocations",
+        "subcategory": null
+      },
+      "rationale": "The text contains explicit instructions for prayers to be offered for the well-being and safety of the people and the royal family.",
+      "confidence": 1.0,
+      "quote": "ἐπευχέσθων πάντα τἀγαθὰ γίνεσθαι τῶι τε δάμωι τῶι Κώιων καὶ βασιλεῖ Ἀριαράθει",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The decree honors King Ariarathes and Queen Antiochis, linking the city's religious life to the health and prosperity of the royal house.",
+      "confidence": 1.0,
+      "quote": "ὑπέρ τε τᾶς ὑγιείας καὶ σωτηρίας τοῦ τε δήμου καὶ βασιλέως Ἀριαράθους",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The text lists various civic and religious officials who must participate in the procession, including the monarchos, hieropoioi, strategoi, and gymnasiarchos.",
+      "confidence": 1.0,
+      "quote": "μετά τε τοῦ μονάρχου καὶ ἱεροποιῶν καὶ πάντων τῶν ἀρχῶν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Ariarathes",
+        "role": "King",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Antiochis",
+        "role": "Queen",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Kos",
+        "type": "City",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Prytaneion",
+        "type": "Building",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Zeus",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Athena",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Asclepius",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Homonoia",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Eudaimonia",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Ploutos",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Kos",
+      "type": "Region",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription from the island of Kos, dating to the early 2nd century BC, represents a civic decree organizing a religious festival. It mandates that all citizens, metics (paroikoi), and visitors wear crowns and participate in a procession led by the city's highest officials (the monarchos and the prytaneis). The decree specifically focuses on sacrifices and prayers for the health and safety of the Koan people and the Cappadocian royal family, King Ariarathes and Queen Antiochis, demonstrating the diplomatic and religious ties between the polis and the Hellenistic monarchy.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 188-166 BC ",
+  "date_min": -188.0,
+  "date_max": -166.0,
+  "date_circa": false
+}

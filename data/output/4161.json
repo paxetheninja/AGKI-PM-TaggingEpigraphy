@@ -1,0 +1,272 @@
+{
+  "phi_id": 4161,
+  "themes": [
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The inscription consists of a long list of names organized by tribe and deme, which is characteristic of Athenian civic or military rosters, such as lists of ephebes, councilors, or soldiers.",
+      "confidence": 1.0,
+      "quote": "κεκροπ δος ... πποθωντ δος ... α αντ δος ... ντιοχ δος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Registers and Catalogues",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Registers and Catalogues",
+        "subcategory": null
+      },
+      "rationale": "The systematic arrangement of individuals under their respective demes and tribes functions as a formal register of the citizen body.",
+      "confidence": 1.0,
+      "quote": "μελιτε ς ... ξυπεται νες ... πειραιε ς ... μαραθ νιοι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The length and vertical organization of the text, typical of Attic citizen lists, indicate it was originally inscribed on a stone stele.",
+      "confidence": 0.8,
+      "quote": "αι κεκροπ δος μελιτε ς",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "Public administrative documents in 4th-century Athens were almost exclusively inscribed on marble.",
+      "confidence": 0.8,
+      "quote": "αι κεκροπ δος μελιτε ς",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The text contains numerous lacunae and brackets, indicating that the original stone is broken and parts of the names are lost.",
+      "confidence": 1.0,
+      "quote": "[δε] νων [δε]ιν ου ... [φλ]υε ς ... [ ρ]ιστοφ ν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Euthydemus",
+        "role": "Citizen",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Anticharmus",
+        "role": "Citizen",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Eudoxus",
+        "role": "Father",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Dionysius",
+        "role": "Citizen",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Demostratus",
+        "role": "Citizen",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Kleinias",
+        "role": "Citizen",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Timotheus",
+        "role": "Citizen",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristophon",
+        "role": "Citizen",
+        "uri": null,
+        "confidence": 0.8
+      },
+      {
+        "name": "Nicostratus",
+        "role": "Citizen",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Eucrates",
+        "role": "Citizen",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Menecles",
+        "role": "Citizen",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Apollodorus",
+        "role": "Citizen",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Lysicrates",
+        "role": "Citizen",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Theodorus",
+        "role": "Citizen",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Pheidias",
+        "role": "Citizen",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Kekropis",
+        "type": "Tribe",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Hippothontis",
+        "type": "Tribe",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Aeantis",
+        "type": "Tribe",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Antiochis",
+        "type": "Tribe",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Melite",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Xypete",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Phlya",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 0.8
+      },
+      {
+        "name": "Piraeus",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Eleusis",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Marathon",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Phaleron",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Aphidna",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Alopeke",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Pallene",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Attica",
+      "type": "Region",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a comprehensive catalogue of Athenian citizens from the mid-4th century BC. It is structured by the Kleisthenic tribal system, listing members of the tribes Kekropis, Hippothontis, Aeantis, and Antiochis. Within each tribe, individuals are grouped by their demes (local districts), providing a clear snapshot of the demographic and administrative organization of Athens during this period. The use of patronymics (father's names) alongside the individual's name and demotic was the standard method of identifying full citizens.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " post med. s. IV a.",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

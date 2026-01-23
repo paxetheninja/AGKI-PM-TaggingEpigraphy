@@ -1,0 +1,192 @@
+{
+  "phi_id": 321,
+  "themes": [
+    {
+      "label": "Inventories",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Inventories",
+        "subcategory": null
+      },
+      "rationale": "The inscription provides a detailed list of sacred objects, including silver bowls, cups, and a gold crown, along with their specific weights, which is characteristic of a temple inventory.",
+      "confidence": 1.0,
+      "quote": "φι λαι ργυρα 0 σταθμ ν το[ τ]ον ττηηηηδδδ κ[ ρατ]α [ ργυρ 0 σταθμ ν το τον]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The text records the formal transfer of sacred property (chremata) from one board of treasurers to their successors, a standard financial administrative procedure in Athens.",
+      "confidence": 1.0,
+      "quote": "ταμ αι τον ερον χρεμ[ τον] τες θενα ας ... παρ δοσαν το ς ταμ αις",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The inscription names several Athenian officials, including the treasurers (tamiai) and the secretaries (grammateis) of the board, identifying them by name, patronymic, and deme.",
+      "confidence": 1.0,
+      "quote": "πολυχσεν δες χαρνε ς κα χσυν ρχοντες ... γραμμ τευε",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Votive Dedications",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Votive Dedications",
+        "subcategory": null
+      },
+      "rationale": "The items listed, such as the gold crown and silver vessels, are dedicated to the goddess Athena and kept in her sanctuary as sacred property.",
+      "confidence": 1.0,
+      "quote": "ταμ αι τον ερον χρεμ τον τες θενα ας",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The stoichedon layout and the nature of the Athenian financial record indicate this was inscribed on a stone stele.",
+      "confidence": 0.8,
+      "quote": "[τ δε ι] ταμ αι τον ερον χρεμ[ τον]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "Official Athenian administrative records of the 5th century BCE were typically inscribed on marble.",
+      "confidence": 0.8,
+      "quote": "[τ δε ι] ταμ αι τον ερον χρεμ[ τον]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The presence of numerous brackets in the transcription indicates that significant portions of the text are missing and have been reconstructed.",
+      "confidence": 1.0,
+      "quote": "[τ δε ι] ταμ αι τον ερον χρεμ[ τον]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Polyxendes of Acharnae",
+        "role": "Treasurer",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Leukaios son of Komarchos of Aphidna",
+        "role": "Secretary",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Autokleides son of Sostratos of Phrearrhioi",
+        "role": "Secretary",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Polymedes son of Kephisophon of Atene",
+        "role": "Treasurer",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Kallaschros son of Eupyreides",
+        "role": "Treasurer",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Athens",
+        "type": "City",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Acharnae",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Aphidna",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Phrearrhioi",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Atene",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Athena",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "Region",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is an Athenian temple inventory from the late 5th century BCE, specifically recording the transfer (paradosis) of sacred treasures of Athena between outgoing and incoming boards of treasurers (tamiai). It lists various precious metal objects, primarily silver phialai and cups, along with a gold crown, noting their weights in the Attic acrophonic numeral system. The text identifies officials by name, patronymic, and deme, following the standard administrative practices of the period.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 413/2 a.",
+  "date_min": -413.0,
+  "date_max": -412.0,
+  "date_circa": false
+}

@@ -1,0 +1,255 @@
+{
+  "phi_id": 309004,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text is a formal decree (psephisma) issued by the deme of Rhamnous, as indicated by the opening formula 'edoxen Rhamnousiois' (it seemed good to the Rhamnousians).",
+      "confidence": 1.0,
+      "quote": "ἔδοξεν Ῥαμνουσίοις",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription honors Dikaiarchos for his virtue (arete) and goodwill (eunoia) towards the people of Athens and the deme of Rhamnous.",
+      "confidence": 1.0,
+      "quote": "ἐπαινέσαι Δικαίαρχον Ἀπολλωνίου Θριάσιον ἀρετῆς ἕνεκα καὶ εὐνοίας",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The end of the inscription lists five men chosen to oversee the implementation of the decree.",
+      "confidence": 1.0,
+      "quote": "οἵδε εὑρέθησαν Ἐλπίνικος Μνησίππου Λυκίας Ἱεροκλέους Στρόμβιχος Κλεοδωρίδου Θρασύμαχος Ἀντιμάχου Λυσίθεος Διοκλέους",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The decree explicitly orders the text to be inscribed on two stone stelae (stelais lithinais).",
+      "confidence": 1.0,
+      "quote": "ἀναγράψαι δὲ τόδε τὸ ψήφισμα... ἐν στήλαις λιθίναις",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Other Stone",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Other Stone"
+      },
+      "rationale": "The inscription specifies the material as stone (lithinais).",
+      "confidence": 1.0,
+      "quote": "ἐν στήλαις λιθίναις",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The text contains several lacunae and restored sections, indicating it is not fully intact.",
+      "confidence": 1.0,
+      "quote": "[π]αρειληφὼς φιλίαν πρὸς τὸν δῆμον τὸν Ἀθηναίων",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Dikaiarchos",
+        "role": "Honoree and military commander",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Apollonios",
+        "role": "Father of Dikaiarchos",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Antigonus",
+        "role": "King Antigonus II Gonatas",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Demetrius",
+        "role": "King Demetrius II Aetolicus",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Philokydes",
+        "role": "General (Strategos)",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Elpinikos",
+        "role": "Proposer of the decree and committee member",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Mnesippos",
+        "role": "Father of Elpinikos",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Lykias",
+        "role": "Committee member",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Hierokles",
+        "role": "Father of Lykias",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Strombichos",
+        "role": "Committee member",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Kleodorides",
+        "role": "Father of Strombichos",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Thrasymachos",
+        "role": "Committee member",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Antimachos",
+        "role": "Father of Thrasymachos",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Lysitheos",
+        "role": "Committee member",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Diokles",
+        "role": "Father of Lysitheos",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Rhamnous",
+        "type": "Deme and fortress",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Athens",
+        "type": "City-state",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Eleusis",
+        "type": "Deme and fortress",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Panakton",
+        "type": "Fortress",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Attica",
+        "type": "Region",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Eretria",
+        "type": "City",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Thria",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Nemesis",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Dionysus",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Rhamnous",
+      "type": "Deme",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a formal decree from the deme of Rhamnous honoring Dikaiarchos of Thria for his military and civic contributions during the reigns of Antigonus II Gonatas and Demetrius II. Dikaiarchos is praised for his command of the garrisons at Rhamnous, Eleusis, and Panakton, his protection of the Attic countryside during wartime, and his diplomatic intervention in Eretria to save Athenian citizens. He is also recognized for his financial support of the Nemesia festival. The decree orders the publication of the text on two stone stelae to be placed in the sanctuaries of Dionysus and Nemesis.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 235/234 BC ",
+  "date_min": -235.0,
+  "date_max": -234.0,
+  "date_circa": false
+}

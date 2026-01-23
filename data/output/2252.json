@@ -1,0 +1,208 @@
+{
+  "phi_id": 2252,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The inscription is a formal Athenian decree, indicated by the resolution formula 'ψηφίσθαι τῶι δήμωι'.",
+      "confidence": 1.0,
+      "quote": "ψηφ σθαι τ ι δ]μωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Treaties and Agreements",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Treaties and Agreements",
+        "subcategory": null
+      },
+      "rationale": "The text establishes a formal alliance (symmachy) and mentions treaties and oaths between Athens and Chios.",
+      "confidence": 1.0,
+      "quote": "συμμα χ αν ς τ ν παντα χ]ρ νο[ν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The decree includes a motion to praise the people of Chios and their ambassadors.",
+      "confidence": 1.0,
+      "quote": " παιν σαι μ ν τ[ ν δ μον τ ν] τ ν χ [ω]ν κα τ ς πρ σβες",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The inscription concludes with a list of the Athenian and Chian ambassadors involved in the treaty.",
+      "confidence": 1.0,
+      "quote": "ο δε ιρ θησαν πρ] σβεις κ φαλο[ς κολλυτε ς",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The decree explicitly commands the setting up of a stone stele on the Acropolis to record the agreement.",
+      "confidence": 1.0,
+      "quote": "στ σαι δ στ λην ν κροπ λει",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "Athenian state decrees of this period were typically inscribed on marble stelae.",
+      "confidence": 0.8,
+      "quote": "στ λην",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Dieitrephes",
+        "role": "Archon",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Cephalus",
+        "role": "Ambassador",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Aesimus",
+        "role": "Ambassador",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Democleides",
+        "role": "Ambassador",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Bryon",
+        "role": "Chian Ambassador",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Archilas",
+        "role": "Chian Ambassador",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Stephanus",
+        "role": "Father of the Secretary",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "King of Persia",
+        "role": "Monarch",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Athens",
+        "type": "City",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Chios",
+        "type": "Island",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Lacedaemon",
+        "type": "City-state",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Acropolis",
+        "type": "Sanctuary",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Collytus",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Alopece",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Phrearrhioi",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Prytaneion",
+        "type": "Public Building",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "Region",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is an Athenian decree from 384/3 BC (archonship of Dieitrephes) renewing an alliance with Chios. It references the King's Peace (387/6 BC) involving the Persian King and the Lacedaemonians, but establishes a specific bilateral symmachy. The text includes standard administrative formulas, provisions for the publication of the stele on the Acropolis, and an invitation to the ambassadors for hospitality in the Prytaneion.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

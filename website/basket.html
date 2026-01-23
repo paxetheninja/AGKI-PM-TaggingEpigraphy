@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Databasket - AGKI Epigraphy Tool</title>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <style>
+    main.page { width: 100%; max-width: 1200px; padding: 2rem; margin: 0 auto; }
+    
+    .basket-toolbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: var(--panel);
+        padding: 1rem;
+        border-radius: 8px 8px 0 0;
+        border: 1px solid var(--border);
+        border-bottom: none;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .toolbar-group { display: flex; gap: 0.5rem; }
+
+    .basket-table {
+        width: 100%;
+        border-collapse: collapse;
+        background: var(--panel);
+        border: 1px solid var(--border);
+        box-shadow: var(--shadow);
+    }
+    
+    .basket-table th, .basket-table td {
+        padding: 0.75rem 1rem;
+        text-align: left;
+        border-bottom: 1px solid var(--border);
+    }
+    
+    .basket-table th {
+        background: var(--bg);
+        font-weight: 600;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--muted);
+    }
+
+    .id-link { font-weight: bold; color: var(--primary); text-decoration: none; }
+    .badge.tiny { font-size: 0.7rem; padding: 0.1rem 0.4rem; }
+    
+    .btn-icon {
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        font-size: 1.1rem;
+        padding: 4px;
+        opacity: 0.7;
+        transition: opacity 0.2s;
+    }
+    .btn-icon:hover { opacity: 1; transform: scale(1.1); }
+    .btn-icon.danger:hover { color: var(--error); }
+
+    .note-row { display: none; background: var(--bg); }
+    .note-row.open { display: table-row; }
+    .note-cell { padding: 0.5rem 1rem 1.5rem 1rem; border-bottom: 2px solid var(--border); }
+    .note-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        max-width: 600px;
+        margin-left: 2rem; /* Indent slightly */
+    }
+    .note-wrapper textarea {
+        width: 100%;
+        min-height: 80px;
+        padding: 0.5rem;
+        border: 1px solid var(--border);
+        border-radius: 4px;
+        font-family: inherit;
+        background: var(--panel);
+        color: var(--text);
+    }
+
+    .empty-state {
+        text-align: center;
+        padding: 4rem 2rem;
+        background: var(--panel);
+        border: 1px dashed var(--border);
+        border-radius: 8px;
+        color: var(--muted);
+    }
+
+    .modal-overlay {
+        position: fixed; top:0; left:0; right:0; bottom:0;
+        background: rgba(0,0,0,0.5);
+        display: flex; align-items: center; justify-content: center;
+        z-index: 9999;
+    }
+    .modal {
+        background: var(--panel);
+        padding: 2rem;
+        border-radius: 8px;
+        width: 100%; max-width: 500px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+  </style>
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand"><h1><a href="../index.html">AGKI Tagging Tool</a></h1></div>
+    <nav class="nav-links">
+        <a href="../index.html" class="nav-item">Home</a>
+        <a href="search.html" class="nav-item">Search</a>
+        <a href="explore.html" class="nav-item">Explore</a>
+        <a href="basket.html" class="nav-item active">Databasket</a>
+        <a href="compare.html" class="nav-item">Compare</a>
+        <a href="network.html" class="nav-item">Network</a>
+        <a href="matrix.html" class="nav-item">Matrix</a>
+        <a href="indices.html" class="nav-item">Indices</a>
+    </nav>
+    <div class="header-controls">
+        <button class="theme-toggle-btn" onclick="toggleTheme()" id="themeBtn">Dark Mode</button>
+    </div>
+  </header>
+
+  <main class="page">
+    <div style="margin-bottom: 2rem;">
+        <h2>Research Databasket</h2>
+        <p class="muted">Manage your collected inscriptions, add private annotations, and export for publication.</p>
+    </div>
+
+    <div id="emptyState" class="empty-state" style="display:none;">
+        <h3>Your basket is empty</h3>
+        <p>Use the star icon <span style="font-size:1.2rem; color:var(--primary)">★</span> in Search or Explore to add items.</p>
+        <a href="explore.html" class="button">Go to Explore</a>
+    </div>
+
+    <div id="basketContainer">
+        <div class="basket-toolbar">
+            <div class="toolbar-group">
+                <button class="button compact" onclick="compareSelected()">Compare Selected</button>
+                <button class="button compact secondary" onclick="generateCitation()">Get Citations</button>
+            </div>
+            <div class="toolbar-group">
+                <button class="button compact secondary" onclick="generateShareLink()">Share Collection</button>
+                <button class="button compact secondary" onclick="exportData('csv')">Export CSV</button>
+                <button class="button compact secondary" onclick="exportData('json')">Export JSON</button>
+                <button class="button compact danger" onclick="clearBasket()">Clear All</button>
+            </div>
+        </div>
+
+        <table class="basket-table">
+            <thead>
+                <tr>
+                    <th style="width: 40px;"><input type="checkbox" onclick="toggleSelectAll(this)"></th>
+                    <th style="width: 120px;">ID</th>
+                    <th>Region</th>
+                    <th>Date</th>
+                    <th>Key Themes</th>
+                    <th style="width: 100px;">Actions</th>
+                </tr>
+            </thead>
+            <tbody id="basketTableBody">
+                <!-- JS populated -->
+            </tbody>
+        </table>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      © 2026 Florian Wachter | Private Non-Profit Research Project | 
+      <a href="https://github.com/paxetheninja/AGKI-PM-TaggingEpigraphy" target="_blank">GitHub</a>
+    </div>
+    <div class="footer-legal">
+      Impressum: Privates Forschungsprojekt. Verantwortlich: Florian Wachter, Institut für Antike, Goethestraße 19, 8010 Graz. Kontakt: florian.wachter@uni-graz.at. Keine Gewähr für die Richtigkeit der Daten.
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/basket.js"></script>
+  <script>
+    // Theme Logic
+    const themeBtn = document.getElementById('themeBtn');
+    function updateThemeBtn() {
+        const current = document.documentElement.getAttribute('data-theme');
+        themeBtn.textContent = current === 'light' ? 'Dark Mode' : 'Light Mode';
+    }
+    updateThemeBtn();
+    window.toggleTheme = function() {
+        const next = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        updateThemeBtn();
+    }
+
+    // Initialize
+    window.addEventListener('DOMContentLoaded', () => {
+        basket.init();
+    });
+
+    // Helper for toolbar exports
+    function exportData(format) {
+        exportBasket(format);
+    }
+  </script>
+</body>
+</html>

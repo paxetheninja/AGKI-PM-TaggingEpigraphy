@@ -67,6 +67,7 @@
         <a href="../index.html" class="nav-item">Home</a>
         <a href="search.html" class="nav-item">Search</a>
         <a href="explore.html" class="nav-item">Explore</a>
+        <a href="basket.html" class="nav-item">Databasket</a>
         <a href="compare.html" class="nav-item active">Compare</a>
         <a href="network.html" class="nav-item">Network</a>
         <a href="matrix.html" class="nav-item">Matrix</a>
@@ -126,15 +127,106 @@
     </div>
   </footer>
 
+  <script src="assets/js/data.js"></script>
   <script>
-    const script = document.createElement('script');
-    script.src = 'assets/js/data.js';
-    script.onload = () => init();
-    document.body.appendChild(script);
-
     let chartA, chartB, timeChartA, timeChartB;
 
     function init() {
+        const params = new URLSearchParams(window.location.search);
+        const idsParam = params.get('ids');
+
+        if (idsParam) {
+            // Item Comparison Mode
+            const ids = idsParam.split(',').map(s => parseInt(s.trim())).filter(n => !isNaN(n));
+            initItemComparison(ids);
+        } else {
+            // Regional Comparison Mode (Default)
+            initRegionComparison();
+        }
+    }
+
+    // --- Item Comparison Mode ---
+
+    function initItemComparison(ids) {
+        // Update UI for Item Mode
+        document.querySelector('.compare-header h2').textContent = 'Inscription Comparison';
+        document.querySelector('.compare-controls').style.display = 'none';
+
+        const container = document.getElementById('comparisonContent');
+        
+        if (ids.length === 0) {
+            container.innerHTML = '<div class="empty-state">No valid inscription IDs provided to compare.</div>';
+            return;
+        }
+
+        const items = ids.map(id => APP_DATA.inscriptions.find(i => i.id == id)).filter(Boolean);
+        
+        if (items.length === 0) {
+            container.innerHTML = '<div class="empty-state">Inscriptions not found in current dataset.</div>';
+            return;
+        }
+
+        // Render Item Comparison Grid/Table
+        let html = `
+            <div style="overflow-x:auto;">
+                <table class="basket-table" style="width:100%; min-width:800px; margin-top:1rem;">
+                    <thead>
+                        <tr>
+                            <th style="width:150px;">Property</th>
+                            ${items.map(item => `<th><a href="inscriptions/${item.id}.html">PHI-${item.id}</a></th>`).join('')}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Region</strong></td>
+                            ${items.map(item => `<td>${item.region || '-'}</td>`).join('')}
+                        </tr>
+                        <tr>
+                            <td><strong>Date</strong></td>
+                            ${items.map(item => `<td>${item.date_str || 'Undated'}</td>`).join('')}
+                        </tr>
+                        <tr>
+                            <td><strong>Completeness</strong></td>
+                            ${items.map(item => `<td><span class="badge info">${item.completeness || 'frag.'}</span></td>`).join('')}
+                        </tr>
+                        <tr>
+                            <td><strong>Tags</strong></td>
+                            ${items.map(item => {
+                                const tags = (item.themes || []).map(t => `<span class="badge tiny" title="Conf: ${(t.confidence*100).toFixed(0)}%">${t.label}</span>`).join(' ');
+                                return `<td><div style="display:flex; flex-wrap:wrap; gap:4px;">${tags}</div></td>`;
+                            }).join('')}
+                        </tr>
+                        <tr>
+                            <td><strong>Entities</strong></td>
+                            ${items.map(item => {
+                                const p = (item.mentioned_persons || []).map(x => x.name).join(', ');
+                                const d = (item.mentioned_deities || []).join(', ');
+                                const pl = (item.mentioned_places || []).map(x => x.name).join(', ');
+                                let out = '';
+                                if(p) out += `<div><small class="muted">Persons:</small> ${p}</div>`;
+                                if(d) out += `<div><small class="muted">Deities:</small> ${d}</div>`;
+                                if(pl) out += `<div><small class="muted">Places:</small> ${pl}</div>`;
+                                return `<td style="font-size:0.85rem;">${out || '-'}</td>`;
+                            }).join('')}
+                        </tr>
+                         <tr>
+                            <td><strong>Text Preview</strong></td>
+                            ${items.map(item => `<td style="font-size:0.85rem; font-style:italic; color:var(--muted); vertical-align:top; min-width:200px;">"${item.preview_text || ''}"</td>`).join('')}
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div style="margin-top:2rem; text-align:center;">
+                <a href="basket.html" class="button secondary">Return to Databasket</a>
+            </div>
+        `;
+
+        container.innerHTML = html;
+    }
+
+    // --- Regional Comparison Mode ---
+
+    function initRegionComparison() {
         // Build region selects
         const regions = Array.from(new Set(APP_DATA.inscriptions.map(i => i.region).filter(Boolean))).sort();
 
@@ -377,6 +469,7 @@
 
     // Initialize Tour
     document.addEventListener('DOMContentLoaded', () => {
+        init();
         if (window.AGKI_Tour) AGKI_Tour.init('compare');
     });
   </script>

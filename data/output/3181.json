@@ -1,0 +1,260 @@
+{
+  "phi_id": 3181,
+  "themes": [
+    {
+      "label": "Agonistic / Victory Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Agonistic / Victory Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription is a detailed list of victors in various athletic and military competitions held during the Theseia games in Athens.",
+      "confidence": 1.0,
+      "quote": "νικῶν τὸν ἀγῶνα τῶν Θησείων",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Registers and Catalogues",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Registers and Catalogues",
+        "subcategory": null
+      },
+      "rationale": "The text functions as a formal catalogue of winners, categorized by event, age group, and tribal affiliation.",
+      "confidence": 1.0,
+      "quote": "παῖδας δόλιχον τῆς τρίτης ἡλικίας Μειδίας Θεοδώρου Αἰαντίδος φυλῆς",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The inscription names several high-ranking officials, including the archon, the agonothetes (festival organizer), taxiarchs (infantry commanders), and hipparchs (cavalry commanders).",
+      "confidence": 1.0,
+      "quote": "ἀγωνοθετοῦντος Πολυξίδος τοῦ Λυσάνδρου Πειραιέως",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The format and content are characteristic of an Athenian victory stele erected in a public or sacred space.",
+      "confidence": 0.8,
+      "quote": "πρνοιαν ποι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "The inscription is carved on marble, the standard material for official Athenian documents in the 2nd century BC.",
+      "confidence": 0.8,
+      "quote": "πρνοιαν ποι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Polyxis son of Lysandrus",
+        "role": "Agonothetes",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Eucles son of Aristocles",
+        "role": "Hipparch",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Agathocles son of Zoilus",
+        "role": "Phylarch",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Timomachus son of Andr...",
+        "role": "Victor in torch race",
+        "uri": null,
+        "confidence": 0.8
+      },
+      {
+        "name": "Philocrates son of Philocles",
+        "role": "Victor in torch race",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristos son of Archidemus",
+        "role": "Victor in torch race",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Zoilus",
+        "role": "Victor in torch race",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Meidias son of Theodorus",
+        "role": "Victor in long race",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Asclepiodorus son of ...ostratus",
+        "role": "Victor in long race",
+        "uri": null,
+        "confidence": 0.8
+      },
+      {
+        "name": "Themistocles son of Albius",
+        "role": "Victor in long race",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Xenon son of Ison",
+        "role": "Victor in sprint and double-pipe race",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Dionysius son of Petraeus",
+        "role": "Victor in sprint",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Athenodorus son of Demetrius",
+        "role": "Victor in sprint",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Lycophron son of Charisandrus",
+        "role": "Victor in sprint",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Dionysius son of Dionysius",
+        "role": "Victor in sprint",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Piraeus",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Perithoidae",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Athens",
+        "type": "City",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Chalcis",
+        "type": "City",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Leontis",
+        "type": "Tribe",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Oineis",
+        "type": "Tribe",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Aiantis",
+        "type": "Tribe",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Pandionis",
+        "type": "Tribe",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Aegeis",
+        "type": "Tribe",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Erechtheis",
+        "type": "Tribe",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Cecropis",
+        "type": "Tribe",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Theseus",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "Region",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a victory list from the Theseia, an Athenian festival honoring Theseus. It records winners in a wide variety of events, including military displays (euandria, euoplia), cavalry exercises, torch races (lampas), and traditional athletic contests like the stadion (sprint), dolichos (long race), and boxing (pygme). The victors are categorized by age groups (boys of different classes, ephebes, young men, and men) and their Athenian tribes. The presence of a Chalcidian victor in the men's sprint indicates the participation of non-Athenians in certain events.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " c. 140 a. ",
+  "date_min": -140.0,
+  "date_max": -140.0,
+  "date_circa": false
+}

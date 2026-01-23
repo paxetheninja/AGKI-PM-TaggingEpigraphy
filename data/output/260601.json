@@ -1,0 +1,193 @@
+{
+  "phi_id": 260601,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text records a formal judgment (apophasis) and references a Roman senatorial decree (dogma) regarding a territorial dispute between Itanos and Hierapytna.",
+      "confidence": 1.0,
+      "quote": "π φασις ε φ μου το παυσαν ου ... κατ τ γεγον ς π τ ς συγκλ του δ γμα",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Official Letters",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Official Letters",
+        "subcategory": null
+      },
+      "rationale": "The inscription mentions and incorporates letters from Roman magistrates and Hellenistic kings used as evidence in the arbitration process.",
+      "confidence": 1.0,
+      "quote": "κατ τ ν ποσταλε σαν πιστολ ν π λευκ ου καλοπορν ου ... πιστολα ς βασιλικα ς",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Boundary Markers (Horoi)",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Identification and Ownership Marks",
+        "category": "Boundary Markers (Horoi)",
+        "subcategory": null
+      },
+      "rationale": "A significant portion of the text describes the physical boundaries (horoi) of the disputed territory, citing specific landmarks and previous settlements.",
+      "confidence": 1.0,
+      "quote": " ρ[οι] δ ντων α το ς τ ς χ ρας το [δε ς] σ δαμνος ς καρ μας",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The opening of the inscription provides an extensive list of the Magnesian judges appointed by their city to settle the dispute.",
+      "confidence": 1.0,
+      "quote": "ε φ μου το παυσαν ου νεωκ ρου τ ς ρτ μιδος ... κ λλου το δημητρ ου ρισταγ ρου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Sacred Laws and Rules",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Sacred Laws and Rules",
+        "subcategory": null
+      },
+      "rationale": "The text cites ancient sacred laws prohibiting certain activities like grazing or anchoring within the sanctuary of Zeus Dictaeus to prove the land's sacred status.",
+      "confidence": 1.0,
+      "quote": "ν μοις γ ρ ερο ς κα ρα ς κα πιτ μοις νωθεν διεκεκ λ[υ]το να μηθε ς ν τ ερ το [δι ς το δικτα ου μ] τε νν μ μ τε ναυλοστατ μ τε σπε ρ μ",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Lucius Calpurnius Piso",
+        "role": "Roman Magistrate",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Servius Sulpicius",
+        "role": "Roman Envoy",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Ptolemy Philometor",
+        "role": "King of Egypt",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Quintus Fabius",
+        "role": "Roman Envoy",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Euphemus son of Pausanias",
+        "role": "Chief Judge from Magnesia",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristagoras son of Demetrius",
+        "role": "Judge from Magnesia",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Itanos",
+        "type": "City",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Hierapytna",
+        "type": "City",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Praisos",
+        "type": "City",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Leuke",
+        "type": "Island",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Crete",
+        "type": "Region",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Magnesia on the Maeander",
+        "type": "City",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Gortyn",
+        "type": "City",
+        "uri": null,
+        "confidence": 0.9
+      },
+      {
+        "name": "Dragmos",
+        "type": "City",
+        "uri": null,
+        "confidence": 0.9
+      }
+    ],
+    "deities": [
+      {
+        "name": "Artemis Leucophryene",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Zeus Dictaeus",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Itanos",
+      "type": "Region",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a major record of international arbitration in the 2nd century BC. The city of Magnesia on the Maeander was chosen to arbitrate a long-standing territorial dispute between the Cretan cities of Itanos and Hierapytna over the island of Leuke and the sanctuary of Zeus Dictaeus. The text is highly complex, citing Roman senatorial decrees, royal correspondence from the Ptolemies, and ancient sacred laws to establish historical ownership and boundary lines. The document serves as a legal dossier, preserving multiple layers of diplomatic and religious history.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

@@ -1,0 +1,106 @@
+{
+  "phi_id": 349745,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text contains the standard enactment formula for a public decree, indicating a decision made by the council and the people.",
+      "confidence": 1.0,
+      "quote": "δεδ χθαι τ ι βουλ ι κα τ ι δ μωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription honors the people of Kos and specific individuals (judges and a secretary) with golden crowns and public praise for their virtue and service.",
+      "confidence": 1.0,
+      "quote": "πα]ιν σαι τ ν δ [μον τ ν κ ων] ... κα στεφαν σαι α τ ν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Agonistic / Victory Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Agonistic / Victory Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The decree specifies that the honors and crowns are to be announced during the Dionysia festival, specifically during the musical contests.",
+      "confidence": 0.8,
+      "quote": "στεφαν σαι α τ ν το ς πρ τοις διονυσ οις ... το μουσικο] γ νος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Judges",
+        "role": "Foreign judges sent to adjudicate legal cases fairly",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Secretary",
+        "role": "Official responsible for administrative duties and documentation",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Envoy",
+        "role": "Representative sent to communicate the decree to the people of Kos",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Agonothetes",
+        "role": "Organizers of the musical games and festival",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Kos",
+        "type": "City",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Dionysus",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Kos",
+      "type": "Region",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This is a fragmentary honorific decree, likely issued by a foreign city to honor the people of Kos and the judges they sent. The text follows the standard Hellenistic diplomatic protocol: praising the 'kalokagathia' (nobility) of the individuals, awarding golden crowns, and arranging for the proclamation of these honors at the Great Dionysia festival. It also mentions the appointment of an envoy to deliver the news to the Kos council and assembly.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " ca. 150-100 BC ",
+  "date_min": -150.0,
+  "date_max": -100.0,
+  "date_circa": true
+}

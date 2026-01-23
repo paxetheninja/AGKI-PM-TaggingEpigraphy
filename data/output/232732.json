@@ -1,0 +1,116 @@
+{
+  "phi_id": 232732,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text contains standard Athenian decree formulas, including the instruction to record the decision on a stone stele and the mention of a formal vote (psephisma).",
+      "confidence": 1.0,
+      "quote": "φσ [φισμα τ δε ναγρ φσαι τ ν γραμματ α τ ν τες βολ]ες ν στ[ λει λιθ νει]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription explicitly names individuals as benefactors (euergetai) and praises them for their service to the Athenian people, a hallmark of honorific decrees.",
+      "confidence": 1.0,
+      "quote": "ι ε εργ τας ε ν[αι δ α το ς υρ σθαι λλο τιν ς]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The text mentions the payment of a set price and involves the Hellenotamiai, who were the primary financial officials of the Athenian empire.",
+      "confidence": 0.8,
+      "quote": "κα [ι ναυπεγο λογιζ σθον το] ς τριεροποιο[ ς τ τε]ταγμ ν[α]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The inscription explicitly refers to itself being recorded on a stone stele (stele lithine).",
+      "confidence": 1.0,
+      "quote": "ν στ[ λει λιθ νει]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The text contains numerous lacunae and reconstructed sections, indicating the physical state of the stone is broken and incomplete.",
+      "confidence": 1.0,
+      "quote": "[----------]α[-----------------------------------]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Antiochus",
+        "role": "Benefactor",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Phanosthenes",
+        "role": "Benefactor",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Athens",
+        "type": "City-state",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "Region",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This is an Athenian honorary decree dating to the late 5th century BC, likely during the Peloponnesian War. It honors Antiochus and Phanosthenes (likely Phanosthenes of Andros) for their services to the city, specifically regarding the supply of naval materials like oars. The text involves several Athenian administrative bodies and officials, including the Council (Boule), the Assembly (Demos), the Generals (Strategoi), the Trireme-makers (Triereopoioi), and the Treasurers of the Greeks (Hellenotamiai). It follows the standard procedure for public honors, including the granting of the title 'euergetes' (benefactor) and the publication of the decree on a marble stele.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

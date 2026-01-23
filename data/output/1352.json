@@ -1,0 +1,232 @@
+{
+  "phi_id": 1352,
+  "themes": [
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The inscription consists of a long list of personal names organized under tribal headings, which is characteristic of Athenian citizen rosters or casualty lists.",
+      "confidence": 1.0,
+      "quote": "πανδιον δος χαρικλες ... λεοντ δος χσενοκλες",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Registers and Catalogues",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Registers and Catalogues",
+        "subcategory": null
+      },
+      "rationale": "The text functions as a formal register of individuals, likely for civic or military purposes.",
+      "confidence": 1.0,
+      "quote": "πανδιον δος χαρικλες",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "Public lists of this nature in 5th-century Athens were typically inscribed on stone stelae for public display.",
+      "confidence": 0.8,
+      "quote": "πανδιον δος χαρικλες",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "Marble was the standard material for monumental public inscriptions in Athens during the Classical period.",
+      "confidence": 0.8,
+      "quote": "πανδιον δος χαρικλες",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The text contains numerous lacunae and partial names, indicating the stone is broken or worn.",
+      "confidence": 1.0,
+      "quote": "[-]αυσ στρατος ... διο[-]εν--",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Damaged but Legible",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Legibility",
+        "category": "Damaged but Legible",
+        "subcategory": null
+      },
+      "rationale": "Despite the missing characters, many names remain identifiable through epigraphic reconstruction.",
+      "confidence": 1.0,
+      "quote": "ε δ δακ[τος] ... κλε στρ[α]τος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Charicles",
+        "role": "Citizen",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Nausistratus",
+        "role": "Citizen",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Diophanes",
+        "role": "Citizen",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Theophanes",
+        "role": "Citizen",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Timonides",
+        "role": "Citizen",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Pistoxenus",
+        "role": "Citizen",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Diodorus",
+        "role": "Citizen",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Anticles",
+        "role": "Citizen",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Apollodorus",
+        "role": "Citizen",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Ctesippus",
+        "role": "Citizen",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Xenocles",
+        "role": "Citizen",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Xenarchus",
+        "role": "Citizen",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Theopompus",
+        "role": "Citizen",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Nausicles",
+        "role": "Citizen",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristion",
+        "role": "Citizen",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Nicodemus",
+        "role": "Citizen",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Cleanetus",
+        "role": "Citizen",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Athens",
+        "type": "City",
+        "uri": null,
+        "confidence": 0.8
+      },
+      {
+        "name": "Pandionis",
+        "type": "Tribe",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Leontis",
+        "type": "Tribe",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "Region",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a classic example of an Athenian public list from the late 5th century BCE. It is organized by tribes, specifically mentioning Pandionis and Leontis. The names are listed in columns, a format used for military casualty lists or rosters of officials such as the Boule or other civic bodies. The orthography (e.g., the use of 'XS' for Xi) confirms a pre-Euclidean Attic date. The presence of many fragmentary names and brackets indicates significant surface damage or loss of the original stone.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " c. 450-400 a. ",
+  "date_min": -450.0,
+  "date_max": -400.0,
+  "date_circa": false
+}

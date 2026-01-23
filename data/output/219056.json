@@ -1,0 +1,199 @@
+{
+  "phi_id": 219056,
+  "themes": [
+    {
+      "label": "Agonistic / Victory Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Agonistic / Victory Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription commemorates a military victory by the King of Aksum over the Bougaites, detailing the capture and submission of the enemy.",
+      "confidence": 1.0,
+      "quote": "τοὺς πολεμῆσαι καὶ παραδεδωκότων αὐτῶν ὑποτάξαντες αὐτοὺς ἤγαγον πρὸς ἡμᾶς",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Votive Dedications",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Votive Dedications",
+        "subcategory": null
+      },
+      "rationale": "The king dedicates statues of gold, silver, and bronze, as well as the stele itself, to the god Ares (Mahrem) as an act of thanksgiving for his victory.",
+      "confidence": 1.0,
+      "quote": "ὑπὲρ δὲ εὐχαριστίας τοῦ ἐμοῦ γεννήσαντος ἀνικήτου Ἄρεως ἀνεθήκαμεν ἀνδριάντα χρύσαιον ἕνα καὶ ἀργύραιον ἕνα καὶ χαλκαίους τρεῖς",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Protective Charms",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Curses and Magic",
+        "subcategory": "Protective Charms"
+      },
+      "rationale": "The text concludes with a formal curse intended to protect the monument from damage or desecration, invoking the god of heaven and earth.",
+      "confidence": 1.0,
+      "quote": "εἴ τις οὖν τοῦτον ἀδικήσαι βουληθῇ ἐξολεθρεύσει αὐτὸν ὁ θεὸς τοῦ οὐρανοῦ καὶ τῆς γῆς",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Edicts and Ordinances",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Edicts and Ordinances",
+        "subcategory": null
+      },
+      "rationale": "The inscription records royal decrees concerning the resettlement of the defeated Bougaites and the specific provisions (rations) allocated to them.",
+      "confidence": 0.8,
+      "quote": "μετοικίσαντες αὐτοὺς κατεστήσαμεν εἴς τινα τόπον τῆς ἡμετέρας χώρας καλούμενον Μάτλια καὶ ἐκελεύσαμεν αὐτοὺς πάλιν ἀννωνεύεσθαι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Commemorative Monuments",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Commemorative Monuments",
+        "subcategory": null
+      },
+      "rationale": "The text explicitly identifies the object as a stele set up to commemorate the king's deeds and his relationship with the divine.",
+      "confidence": 1.0,
+      "quote": "καὶ ἀνέθηκα ταύτην τὴν στήλην",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The inscription refers to itself as a 'stele' (στήλην).",
+      "confidence": 1.0,
+      "quote": "καὶ ἀνέθηκα ταύτην τὴν στήλην",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Other Stone",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Other Stone"
+      },
+      "rationale": "Aksumite stelae of this period were typically carved from local stone such as basalt or granite, which falls under the 'Other Stone' category in the provided taxonomy.",
+      "confidence": 0.8,
+      "quote": "στήλην",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The text contains several lacunae and reconstructed sections, indicating the physical state of the inscription is not fully intact.",
+      "confidence": 1.0,
+      "quote": "θε[ ὸς] ... π ρ[χ] ... ν γ ζ ντων",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Ezana",
+        "role": "King of Aksum",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Sazanas",
+        "role": "Brother of the King",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Adiphas",
+        "role": "Brother of the King",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Aksum",
+        "type": "City/Kingdom",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Matlia",
+        "type": "Settlement",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Kush",
+        "type": "Region",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Himyar",
+        "type": "Kingdom",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Saba",
+        "type": "Kingdom",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Ares",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "God of Heaven and Earth",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Aksum",
+      "type": "Region",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a major historical document from the Aksumite Empire, written in Greek. It records the military campaigns of King Ezana against the Bougaites. It follows a standard royal Aksumite pattern: a list of titles, a narrative of the campaign and the humane treatment/resettlement of the captives, a dedication of statues and a stele to the god Ares (the Greek equivalent of the Aksumite war god Mahrem), and a closing curse to protect the monument. The use of Greek reflects the international status of Aksum in Late Antiquity.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 4th/5th c. AD ",
+  "date_min": 301.0,
+  "date_max": 500.0,
+  "date_circa": false
+}
