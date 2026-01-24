@@ -89,14 +89,22 @@ def is_human_in_wikidata(wikidata_id):
 
 def is_deity_in_wikidata(wikidata_id):
     """Check if a Wikidata item is a deity or mythological character."""
-    # Q178885: deity
-    # Q22989102: Greek deity
-    # Q11688446: Roman deity
-    # Q146083: Egyptian deity
-    # Q4271324: mythological character
-    # Q35277: deity (alternative)
-    # Q48350: mythological character (alternative)
-    deity_qids = ["Q178885", "Q22989102", "Q11688446", "Q146083", "Q4271324", "Q35277", "Q48350"]
+    # Known exact matches for groups/classes that might lack P31 or be instances of themselves
+    if wikidata_id in ["Q373916", "Q66016"]: # Nymph, Muse
+        return True
+
+    # Expanded list of QIDs
+    # Q178885: deity, Q22989102: Greek deity, Q11688446: Roman deity, Q146083: Egyptian deity
+    # Q4271324: mythological character, Q35277: deity (alt), Q48350: mythological character
+    # Q2194631: hero, Q215627: Titan, Q9135: Olympian god, Q24322474: deity of ancient Greece
+    # Q23015925: demigod of Greco-Roman mythology, Q134556: Greek deity
+    # Q182406: Personification, Q1916821: Goddess, Q113302: God, Q50078178: God of Healing
+    # Q28061975: class of Greek mythological figures (e.g. Muses)
+    deity_qids = [
+        "Q178885", "Q22989102", "Q11688446", "Q146083", "Q4271324", "Q35277", 
+        "Q48350", "Q2194631", "Q215627", "Q9135", "Q24322474", "Q205985", "Q346660",
+        "Q23015925", "Q134556", "Q182406", "Q1916821", "Q113302", "Q50078178", "Q28061975"
+    ]
     return is_instance_of(wikidata_id, deity_qids)
 
 def reconcile_place(name, place_type=None):
@@ -159,7 +167,8 @@ def reconcile_wikidata(name, type_filter=None):
             "format": "json",
             "language": "en",
             "type": "item",
-            "search": query
+            "search": query,
+            "limit": 7  # Increase limit to find better matches
         }
         url = f"https://www.wikidata.org/w/api.php?{urllib.parse.urlencode(params)}"
         req = urllib.request.Request(url, headers={'User-Agent': 'AGKI-Reconciliation-Tool/1.0'})
@@ -167,21 +176,30 @@ def reconcile_wikidata(name, type_filter=None):
             data = json.loads(response.read().decode())
             if data.get("search"):
                 # Check the first few results for the right type
-                for result in data['search'][:3]:
-                    uri = f"https://www.wikidata.org/wiki/{result['id']}"
+                for result in data['search']:
+                    desc = result.get('description', '').lower()
                     
-                    # If we are looking for a Person (Q5), verify it's human
+                    # Heuristic filtering for Persons (Q5)
                     if type_filter == "Q5":
+                        # Skip obviously modern persons
+                        if any(x in desc for x in ["born", "19", "20", "football", "player", "actor", "politician", "american", "british"]):
+                            if not any(x in desc for x in ["ancient", "bc", "bce", "greek", "roman", "strategos", "archon"]):
+                                continue # Skip if modern and no ancient keywords
+                        
                         if is_human_in_wikidata(result['id']):
+                            uri = f"https://www.wikidata.org/wiki/{result['id']}"
                             target_cache[cache_key] = uri
                             return uri
-                    # If we are looking for a Deity (Q35277 / Q178885), verify it
+                            
+                    # Heuristic for Deities
                     elif type_filter in ["Q35277", "Q178885"]:
                         if is_deity_in_wikidata(result['id']):
+                            uri = f"https://www.wikidata.org/wiki/{result['id']}"
                             target_cache[cache_key] = uri
                             return uri
                     else:
                         # For others, assume top rank is OK (or improve logic later)
+                        uri = f"https://www.wikidata.org/wiki/{result['id']}"
                         target_cache[cache_key] = uri
                         return uri
     except Exception:
@@ -193,12 +211,43 @@ def reconcile_wikidata(name, type_filter=None):
 def reconcile_deity(name):
     """Search Wikidata for a deity."""
     # Wikidata Q35277 is 'deity'
-    return reconcile_wikidata(name, "Q35277")
+    uri = reconcile_wikidata(name, "Q35277")
+    if uri: return uri
+    
+    # Fallback 1: Try splitting epithets (e.g. "Zeus Keraunios" -> "Zeus")
+    if " " in name:
+        main_name = name.split(" ")[0]
+        if len(main_name) > 2:
+            uri_fallback = reconcile_wikidata(main_name, "Q35277")
+            if uri_fallback:
+                CACHE["deities"][name] = uri_fallback # Cache under full name too
+                return uri_fallback
+    
+    # Fallback 2: Try singular form (e.g. "Nymphs" -> "Nymph")
+    if name.endswith("s"):
+        uri_singular = reconcile_wikidata(name[:-1], "Q35277")
+        if uri_singular:
+            CACHE["deities"][name] = uri_singular
+            return uri_singular
+
+    # Fallback 3: Try appending " (mythology)" for ambiguous names (e.g. "Nike")
+    uri_myth = reconcile_wikidata(f"{name} (mythology)", "Q35277")
+    if uri_myth:
+        CACHE["deities"][name] = uri_myth
+        return uri_myth
+        
+    return None
 
 def reconcile_person(name, role=None):
     """Search Wikidata (Human) first, then fallback to LGPN."""
     if not name or len(name) < 3: return None
-    if name in CACHE["persons"]: return CACHE["persons"][name]
+    
+    cached_uri = CACHE["persons"].get(name)
+    # Invalidate old LGPN links in cache
+    if cached_uri and "clas-lgpn2.classics.ox.ac.uk" in cached_uri:
+        cached_uri = None
+        
+    if cached_uri: return cached_uri
     
     # 1. Try Wikidata (Q5 - Human)
     wd_uri = reconcile_wikidata(name, "Q5")
@@ -207,7 +256,7 @@ def reconcile_person(name, role=None):
         return wd_uri
 
     # 2. Fallback to LGPN Search
-    search_url = f"http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name={urllib.parse.quote(name)}"
+    search_url = f"https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query={urllib.parse.quote(name)}"
     CACHE["persons"][name] = search_url
     return search_url
 
@@ -256,6 +305,17 @@ def process_file(file_path):
 
 def main():
     load_cache()
+    
+    # Force retry for deities that were previously not found
+    print("Pruning 'None' entries from deity cache to force re-check...")
+    CACHE["deities"] = {k: v for k, v in CACHE["deities"].items() if v is not None}
+    
+    # Explicitly clear specific problematic keys (including with type suffixes) if they exist
+    for name in ["Heracles", "Nike", "Nymphs", "Muses", "Tyche", "Demos", "Isis"]:
+        keys_to_remove = [k for k in CACHE["deities"] if name in k]
+        for k in keys_to_remove:
+            del CACHE["deities"][k]
+
     files = list(OUTPUT_DIR.glob("*.json"))
     print(f"Reconciling entities in {len(files)} files...")
     
