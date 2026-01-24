@@ -77,7 +77,7 @@
       {
         "name": "Demarch",
         "role": "Local official involved in land administration",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demarch",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Demarch",
         "confidence": 0.8
       }
     ],
@@ -98,12 +98,12 @@
     "deities": [
       {
         "name": "Athena",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q37122",
         "confidence": 1.0
       },
       {
         "name": "Apollo",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q37340",
         "confidence": 1.0
       }
     ]

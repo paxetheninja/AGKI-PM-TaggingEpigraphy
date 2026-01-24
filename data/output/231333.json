@@ -91,61 +91,61 @@
       {
         "name": "Flavius Diogenes",
         "role": "Archon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Flavius%20Diogenes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Flavius%20Diogenes",
         "confidence": 1.0
       },
       {
         "name": "Aedon",
         "role": "Secretary",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aedon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aedon",
         "confidence": 1.0
       },
       {
         "name": "Julianus",
         "role": "Proedros",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Julianus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Julianus",
         "confidence": 1.0
       },
       {
         "name": "Septimius Severus",
         "role": "Emperor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Septimius%20Severus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Septimius%20Severus",
         "confidence": 1.0
       },
       {
         "name": "Marcus Aurelius Antoninus",
         "role": "Emperor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Marcus%20Aurelius%20Antoninus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Marcus%20Aurelius%20Antoninus",
         "confidence": 1.0
       },
       {
         "name": "Publius Septimius Geta",
         "role": "Emperor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Publius%20Septimius%20Geta",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Publius%20Septimius%20Geta",
         "confidence": 1.0
       },
       {
         "name": "Alcamenes",
         "role": "Strategos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Alcamenes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Alcamenes",
         "confidence": 1.0
       },
       {
         "name": "Gaius Licinius Telemachus",
         "role": "Legate and Logistes",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Gaius%20Licinius%20Telemachus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Gaius%20Licinius%20Telemachus",
         "confidence": 1.0
       },
       {
         "name": "Tryphon",
         "role": "Agonothete",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Tryphon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Tryphon",
         "confidence": 1.0
       },
       {
         "name": "Theophilus",
         "role": "Priest",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theophilus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Theophilus",
         "confidence": 1.0
       }
     ],

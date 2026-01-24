@@ -91,121 +91,121 @@
       {
         "name": "Damosthenes",
         "role": "Archon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Damosthenes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Damosthenes",
         "confidence": 1.0
       },
       {
         "name": "Alkesippos",
         "role": "Dedicant and Testator",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Alkesippos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Alkesippos",
         "confidence": 1.0
       },
       {
         "name": "Butheras",
         "role": "Father of Alkesippos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Butheras",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Butheras",
         "confidence": 1.0
       },
       {
         "name": "Theutiman",
         "role": "Slave to be manumitted",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theutiman",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Theutiman",
         "confidence": 1.0
       },
       {
         "name": "Damippos",
         "role": "Executor of burial",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Damippos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Damippos",
         "confidence": 1.0
       },
       {
         "name": "Theutima",
         "role": "Executor of burial",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theutima",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Theutima",
         "confidence": 1.0
       },
       {
         "name": "Gias",
         "role": "Executor, Witness, and Guardian of the will",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Gias",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Gias",
         "confidence": 1.0
       },
       {
         "name": "Peisilaos",
         "role": "Executor, Witness, and Guardian of the will",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Peisilaos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Peisilaos",
         "confidence": 1.0
       },
       {
         "name": "Kritolaos",
         "role": "Witness",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kritolaos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Kritolaos",
         "confidence": 1.0
       },
       {
         "name": "Altropos",
         "role": "Witness",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Altropos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Altropos",
         "confidence": 1.0
       },
       {
         "name": "Polemokrates",
         "role": "Witness",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Polemokrates",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Polemokrates",
         "confidence": 1.0
       },
       {
         "name": "Giasidamos",
         "role": "Witness",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Giasidamos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Giasidamos",
         "confidence": 1.0
       },
       {
         "name": "Gennaios",
         "role": "Father of Giasidamos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Gennaios",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Gennaios",
         "confidence": 0.8
       },
       {
         "name": "Xenokrates",
         "role": "Witness and Strategos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Xenokrates",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Xenokrates",
         "confidence": 1.0
       },
       {
         "name": "Kallikles",
         "role": "Witness",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kallikles",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Kallikles",
         "confidence": 1.0
       },
       {
         "name": "Andronikos",
         "role": "Witness",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Andronikos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Andronikos",
         "confidence": 1.0
       },
       {
         "name": "Dexikrates",
         "role": "Witness",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dexikrates",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Dexikrates",
         "confidence": 1.0
       },
       {
         "name": "Charoxenos",
         "role": "Witness and Polemarch",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Charoxenos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Charoxenos",
         "confidence": 1.0
       },
       {
         "name": "Pausanias",
         "role": "Witness",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pausanias",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Pausanias",
         "confidence": 1.0
       },
       {
         "name": "Thambos",
         "role": "Guardian of the will",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Thambos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Thambos",
         "confidence": 1.0
       }
     ],
@@ -232,7 +232,7 @@
     "deities": [
       {
         "name": "Apollo Pythios",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q37340",
         "confidence": 1.0
       }
     ]

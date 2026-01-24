@@ -97,55 +97,55 @@
       {
         "name": "Isocrates",
         "role": "Secretary",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Isocrates",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Isocrates",
         "confidence": 1.0
       },
       {
         "name": "Socrates",
         "role": "Father of Isocrates",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Socrates",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Socrates",
         "confidence": 1.0
       },
       {
         "name": "Sosistratus",
         "role": "Chairman of the Proedroi",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sosistratus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Sosistratus",
         "confidence": 1.0
       },
       {
         "name": "Sosippus",
         "role": "Father of Sosistratus",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sosippus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Sosippus",
         "confidence": 1.0
       },
       {
         "name": "Photius",
         "role": "Proposer of the decree",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Photius",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Photius",
         "confidence": 1.0
       },
       {
         "name": "Pamphilus",
         "role": "Father of Photius",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pamphilus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Pamphilus",
         "confidence": 1.0
       },
       {
         "name": "Strombichos",
         "role": "Honoree and soldier",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Strombichos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Strombichos",
         "confidence": 1.0
       },
       {
         "name": "Demetrius",
         "role": "Ruler or General",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demetrius",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Demetrius",
         "confidence": 1.0
       },
       {
         "name": "Spintharus",
         "role": "Associate of Strombichos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Spintharus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Spintharus",
         "confidence": 1.0
       }
     ],

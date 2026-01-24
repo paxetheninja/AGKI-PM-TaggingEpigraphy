@@ -77,49 +77,49 @@
       {
         "name": "Naxicrates",
         "role": "Treasurer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Naxicrates",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Naxicrates",
         "confidence": 1.0
       },
       {
         "name": "Euxenos",
         "role": "Secretary",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Euxenos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Euxenos",
         "confidence": 1.0
       },
       {
         "name": "Euphanes",
         "role": "Father of Euxenos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Euphanes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Euphanes",
         "confidence": 1.0
       },
       {
         "name": "Lysicles",
         "role": "Secretary of the incoming board",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lysicles",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Lysicles",
         "confidence": 1.0
       },
       {
         "name": "Dracontides",
         "role": "Father of Lysicles",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dracontides",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Dracontides",
         "confidence": 1.0
       },
       {
         "name": "Dexitheos",
         "role": "Incoming Treasurer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dexitheos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Dexitheos",
         "confidence": 1.0
       },
       {
         "name": "Phormion",
         "role": "Secretary of the outgoing board",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Phormion",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Phormion",
         "confidence": 1.0
       },
       {
         "name": "Aristion",
         "role": "Father of Phormion",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristion",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aristion",
         "confidence": 1.0
       }
     ],
@@ -158,7 +158,7 @@
     "deities": [
       {
         "name": "Athena",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q37122",
         "confidence": 1.0
       }
     ]

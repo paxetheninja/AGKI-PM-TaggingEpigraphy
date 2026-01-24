@@ -63,31 +63,31 @@
       {
         "name": "Nikokles",
         "role": "Eponymous Archon of Athens (302/1 BC)",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nikokles",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Nikokles",
         "confidence": 1.0
       },
       {
         "name": "Stephanos",
         "role": "Honoree, official (epimeletes and hieropoios), breastplate-maker, and miller",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Stephanos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Stephanos",
         "confidence": 1.0
       },
       {
         "name": "Klearchos",
         "role": "Eponymous Archon of Athens (301/0 BC)",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Klearchos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Klearchos",
         "confidence": 1.0
       },
       {
         "name": "Hegemachos",
         "role": "Eponymous Archon of Athens (300/299 BC)",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hegemachos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Hegemachos",
         "confidence": 1.0
       },
       {
         "name": "Sokles",
         "role": "Proposer of the decree",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sokles",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Sokles",
         "confidence": 1.0
       }
     ],
@@ -108,7 +108,7 @@
     "deities": [
       {
         "name": "Aphrodite",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q35500",
         "confidence": 1.0
       },
       {

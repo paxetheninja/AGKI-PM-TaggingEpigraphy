@@ -77,67 +77,67 @@
       {
         "name": "Androbios",
         "role": "Priest",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Androbios",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Androbios",
         "confidence": 1.0
       },
       {
         "name": "Demosthenes son of Lysias",
         "role": "Donor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demosthenes%20son%20of%20Lysias",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Demosthenes%20son%20of%20Lysias",
         "confidence": 1.0
       },
       {
         "name": "Hermenanis son of Hermenanis",
         "role": "Donor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hermenanis%20son%20of%20Hermenanis",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Hermenanis%20son%20of%20Hermenanis",
         "confidence": 1.0
       },
       {
         "name": "Hermelykos son of Soson",
         "role": "Donor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hermelykos%20son%20of%20Soson",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Hermelykos%20son%20of%20Soson",
         "confidence": 1.0
       },
       {
         "name": "Themistocles son of Hermaphilos",
         "role": "Donor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Themistocles%20son%20of%20Hermaphilos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Themistocles%20son%20of%20Hermaphilos",
         "confidence": 1.0
       },
       {
         "name": "Sarpedon",
         "role": "Donor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sarpedon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Sarpedon",
         "confidence": 1.0
       },
       {
         "name": "Mausolos son of Mausolos",
         "role": "Donor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Mausolos%20son%20of%20Mausolos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Mausolos%20son%20of%20Mausolos",
         "confidence": 1.0
       },
       {
         "name": "Leonides",
         "role": "Donor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Leonides",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Leonides",
         "confidence": 1.0
       },
       {
         "name": "Lalla daughter of Leonides",
         "role": "Donor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lalla%20daughter%20of%20Leonides",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Lalla%20daughter%20of%20Leonides",
         "confidence": 1.0
       },
       {
         "name": "Chrysogonos son of Tlepolemos",
         "role": "Donor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Chrysogonos%20son%20of%20Tlepolemos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Chrysogonos%20son%20of%20Tlepolemos",
         "confidence": 1.0
       },
       {
         "name": "Lyson son of Ptolemy",
         "role": "Donor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lyson%20son%20of%20Ptolemy",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Lyson%20son%20of%20Ptolemy",
         "confidence": 1.0
       }
     ],
@@ -164,12 +164,12 @@
     "deities": [
       {
         "name": "Apollo",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q37340",
         "confidence": 1.0
       },
       {
         "name": "Artemis",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q39503",
         "confidence": 1.0
       },
       {
@@ -179,7 +179,7 @@
       },
       {
         "name": "Athena",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q37122",
         "confidence": 0.9
       }
     ]

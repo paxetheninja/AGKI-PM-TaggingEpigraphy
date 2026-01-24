@@ -49,37 +49,37 @@
       {
         "name": "Myonides son of Demetrios Damalas",
         "role": "Priest",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Myonides%20son%20of%20Demetrios%20Damalas",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Myonides%20son%20of%20Demetrios%20Damalas",
         "confidence": 1.0
       },
       {
         "name": "Menekles",
         "role": "Priest",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Menekles",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Menekles",
         "confidence": 1.0
       },
       {
         "name": "Orphaina daughter of Demetrios",
         "role": "Priestess",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Orphaina%20daughter%20of%20Demetrios",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Orphaina%20daughter%20of%20Demetrios",
         "confidence": 1.0
       },
       {
         "name": "Apollonides",
         "role": "Relative of the priestess",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Apollonides",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Apollonides",
         "confidence": 0.8
       },
       {
         "name": "Drakon",
         "role": "Relative of the priestess",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Drakon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Drakon",
         "confidence": 0.8
       },
       {
         "name": "Apphas",
         "role": "Mother of the priest",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Apphas",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Apphas",
         "confidence": 1.0
       },
       {
@@ -91,7 +91,7 @@
       {
         "name": "Phloristolada",
         "role": "Relative",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Phloristolada",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Phloristolada",
         "confidence": 0.8
       }
     ],
@@ -112,7 +112,7 @@
     "deities": [
       {
         "name": "Hecate",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q131575",
         "confidence": 1.0
       },
       {

@@ -77,61 +77,61 @@
       {
         "name": "Demochares",
         "role": "Archon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demochares",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Demochares",
         "confidence": 1.0
       },
       {
         "name": "Dionysodorus",
         "role": "Secretary",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dionysodorus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Dionysodorus",
         "confidence": 1.0
       },
       {
         "name": "Timollus",
         "role": "Proedros",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Timollus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Timollus",
         "confidence": 1.0
       },
       {
         "name": "Themistocles",
         "role": "Agonothetes of the Panathenaia",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Themistocles",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Themistocles",
         "confidence": 1.0
       },
       {
         "name": "Nike",
         "role": "Maiden (Ergastine)",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nike",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Nike",
         "confidence": 0.8
       },
       {
         "name": "Dionysia",
         "role": "Maiden (Ergastine)",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dionysia",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Dionysia",
         "confidence": 1.0
       },
       {
         "name": "Lysistrate",
         "role": "Maiden (Ergastine)",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lysistrate",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Lysistrate",
         "confidence": 0.8
       },
       {
         "name": "Xenostrate",
         "role": "Maiden (Ergastine)",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Xenostrate",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Xenostrate",
         "confidence": 0.8
       },
       {
         "name": "Agathocleia",
         "role": "Maiden (Ergastine)",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Agathocleia",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Agathocleia",
         "confidence": 1.0
       },
       {
         "name": "Mnesis",
         "role": "Maiden (Ergastine)",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Mnesis",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Mnesis",
         "confidence": 1.0
       }
     ],
@@ -224,7 +224,7 @@
     "deities": [
       {
         "name": "Athena",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q37122",
         "confidence": 1.0
       }
     ]

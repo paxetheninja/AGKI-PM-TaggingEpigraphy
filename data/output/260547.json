@@ -77,37 +77,37 @@
       {
         "name": "Aristagoras son of Aristagoras",
         "role": "Proposer of the decree",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristagoras%20son%20of%20Aristagoras",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aristagoras%20son%20of%20Aristagoras",
         "confidence": 1.0
       },
       {
         "name": "Menogenes son of Zenon",
         "role": "Envoy from Alarba",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Menogenes%20son%20of%20Zenon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Menogenes%20son%20of%20Zenon",
         "confidence": 1.0
       },
       {
         "name": "Philocrates son of Dionysius",
         "role": "Judge",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philocrates%20son%20of%20Dionysius",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Philocrates%20son%20of%20Dionysius",
         "confidence": 1.0
       },
       {
         "name": "Socrates son of Arcesilaus",
         "role": "Judge",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Socrates%20son%20of%20Arcesilaus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Socrates%20son%20of%20Arcesilaus",
         "confidence": 1.0
       },
       {
         "name": "Aristagoras son of Neumon",
         "role": "Judge",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristagoras%20son%20of%20Neumon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aristagoras%20son%20of%20Neumon",
         "confidence": 1.0
       },
       {
         "name": "Moschus son of Zenodotus",
         "role": "Secretary",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Moschus%20son%20of%20Zenodotus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Moschus%20son%20of%20Zenodotus",
         "confidence": 1.0
       }
     ],

@@ -77,37 +77,37 @@
       {
         "name": "Lucius Calpurnius Piso",
         "role": "Roman Magistrate",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lucius%20Calpurnius%20Piso",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Lucius%20Calpurnius%20Piso",
         "confidence": 1.0
       },
       {
         "name": "Servius Sulpicius",
         "role": "Roman Envoy",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Servius%20Sulpicius",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Servius%20Sulpicius",
         "confidence": 1.0
       },
       {
         "name": "Ptolemy Philometor",
         "role": "King of Egypt",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ptolemy%20Philometor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Ptolemy%20Philometor",
         "confidence": 1.0
       },
       {
         "name": "Quintus Fabius",
         "role": "Roman Envoy",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Quintus%20Fabius",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Quintus%20Fabius",
         "confidence": 1.0
       },
       {
         "name": "Euphemus son of Pausanias",
         "role": "Chief Judge from Magnesia",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Euphemus%20son%20of%20Pausanias",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Euphemus%20son%20of%20Pausanias",
         "confidence": 1.0
       },
       {
         "name": "Aristagoras son of Demetrius",
         "role": "Judge from Magnesia",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristagoras%20son%20of%20Demetrius",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aristagoras%20son%20of%20Demetrius",
         "confidence": 1.0
       }
     ],
@@ -164,12 +164,12 @@
     "deities": [
       {
         "name": "Artemis Leucophryene",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q39503",
         "confidence": 1.0
       },
       {
         "name": "Zeus Dictaeus",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q34201",
         "confidence": 1.0
       }
     ]

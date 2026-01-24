@@ -91,31 +91,31 @@
       {
         "name": "Diogenes",
         "role": "Ally",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Diogenes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Diogenes",
         "confidence": 0.8
       },
       {
         "name": "Aristomenes",
         "role": "Individual",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristomenes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aristomenes",
         "confidence": 0.8
       },
       {
         "name": "Antiphilus",
         "role": "Individual",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antiphilus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Antiphilus",
         "confidence": 0.8
       },
       {
         "name": "Athenagoras",
         "role": "Individual",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Athenagoras",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Athenagoras",
         "confidence": 0.8
       },
       {
         "name": "Parmenides",
         "role": "Individual",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Parmenides",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Parmenides",
         "confidence": 0.5
       }
     ],
@@ -142,7 +142,7 @@
     "deities": [
       {
         "name": "Tyche",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q213440",
         "confidence": 0.9
       }
     ]

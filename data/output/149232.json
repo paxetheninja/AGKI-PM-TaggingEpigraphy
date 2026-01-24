@@ -105,19 +105,19 @@
       {
         "name": "Asclepius",
         "role": "Eponymous Priest",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Asclepius",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Asclepius",
         "confidence": 0.8
       },
       {
         "name": "Philolaus",
         "role": "Magistrate",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philolaus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Philolaus",
         "confidence": 1.0
       },
       {
         "name": "Eumeneion",
         "role": "Father of Philolaus",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eumeneion",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Eumeneion",
         "confidence": 1.0
       }
     ],
@@ -144,7 +144,7 @@
     "deities": [
       {
         "name": "Pluto",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q152262",
         "confidence": 1.0
       },
       {

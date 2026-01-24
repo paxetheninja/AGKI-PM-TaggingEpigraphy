@@ -105,13 +105,13 @@
       {
         "name": "Peisitheides",
         "role": "Benefactor and recipient of Athenian citizenship and maintenance",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Peisitheides",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Peisitheides",
         "confidence": 1.0
       },
       {
         "name": "Peisitheides",
         "role": "Father of the honored Peisitheides",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Peisitheides",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Peisitheides",
         "confidence": 1.0
       }
     ],
@@ -138,7 +138,7 @@
     "deities": [
       {
         "name": "Athena",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q37122",
         "confidence": 1.0
       }
     ]

@@ -147,37 +147,37 @@
       {
         "name": "Nikokrates",
         "role": "Archon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nikokrates",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Nikokrates",
         "confidence": 1.0
       },
       {
         "name": "Archilas son of Chaireas of Pallene",
         "role": "Secretary",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Archilas%20son%20of%20Chaireas%20of%20Pallene",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Archilas%20son%20of%20Chaireas%20of%20Pallene",
         "confidence": 1.0
       },
       {
         "name": "Nikias of Themake",
         "role": "Proedros",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nikias%20of%20Themake",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Nikias%20of%20Themake",
         "confidence": 1.0
       },
       {
         "name": "Chairionides son of Lysanias of Phlya",
         "role": "Proposer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Chairionides%20son%20of%20Lysanias%20of%20Phlya",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Chairionides%20son%20of%20Lysanias%20of%20Phlya",
         "confidence": 1.0
       },
       {
         "name": "Pytheas son of Sosidemos of Alopeke",
         "role": "Superintendent of Fountains",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pytheas%20son%20of%20Sosidemos%20of%20Alopeke",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Pytheas%20son%20of%20Sosidemos%20of%20Alopeke",
         "confidence": 1.0
       },
       {
         "name": "Sosidemos",
         "role": "Father of Pytheas",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sosidemos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Sosidemos",
         "confidence": 1.0
       }
     ],

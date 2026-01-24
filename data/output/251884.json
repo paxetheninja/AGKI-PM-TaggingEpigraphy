@@ -77,31 +77,31 @@
       {
         "name": "Thales",
         "role": "Judge",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Thales",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Thales",
         "confidence": 1.0
       },
       {
         "name": "Xenodotos",
         "role": "Judge",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Xenodotos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Xenodotos",
         "confidence": 1.0
       },
       {
         "name": "Hegesikrates",
         "role": "Judge",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hegesikrates",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Hegesikrates",
         "confidence": 1.0
       },
       {
         "name": "Python",
         "role": "Judge",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Python",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Python",
         "confidence": 1.0
       },
       {
         "name": "Kephisodoros",
         "role": "Judge",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kephisodoros",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Kephisodoros",
         "confidence": 1.0
       }
     ],

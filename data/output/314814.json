@@ -77,25 +77,25 @@
       {
         "name": "Demodamas",
         "role": "Proposer of the decree",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demodamas",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Demodamas",
         "confidence": 1.0
       },
       {
         "name": "Aristides",
         "role": "Father of Demodamas",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristides",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aristides",
         "confidence": 1.0
       },
       {
         "name": "Antiochus",
         "role": "Honoree, son of King Seleucus",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antiochus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Antiochus",
         "confidence": 1.0
       },
       {
         "name": "Seleucus",
         "role": "King, father of Antiochus",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Seleucus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Seleucus",
         "confidence": 1.0
       }
     ],
@@ -121,7 +121,7 @@
       },
       {
         "name": "Apollo",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q37340",
         "confidence": 0.8
       }
     ]

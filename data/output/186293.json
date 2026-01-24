@@ -105,7 +105,7 @@
       {
         "name": "Philippos",
         "role": "Physician",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philippos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Philippos",
         "confidence": 1.0
       }
     ],

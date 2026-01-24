@@ -49,127 +49,127 @@
       {
         "name": "Cleandros",
         "role": "Judge",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Cleandros",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Cleandros",
         "confidence": 1.0
       },
       {
         "name": "Diodoros",
         "role": "Father of Cleandros",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Diodoros",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Diodoros",
         "confidence": 1.0
       },
       {
         "name": "Leon",
         "role": "Judge",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Leon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Leon",
         "confidence": 1.0
       },
       {
         "name": "Euboulos",
         "role": "Father of Leon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Euboulos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Euboulos",
         "confidence": 1.0
       },
       {
         "name": "Cephalos",
         "role": "Judge",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Cephalos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Cephalos",
         "confidence": 1.0
       },
       {
         "name": "Dracon",
         "role": "Father of Cephalos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dracon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Dracon",
         "confidence": 1.0
       },
       {
         "name": "Theodoros",
         "role": "Judge",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theodoros",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Theodoros",
         "confidence": 1.0
       },
       {
         "name": "Noumenios",
         "role": "Father of Theodoros",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Noumenios",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Noumenios",
         "confidence": 1.0
       },
       {
         "name": "Dracontides",
         "role": "Father of Leon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dracontides",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Dracontides",
         "confidence": 1.0
       },
       {
         "name": "Eumolpos",
         "role": "Epistates",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eumolpos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Eumolpos",
         "confidence": 1.0
       },
       {
         "name": "Melpos",
         "role": "Father of Eumolpos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Melpos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Melpos",
         "confidence": 1.0
       },
       {
         "name": "Messenios",
         "role": "Proposer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Messenios",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Messenios",
         "confidence": 1.0
       },
       {
         "name": "Dion",
         "role": "Father of Messenios",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dion",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Dion",
         "confidence": 1.0
       },
       {
         "name": "Aristophanes",
         "role": "Official",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristophanes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aristophanes",
         "confidence": 1.0
       },
       {
         "name": "Stesichos",
         "role": "Official",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Stesichos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Stesichos",
         "confidence": 1.0
       },
       {
         "name": "Heracleitos",
         "role": "Father of Stesichos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Heracleitos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Heracleitos",
         "confidence": 1.0
       },
       {
         "name": "Artemidoros",
         "role": "Official",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Artemidoros",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Artemidoros",
         "confidence": 1.0
       },
       {
         "name": "Demophon",
         "role": "Father of Artemidoros",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demophon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Demophon",
         "confidence": 1.0
       },
       {
         "name": "Prytanios",
         "role": "Official",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Prytanios",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Prytanios",
         "confidence": 1.0
       },
       {
         "name": "Damon",
         "role": "Father of Prytanios",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Damon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Damon",
         "confidence": 1.0
       },
       {
         "name": "Niphalion",
         "role": "Father of Damon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Niphalion",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Niphalion",
         "confidence": 1.0
       }
     ],
@@ -195,7 +195,7 @@
       },
       {
         "name": "Artemis",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q39503",
         "confidence": 1.0
       },
       {

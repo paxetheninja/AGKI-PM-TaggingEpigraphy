@@ -21,25 +21,25 @@
       {
         "name": "Epimachus",
         "role": "The deceased, a youth who died at the age of twelve.",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Epimachus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Epimachus",
         "confidence": 1.0
       },
       {
         "name": "Epimachus",
         "role": "Father of the deceased, noted for his wealth and horse-breeding.",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Epimachus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Epimachus",
         "confidence": 1.0
       },
       {
         "name": "Epimachus",
         "role": "Grandfather of the deceased, a former Agoranomos (market overseer).",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Epimachus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Epimachus",
         "confidence": 1.0
       },
       {
         "name": "Philermon",
         "role": "Brother of the deceased, entrusted with the burial instructions.",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philermon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Philermon",
         "confidence": 1.0
       }
     ],

@@ -105,31 +105,31 @@
       {
         "name": "Polyxendes of Acharnae",
         "role": "Treasurer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Polyxendes%20of%20Acharnae",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Polyxendes%20of%20Acharnae",
         "confidence": 1.0
       },
       {
         "name": "Leukaios son of Komarchos of Aphidna",
         "role": "Secretary",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Leukaios%20son%20of%20Komarchos%20of%20Aphidna",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Leukaios%20son%20of%20Komarchos%20of%20Aphidna",
         "confidence": 1.0
       },
       {
         "name": "Autokleides son of Sostratos of Phrearrhioi",
         "role": "Secretary",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Autokleides%20son%20of%20Sostratos%20of%20Phrearrhioi",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Autokleides%20son%20of%20Sostratos%20of%20Phrearrhioi",
         "confidence": 1.0
       },
       {
         "name": "Polymedes son of Kephisophon of Atene",
         "role": "Treasurer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Polymedes%20son%20of%20Kephisophon%20of%20Atene",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Polymedes%20son%20of%20Kephisophon%20of%20Atene",
         "confidence": 1.0
       },
       {
         "name": "Kallaschros son of Eupyreides",
         "role": "Treasurer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kallaschros%20son%20of%20Eupyreides",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Kallaschros%20son%20of%20Eupyreides",
         "confidence": 1.0
       }
     ],
@@ -168,7 +168,7 @@
     "deities": [
       {
         "name": "Athena",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q37122",
         "confidence": 1.0
       }
     ]

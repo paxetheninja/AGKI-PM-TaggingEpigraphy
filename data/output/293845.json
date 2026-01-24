@@ -83,169 +83,169 @@
       {
         "name": "Nikostratos",
         "role": "Archon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nikostratos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Nikostratos",
         "confidence": 1.0
       },
       {
         "name": "Kallias",
         "role": "Archon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kallias",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Kallias",
         "confidence": 0.8
       },
       {
         "name": "Timastheos",
         "role": "Archon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Timastheos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Timastheos",
         "confidence": 0.8
       },
       {
         "name": "Demokritos",
         "role": "Archon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demokritos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Demokritos",
         "confidence": 0.8
       },
       {
         "name": "Deinokrates",
         "role": "Archon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Deinokrates",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Deinokrates",
         "confidence": 0.8
       },
       {
         "name": "Nikokles",
         "role": "Archon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nikokles",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Nikokles",
         "confidence": 0.8
       },
       {
         "name": "Theodoros",
         "role": "Archon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theodoros",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Theodoros",
         "confidence": 0.8
       },
       {
         "name": "Chareas",
         "role": "Archon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Chareas",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Chareas",
         "confidence": 0.8
       },
       {
         "name": "Eorthades",
         "role": "Archon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eorthades",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Eorthades",
         "confidence": 0.8
       },
       {
         "name": "Sokles",
         "role": "Archon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sokles",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Sokles",
         "confidence": 0.8
       },
       {
         "name": "Ethykles",
         "role": "Archon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ethykles",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Ethykles",
         "confidence": 0.8
       },
       {
         "name": "Simos",
         "role": "Archon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Simos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Simos",
         "confidence": 0.8
       },
       {
         "name": "Semias",
         "role": "Archon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Semias",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Semias",
         "confidence": 0.8
       },
       {
         "name": "Konon",
         "role": "Archon, son of Timotheos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Konon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Konon",
         "confidence": 0.9
       },
       {
         "name": "Timotheos",
         "role": "Father of Konon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Timotheos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Timotheos",
         "confidence": 0.9
       },
       {
         "name": "Prokles",
         "role": "Archon, son of Protokles",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Prokles",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Prokles",
         "confidence": 0.8
       },
       {
         "name": "Protokles",
         "role": "Father of Prokles",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Protokles",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Protokles",
         "confidence": 0.8
       },
       {
         "name": "Kephisodoros",
         "role": "Archon, son of Melesias",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kephisodoros",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Kephisodoros",
         "confidence": 0.8
       },
       {
         "name": "Melesias",
         "role": "Father of Kephisodoros",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Melesias",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Melesias",
         "confidence": 0.8
       },
       {
         "name": "Hemedemos",
         "role": "Archon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hemedemos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Hemedemos",
         "confidence": 0.5
       },
       {
         "name": "Idymeas",
         "role": "Archon, son of Kriton",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Idymeas",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Idymeas",
         "confidence": 0.8
       },
       {
         "name": "Kriton",
         "role": "Father of Idymeas",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kriton",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Kriton",
         "confidence": 0.8
       },
       {
         "name": "Antikles",
         "role": "Archon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antikles",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Antikles",
         "confidence": 0.8
       },
       {
         "name": "Euthydemos",
         "role": "Archon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Euthydemos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Euthydemos",
         "confidence": 0.8
       },
       {
         "name": "Euboulides",
         "role": "Archon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Euboulides",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Euboulides",
         "confidence": 0.8
       },
       {
         "name": "Chairedemos",
         "role": "Archon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Chairedemos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Chairedemos",
         "confidence": 0.8
       },
       {
         "name": "Androtion",
         "role": "Official, son of Saos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Androtion",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Androtion",
         "confidence": 0.8
       },
       {
         "name": "Saos",
         "role": "Father of Androtion",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Saos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Saos",
         "confidence": 0.8
       }
     ],

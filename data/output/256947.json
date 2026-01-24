@@ -63,19 +63,19 @@
       {
         "name": "Marcus Ulpius Appuleius Eurycles",
         "role": "High Priest of Asia",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Marcus%20Ulpius%20Appuleius%20Eurycles",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Marcus%20Ulpius%20Appuleius%20Eurycles",
         "confidence": 1.0
       },
       {
         "name": "Marcus Aurelius Commodus Antoninus Augustus",
         "role": "Roman Emperor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Marcus%20Aurelius%20Commodus%20Antoninus%20Augustus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Marcus%20Aurelius%20Commodus%20Antoninus%20Augustus",
         "confidence": 1.0
       },
       {
         "name": "Flavius Lysimachus",
         "role": "Testator and Benefactor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Flavius%20Lysimachus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Flavius%20Lysimachus",
         "confidence": 1.0
       }
     ],
@@ -108,7 +108,7 @@
     "deities": [
       {
         "name": "Tyche",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q213440",
         "confidence": 1.0
       }
     ]

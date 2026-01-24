@@ -91,25 +91,25 @@
       {
         "name": "Kraton",
         "role": "Priest of the association and benefactor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kraton",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Kraton",
         "confidence": 1.0
       },
       {
         "name": "Zotichos",
         "role": "Father of Kraton",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Zotichos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Zotichos",
         "confidence": 1.0
       },
       {
         "name": "Attalus",
         "role": "King of Pergamum",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Attalus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Attalus",
         "confidence": 1.0
       },
       {
         "name": "Alexander",
         "role": "Referenced in the context of Alexandrian currency",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Alexander",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Alexander",
         "confidence": 1.0
       }
     ],

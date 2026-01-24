@@ -63,31 +63,31 @@
       {
         "name": "Sapautolus",
         "role": "Target of the curse",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sapautolus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Sapautolus",
         "confidence": 1.0
       },
       {
         "name": "Januaria",
         "role": "Mentioned individual",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Januaria",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Januaria",
         "confidence": 0.9
       },
       {
         "name": "Lacinia",
         "role": "Mentioned individual",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lacinia",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Lacinia",
         "confidence": 0.8
       },
       {
         "name": "Ursellus",
         "role": "Mentioned individual",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ursellus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Ursellus",
         "confidence": 0.9
       },
       {
         "name": "Pomponius",
         "role": "Mentioned individual",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pomponius",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Pomponius",
         "confidence": 0.8
       }
     ],

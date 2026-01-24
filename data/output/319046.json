@@ -63,25 +63,25 @@
       {
         "name": "Orthagoras",
         "role": "Judge",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Orthagoras",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Orthagoras",
         "confidence": 1.0
       },
       {
         "name": "Hippocrates",
         "role": "Father of Orthagoras",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hippocrates",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Hippocrates",
         "confidence": 1.0
       },
       {
         "name": "Timarchos",
         "role": "Judge",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Timarchos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Timarchos",
         "confidence": 1.0
       },
       {
         "name": "Timides",
         "role": "Father of Timarchos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Timides",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Timides",
         "confidence": 1.0
       }
     ],

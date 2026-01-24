@@ -63,25 +63,25 @@
       {
         "name": "Roman Emperors",
         "role": "Addressees and authors of the rescript",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Roman%20Emperors",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Roman%20Emperors",
         "confidence": 1.0
       },
       {
         "name": "Governor",
         "role": "Provincial administrator with judicial authority",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Governor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Governor",
         "confidence": 1.0
       },
       {
         "name": "Frumentarii",
         "role": "Military officials accused of extortion",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Frumentarii",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Frumentarii",
         "confidence": 1.0
       },
       {
         "name": "Colletiones",
         "role": "Tax or administrative officials accused of abuse",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Colletiones",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Colletiones",
         "confidence": 1.0
       }
     ],

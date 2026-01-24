@@ -77,7 +77,7 @@
       {
         "name": "Abrianos son of Pratichos",
         "role": "Judge",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Abrianos%20son%20of%20Pratichos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Abrianos%20son%20of%20Pratichos",
         "confidence": 0.9
       }
     ],
@@ -104,7 +104,7 @@
     "deities": [
       {
         "name": "Apollo Delios",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q37340",
         "confidence": 1.0
       },
       {

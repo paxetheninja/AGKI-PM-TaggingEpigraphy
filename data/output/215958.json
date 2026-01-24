@@ -77,19 +77,19 @@
       {
         "name": "Berenice",
         "role": "Queen",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Berenice",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Berenice",
         "confidence": 1.0
       },
       {
         "name": "Dioscorides",
         "role": "Relative and Strategos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dioscorides",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Dioscorides",
         "confidence": 1.0
       },
       {
         "name": "Socrates",
         "role": "Temple Overseer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Socrates",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Socrates",
         "confidence": 1.0
       }
     ],

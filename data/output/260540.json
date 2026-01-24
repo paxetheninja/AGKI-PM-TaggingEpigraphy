@@ -77,37 +77,37 @@
       {
         "name": "Knidian Ambassadors",
         "role": "Diplomatic representatives",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Knidian%20Ambassadors",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Knidian%20Ambassadors",
         "confidence": 1.0
       },
       {
         "name": "Agonothetai",
         "role": "Supervisors of the games",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Agonothetai",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Agonothetai",
         "confidence": 1.0
       },
       {
         "name": "Oikonomoi",
         "role": "Financial treasurers",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Oikonomoi",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Oikonomoi",
         "confidence": 1.0
       },
       {
         "name": "Stephanophoros",
         "role": "Eponymous magistrate",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Stephanophoros",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Stephanophoros",
         "confidence": 1.0
       },
       {
         "name": "Polemarchs",
         "role": "Military officials",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Polemarchs",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Polemarchs",
         "confidence": 1.0
       },
       {
         "name": "Hipparchs",
         "role": "Cavalry commanders",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hipparchs",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Hipparchs",
         "confidence": 1.0
       }
     ],
@@ -134,7 +134,7 @@
     "deities": [
       {
         "name": "Artemis Leukophryene",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q39503",
         "confidence": 0.8
       }
     ]

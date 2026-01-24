@@ -63,31 +63,31 @@
       {
         "name": "Polymedes",
         "role": "Secretary",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Polymedes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Polymedes",
         "confidence": 0.8
       },
       {
         "name": "Kephisophon",
         "role": "Father of Polymedes",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kephisophon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Kephisophon",
         "confidence": 1.0
       },
       {
         "name": "Polyxenides",
         "role": "Treasurer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Polyxenides",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Polyxenides",
         "confidence": 0.8
       },
       {
         "name": "Leukaios",
         "role": "Secretary",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Leukaios",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Leukaios",
         "confidence": 0.8
       },
       {
         "name": "Komarchos",
         "role": "Father of Leukaios",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Komarchos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Komarchos",
         "confidence": 1.0
       }
     ],
@@ -138,7 +138,7 @@
     "deities": [
       {
         "name": "Athena",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q37122",
         "confidence": 1.0
       },
       {

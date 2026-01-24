@@ -49,19 +49,19 @@
       {
         "name": "Pylos",
         "role": "Honorand and new citizen",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pylos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Pylos",
         "confidence": 1.0
       },
       {
         "name": "Sosigenes",
         "role": "Father of the honorand",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sosigenes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Sosigenes",
         "confidence": 1.0
       },
       {
         "name": "Demoretos",
         "role": "Proposer of the decree",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demoretos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Demoretos",
         "confidence": 1.0
       }
     ],

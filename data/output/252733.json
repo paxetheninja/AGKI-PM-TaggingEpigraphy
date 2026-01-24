@@ -77,31 +77,31 @@
       {
         "name": "Eudoxus",
         "role": "Astronomer cited as an authority",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eudoxus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Eudoxus",
         "confidence": 1.0
       },
       {
         "name": "Conon",
         "role": "Astronomer cited as an authority",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Conon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Conon",
         "confidence": 1.0
       },
       {
         "name": "Philippus",
         "role": "Astronomer cited as an authority",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philippus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Philippus",
         "confidence": 1.0
       },
       {
         "name": "Euctemon",
         "role": "Astronomer cited as an authority",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Euctemon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Euctemon",
         "confidence": 1.0
       },
       {
         "name": "Epikrates",
         "role": "Official or individual mentioned in the heading",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Epikrates",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Epikrates",
         "confidence": 0.8
       }
     ],

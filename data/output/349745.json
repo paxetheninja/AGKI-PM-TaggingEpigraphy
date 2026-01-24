@@ -49,25 +49,25 @@
       {
         "name": "Judges",
         "role": "Foreign judges sent to adjudicate legal cases fairly",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Judges",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Judges",
         "confidence": 1.0
       },
       {
         "name": "Secretary",
         "role": "Official responsible for administrative duties and documentation",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Secretary",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Secretary",
         "confidence": 1.0
       },
       {
         "name": "Envoy",
         "role": "Representative sent to communicate the decree to the people of Kos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Envoy",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Envoy",
         "confidence": 1.0
       },
       {
         "name": "Agonothetes",
         "role": "Organizers of the musical games and festival",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Agonothetes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Agonothetes",
         "confidence": 1.0
       }
     ],

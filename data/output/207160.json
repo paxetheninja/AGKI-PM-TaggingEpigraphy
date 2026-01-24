@@ -49,19 +49,19 @@
       {
         "name": "Simos",
         "role": "Manumitted person",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Simos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Simos",
         "confidence": 1.0
       },
       {
         "name": "Ptolemaios",
         "role": "Former owner",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ptolemaios",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Ptolemaios",
         "confidence": 1.0
       },
       {
         "name": "Aristarchos",
         "role": "Father of treasurer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristarchos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aristarchos",
         "confidence": 1.0
       },
       {
@@ -73,73 +73,73 @@
       {
         "name": "Philoxenides",
         "role": "Strategos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philoxenides",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Philoxenides",
         "confidence": 1.0
       },
       {
         "name": "Mnesimachos",
         "role": "Former owner",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Mnesimachos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Mnesimachos",
         "confidence": 1.0
       },
       {
         "name": "Brous",
         "role": "Father of former owner",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Brous",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Brous",
         "confidence": 1.0
       },
       {
         "name": "Publius Sextius",
         "role": "Treasurer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Publius%20Sextius",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Publius%20Sextius",
         "confidence": 1.0
       },
       {
         "name": "Aristokrates",
         "role": "Manumitted person",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristokrates",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aristokrates",
         "confidence": 1.0
       },
       {
         "name": "Philippos",
         "role": "Former owner",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philippos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Philippos",
         "confidence": 1.0
       },
       {
         "name": "Parmonides",
         "role": "Father of former owner",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Parmonides",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Parmonides",
         "confidence": 1.0
       },
       {
         "name": "Leonides",
         "role": "Former owner by adoption",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Leonides",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Leonides",
         "confidence": 1.0
       },
       {
         "name": "Soteris",
         "role": "Manumitted person",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Soteris",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Soteris",
         "confidence": 1.0
       },
       {
         "name": "Polycharmos",
         "role": "Former owner",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Polycharmos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Polycharmos",
         "confidence": 1.0
       },
       {
         "name": "Nikaresta",
         "role": "Former owner",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nikaresta",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Nikaresta",
         "confidence": 1.0
       },
       {
         "name": "Pothion",
         "role": "Father of former owner",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pothion",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Pothion",
         "confidence": 1.0
       }
     ],

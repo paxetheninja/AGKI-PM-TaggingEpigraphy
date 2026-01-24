@@ -91,73 +91,73 @@
       {
         "name": "Seleucus",
         "role": "King and benefactor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Seleucus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Seleucus",
         "confidence": 1.0
       },
       {
         "name": "Antiochus",
         "role": "King and benefactor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antiochus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Antiochus",
         "confidence": 1.0
       },
       {
         "name": "Apelles son of Polydorus",
         "role": "Committee member",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Apelles%20son%20of%20Polydorus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Apelles%20son%20of%20Polydorus",
         "confidence": 1.0
       },
       {
         "name": "Pelles son of Dionysius",
         "role": "Committee member",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pelles%20son%20of%20Dionysius",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Pelles%20son%20of%20Dionysius",
         "confidence": 1.0
       },
       {
         "name": "Metrobios",
         "role": "Committee member",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Metrobios",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Metrobios",
         "confidence": 1.0
       },
       {
         "name": "Pellichos son of Athenaeus",
         "role": "Committee member",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pellichos%20son%20of%20Athenaeus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Pellichos%20son%20of%20Athenaeus",
         "confidence": 1.0
       },
       {
         "name": "Athenaeus son of Polydorus",
         "role": "Committee member",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Athenaeus%20son%20of%20Polydorus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Athenaeus%20son%20of%20Polydorus",
         "confidence": 1.0
       },
       {
         "name": "Proteros son of Phaitas",
         "role": "Committee member",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Proteros%20son%20of%20Phaitas",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Proteros%20son%20of%20Phaitas",
         "confidence": 1.0
       },
       {
         "name": "Thanos son of Mikkos",
         "role": "Committee member",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Thanos%20son%20of%20Mikkos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Thanos%20son%20of%20Mikkos",
         "confidence": 1.0
       },
       {
         "name": "Cleomenes son of Hermagoras",
         "role": "Committee member",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Cleomenes%20son%20of%20Hermagoras",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Cleomenes%20son%20of%20Hermagoras",
         "confidence": 1.0
       },
       {
         "name": "Aristagoras son of Athenaeus",
         "role": "Committee member",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristagoras%20son%20of%20Athenaeus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aristagoras%20son%20of%20Athenaeus",
         "confidence": 1.0
       },
       {
         "name": "Apollonides son of Kakos",
         "role": "Committee member",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Apollonides%20son%20of%20Kakos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Apollonides%20son%20of%20Kakos",
         "confidence": 1.0
       }
     ],
@@ -208,17 +208,17 @@
     "deities": [
       {
         "name": "Apollo",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q37340",
         "confidence": 1.0
       },
       {
         "name": "Athena",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q37122",
         "confidence": 1.0
       },
       {
         "name": "Zeus Soter",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q34201",
         "confidence": 1.0
       },
       {

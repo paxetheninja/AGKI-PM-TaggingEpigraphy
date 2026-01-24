@@ -91,181 +91,181 @@
       {
         "name": "Polybus",
         "role": "Payer of interest",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Polybus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Polybus",
         "confidence": 1.0
       },
       {
         "name": "Parmenion",
         "role": "Father of Telesandrus",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Parmenion",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Parmenion",
         "confidence": 1.0
       },
       {
         "name": "Damacus",
         "role": "Individual listed in accounts",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Damacus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Damacus",
         "confidence": 1.0
       },
       {
         "name": "Sostratus",
         "role": "Individual associated with Damacus",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sostratus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Sostratus",
         "confidence": 1.0
       },
       {
         "name": "Andron",
         "role": "Individual listed in accounts",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Andron",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Andron",
         "confidence": 1.0
       },
       {
         "name": "Geryllus",
         "role": "Individual listed in accounts",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Geryllus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Geryllus",
         "confidence": 1.0
       },
       {
         "name": "Pistoxenus",
         "role": "Father of Geryllus",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pistoxenus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Pistoxenus",
         "confidence": 1.0
       },
       {
         "name": "Phocion",
         "role": "Individual listed in accounts",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Phocion",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Phocion",
         "confidence": 1.0
       },
       {
         "name": "Erymanthus",
         "role": "Individual listed in accounts",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Erymanthus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Erymanthus",
         "confidence": 1.0
       },
       {
         "name": "Dexicus",
         "role": "Individual listed in accounts",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dexicus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Dexicus",
         "confidence": 1.0
       },
       {
         "name": "Gorgias",
         "role": "Individual listed in accounts",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Gorgias",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Gorgias",
         "confidence": 0.8
       },
       {
         "name": "Philtes",
         "role": "Individual listed in accounts",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philtes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Philtes",
         "confidence": 1.0
       },
       {
         "name": "Tlepolemus",
         "role": "Father of Philtes",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Tlepolemus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Tlepolemus",
         "confidence": 1.0
       },
       {
         "name": "Polyxenus",
         "role": "Individual listed in accounts",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Polyxenus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Polyxenus",
         "confidence": 1.0
       },
       {
         "name": "Pistos",
         "role": "Individual listed in accounts",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pistos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Pistos",
         "confidence": 1.0
       },
       {
         "name": "Xenon",
         "role": "Father of Pistos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Xenon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Xenon",
         "confidence": 1.0
       },
       {
         "name": "Criton",
         "role": "Individual listed in accounts",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Criton",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Criton",
         "confidence": 1.0
       },
       {
         "name": "Olympiodorus",
         "role": "Individual listed in accounts",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Olympiodorus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Olympiodorus",
         "confidence": 1.0
       },
       {
         "name": "Xenocleides",
         "role": "Individual listed in accounts",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Xenocleides",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Xenocleides",
         "confidence": 1.0
       },
       {
         "name": "Polydorus",
         "role": "Citizen of Cyzicus",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Polydorus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Polydorus",
         "confidence": 1.0
       },
       {
         "name": "Euthenes",
         "role": "Individual listed in accounts",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Euthenes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Euthenes",
         "confidence": 1.0
       },
       {
         "name": "Aristides",
         "role": "Father of Euthenes",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristides",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aristides",
         "confidence": 1.0
       },
       {
         "name": "Aristodicus",
         "role": "Winner in stadium race",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristodicus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aristodicus",
         "confidence": 1.0
       },
       {
         "name": "Cosmides",
         "role": "Winner in boxing",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Cosmides",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Cosmides",
         "confidence": 1.0
       },
       {
         "name": "Telesandrus",
         "role": "Winner in stadium race and boxing",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Telesandrus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Telesandrus",
         "confidence": 1.0
       },
       {
         "name": "Epicharmus",
         "role": "Winner in diaulos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Epicharmus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Epicharmus",
         "confidence": 1.0
       },
       {
         "name": "Theognetus",
         "role": "Winner in boxing",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theognetus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Theognetus",
         "confidence": 1.0
       },
       {
         "name": "Pyrrathus",
         "role": "Winner in boxing",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pyrrathus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Pyrrathus",
         "confidence": 1.0
       },
       {
         "name": "Aristocles",
         "role": "Individual associated with the stele",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristocles",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aristocles",
         "confidence": 1.0
       },
       {
         "name": "Nicaea",
         "role": "Individual listed in accounts",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nicaea",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Nicaea",
         "confidence": 0.8
       }
     ],
@@ -297,7 +297,7 @@
       },
       {
         "name": "Zeus Cynthius",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q34201",
         "confidence": 1.0
       }
     ]

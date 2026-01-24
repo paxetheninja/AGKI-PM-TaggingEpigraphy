@@ -63,73 +63,73 @@
       {
         "name": "Ptolemy",
         "role": "Donor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ptolemy",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Ptolemy",
         "confidence": 1.0
       },
       {
         "name": "Demetrius",
         "role": "Donor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demetrius",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Demetrius",
         "confidence": 1.0
       },
       {
         "name": "Antipatros son of Balagros",
         "role": "Donor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antipatros%20son%20of%20Balagros",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Antipatros%20son%20of%20Balagros",
         "confidence": 1.0
       },
       {
         "name": "Philokles",
         "role": "Donor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philokles",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Philokles",
         "confidence": 1.0
       },
       {
         "name": "Polykleitos",
         "role": "Donor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Polykleitos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Polykleitos",
         "confidence": 1.0
       },
       {
         "name": "Ktesikles",
         "role": "Donor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ktesikles",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Ktesikles",
         "confidence": 1.0
       },
       {
         "name": "Nikokreon",
         "role": "Donor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nikokreon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Nikokreon",
         "confidence": 1.0
       },
       {
         "name": "Sotion",
         "role": "Worker",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sotion",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Sotion",
         "confidence": 0.8
       },
       {
         "name": "Prokles",
         "role": "Worker",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Prokles",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Prokles",
         "confidence": 0.8
       },
       {
         "name": "Glaukos",
         "role": "Donor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Glaukos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Glaukos",
         "confidence": 1.0
       },
       {
         "name": "Lucimus",
         "role": "Recipient of payment",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lucimus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Lucimus",
         "confidence": 0.8
       },
       {
         "name": "Mikron",
         "role": "Worker",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Mikron",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Mikron",
         "confidence": 0.8
       }
     ],
@@ -150,7 +150,7 @@
     "deities": [
       {
         "name": "Apollo",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q37340",
         "confidence": 1.0
       }
     ]

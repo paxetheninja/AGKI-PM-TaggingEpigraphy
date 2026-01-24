@@ -63,49 +63,49 @@
       {
         "name": "Athenodorus",
         "role": "Archon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Athenodorus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Athenodorus",
         "confidence": 1.0
       },
       {
         "name": "Archias",
         "role": "Grain Commissioner",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Archias",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Archias",
         "confidence": 1.0
       },
       {
         "name": "Archinos",
         "role": "Grain Commissioner",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Archinos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Archinos",
         "confidence": 1.0
       },
       {
         "name": "Charnias",
         "role": "Grain Commissioner",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Charnias",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Charnias",
         "confidence": 1.0
       },
       {
         "name": "Agatharchus",
         "role": "Grain Commissioner",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Agatharchus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Agatharchus",
         "confidence": 1.0
       },
       {
         "name": "Eudemus",
         "role": "Grain Commissioner",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eudemus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Eudemus",
         "confidence": 1.0
       },
       {
         "name": "Ergocles",
         "role": "Secretary",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ergocles",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Ergocles",
         "confidence": 1.0
       },
       {
         "name": "Antigonus",
         "role": "King",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antigonus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Antigonus",
         "confidence": 1.0
       }
     ],

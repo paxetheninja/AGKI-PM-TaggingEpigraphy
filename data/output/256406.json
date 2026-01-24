@@ -153,31 +153,31 @@
       {
         "name": "Menecles",
         "role": "Ambassador",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Menecles",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Menecles",
         "confidence": 1.0
       },
       {
         "name": "Menodotus",
         "role": "Father of Herodotus",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Menodotus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Menodotus",
         "confidence": 1.0
       },
       {
         "name": "Dionysius",
         "role": "Father of Menecles",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dionysius",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Dionysius",
         "confidence": 1.0
       },
       {
         "name": "Dexios",
         "role": "Kosmos (Magistrate)",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dexios",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Dexios",
         "confidence": 1.0
       },
       {
         "name": "Glaukos",
         "role": "Father of Dexios",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Glaukos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Glaukos",
         "confidence": 1.0
       }
     ],

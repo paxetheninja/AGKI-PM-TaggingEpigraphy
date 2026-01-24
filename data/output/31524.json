@@ -49,37 +49,37 @@
       {
         "name": "Sophist",
         "role": "Educator",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sophist",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Sophist",
         "confidence": 1.0
       },
       {
         "name": "Advocate",
         "role": "Legal professional",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Advocate",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Advocate",
         "confidence": 1.0
       },
       {
         "name": "Jurist",
         "role": "Legal professional",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Jurist",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Jurist",
         "confidence": 1.0
       },
       {
         "name": "Architect",
         "role": "Professional",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Architect",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Architect",
         "confidence": 1.0
       },
       {
         "name": "Teacher",
         "role": "Educator",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Teacher",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Teacher",
         "confidence": 1.0
       },
       {
         "name": "Bath attendant",
         "role": "Service worker",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Bath%20attendant",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Bath%20attendant",
         "confidence": 1.0
       }
     ],

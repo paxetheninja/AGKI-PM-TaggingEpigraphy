@@ -21,25 +21,25 @@
       {
         "name": "Archidamos",
         "role": "Contractor from Corinth",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Archidamos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Archidamos",
         "confidence": 1.0
       },
       {
         "name": "Pancrates",
         "role": "Contractor from Argos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pancrates",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Pancrates",
         "confidence": 1.0
       },
       {
         "name": "Dios",
         "role": "Contractor from Megara",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dios",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Dios",
         "confidence": 0.9
       },
       {
         "name": "Heracleidas",
         "role": "Individual mentioned in the accounts",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Heracleidas",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Heracleidas",
         "confidence": 0.8
       }
     ],

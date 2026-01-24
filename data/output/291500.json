@@ -105,19 +105,19 @@
       {
         "name": "Marcus Ulpius Eubiotus Leurus Gargettius",
         "role": "Honorand, Consular, Eponymous Archon, and Benefactor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Marcus%20Ulpius%20Eubiotus%20Leurus%20Gargettius",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Marcus%20Ulpius%20Eubiotus%20Leurus%20Gargettius",
         "confidence": 1.0
       },
       {
         "name": "Marcus Ulpius Tisamenus",
         "role": "Son of the honorand",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Marcus%20Ulpius%20Tisamenus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Marcus%20Ulpius%20Tisamenus",
         "confidence": 1.0
       },
       {
         "name": "Pupienus Maximus",
         "role": "Son of the honorand",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pupienus%20Maximus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Pupienus%20Maximus",
         "confidence": 1.0
       }
     ],
@@ -144,7 +144,7 @@
     "deities": [
       {
         "name": "Athena",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q37122",
         "confidence": 0.8
       },
       {

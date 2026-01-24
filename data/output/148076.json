@@ -97,7 +97,7 @@
       {
         "name": "Kleagenes",
         "role": "Archon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kleagenes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Kleagenes",
         "confidence": 1.0
       },
       {
@@ -109,19 +109,19 @@
       {
         "name": "Lampon",
         "role": "Archon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lampon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Lampon",
         "confidence": 1.0
       },
       {
         "name": "Nicobulus",
         "role": "Archon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nicobulus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Nicobulus",
         "confidence": 1.0
       },
       {
         "name": "Androsthenes",
         "role": "Honoree and Proxenos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Androsthenes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Androsthenes",
         "confidence": 1.0
       },
       {

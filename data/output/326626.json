@@ -91,163 +91,163 @@
       {
         "name": "Straton",
         "role": "Secretary",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Straton",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Straton",
         "confidence": 0.9
       },
       {
         "name": "Theodorus",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theodorus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Theodorus",
         "confidence": 0.9
       },
       {
         "name": "Python",
         "role": "Individual",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Python",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Python",
         "confidence": 0.9
       },
       {
         "name": "Pythodorus",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pythodorus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Pythodorus",
         "confidence": 0.9
       },
       {
         "name": "Kalligetus",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kalligetus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Kalligetus",
         "confidence": 0.9
       },
       {
         "name": "Straton son of Nicander",
         "role": "Judge/Ambassador",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Straton%20son%20of%20Nicander",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Straton%20son%20of%20Nicander",
         "confidence": 0.9
       },
       {
         "name": "Nicander",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nicander",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Nicander",
         "confidence": 0.9
       },
       {
         "name": "Anesion son of Xenon",
         "role": "Judge/Ambassador",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Anesion%20son%20of%20Xenon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Anesion%20son%20of%20Xenon",
         "confidence": 0.9
       },
       {
         "name": "Xenon",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Xenon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Xenon",
         "confidence": 0.9
       },
       {
         "name": "Antiphilus son of Dioccles",
         "role": "Judge/Ambassador",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antiphilus%20son%20of%20Dioccles",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Antiphilus%20son%20of%20Dioccles",
         "confidence": 0.9
       },
       {
         "name": "Dioccles",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dioccles",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Dioccles",
         "confidence": 0.9
       },
       {
         "name": "Damoteon son of Aristodicus",
         "role": "Judge/Ambassador",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Damoteon%20son%20of%20Aristodicus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Damoteon%20son%20of%20Aristodicus",
         "confidence": 0.9
       },
       {
         "name": "Aristodicus",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristodicus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aristodicus",
         "confidence": 0.9
       },
       {
         "name": "Pheidolaus son of Daitiphantus",
         "role": "Judge/Ambassador",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pheidolaus%20son%20of%20Daitiphantus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Pheidolaus%20son%20of%20Daitiphantus",
         "confidence": 0.9
       },
       {
         "name": "Daitiphantus",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Daitiphantus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Daitiphantus",
         "confidence": 0.9
       },
       {
         "name": "Mnasicles son of Epimachus",
         "role": "Individual",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Mnasicles%20son%20of%20Epimachus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Mnasicles%20son%20of%20Epimachus",
         "confidence": 0.9
       },
       {
         "name": "Epimachus",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Epimachus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Epimachus",
         "confidence": 0.9
       },
       {
         "name": "Cratidas son of Satyrus",
         "role": "Individual",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Cratidas%20son%20of%20Satyrus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Cratidas%20son%20of%20Satyrus",
         "confidence": 0.9
       },
       {
         "name": "Satyrus",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Satyrus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Satyrus",
         "confidence": 0.9
       },
       {
         "name": "Boscon son of Nasimus",
         "role": "Individual",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Boscon%20son%20of%20Nasimus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Boscon%20son%20of%20Nasimus",
         "confidence": 0.9
       },
       {
         "name": "Nasimus",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nasimus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Nasimus",
         "confidence": 0.9
       },
       {
         "name": "Archippus",
         "role": "Individual",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Archippus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Archippus",
         "confidence": 0.9
       },
       {
         "name": "Lyciscus",
         "role": "Individual",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lyciscus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Lyciscus",
         "confidence": 0.9
       },
       {
         "name": "Sthenon",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sthenon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Sthenon",
         "confidence": 0.9
       },
       {
         "name": "Sotimus",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sotimus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Sotimus",
         "confidence": 0.9
       },
       {
         "name": "Achaean League",
         "role": "Political Entity",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Achaean%20League",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Achaean%20League",
         "confidence": 1.0
       },
       {
         "name": "Boeotian League",
         "role": "Political Entity",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Boeotian%20League",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Boeotian%20League",
         "confidence": 1.0
       }
     ],

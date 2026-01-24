@@ -63,91 +63,91 @@
       {
         "name": "Amnitos",
         "role": "Archon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Amnitos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Amnitos",
         "confidence": 1.0
       },
       {
         "name": "Cleon",
         "role": "Seller",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Cleon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Cleon",
         "confidence": 1.0
       },
       {
         "name": "Philistides",
         "role": "Father of Cleon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philistides",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Philistides",
         "confidence": 1.0
       },
       {
         "name": "Agathias",
         "role": "Slave being manumitted",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Agathias",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Agathias",
         "confidence": 1.0
       },
       {
         "name": "Amynias",
         "role": "Guarantor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Amynias",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Amynias",
         "confidence": 1.0
       },
       {
         "name": "Charixenus",
         "role": "Father of Amynias",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Charixenus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Charixenus",
         "confidence": 1.0
       },
       {
         "name": "Dion",
         "role": "Guarantor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dion",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Dion",
         "confidence": 1.0
       },
       {
         "name": "Alexon",
         "role": "Father of Dion",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Alexon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Alexon",
         "confidence": 1.0
       },
       {
         "name": "Thambos",
         "role": "Priest of Apollo",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Thambos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Thambos",
         "confidence": 1.0
       },
       {
         "name": "Mantas",
         "role": "Priest of Apollo",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Mantas",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Mantas",
         "confidence": 1.0
       },
       {
         "name": "Diotaias",
         "role": "Witness",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Diotaias",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Diotaias",
         "confidence": 0.9
       },
       {
         "name": "Eucleidas",
         "role": "Witness",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eucleidas",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Eucleidas",
         "confidence": 0.9
       },
       {
         "name": "Archon",
         "role": "Witness",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Archon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Archon",
         "confidence": 0.9
       },
       {
         "name": "Engeglos",
         "role": "Witness",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Engeglos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Engeglos",
         "confidence": 0.9
       },
       {
         "name": "Kallieros",
         "role": "Witness",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kallieros",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Kallieros",
         "confidence": 0.9
       }
     ],
@@ -168,7 +168,7 @@
     "deities": [
       {
         "name": "Apollo Pythios",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q37340",
         "confidence": 1.0
       }
     ]

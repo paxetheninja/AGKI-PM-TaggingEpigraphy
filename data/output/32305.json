@@ -63,19 +63,19 @@
       {
         "name": "Julia Eudia",
         "role": "Benefactor and honoree, daughter of Eutelinos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Julia%20Eudia",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Julia%20Eudia",
         "confidence": 1.0
       },
       {
         "name": "Eutelinos",
         "role": "Father of Julia Eudia",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eutelinos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Eutelinos",
         "confidence": 1.0
       },
       {
         "name": "Gaius Julius Strobilus",
         "role": "Husband of Julia Eudia",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Gaius%20Julius%20Strobilus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Gaius%20Julius%20Strobilus",
         "confidence": 1.0
       }
     ],
@@ -112,7 +112,7 @@
       },
       {
         "name": "Tyche",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q213440",
         "confidence": 1.0
       },
       {

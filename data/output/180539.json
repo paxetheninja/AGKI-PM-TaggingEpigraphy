@@ -49,43 +49,43 @@
       {
         "name": "Leosthenes",
         "role": "General of the Countryside",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Leosthenes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Leosthenes",
         "confidence": 1.0
       },
       {
         "name": "Dikaiogenes",
         "role": "General of Piraeus",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dikaiogenes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Dikaiogenes",
         "confidence": 1.0
       },
       {
         "name": "Philokles",
         "role": "Kosmetes",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philokles",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Philokles",
         "confidence": 1.0
       },
       {
         "name": "Pherekleides",
         "role": "General of the Coast",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pherekleides",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Pherekleides",
         "confidence": 1.0
       },
       {
         "name": "Thymochares",
         "role": "Sophronistes",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Thymochares",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Thymochares",
         "confidence": 1.0
       },
       {
         "name": "Nikodoros",
         "role": "Epimeletes",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nikodoros",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Nikodoros",
         "confidence": 1.0
       },
       {
         "name": "Lysistratos",
         "role": "Epimeletes",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lysistratos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Lysistratos",
         "confidence": 1.0
       }
     ],

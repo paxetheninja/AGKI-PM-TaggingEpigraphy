@@ -63,25 +63,25 @@
       {
         "name": "Satyrus",
         "role": "Ally and ruler involved in the treaty",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Satyrus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Satyrus",
         "confidence": 1.0
       },
       {
         "name": "Clearchus",
         "role": "Tyrant of Heraclea Pontica, mentioned as the father of the allies",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Clearchus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Clearchus",
         "confidence": 1.0
       },
       {
         "name": "Sons of Clearchus",
         "role": "Rulers of Heraclea Pontica (Timotheus and Dionysius)",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sons%20of%20Clearchus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Sons%20of%20Clearchus",
         "confidence": 1.0
       },
       {
         "name": "The King",
         "role": "The Persian Monarch (likely Artaxerxes III)",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=The%20King",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=The%20King",
         "confidence": 1.0
       }
     ],

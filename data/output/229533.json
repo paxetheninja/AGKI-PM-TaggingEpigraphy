@@ -63,37 +63,37 @@
       {
         "name": "Aischron",
         "role": "Theoros (sacred envoy)",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aischron",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aischron",
         "confidence": 1.0
       },
       {
         "name": "Theudotos",
         "role": "Father of Aischron",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theudotos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Theudotos",
         "confidence": 1.0
       },
       {
         "name": "Hippotas",
         "role": "Architheoros (chief sacred envoy)",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hippotas",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Hippotas",
         "confidence": 1.0
       },
       {
         "name": "Hippokrates",
         "role": "Father of Hippotas",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hippokrates",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Hippokrates",
         "confidence": 1.0
       },
       {
         "name": "Gorakratos",
         "role": "Surname or byname of Aischron",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Gorakratos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Gorakratos",
         "confidence": 0.8
       },
       {
         "name": "Athenagoras",
         "role": "Proposer of the decree",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Athenagoras",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Athenagoras",
         "confidence": 0.8
       }
     ],

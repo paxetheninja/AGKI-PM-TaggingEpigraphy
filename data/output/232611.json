@@ -105,55 +105,55 @@
       {
         "name": "Charicleides",
         "role": "Archon of Athens",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Charicleides",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Charicleides",
         "confidence": 1.0
       },
       {
         "name": "Stephanos of Myrrhinous",
         "role": "Arbitrator",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Stephanos%20of%20Myrrhinous",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Stephanos%20of%20Myrrhinous",
         "confidence": 1.0
       },
       {
         "name": "Cleagoras of Acharnae",
         "role": "Arbitrator",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Cleagoras%20of%20Acharnae",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Cleagoras%20of%20Acharnae",
         "confidence": 1.0
       },
       {
         "name": "Aristogeiton of Myrrhinous",
         "role": "Arbitrator",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristogeiton%20of%20Myrrhinous",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aristogeiton%20of%20Myrrhinous",
         "confidence": 1.0
       },
       {
         "name": "Euthycritos of Lamptrae",
         "role": "Arbitrator",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Euthycritos%20of%20Lamptrae",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Euthycritos%20of%20Lamptrae",
         "confidence": 1.0
       },
       {
         "name": "Cephisodotos of Aithalidae",
         "role": "Arbitrator",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Cephisodotos%20of%20Aithalidae",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Cephisodotos%20of%20Aithalidae",
         "confidence": 1.0
       },
       {
         "name": "Thrasycles",
         "role": "Herald",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Thrasycles",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Thrasycles",
         "confidence": 1.0
       },
       {
         "name": "Aristarchos",
         "role": "Archon of the Salaminians",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristarchos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aristarchos",
         "confidence": 1.0
       },
       {
         "name": "Diophilos son of Diopeithes",
         "role": "Archon of the Salaminians at Sounion",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Diophilos%20son%20of%20Diopeithes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Diophilos%20son%20of%20Diopeithes",
         "confidence": 1.0
       }
     ],
@@ -210,7 +210,7 @@
     "deities": [
       {
         "name": "Athena Skiras",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q37122",
         "confidence": 1.0
       },
       {
@@ -240,17 +240,17 @@
       },
       {
         "name": "Poseidon Hippodromios",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q41127",
         "confidence": 1.0
       },
       {
         "name": "Apollo Patroos",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q37340",
         "confidence": 1.0
       },
       {
         "name": "Artemis",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q39503",
         "confidence": 1.0
       },
       {
@@ -260,7 +260,7 @@
       },
       {
         "name": "Zeus Phratrios",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q34201",
         "confidence": 1.0
       },
       {

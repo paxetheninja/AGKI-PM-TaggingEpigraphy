@@ -105,43 +105,43 @@
       {
         "name": "Diodorus",
         "role": "Archon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Diodorus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Diodorus",
         "confidence": 1.0
       },
       {
         "name": "Kallidemos",
         "role": "Council member and Witness",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kallidemos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Kallidemos",
         "confidence": 1.0
       },
       {
         "name": "Amphistratos",
         "role": "Father of Kallidemos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Amphistratos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Amphistratos",
         "confidence": 0.8
       },
       {
         "name": "Sotelos",
         "role": "Council member and Witness",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sotelos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Sotelos",
         "confidence": 1.0
       },
       {
         "name": "Sostratos",
         "role": "Father of Sotelos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sostratos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Sostratos",
         "confidence": 1.0
       },
       {
         "name": "Philonikos",
         "role": "Secretary and Witness",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philonikos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Philonikos",
         "confidence": 1.0
       },
       {
         "name": "Menedemos",
         "role": "Father of Philonikos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Menedemos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Menedemos",
         "confidence": 0.8
       },
       {
@@ -153,115 +153,115 @@
       {
         "name": "Phila",
         "role": "Seller",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Phila",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Phila",
         "confidence": 1.0
       },
       {
         "name": "Theodosios",
         "role": "Manumitted slave",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theodosios",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Theodosios",
         "confidence": 1.0
       },
       {
         "name": "Mnasitheos",
         "role": "Guarantor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Mnasitheos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Mnasitheos",
         "confidence": 1.0
       },
       {
         "name": "Diodorus",
         "role": "Father of Mnasitheos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Diodorus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Diodorus",
         "confidence": 1.0
       },
       {
         "name": "Aegon",
         "role": "Guarantor, son of Polykleitos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aegon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aegon",
         "confidence": 1.0
       },
       {
         "name": "Polykleitos",
         "role": "Father of Aegon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Polykleitos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Polykleitos",
         "confidence": 1.0
       },
       {
         "name": "Atreas",
         "role": "Priest of Apollo",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Atreas",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Atreas",
         "confidence": 1.0
       },
       {
         "name": "Andronikos",
         "role": "Father of Atreas",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Andronikos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Andronikos",
         "confidence": 1.0
       },
       {
         "name": "Aegon",
         "role": "Priest of Apollo, son of Kephalos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aegon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aegon",
         "confidence": 1.0
       },
       {
         "name": "Kephalos",
         "role": "Father of Aegon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kephalos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Kephalos",
         "confidence": 1.0
       },
       {
         "name": "Sostratos",
         "role": "Arbitrator, son of Sotelos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sostratos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Sostratos",
         "confidence": 1.0
       },
       {
         "name": "Phanis",
         "role": "Arbitrator",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Phanis",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Phanis",
         "confidence": 0.8
       },
       {
         "name": "Gorgylos",
         "role": "Father of Phanis",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Gorgylos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Gorgylos",
         "confidence": 1.0
       },
       {
         "name": "Onesimos",
         "role": "Arbitrator",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Onesimos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Onesimos",
         "confidence": 1.0
       },
       {
         "name": "Antiochos",
         "role": "Father of Onesimos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antiochos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Antiochos",
         "confidence": 1.0
       },
       {
         "name": "Xenokrates",
         "role": "Arbitrator",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Xenokrates",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Xenokrates",
         "confidence": 1.0
       },
       {
         "name": "Hegesilaos",
         "role": "Father of Xenokrates",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hegesilaos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Hegesilaos",
         "confidence": 0.8
       },
       {
         "name": "Xenokritos",
         "role": "Arbitrator",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Xenokritos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Xenokritos",
         "confidence": 1.0
       },
       {
         "name": "Stesimenes",
         "role": "Father of Xenokritos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Stesimenes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Stesimenes",
         "confidence": 1.0
       }
     ],
@@ -282,7 +282,7 @@
     "deities": [
       {
         "name": "Apollo Pythios",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q37340",
         "confidence": 1.0
       }
     ]

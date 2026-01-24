@@ -91,25 +91,25 @@
       {
         "name": "Eirenias",
         "role": "Ambassador and honorand",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eirenias",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Eirenias",
         "confidence": 1.0
       },
       {
         "name": "Eumenes",
         "role": "King of Pergamon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eumenes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Eumenes",
         "confidence": 1.0
       },
       {
         "name": "Antiochus",
         "role": "King",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antiochus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Antiochus",
         "confidence": 1.0
       },
       {
         "name": "Antiochus",
         "role": "Brother of the King",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antiochus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Antiochus",
         "confidence": 0.8
       }
     ],

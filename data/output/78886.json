@@ -63,67 +63,67 @@
       {
         "name": "Athenaios",
         "role": "Proposer of the decree, son of Kalotychos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Athenaios",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Athenaios",
         "confidence": 1.0
       },
       {
         "name": "Kalotychos",
         "role": "Father of Athenaios",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kalotychos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Kalotychos",
         "confidence": 1.0
       },
       {
         "name": "Antiochos",
         "role": "Chairman (Epipsephisamenos), son of Epigonos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antiochos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Antiochos",
         "confidence": 1.0
       },
       {
         "name": "Epigonos",
         "role": "Father of Antiochos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Epigonos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Epigonos",
         "confidence": 1.0
       },
       {
         "name": "Abrytis",
         "role": "The deceased honoree, daughter of Agathopous",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Abrytis",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Abrytis",
         "confidence": 1.0
       },
       {
         "name": "Agathopous",
         "role": "Father of Abrytis",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Agathopous",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Agathopous",
         "confidence": 1.0
       },
       {
         "name": "Philagathos",
         "role": "Husband of Abrytis, a dekaprotos and archon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philagathos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Philagathos",
         "confidence": 1.0
       },
       {
         "name": "Philoxena",
         "role": "Mother of Abrytis, daughter of Epinomides",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philoxena",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Philoxena",
         "confidence": 1.0
       },
       {
         "name": "Epinomides",
         "role": "Brother of Abrytis and son of Agathopous",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Epinomides",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Epinomides",
         "confidence": 1.0
       },
       {
         "name": "Epinomides",
         "role": "Maternal grandfather of Abrytis",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Epinomides",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Epinomides",
         "confidence": 1.0
       },
       {
         "name": "[...]odoros",
         "role": "Brother of Abrytis and son of Agathopous",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=%5B...%5Dodoros",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=%5B...%5Dodoros",
         "confidence": 0.8
       }
     ],

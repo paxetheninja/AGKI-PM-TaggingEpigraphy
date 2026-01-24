@@ -63,19 +63,19 @@
       {
         "name": "Cornelius Sulla",
         "role": "Roman General and Dictator",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Cornelius%20Sulla",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Cornelius%20Sulla",
         "confidence": 1.0
       },
       {
         "name": "Gnaeus Pompeius",
         "role": "Roman General and Statesman",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Gnaeus%20Pompeius",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Gnaeus%20Pompeius",
         "confidence": 1.0
       },
       {
         "name": "Servilius",
         "role": "Roman Censor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Servilius",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Servilius",
         "confidence": 0.8
       }
     ],

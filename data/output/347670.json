@@ -77,13 +77,13 @@
       {
         "name": "Timarchus",
         "role": "Honoree, Proxenos, and Benefactor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Timarchus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Timarchus",
         "confidence": 1.0
       },
       {
         "name": "Timarchus",
         "role": "Father of the honoree",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Timarchus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Timarchus",
         "confidence": 1.0
       }
     ],
@@ -116,7 +116,7 @@
     "deities": [
       {
         "name": "Athena",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q37122",
         "confidence": 1.0
       },
       {

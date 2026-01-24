@@ -55,19 +55,19 @@
       {
         "name": "Menodotus",
         "role": "Father of Herodotus",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Menodotus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Menodotus",
         "confidence": 1.0
       },
       {
         "name": "Menekles",
         "role": "Ambassador and Proxenos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Menekles",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Menekles",
         "confidence": 1.0
       },
       {
         "name": "Dionysius",
         "role": "Father of Menekles",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dionysius",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Dionysius",
         "confidence": 1.0
       }
     ],

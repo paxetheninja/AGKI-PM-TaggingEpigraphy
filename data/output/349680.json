@@ -63,67 +63,67 @@
       {
         "name": "Philiscus",
         "role": "Monarchos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philiscus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Philiscus",
         "confidence": 1.0
       },
       {
         "name": "Onasander",
         "role": "Physician",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Onasander",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Onasander",
         "confidence": 1.0
       },
       {
         "name": "Onesimus",
         "role": "Father of Onasander",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Onesimus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Onesimus",
         "confidence": 1.0
       },
       {
         "name": "Antipater",
         "role": "Teacher of Onasander",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antipater",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Antipater",
         "confidence": 1.0
       },
       {
         "name": "Nicarchus",
         "role": "Proposer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nicarchus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Nicarchus",
         "confidence": 1.0
       },
       {
         "name": "Teisarchus",
         "role": "Father of Nicarchus",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Teisarchus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Teisarchus",
         "confidence": 1.0
       },
       {
         "name": "Ariston",
         "role": "Proposer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ariston",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Ariston",
         "confidence": 1.0
       },
       {
         "name": "Charmylus",
         "role": "Father of Ariston",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Charmylus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Charmylus",
         "confidence": 1.0
       },
       {
         "name": "Philondas",
         "role": "Proposer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philondas",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Philondas",
         "confidence": 1.0
       },
       {
         "name": "Didymarchus",
         "role": "Father of Philondas",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Didymarchus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Didymarchus",
         "confidence": 1.0
       },
       {
         "name": "Dioscorides",
         "role": "Medical Authority",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dioscorides",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Dioscorides",
         "confidence": 0.8
       }
     ],
@@ -144,7 +144,7 @@
     "deities": [
       {
         "name": "Apollo",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q37340",
         "confidence": 1.0
       }
     ]

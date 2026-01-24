@@ -63,79 +63,79 @@
       {
         "name": "Aristodamos",
         "role": "Honoree",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristodamos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aristodamos",
         "confidence": 1.0
       },
       {
         "name": "Lykanos",
         "role": "Father of Aristodamos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lykanos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Lykanos",
         "confidence": 1.0
       },
       {
         "name": "Teison",
         "role": "Ambassador",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Teison",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Teison",
         "confidence": 1.0
       },
       {
         "name": "Theocharios",
         "role": "Father of Teison",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theocharios",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Theocharios",
         "confidence": 1.0
       },
       {
         "name": "Kleon",
         "role": "Ambassador",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kleon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Kleon",
         "confidence": 1.0
       },
       {
         "name": "Eryos",
         "role": "Father of Kleon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eryos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Eryos",
         "confidence": 1.0
       },
       {
         "name": "Agon",
         "role": "Archon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Agon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Agon",
         "confidence": 1.0
       },
       {
         "name": "Petron",
         "role": "Councilor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Petron",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Petron",
         "confidence": 1.0
       },
       {
         "name": "Aristoboulos",
         "role": "Father of Petron",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristoboulos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aristoboulos",
         "confidence": 1.0
       },
       {
         "name": "Ariston",
         "role": "Councilor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ariston",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Ariston",
         "confidence": 1.0
       },
       {
         "name": "Damophanes",
         "role": "Father of Ariston",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Damophanes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Damophanes",
         "confidence": 1.0
       },
       {
         "name": "Herakleidas",
         "role": "Secretary",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Herakleidas",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Herakleidas",
         "confidence": 1.0
       },
       {
         "name": "Aristodemos",
         "role": "Father of Herakleidas",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristodemos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aristodemos",
         "confidence": 1.0
       }
     ],
@@ -156,7 +156,7 @@
     "deities": [
       {
         "name": "Apollo",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q37340",
         "confidence": 1.0
       }
     ]

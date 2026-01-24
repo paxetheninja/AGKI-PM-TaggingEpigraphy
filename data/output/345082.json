@@ -91,31 +91,31 @@
       {
         "name": "Antigenes son of Apollonios",
         "role": "Judge",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antigenes%20son%20of%20Apollonios",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Antigenes%20son%20of%20Apollonios",
         "confidence": 1.0
       },
       {
         "name": "Aineas son of Artemidoros",
         "role": "Judge",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aineas%20son%20of%20Artemidoros",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aineas%20son%20of%20Artemidoros",
         "confidence": 1.0
       },
       {
         "name": "Timouchos son of Euerchos",
         "role": "Judge",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Timouchos%20son%20of%20Euerchos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Timouchos%20son%20of%20Euerchos",
         "confidence": 1.0
       },
       {
         "name": "Pythion son of Demetrios",
         "role": "Secretary",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pythion%20son%20of%20Demetrios",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Pythion%20son%20of%20Demetrios",
         "confidence": 1.0
       },
       {
         "name": "Athenodoros son of Menekrates",
         "role": "Proposer and Ambassador",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Athenodoros%20son%20of%20Menekrates",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Athenodoros%20son%20of%20Menekrates",
         "confidence": 1.0
       }
     ],
@@ -141,7 +141,7 @@
       },
       {
         "name": "Tyche",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q213440",
         "confidence": 1.0
       }
     ]

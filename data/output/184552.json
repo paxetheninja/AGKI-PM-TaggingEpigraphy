@@ -91,31 +91,31 @@
       {
         "name": "Thrasymedes son of Thrasymedes",
         "role": "Honorand",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Thrasymedes%20son%20of%20Thrasymedes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Thrasymedes%20son%20of%20Thrasymedes",
         "confidence": 1.0
       },
       {
         "name": "Satyros",
         "role": "Grandfather of the honorand",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Satyros",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Satyros",
         "confidence": 1.0
       },
       {
         "name": "Flavius Ariston",
         "role": "Priest and eponymous official",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Flavius%20Ariston",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Flavius%20Ariston",
         "confidence": 1.0
       },
       {
         "name": "Flavius Agepolis",
         "role": "Father of Ariston",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Flavius%20Agepolis",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Flavius%20Agepolis",
         "confidence": 1.0
       },
       {
         "name": "Apollonides",
         "role": "Secretary",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Apollonides",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Apollonides",
         "confidence": 1.0
       }
     ],
@@ -142,7 +142,7 @@
     "deities": [
       {
         "name": "Parthenos",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q85859532",
         "confidence": 1.0
       }
     ]

@@ -77,49 +77,49 @@
       {
         "name": "Leochares",
         "role": "Archon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Leochares",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Leochares",
         "confidence": 1.0
       },
       {
         "name": "Theokrisios son of Pasion",
         "role": "Secretary",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theokrisios%20son%20of%20Pasion",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Theokrisios%20son%20of%20Pasion",
         "confidence": 1.0
       },
       {
         "name": "Pasion",
         "role": "Father of Secretary",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pasion",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Pasion",
         "confidence": 1.0
       },
       {
         "name": "Nikon son of Nikon",
         "role": "Chairman of the Proedroi",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nikon%20son%20of%20Nikon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Nikon%20son%20of%20Nikon",
         "confidence": 1.0
       },
       {
         "name": "Chares son of Eucharistos",
         "role": "Proposer of the decree",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Chares%20son%20of%20Eucharistos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Chares%20son%20of%20Eucharistos",
         "confidence": 1.0
       },
       {
         "name": "Eucharistos",
         "role": "Father of the proposer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eucharistos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Eucharistos",
         "confidence": 1.0
       },
       {
         "name": "Pythodoros son of Archias",
         "role": "Treasurer of the Council",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pythodoros%20son%20of%20Archias",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Pythodoros%20son%20of%20Archias",
         "confidence": 1.0
       },
       {
         "name": "Archias",
         "role": "Father of the treasurer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Archias",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Archias",
         "confidence": 1.0
       }
     ],
@@ -170,12 +170,12 @@
     "deities": [
       {
         "name": "Apollo Prostaterios",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q37340",
         "confidence": 1.0
       },
       {
         "name": "Artemis Boulaia",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q39503",
         "confidence": 1.0
       },
       {

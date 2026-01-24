@@ -97,13 +97,13 @@
       {
         "name": "Nausistratus",
         "role": "Citizen",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nausistratus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Nausistratus",
         "confidence": 1.0
       },
       {
         "name": "Diophanes",
         "role": "Citizen",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Diophanes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Diophanes",
         "confidence": 1.0
       },
       {
@@ -115,19 +115,19 @@
       {
         "name": "Timonides",
         "role": "Citizen",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Timonides",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Timonides",
         "confidence": 1.0
       },
       {
         "name": "Pistoxenus",
         "role": "Citizen",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pistoxenus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Pistoxenus",
         "confidence": 1.0
       },
       {
         "name": "Diodorus",
         "role": "Citizen",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Diodorus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Diodorus",
         "confidence": 1.0
       },
       {
@@ -139,19 +139,19 @@
       {
         "name": "Apollodorus",
         "role": "Citizen",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Apollodorus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Apollodorus",
         "confidence": 1.0
       },
       {
         "name": "Ctesippus",
         "role": "Citizen",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ctesippus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Ctesippus",
         "confidence": 1.0
       },
       {
         "name": "Xenocles",
         "role": "Citizen",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Xenocles",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Xenocles",
         "confidence": 1.0
       },
       {
@@ -163,31 +163,31 @@
       {
         "name": "Theopompus",
         "role": "Citizen",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theopompus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Theopompus",
         "confidence": 1.0
       },
       {
         "name": "Nausicles",
         "role": "Citizen",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nausicles",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Nausicles",
         "confidence": 1.0
       },
       {
         "name": "Aristion",
         "role": "Citizen",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristion",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aristion",
         "confidence": 1.0
       },
       {
         "name": "Nicodemus",
         "role": "Citizen",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nicodemus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Nicodemus",
         "confidence": 1.0
       },
       {
         "name": "Cleanetus",
         "role": "Citizen",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Cleanetus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Cleanetus",
         "confidence": 1.0
       }
     ],

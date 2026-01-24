@@ -49,61 +49,61 @@
       {
         "name": "Cassander",
         "role": "General",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Cassander",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Cassander",
         "confidence": 1.0
       },
       {
         "name": "Ptolemy",
         "role": "General",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ptolemy",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Ptolemy",
         "confidence": 1.0
       },
       {
         "name": "Prepelaus",
         "role": "Envoy",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Prepelaus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Prepelaus",
         "confidence": 1.0
       },
       {
         "name": "Aristodemus",
         "role": "Envoy",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristodemus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aristodemus",
         "confidence": 1.0
       },
       {
         "name": "Lysimachus",
         "role": "General",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lysimachus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Lysimachus",
         "confidence": 1.0
       },
       {
         "name": "Aristobulus",
         "role": "Envoy",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristobulus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aristobulus",
         "confidence": 1.0
       },
       {
         "name": "Aeschylus",
         "role": "Envoy",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aeschylus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aeschylus",
         "confidence": 1.0
       },
       {
         "name": "Hegesias",
         "role": "Envoy",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hegesias",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Hegesias",
         "confidence": 1.0
       },
       {
         "name": "Akios",
         "role": "Envoy",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Akios",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Akios",
         "confidence": 1.0
       },
       {
         "name": "Polyperchon",
         "role": "General",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Polyperchon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Polyperchon",
         "confidence": 1.0
       }
     ],

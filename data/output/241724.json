@@ -77,103 +77,103 @@
       {
         "name": "Teisamenos",
         "role": "Archon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Teisamenos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Teisamenos",
         "confidence": 0.8
       },
       {
         "name": "Nikas",
         "role": "Seller",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nikas",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Nikas",
         "confidence": 1.0
       },
       {
         "name": "Nikon",
         "role": "Father of Nikas",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nikon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Nikon",
         "confidence": 1.0
       },
       {
         "name": "Lamia",
         "role": "Slave",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lamia",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Lamia",
         "confidence": 1.0
       },
       {
         "name": "Cleon",
         "role": "Guarantor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Cleon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Cleon",
         "confidence": 1.0
       },
       {
         "name": "Thryeus",
         "role": "Father of Cleon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Thryeus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Thryeus",
         "confidence": 1.0
       },
       {
         "name": "Ariston",
         "role": "Witness",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ariston",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Ariston",
         "confidence": 1.0
       },
       {
         "name": "Damophanes",
         "role": "Father of Ariston",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Damophanes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Damophanes",
         "confidence": 1.0
       },
       {
         "name": "Nicetas",
         "role": "Witness",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nicetas",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Nicetas",
         "confidence": 1.0
       },
       {
         "name": "Sosipatros",
         "role": "Father of Nicetas",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sosipatros",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Sosipatros",
         "confidence": 1.0
       },
       {
         "name": "Heracleidas",
         "role": "Witness",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Heracleidas",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Heracleidas",
         "confidence": 1.0
       },
       {
         "name": "Eucleidas",
         "role": "Witness",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eucleidas",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Eucleidas",
         "confidence": 1.0
       },
       {
         "name": "Calleidas",
         "role": "Father of Eucleidas",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Calleidas",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Calleidas",
         "confidence": 1.0
       },
       {
         "name": "Archon",
         "role": "Witness",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Archon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Archon",
         "confidence": 1.0
       },
       {
         "name": "Callicon",
         "role": "Father of Archon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Callicon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Callicon",
         "confidence": 1.0
       },
       {
         "name": "Eucretes",
         "role": "Grandfather of Archon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eucretes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Eucretes",
         "confidence": 1.0
       },
       {
         "name": "Leontis",
         "role": "Party in penalty clause",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Leontis",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Leontis",
         "confidence": 1.0
       }
     ],
@@ -188,7 +188,7 @@
     "deities": [
       {
         "name": "Apollo Pythios",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q37340",
         "confidence": 1.0
       }
     ]

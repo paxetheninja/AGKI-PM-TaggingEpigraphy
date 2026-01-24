@@ -105,31 +105,31 @@
       {
         "name": "Philip V",
         "role": "King of Macedon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philip%20V",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Philip%20V",
         "confidence": 1.0
       },
       {
         "name": "Callistratus",
         "role": "Ambassador",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Callistratus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Callistratus",
         "confidence": 1.0
       },
       {
         "name": "Seleucus",
         "role": "King",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Seleucus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Seleucus",
         "confidence": 1.0
       },
       {
         "name": "Olympichus",
         "role": "General or Dynast",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Olympichus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Olympichus",
         "confidence": 1.0
       },
       {
         "name": "Demetrius II",
         "role": "King of Macedon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demetrius%20II",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Demetrius%20II",
         "confidence": 1.0
       }
     ],
@@ -156,7 +156,7 @@
     "deities": [
       {
         "name": "Zeus Labraundos",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q34201",
         "confidence": 1.0
       }
     ]

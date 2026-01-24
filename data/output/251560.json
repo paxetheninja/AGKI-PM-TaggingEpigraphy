@@ -49,73 +49,73 @@
       {
         "name": "Polydeuces",
         "role": "General",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Polydeuces",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Polydeuces",
         "confidence": 1.0
       },
       {
         "name": "Megon",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Megon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Megon",
         "confidence": 1.0
       },
       {
         "name": "Aeschyles",
         "role": "Controller",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aeschyles",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aeschyles",
         "confidence": 1.0
       },
       {
         "name": "Themisteus",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Themisteus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Themisteus",
         "confidence": 1.0
       },
       {
         "name": "Kataios",
         "role": "Judge",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kataios",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Kataios",
         "confidence": 1.0
       },
       {
         "name": "Demetrius",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demetrius",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Demetrius",
         "confidence": 1.0
       },
       {
         "name": "Diodotus",
         "role": "Judge",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Diodotus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Diodotus",
         "confidence": 1.0
       },
       {
         "name": "Cleonymus",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Cleonymus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Cleonymus",
         "confidence": 1.0
       },
       {
         "name": "Theopompus",
         "role": "Secretary",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theopompus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Theopompus",
         "confidence": 1.0
       },
       {
         "name": "Pollodotus",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pollodotus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Pollodotus",
         "confidence": 1.0
       },
       {
         "name": "Agemachus",
         "role": "Judge-escort",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Agemachus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Agemachus",
         "confidence": 1.0
       },
       {
         "name": "Gelaeus",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Gelaeus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Gelaeus",
         "confidence": 1.0
       }
     ],
@@ -141,7 +141,7 @@
       },
       {
         "name": "Tyche",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q213440",
         "confidence": 1.0
       }
     ]

@@ -63,19 +63,19 @@
       {
         "name": "Mantas",
         "role": "Archon and Priest",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Mantas",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Mantas",
         "confidence": 1.0
       },
       {
         "name": "Philokrates",
         "role": "Seller and former owner",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philokrates",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Philokrates",
         "confidence": 1.0
       },
       {
         "name": "Theuphrastos",
         "role": "Father of Philokrates",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theuphrastos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Theuphrastos",
         "confidence": 1.0
       },
       {
@@ -87,43 +87,43 @@
       {
         "name": "Euryps",
         "role": "Guarantor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Euryps",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Euryps",
         "confidence": 1.0
       },
       {
         "name": "Pisitheos",
         "role": "Father of Euryps",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pisitheos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Pisitheos",
         "confidence": 1.0
       },
       {
         "name": "Demarchos",
         "role": "Guarantor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demarchos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Demarchos",
         "confidence": 1.0
       },
       {
         "name": "Eutychidas",
         "role": "Father of Demarchos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eutychidas",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Eutychidas",
         "confidence": 1.0
       },
       {
         "name": "Thambos",
         "role": "Priest",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Thambos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Thambos",
         "confidence": 1.0
       },
       {
         "name": "Polycrates",
         "role": "Archon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Polycrates",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Polycrates",
         "confidence": 1.0
       },
       {
         "name": "Sodamidas",
         "role": "Archon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sodamidas",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Sodamidas",
         "confidence": 1.0
       }
     ],
@@ -150,7 +150,7 @@
     "deities": [
       {
         "name": "Apollo",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q37340",
         "confidence": 1.0
       }
     ]

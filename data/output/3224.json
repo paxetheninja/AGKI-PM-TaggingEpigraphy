@@ -77,25 +77,25 @@
       {
         "name": "Nikodemos",
         "role": "Archon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nikodemos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Nikodemos",
         "confidence": 1.0
       },
       {
         "name": "Epigenes son of Epigonos",
         "role": "Secretary",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Epigenes%20son%20of%20Epigonos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Epigenes%20son%20of%20Epigonos",
         "confidence": 1.0
       },
       {
         "name": "Timon son of Theopompos",
         "role": "Chairman of the Proedroi",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Timon%20son%20of%20Theopompos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Timon%20son%20of%20Theopompos",
         "confidence": 1.0
       },
       {
         "name": "Aphrodisios son of Aphrodisios",
         "role": "Proposer of the decree",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aphrodisios%20son%20of%20Aphrodisios",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aphrodisios%20son%20of%20Aphrodisios",
         "confidence": 1.0
       }
     ],
@@ -140,7 +140,7 @@
     "deities": [
       {
         "name": "Apollo Prostaterios",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q37340",
         "confidence": 1.0
       },
       {

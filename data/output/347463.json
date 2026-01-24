@@ -105,79 +105,79 @@
       {
         "name": "Archelaus",
         "role": "Archon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Archelaus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Archelaus",
         "confidence": 1.0
       },
       {
         "name": "Moschus",
         "role": "Secretary",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Moschus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Moschus",
         "confidence": 1.0
       },
       {
         "name": "Moschion",
         "role": "Father of Moschus",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Moschion",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Moschion",
         "confidence": 1.0
       },
       {
         "name": "Callistratus",
         "role": "Presiding officer (Proedros)",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Callistratus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Callistratus",
         "confidence": 1.0
       },
       {
         "name": "Ecphantus",
         "role": "Speaker and Treasurer of the Council",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ecphantus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Ecphantus",
         "confidence": 1.0
       },
       {
         "name": "Euphanus",
         "role": "Father of Ecphantus",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Euphanus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Euphanus",
         "confidence": 1.0
       },
       {
         "name": "Patrocles",
         "role": "Treasurer of the Prytaneis",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Patrocles",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Patrocles",
         "confidence": 1.0
       },
       {
         "name": "Pollophanes",
         "role": "Secretary of the Prytaneis",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pollophanes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Pollophanes",
         "confidence": 1.0
       },
       {
         "name": "Lysicles",
         "role": "Presiding officer (Proedros)",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lysicles",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Lysicles",
         "confidence": 1.0
       },
       {
         "name": "Pollodorus",
         "role": "Father of Lysicles",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pollodorus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Pollodorus",
         "confidence": 1.0
       },
       {
         "name": "Euboulides",
         "role": "Priest of the Eponymous",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Euboulides",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Euboulides",
         "confidence": 1.0
       },
       {
         "name": "Eucles",
         "role": "Herald of the Council and People",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eucles",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Eucles",
         "confidence": 1.0
       },
       {
         "name": "Lenomus",
         "role": "Under-secretary",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lenomus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Lenomus",
         "confidence": 1.0
       }
     ],
@@ -312,12 +312,12 @@
     "deities": [
       {
         "name": "Apollo Prostaterios",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q37340",
         "confidence": 1.0
       },
       {
         "name": "Artemis Boulaia",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q39503",
         "confidence": 1.0
       }
     ]

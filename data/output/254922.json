@@ -49,475 +49,475 @@
       {
         "name": "Critippus",
         "role": "Payer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Critippus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Critippus",
         "confidence": 0.8
       },
       {
         "name": "Pythagoras",
         "role": "Payer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pythagoras",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Pythagoras",
         "confidence": 1.0
       },
       {
         "name": "Democranes",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Democranes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Democranes",
         "confidence": 1.0
       },
       {
         "name": "Dionysius",
         "role": "Payer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dionysius",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Dionysius",
         "confidence": 1.0
       },
       {
         "name": "Apollophanes",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Apollophanes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Apollophanes",
         "confidence": 1.0
       },
       {
         "name": "Leophanes",
         "role": "Payer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Leophanes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Leophanes",
         "confidence": 1.0
       },
       {
         "name": "Lamprus",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lamprus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Lamprus",
         "confidence": 1.0
       },
       {
         "name": "Pelles",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pelles",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Pelles",
         "confidence": 1.0
       },
       {
         "name": "Mnesilochus",
         "role": "Payer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Mnesilochus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Mnesilochus",
         "confidence": 1.0
       },
       {
         "name": "Androsthenes",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Androsthenes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Androsthenes",
         "confidence": 1.0
       },
       {
         "name": "Alexander",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Alexander",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Alexander",
         "confidence": 1.0
       },
       {
         "name": "Polydamas",
         "role": "Payer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Polydamas",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Polydamas",
         "confidence": 1.0
       },
       {
         "name": "Prytanis",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Prytanis",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Prytanis",
         "confidence": 1.0
       },
       {
         "name": "Menecrates",
         "role": "Payer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Menecrates",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Menecrates",
         "confidence": 1.0
       },
       {
         "name": "Aspasius",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aspasius",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aspasius",
         "confidence": 1.0
       },
       {
         "name": "Theocles",
         "role": "Payer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theocles",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Theocles",
         "confidence": 0.8
       },
       {
         "name": "Perigenes",
         "role": "Payer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Perigenes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Perigenes",
         "confidence": 1.0
       },
       {
         "name": "Hegemon",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hegemon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Hegemon",
         "confidence": 1.0
       },
       {
         "name": "Leomedon",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Leomedon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Leomedon",
         "confidence": 1.0
       },
       {
         "name": "Micion",
         "role": "Payer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Micion",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Micion",
         "confidence": 1.0
       },
       {
         "name": "Metrodorus",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Metrodorus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Metrodorus",
         "confidence": 1.0
       },
       {
         "name": "Tharsynon",
         "role": "Payer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Tharsynon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Tharsynon",
         "confidence": 1.0
       },
       {
         "name": "Polycharmus",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Polycharmus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Polycharmus",
         "confidence": 1.0
       },
       {
         "name": "Archippus",
         "role": "Payer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Archippus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Archippus",
         "confidence": 1.0
       },
       {
         "name": "Polemon",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Polemon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Polemon",
         "confidence": 1.0
       },
       {
         "name": "Heracleitus",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Heracleitus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Heracleitus",
         "confidence": 1.0
       },
       {
         "name": "Agesarchus",
         "role": "Payer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Agesarchus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Agesarchus",
         "confidence": 1.0
       },
       {
         "name": "Theognetus",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theognetus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Theognetus",
         "confidence": 1.0
       },
       {
         "name": "Hipponicus",
         "role": "Payer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hipponicus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Hipponicus",
         "confidence": 1.0
       },
       {
         "name": "Pyrrhus",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pyrrhus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Pyrrhus",
         "confidence": 1.0
       },
       {
         "name": "Aganax",
         "role": "Payer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aganax",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aganax",
         "confidence": 1.0
       },
       {
         "name": "Hermodromus",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hermodromus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Hermodromus",
         "confidence": 1.0
       },
       {
         "name": "Peirocles",
         "role": "Payer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Peirocles",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Peirocles",
         "confidence": 1.0
       },
       {
         "name": "Menecles",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Menecles",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Menecles",
         "confidence": 1.0
       },
       {
         "name": "Sannion",
         "role": "Payer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sannion",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Sannion",
         "confidence": 1.0
       },
       {
         "name": "Aesandrus",
         "role": "Payer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aesandrus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aesandrus",
         "confidence": 1.0
       },
       {
         "name": "Zoilus",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Zoilus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Zoilus",
         "confidence": 1.0
       },
       {
         "name": "Sperchelus",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sperchelus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Sperchelus",
         "confidence": 1.0
       },
       {
         "name": "Crates",
         "role": "Payer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Crates",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Crates",
         "confidence": 1.0
       },
       {
         "name": "Charmus",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Charmus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Charmus",
         "confidence": 1.0
       },
       {
         "name": "Metiochus",
         "role": "Payer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Metiochus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Metiochus",
         "confidence": 1.0
       },
       {
         "name": "Euthymachus",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Euthymachus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Euthymachus",
         "confidence": 1.0
       },
       {
         "name": "Demos",
         "role": "Payer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Demos",
         "confidence": 1.0
       },
       {
         "name": "Myrmex",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Myrmex",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Myrmex",
         "confidence": 1.0
       },
       {
         "name": "Aristomenes",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristomenes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aristomenes",
         "confidence": 1.0
       },
       {
         "name": "Adrastus",
         "role": "Payer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Adrastus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Adrastus",
         "confidence": 1.0
       },
       {
         "name": "Callippus",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Callippus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Callippus",
         "confidence": 1.0
       },
       {
         "name": "Deileon",
         "role": "Payer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Deileon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Deileon",
         "confidence": 1.0
       },
       {
         "name": "Theutimides",
         "role": "Payer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theutimides",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Theutimides",
         "confidence": 1.0
       },
       {
         "name": "Eudemus",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eudemus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Eudemus",
         "confidence": 1.0
       },
       {
         "name": "Agathocles",
         "role": "Payer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Agathocles",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Agathocles",
         "confidence": 1.0
       },
       {
         "name": "Cleonicus",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Cleonicus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Cleonicus",
         "confidence": 1.0
       },
       {
         "name": "Cleonymus",
         "role": "Payer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Cleonymus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Cleonymus",
         "confidence": 1.0
       },
       {
         "name": "Demophon",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demophon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Demophon",
         "confidence": 1.0
       },
       {
         "name": "Leomestor",
         "role": "Payer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Leomestor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Leomestor",
         "confidence": 1.0
       },
       {
         "name": "Eustratides",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eustratides",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Eustratides",
         "confidence": 1.0
       },
       {
         "name": "Pytharchus",
         "role": "Payer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pytharchus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Pytharchus",
         "confidence": 1.0
       },
       {
         "name": "Hestiaeus",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hestiaeus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Hestiaeus",
         "confidence": 1.0
       },
       {
         "name": "Metritimus",
         "role": "Payer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Metritimus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Metritimus",
         "confidence": 1.0
       },
       {
         "name": "Apollonides",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Apollonides",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Apollonides",
         "confidence": 1.0
       },
       {
         "name": "Lysistratus",
         "role": "Payer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lysistratus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Lysistratus",
         "confidence": 1.0
       },
       {
         "name": "Pelys",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pelys",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Pelys",
         "confidence": 1.0
       },
       {
         "name": "Nicostratus",
         "role": "Payer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nicostratus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Nicostratus",
         "confidence": 1.0
       },
       {
         "name": "Hermesianax",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hermesianax",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Hermesianax",
         "confidence": 1.0
       },
       {
         "name": "Menon",
         "role": "Payer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Menon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Menon",
         "confidence": 1.0
       },
       {
         "name": "Alcibiades",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Alcibiades",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Alcibiades",
         "confidence": 1.0
       },
       {
         "name": "Mnesitheides",
         "role": "Payer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Mnesitheides",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Mnesitheides",
         "confidence": 1.0
       },
       {
         "name": "Hellen",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hellen",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Hellen",
         "confidence": 1.0
       },
       {
         "name": "Critoleos",
         "role": "Payer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Critoleos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Critoleos",
         "confidence": 1.0
       },
       {
         "name": "Aegialeus",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aegialeus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aegialeus",
         "confidence": 1.0
       },
       {
         "name": "Polythemis",
         "role": "Payer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Polythemis",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Polythemis",
         "confidence": 1.0
       },
       {
         "name": "Pythes",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pythes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Pythes",
         "confidence": 1.0
       },
       {
         "name": "Casius",
         "role": "Payer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Casius",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Casius",
         "confidence": 1.0
       },
       {
         "name": "Leophantus",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Leophantus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Leophantus",
         "confidence": 1.0
       },
       {
         "name": "Philon",
         "role": "Payer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Philon",
         "confidence": 1.0
       },
       {
         "name": "Axinides",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Axinides",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Axinides",
         "confidence": 1.0
       },
       {
         "name": "Metrobius",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Metrobius",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Metrobius",
         "confidence": 1.0
       },
       {
         "name": "Antilochus",
         "role": "Payer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antilochus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Antilochus",
         "confidence": 1.0
       },
       {
         "name": "Thales",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Thales",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Thales",
         "confidence": 1.0
       },
       {
@@ -529,43 +529,43 @@
       {
         "name": "Laiosius",
         "role": "Payer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Laiosius",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Laiosius",
         "confidence": 1.0
       },
       {
         "name": "Olympidorus",
         "role": "Payer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Olympidorus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Olympidorus",
         "confidence": 1.0
       },
       {
         "name": "Theupropidas",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theupropidas",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Theupropidas",
         "confidence": 1.0
       },
       {
         "name": "Scymnus",
         "role": "Payer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Scymnus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Scymnus",
         "confidence": 1.0
       },
       {
         "name": "Arxenandrus",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Arxenandrus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Arxenandrus",
         "confidence": 1.0
       },
       {
         "name": "Colotes",
         "role": "Payer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Colotes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Colotes",
         "confidence": 1.0
       },
       {
         "name": "Theuxeinides",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theuxeinides",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Theuxeinides",
         "confidence": 1.0
       },
       {
@@ -583,55 +583,55 @@
       {
         "name": "Mentor",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Mentor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Mentor",
         "confidence": 1.0
       },
       {
         "name": "Pausanias",
         "role": "Payer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pausanias",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Pausanias",
         "confidence": 1.0
       },
       {
         "name": "Moschus",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Moschus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Moschus",
         "confidence": 1.0
       },
       {
         "name": "Hippias",
         "role": "Payer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hippias",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Hippias",
         "confidence": 1.0
       },
       {
         "name": "Ischomachus",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ischomachus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Ischomachus",
         "confidence": 1.0
       },
       {
         "name": "Posideus",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Posideus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Posideus",
         "confidence": 1.0
       },
       {
         "name": "Artemidorus",
         "role": "Payer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Artemidorus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Artemidorus",
         "confidence": 1.0
       },
       {
         "name": "Dioscourides",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dioscourides",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Dioscourides",
         "confidence": 1.0
       },
       {
         "name": "Arcanius",
         "role": "Payer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Arcanius",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Arcanius",
         "confidence": 1.0
       },
       {
@@ -655,7 +655,7 @@
       {
         "name": "Zopyrus",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Zopyrus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Zopyrus",
         "confidence": 1.0
       },
       {
@@ -667,19 +667,19 @@
       {
         "name": "Moerias",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Moerias",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Moerias",
         "confidence": 1.0
       },
       {
         "name": "Agathenor",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Agathenor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Agathenor",
         "confidence": 1.0
       },
       {
         "name": "Apollodorus",
         "role": "Payer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Apollodorus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Apollodorus",
         "confidence": 1.0
       },
       {
@@ -691,19 +691,19 @@
       {
         "name": "Hermocrates",
         "role": "Payer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hermocrates",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Hermocrates",
         "confidence": 1.0
       },
       {
         "name": "Metronax",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Metronax",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Metronax",
         "confidence": 1.0
       },
       {
         "name": "Pantaleon",
         "role": "Payer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pantaleon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Pantaleon",
         "confidence": 1.0
       },
       {
@@ -715,19 +715,19 @@
       {
         "name": "Simylus",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Simylus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Simylus",
         "confidence": 1.0
       },
       {
         "name": "Lysimachides",
         "role": "Payer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lysimachides",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Lysimachides",
         "confidence": 1.0
       },
       {
         "name": "Gorgus",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Gorgus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Gorgus",
         "confidence": 1.0
       },
       {
@@ -739,43 +739,43 @@
       {
         "name": "Anaxagoras",
         "role": "Payer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Anaxagoras",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Anaxagoras",
         "confidence": 1.0
       },
       {
         "name": "Aeschrus",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aeschrus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aeschrus",
         "confidence": 1.0
       },
       {
         "name": "Dicaeides",
         "role": "Payer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dicaeides",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Dicaeides",
         "confidence": 1.0
       },
       {
         "name": "Cyniscus",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Cyniscus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Cyniscus",
         "confidence": 1.0
       },
       {
         "name": "Moschion",
         "role": "Payer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Moschion",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Moschion",
         "confidence": 1.0
       },
       {
         "name": "Parmenon",
         "role": "Father",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Parmenon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Parmenon",
         "confidence": 1.0
       },
       {
         "name": "Thearides",
         "role": "Payer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Thearides",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Thearides",
         "confidence": 1.0
       },
       {
@@ -787,7 +787,7 @@
       {
         "name": "Perses",
         "role": "Payer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Perses",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Perses",
         "confidence": 1.0
       }
     ],

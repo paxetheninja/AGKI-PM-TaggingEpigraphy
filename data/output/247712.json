@@ -77,13 +77,13 @@
       {
         "name": "Prytanis",
         "role": "Chief magistrate and religious official",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Prytanis",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Prytanis",
         "confidence": 1.0
       },
       {
         "name": "Hierophant",
         "role": "Religious official who reveals sacred mysteries",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hierophant",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Hierophant",
         "confidence": 1.0
       },
       {
@@ -95,25 +95,25 @@
       {
         "name": "Aulete",
         "role": "Flute player",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aulete",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aulete",
         "confidence": 1.0
       },
       {
         "name": "Salpinktes",
         "role": "Trumpeter",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Salpinktes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Salpinktes",
         "confidence": 1.0
       },
       {
         "name": "Hieroskopos",
         "role": "Sacred observer or diviner",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hieroskopos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Hieroskopos",
         "confidence": 1.0
       },
       {
         "name": "Hebdomokouretis",
         "role": "Member of the college of Kouretes",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hebdomokouretis",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Hebdomokouretis",
         "confidence": 1.0
       }
     ],

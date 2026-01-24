@@ -63,37 +63,37 @@
       {
         "name": "Aristos",
         "role": "Stephanephoros",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aristos",
         "confidence": 0.8
       },
       {
         "name": "Demetrios",
         "role": "Father of Aristos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demetrios",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Demetrios",
         "confidence": 0.8
       },
       {
         "name": "Pythokleides",
         "role": "Secretary of the Council",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pythokleides",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Pythokleides",
         "confidence": 0.8
       },
       {
         "name": "Hegesippos",
         "role": "Father of Pythokleides",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hegesippos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Hegesippos",
         "confidence": 0.8
       },
       {
         "name": "Menestratos",
         "role": "Epistates of the Proedroi",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Menestratos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Menestratos",
         "confidence": 1.0
       },
       {
         "name": "Artemidoros",
         "role": "Father of Menestratos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Artemidoros",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Artemidoros",
         "confidence": 1.0
       }
     ],
@@ -132,17 +132,17 @@
     "deities": [
       {
         "name": "Artemis Leukophryene",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q39503",
         "confidence": 1.0
       },
       {
         "name": "Zeus Sosipolis",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q2303711",
         "confidence": 1.0
       },
       {
         "name": "Apollo Pythios",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q37340",
         "confidence": 1.0
       },
       {

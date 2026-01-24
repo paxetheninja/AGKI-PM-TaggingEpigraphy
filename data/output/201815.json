@@ -91,7 +91,7 @@
       {
         "name": "Sokles",
         "role": "Magistrate or Eponymous Official",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sokles",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Sokles",
         "confidence": 0.8
       }
     ],
@@ -130,7 +130,7 @@
     "deities": [
       {
         "name": "Zeus Cretagenes",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q34201",
         "confidence": 1.0
       },
       {
@@ -140,12 +140,12 @@
       },
       {
         "name": "Zeus Dictaeus",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q34201",
         "confidence": 1.0
       },
       {
         "name": "Zeus Erythrius",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q34201",
         "confidence": 1.0
       },
       {
@@ -160,12 +160,12 @@
       },
       {
         "name": "Athena Aleria",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q37122",
         "confidence": 1.0
       },
       {
         "name": "Athena Polias",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q37122",
         "confidence": 1.0
       },
       {
@@ -175,7 +175,7 @@
       },
       {
         "name": "Apollo Pythius",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q37340",
         "confidence": 1.0
       },
       {
@@ -185,7 +185,7 @@
       },
       {
         "name": "Artemis",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q39503",
         "confidence": 1.0
       },
       {
@@ -195,7 +195,7 @@
       },
       {
         "name": "Aphrodite",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q35500",
         "confidence": 1.0
       },
       {

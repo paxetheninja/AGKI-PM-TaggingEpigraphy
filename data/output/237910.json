@@ -77,37 +77,37 @@
       {
         "name": "Philodamos",
         "role": "Poet and honoree",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philodamos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Philodamos",
         "confidence": 1.0
       },
       {
         "name": "Ainesidemos",
         "role": "Father of Philodamos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ainesidemos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Ainesidemos",
         "confidence": 1.0
       },
       {
         "name": "Tymondas",
         "role": "Archon of Delphi",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Tymondas",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Tymondas",
         "confidence": 1.0
       },
       {
         "name": "Pleistion",
         "role": "Council member",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pleistion",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Pleistion",
         "confidence": 1.0
       },
       {
         "name": "Kallikrates",
         "role": "Council member",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kallikrates",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Kallikrates",
         "confidence": 1.0
       },
       {
         "name": "Cadmus",
         "role": "Mythological founder of Thebes",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Cadmus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Cadmus",
         "confidence": 1.0
       }
     ],
@@ -175,7 +175,7 @@
       },
       {
         "name": "Apollo",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q37340",
         "confidence": 1.0
       },
       {

@@ -63,43 +63,43 @@
       {
         "name": "Aurelius Septimius Eutychus",
         "role": "Athlete and citizen of Laodicea",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aurelius%20Septimius%20Eutychus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aurelius%20Septimius%20Eutychus",
         "confidence": 1.0
       },
       {
         "name": "Irenaeus",
         "role": "Father of the athlete",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Irenaeus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Irenaeus",
         "confidence": 1.0
       },
       {
         "name": "Messalla",
         "role": "Roman Consul (dating)",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Messalla",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Messalla",
         "confidence": 1.0
       },
       {
         "name": "Sabinus",
         "role": "Roman Consul (dating)",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sabinus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Sabinus",
         "confidence": 1.0
       },
       {
         "name": "Epitynchanon",
         "role": "Local official (dating)",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Epitynchanon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Epitynchanon",
         "confidence": 1.0
       },
       {
         "name": "Gratus",
         "role": "Father of local official",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Gratus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Gratus",
         "confidence": 1.0
       },
       {
         "name": "Vitellius Seleucus",
         "role": "Local official (dating)",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Vitellius%20Seleucus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Vitellius%20Seleucus",
         "confidence": 1.0
       }
     ],
@@ -264,7 +264,7 @@
     "deities": [
       {
         "name": "Apollo",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q37340",
         "confidence": 0.8
       },
       {

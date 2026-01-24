@@ -63,31 +63,31 @@
       {
         "name": "Marcus Aurelius Antoninus",
         "role": "Emperor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Marcus%20Aurelius%20Antoninus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Marcus%20Aurelius%20Antoninus",
         "confidence": 1.0
       },
       {
         "name": "Lucius Aurelius Verus",
         "role": "Emperor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lucius%20Aurelius%20Verus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Lucius%20Aurelius%20Verus",
         "confidence": 1.0
       },
       {
         "name": "Ulpius Eurycles",
         "role": "Logistes (Auditor) of the Gerousia",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ulpius%20Eurycles",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Ulpius%20Eurycles",
         "confidence": 1.0
       },
       {
         "name": "Saturninus",
         "role": "Public slave or official",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Saturninus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Saturninus",
         "confidence": 0.8
       },
       {
         "name": "Sabinus",
         "role": "Grandfather",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sabinus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Sabinus",
         "confidence": 0.8
       }
     ],

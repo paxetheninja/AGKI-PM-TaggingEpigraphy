@@ -91,157 +91,157 @@
       {
         "name": "Autokleides",
         "role": "Lessee",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Autokleides",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Autokleides",
         "confidence": 1.0
       },
       {
         "name": "Kallias",
         "role": "Property owner",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kallias",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Kallias",
         "confidence": 1.0
       },
       {
         "name": "Kleonymos",
         "role": "Lessee",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kleonymos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Kleonymos",
         "confidence": 1.0
       },
       {
         "name": "Philochares",
         "role": "Father of Kleonymos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philochares",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Philochares",
         "confidence": 1.0
       },
       {
         "name": "Euthykrates",
         "role": "Lessee",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Euthykrates",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Euthykrates",
         "confidence": 1.0
       },
       {
         "name": "Antidotos",
         "role": "Father of Euthykrates",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antidotos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Antidotos",
         "confidence": 1.0
       },
       {
         "name": "Mentor",
         "role": "Lessee",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Mentor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Mentor",
         "confidence": 1.0
       },
       {
         "name": "Arkesilaos",
         "role": "Father of Mentor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Arkesilaos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Arkesilaos",
         "confidence": 1.0
       },
       {
         "name": "Menexenos",
         "role": "Lessee",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Menexenos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Menexenos",
         "confidence": 1.0
       },
       {
         "name": "Metaxenos",
         "role": "Father of Menexenos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Metaxenos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Metaxenos",
         "confidence": 1.0
       },
       {
         "name": "Lysanias",
         "role": "Lessee",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lysanias",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Lysanias",
         "confidence": 1.0
       },
       {
         "name": "Lysikles",
         "role": "Father of Lysanias",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lysikles",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Lysikles",
         "confidence": 1.0
       },
       {
         "name": "Aristoteles",
         "role": "Lessee",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristoteles",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aristoteles",
         "confidence": 1.0
       },
       {
         "name": "Psidos",
         "role": "Father of Aristoteles",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Psidos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Psidos",
         "confidence": 1.0
       },
       {
         "name": "Theodoros",
         "role": "Lessee",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theodoros",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Theodoros",
         "confidence": 1.0
       },
       {
         "name": "Olympichos",
         "role": "Father of Theodoros",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Olympichos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Olympichos",
         "confidence": 1.0
       },
       {
         "name": "Asimides",
         "role": "Lessee",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Asimides",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Asimides",
         "confidence": 1.0
       },
       {
         "name": "Diophanes",
         "role": "Father of Asimides",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Diophanes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Diophanes",
         "confidence": 1.0
       },
       {
         "name": "Timokleides",
         "role": "Lessee",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Timokleides",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Timokleides",
         "confidence": 1.0
       },
       {
         "name": "Psechades",
         "role": "Father of Timokleides",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Psechades",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Psechades",
         "confidence": 1.0
       },
       {
         "name": "Epikrates",
         "role": "Lessee",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Epikrates",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Epikrates",
         "confidence": 1.0
       },
       {
         "name": "Sokrates",
         "role": "Father of Epikrates",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sokrates",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Sokrates",
         "confidence": 1.0
       },
       {
         "name": "Callimachus",
         "role": "Archon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Callimachus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Callimachus",
         "confidence": 1.0
       },
       {
         "name": "Theophilus",
         "role": "Archon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theophilus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Theophilus",
         "confidence": 1.0
       },
       {
         "name": "Konon",
         "role": "Workshop owner",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Konon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Konon",
         "confidence": 1.0
       },
       {
         "name": "Diotimos",
         "role": "Workshop owner",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Diotimos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Diotimos",
         "confidence": 1.0
       }
     ],
@@ -315,7 +315,7 @@
       },
       {
         "name": "Artemis",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q39503",
         "confidence": 1.0
       },
       {
@@ -330,7 +330,7 @@
       },
       {
         "name": "Apollo",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q37340",
         "confidence": 1.0
       },
       {

@@ -91,61 +91,61 @@
       {
         "name": "Flavius (Hierophant of Paiania)",
         "role": "Hierophant and subject of the inscription",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Flavius%20%28Hierophant%20of%20Paiania%29",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Flavius%20%28Hierophant%20of%20Paiania%29",
         "confidence": 1.0
       },
       {
         "name": "Flavius Alcibiades",
         "role": "Father of the subject and former Eponymous Archon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Flavius%20Alcibiades",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Flavius%20Alcibiades",
         "confidence": 1.0
       },
       {
         "name": "Flavius Leosthenes",
         "role": "Paternal ancestor and former Eponymous Archon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Flavius%20Leosthenes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Flavius%20Leosthenes",
         "confidence": 1.0
       },
       {
         "name": "Hadrian",
         "role": "Deified Roman Emperor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hadrian",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Hadrian",
         "confidence": 1.0
       },
       {
         "name": "Antoninus Pius",
         "role": "Deified Roman Emperor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antoninus%20Pius",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Antoninus%20Pius",
         "confidence": 1.0
       },
       {
         "name": "Lucius Aurelius Verus",
         "role": "Roman Emperor initiated into the Mysteries by the subject",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lucius%20Aurelius%20Verus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Lucius%20Aurelius%20Verus",
         "confidence": 1.0
       },
       {
         "name": "Flavia Isidora",
         "role": "Mother of the subject",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Flavia%20Isidora",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Flavia%20Isidora",
         "confidence": 1.0
       },
       {
         "name": "Flavius Heracleitus",
         "role": "Maternal grandfather",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Flavius%20Heracleitus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Flavius%20Heracleitus",
         "confidence": 1.0
       },
       {
         "name": "Domitia Laodameia",
         "role": "Maternal grandmother",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Domitia%20Laodameia",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Domitia%20Laodameia",
         "confidence": 1.0
       },
       {
         "name": "Craterus",
         "role": "Maternal great-grandfather",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Craterus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Craterus",
         "confidence": 1.0
       }
     ],
@@ -172,7 +172,7 @@
     "deities": [
       {
         "name": "Tyche",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q213440",
         "confidence": 1.0
       }
     ]

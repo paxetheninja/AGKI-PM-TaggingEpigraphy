@@ -77,25 +77,25 @@
       {
         "name": "Posidonius",
         "role": "Strategos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Posidonius",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Posidonius",
         "confidence": 1.0
       },
       {
         "name": "Gnaeus Vergilius Capito",
         "role": "Prefect of Egypt",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Gnaeus%20Vergilius%20Capito",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Gnaeus%20Vergilius%20Capito",
         "confidence": 1.0
       },
       {
         "name": "Tiberius Claudius Caesar",
         "role": "Emperor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Tiberius%20Claudius%20Caesar",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Tiberius%20Claudius%20Caesar",
         "confidence": 1.0
       },
       {
         "name": "Basilides",
         "role": "Imperial Freedman and Auditor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Basilides",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Basilides",
         "confidence": 1.0
       }
     ],

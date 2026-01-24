@@ -63,43 +63,43 @@
       {
         "name": "Monarch",
         "role": "Eponymous official of Kos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Monarch",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Monarch",
         "confidence": 1.0
       },
       {
         "name": "Hieropoioi",
         "role": "Sacred officials responsible for sacrifices",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hieropoioi",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Hieropoioi",
         "confidence": 1.0
       },
       {
         "name": "Treasurers",
         "role": "Financial officials (Tamiai)",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Treasurers",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Treasurers",
         "confidence": 1.0
       },
       {
         "name": "Damarchs",
         "role": "Deme officials",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Damarchs",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Damarchs",
         "confidence": 1.0
       },
       {
         "name": "Prostatai",
         "role": "Civic magistrates",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Prostatai",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Prostatai",
         "confidence": 1.0
       },
       {
         "name": "Priest",
         "role": "Religious official performing libations",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Priest",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Priest",
         "confidence": 1.0
       },
       {
         "name": "Epimenioi",
         "role": "Monthly officials selected from demes",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Epimenioi",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Epimenioi",
         "confidence": 0.8
       }
     ],
@@ -137,7 +137,7 @@
       },
       {
         "name": "Apollo Kyparissios",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q37340",
         "confidence": 1.0
       },
       {

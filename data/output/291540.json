@@ -91,67 +91,67 @@
       {
         "name": "Epipolemos",
         "role": "Donor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Epipolemos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Epipolemos",
         "confidence": 1.0
       },
       {
         "name": "Oinochares",
         "role": "Donor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Oinochares",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Oinochares",
         "confidence": 1.0
       },
       {
         "name": "Hieronymos",
         "role": "Donor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hieronymos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Hieronymos",
         "confidence": 1.0
       },
       {
         "name": "Xenophon",
         "role": "Father of Hieronymos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Xenophon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Xenophon",
         "confidence": 1.0
       },
       {
         "name": "Chairekrates",
         "role": "Donor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Chairekrates",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Chairekrates",
         "confidence": 1.0
       },
       {
         "name": "Sotelos",
         "role": "Father of Chairekrates",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sotelos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Sotelos",
         "confidence": 1.0
       },
       {
         "name": "Nikoxenos",
         "role": "Donor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nikoxenos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Nikoxenos",
         "confidence": 0.8
       },
       {
         "name": "Chabrias",
         "role": "Donor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Chabrias",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Chabrias",
         "confidence": 1.0
       },
       {
         "name": "Ktesippos",
         "role": "Father of Chabrias",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ktesippos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Ktesippos",
         "confidence": 1.0
       },
       {
         "name": "Demodokos",
         "role": "Individual mentioned",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demodokos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Demodokos",
         "confidence": 1.0
       },
       {
         "name": "Telokles",
         "role": "Individual mentioned",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Telokles",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Telokles",
         "confidence": 1.0
       }
     ],
@@ -201,7 +201,7 @@
       },
       {
         "name": "Athena",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q37122",
         "confidence": 1.0
       }
     ]

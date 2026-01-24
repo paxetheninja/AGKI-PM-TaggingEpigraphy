@@ -119,19 +119,19 @@
       {
         "name": "Kratesis son of Kousopas",
         "role": "Benefactor and Proxenos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kratesis%20son%20of%20Kousopas",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Kratesis%20son%20of%20Kousopas",
         "confidence": 1.0
       },
       {
         "name": "Eucratidas",
         "role": "Eponymous Ephor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eucratidas",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Eucratidas",
         "confidence": 0.9
       },
       {
         "name": "Ephors",
         "role": "City officials",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ephors",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Ephors",
         "confidence": 1.0
       }
     ],
@@ -158,7 +158,7 @@
     "deities": [
       {
         "name": "Apollo Hyperteleatas",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q37340",
         "confidence": 1.0
       }
     ]

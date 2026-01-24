@@ -35,31 +35,31 @@
       {
         "name": "Quintus Oppius",
         "role": "Proconsul and General",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Quintus%20Oppius",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Quintus%20Oppius",
         "confidence": 1.0
       },
       {
         "name": "Artemidorus",
         "role": "Stephanophoros and Envoy",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Artemidorus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Artemidorus",
         "confidence": 1.0
       },
       {
         "name": "Attalus",
         "role": "General of the Territory",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Attalus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Attalus",
         "confidence": 1.0
       },
       {
         "name": "Menander",
         "role": "Father of Attalus",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Menander",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Menander",
         "confidence": 1.0
       },
       {
         "name": "Antiochus",
         "role": "Secretary of the People",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antiochus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Antiochus",
         "confidence": 1.0
       }
     ],

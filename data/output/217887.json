@@ -63,91 +63,91 @@
       {
         "name": "Marcus Aurelius Antoninus",
         "role": "Emperor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Marcus%20Aurelius%20Antoninus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Marcus%20Aurelius%20Antoninus",
         "confidence": 1.0
       },
       {
         "name": "Apollonius",
         "role": "High Priest",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Apollonius",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Apollonius",
         "confidence": 1.0
       },
       {
         "name": "Leonides",
         "role": "High Priest",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Leonides",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Leonides",
         "confidence": 1.0
       },
       {
         "name": "Seleucus",
         "role": "High Priest",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Seleucus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Seleucus",
         "confidence": 1.0
       },
       {
         "name": "Hierax",
         "role": "High Priest",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hierax",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Hierax",
         "confidence": 1.0
       },
       {
         "name": "Alexander",
         "role": "Gymnasiarch and Strategos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Alexander",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Alexander",
         "confidence": 1.0
       },
       {
         "name": "Aurelius Polycles",
         "role": "High Priest and Royal Scribe",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aurelius%20Polycles",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aurelius%20Polycles",
         "confidence": 1.0
       },
       {
         "name": "Achillammon",
         "role": "High Priest and Agoranomos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Achillammon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Achillammon",
         "confidence": 1.0
       },
       {
         "name": "Aurelius Asclepiades",
         "role": "Gymnasiarch and Strategos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aurelius%20Asclepiades",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aurelius%20Asclepiades",
         "confidence": 1.0
       },
       {
         "name": "Sarapion Serenus",
         "role": "Gymnasiarch",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sarapion%20Serenus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Sarapion%20Serenus",
         "confidence": 1.0
       },
       {
         "name": "Herennius Polycles Titianus",
         "role": "Gymnasiarch",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Herennius%20Polycles%20Titianus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Herennius%20Polycles%20Titianus",
         "confidence": 1.0
       },
       {
         "name": "Isidorus Zosimus",
         "role": "High Priest and Strategos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Isidorus%20Zosimus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Isidorus%20Zosimus",
         "confidence": 1.0
       },
       {
         "name": "Areius",
         "role": "High Priest and Royal Scribe",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Areius",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Areius",
         "confidence": 1.0
       },
       {
         "name": "Sarapion Ammonius",
         "role": "High Priest",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sarapion%20Ammonius",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Sarapion%20Ammonius",
         "confidence": 1.0
       },
       {
         "name": "Hierax Hieraskos",
         "role": "High Priest",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hierax%20Hieraskos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Hierax%20Hieraskos",
         "confidence": 1.0
       }
     ],

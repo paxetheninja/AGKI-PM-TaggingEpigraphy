@@ -49,25 +49,25 @@
       {
         "name": "Xystarches",
         "role": "Official in charge of the gymnasium",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Xystarches",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Xystarches",
         "confidence": 1.0
       },
       {
         "name": "Panegyriarches",
         "role": "Festival director",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Panegyriarches",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Panegyriarches",
         "confidence": 1.0
       },
       {
         "name": "Secretaries",
         "role": "Administrative officials",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Secretaries",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Secretaries",
         "confidence": 1.0
       },
       {
         "name": "Statue Makers",
         "role": "Sculptors",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Statue%20Makers",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Statue%20Makers",
         "confidence": 1.0
       }
     ],
@@ -94,7 +94,7 @@
     "deities": [
       {
         "name": "Apollo",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q37340",
         "confidence": 0.8
       }
     ]

@@ -105,25 +105,25 @@
       {
         "name": "Nicomachus",
         "role": "Treasurer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nicomachus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Nicomachus",
         "confidence": 1.0
       },
       {
         "name": "Phanostrate",
         "role": "Dedicator",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Phanostrate",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Phanostrate",
         "confidence": 1.0
       },
       {
         "name": "Phylarchos",
         "role": "Dedicator",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Phylarchos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Phylarchos",
         "confidence": 1.0
       },
       {
         "name": "Anax...",
         "role": "Father of Phanostrate",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Anax...",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Anax...",
         "confidence": 0.5
       }
     ],
@@ -143,7 +143,7 @@
       },
       {
         "name": "Athena",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q37122",
         "confidence": 0.8
       }
     ]

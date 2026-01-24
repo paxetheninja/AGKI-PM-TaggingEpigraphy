@@ -49,31 +49,31 @@
       {
         "name": "Glaukos",
         "role": "Honoree",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Glaukos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Glaukos",
         "confidence": 1.0
       },
       {
         "name": "Eudorus",
         "role": "Father of Glaukos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eudorus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Eudorus",
         "confidence": 1.0
       },
       {
         "name": "Alexippus",
         "role": "Strategos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Alexippus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Alexippus",
         "confidence": 1.0
       },
       {
         "name": "Hippolochus",
         "role": "Father of Alexippus",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hippolochus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Hippolochus",
         "confidence": 1.0
       },
       {
         "name": "Theodorus",
         "role": "Father of a magistrate",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theodorus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Theodorus",
         "confidence": 0.8
       }
     ],

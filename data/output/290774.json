@@ -91,37 +91,37 @@
       {
         "name": "Demostratos",
         "role": "Honored citizen of Phlya",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demostratos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Demostratos",
         "confidence": 1.0
       },
       {
         "name": "Leon",
         "role": "Overseer from Aithalidai",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Leon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Leon",
         "confidence": 1.0
       },
       {
         "name": "Gnon",
         "role": "Father of Leon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Gnon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Gnon",
         "confidence": 1.0
       },
       {
         "name": "Antiphanes",
         "role": "Committee member from Oion",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antiphanes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Antiphanes",
         "confidence": 1.0
       },
       {
         "name": "Xenophilos",
         "role": "Committee member from Kydantidai",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Xenophilos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Xenophilos",
         "confidence": 1.0
       },
       {
         "name": "Theogeiton",
         "role": "Committee member from Rhamnous",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theogeiton",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Theogeiton",
         "confidence": 1.0
       }
     ],
@@ -166,12 +166,12 @@
     "deities": [
       {
         "name": "Zeus Soter",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q34201",
         "confidence": 1.0
       },
       {
         "name": "Athena Soteira",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q37122",
         "confidence": 1.0
       }
     ]

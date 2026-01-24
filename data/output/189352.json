@@ -49,37 +49,37 @@
       {
         "name": "Dionysius",
         "role": "Charioteer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dionysius",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Dionysius",
         "confidence": 1.0
       },
       {
         "name": "Lamyrus",
         "role": "Charioteer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lamyrus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Lamyrus",
         "confidence": 1.0
       },
       {
         "name": "Estoutianus",
         "role": "Charioteer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Estoutianus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Estoutianus",
         "confidence": 1.0
       },
       {
         "name": "Protus",
         "role": "Charioteer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Protus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Protus",
         "confidence": 1.0
       },
       {
         "name": "Phelekes",
         "role": "Charioteer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Phelekes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Phelekes",
         "confidence": 1.0
       },
       {
         "name": "Narcissus",
         "role": "Charioteer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Narcissus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Narcissus",
         "confidence": 1.0
       }
     ],

@@ -77,13 +77,13 @@
       {
         "name": "Apollonius",
         "role": "Physician and Benefactor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Apollonius",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Apollonius",
         "confidence": 1.0
       },
       {
         "name": "Hierocles",
         "role": "Father of Apollonius",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hierocles",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Hierocles",
         "confidence": 1.0
       }
     ],
@@ -114,7 +114,7 @@
       },
       {
         "name": "Apollo",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q37340",
         "confidence": 1.0
       },
       {

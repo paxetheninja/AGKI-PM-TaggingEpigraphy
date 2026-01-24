@@ -77,73 +77,73 @@
       {
         "name": "Sostratos",
         "role": "Witness or party to a legal act",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sostratos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Sostratos",
         "confidence": 0.8
       },
       {
         "name": "Argeios",
         "role": "Witness or party to a legal act",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Argeios",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Argeios",
         "confidence": 0.8
       },
       {
         "name": "Hippos",
         "role": "Individual mentioned in legal context",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hippos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Hippos",
         "confidence": 0.8
       },
       {
         "name": "Aeschines",
         "role": "Father of Hippos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aeschines",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aeschines",
         "confidence": 0.8
       },
       {
         "name": "Euphorbos",
         "role": "Gymnasiarch",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Euphorbos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Euphorbos",
         "confidence": 1.0
       },
       {
         "name": "Kratesipolis",
         "role": "Landowner",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kratesipolis",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Kratesipolis",
         "confidence": 0.9
       },
       {
         "name": "Hippocrates",
         "role": "Recipient or buyer of property",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hippocrates",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Hippocrates",
         "confidence": 0.9
       },
       {
         "name": "Democrates",
         "role": "Father of Hippocrates",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Democrates",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Democrates",
         "confidence": 0.9
       },
       {
         "name": "Aristokles",
         "role": "Litigant or party in a lawsuit",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristokles",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aristokles",
         "confidence": 0.9
       },
       {
         "name": "Nikonidas",
         "role": "Father of Aristokles",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nikonidas",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Nikonidas",
         "confidence": 0.9
       },
       {
         "name": "Nausimachos",
         "role": "Individual mentioned in property context",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nausimachos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Nausimachos",
         "confidence": 0.8
       },
       {
         "name": "Eustratos",
         "role": "Father of Sostratos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eustratos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Eustratos",
         "confidence": 0.7
       }
     ],

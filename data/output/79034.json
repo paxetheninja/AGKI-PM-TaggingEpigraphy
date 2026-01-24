@@ -77,61 +77,61 @@
       {
         "name": "Hegesippos",
         "role": "Honoree and son of Hegesistratos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hegesippos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Hegesippos",
         "confidence": 1.0
       },
       {
         "name": "Antipappos",
         "role": "Honoree and son of Hegesistratos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antipappos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Antipappos",
         "confidence": 1.0
       },
       {
         "name": "Hegesistratos",
         "role": "Father of the honorees",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hegesistratos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Hegesistratos",
         "confidence": 1.0
       },
       {
         "name": "Sokleidas",
         "role": "Pirate leader",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sokleidas",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Sokleidas",
         "confidence": 1.0
       },
       {
         "name": "Soterides",
         "role": "Official or secretary",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Soterides",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Soterides",
         "confidence": 1.0
       },
       {
         "name": "Phedios",
         "role": "Father of Soterides",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Phedios",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Phedios",
         "confidence": 1.0
       },
       {
         "name": "Philoxenos",
         "role": "Presiding official",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philoxenos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Philoxenos",
         "confidence": 1.0
       },
       {
         "name": "Philothymios",
         "role": "Father of Philoxenos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philothymios",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Philothymios",
         "confidence": 1.0
       },
       {
         "name": "Lysites",
         "role": "Proposer of the decree",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lysites",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Lysites",
         "confidence": 1.0
       },
       {
         "name": "Dorieus",
         "role": "Owner of the captured ship",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dorieus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Dorieus",
         "confidence": 1.0
       }
     ],
@@ -152,7 +152,7 @@
     "deities": [
       {
         "name": "Athena",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q37122",
         "confidence": 1.0
       },
       {

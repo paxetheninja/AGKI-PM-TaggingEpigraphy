@@ -91,31 +91,31 @@
       {
         "name": "Niketes",
         "role": "Archon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Niketes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Niketes",
         "confidence": 1.0
       },
       {
         "name": "Aristophon son of Aristophon of Anagyrous",
         "role": "Secretary",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristophon%20son%20of%20Aristophon%20of%20Anagyrous",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aristophon%20son%20of%20Aristophon%20of%20Anagyrous",
         "confidence": 1.0
       },
       {
         "name": "Epichares of Agnous",
         "role": "Chairman of the assembly",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Epichares%20of%20Agnous",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Epichares%20of%20Agnous",
         "confidence": 1.0
       },
       {
         "name": "Phanodemos son of Diyllos of Thymaitadai",
         "role": "Proposer of the decree",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Phanodemos%20son%20of%20Diyllos%20of%20Thymaitadai",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Phanodemos%20son%20of%20Diyllos%20of%20Thymaitadai",
         "confidence": 1.0
       },
       {
         "name": "Diyllos",
         "role": "Father of Phanodemos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Diyllos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Diyllos",
         "confidence": 1.0
       }
     ],

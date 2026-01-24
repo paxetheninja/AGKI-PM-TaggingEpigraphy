@@ -63,25 +63,25 @@
       {
         "name": "Glycon",
         "role": "Physician and husband of Pantheia",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Glycon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Glycon",
         "confidence": 1.0
       },
       {
         "name": "Pantheia",
         "role": "Wife of Glycon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pantheia",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Pantheia",
         "confidence": 1.0
       },
       {
         "name": "Hippocrates",
         "role": "Famous ancient physician used as a standard of comparison for Glycon's skill",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hippocrates",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Hippocrates",
         "confidence": 1.0
       },
       {
         "name": "Philadelphus",
         "role": "Epithet or cognomen of the deceased Glycon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philadelphus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Philadelphus",
         "confidence": 0.9
       }
     ],

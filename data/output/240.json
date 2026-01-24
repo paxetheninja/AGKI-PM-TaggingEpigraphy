@@ -91,19 +91,19 @@
       {
         "name": "Basileus",
         "role": "Magistrate or King responsible for religious affairs",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Basileus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Basileus",
         "confidence": 0.9
       },
       {
         "name": "Herald",
         "role": "Religious official",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Herald",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Herald",
         "confidence": 0.8
       },
       {
         "name": "Initiates",
         "role": "Participants in mystery cults",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Initiates",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Initiates",
         "confidence": 0.9
       }
     ],

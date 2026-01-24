@@ -63,25 +63,25 @@
       {
         "name": "Diocletian",
         "role": "Emperor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Diocletian",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Diocletian",
         "confidence": 1.0
       },
       {
         "name": "Maximian",
         "role": "Emperor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Maximian",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Maximian",
         "confidence": 1.0
       },
       {
         "name": "Constantius",
         "role": "Caesar",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Constantius",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Constantius",
         "confidence": 1.0
       },
       {
         "name": "Galerius",
         "role": "Caesar",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Galerius",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Galerius",
         "confidence": 1.0
       }
     ],

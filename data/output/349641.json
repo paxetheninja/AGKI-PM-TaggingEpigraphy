@@ -77,73 +77,73 @@
       {
         "name": "Charmanos",
         "role": "Contributor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Charmanos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Charmanos",
         "confidence": 1.0
       },
       {
         "name": "Charmipos",
         "role": "Contributor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Charmipos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Charmipos",
         "confidence": 1.0
       },
       {
         "name": "Aristolochos",
         "role": "Contributor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristolochos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aristolochos",
         "confidence": 1.0
       },
       {
         "name": "Alexander",
         "role": "Contributor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Alexander",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Alexander",
         "confidence": 1.0
       },
       {
         "name": "Ptolemaios",
         "role": "Contributor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ptolemaios",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Ptolemaios",
         "confidence": 1.0
       },
       {
         "name": "Ariston",
         "role": "Contributor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ariston",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Ariston",
         "confidence": 1.0
       },
       {
         "name": "Theodoros",
         "role": "Contributor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theodoros",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Theodoros",
         "confidence": 1.0
       },
       {
         "name": "Nikagoras",
         "role": "Contributor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nikagoras",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Nikagoras",
         "confidence": 1.0
       },
       {
         "name": "Pythagoras",
         "role": "Contributor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pythagoras",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Pythagoras",
         "confidence": 1.0
       },
       {
         "name": "Philippos",
         "role": "Contributor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philippos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Philippos",
         "confidence": 1.0
       },
       {
         "name": "Demetrios",
         "role": "Contributor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demetrios",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Demetrios",
         "confidence": 1.0
       },
       {
         "name": "Aristagoras",
         "role": "Contributor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristagoras",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aristagoras",
         "confidence": 1.0
       }
     ],
@@ -182,7 +182,7 @@
     "deities": [
       {
         "name": "Asklepios",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q83223",
         "confidence": 1.0
       }
     ]

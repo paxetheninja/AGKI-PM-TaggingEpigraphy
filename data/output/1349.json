@@ -63,7 +63,7 @@
       {
         "name": "Lykon",
         "role": "Trierarch",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lykon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Lykon",
         "confidence": 1.0
       },
       {
@@ -99,25 +99,25 @@
       {
         "name": "Diokleides",
         "role": "Citizen of Oineis tribe",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Diokleides",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Diokleides",
         "confidence": 1.0
       },
       {
         "name": "Telesagoros",
         "role": "Citizen of Kekropis tribe",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Telesagoros",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Telesagoros",
         "confidence": 1.0
       },
       {
         "name": "Pythodoros",
         "role": "Phylarch of Hippothontis tribe",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pythodoros",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Pythodoros",
         "confidence": 1.0
       },
       {
         "name": "Sostratos",
         "role": "Foreigner/Barbarian",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sostratos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Sostratos",
         "confidence": 1.0
       }
     ],

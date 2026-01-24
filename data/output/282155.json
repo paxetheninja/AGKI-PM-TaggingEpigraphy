@@ -49,37 +49,37 @@
       {
         "name": "Aurelius Demetrius",
         "role": "Member of the association",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aurelius%20Demetrius",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aurelius%20Demetrius",
         "confidence": 1.0
       },
       {
         "name": "Aurelius Alexander",
         "role": "Brabeutes (official)",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aurelius%20Alexander",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aurelius%20Alexander",
         "confidence": 1.0
       },
       {
         "name": "Aurelius Zoticus",
         "role": "Member of the association",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aurelius%20Zoticus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aurelius%20Zoticus",
         "confidence": 1.0
       },
       {
         "name": "Lucretius Quintus",
         "role": "Member of the association",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lucretius%20Quintus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Lucretius%20Quintus",
         "confidence": 1.0
       },
       {
         "name": "Aurelius Timotheus",
         "role": "Member of the association",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aurelius%20Timotheus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aurelius%20Timotheus",
         "confidence": 1.0
       },
       {
         "name": "Marcus Septimius",
         "role": "Member of the association",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Marcus%20Septimius",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Marcus%20Septimius",
         "confidence": 1.0
       }
     ],
@@ -124,12 +124,12 @@
     "deities": [
       {
         "name": "Artemis",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q39503",
         "confidence": 1.0
       },
       {
         "name": "Tyche",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q213440",
         "confidence": 1.0
       }
     ]

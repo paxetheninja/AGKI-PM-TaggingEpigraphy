@@ -105,67 +105,67 @@
       {
         "name": "Aurelia Julia Menelais",
         "role": "Benefactor or relative of official",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aurelia%20Julia%20Menelais",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aurelia%20Julia%20Menelais",
         "confidence": 1.0
       },
       {
         "name": "Herodes",
         "role": "Father of Aurelia Julia Menelais",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Herodes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Herodes",
         "confidence": 1.0
       },
       {
         "name": "Menelaus",
         "role": "Asiarch and grandfather",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Menelaus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Menelaus",
         "confidence": 0.9
       },
       {
         "name": "Marcus Aurelius Merimnus",
         "role": "Ephebarch",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Marcus%20Aurelius%20Merimnus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Marcus%20Aurelius%20Merimnus",
         "confidence": 1.0
       },
       {
         "name": "Marcus Aurelius Faustinus",
         "role": "Former Ephebarch and brother",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Marcus%20Aurelius%20Faustinus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Marcus%20Aurelius%20Faustinus",
         "confidence": 1.0
       },
       {
         "name": "Aelius Lallius Egnatius Elpistos",
         "role": "Aigikoreus and Ephebe",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aelius%20Lallius%20Egnatius%20Elpistos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aelius%20Lallius%20Egnatius%20Elpistos",
         "confidence": 1.0
       },
       {
         "name": "Aurelius Eutyches",
         "role": "Dioiketes",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aurelius%20Eutyches",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aurelius%20Eutyches",
         "confidence": 1.0
       },
       {
         "name": "Valerius Maximus",
         "role": "Ephebe",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Valerius%20Maximus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Valerius%20Maximus",
         "confidence": 1.0
       },
       {
         "name": "Valerius Victorinus",
         "role": "Ephebe",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Valerius%20Victorinus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Valerius%20Victorinus",
         "confidence": 1.0
       },
       {
         "name": "Vulcacius Eutyches",
         "role": "Ephebe",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Vulcacius%20Eutyches",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Vulcacius%20Eutyches",
         "confidence": 1.0
       },
       {
         "name": "Aurelius Heracleides",
         "role": "Trichonistes",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aurelius%20Heracleides",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aurelius%20Heracleides",
         "confidence": 0.9
       }
     ],
@@ -186,7 +186,7 @@
     "deities": [
       {
         "name": "Tyche",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q213440",
         "confidence": 1.0
       },
       {

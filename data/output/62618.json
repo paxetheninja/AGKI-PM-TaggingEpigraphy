@@ -63,73 +63,73 @@
       {
         "name": "Aristobulus",
         "role": "Father of children mentioned",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristobulus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aristobulus",
         "confidence": 1.0
       },
       {
         "name": "Diacritus",
         "role": "Guarantor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Diacritus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Diacritus",
         "confidence": 1.0
       },
       {
         "name": "Cleocritus",
         "role": "Tenant or house owner",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Cleocritus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Cleocritus",
         "confidence": 1.0
       },
       {
         "name": "Pistoxenus",
         "role": "Landowner",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pistoxenus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Pistoxenus",
         "confidence": 1.0
       },
       {
         "name": "Aristarchus",
         "role": "Worker from Carystus",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristarchus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aristarchus",
         "confidence": 1.0
       },
       {
         "name": "Craton",
         "role": "Builder from Syria",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Craton",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Craton",
         "confidence": 1.0
       },
       {
         "name": "Socrates",
         "role": "Builder",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Socrates",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Socrates",
         "confidence": 1.0
       },
       {
         "name": "Callisthenes",
         "role": "Deceased lessee",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Callisthenes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Callisthenes",
         "confidence": 1.0
       },
       {
         "name": "Polycrates",
         "role": "New lessee",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Polycrates",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Polycrates",
         "confidence": 1.0
       },
       {
         "name": "Theognotus",
         "role": "Guarantor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theognotus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Theognotus",
         "confidence": 1.0
       },
       {
         "name": "Deinocrates",
         "role": "Contractor for the portico",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Deinocrates",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Deinocrates",
         "confidence": 1.0
       },
       {
         "name": "Sosileia",
         "role": "Property owner",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sosileia",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Sosileia",
         "confidence": 1.0
       }
     ],

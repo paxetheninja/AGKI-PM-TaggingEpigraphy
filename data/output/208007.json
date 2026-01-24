@@ -77,61 +77,61 @@
       {
         "name": "Theukles",
         "role": "Monarchos (Eponymous Magistrate)",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theukles",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Theukles",
         "confidence": 1.0
       },
       {
         "name": "Philondas",
         "role": "Prostates (Official)",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philondas",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Philondas",
         "confidence": 1.0
       },
       {
         "name": "Philistos",
         "role": "Father of Philondas",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philistos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Philistos",
         "confidence": 1.0
       },
       {
         "name": "Anaxikles",
         "role": "Prostates (Official)",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Anaxikles",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Anaxikles",
         "confidence": 1.0
       },
       {
         "name": "Rhodotos",
         "role": "Prostates (Official)",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Rhodotos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Rhodotos",
         "confidence": 1.0
       },
       {
         "name": "Herakleitos",
         "role": "Prostates (Official)",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Herakleitos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Herakleitos",
         "confidence": 1.0
       },
       {
         "name": "Epikrates",
         "role": "Father of Herakleitos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Epikrates",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Epikrates",
         "confidence": 1.0
       },
       {
         "name": "Philon",
         "role": "Grandfather of Herakleitos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Philon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Philon",
         "confidence": 1.0
       },
       {
         "name": "Exagetos",
         "role": "Proposer of the decree",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Exagetos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Exagetos",
         "confidence": 1.0
       },
       {
         "name": "Theudoros",
         "role": "Official",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theudoros",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Theudoros",
         "confidence": 1.0
       }
     ],
@@ -185,7 +185,7 @@
       },
       {
         "name": "Artemis Toxitis",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q39503",
         "confidence": 1.0
       },
       {
@@ -195,7 +195,7 @@
       },
       {
         "name": "Aphrodite",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q35500",
         "confidence": 1.0
       },
       {

@@ -91,25 +91,25 @@
       {
         "name": "Malousios",
         "role": "Benefactor and Honorand",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Malousios",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Malousios",
         "confidence": 1.0
       },
       {
         "name": "Bakchios",
         "role": "Father of Malousios",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Bakchios",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Bakchios",
         "confidence": 1.0
       },
       {
         "name": "Antigonus",
         "role": "King",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antigonus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Antigonus",
         "confidence": 1.0
       },
       {
         "name": "Samalos",
         "role": "Proposer of the decree",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Samalos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Samalos",
         "confidence": 1.0
       }
     ],
@@ -136,12 +136,12 @@
     "deities": [
       {
         "name": "Athena Ilias",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q37122",
         "confidence": 1.0
       },
       {
         "name": "Tyche",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q213440",
         "confidence": 1.0
       }
     ]

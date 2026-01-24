@@ -77,91 +77,91 @@
       {
         "name": "Protagoras",
         "role": "Stephanephoros",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Protagoras",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Protagoras",
         "confidence": 1.0
       },
       {
         "name": "Gelokhos",
         "role": "Father of Protagoras",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Gelokhos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Gelokhos",
         "confidence": 1.0
       },
       {
         "name": "Damagetus",
         "role": "Official",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Damagetus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Damagetus",
         "confidence": 1.0
       },
       {
         "name": "Orthokles",
         "role": "Citizen",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Orthokles",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Orthokles",
         "confidence": 1.0
       },
       {
         "name": "Ariston",
         "role": "Father of Orthokles",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ariston",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Ariston",
         "confidence": 1.0
       },
       {
         "name": "Meka",
         "role": "Wife",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Meka",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Meka",
         "confidence": 1.0
       },
       {
         "name": "Dexios",
         "role": "Father of Meka",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dexios",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Dexios",
         "confidence": 1.0
       },
       {
         "name": "Kleidamos",
         "role": "Citizen",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kleidamos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Kleidamos",
         "confidence": 1.0
       },
       {
         "name": "Sodemos",
         "role": "Father of Kleidamos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sodemos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Sodemos",
         "confidence": 1.0
       },
       {
         "name": "Pelesimos",
         "role": "Citizen",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pelesimos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Pelesimos",
         "confidence": 1.0
       },
       {
         "name": "Mesidas",
         "role": "Father of Pelesimos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Mesidas",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Mesidas",
         "confidence": 1.0
       },
       {
         "name": "Pyrgias",
         "role": "Citizen",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pyrgias",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Pyrgias",
         "confidence": 1.0
       },
       {
         "name": "Kallidikos",
         "role": "Father of Pyrgias",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kallidikos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Kallidikos",
         "confidence": 1.0
       },
       {
         "name": "Artemis",
         "role": "Wife",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Artemis",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Artemis",
         "confidence": 1.0
       },
       {
         "name": "Leon",
         "role": "Father of Artemis",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Leon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Leon",
         "confidence": 1.0
       }
     ],

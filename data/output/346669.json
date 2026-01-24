@@ -91,13 +91,13 @@
       {
         "name": "Diocles",
         "role": "Archon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Diocles",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Diocles",
         "confidence": 1.0
       },
       {
         "name": "Aristophanes",
         "role": "Secretary",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristophanes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aristophanes",
         "confidence": 1.0
       },
       {
@@ -109,31 +109,31 @@
       {
         "name": "Phanocles",
         "role": "Presiding officer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Phanocles",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Phanocles",
         "confidence": 1.0
       },
       {
         "name": "Hippomachus",
         "role": "Father of Phanocles",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hippomachus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Hippomachus",
         "confidence": 1.0
       },
       {
         "name": "Democrates",
         "role": "Proposer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Democrates",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Democrates",
         "confidence": 1.0
       },
       {
         "name": "Thrasycles",
         "role": "Superintendent of the Mysteries",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Thrasycles",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Thrasycles",
         "confidence": 1.0
       },
       {
         "name": "Nicetes",
         "role": "Superintendent of the Mysteries",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nicetes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Nicetes",
         "confidence": 1.0
       }
     ],

@@ -63,25 +63,25 @@
       {
         "name": "Hypatios",
         "role": "Bishop and Author",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hypatios",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Hypatios",
         "confidence": 1.0
       },
       {
         "name": "Jesus Christ",
         "role": "God and Savior",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Jesus%20Christ",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Jesus%20Christ",
         "confidence": 1.0
       },
       {
         "name": "Mary",
         "role": "Theotokos and Ever-Virgin",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Mary",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Mary",
         "confidence": 1.0
       },
       {
         "name": "Paul",
         "role": "Apostle",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Paul",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Paul",
         "confidence": 0.8
       }
     ],
@@ -96,7 +96,7 @@
     "deities": [
       {
         "name": "Jesus Christ",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q302",
         "confidence": 1.0
       },
       {

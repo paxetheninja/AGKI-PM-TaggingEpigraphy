@@ -119,19 +119,19 @@
       {
         "name": "Xenokritos",
         "role": "Judge from Knidos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Xenokritos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Xenokritos",
         "confidence": 1.0
       },
       {
         "name": "Hegesikrates",
         "role": "Judge from Knidos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hegesikrates",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Hegesikrates",
         "confidence": 1.0
       },
       {
         "name": "Xenokrates",
         "role": "Father of Xenokritos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Xenokrates",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Xenokrates",
         "confidence": 1.0
       }
     ],
@@ -152,7 +152,7 @@
     "deities": [
       {
         "name": "Aphrodite Stratonikis",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q35500",
         "confidence": 1.0
       },
       {

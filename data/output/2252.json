@@ -103,37 +103,37 @@
       {
         "name": "Aesimus",
         "role": "Ambassador",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aesimus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aesimus",
         "confidence": 1.0
       },
       {
         "name": "Democleides",
         "role": "Ambassador",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Democleides",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Democleides",
         "confidence": 1.0
       },
       {
         "name": "Bryon",
         "role": "Chian Ambassador",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Bryon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Bryon",
         "confidence": 1.0
       },
       {
         "name": "Archilas",
         "role": "Chian Ambassador",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Archilas",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Archilas",
         "confidence": 1.0
       },
       {
         "name": "Stephanus",
         "role": "Father of the Secretary",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Stephanus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Stephanus",
         "confidence": 1.0
       },
       {
         "name": "King of Persia",
         "role": "Monarch",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=King%20of%20Persia",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=King%20of%20Persia",
         "confidence": 1.0
       }
     ],

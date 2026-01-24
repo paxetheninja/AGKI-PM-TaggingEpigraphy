@@ -91,49 +91,49 @@
       {
         "name": "Kallimachos",
         "role": "Archon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Kallimachos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Kallimachos",
         "confidence": 1.0
       },
       {
         "name": "Sokydes of Halai",
         "role": "Epistates",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sokydes%20of%20Halai",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Sokydes%20of%20Halai",
         "confidence": 1.0
       },
       {
         "name": "Hierokleides son of Timostratos",
         "role": "Proposer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hierokleides%20son%20of%20Timostratos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Hierokleides%20son%20of%20Timostratos",
         "confidence": 1.0
       },
       {
         "name": "Timostratos of Alopeke",
         "role": "Father of proposer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Timostratos%20of%20Alopeke",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Timostratos%20of%20Alopeke",
         "confidence": 1.0
       },
       {
         "name": "Theogenes of Naukratis",
         "role": "Honoree",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theogenes%20of%20Naukratis",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Theogenes%20of%20Naukratis",
         "confidence": 1.0
       },
       {
         "name": "Xenokles",
         "role": "Father of honoree",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Xenokles",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Xenokles",
         "confidence": 1.0
       },
       {
         "name": "Dieuches son of Demarchos",
         "role": "Secretary",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dieuches%20son%20of%20Demarchos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Dieuches%20son%20of%20Demarchos",
         "confidence": 1.0
       },
       {
         "name": "Demarchos of Phrearrhioi",
         "role": "Father of secretary",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demarchos%20of%20Phrearrhioi",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Demarchos%20of%20Phrearrhioi",
         "confidence": 1.0
       }
     ],

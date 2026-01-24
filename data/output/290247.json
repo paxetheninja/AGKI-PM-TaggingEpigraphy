@@ -63,19 +63,19 @@
       {
         "name": "Tiberius Claudius Atticus",
         "role": "High Priest of the Augusti, Treasurer, and Benefactor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Tiberius%20Claudius%20Atticus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Tiberius%20Claudius%20Atticus",
         "confidence": 1.0
       },
       {
         "name": "Vibullia Alcia",
         "role": "Benefactor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Vibullia%20Alcia",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Vibullia%20Alcia",
         "confidence": 1.0
       },
       {
         "name": "Hadrian",
         "role": "Emperor",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hadrian",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Hadrian",
         "confidence": 1.0
       }
     ],
@@ -101,7 +101,7 @@
       },
       {
         "name": "Tyche",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q213440",
         "confidence": 0.8
       }
     ]

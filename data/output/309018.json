@@ -77,43 +77,43 @@
       {
         "name": "Menandros",
         "role": "Trierarch and honoree",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Menandros",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Menandros",
         "confidence": 1.0
       },
       {
         "name": "Teisandros",
         "role": "Father of Menandros",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Teisandros",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Teisandros",
         "confidence": 1.0
       },
       {
         "name": "Timokrates",
         "role": "Proposer of the decree",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Timokrates",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Timokrates",
         "confidence": 1.0
       },
       {
         "name": "Epigonos",
         "role": "Father of Timokrates",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Epigonos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Epigonos",
         "confidence": 1.0
       },
       {
         "name": "Niketes",
         "role": "Archon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Niketes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Niketes",
         "confidence": 1.0
       },
       {
         "name": "Archistratos",
         "role": "Committee member",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Archistratos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Archistratos",
         "confidence": 1.0
       },
       {
         "name": "Aischines",
         "role": "Father of Archistratos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aischines",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aischines",
         "confidence": 1.0
       },
       {
@@ -125,7 +125,7 @@
       {
         "name": "Dion",
         "role": "Father of Diokles",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dion",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Dion",
         "confidence": 1.0
       }
     ],
@@ -164,12 +164,12 @@
     "deities": [
       {
         "name": "Zeus Soter",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q34201",
         "confidence": 1.0
       },
       {
         "name": "Athena Soteira",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q37122",
         "confidence": 1.0
       },
       {

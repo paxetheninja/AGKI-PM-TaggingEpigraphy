@@ -105,79 +105,79 @@
       {
         "name": "Aurelius Eumachus",
         "role": "Tomb owner and builder",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aurelius%20Eumachus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aurelius%20Eumachus",
         "confidence": 1.0
       },
       {
         "name": "Aurelia Tatia",
         "role": "Wife of Eumachus",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aurelia%20Tatia",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aurelia%20Tatia",
         "confidence": 1.0
       },
       {
         "name": "Pappas",
         "role": "Father of Tatia",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pappas",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Pappas",
         "confidence": 1.0
       },
       {
         "name": "Aurelius Dionysius",
         "role": "Son of Tatia",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aurelius%20Dionysius",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aurelius%20Dionysius",
         "confidence": 1.0
       },
       {
         "name": "Chrysogonus",
         "role": "Father of Dionysius",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Chrysogonus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Chrysogonus",
         "confidence": 1.0
       },
       {
         "name": "Aurelius Pelles",
         "role": "Son of Eumachus",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aurelius%20Pelles",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aurelius%20Pelles",
         "confidence": 1.0
       },
       {
         "name": "Aurelia Eumachia",
         "role": "Daughter of Eumachus",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aurelia%20Eumachia",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aurelia%20Eumachia",
         "confidence": 1.0
       },
       {
         "name": "Tiberius Claudius Achilles",
         "role": "Husband of Eumachia",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Tiberius%20Claudius%20Achilles",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Tiberius%20Claudius%20Achilles",
         "confidence": 1.0
       },
       {
         "name": "Tolmedes",
         "role": "Father of Achilles",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Tolmedes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Tolmedes",
         "confidence": 1.0
       },
       {
         "name": "Glycon",
         "role": "Stephanephoros (Magistrate)",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Glycon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Glycon",
         "confidence": 1.0
       },
       {
         "name": "Archimedes",
         "role": "Father of Glycon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Archimedes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Archimedes",
         "confidence": 1.0
       },
       {
         "name": "Zenon",
         "role": "Ancestor of Eumachus",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Zenon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Zenon",
         "confidence": 0.8
       },
       {
         "name": "Eudemos",
         "role": "Ancestor of Eumachus",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eudemos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Eudemos",
         "confidence": 0.8
       }
     ],

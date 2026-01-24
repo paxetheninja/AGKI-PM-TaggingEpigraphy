@@ -91,37 +91,37 @@
       {
         "name": "Apollonius",
         "role": "Priest, President, and Village Head",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Apollonius",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Apollonius",
         "confidence": 1.0
       },
       {
         "name": "Theon",
         "role": "Former High Priest and father of Apollonius",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Theon",
         "confidence": 1.0
       },
       {
         "name": "Theon",
         "role": "Son of Apollonius",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Theon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Theon",
         "confidence": 1.0
       },
       {
         "name": "Aristion",
         "role": "Namesake of the association building",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristion",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aristion",
         "confidence": 1.0
       },
       {
         "name": "Cleopatra",
         "role": "Namesake of the association building",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Cleopatra",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Cleopatra",
         "confidence": 1.0
       },
       {
         "name": "Caesar",
         "role": "Roman Emperor Augustus, used for dating",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Caesar",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Caesar",
         "confidence": 1.0
       }
     ],
@@ -142,7 +142,7 @@
     "deities": [
       {
         "name": "Tyche",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q213440",
         "confidence": 1.0
       }
     ]

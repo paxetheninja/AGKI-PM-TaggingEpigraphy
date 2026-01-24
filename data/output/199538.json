@@ -49,61 +49,61 @@
       {
         "name": "Aristosthenes",
         "role": "Demiurge",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristosthenes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aristosthenes",
         "confidence": 1.0
       },
       {
         "name": "Didymarchos",
         "role": "Benefactor and Proxenos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Didymarchos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Didymarchos",
         "confidence": 1.0
       },
       {
         "name": "Chaton",
         "role": "Father of Didymarchos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Chaton",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Chaton",
         "confidence": 1.0
       },
       {
         "name": "Eudamos",
         "role": "Benefactor and Proxenos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eudamos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Eudamos",
         "confidence": 1.0
       },
       {
         "name": "Sosigenes",
         "role": "Father of Eudamos",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sosigenes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Sosigenes",
         "confidence": 1.0
       },
       {
         "name": "Sotadas",
         "role": "Demiurge",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Sotadas",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Sotadas",
         "confidence": 1.0
       },
       {
         "name": "Demetrios",
         "role": "Benefactor, Proxenos, and Citizen",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demetrios",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Demetrios",
         "confidence": 1.0
       },
       {
         "name": "Arsinoas",
         "role": "Demiurge",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Arsinoas",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Arsinoas",
         "confidence": 0.8
       },
       {
         "name": "Gemon",
         "role": "Benefactor, Proxenos, and Citizen",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Gemon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Gemon",
         "confidence": 1.0
       },
       {
         "name": "Lysimachos",
         "role": "Father of Gemon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lysimachos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Lysimachos",
         "confidence": 1.0
       }
     ],

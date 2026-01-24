@@ -63,7 +63,7 @@
       {
         "name": "Aristius",
         "role": "Veteran",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristius",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aristius",
         "confidence": 1.0
       }
     ],
@@ -78,7 +78,7 @@
     "deities": [
       {
         "name": "Zeus Labraundos",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q34201",
         "confidence": 1.0
       }
     ]

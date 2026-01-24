@@ -63,49 +63,49 @@
       {
         "name": "Diophantos",
         "role": "Secretary",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Diophantos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Diophantos",
         "confidence": 1.0
       },
       {
         "name": "Prokleides",
         "role": "Secretary to the Council and the People",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Prokleides",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Prokleides",
         "confidence": 1.0
       },
       {
         "name": "Nikostratos",
         "role": "Treasurer of the Council",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Nikostratos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Nikostratos",
         "confidence": 1.0
       },
       {
         "name": "Eukles",
         "role": "Herald of the Council and the People",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Eukles",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Eukles",
         "confidence": 1.0
       },
       {
         "name": "Pythodelos",
         "role": "Recorder",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pythodelos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Pythodelos",
         "confidence": 1.0
       },
       {
         "name": "Epikrates",
         "role": "Checking Clerk",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Epikrates",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Epikrates",
         "confidence": 1.0
       },
       {
         "name": "Phyllos",
         "role": "Law Officer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Phyllos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Phyllos",
         "confidence": 1.0
       },
       {
         "name": "Diaitos",
         "role": "Herald",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Diaitos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Diaitos",
         "confidence": 1.0
       }
     ],

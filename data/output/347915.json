@@ -119,67 +119,67 @@
       {
         "name": "Polyeuctus",
         "role": "Archon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Polyeuctus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Polyeuctus",
         "confidence": 1.0
       },
       {
         "name": "Chairephon",
         "role": "Secretary",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Chairephon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Chairephon",
         "confidence": 1.0
       },
       {
         "name": "Archestratus",
         "role": "Father of Chairephon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Archestratus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Archestratus",
         "confidence": 1.0
       },
       {
         "name": "Cleodemus",
         "role": "Chairman of the Proedroi",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Cleodemus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Cleodemus",
         "confidence": 1.0
       },
       {
         "name": "Phrynon",
         "role": "Father of Cleodemus",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Phrynon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Phrynon",
         "confidence": 1.0
       },
       {
         "name": "Demostratus",
         "role": "Proposer of the decree",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Demostratus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Demostratus",
         "confidence": 1.0
       },
       {
         "name": "Aristophanes",
         "role": "Father of Demostratus",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristophanes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aristophanes",
         "confidence": 1.0
       },
       {
         "name": "Antigonus",
         "role": "King",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antigonus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Antigonus",
         "confidence": 1.0
       },
       {
         "name": "Phila",
         "role": "Queen",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Phila",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Phila",
         "confidence": 1.0
       },
       {
         "name": "Timocrate",
         "role": "Priestess of Aglauros",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Timocrate",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Timocrate",
         "confidence": 1.0
       },
       {
         "name": "Polynicus",
         "role": "Father of Timocrate",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Polynicus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Polynicus",
         "confidence": 1.0
       }
     ],
@@ -234,7 +234,7 @@
       },
       {
         "name": "Helios",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q134270",
         "confidence": 1.0
       },
       {
@@ -244,7 +244,7 @@
       },
       {
         "name": "Apollo",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q37340",
         "confidence": 1.0
       }
     ]

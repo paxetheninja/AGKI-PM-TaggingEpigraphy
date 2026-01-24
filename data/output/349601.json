@@ -35,19 +35,19 @@
       {
         "name": "Praximenes",
         "role": "Proposer of the decree",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Praximenes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Praximenes",
         "confidence": 1.0
       },
       {
         "name": "Xenotimos son of Timoxenos",
         "role": "Physician and honoree",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Xenotimos%20son%20of%20Timoxenos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Xenotimos%20son%20of%20Timoxenos",
         "confidence": 1.0
       },
       {
         "name": "Timoxenos",
         "role": "Father of the honoree",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Timoxenos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Timoxenos",
         "confidence": 1.0
       }
     ],

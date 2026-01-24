@@ -77,49 +77,49 @@
       {
         "name": "Dionysodorus",
         "role": "Honoree and Thasian citizen",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dionysodorus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Dionysodorus",
         "confidence": 1.0
       },
       {
         "name": "Pempides",
         "role": "Father of Dionysodorus",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Pempides",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Pempides",
         "confidence": 1.0
       },
       {
         "name": "Hippon",
         "role": "Proposer of the first decree",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hippon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Hippon",
         "confidence": 1.0
       },
       {
         "name": "Mnesitheus",
         "role": "Father of Hippon",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Mnesitheus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Mnesitheus",
         "confidence": 1.0
       },
       {
         "name": "Dionysius",
         "role": "Secretary of the council",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dionysius",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Dionysius",
         "confidence": 1.0
       },
       {
         "name": "Lenaeus",
         "role": "Father of Dionysius",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Lenaeus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Lenaeus",
         "confidence": 1.0
       },
       {
         "name": "Paeonius",
         "role": "Proposer of the second decree",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Paeonius",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Paeonius",
         "confidence": 1.0
       },
       {
         "name": "Phitus",
         "role": "Father of Paeonius",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Phitus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Phitus",
         "confidence": 1.0
       }
     ],
@@ -140,7 +140,7 @@
     "deities": [
       {
         "name": "Aphrodite",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q35500",
         "confidence": 1.0
       },
       {

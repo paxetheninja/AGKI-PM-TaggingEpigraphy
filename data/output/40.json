@@ -147,19 +147,19 @@
       {
         "name": "Antiochus",
         "role": "Prytanis",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Antiochus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Antiochus",
         "confidence": 1.0
       },
       {
         "name": "Dracontides",
         "role": "Epistates",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Dracontides",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Dracontides",
         "confidence": 1.0
       },
       {
         "name": "Diognetus",
         "role": "Proposer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Diognetus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Diognetus",
         "confidence": 1.0
       },
       {
@@ -171,13 +171,13 @@
       {
         "name": "Archestratus",
         "role": "Proposer",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Archestratus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Archestratus",
         "confidence": 1.0
       },
       {
         "name": "Hierocles",
         "role": "Religious official",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Hierocles",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Hierocles",
         "confidence": 1.0
       }
     ],
@@ -210,7 +210,7 @@
     "deities": [
       {
         "name": "Zeus Olympius",
-        "uri": null,
+        "uri": "https://www.wikidata.org/wiki/Q34201",
         "confidence": 1.0
       }
     ]

@@ -91,19 +91,19 @@
       {
         "name": "Cleopatra",
         "role": "Queen",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Cleopatra",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Cleopatra",
         "confidence": 1.0
       },
       {
         "name": "Ptolemy Caesar",
         "role": "King",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Ptolemy%20Caesar",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Ptolemy%20Caesar",
         "confidence": 1.0
       },
       {
         "name": "Callimachus",
         "role": "Strategos and Epistrategos of the Thebaid",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Callimachus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Callimachus",
         "confidence": 1.0
       }
     ],

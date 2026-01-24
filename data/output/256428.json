@@ -77,7 +77,7 @@
       {
         "name": "Aristippos",
         "role": "Prytanis",
-        "uri": "http://clas-lgpn2.classics.ox.ac.uk/cgi-bin/lgpn_search.cgi?name=Aristippos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aristippos",
         "confidence": 1.0
       }
     ],
