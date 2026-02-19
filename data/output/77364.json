@@ -1,0 +1,75 @@
+{
+  "phi_id": 77364,
+  "themes": [
+    {
+      "label": "Registers and Catalogues",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Registers and Catalogues",
+        "subcategory": null
+      },
+      "rationale": "The repetitive structure of the genitive plural article followed by sequential letters and numerals suggests a systematic register or catalogue of items or individuals.",
+      "confidence": 1.0,
+      "quote": "[τῶν] [ ] [τῶν] [ ] [τῶν] [ ]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The presence of Greek alphabetic numerals representing the 300s, 400s, and 500s in sequence suggests a ledger or financial account tracking specific quantities or numbered entries.",
+      "confidence": 0.9,
+      "quote": "τῶν τλ[] τῶν τμ[] τῶν τν[] τῶν τξ[]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The inscription is highly damaged, with most lines containing only the article 'of the' and fragmentary numerical or alphabetical markers.",
+      "confidence": 1.0,
+      "quote": "[τῶν] [ ] [τῶν] [ ] [τῶν] [ ]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [],
+    "places": [
+      {
+        "name": "Paros",
+        "type": "island city-state",
+        "uri": null,
+        "confidence": 0.8
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Paros",
+      "type": "region",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription from Paros appears to be a large-scale administrative document, likely a register or a set of accounts. The text is characterized by a long list of entries beginning with the genitive plural article 'of the', followed by what are clearly Greek numerals in ascending order (300s, 400s, and 500s). The mention of 'Parians' in the second line confirms the local civic context. Some fragments like 'phil' might suggest the inclusion of personal names alongside the numerical data, though they are too incomplete to identify specific individuals.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "2nd/1st c. BC",
+  "date_min": 2.0,
+  "date_max": 1.0,
+  "date_circa": false
+}

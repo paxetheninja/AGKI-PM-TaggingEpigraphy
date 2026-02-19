@@ -1,0 +1,152 @@
+{
+  "phi_id": 352381,
+  "themes": [
+    {
+      "label": "Treaties and Agreements",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Treaties and Agreements",
+        "subcategory": null
+      },
+      "rationale": "The text explicitly mentions 'symbola' (treaties or judicial agreements) between the cities of Miletus and Priene, establishing mutual legal procedures and defense.",
+      "confidence": 1.0,
+      "quote": "ταῦτα τὰ σύμβολα ἐγένετο",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Laws and Regulations",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Laws and Regulations",
+        "subcategory": null
+      },
+      "rationale": "The inscription details specific legal regulations regarding how lawsuits are to be filed, the roles of judges, and the timeline for legal proceedings.",
+      "confidence": 1.0,
+      "quote": "οἱ δικασταὶ τὴν δίκην μὴ εἰσαγέτωσαν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Sacred Laws and Rules",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Sacred Laws and Rules",
+        "subcategory": null
+      },
+      "rationale": "The text references legal or procedural actions taking place at the altar of Athena and mentions Zeus Olympios, indicating a religious framework for these civic regulations.",
+      "confidence": 0.8,
+      "quote": "ἐπὶ τοῦ βωμοῦ τῆς Ἀθηνᾶς",
+      "is_ambiguous": true,
+      "ambiguity_note": "The text is primarily a secular judicial treaty, but the involvement of the altar of Athena and Zeus Olympios suggests a religious-legal intersection."
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The format and content are characteristic of a public legal document inscribed on a stone stele for display in a sanctuary.",
+      "confidence": 0.8,
+      "quote": "περὶ ἀναγραφῆς",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "Based on the archaeological context of the Sanctuary of Athena at Priene, such official documents were typically inscribed on marble.",
+      "confidence": 0.5,
+      "quote": "[ ]. τῶμ με.[...........]",
+      "is_ambiguous": true,
+      "ambiguity_note": "Material is inferred from the archaeological context of Priene rather than stated in the text."
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Strategoi",
+        "role": "Military and administrative officials in Priene",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Epimeletai of the Emporion",
+        "role": "Overseers of the market and trade in Miletus",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Archons",
+        "role": "Annual magistrates",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Judges",
+        "role": "Officials presiding over lawsuits",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Miletus",
+        "type": "City-state",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Priene",
+        "type": "City-state",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Athena",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Zeus Olympios",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Priene",
+      "type": "City",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Ionia",
+      "type": "Region",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription represents a judicial treaty (symbolon) between the Ionian cities of Miletus and Priene. It outlines the procedures for cross-border litigation, specifying that Milesians should be tried in Priene and Prienians in Miletus. It designates the specific magistrates (Strategoi in Priene and Epimeletai in Miletus) to handle these cases and mentions the religious context of the proceedings at the Sanctuary of Athena.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "sh. aft. 200 BC",
+  "date_min": 200.0,
+  "date_max": 200.0,
+  "date_circa": false
+}

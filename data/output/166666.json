@@ -1,0 +1,234 @@
+{
+  "phi_id": 166666,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text is a formal decree passed by the council and the people of Sestos, following standard official formulas.",
+      "confidence": 1.0,
+      "quote": "ἔδοξε τῆι βουλῆι καὶ τῶι δήμωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription honors Menas, son of Menes, for his extensive services, diplomatic missions, and personal virtues toward the city.",
+      "confidence": 1.0,
+      "quote": "ἐπῃνῆσθαι Μηνᾶν Μένητος ἐπί τε τοῖς προγεγραμμένοις πᾶσιν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Agonistic / Victory Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Agonistic / Victory Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The text describes athletic contests, prizes for ephebes and youths, and the annual crowning of the honoree during gymnastic games.",
+      "confidence": 1.0,
+      "quote": "στεφανοῦσθαι δὲ αὐτὸν καὶ ὑπὸ τοῦ δήμου ἀνὰ πᾶν ἔτος τῆς πανηγύρεως ἐν τῶι γυμνικῶι ἀγῶνι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Building Commemoration",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Building Commemoration",
+        "subcategory": null
+      },
+      "rationale": "Menas is credited with constructing a bathhouse and an adjacent room for the gymnasium at his own expense.",
+      "confidence": 1.0,
+      "quote": "κατεσκεύασεν δὲ τόν τε λουτρῶνα καὶ τὸν ἐφ̣[ε]ξῆς οἶκον",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Votive Dedications",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Votive Dedications",
+        "subcategory": null
+      },
+      "rationale": "The text mentions the dedication of a white stone statue and the dedication of weapons within the gymnasium.",
+      "confidence": 1.0,
+      "quote": "ἀνέθηκεν δὲ καὶ ἄγαλμα λευκοῦ λίθου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The decree discusses the city's decision to implement its own bronze coinage and Menas's role in overseeing the minting process.",
+      "confidence": 1.0,
+      "quote": "τοῦ τε δήμου προελομέ̣ν̣ου νομίσματι χαλκίνῳ χρῆσθαι ἰδίωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The decree explicitly orders the text to be inscribed on a white marble stele to be placed in the gymnasium.",
+      "confidence": 1.0,
+      "quote": "ἀναγραψάτωι δὲ καὶ εἰς στήλην λευκοῦ λίθου τόδε τὸ ψήφισμα",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "The inscription specifies 'white stone', which in the context of Sestos and Hellenistic decrees typically refers to white marble.",
+      "confidence": 0.8,
+      "quote": "στήλην λευκοῦ λίθου",
+      "is_ambiguous": true,
+      "ambiguity_note": "The Greek 'leukos lithos' literally means 'white stone', which is almost certainly marble but could technically refer to other white limestone."
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Glaukias",
+        "role": "Priest and eponymous official",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Glaukias",
+        "confidence": 1.0
+      },
+      {
+        "name": "Killaios",
+        "role": "Father of Glaukias",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Killaios",
+        "confidence": 1.0
+      },
+      {
+        "name": "Menander",
+        "role": "Proposer of the decree",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Menander",
+        "confidence": 1.0
+      },
+      {
+        "name": "Apollas",
+        "role": "Father of Menander",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Apollas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Menas",
+        "role": "Honoree, Gymnasiarch, and Ambassador",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Menas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Menes",
+        "role": "Father of Menas",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Menes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Straton",
+        "role": "General of the Chersonese and Thrace",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Straton",
+        "confidence": 1.0
+      },
+      {
+        "name": "Attalus",
+        "role": "King of Pergamon",
+        "uri": "https://www.wikidata.org/wiki/Q316286",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Sestos",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/501609",
+        "confidence": 1.0
+      },
+      {
+        "name": "Thracian Chersonese",
+        "type": "Region",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Thrace",
+        "type": "Region",
+        "uri": "https://www.wikidata.org/wiki/Q41741",
+        "confidence": 1.0
+      },
+      {
+        "name": "Asia",
+        "type": "Region/Province",
+        "uri": "https://pleiades.stoa.org/places/599527",
+        "confidence": 1.0
+      },
+      {
+        "name": "Rome",
+        "type": "City/State",
+        "uri": "https://pleiades.stoa.org/places/423025",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Hermes",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Heracles",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Attalus",
+        "uri": null,
+        "confidence": 0.9
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Sestos",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/501609",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This lengthy honorific decree from Sestos provides a detailed account of the career of Menas, son of Menes, during the late 2nd century BC. It covers his diplomatic missions to kings and Roman generals, his financial generosity during Thracian raids and food shortages, his religious service as a priest of King Attalus, and his two terms as gymnasiarch. Notably, it records the city's transition to a local bronze currency and Menas's role in managing the mint. The text is a prime example of Hellenistic civic euergetism and the complex relationship between Greek cities, the Attalid monarchy, and the rising power of Rome.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "133-120 BC",
+  "date_min": 133.0,
+  "date_max": -120.0,
+  "date_circa": false
+}

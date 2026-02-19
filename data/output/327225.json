@@ -1,0 +1,128 @@
+{
+  "phi_id": 327225,
+  "themes": [
+    {
+      "label": "Official Letters",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Official Letters",
+        "subcategory": null
+      },
+      "rationale": "The text is a formal communication from Emperor Hadrian addressed to the magistrates, council, and people of Koroneia, using the standard greeting 'chairein'.",
+      "confidence": 1.0,
+      "quote": "Κορωνέων τοῖς ἄρχουσι καὶ τῇ βουλῇ καὶ [τῷ δήμῳ χαίρει]ν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Laws and Regulations",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Laws and Regulations",
+        "subcategory": null
+      },
+      "rationale": "The inscription contains specific regulations regarding the maintenance of hydraulic infrastructure and stipulates a fine of 500 denarii for those who cause damage.",
+      "confidence": 1.0,
+      "quote": "πεντ̣α̣κ̣όσια δηνάρια εἰσοίσει τῇ πόλει",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Building Commemoration",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Building Commemoration",
+        "subcategory": null
+      },
+      "rationale": "The text refers to the 'work of Phalaros', indicating the construction or restoration of public infrastructure such as embankments and barriers.",
+      "confidence": 0.8,
+      "quote": "γέγονεν ὑμεῖν τοῦ Φαλαροῦ τὸ ἔργον",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The inscription contains several lacunae and missing sections, particularly at the beginnings and ends of lines, requiring reconstruction.",
+      "confidence": 1.0,
+      "quote": "[Αὐτοκράτωρ Καῖσαρ, θε]οῦ Τ̣[ραϊα]νοῦ Παρθικοῦ υἱός",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Hadrian",
+        "role": "Emperor and author of the letter",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Hadrian",
+        "confidence": 1.0
+      },
+      {
+        "name": "Trajan",
+        "role": "Deified father of Hadrian",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Trajan",
+        "confidence": 1.0
+      },
+      {
+        "name": "Nerva",
+        "role": "Deified grandfather of Hadrian",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Nerva",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Koroneia",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/540717",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phalaros",
+        "type": "River or marsh area",
+        "uri": "https://www.wikidata.org/wiki/Q109763225",
+        "confidence": 0.9
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Boiotia",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/540689",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Koroneia",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/540717",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Pontza",
+      "type": "Site",
+      "uri": "https://www.wikidata.org/wiki/Q490032",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is an imperial letter from Emperor Hadrian to the city of Koroneia in Boiotia. It concerns the management and protection of hydraulic works (embankments, barriers, and conduits) associated with the Phalaros river or marsh. The Emperor emphasizes the utility and appearance of the work and establishes a legal penalty (a fine of 500 denarii) for anyone who damages the infrastructure or fails to maintain the barriers properly. The text includes Hadrian's full imperial titulature, identifying him as the son of the divine Trajan and grandson of the divine Nerva.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "reign of Hadrian [inscribed after 161 AD]",
+  "date_min": 161.0,
+  "date_max": 161.0,
+  "date_circa": false
+}

@@ -1,0 +1,119 @@
+{
+  "phi_id": 152993,
+  "themes": [
+    {
+      "label": "Funerary Inscriptions (Epitaphs)",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Funerary Inscriptions (Epitaphs)",
+        "subcategory": null
+      },
+      "rationale": "The inscription is identified as a funerary monument (epitaph) from the cemetery of Aigeai, listing the names of the deceased.",
+      "confidence": 1.0,
+      "quote": "Μ[υ]ννὼ Μ[ι]ννὼ ( ) Ἀγάθων.",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Tombstone (Gravestone)",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Tombstone (Gravestone)"
+      },
+      "rationale": "The text is inscribed on a funerary monument, specifically a gravestone or stele found in a necropolis.",
+      "confidence": 1.0,
+      "quote": "Μ[υ]ννὼ Μ[ι]ννὼ ( ) Ἀγάθων.",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The presence of square brackets in the transcription indicates that parts of the names are missing or reconstructed due to damage to the stone.",
+      "confidence": 1.0,
+      "quote": "Μ[υ]ννὼ Μ[ι]ννὼ",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Mynno",
+        "role": "deceased",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Minno",
+        "role": "deceased",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Agathon",
+        "role": "deceased",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Aigeai",
+        "type": "City",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Vergina",
+        "type": "Modern Site",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Macedonia",
+        "type": "Region",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Bottiaia",
+        "type": "Sub-region",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Macedonia",
+      "type": "Region",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Aigeai",
+      "type": "City",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This is a brief funerary inscription from the 4th century BC found at Aigeai (modern Vergina). It records the names of individuals, likely members of the same family buried together. The names Mynno and Minno are female, while Agathon is male. The text shows signs of damage, as indicated by the reconstructions in the names.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "ca. 360-300 BC",
+  "date_min": 360.0,
+  "date_max": -300.0,
+  "date_circa": true
+}

@@ -1,0 +1,134 @@
+{
+  "phi_id": 344782,
+  "themes": [
+    {
+      "label": "Agonistic / Victory Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Agonistic / Victory Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription explicitly mentions a victory (nike) associated with Apollonides, which is a hallmark of agonistic or victory records.",
+      "confidence": 1.0,
+      "quote": "Ἀπολλωνίδου νίκη",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The text contains a list of several individuals (Epaphras, Epigenes, Bassus, Metrophanes) in the genitive case, typical of civic or group registers.",
+      "confidence": 0.9,
+      "quote": "Ἐπαφρᾶ καὶ [ ] καὶ Ἐπιγένους, Βάσσου Μητροφάνο[υ καὶ ]εμίου [καὶ ]ΧΟΜΟΥ",
+      "is_ambiguous": true,
+      "ambiguity_note": "While clearly a list, the specific status of the individuals (officials vs. athletes) is not explicitly stated, though the context of victory suggests athletes or gymnasiarchs."
+    },
+    {
+      "label": "Registers and Catalogues",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Registers and Catalogues",
+        "subcategory": null
+      },
+      "rationale": "The inscription functions as a catalogue or register of names, likely recording participants or members of a specific group in Samos.",
+      "confidence": 0.9,
+      "quote": "Ἐπαφρᾶ καὶ [ ] καὶ Ἐπιγένους, Βάσσου Μητροφάνο[υ καὶ ]εμίου [καὶ ]ΧΟΜΟΥ",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The presence of brackets and missing letters indicates that the inscription is not fully preserved.",
+      "confidence": 1.0,
+      "quote": "[ ] καὶ [ ] ... Μητροφάνο[υ καὶ ]εμίου [καὶ ]ΧΟΜΟΥ. [ ]ΤΟ[ ]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Damaged but Legible",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Legibility",
+        "category": "Damaged but Legible",
+        "subcategory": null
+      },
+      "rationale": "Despite the lacunae and missing parts, the primary names and the victory statement remain legible.",
+      "confidence": 1.0,
+      "quote": "Ἐπαφρᾶ ... Ἐπιγένους, Βάσσου ... Ἀπολλωνίδου νίκη",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Epaphras",
+        "role": "Listed individual",
+        "uri": "https://www.wikidata.org/wiki/Q4357904",
+        "confidence": 1.0
+      },
+      {
+        "name": "Epigenes",
+        "role": "Listed individual",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Epigenes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Bassus",
+        "role": "Listed individual",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Bassus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Metrophanes",
+        "role": "Listed individual",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Metrophanes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Apollonides",
+        "role": "Victor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Apollonides",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Samos",
+        "type": "Island",
+        "uri": "https://pleiades.stoa.org/places/599925",
+        "confidence": 0.9
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Samos",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/599925",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "The inscription is a commemorative record from Samos, likely dating to the late Hellenistic or early Roman period. It features a list of names followed by a victory acclamation for Apollonides. The structure suggests it may be a record of winners or participants in a local athletic or civic competition, common in the gymnasium culture of the Aegean islands.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "1st c. BC/1st c. AD?",
+  "date_min": 1.0,
+  "date_max": 1.0,
+  "date_circa": true
+}
