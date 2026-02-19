@@ -1,0 +1,312 @@
+{
+  "phi_id": 62949,
+  "themes": [
+    {
+      "label": "Inventories",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Inventories",
+        "subcategory": null
+      },
+      "rationale": "The text is a detailed inventory of temple treasures on Delos, using standard administrative language such as 'we received' (parelabomen) to record the transfer of items between boards of officials.",
+      "confidence": 1.0,
+      "quote": "[κα τ δε παρε]λ βομε[ν ν τ ι νε ι ο τ πτ]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Votive Dedications",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Votive Dedications",
+        "subcategory": null
+      },
+      "rationale": "Many items in the list are explicitly identified as 'anathema' (votive offerings), often accompanied by the name of the donor.",
+      "confidence": 1.0,
+      "quote": "[στεφ νιον λευ]κ ου π[π ου ωμα ου ν θεμα]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The inscription records the weights of precious metal objects and tracks fragments or broken items, serving as a financial audit of the temple's assets.",
+      "confidence": 1.0,
+      "quote": "ηη κα τ πεσ ν χρ[υσ ον]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The text dates various entries by the names of archons and mentions other officials like priests and architheoroi.",
+      "confidence": 1.0,
+      "quote": "[σκ φιον βου]λ ς [τ ς π ρχοντος φωκαι ως]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Silver",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Metal",
+        "subcategory": "Silver"
+      },
+      "rationale": "The inventory specifically mentions silver objects, such as a silver krater.",
+      "confidence": 1.0,
+      "quote": "[κρατ ρα ργυρο ν --- το ν ς τ ς τ] ν κ σμον ο κ χο[ντα]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Gold",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Metal",
+        "subcategory": "Gold"
+      },
+      "rationale": "The text records the presence of gold, including fallen gold fragments.",
+      "confidence": 1.0,
+      "quote": "ηη κα τ πεσ ν χρ[υσ ον]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Iron",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Metal",
+        "subcategory": "Iron"
+      },
+      "rationale": "Iron objects, such as pins and tongs, are listed in the inventory.",
+      "confidence": 1.0,
+      "quote": "[περ ναι σιδηρα ν λ] μν. δδδδ λαβ δε[ς σιδηρα]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Bronze",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Metal",
+        "subcategory": "Bronze"
+      },
+      "rationale": "Bronze statues or components are mentioned in the list of temple property.",
+      "confidence": 1.0,
+      "quote": "[ νδριαντ δια χαλκ 0]ιιι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Wood",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Organic Materials",
+        "subcategory": "Wood"
+      },
+      "rationale": "The inventory includes wooden objects, such as a wooden model or type.",
+      "confidence": 1.0,
+      "quote": "[τ πον ξ λινον κεραμ δων]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The inscription is highly fragmentary, with significant portions of the text requiring restoration.",
+      "confidence": 1.0,
+      "quote": "[σκ φιον βου]λ ς [τ ς π ρχοντος φωκαι ως]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Phocaeus",
+        "role": "Archon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Phocaeus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lucius son of Hippus",
+        "role": "Roman donor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Lucius%20son%20of%20Hippus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pytheas",
+        "role": "Priest",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Pytheas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phyllis",
+        "role": "Archon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Phyllis",
+        "confidence": 1.0
+      },
+      {
+        "name": "Diogenes",
+        "role": "Donor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Diogenes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Demetrius son of Ariston",
+        "role": "Donor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Demetrius%20son%20of%20Ariston",
+        "confidence": 1.0
+      },
+      {
+        "name": "Stratonice",
+        "role": "Queen",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Stratonice",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristobulus",
+        "role": "Archon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aristobulus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Polybus son of Medeius",
+        "role": "Donor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Polybus%20son%20of%20Medeius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Leucanus",
+        "role": "Archon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Leucanus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Xenotimus son of Phanous",
+        "role": "Donor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Xenotimus%20son%20of%20Phanous",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dorieus",
+        "role": "Archon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Dorieus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Empedus",
+        "role": "Archon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Empedus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Antipater",
+        "role": "Donor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Antipater",
+        "confidence": 1.0
+      },
+      {
+        "name": "Gorgias",
+        "role": "Donor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Gorgias",
+        "confidence": 0.8
+      },
+      {
+        "name": "Lamydon",
+        "role": "Donor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Lamydon",
+        "confidence": 0.8
+      },
+      {
+        "name": "Teisicles son of Kesimbrotus",
+        "role": "Official",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Teisicles%20son%20of%20Kesimbrotus",
+        "confidence": 0.8
+      },
+      {
+        "name": "Telesarchides",
+        "role": "Official",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Telesarchides",
+        "confidence": 0.8
+      },
+      {
+        "name": "Heliodorus",
+        "role": "Donor",
+        "uri": "https://www.wikidata.org/wiki/Q1397528",
+        "confidence": 0.8
+      },
+      {
+        "name": "Apatourius",
+        "role": "Triktyarch",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Apatourius",
+        "confidence": 0.8
+      }
+    ],
+    "places": [
+      {
+        "name": "Delos",
+        "type": "Island",
+        "uri": "https://pleiades.stoa.org/places/599587",
+        "confidence": 1.0
+      },
+      {
+        "name": "Rome",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/423025",
+        "confidence": 1.0
+      },
+      {
+        "name": "Seriphos",
+        "type": "Island",
+        "uri": "https://pleiades.stoa.org/places/590043",
+        "confidence": 1.0
+      },
+      {
+        "name": "Cius",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/216770",
+        "confidence": 1.0
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Delos",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/599587",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a classic example of a Delian temple inventory from the mid-2nd century BC. It meticulously records the transfer of sacred property, including votive offerings (anathema) made by individuals, royalty (Queen Stratonice), and cities (Cius). The text is organized chronologically by archonships and provides physical descriptions of the items, including their material (gold, silver, iron, bronze, wood) and their state of preservation (e.g., broken or missing parts).",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " ca. 175-166 BC",
+  "date_min": -175.0,
+  "date_max": -166.0,
+  "date_circa": true
+}

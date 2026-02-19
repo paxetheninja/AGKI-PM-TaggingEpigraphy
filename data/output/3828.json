@@ -1,0 +1,179 @@
+{
+  "phi_id": 3828,
+  "themes": [
+    {
+      "label": "Inventories",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Inventories",
+        "subcategory": null
+      },
+      "rationale": "The inscription is a detailed inventory of naval equipment belonging to the Athenian state, listing specific items like masts, oars, and rudders for various triremes.",
+      "confidence": 1.0,
+      "quote": "κεραῖαι μεγάλας καὶ πᾶσαι θρανίτιδας δοκίμους ζυγίας",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "These naval lists served as official accounts for the curators of the dockyards, tracking the responsibility of trierarchs and the status of captured military equipment.",
+      "confidence": 1.0,
+      "quote": "τριήραρχος ... αἰχμάλωτος τῶν μετὰ Τιμοθέου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The inscription is recorded on a stone slab, which was the standard format for public administrative records in 4th-century Athens.",
+      "confidence": 1.0,
+      "quote": "[--- κεραῖαι μεγ]άλαι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "The material used for Athenian public inscriptions of this period was typically Pentelic marble.",
+      "confidence": 0.8,
+      "quote": "[--- κεραῖαι μεγ]άλαι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The text contains numerous lacunae and restored sections, indicating the stone is not fully preserved.",
+      "confidence": 1.0,
+      "quote": "[--- κεραῖαι μεγ]άλαι κ[αὶ πᾶσαι θ]ρανίτιδας",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Damnatio Memoriae-like Name Erasure",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Reconstruction and Intervention",
+        "category": "Mutilated / Erased",
+        "subcategory": "Damnatio Memoriae-like Name Erasure"
+      },
+      "rationale": "The word for 'general' (strategos) is enclosed in double brackets, indicating an intentional erasure or modification on the stone, likely following the political downfall of the individuals mentioned.",
+      "confidence": 1.0,
+      "quote": "[[στρατηγοῦ]]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Timotheus",
+        "role": "General",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Timotheus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Chabrias",
+        "role": "General",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Chabrias",
+        "confidence": 1.0
+      },
+      {
+        "name": "Peranthes",
+        "role": "Trierarch",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Peranthes",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Athens",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      },
+      {
+        "name": "Acharnae",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Euonymon",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579932",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Nemesis",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Galateia",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Panthera",
+        "uri": null,
+        "confidence": 0.9
+      },
+      {
+        "name": "Euploia",
+        "uri": null,
+        "confidence": 0.9
+      },
+      {
+        "name": "Genesis",
+        "uri": null,
+        "confidence": 0.9
+      },
+      {
+        "name": "Demokratia",
+        "uri": null,
+        "confidence": 0.9
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579885",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription belongs to the Athenian Naval Catalogues, specifically recording the equipment (skeue) of triremes in the year 374/3 BC. It lists various types of oars (thranite, zygian, thalamian), masts, and rudders. A significant historical feature is the mention of ships captured (aichmalotos) during the campaigns of the famous generals Timotheus and Chabrias. The ship names mentioned include Panthera, Galateia, Nemesis, Euploia, Genesis, and Demokratia. The erasure of the title 'strategos' reflects the volatile political status of these military leaders in Athens.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

@@ -1,0 +1,252 @@
+{
+  "phi_id": 4572,
+  "themes": [
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The inscription contains extensive lists of Athenian officials, including archons, polemarchs, thesmothetai, and strategoi, organized by year.",
+      "confidence": 1.0,
+      "quote": "ἄρχων Θεοκλῆς ... πολέμαρχος ... θεσμοθέται ... στρατηγὸς ἐπὶ τὰ ὅπλα",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The text mentions the 'aparche' (firstfruits) and the management of sacred funds, which are administrative financial matters.",
+      "confidence": 1.0,
+      "quote": "τῆς ἀπαρχῆς τῆς πρώτης ἐννεετηρίδος ... ἐπὶ τῶν φυλακῶν τῶν ἱερῶν χρημάτων",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The inscription explicitly references a decree of the Athenian people as the authority for the recorded actions.",
+      "confidence": 1.0,
+      "quote": "κατὰ τὸ ψήφισμα τοῦ δήμου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Votive Dedications",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Votive Dedications",
+        "subcategory": null
+      },
+      "rationale": "The context involves the Pythais (sacred procession) to Delos and the dedication of the aparche to Apollo Pythios.",
+      "confidence": 1.0,
+      "quote": "τῆς εἰς Δῆλον πυθαΐδος καὶ τῆς ἀπαρχῆς ... τῶι Ἀπόλλωνι τῶι Πυθίωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Theokles",
+        "role": "Archon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Theokles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Echekrates",
+        "role": "Archon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Echekrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Medeios",
+        "role": "Archon and General",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Medeios",
+        "confidence": 1.0
+      },
+      {
+        "name": "Theodosios",
+        "role": "Archon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Theodosios",
+        "confidence": 1.0
+      },
+      {
+        "name": "Prokles",
+        "role": "Archon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Prokles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Argeios",
+        "role": "Archon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Argeios",
+        "confidence": 1.0
+      },
+      {
+        "name": "Herakleitos",
+        "role": "Archon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Herakleitos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sarapion",
+        "role": "General",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Sarapion",
+        "confidence": 1.0
+      },
+      {
+        "name": "Diotimos",
+        "role": "Polemarch",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Diotimos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristonymos",
+        "role": "Thesmothetes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aristonymos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Glaukias",
+        "role": "Herald",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Glaukias",
+        "confidence": 1.0
+      },
+      {
+        "name": "Ammonios",
+        "role": "Priest",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Ammonios",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Athens",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      },
+      {
+        "name": "Delos",
+        "type": "Island/Sanctuary",
+        "uri": "https://pleiades.stoa.org/places/599587",
+        "confidence": 1.0
+      },
+      {
+        "name": "Piraeus",
+        "type": "Port",
+        "uri": "https://pleiades.stoa.org/places/580062",
+        "confidence": 1.0
+      },
+      {
+        "name": "Marathon",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580021",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eleusis",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579920",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sounion",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580107",
+        "confidence": 1.0
+      },
+      {
+        "name": "Myrrhinous",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580030",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kephale",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579971",
+        "confidence": 1.0
+      },
+      {
+        "name": "Paiania",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Melite",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/582863",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Apollo Pythios",
+        "uri": "https://www.wikidata.org/wiki/Q37340",
+        "confidence": 1.0
+      },
+      {
+        "name": "Artemis",
+        "uri": "https://www.wikidata.org/wiki/Q39503",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hermes",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Sarapis",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Hagne Theos",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Zeus Kynthios",
+        "uri": "https://www.wikidata.org/wiki/Q34201",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dionysus",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579885",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a multi-year record of the Athenian Pythais to Delos, listing the magistrates, priests, and other officials involved in the administration of the sacred procession and the offering of the firstfruits (aparche) to Apollo. It covers several archonships from the late 2nd to early 1st century BCE and provides a detailed prosopography of the Athenian elite during this period.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

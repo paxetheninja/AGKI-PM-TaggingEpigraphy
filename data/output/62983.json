@@ -1,0 +1,208 @@
+{
+  "phi_id": 62983,
+  "themes": [
+    {
+      "label": "Contracts and Private Legal Acts",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Contracts and Private Legal Acts",
+        "subcategory": null
+      },
+      "rationale": "The inscription is a detailed building contract (syngraphe) outlining technical specifications, construction methods, and legal obligations for a public work.",
+      "confidence": 1.0,
+      "quote": "ποησ τω δ κα στ λην τ ι συγγρα φ ι κα ναγραψ σθω",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The text includes financial details, including costs, fines in drachmas, and the total sum involved in the contract.",
+      "confidence": 1.0,
+      "quote": "φαιρ σομεν π τ ς ργυ ς κ στης ξωθεν μετρο μενοι δραχμ ς δ κα",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The document concludes with an extensive list of magistrates, including the archon, council members (bouleutai), market overseers (agoranomoi), and guarantors.",
+      "confidence": 1.0,
+      "quote": "ρχοντος μην ς παν μου ... βουλευτ λυνπι δωρος λικ νδρου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The text explicitly mentions that the contract is to be inscribed on a stone stele of specific dimensions.",
+      "confidence": 1.0,
+      "quote": "ποησ τω δ κα στ λην τ ι συγγρα φ ι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Architraves / Friezes / Archways",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Other Architectural Elements"
+      },
+      "rationale": "The contract provides meticulous instructions for the construction of architectural elements including columns, architraves, triglyphs, and metopes.",
+      "confidence": 1.0,
+      "quote": "τπισστ λιον πιθ σηι κ κλωι π δ το πισστυλ ου το [ π το χου πιθ σει μετ πια]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The text contains numerous lacunae and reconstructed sections, indicating the physical state of the inscription is not fully intact.",
+      "confidence": 1.0,
+      "quote": "[τ]α ς πλ [νθοις] -- ας τιθ τω δ τος λ θ[ους -------]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Pyrrhides",
+        "role": "Archon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Pyrrhides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Menander",
+        "role": "Guarantor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Menander",
+        "confidence": 1.0
+      },
+      {
+        "name": "Diodotus",
+        "role": "Guarantor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Diodotus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Parmenion",
+        "role": "Guarantor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Parmenion",
+        "confidence": 1.0
+      },
+      {
+        "name": "Geryllus",
+        "role": "Guarantor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Geryllus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Olympidorus",
+        "role": "Council Member",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Olympidorus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Autocrates",
+        "role": "Council Member",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Autocrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Antigonus",
+        "role": "Council Member",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Antigonus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Epithales",
+        "role": "Council Member",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Epithales",
+        "confidence": 1.0
+      },
+      {
+        "name": "Antipater",
+        "role": "Council Member",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Antipater",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phanos",
+        "role": "Market Overseer",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Phanos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Glaucus",
+        "role": "Market Overseer",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Glaucus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Theodorus",
+        "role": "President",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Theodorus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pollidorus",
+        "role": "President",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Pollidorus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Autocles",
+        "role": "Witness",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Autocles",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Delos",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/599587",
+        "confidence": 1.0
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Delos",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/599587",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription from Delos, dated to 297 BC, is a highly technical building contract. It details the architectural requirements for a structure, likely a temple or public portico, specifying the dimensions and placement of columns, capitals, triglyphs, and metopes. It also includes administrative and legal clauses, such as the names of the magistrates overseeing the project, the financial penalties for non-compliance, and a list of citizens serving as guarantors for the contractor.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 297 BC",
+  "date_min": -297.0,
+  "date_max": -297.0,
+  "date_circa": false
+}

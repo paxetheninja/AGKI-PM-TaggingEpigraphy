@@ -1,0 +1,238 @@
+{
+  "phi_id": 62558,
+  "themes": [
+    {
+      "label": "Inventories",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Inventories",
+        "subcategory": null
+      },
+      "rationale": "The inscription contains extensive lists of ritual objects, bronze vessels, and naval equipment, which is characteristic of administrative inventories.",
+      "confidence": 1.0,
+      "quote": "κερατ[ να] ... βο ς ... β ρσαν ... χαλκ ον θερμα[ντ ριον] ... περιραντ ριον ... ψυκτ ρες ... βελ σκοι ... σχ ριον ... καδ ... λυχν ... ο νοχο διον ... προχο διον ... χ τρα χαλκ ... ποδανιπτ ρ ... κοττ βειον ... λυχνε ον ... λεβ τια ... σκε η τ ς τρι ρου[ς]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The text mentions financial terms such as 'misthos' (rent/payment), 'eggye' (surety/guarantee), and 'argyrio' (money), indicating it records financial transactions or obligations.",
+      "confidence": 1.0,
+      "quote": "μισθω. ... γγυη. ... [τ] ν δοθ ντων ... ργ[υ]ριο",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Contracts and Private Legal Acts",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Contracts and Private Legal Acts",
+        "subcategory": null
+      },
+      "rationale": "The repetitive structure of 'misthos' followed by 'eggye' and a name suggests the recording of lease contracts and their respective guarantors.",
+      "confidence": 0.8,
+      "quote": "μισθω. ... γγυη. ... θεοτ λης θ α[ν]το[ς] αμ[νο σιος]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The inscription lists numerous individuals by name, patronymic, and demotic, serving as a record of citizens involved in these administrative or financial acts.",
+      "confidence": 1.0,
+      "quote": "θεοτ λης θ α[ν]το[ς] ... νδρο[κ]λ ς ... φιλοκλ [ς] ... χαρισα]νδ[ρ] δης χαρισανδ[ρ] δου [λευσ νιος] ... καλλισθ νους τρινε[μεε ς] ... θε μνηστος δειν ο[υ θμονε ς]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Theoteles",
+        "role": "Lessee or guarantor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Theoteles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Androkles",
+        "role": "Lessee or guarantor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Androkles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Philokles",
+        "role": "Guarantor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Philokles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Charisandrides",
+        "role": "Lessee or guarantor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Charisandrides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kallisthenes",
+        "role": "Father of a lessee",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Kallisthenes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Theomnestos",
+        "role": "Lessee or guarantor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Theomnestos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dieitrephes",
+        "role": "Official (Archieus)",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Dieitrephes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Moschos",
+        "role": "Lessee or guarantor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Moschos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Smikrion",
+        "role": "Father of a lessee",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Smikrion",
+        "confidence": 1.0
+      },
+      {
+        "name": "Mnesitheos",
+        "role": "Defendant or litigant",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Mnesitheos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Charmylos",
+        "role": "Individual mentioned",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Charmylos",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Delos",
+        "type": "Island and Sanctuary",
+        "uri": "https://pleiades.stoa.org/places/599587",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eleusis",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579920",
+        "confidence": 1.0
+      },
+      {
+        "name": "Athmonon",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579887",
+        "confidence": 1.0
+      },
+      {
+        "name": "Cholargos",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579902",
+        "confidence": 1.0
+      },
+      {
+        "name": "Acharnae",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Aigilia",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579852",
+        "confidence": 1.0
+      },
+      {
+        "name": "Trinemeia",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580126",
+        "confidence": 1.0
+      },
+      {
+        "name": "Teithras",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580115",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hamaxanteia",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/585916",
+        "confidence": 1.0
+      },
+      {
+        "name": "Stoa Poikile",
+        "type": "Building and Court location",
+        "uri": "https://pleiades.stoa.org/places/143098101",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hippodrome",
+        "type": "Athletic facility",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Aphesis",
+        "type": "Starting line of the hippodrome",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Aphrodite",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Artemis",
+        "uri": "https://www.wikidata.org/wiki/Q39503",
+        "confidence": 1.0
+      },
+      {
+        "name": "Archegetes",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Delos",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/599587",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription from Delos is a complex administrative document, likely an inventory and account record of the Athenian administration on the island. It details the leasing of sacred lands or properties (indicated by 'misthos' and 'eggye'), lists various ritual and domestic bronze objects (kraters, basins, lamps), and includes an inventory of naval equipment ('skeue tes trierous'). It concludes with a reference to a legal proceeding in the Stoa Poikile involving voting pebbles (psephon).",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " ca. 340 BC",
+  "date_min": -340.0,
+  "date_max": -340.0,
+  "date_circa": true
+}

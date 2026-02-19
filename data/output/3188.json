@@ -1,0 +1,181 @@
+{
+  "phi_id": 3188,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The inscription follows the standard Athenian decree formula, including the decision of the Council and the People.",
+      "confidence": 1.0,
+      "quote": " ἔδοξεν τε βου[λε κα τ ι δ μωι]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The text honors Miltiades, son of Zoilos, for his extensive public service, financial contributions, and religious piety.",
+      "confidence": 1.0,
+      "quote": "ἐπειδὴ Μιλτιάδης Ζωίλου ... εὔχρηστον αὑτὸν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Building Commemoration",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Building Commemoration",
+        "subcategory": null
+      },
+      "rationale": "The honorand is specifically praised for repairing public buildings, including the Long Stoa in the Kerameikos and the Anakeion.",
+      "confidence": 1.0,
+      "quote": "τ ς] ν κεραμεικ ι μακρ ς στ[ο ς ... τ ι ν]ακε [ω]ι πεσκε ασεν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Agonistic / Victory Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Agonistic / Victory Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription records Miltiades' service as Agonothetes (festival director) for the Panathenaic Games.",
+      "confidence": 1.0,
+      "quote": "τ ν γ]ωνοθεσ αν τ ν παναθηνα [ων",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The text details specific financial outlays, including private funds spent on grain (sitonika) and festival preparations when public revenues were insufficient.",
+      "confidence": 0.8,
+      "quote": "προσ νεγ]κεν ο κ λ γα χρ μ[ατα ... κ τ ν δ [ων προαν] λωσεν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Miltiades",
+        "role": "Honorand, Agonothetes, and Grain Commissioner",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Miltiades",
+        "confidence": 1.0
+      },
+      {
+        "name": "Zoilos",
+        "role": "Father of the honorand",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Zoilos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Daughter of Miltiades",
+        "role": "Kanephoros (Basket-bearer)",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Daughter%20of%20Miltiades",
+        "confidence": 0.8
+      }
+    ],
+    "places": [
+      {
+        "name": "Athens",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      },
+      {
+        "name": "Marathon",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580021",
+        "confidence": 1.0
+      },
+      {
+        "name": "Melite",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/582863",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kerameikos",
+        "type": "District",
+        "uri": "https://pleiades.stoa.org/places/97294452",
+        "confidence": 1.0
+      },
+      {
+        "name": "Acropolis",
+        "type": "Citadel",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      },
+      {
+        "name": "Anakeion",
+        "type": "Sanctuary",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Long Stoa",
+        "type": "Building",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Hippothontis",
+        "type": "Tribe",
+        "uri": "https://pleiades.stoa.org/places/908290183",
+        "confidence": 1.0
+      },
+      {
+        "name": "Boutadai",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579897",
+        "confidence": 0.8
+      }
+    ],
+    "deities": [
+      {
+        "name": "Athena",
+        "uri": "https://www.wikidata.org/wiki/Q37122",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dioskouroi",
+        "uri": null,
+        "confidence": 0.8
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579885",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This is a significant Athenian honorific decree from the mid-2nd century BC. It documents the career of Miltiades of Marathon, highlighting the Hellenistic practice of liturgy and euergetism, where wealthy citizens funded essential city functions like grain supply and religious festivals (the Panathenaia) from their private wealth. The text also provides valuable topographical information regarding the Kerameikos and the repair of public monuments such as the Anakeion and the Long Stoa.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " c. 140 a.?",
+  "date_min": -140.0,
+  "date_max": -140.0,
+  "date_circa": true
+}

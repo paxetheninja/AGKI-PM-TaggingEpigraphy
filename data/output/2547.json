@@ -1,0 +1,190 @@
+{
+  "phi_id": 2547,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text follows the standard Athenian decree formula, including the archonship, prytany, and the decision of the council and people.",
+      "confidence": 1.0,
+      "quote": "ἔδοξεν τῷ δήμῳ",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The primary purpose of the inscription is to honor Phyleus and his fellow hieropoioi for their virtuous service to the state.",
+      "confidence": 1.0,
+      "quote": "ἐπαινέσαι τὸν ἱεροποιὸν τῆς βουλῆς καὶ τοῦ δήμου... καὶ στεφανῶσαι χρυσῷ στεφάνῳ",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The decree contains specific financial instructions for the treasurer regarding the funding of the golden crown and the publication of the stele.",
+      "confidence": 1.0,
+      "quote": "τὸ δὲ ἀργύριον τὸ εἰς τὸν στέφανον προδανεῖσαι τὸν ταμίαν τοῦ δήμου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The text names several officials, specifically the hieropoioi (sacred officials) and the archon, as part of the official record.",
+      "confidence": 1.0,
+      "quote": "ἐπὶ Πυθοδήλου ἄρχοντος... οἱ συνάρχοντες ἱεροποιοὶ λέγουσιν Παυσανίας καὶ Χαρίδημος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The inscription explicitly orders the text to be recorded on a stone stele.",
+      "confidence": 1.0,
+      "quote": "ἀναγράψαι δὲ τόδε τὸ ψήφισμα τὸν γραμματέα... ἐν στήλῃ λιθίνῃ",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "Public decrees in 4th-century Athens, especially those set on the Acropolis, were almost exclusively inscribed on marble, though the text simply specifies 'stone'.",
+      "confidence": 0.8,
+      "quote": "στήλῃ λιθίνῃ",
+      "is_ambiguous": true,
+      "ambiguity_note": "The text specifies 'stone' (lithine), but marble is the standard material for such Athenian state documents."
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Pythodelos",
+        "role": "Archon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Pythodelos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phyleus",
+        "role": "Hieropoios (Official)",
+        "uri": "https://www.wikidata.org/wiki/Q1243502",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pausanias",
+        "role": "Father of Phyleus and fellow Hieropoios",
+        "uri": "https://www.wikidata.org/wiki/Q192931",
+        "confidence": 1.0
+      },
+      {
+        "name": "Theodoros",
+        "role": "Proposer of the decree",
+        "uri": "https://www.wikidata.org/wiki/Q112867544",
+        "confidence": 1.0
+      },
+      {
+        "name": "Antiphon",
+        "role": "Father of Theodoros",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Antiphon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hippochares",
+        "role": "Proposer of the decree",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Hippochares",
+        "confidence": 1.0
+      },
+      {
+        "name": "Chairegenes",
+        "role": "Proposer of the decree",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Chairegenes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Charidemos",
+        "role": "Hieropoios (Official)",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Charidemos",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Athens",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      },
+      {
+        "name": "Acropolis",
+        "type": "Sanctuary/Location",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      },
+      {
+        "name": "Oinoe",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580039",
+        "confidence": 1.0
+      },
+      {
+        "name": "Alopeke",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579858",
+        "confidence": 1.0
+      },
+      {
+        "name": "Ikaria",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579958",
+        "confidence": 1.0
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579885",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription consists of multiple Athenian decrees from the archonship of Pythodelos (335/4 BC). It honors Phyleus of Oinoe and his colleagues, who served as hieropoioi (officials in charge of sacred rites), for their conduct and virtue. The text includes standard administrative details such as the prytany, the presiding officers (proedroi), and the secretary, as well as specific instructions for the treasurer to fund a golden crown and a stone stele to be erected on the Acropolis.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

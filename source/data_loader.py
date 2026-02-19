@@ -6,6 +6,7 @@ from pydantic import BaseModel, Field
 class InputInscription(BaseModel):
     id: int
     text: str
+    text_by_lines: Optional[List[str]] = None
     metadata: Optional[str] = None
     region_main_id: Optional[str] = None
     region_main: Optional[str] = None

@@ -1,0 +1,108 @@
+{
+  "phi_id": 3314,
+  "themes": [
+    {
+      "label": "Official Letters",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Official Letters",
+        "subcategory": null
+      },
+      "rationale": "The text is a formal communication from the imperial circle, specifically Empress Plotina, regarding the administration of the Epicurean school.",
+      "confidence": 1.0,
+      "quote": "πλωτεῖνα σεβαστὴ πᾶσι τοῖς φίλοις χαίρειν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Laws and Regulations",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Laws and Regulations",
+        "subcategory": null
+      },
+      "rationale": "The inscription outlines the legal rules and imperial permissions granted for the succession of the head of the Epicurean school in Athens.",
+      "confidence": 1.0,
+      "quote": "συνκεχώρηται γὰρ τῶι διαδόχωι ὡς ἂν μέλληι τῆς Ἐπικούρου διαδοχῆς ὑφηγεῖσθαι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Contracts and Private Legal Acts",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Contracts and Private Legal Acts",
+        "subcategory": null
+      },
+      "rationale": "The text explicitly mentions the use of a Greek-style will or testament to arrange the succession of the school's leadership.",
+      "confidence": 1.0,
+      "quote": "Ἑλληνικῆι διαθήκηι διατάσσεσθαι καὶ αἱρεῖσθαι εἴτε Ἕλληνα εἴτε Ῥωμαῖον",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The emperor is praised using high honorific titles, described as a benefactor and a decorator of all education.",
+      "confidence": 0.9,
+      "quote": "εὐεργέτηι καὶ πάσης π[α]ιδείας κοσμητῆι ὄντι καὶ κατὰ τοῦτο σε[βα]σμιωτάτωι αὐτοκράτορι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Plotina",
+        "role": "Empress and Patron",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Plotina",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hadrian",
+        "role": "Emperor and Benefactor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Hadrian",
+        "confidence": 1.0
+      },
+      {
+        "name": "Epicurus",
+        "role": "Philosopher and Founder",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Epicurus",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Athens",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/579885",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription preserves a significant letter from Empress Plotina and Emperor Hadrian (dated to 121 AD) addressed to the Epicurean school in Athens. It grants the head of the school (the diadochos) the right to appoint a successor who may be a non-Roman citizen (a Greek) and allows the use of a Greek-style will for this purpose. It is a crucial document for understanding the legal status of philosophical schools in the Roman Empire and the personal interest of the imperial family in Athenian intellectual life.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 121 p.",
+  "date_min": 121.0,
+  "date_max": 121.0,
+  "date_circa": false
+}

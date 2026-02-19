@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PHI-63933 - AGKI</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <style>
+    /* Custom Scrollbar Styling */
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: rgba(0,0,0,0.05); }
+    ::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #aaa; }
+
+    .page-container { max-width: 1400px; margin: 0 auto; padding: 2rem; }
+    .back-link { display: inline-block; margin-bottom: 1rem; color: var(--primary); font-weight: 600; }
+    .text-viewer-original { display: grid; grid-template-columns: 40px 1fr; gap: 2rem; font-family: "New Athena Unicode", "Gentium Plus", "Times New Roman", serif; font-size: 1.25rem; line-height: 1.6; background: var(--panel); padding: 2rem; border: 1px solid var(--border); border-radius: 4px; margin-bottom: 2rem; color: var(--text); }
+    .line-numbers { text-align: right; color: var(--muted); font-size: 1.25rem; line-height: 1.6; user-select: none; opacity: 0.5; font-family: inherit; white-space: pre; padding-right: 1rem; border-right: 1px solid var(--border); }
+    .greek-content { white-space: pre-wrap; word-break: break-word; padding-left: 1rem; }
+    .highlight-evidence { background-color: var(--accent); color: white; border-radius: 2px; padding: 0 2px; }
+    .theme-card { background: var(--panel); padding: 1rem 1.5rem; border-left: 4px solid var(--primary); margin-bottom: 0.75rem; border: 1px solid var(--border); border-left-width: 4px; }
+    .ai-analysis-box { background: rgba(31, 167, 163, 0.05); padding: 2rem; border-radius: 8px; border: 1px solid var(--border); margin-top: 2rem; }
+    .evidence-box { max-width: 500px; text-align: right; }
+    .evidence-quote { font-size: 0.85rem; font-style: italic; color: var(--muted); margin: 0; }
+    .badge.green { background: #e6f4ea; color: #137333; border-color: #137333; }
+    .badge.orange { background: #fef7e0; color: #b06000; border-color: #b06000; }
+    .badge.red { background: #fce8e6; color: #c5221f; border-color: #c5221f; }
+    .entity-tag { background: rgba(217, 123, 61, 0.1); color: var(--accent-2); margin-right: 0.5rem; margin-bottom: 0.5rem; display: inline-block; padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.9rem; border: 1px solid rgba(217, 123, 61, 0.2); }
+    .split-container { display: block; }
+    .split-container.active { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+    .split-container.active .split-col-right { position: sticky; top: 20px; max-height: 90vh; overflow-y: auto; padding-right: 10px; }
+  </style>
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+
+    function toggleSplitView() {
+        const container = document.getElementById('main-content');
+        const btn = document.getElementById('splitViewBtn');
+        container.classList.toggle('active');
+        btn.textContent = container.classList.contains('active') ? 'View: Split' : 'View: Standard';
+    }
+
+    function copyCitation() {
+        const citation = "AGKI Project. (2026). Inscription PHI-63933 . Retrieved from " + window.location.href;
+        navigator.clipboard.writeText(citation);
+        alert("Citation copied to clipboard!");
+    }
+
+    function highlightQuote(quote) {
+        const container = document.querySelector('.greek-content');
+        if (!container || !quote) return;
+        if (!container.dataset.original) container.dataset.original = container.innerHTML;
+        else container.innerHTML = container.dataset.original;
+        
+        const regex = new RegExp(quote.trim().replace(/\s+/g, '\\s+'), 'g');
+        container.innerHTML = container.innerHTML.replace(regex, match => `<mark class="highlight-evidence">${match}</mark>`);
+    }
+
+    function clearHighlight() {
+        const container = document.querySelector('.greek-content');
+        if (container && container.dataset.original) container.innerHTML = container.dataset.original;
+    }
+
+    function updateFontSize(size) {
+        const v = document.getElementById('original-view');
+        if(v) v.style.fontSize = size + 'px';
+    }
+
+    function openReportModal() { document.getElementById('reportModal').style.display = 'block'; }
+    function closeReportModal() { document.getElementById('reportModal').style.display = 'none'; }
+    function sendReport() {
+        const category = document.getElementById('reportCategory').value;
+        const desc = document.getElementById('reportDesc').value;
+        const fix = document.getElementById('reportFix').value;
+        const subject = `AGKI Error Report: PHI-63933`;
+        const body = `Category: ${category}%0D%0ADescription: ${desc}%0D%0AProposed Fix: ${fix}`;
+        window.location.href = `mailto:admin@agki-project.org?subject=${encodeURIComponent(subject)}&body=${body}`;
+        closeReportModal();
+    }
+  </script>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="brand"><h1><a href="../../index.html">AGKI Tagging Tool</a></h1></div>
+    <nav class="nav-links">
+        <a href="../../index.html" class="nav-item">Home</a>
+        <a href="../search.html" class="nav-item">Search</a>
+        <a href="../explore.html" class="nav-item">Explore</a>
+        <a href="../basket.html" class="nav-item">Databasket</a>
+        <a href="../compare.html" class="nav-item">Compare</a>
+        <a href="../network.html" class="nav-item">Network</a>
+        <a href="../matrix.html" class="nav-item">Matrix</a>
+        <a href="../indices.html" class="nav-item">Indices</a>
+    </nav>
+    <div class="header-controls">
+        <button class="theme-toggle-btn" onclick="toggleTheme()" id="themeBtn">Dark Mode</button>
+    </div>
+  </header>
+
+  <script>
+    const themeBtn = document.getElementById('themeBtn');
+    function updateThemeBtn() {
+        const current = document.documentElement.getAttribute('data-theme');
+        if(themeBtn) themeBtn.textContent = current === 'light' ? 'Dark Mode' : 'Light Mode';
+    }
+    updateThemeBtn();
+    window.toggleTheme = function() {
+        const current = document.documentElement.getAttribute('data-theme');
+        const next = current === 'light' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        updateThemeBtn();
+    }
+  </script>
+
+  <main class="page-container inscription-page">
+    <div class="inscription-toolbar">
+        <a href="../search.html" class="back-link"><- Back to Dashboard</a>
+        <div class="inscription-actions">
+            <button id="splitViewBtn" onclick="toggleSplitView()" class="button secondary compact">View: Standard</button>
+            <button onclick="openReportModal()" class="button error compact">Report Error</button>
+        </div>
+    </div>
+
+    <!-- Report Modal -->
+    <div id="reportModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:1000;">
+        <div style="background:var(--panel); width:90%; max-width:500px; margin:10% auto; padding:2rem; border-radius:8px; border:1px solid var(--border);">
+            <h3>Report Error for PHI-63933</h3>
+            <label>Error Category</label>
+            <select id="reportCategory" style="width:100%; padding:0.5rem; margin-bottom:1rem;">
+                <option value="Incorrect Tag">Incorrect Tag / Theme</option>
+                <option value="Missing Entity">Missing Person / Place</option>
+                <option value="Translation Error">Translation / Text Issue</option>
+                <option value="Other">Other</option>
+            </select>
+            <label>Description</label>
+            <textarea id="reportDesc" rows="3" style="width:100%; margin-bottom:1rem;"></textarea>
+            <label>Proposed Fix</label>
+            <textarea id="reportFix" rows="2" style="width:100%; margin-bottom:1.5rem;"></textarea>
+            <div style="display:flex; justify-content:flex-end; gap:0.5rem;">
+                <button onclick="closeReportModal()" class="button secondary">Cancel</button>
+                <button onclick="sendReport()" class="button">Create Email Report</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="main-content" class="split-container">
+        <div class="split-col-left">
+            <section class="inscription-hero">
+                <div class="inscription-title-row">
+                    <h2>Inscription PHI-63933</h2>
+                    <div class="inscription-actions">
+                        <button onclick="copyCitation()" class="button secondary compact">Cite</button>
+                        <a href="https://epigraphy.packhum.org/text/63933" target="_blank" class="button secondary compact">View on PHI</a>
+                    </div>
+                </div>
+                <div class="inscription-meta">
+                    <div class="meta-item"><div class="label">Provenance</div><div class="meta-value"><a href="https://pleiades.stoa.org/places/599587" target="_blank" title="View in Pleiades">Delos</a></div></div>
+                    <div class="meta-item"><div class="label">Date</div><div class="meta-value"> 160/59 BC </div></div>
+                    <div class="meta-item"><div class="label">Completeness</div><div class="meta-value"><span class="badge info">fragmentary</span></div></div>
+                    <div class="meta-item"><div class="label">Tagged by</div><div class="meta-value"><span class="badge" style="background:rgba(12,140,136,0.15); color:#0c8c88; border:1px solid #0c8c88;">gemini-3-flash-preview (Proposer+Judge)</span></div></div>
+                </div>
+            </section>
+            <div class="inscription-title-row">
+                <h3>Original Text</h3>
+                <div class="font-size-control">
+                    <input type="range" min="14" max="32" value="20" oninput="updateFontSize(this.value)">
+                </div>
+            </div>
+            <div id="original-view" class="text-viewer-original">
+                <div class="line-numbers">1</div>
+                <div class="greek-content">[θε]ο. [ π τυχ νδρου ρχοντ]ος π τ ς ο νε δος ν της [πρυτανε ας ι σωσιγ]νης μενεκρ του μαραθ νιος γραμ[μ τευεν λαφηβολι νο]ς τετρ δι σταμ νου ν τει κα [δεκ τει τ ς πρυτανε]ας κκλησ α κυρ α ν τ ι θε τρωι [ τ ν προ δρων] πεψ φισεν κτα ος σ μωνος [θμονε ς κα συμπρ εδροι]δοξεν τε βουλε κα τ ι δ μωι -------------- ν ε πεν πειδ τ ν προγ νων τ[ο] [βασιλ ως φαρν κου φ λων] παρχ ντων το δ μου το [θηνα ων ------------]ι τ προγεγον τα φιλ[ νθρωπα --] -------------- ν τε τ ν βασιλ α 0 ------- [------------ ψ φ]ισμα πο[δο ναι -------] -μβ- [ο μ νον π ντα τ καθυστερο ντα χρ ματα]πηγγε λατο [ ποδ σειν λλ τ μ ν τρ τον μ ρος παραχρ] μα δωκεν το ς πρεσβευτα ς [τ δ λοιπ κατ] λ γον ω θη δε ν παραλαμβ νειν κα π λιν τ [γεν μενα το] ς λθο σιν συν θηκεν κα περ ο κ ε καιρ ν λλ [κα το] ς λλους παρηιτημ νος δι τ μ πω καθεστηκ ναι τ πρ [γμ]ατα π γγελται δ κα ε ς τ λοιπ ν ξαποστελε ν κατ τ μολογημ να πρ τερον γαθε τ χει δεδ χθαι τε βουλε το ς λαχ ντας προ δρους ε[ ς τ ν] πιο σαν κκλησ αν χρηματ σαι περ το των γν μην δ [ξυμβ λ]λεσθαι τ ς βουλ ς ε ς τ ν δ μον τι δοκε τε βουλε παιν[ σαι μ ν] τ ν βασιλ α φαρν κην κα στεφαν σαι χρυσ ι στεφ νωι ρισ[τε] ωι κατ τ ν ν μον κα νειπε ν τ ν στ φανον το τον διονυσ ων τε τ ν ν στει τραγωιδ ν τ ι καιν ι γ νι κα παναθηνα ων κα λευσιν ων κα πτολεμα ων το ς γυμνικο ς γ σιν πε δ κα προσ γγελται τ ν βασ λισσαν ν σαν βασιλ ως ντι χου θυγατ ρα συνωικηκ ναι τ ι βασιλε φαρν κει καθ κον δ στ ν θηνα οις μεμνημ νους π γαθ ι κα τιμ ντας φα νεσθαι το ς ε εργ τας το δ μου κα το ς ξ ε εργετ ν γεγον τας παιν σαι τ ν βασ λισσαν ν σαν βασιλ ως ντι χου κα βασιλ σσης λαοδ κης κα στεφαν σαι χρυσ ι στεφ νωι κατ τ ν ν μον κα ναγορε σαι κα το τον τ ν στ φανον διονυσ ων τε τ ν ν στει τραγωιδ ν τ ι καιν ι γ νι κα παναθηνα ων κα λευσιν ων κα πτολεμα ων το ς γυμνικο ς γ σιν στ σαι δ το βασιλ ως φαρν κου κα τ ς βασιλ σσης ν σης κατ ρου ε κ να χαλκ ν κα ναθε ναι ν δ λωι τ ς δ ναγορε σεως τ ν στεφ νων κα τ ν ε κ νων πιμεληθ ναι το ς στρατηγο ς κα τ ν ταμ αν τ ν στρατιωτικ ν χειροτον σαι δ τ ν δ μον δη τρε ς νδρας ξ θηνα ων π ντων ο τινες πιμελ σονται τ ς κατασκευ ς κα τ ς ναθ σεως τ ν ε κ νων ναγρ ψαι δ τ δε τ ψ φισμα τ ν γραμματ α τ ν κατ πρυτανε αν ν στ λει λιθ νει κα στ σαι παρ τ ς ε κ νας ε ς δ τ ν [να]γραφ ν κα τ ν ν θεσιν τ ς στ λης τ γεν μενον ν λωμα μ[ερ σαι] τ ν ταμ αν τ ν στρατιωτικ ν πως δ ν κα ν ν καθ κοντος το καιρο πενφθε ποκομι ν τ πιβ λλοντα δοθ ναι κολο θως τε [τ]ο βασιλ ως α ρ σει κα το ς γεγον σιν π α το προστ γμασιν χειροτον σαι τ ν δ μον δη να νδρα ξ θηνα ων π ντων στις φικ μενος πρ ς τ ν βασιλ α φαρν κην τ τε ψ φισμα ποδ σει κα προσαγορε σει [κα] α τ ν κα τ ν βασ λισσαν π ρ το δ μου κα ν ν δυνατ ι ε πα[ραλ] ψεται τ γιν μενα μ ρη τ ι νιαυτ ι ναγγ λλειν δ τ ι βασιλε τ ν κ[εχ]ειροτονημ νον τι δ μ[ος π]ειρ σεται μηθεν ς καταδε στερον πρ[ο γ]εσθαι τν λλων [βασι]λ ων λλ π ντα τ πρ ς δ ξαν κα μν μην [α τ ι ν κο]ντα συνκατασκευ σει καθ περ κα το ς λλοις ε εργ ταις [τ ς π]λεως τ ι δ χειροτονηθ ντι νδρ μερ σαι τ φ διον τ ν ταμ αν [τ]ν στρατιωτικ ν ποδημ σων πρ ς τ ν βασιλ α φαρν κην κατ τ ψ [φι]σμα κεχειροτ νηται φιλ ξενος πειραιε ς ο πιμελησ μενοι τ ς κατα[σκ]ευ ς κα τ ς ναθ σεως τ ν ε κ νων κατ τ ψ φισμα ο δε κεχειροτ νηνται λ ων α ξωνε ς φιλ ξενος πειραιε ς διον σιος γ μυρρινο ττης. βουλ δ μος τ ν βασιλ α φαρν κην. βουλ δ μος τ ν βασ λισσαν ν σαν.</div>
+            </div>
+        </div>
+        <div class="split-col-right">
+            <h3>Thematic Analysis</h3>
+            
+        <div class="theme-card" onmouseover="highlightQuote('ἔδοξεν τεῖ βουλεῖ καὶ τῶι δήμωι')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Content/Official and Legal Documents/Decrees" class="tag domain-tag" style="text-decoration:none;">Content</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
+                    <div class="theme-path">Content > Official and Legal Documents > Decrees</div>
+                    <div class="theme-label">Decrees</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "ἔδοξεν τεῖ βουλεῖ καὶ τῶι δήμωι"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('ἐπαινέσαι μὲν τὸν βασιλέα Φαρνάκην καὶ στεφανῶσαι χρυσῶι στεφάνωι')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Content/Honorific and Commemorative Inscriptions/Honorific Inscriptions" class="tag domain-tag" style="text-decoration:none;">Content</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
+                    <div class="theme-path">Content > Honorific and Commemorative Inscriptions > Honorific Inscriptions</div>
+                    <div class="theme-label">Honorific Inscriptions</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "ἐπαινέσαι μὲν τὸν βασιλέα Φαρνάκην καὶ στεφανῶσαι χρυσῶι στεφάνωι"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('τὸ γενόμενον ἀνάλωμα μερίσαι τὸν ταμίαν τῶν στρατιωτικῶν')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Content/Administrative Records and Lists/Accounts and Financial Records" class="tag domain-tag" style="text-decoration:none;">Content</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
+                    <div class="theme-path">Content > Administrative Records and Lists > Accounts and Financial Records</div>
+                    <div class="theme-label">Accounts and Financial Records</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "τὸ γενόμενον ἀνάλωμα μερίσαι τὸν ταμίαν τῶν στρατιωτικῶν"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('διονυσίων τε τῶν ἐν ἄστει τραγωιδῶν τῶι καινῶι ἀγῶνι καὶ παναθηναίων καὶ ἐλευσινίων καὶ πτολεμαίων τοῖς γυμνικοῖς ἀγῶσιν')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Content/Honorific and Commemorative Inscriptions/Agonistic / Victory Inscriptions" class="tag domain-tag" style="text-decoration:none;">Content</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
+                    <div class="theme-path">Content > Honorific and Commemorative Inscriptions > Agonistic / Victory Inscriptions</div>
+                    <div class="theme-label">Agonistic / Victory Inscriptions</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "διονυσίων τε τῶν ἐν ἄστει τραγωιδῶν τῶι καινῶι ἀγῶνι καὶ παναθηναίων καὶ ἐλευσινίων καὶ πτολεμαίων τοῖς γυμνικοῖς ἀγῶσιν"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('οἵδε κεχειροτόνηνται Λέων Αἰξωνεύς Φιλόξενος Πειραιεύς Διονύσιος ἐκ Μυρρινούττης')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Content/Administrative Records and Lists/Lists of Officials or Citizens" class="tag domain-tag" style="text-decoration:none;">Content</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
+                    <div class="theme-path">Content > Administrative Records and Lists > Lists of Officials or Citizens</div>
+                    <div class="theme-label">Lists of Officials or Citizens</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "οἵδε κεχειροτόνηνται Λέων Αἰξωνεύς Φιλόξενος Πειραιεύς Διονύσιος ἐκ Μυρρινούττης"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('ἀναγράψαι δὲ τόδε τὸ ψήφισμα τὸν γραμματέα τὸν κατὰ πρυτανείαν ἐν στήλει λιθίνει')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Type/Object Type/Monumental Stone Objects/Stele" class="tag domain-tag" style="text-decoration:none;">Type</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
+                    <div class="theme-path">Type > Object Type > Monumental Stone Objects > Stele</div>
+                    <div class="theme-label">Stele</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "ἀναγράψαι δὲ τόδε τὸ ψήφισμα τὸν γραμματέα τὸν κατὰ πρυτανείαν ἐν στήλει λιθίνει"</p>
+                </div>
+            </div>
+        </div>
+        
+            <div style="margin-top:2rem;"><h3>Entities</h3><div><a href="../search.html?q=Pharnaces I" class="tag entity-tag" style="text-decoration:none;">👤 Pharnaces I <small>(King of Pontus, honored benefactor)</small></a><a href="../search.html?q=Nysa" class="tag entity-tag" style="text-decoration:none;">👤 Nysa <small>(Queen, wife of Pharnaces, honored benefactor)</small></a><a href="../search.html?q=Antiochus IV" class="tag entity-tag" style="text-decoration:none;">👤 Antiochus IV <small>(King, father of Queen Nysa)</small></a><a href="../search.html?q=Laodice IV" class="tag entity-tag" style="text-decoration:none;">👤 Laodice IV <small>(Queen, mother of Queen Nysa)</small></a><a href="../search.html?q=Tychandros" class="tag entity-tag" style="text-decoration:none;">👤 Tychandros <small>(Archon of Athens)</small></a><a href="../search.html?q=Sosigenes son of Menecrates" class="tag entity-tag" style="text-decoration:none;">👤 Sosigenes son of Menecrates <small>(Secretary of the prytany from Marathon)</small></a><a href="../search.html?q=Octaius son of Simon" class="tag entity-tag" style="text-decoration:none;">👤 Octaius son of Simon <small>(Chairman (proedros) of the assembly from Athmonon)</small></a><a href="../search.html?q=Philoxenus of Piraeus" class="tag entity-tag" style="text-decoration:none;">👤 Philoxenus of Piraeus <small>(Envoy and commissioner for the statues)</small></a><a href="../search.html?q=Leon of Aixone" class="tag entity-tag" style="text-decoration:none;">👤 Leon of Aixone <small>(Commissioner for the statues)</small></a><a href="../search.html?q=Dionysius of Myrrhinous" class="tag entity-tag" style="text-decoration:none;">👤 Dionysius of Myrrhinous <small>(Commissioner for the statues)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Delos <small>(Delos)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Athens <small>(Athens)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Piraeus <small>(Piraeus)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Marathon <small>(Marathon)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Aixone <small>(Aixone)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Myrrhinous <small>(Myrrhinous)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Athmonon <small>(Athmonon)</small></a><a href="../index_deities.html" class="tag entity-tag" style="text-decoration:none;">⚡ Dionysus</a></div></div>
+            <div class="ai-analysis-box"><h3>AI Analysis Summary</h3><p>This is a significant Athenian honorific decree found on Delos, dating to the mid-2nd century BC (c. 160/159 BC). It documents the diplomatic and financial relationship between Athens and the Kingdom of Pontus, specifically King Pharnaces I and Queen Nysa. The text details the honors granted (crowns and statues), the festivals where these honors are to be proclaimed (Dionysia, Panathenaia, Eleusinia, Ptolemaia), and the administrative steps taken to ensure the decree&#x27;s execution, including the appointment of a three-man commission and an envoy, Philoxenus of Piraeus.</p></div>
+        </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      © 2026 Florian Wachter | Private Non-Profit Research Project | 
+      <a href="https://github.com/paxetheninja/AGKI-PM-TaggingEpigraphy" target="_blank">GitHub</a>
+    </div>
+    <div class="footer-legal">
+      Impressum: Privates Forschungsprojekt. Verantwortlich: Florian Wachter, Institut für Antike, Goethestraße 19, 8010 Graz. Kontakt: florian.wachter@uni-graz.at. Keine Gewähr für die Richtigkeit der Daten.
+    </div>
+  </footer>
+</body>
+</html>
+    

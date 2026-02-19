@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PHI-417 - AGKI</title>
+  <title>PHI-3247 - AGKI</title>
   <link rel="stylesheet" href="../assets/css/main.css">
   <style>
     /* Custom Scrollbar Styling */
@@ -42,7 +42,7 @@
     }
 
     function copyCitation() {
-        const citation = "AGKI Project. (2026). Inscription PHI-417 . Retrieved from " + window.location.href;
+        const citation = "AGKI Project. (2026). Inscription PHI-3247 . Retrieved from " + window.location.href;
         navigator.clipboard.writeText(citation);
         alert("Citation copied to clipboard!");
     }
@@ -73,7 +73,7 @@
         const category = document.getElementById('reportCategory').value;
         const desc = document.getElementById('reportDesc').value;
         const fix = document.getElementById('reportFix').value;
-        const subject = `AGKI Error Report: PHI-417`;
+        const subject = `AGKI Error Report: PHI-3247`;
         const body = `Category: ${category}%0D%0ADescription: ${desc}%0D%0AProposed Fix: ${fix}`;
         window.location.href = `mailto:admin@agki-project.org?subject=${encodeURIComponent(subject)}&body=${body}`;
         closeReportModal();
@@ -127,7 +127,7 @@
     <!-- Report Modal -->
     <div id="reportModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:1000;">
         <div style="background:var(--panel); width:90%; max-width:500px; margin:10% auto; padding:2rem; border-radius:8px; border:1px solid var(--border);">
-            <h3>Report Error for PHI-417</h3>
+            <h3>Report Error for PHI-3247</h3>
             <label>Error Category</label>
             <select id="reportCategory" style="width:100%; padding:0.5rem; margin-bottom:1rem;">
                 <option value="Incorrect Tag">Incorrect Tag / Theme</option>
@@ -150,15 +150,15 @@
         <div class="split-col-left">
             <section class="inscription-hero">
                 <div class="inscription-title-row">
-                    <h2>Inscription PHI-417</h2>
+                    <h2>Inscription PHI-3247</h2>
                     <div class="inscription-actions">
                         <button onclick="copyCitation()" class="button secondary compact">Cite</button>
-                        <a href="https://epigraphy.packhum.org/text/417" target="_blank" class="button secondary compact">View on PHI</a>
+                        <a href="https://epigraphy.packhum.org/text/3247" target="_blank" class="button secondary compact">View on PHI</a>
                     </div>
                 </div>
                 <div class="inscription-meta">
                     <div class="meta-item"><div class="label">Provenance</div><div class="meta-value"><a href="https://pleiades.stoa.org/places/579885" target="_blank" title="View in Pleiades">Athens</a></div></div>
-                    <div class="meta-item"><div class="label">Date</div><div class="meta-value"> c. 416/5 a.</div></div>
+                    <div class="meta-item"><div class="label">Date</div><div class="meta-value"> fin. s. II a. </div></div>
                     <div class="meta-item"><div class="label">Completeness</div><div class="meta-value"><span class="badge info">fragmentary</span></div></div>
                     <div class="meta-item"><div class="label">Tagged by</div><div class="meta-value"><span class="badge" style="background:rgba(12,140,136,0.15); color:#0c8c88; border:1px solid #0c8c88;">gemini-3-flash-preview (Proposer+Judge)</span></div></div>
                 </div>
@@ -171,28 +171,58 @@
             </div>
             <div id="original-view" class="text-viewer-original">
                 <div class="line-numbers">1</div>
-                <div class="greek-content">------------------------------- [--------]σχ ------------------------- [--------]ινα ------------------------ [-------]χρυς ------------------------ [-- χρυ]σο π [το ----------------------] [- σταθ]μ ν τ ------------------------ [----]ι στλι[γγ ς --------------------] [--ο]πα χρυ[σα ------------------------] [-χ]συλοι 0 ------------------------ [--]ολα τ -------------------------- [--------]ν λιθ ---------------------- [--------]σι χρυς ----------------------- [--------]ς π το λιθ ν[ο δος --------------] [--- π το] ρχα ο δος κ ---------------- [- χσ μπ]ας ριθμ ς τογ χ[ρυσ ον --------------] [--- π] τες φλι ς καταχ[ρυς -----------------] [-----]αργυρα π χρυσ[α --------------------] [----] κτ νε ν ντε π -------------------- [χρυ]σος κ το ρχα ο ν[ε --- ριθμ ς μεγ λον χρυσ ον --] [---] σμικρον δδ σφεν[δον -----------] [- χ]ρυσ ον δ ιιι σφ[ενδον -------- π δ]εσμος κ το ρχα[ ο νε ι ----------- κ το] ρχα ο νε ριθμ[ ς ---------------------] [---] χρυσ ιι κ τ[ο --------------- κ το πα]ρ[θε]νονο[ς ---------------------] [------] --------------------------- [-----]ουτ[-]λμ ------------------------ [-- χρ]υσ ο π [το ----------------------] [----]0 κ το πα[ρθενονος ----------------] [---]α χοσα δ ---------------------- [στ]αθμ ν τα [τες -----------------------] [--]σα ριθμ[ ς -----------------------] [-]νοι κ το [------------------------ πε]ρ χρυς --------------------------- ιοπα χρ[υσ -------------------------] δεπε ----------------------------- χρυ[ς ----------------------------] [-----]α ργυρο ------------------------ [-- σ]παθ ς ργυ[ρ ----------------------] [---] μ τια ρε [--------------------- γ] [κιβ]οτ οι ι μοργ[------------------ γ κι]βοτ οι ι κατ [στικτος ---------------] [---]ι τος ν τ ------------------- [---] κροκοτ ς γ [κιβοτ οι ι -------------] [--]α χιτ νια χ[ο -----------------------] [--]ς ρμος χρυ[σος --------------------] 0----------------- λ ------------------------- οις [----] ---------------------------- τρο[---] ---------------------------- αντιπ[-] ----------------------------- λευκα --------------------------- ι θρο------------------------------ απα ------------------------------ αν ----------------------------- ------------------------------ βε ------------------------------ χς ------------------------------- ε -------------------------- κτος [----] ---------------------- ον [γ] κιβοτ[----] [---------- γ κι]βοτοι ι σινδ νε ιι [--] [-------------- ποικ] λον ι π βλεμα ποικ[ λον --------------]ος κ ρας χρυσον ι στ[αθμ ν το το --------- στ]αθμ ν το τον κυ [θ]ο ι[ι χρυσ ---- σταθ]μ ν το τον δακτ λιο[ς] χρ[υσος ι -----------]α μικρ κα μ ν σταθμ ν το[ τον ----------- δ]ι λιθον χρυσ α χον η δδδ κ ----- ι π το χιτον ο ιιιι [-] -------------------- χθοιβος χρυσ α χο[ν ----------------]α τα ς ερ αις διι [------------------- δακ]τ λιοι ργυρο ιι [------------------ στα]θμ ν το τοιν ιι [------------------- δακ]τ λιοι χρυσο δ[-] ----------------------- ι κ [-------] --------------------------------.</div>
+                <div class="greek-content">------------------------------ τ ς δ ναγορε σεως το στεφ νου πιμεληθ ναι τ]ος στρατη[γο ς κα τ ν ταμ αν τ ν στρατιωτικ ν] [ παιν σαι δ κα το ς διδασκ λους α τ ν τ]ν παιδοτρ βην ------------------------------------------------------------------------------------------------------------------------------------------ ακε ----------------------------------------------------- [------------ γεν μενο]ν ν λω[μα μερ σαι ----------] βουλ δ μος τ ν [κοσμητ ν] [καλλ αν] [σωσι]κρ του [φλ]υ α [ π --- ρχοντος π τ ς --- τετ] ρτης πρυτανε ας ι δημ τριος δημ[----- γραμμ τευεν βοηδρομι νος νδ]εκ τει νδεκ τει τ [ς] πρυτανε α[ς] [ δοξεν τ ι βουλ ι κα τ ι δ μωι ----] φαν ου παιανιε ς ε πεν πει[δ καλλ ας σωσικρ του φλυε ς χειροτονηθε ς κοσμ]ητ ς π το ς φ βους [ε] ς [τ] ν νιαυ[τ ν] [τ ν π --- ρχοντος ρξεν τ ν ρχ ν κα]τ τε το ς ν [μ]ους κα τ ψηφ σμα[τα] [το δ μου προ στη δ κα τ ς ε ταξ ας τ ν φ βω]ν κα τ[ ς] ν το ς μαθ μασιν γινομ ν[ης] [ πιστασ ας πεμελ θη θυσε δ κα τ ς θυσ ας με]τ ατ ν το [ς] τε θεο ς [κα] το ς ε εργ[ ταις ν το ς καθ κουσιν χρ νοις διετ ρησεν δ α]τ ν κα τ ν πρ ς [λλ]λους μ νο[ιαν κα φιλ αν δι λου το νιαυτο ντων τ ν ριθμ ν] κατ ν δεκαδ ο [στ]ν π ντων α ----------------------- ω--ν ποι σατο δ [κα] τ ν π δει[ξιν] [α τ ν ν το ς πλοις καθ περ προστ τακται τ]ο ς ν μοις κα περ π ντων το [τ]ω[ν δωκεν τ ς ε θ νας ν τ ι δικαστηρ ωι πως ν ο]ν το ς π το δ μου [κ]αθισταμ[ ν]ο[ις] [ π τα την τ ν ρχ ν φ μιλλον ι ρξαι α τ ν κα]τ το ς [ν]μους γαθε τ χει δεδ [χθαι τε βουλε το ς λαχ ντας προ δρους ε ς τ ν]πι[ο] σαν κκλησ αν χρηματ σαι πε[ρ] [το των γν μην δ ξυμβ λλεσθαι τ ς βουλ ς ε]ς τ ν [δ] μον τι δοκε τε βουλε [ παιν σαι τ ν κοσμητ ν τ ν φ βων π --- ρ]χοντο[ς] καλλ αν σωσικρ του [φλυ α] [κα στεφαν σαι α τ ν χρυσ ι στεφ νωι κατ τ ν] ν μον ρετ ς [νε]κεν κα δικα[ιοσ νης ς χων διετ λεσεν ε ς τε τ ν δ μον κα το ς φ βους κα ν]ειπε [ν ---].</div>
             </div>
         </div>
         <div class="split-col-right">
             <h3>Thematic Analysis</h3>
             
-        <div class="theme-card" onmouseover="highlightQuote('σταθμὸν τούτων')" onmouseout="clearHighlight()">
+        <div class="theme-card" onmouseover="highlightQuote('ἔδοξεν τῇ βουλῇ καὶ τῷ δήμῳ')" onmouseout="clearHighlight()">
             <div style="display:flex; justify-content:space-between; align-items:center;">
                 <div>
-                    <a href="../search.html?theme=Content/Administrative Records and Lists/Inventories" class="tag domain-tag" style="text-decoration:none;">Content</a>
+                    <a href="../search.html?theme=Content/Official and Legal Documents/Decrees" class="tag domain-tag" style="text-decoration:none;">Content</a>
                     <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
                     
-                    <div class="theme-path">Content > Administrative Records and Lists > Inventories</div>
-                    <div class="theme-label">Inventories</div>
+                    <div class="theme-path">Content > Official and Legal Documents > Decrees</div>
+                    <div class="theme-label">Decrees</div>
                 </div>
                 <div class="evidence-box">
-                    <p class="evidence-quote">Evidence: "σταθμὸν τούτων"</p>
+                    <p class="evidence-quote">Evidence: "ἔδοξεν τῇ βουλῇ καὶ τῷ δήμῳ"</p>
                 </div>
             </div>
         </div>
         
-        <div class="theme-card" onmouseover="highlightQuote('ἀριθμὸς τογ χρυσίον')" onmouseout="clearHighlight()">
+        <div class="theme-card" onmouseover="highlightQuote('ἐπαινέσαι τὸν κοσμητὴν τῶν ἐφήβων ... καὶ στεφανῶσαι αὐτὸν χρυσῷ στεφάνῳ')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Content/Honorific and Commemorative Inscriptions/Honorific Inscriptions" class="tag domain-tag" style="text-decoration:none;">Content</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
+                    <div class="theme-path">Content > Honorific and Commemorative Inscriptions > Honorific Inscriptions</div>
+                    <div class="theme-label">Honorific Inscriptions</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "ἐπαινέσαι τὸν κοσμητὴν τῶν ἐφήβων ... καὶ στεφανῶσαι αὐτὸν χρυσῷ στεφάνῳ"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('τοὺς στρατηγοὺς καὶ τὸν ταμίαν τῶν στρατιωτικῶν ... τὸν κοσμητὴν τῶν ἐφήβων')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Content/Administrative Records and Lists/Lists of Officials or Citizens" class="tag domain-tag" style="text-decoration:none;">Content</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
+                    <div class="theme-path">Content > Administrative Records and Lists > Lists of Officials or Citizens</div>
+                    <div class="theme-label">Lists of Officials or Citizens</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "τοὺς στρατηγοὺς καὶ τὸν ταμίαν τῶν στρατιωτικῶν ... τὸν κοσμητὴν τῶν ἐφήβων"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('γενόμενον ἀνάλωμα μερίσαι')" onmouseout="clearHighlight()">
             <div style="display:flex; justify-content:space-between; align-items:center;">
                 <div>
                     <a href="../search.html?theme=Content/Administrative Records and Lists/Accounts and Financial Records" class="tag domain-tag" style="text-decoration:none;">Content</a>
@@ -202,73 +232,58 @@
                     <div class="theme-label">Accounts and Financial Records</div>
                 </div>
                 <div class="evidence-box">
-                    <p class="evidence-quote">Evidence: "ἀριθμὸς τογ χρυσίον"</p>
+                    <p class="evidence-quote">Evidence: "γενόμενον ἀνάλωμα μερίσαι"</p>
                 </div>
             </div>
         </div>
         
-        <div class="theme-card" onmouseover="highlightQuote('δακτύλιος χρυσός')" onmouseout="clearHighlight()">
+        <div class="theme-card" onmouseover="highlightQuote('τῆς δὲ ἀναγορεύσεως τοῦ στεφάνου')" onmouseout="clearHighlight()">
             <div style="display:flex; justify-content:space-between; align-items:center;">
                 <div>
-                    <a href="../search.html?theme=Content/Religious and Dedicatory Texts/Votive Dedications" class="tag domain-tag" style="text-decoration:none;">Content</a>
-                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">90% Conf.</span>
+                    <a href="../search.html?theme=Type/Object Type/Monumental Stone Objects/Stele" class="tag domain-tag" style="text-decoration:none;">Type</a>
+                    <span class="badge orange" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">80% Conf.</span>
                     
-                    <div class="theme-path">Content > Religious and Dedicatory Texts > Votive Dedications</div>
-                    <div class="theme-label">Votive Dedications</div>
+                    <div class="theme-path">Type > Object Type > Monumental Stone Objects > Stele</div>
+                    <div class="theme-label">Stele</div>
                 </div>
                 <div class="evidence-box">
-                    <p class="evidence-quote">Evidence: "δακτύλιος χρυσός"</p>
+                    <p class="evidence-quote">Evidence: "τῆς δὲ ἀναγορεύσεως τοῦ στεφάνου"</p>
                 </div>
             </div>
         </div>
         
-        <div class="theme-card" onmouseover="highlightQuote('δακτύλιος χρυσός')" onmouseout="clearHighlight()">
+        <div class="theme-card" onmouseover="highlightQuote('ἔδοξεν τῇ βουλῇ')" onmouseout="clearHighlight()">
             <div style="display:flex; justify-content:space-between; align-items:center;">
                 <div>
-                    <a href="../search.html?theme=Type/Object Type/Portable Objects/Jewelry and Gems" class="tag domain-tag" style="text-decoration:none;">Type</a>
+                    <a href="../search.html?theme=Type/Material/Stone/Marble" class="tag domain-tag" style="text-decoration:none;">Type</a>
+                    <span class="badge orange" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">80% Conf.</span>
+                    
+                    <div class="theme-path">Type > Material > Stone > Marble</div>
+                    <div class="theme-label">Marble</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "ἔδοξεν τῇ βουλῇ"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('---------------- τῆς δὲ ἀναγορεύσεως')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=State/Incomplete / Fragmentary/Fragmentary" class="tag domain-tag" style="text-decoration:none;">State</a>
                     <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
                     
-                    <div class="theme-path">Type > Object Type > Portable Objects > Jewelry and Gems</div>
-                    <div class="theme-label">Jewelry</div>
+                    <div class="theme-path">State > Incomplete / Fragmentary > Fragmentary</div>
+                    <div class="theme-label">Fragmentary</div>
                 </div>
                 <div class="evidence-box">
-                    <p class="evidence-quote">Evidence: "δακτύλιος χρυσός"</p>
+                    <p class="evidence-quote">Evidence: "---------------- τῆς δὲ ἀναγορεύσεως"</p>
                 </div>
             </div>
         </div>
         
-        <div class="theme-card" onmouseover="highlightQuote('χρυσός')" onmouseout="clearHighlight()">
-            <div style="display:flex; justify-content:space-between; align-items:center;">
-                <div>
-                    <a href="../search.html?theme=Type/Material/Metal/Gold" class="tag domain-tag" style="text-decoration:none;">Type</a>
-                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
-                    
-                    <div class="theme-path">Type > Material > Metal > Gold</div>
-                    <div class="theme-label">Gold</div>
-                </div>
-                <div class="evidence-box">
-                    <p class="evidence-quote">Evidence: "χρυσός"</p>
-                </div>
-            </div>
-        </div>
-        
-        <div class="theme-card" onmouseover="highlightQuote('ἀργυρᾶ')" onmouseout="clearHighlight()">
-            <div style="display:flex; justify-content:space-between; align-items:center;">
-                <div>
-                    <a href="../search.html?theme=Type/Material/Metal/Silver" class="tag domain-tag" style="text-decoration:none;">Type</a>
-                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
-                    
-                    <div class="theme-path">Type > Material > Metal > Silver</div>
-                    <div class="theme-label">Silver</div>
-                </div>
-                <div class="evidence-box">
-                    <p class="evidence-quote">Evidence: "ἀργυρᾶ"</p>
-                </div>
-            </div>
-        </div>
-        
-            <div style="margin-top:2rem;"><h3>Entities</h3><div><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Athens <small>(Athens)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Parthenon <small>(Parthenon)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Old Temple of Athena <small>(Old Temple of Athena)</small></a><a href="../index_deities.html" class="tag entity-tag" style="text-decoration:none;">⚡ Athena</a></div></div>
-            <div class="ai-analysis-box"><h3>AI Analysis Summary</h3><p>This inscription is a fragmentary inventory of the sacred treasures of Athena, likely from the Parthenon or the Opisthodomos on the Athenian Acropolis. It dates to the late 5th century BCE and lists various precious items including gold and silver jewelry, ceremonial clothing (like the saffron robe and tunics), and storage chests. The text meticulously records the &#x27;arithmos&#x27; (number) and &#x27;stathmon&#x27; (weight) of these items, which was a standard practice for the Athenian treasurers to ensure accountability of the city&#x27;s sacred wealth. The mention of the &#x27;Archaio Neos&#x27; (Old Temple) and the &#x27;Parthenon&#x27; confirms the location and administrative context.</p></div>
+            <div style="margin-top:2rem;"><h3>Entities</h3><div><a href="../search.html?q=Callias son of Sosicrates" class="tag entity-tag" style="text-decoration:none;">👤 Callias son of Sosicrates <small>(Kosmetes)</small></a><a href="../search.html?q=Sosicrates" class="tag entity-tag" style="text-decoration:none;">👤 Sosicrates <small>(Father of Callias)</small></a><a href="../search.html?q=Phanias of Paiania" class="tag entity-tag" style="text-decoration:none;">👤 Phanias of Paiania <small>(Proposer)</small></a><a href="../search.html?q=Demetrius" class="tag entity-tag" style="text-decoration:none;">👤 Demetrius <small>(Secretary)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Phlya <small>(Phlya)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Paiania <small>(Paiania)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Athens <small>(Athens)</small></a><a href="../index_deities.html" class="tag entity-tag" style="text-decoration:none;">⚡ The Gods</a><a href="../index_deities.html" class="tag entity-tag" style="text-decoration:none;">⚡ The Benefactors</a></div></div>
+            <div class="ai-analysis-box"><h3>AI Analysis Summary</h3><p>This inscription is an Athenian honorific decree from the late 2nd century BC. It honors Callias, son of Sosicrates of the deme Phlya, for his exemplary service as the kosmetes (supervisor) of the ephebes. The text details his oversight of the ephebes&#x27; education, military training, and religious obligations, including sacrifices to the gods and benefactors. It follows the standard administrative procedures of the Athenian state, mentioning the Council, the Assembly, the prytany system, and various financial and military officials.</p></div>
         </div>
     </div>
   </main>

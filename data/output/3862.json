@@ -1,0 +1,109 @@
+{
+  "phi_id": 3862,
+  "themes": [
+    {
+      "label": "Inventories",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Inventories",
+        "subcategory": null
+      },
+      "rationale": "The inscription is a detailed list of physical objects, including vessels, furniture, and equipment, being handed over between boards of officials.",
+      "confidence": 1.0,
+      "quote": "τάδε παρεδόμεν κλῖνας",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The text meticulously records the weights of precious metal items, such as gold crowns and silver phialai, indicating financial oversight of state or sacred assets.",
+      "confidence": 1.0,
+      "quote": "σταθμὸν τούτω[ν]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The stoichedon format and the administrative nature of the text are characteristic of Athenian public records inscribed on marble stelae.",
+      "confidence": 0.8,
+      "quote": "σταθμ[ὸν]",
+      "is_ambiguous": true,
+      "ambiguity_note": "The physical medium is inferred from the administrative nature and the stoichedon layout typical of Athenian public inscriptions."
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "Marble was the standard material for public administrative inscriptions in 4th-century BC Athens.",
+      "confidence": 0.8,
+      "quote": "σταθμ[ὸν]",
+      "is_ambiguous": true,
+      "ambiguity_note": "The material is inferred based on the standard practice for Athenian state documents of this period."
+    },
+    {
+      "label": "Damaged but Legible",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Legibility",
+        "category": "Damaged but Legible",
+        "subcategory": null
+      },
+      "rationale": "Despite the fragmentation, the formulaic nature of the inventory allows for a clear understanding of the content and specific items listed.",
+      "confidence": 0.9,
+      "quote": "κατεαγότα",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [],
+    "places": [
+      {
+        "name": "Athens",
+        "type": null,
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Athena",
+        "uri": "https://www.wikidata.org/wiki/Q37122",
+        "confidence": 0.7
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579885",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is an Athenian inventory (paradosis) dating to the late 4th century BC (likely 335/4 BC). It records the transfer of various items between outgoing and incoming boards of officials. The list is diverse, encompassing bronze vessels (kraters, chytrai, foot-basins), furniture (tables, couches), and precious metal objects (a gold crown, silver phialai). Notably, it includes naval equipment like trireme rams (emboloi) and items related to sacred festivals, such as prizes (athla) and equipment for sacred sheep. The meticulous recording of weights and the physical condition of the items (e.g., 'broken') reflects the rigorous administrative and financial oversight characteristic of the Athenian state.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

@@ -1,0 +1,224 @@
+{
+  "phi_id": 367,
+  "themes": [
+    {
+      "label": "Inventories",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Inventories",
+        "subcategory": null
+      },
+      "rationale": "The text is a detailed list of sacred objects, including their weights and descriptions, being handed over from one board of treasurers to another.",
+      "confidence": 1.0,
+      "quote": "παρ δοσαν το]ς ταμ αις ... παραδεχσ [μενοι παρ τον προτ ρον ταμιον",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The inscription records the weights (stathmon) of precious metal objects, serving as a financial audit of the temple treasury.",
+      "confidence": 1.0,
+      "quote": "σταθμ ν το το ηη δδδ χρ[υσ ον σεμον σταθμ ν το το ιιιι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The text lists the names of the treasurers (tamiai) and the secretary (grammateus) responsible for the sacred property.",
+      "confidence": 1.0,
+      "quote": "ταμ αι τον ερον χρεμ τον τες θενα ας πολυχσεν δες] χαρνε ς κα χσυν ρχον[τες",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Votive Dedications",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Votive Dedications",
+        "subcategory": null
+      },
+      "rationale": "The items listed, such as golden crowns and silver bowls, are sacred offerings dedicated to the goddess Athena.",
+      "confidence": 1.0,
+      "quote": "στ φανος χρυσος σταθμ ν το το δ φι λαι χρυσα",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "This type of Athenian administrative record was typically inscribed on a stone stele for public display.",
+      "confidence": 0.8,
+      "quote": "τ δε ι ταμ αι τον ερον χρεμ τον",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "Athenian state documents of this period were almost exclusively inscribed on Pentelic marble.",
+      "confidence": 0.8,
+      "quote": "τ δε ι ταμ αι τον ερον χρεμ τον",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Polyxenides",
+        "role": "Treasurer",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Polyxenides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Leukaeos",
+        "role": "Treasurer",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Leukaeos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Komarchos",
+        "role": "Father of Leukaeos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Komarchos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Autocleides",
+        "role": "Treasurer",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Autocleides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sostratus",
+        "role": "Father of Autocleides",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Sostratus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Callaschrus",
+        "role": "Treasurer",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Callaschrus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Polymedes",
+        "role": "Secretary of the previous board",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Polymedes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kephisophon",
+        "role": "Father of Polymedes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Kephisophon",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Acharnae",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Aphidna",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579873",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phrearrhioi",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580077",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eupyridai",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579933",
+        "confidence": 0.8
+      },
+      {
+        "name": "Paiania",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 0.8
+      },
+      {
+        "name": "Parthenon",
+        "type": "Temple",
+        "uri": "https://pleiades.stoa.org/places/168254096",
+        "confidence": 1.0
+      },
+      {
+        "name": "Methymna",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/550738",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lesbos",
+        "type": "Island",
+        "uri": "https://pleiades.stoa.org/places/550696",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Athena",
+        "uri": "https://www.wikidata.org/wiki/Q37122",
+        "confidence": 1.0
+      },
+      {
+        "name": "Heracles",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Nike",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579885",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a classic Athenian treasury inventory from the Parthenon, dated to 413/2 BC (IG I³ 302). It records the formal transfer of sacred objects (anathemata) from the outgoing board of Treasurers of Athena to the incoming board. The text lists a variety of precious items, including golden crowns, silver bowls (phialai), furniture (thrones and couches), and musical instruments (lyres), often specifying their weight in drachmas. The presence of demotics (Acharnae, Aphidna, Phrearrhioi, Eupyridai, Paiania) and the mention of the Parthenon confirm its Athenian origin and administrative function.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " 413/2 a.",
+  "date_min": -413.0,
+  "date_max": -412.0,
+  "date_circa": false
+}

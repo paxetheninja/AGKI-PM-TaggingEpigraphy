@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PHI-3734 - AGKI</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <style>
+    /* Custom Scrollbar Styling */
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: rgba(0,0,0,0.05); }
+    ::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #aaa; }
+
+    .page-container { max-width: 1400px; margin: 0 auto; padding: 2rem; }
+    .back-link { display: inline-block; margin-bottom: 1rem; color: var(--primary); font-weight: 600; }
+    .text-viewer-original { display: grid; grid-template-columns: 40px 1fr; gap: 2rem; font-family: "New Athena Unicode", "Gentium Plus", "Times New Roman", serif; font-size: 1.25rem; line-height: 1.6; background: var(--panel); padding: 2rem; border: 1px solid var(--border); border-radius: 4px; margin-bottom: 2rem; color: var(--text); }
+    .line-numbers { text-align: right; color: var(--muted); font-size: 1.25rem; line-height: 1.6; user-select: none; opacity: 0.5; font-family: inherit; white-space: pre; padding-right: 1rem; border-right: 1px solid var(--border); }
+    .greek-content { white-space: pre-wrap; word-break: break-word; padding-left: 1rem; }
+    .highlight-evidence { background-color: var(--accent); color: white; border-radius: 2px; padding: 0 2px; }
+    .theme-card { background: var(--panel); padding: 1rem 1.5rem; border-left: 4px solid var(--primary); margin-bottom: 0.75rem; border: 1px solid var(--border); border-left-width: 4px; }
+    .ai-analysis-box { background: rgba(31, 167, 163, 0.05); padding: 2rem; border-radius: 8px; border: 1px solid var(--border); margin-top: 2rem; }
+    .evidence-box { max-width: 500px; text-align: right; }
+    .evidence-quote { font-size: 0.85rem; font-style: italic; color: var(--muted); margin: 0; }
+    .badge.green { background: #e6f4ea; color: #137333; border-color: #137333; }
+    .badge.orange { background: #fef7e0; color: #b06000; border-color: #b06000; }
+    .badge.red { background: #fce8e6; color: #c5221f; border-color: #c5221f; }
+    .entity-tag { background: rgba(217, 123, 61, 0.1); color: var(--accent-2); margin-right: 0.5rem; margin-bottom: 0.5rem; display: inline-block; padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.9rem; border: 1px solid rgba(217, 123, 61, 0.2); }
+    .split-container { display: block; }
+    .split-container.active { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+    .split-container.active .split-col-right { position: sticky; top: 20px; max-height: 90vh; overflow-y: auto; padding-right: 10px; }
+  </style>
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+
+    function toggleSplitView() {
+        const container = document.getElementById('main-content');
+        const btn = document.getElementById('splitViewBtn');
+        container.classList.toggle('active');
+        btn.textContent = container.classList.contains('active') ? 'View: Split' : 'View: Standard';
+    }
+
+    function copyCitation() {
+        const citation = "AGKI Project. (2026). Inscription PHI-3734 . Retrieved from " + window.location.href;
+        navigator.clipboard.writeText(citation);
+        alert("Citation copied to clipboard!");
+    }
+
+    function highlightQuote(quote) {
+        const container = document.querySelector('.greek-content');
+        if (!container || !quote) return;
+        if (!container.dataset.original) container.dataset.original = container.innerHTML;
+        else container.innerHTML = container.dataset.original;
+        
+        const regex = new RegExp(quote.trim().replace(/\s+/g, '\\s+'), 'g');
+        container.innerHTML = container.innerHTML.replace(regex, match => `<mark class="highlight-evidence">${match}</mark>`);
+    }
+
+    function clearHighlight() {
+        const container = document.querySelector('.greek-content');
+        if (container && container.dataset.original) container.innerHTML = container.dataset.original;
+    }
+
+    function updateFontSize(size) {
+        const v = document.getElementById('original-view');
+        if(v) v.style.fontSize = size + 'px';
+    }
+
+    function openReportModal() { document.getElementById('reportModal').style.display = 'block'; }
+    function closeReportModal() { document.getElementById('reportModal').style.display = 'none'; }
+    function sendReport() {
+        const category = document.getElementById('reportCategory').value;
+        const desc = document.getElementById('reportDesc').value;
+        const fix = document.getElementById('reportFix').value;
+        const subject = `AGKI Error Report: PHI-3734`;
+        const body = `Category: ${category}%0D%0ADescription: ${desc}%0D%0AProposed Fix: ${fix}`;
+        window.location.href = `mailto:admin@agki-project.org?subject=${encodeURIComponent(subject)}&body=${body}`;
+        closeReportModal();
+    }
+  </script>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="brand"><h1><a href="../../index.html">AGKI Tagging Tool</a></h1></div>
+    <nav class="nav-links">
+        <a href="../../index.html" class="nav-item">Home</a>
+        <a href="../search.html" class="nav-item">Search</a>
+        <a href="../explore.html" class="nav-item">Explore</a>
+        <a href="../basket.html" class="nav-item">Databasket</a>
+        <a href="../compare.html" class="nav-item">Compare</a>
+        <a href="../network.html" class="nav-item">Network</a>
+        <a href="../matrix.html" class="nav-item">Matrix</a>
+        <a href="../indices.html" class="nav-item">Indices</a>
+    </nav>
+    <div class="header-controls">
+        <button class="theme-toggle-btn" onclick="toggleTheme()" id="themeBtn">Dark Mode</button>
+    </div>
+  </header>
+
+  <script>
+    const themeBtn = document.getElementById('themeBtn');
+    function updateThemeBtn() {
+        const current = document.documentElement.getAttribute('data-theme');
+        if(themeBtn) themeBtn.textContent = current === 'light' ? 'Dark Mode' : 'Light Mode';
+    }
+    updateThemeBtn();
+    window.toggleTheme = function() {
+        const current = document.documentElement.getAttribute('data-theme');
+        const next = current === 'light' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        updateThemeBtn();
+    }
+  </script>
+
+  <main class="page-container inscription-page">
+    <div class="inscription-toolbar">
+        <a href="../search.html" class="back-link"><- Back to Dashboard</a>
+        <div class="inscription-actions">
+            <button id="splitViewBtn" onclick="toggleSplitView()" class="button secondary compact">View: Standard</button>
+            <button onclick="openReportModal()" class="button error compact">Report Error</button>
+        </div>
+    </div>
+
+    <!-- Report Modal -->
+    <div id="reportModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:1000;">
+        <div style="background:var(--panel); width:90%; max-width:500px; margin:10% auto; padding:2rem; border-radius:8px; border:1px solid var(--border);">
+            <h3>Report Error for PHI-3734</h3>
+            <label>Error Category</label>
+            <select id="reportCategory" style="width:100%; padding:0.5rem; margin-bottom:1rem;">
+                <option value="Incorrect Tag">Incorrect Tag / Theme</option>
+                <option value="Missing Entity">Missing Person / Place</option>
+                <option value="Translation Error">Translation / Text Issue</option>
+                <option value="Other">Other</option>
+            </select>
+            <label>Description</label>
+            <textarea id="reportDesc" rows="3" style="width:100%; margin-bottom:1rem;"></textarea>
+            <label>Proposed Fix</label>
+            <textarea id="reportFix" rows="2" style="width:100%; margin-bottom:1.5rem;"></textarea>
+            <div style="display:flex; justify-content:flex-end; gap:0.5rem;">
+                <button onclick="closeReportModal()" class="button secondary">Cancel</button>
+                <button onclick="sendReport()" class="button">Create Email Report</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="main-content" class="split-container">
+        <div class="split-col-left">
+            <section class="inscription-hero">
+                <div class="inscription-title-row">
+                    <h2>Inscription PHI-3734</h2>
+                    <div class="inscription-actions">
+                        <button onclick="copyCitation()" class="button secondary compact">Cite</button>
+                        <a href="https://epigraphy.packhum.org/text/3734" target="_blank" class="button secondary compact">View on PHI</a>
+                    </div>
+                </div>
+                <div class="inscription-meta">
+                    <div class="meta-item"><div class="label">Provenance</div><div class="meta-value"><strong>Attica</strong></div></div>
+                    <div class="meta-item"><div class="label">Date</div><div class="meta-value"></div></div>
+                    <div class="meta-item"><div class="label">Completeness</div><div class="meta-value"><span class="badge info">fragmentary</span></div></div>
+                    <div class="meta-item"><div class="label">Tagged by</div><div class="meta-value"><span class="badge" style="background:rgba(12,140,136,0.15); color:#0c8c88; border:1px solid #0c8c88;">Unknown</span></div></div>
+                </div>
+            </section>
+            <div class="inscription-title-row">
+                <h3>Original Text</h3>
+                <div class="font-size-control">
+                    <input type="range" min="14" max="32" value="20" oninput="updateFontSize(this.value)">
+                </div>
+            </div>
+            <div id="original-view" class="text-viewer-original">
+                <div class="line-numbers">1</div>
+                <div class="greek-content">ο ---- υμ---ος ναφλ στιο[ς] [χρυσ] κ το αρθεν νος κιβ τιον α [δ]ακτ λιο[ι λ] χρυσοι πε ρονες κα χ[ρ]υσ ον π[υρ]ον ργυρ ωι δεδε. σταθμ 0 δακτ [λι]ος χρυσο ς στρεπτ ς στα θριπ δεστον χρυσο ν σταθ 0 ναυσισ[τρ]τη σπιδσκας χρυσ ς σταθ 0 [ π]οδερ ς χρυσ στα[θ] 0 --. [κ]ανθ ριο[ν] χρυσο ν [σ]ταθ 0 σωσ[τρ τ]η γνοθ ου γ[υν] κυδαθην. πλ στρ[α χρυσ] σταθ 0 συχ α δακτ λιον [χρυσο]ν πε ρονα [σ]ταθμ ν 0 -------- [------ χ]ρυσ ν [σ]ταθ 0 κλ--------------------α χρυσ ς σταθ -------------------------νι καρ-------------------------ερμενο------------- τα -------------- ο νικο ------------ μαλθ[ κη ----------] ν στ[ατον ---------] τιον. ------------ τιον. [-------- σταθ σ ν] τ [ι] λ ν[ωι ----------] ατος λε ---------- ερε---ε[-------- σ νμ]εικτα σ[ταθ. ---------] 0 λ ----------- δες 0 ---------- χα--ων ---------- ητω. ιμα ---------- δακτ λι 0 λ ---------- ω ισα --------- -ν νδε ----------- [χ]ρυσο ----------- ---- ιρ ---------- -------------εμβ--ν τ χρυσ ον α-- ------------- πιχ ρμου γυν φαλη[ρ ως -------- χ]ρυσ σταθ 0 ε ς τ ν [παρθεν να τ δε] νετ θη χρυσ ον σ νμ[εικτον σταθ ---]0 ποδερ ς χρυσ σταθ -------------α βοιωτο ροι δου γυ[ν ----------] πρ ς τ ι το χωι ριστε[--------- στ]τους σταθ. πιγ γραπ[ται -------- τε]ισικρ τεια σπιδ σκ[ην χρυσ ν πρ ς τ] ι κ ονι ο λαφος σ[τατον --------] στλεγγ δα χρυσ ν στ[ατον πρ ς τ ι το] χωι ε θ μαχος ε θυδ[--ου ---------]ας χρυσ ς ν τ ι προστ[ ιωι ------ στα]θ πιγ γραπται 0 [-------------κ]ρ τους ποδερ δα χρ[υσ ν ----------] 0 στατα πρ ς τ[----------- σταθ]. πιγ γραπται 0 ----------------ιι ντ ς χρυσ ον χ[ει. τ δε παρ δοσαν] πιστ ται ο π 0[υθοδ του ρχοντο]ς καλλ στρατος θο[ρ κα συν ρχοντες]πιστ ταις το ς π[ σωσιγ νους ρχοντ]ριστομ χη πλ κι[ον --------------------]διον χρυσο[ ν -------- τ δε παρ δοσαν]πιστ ται [ο π σωσιγ νους ρχοντος ---] δημο[ς ----------- κα συν ρχοντες π]ιστ[ ταις το ς π νικομ χου ρχοντος --] -------------- -ους στα[θ ----------] -στος ν θ[ηκεν --------] αττις 0 τε[ρ --- π -- ρ]χον. νετ θ[η --------] ε φροσ νη φ[---------- πρ ς τ ι το χ]ωι στατος λ --------- ν ιδιον π[ --- ρχοντος νε]τ θη ε ς τ ν [----------------- κυλ]χνιον σταθ. [-------------------- σ]ταθ 0 ξ β[ νου -------------- πρ]ς τ ι φι ληι [------- στ]αθ 0 ε κτητ[---- σταθ. --] 0 τ δε π θ[ε λλου ρχο. νετ θη 0] δακτ λιοι 0 σ[---------------- ργ]υρ ου ν μισμα [----- τ δε π πολλοδ] ρου ρχο. νε[τ θη ------------ ν]θηκεν πασ λεα -------- μελ τη ν ιδιο[ν ------------- νομ]σματος 0 δακ[τ λιο -----] ιος ρει[χ]λκιν[ος -------] διον σιδ[η]ρο ν [---- λεφαντ] νη τ ρ[α] λεφ[αντ νη ---------- πρ]ς τ ι το [χωι ---------] τ δε π [--- ρχοντος νετ θη 0] φιδ κ[η ------- χρυσοχ] ου χρυ[ς ----------] - ----------------------- ο ---- [------------ νευ το -----]σ ου. -- [---------------- διοκλε--]η στεφ [νου ----------------- μν]ημ[ο]δ κη δ ω[νος ----------------]π τ ς φαιν π[που ------------------]εση φρο ρου [------------ δακτ]λιον χρυ[σο] ν στα[θ. ------------]α λ κωνος δακτ λιον [χρυσο ν σταθ 0-]0 ριστομχη θεοπ[ μπου γυν π]οδερ δα χρυσ ν [ εροθ α ερ]οκλ ους [κ]ανθ ριον χρυσο[ ν 0-----0 δη]μοστρ [τ]η ππομ χου δα[κτ λιον λευκο] χρυσ ου σταθ 0 δημοσ[τρ τη δακτ λι]ον χρυσον σταθ 0 [-------- δακτ] λιον [χρυ]σο ν σταθ 0 [0 ---------] κου [γυν] σ ρδιον χρυ[σ ωι δεδεμ νον] στα[θ 0] οεογη τις κα[λλ ου γυν κ-----]ρ---- σταθ [------- κου γυν π]οδερ δ[α χ]ρυ[σ ν -] σ ------------- κα ------------- τα ------------- ρμ[ο --------- δακτ] λ[ιο --------- δακ]τ λ[ιο -----------] λ ο ------------ κ το[ --------- σμ]ικ θ[η -----------] ---------- ι ------- [--------- ν]επ [γρα 0] π [πυθοδ του χαιρεστρ τη χι]τ νιον μ ρ [ μ πλαισ. ρχεστρ τη παρ]υφ ς μ πλαι [ πτυγμ νον τιμοκρ τους γ]υν χιτων σ[κον ποικ λ μ πλαισ. λ σι]λλα χιτων σ[κον λευκ μ πλαι. καλλ ππ]η μ τιον παι[δε. παραλουργ. ε βο λ]η χιτ νιον στ [ππινον πανθηρ ς χιτων]σκον πλατυαλο[υργ γνοδ μου γυν χι]των σκον στ ππ[ινον χρυσ ς χλαν δα ν]δρε. ριστομ [χη χιτων σκον κτενω. με]λ τη χιτων σκ[ον νδρε. α τ τερον] χιτων σκον ν[δρε. ------ χιτων σκ]ον περιπο κιλον [-------------- παραλο]υργ ς νεπ ργ [-------λεια κ λυμμα συ]νερρ[α]μμ [ν]ον α [-------- ταραντ. π σ]ωσιγ [ν]ους φιλο[-------- κ]αλλ[ι]σ[το]μ χη χ[ιτων ------- π]υργωτ ν τρ [φημα -------] [κος] μεσοπο [κιλον ------ μ] τ[ι]ον λευκ[ ν -] [--------- τ]ρ χ[απτον ----] θ[εαν μπ χον]ον περ τ [ι] [δει τ ι ρχα] ωι [πεντετη]ρ ς ταραντ νον π[ερ τ ι δ]ει τ ι ρ[χ]α ωι θεαν κατ στικ[τον διπτ] ρυ. περ τ ι δει τ ι ρχα ωι χλαν [ς κ]αρτ γραφος παρ βολον χουσα παιδ [ο] χλαν σκιον λευκ ν καρτ ν ερ ν πιγ γρα. ρτ μιδος παρ βολον χει φοιν [κι]ο[ν] χιτων σκος κτενω. περιπο κ περ [τ] [ι γ]λματι τ ι ρθ ι χιτων σκος κτενω[τ ς π]ερι γη. [λ] διον νεπ γραφον ξε[ν]αρ στη ντιφ ντος γυν περιθο δου χιτων σκον κτενω. λ δ[ι]ον χιτων σκος λευκ ς πυργωτ ς παρακυμ τιος πλατυαλουρ. νεπ γρα. μ τιον νδρε ον ργονι ς ν θηκε βατραχ ς νκυκλον περιπο κιλον θηνα ς ν θ λουργ ς ξενικ κος νεπ γρα. μνησιστρ τη μπ χονον μ πλαι. ντιβ ου γυν φε δυλλα χιτ νιον μ ρ πλο ν καλλ π[π]η χιτων σ[κ]ον κτενω. νι[κ] χιτων σκον περι γητ [ ρτ μιδι. πποδ μη θεοτ λ]ους λαι ς [χιτων σκον μιυφ μ πλαι. κα] κρ [κην κα ρια --] [-- τρ φη]μα κρ[οκωτ ν -] [-----]μ τιον - -----κλ ους λ - [-- μ] ρ μ πλα[ισ ωι -] [- λ]ουργ δα ν - ---ους γυν κατ - ---α πεστιν. δ - [- χι]των σκον πε[ρι -] -- φανοστρ του - ---εα στρο βου - [ μ]ργι. κλειν - [---α]λουργ ς ν - ----ως γυν χι[των -] [κατε]ιργας. σω - [--- φα]νοδ κου σ - -----ενα φαιν - ------ στυππι[νο -] [-----τ]ιμος νε[ωκ ρος] [---- γν] θαινα - -------στη μο - ------- θη μυ - -------να α - -------- ---- - [ μ] ργ - -- - σο--ου -----λ - χε--ρα ---λ - -ω--ατη - καττιτ [ριν]ο [------ λ]εφ[α]ντ νη[ν] λ[αβ ν χ -] λ- ν [χα]λκο ν - γυν [κ]τροπ[τον -] -ορου [γυ]ν κ[ τροπτον -] - κ [κιβ]ωτ [ν ----- χαλ]κ [κ τ]ροπ[τον ---- χαλ]κ [κι]β τι[ον -------] -ν μικρ ν - -- ο - --------------------- 0 μ --- [----------------- λ]εφ ντινα κα-- [----------------]ν λ τρωι σπαθ[ ς] -----------------ρα ξ λειπτρα κ[-] ----------------- 0 στ φανοι [--------------- κ]ερατ νη λ ρα κ ρο[ς ---------------]ς κιβ τια περικ λ[λητα ------------]ον σπιδ σκσαι λε[φ ντιναι -------]νομ χη μβον κιβω[τ--------------] 0 στ φανοι 0 ----------------κη λακ την κιβωτ[--------------- μ]ικρ 0 κυλιχν [------ πρ ς τ ι παρ]αστ δι ν κιβωτ ω[ι---------------]ια χουσαν ξ λι[ν ------------- κ]ατε γασιν κλιν ς ---------------- ππη πε χους φρε[αρρ ου -------- κυ]λιχν ς λωτ νη ζω [λου --------------] χ ριος τροχιλε [α ------------ κ το] ρχα ου νε χαλ[κ ------------ ψυ]κτ ρες 0 σμη[ματοθ κη --------] καρχ σιον κοτ λη ----------------τα 0 κιβωτ----------------τηρ προσηλωμ νο[ς] -----------------ρον φειδεστρατ[-] ----------------- ξ λειπτρον ν[-] ------------------ γ κιβωτ ωι εσ[-] ------------------ λικος δ φρο-- [-----------------πο]τ ριον χαλκ[ο ν--------------------] ερ ς ρτ[ μιδος ----------------------]επι--.</div>
+            </div>
+        </div>
+        <div class="split-col-right">
+            <h3>Thematic Analysis</h3>
+            <p class='muted'>No themes assigned.</p>
+            <div style="margin-top:2rem;"><h3>Entities</h3><div></div></div>
+            <div class="ai-analysis-box"><h3>AI Analysis Summary</h3><p>No additional analysis provided.</p></div>
+        </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      © 2026 Florian Wachter | Private Non-Profit Research Project | 
+      <a href="https://github.com/paxetheninja/AGKI-PM-TaggingEpigraphy" target="_blank">GitHub</a>
+    </div>
+    <div class="footer-legal">
+      Impressum: Privates Forschungsprojekt. Verantwortlich: Florian Wachter, Institut für Antike, Goethestraße 19, 8010 Graz. Kontakt: florian.wachter@uni-graz.at. Keine Gewähr für die Richtigkeit der Daten.
+    </div>
+  </footer>
+</body>
+</html>
+    

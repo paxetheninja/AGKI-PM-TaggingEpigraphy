@@ -1,0 +1,282 @@
+{
+  "phi_id": 4254,
+  "themes": [
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The inscription is a formal register of ephebes (synepheboi) and their supervising officials, including the kosmetes, paidotribes, and gymnasiarchs.",
+      "confidence": 1.0,
+      "quote": "το ς συνεφ β[ο]υς γυμνασ αρχοι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Registers and Catalogues",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Registers and Catalogues",
+        "subcategory": null
+      },
+      "rationale": "The text serves as a comprehensive catalogue of the ephebic class and administrative staff for a specific year in Athens.",
+      "confidence": 1.0,
+      "quote": "νγραφοι ν μαστος διονυσ ου ξ ο ου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Calendars and Timetables",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Calendars and Timetables",
+        "subcategory": null
+      },
+      "rationale": "The list of gymnasiarchs is organized chronologically according to the months of the Attic calendar, such as Boedromion, Pyanopsion, and Maimakterion.",
+      "confidence": 1.0,
+      "quote": "βοηδρο [ ριστ βουλος] βασιλ πυανο λε κιος κ ρυξ μαιμακτη ριστ βουλος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription records that the ephebes and officials have honored their leaders, a common practice in ephebic monuments.",
+      "confidence": 1.0,
+      "quote": "τειμ σαντες",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Votive Dedications",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Votive Dedications",
+        "subcategory": null
+      },
+      "rationale": "The inscription begins with a standard religious invocation to Good Fortune (Agathe Tyche).",
+      "confidence": 0.8,
+      "quote": "γαθ τ χ ",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The format and content are characteristic of an Athenian ephebic stele, used to publicly display the names of the year's graduates.",
+      "confidence": 0.8,
+      "quote": "γαθ τ χ [α το]κρ τορα τρα[ιαν ν]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "Marble was the standard material for public administrative and honorific inscriptions in Roman-era Athens.",
+      "confidence": 0.8,
+      "quote": "γαθ τ χ [α το]κρ τορα τρα[ιαν ν]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The text contains numerous lacunae and missing sections, particularly at the beginning and end of lines.",
+      "confidence": 1.0,
+      "quote": "[--- κολ]λυ ε-----ις ραφ νι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Damaged but Legible",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Legibility",
+        "category": "Damaged but Legible",
+        "subcategory": null
+      },
+      "rationale": "Despite the fragmentation, a significant portion of the names and titles remains legible for analysis.",
+      "confidence": 1.0,
+      "quote": "κοσμητ ς τ ν φ βων ε ρηνα ος λευκ ου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Partial Reconstruction",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Reconstruction and Intervention",
+        "category": "Reconstructed",
+        "subcategory": "Partial Reconstruction"
+      },
+      "rationale": "The text includes significant editorial reconstructions of names, demotics, and official titles based on epigraphic parallels.",
+      "confidence": 1.0,
+      "quote": "[ π ρχοντος 0]αντα νου γαργ[ηττ ου]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Trajan",
+        "role": "Emperor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Trajan",
+        "confidence": 1.0
+      },
+      {
+        "name": "Irenaeus son of Leukios",
+        "role": "Kosmetes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Irenaeus%20son%20of%20Leukios",
+        "confidence": 1.0
+      },
+      {
+        "name": "Ariston of Rhamnous",
+        "role": "Paidotribes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Ariston%20of%20Rhamnous",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lucius son of Irenaeus",
+        "role": "Gymnasiarch",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Lucius%20son%20of%20Irenaeus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristobulus son of Irenaeus",
+        "role": "Gymnasiarch",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aristobulus%20son%20of%20Irenaeus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Flavius Glaucias of Acharnae",
+        "role": "Strategos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Flavius%20Glaucias%20of%20Acharnae",
+        "confidence": 1.0
+      },
+      {
+        "name": "Archelaus of Oion",
+        "role": "Gymnasiarch",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Archelaus%20of%20Oion",
+        "confidence": 1.0
+      },
+      {
+        "name": "Onomastos son of Dionysios",
+        "role": "Antigrapheus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Onomastos%20son%20of%20Dionysios",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Athens",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kydathenaion",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/582862",
+        "confidence": 1.0
+      },
+      {
+        "name": "Gargettos",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579935",
+        "confidence": 1.0
+      },
+      {
+        "name": "Rhamnous",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580097",
+        "confidence": 1.0
+      },
+      {
+        "name": "Acharnae",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Eleusis",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579920",
+        "confidence": 1.0
+      },
+      {
+        "name": "Piraeus",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580062",
+        "confidence": 1.0
+      },
+      {
+        "name": "Marathon",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580021",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phaleron",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580072",
+        "confidence": 1.0
+      },
+      {
+        "name": "Oion",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/540977",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Tyche",
+        "uri": "https://www.wikidata.org/wiki/Q213440",
+        "confidence": 0.8
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579885",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a classic Athenian ephebic list dating to the reign of the Emperor Trajan (post 102 AD). It records the names of the ephebes and their supervising officials, organized by the months of the Attic calendar. The text is notable for its detailed list of gymnasiarchs and other civic officials like the strategos and archon, providing insight into the administrative and religious life of the Athenian ephebeia during the Roman period.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " p. post 102 p.",
+  "date_min": 102.0,
+  "date_max": 102.0,
+  "date_circa": false
+}

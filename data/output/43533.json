@@ -1,0 +1,211 @@
+{
+  "phi_id": 43533,
+  "themes": [
+    {
+      "label": "Manumission Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Manumission Records",
+        "subcategory": null
+      },
+      "rationale": "The inscription records multiple instances of slaves being sold to the god Asclepius for the purpose of achieving freedom (manumission).",
+      "confidence": 1.0,
+      "quote": "ἀπέδοτο ... τῷ Ἀσκλαπιῷ τῷ ἐν Κρουνοῖς ἐπ' ἐλευθερίᾳ",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Contracts and Private Legal Acts",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Contracts and Private Legal Acts",
+        "subcategory": null
+      },
+      "rationale": "The text details legal transactions including prices, guarantors, and conditions of service (paramone).",
+      "confidence": 1.0,
+      "quote": "τιμᾶς ἀργυρίου ... βεβαιωτῆρες κατὰ τὸν νόμον",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The inscription lists various local officials such as archons, secretaries, and a strategos to date the legal acts.",
+      "confidence": 1.0,
+      "quote": "γραμματεύοντος θεαροῦς ἐν Ναυπάκτῳ ... ἄρχοντος Ἀλκίδα",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Votive Dedications",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Votive Dedications",
+        "subcategory": null
+      },
+      "rationale": "The manumission is framed as a religious act of selling the slave to the god Asclepius, effectively dedicating the person to the deity to ensure their free status.",
+      "confidence": 0.8,
+      "quote": "ἀπέδοτο ... τῷ Ἀσκλαπιῷ τῷ ἐν Κρουνοῖς",
+      "is_ambiguous": true,
+      "ambiguity_note": "While framed as a sale to a god, it is a legal fiction for manumission rather than a standard votive offering."
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Nicocrates",
+        "role": "Seller",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Nicocrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Mnasis",
+        "role": "Slave",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Mnasis",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pharnaces",
+        "role": "Beneficiary of service",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Pharnaces",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eudamus",
+        "role": "Guarantor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Eudamus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lucius",
+        "role": "Slave",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Lucius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Nicidas",
+        "role": "Guarantor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Nicidas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phillidas",
+        "role": "Guarantor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Phillidas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Simika",
+        "role": "Slave",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Simika",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lampis",
+        "role": "Guarantor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Lampis",
+        "confidence": 1.0
+      },
+      {
+        "name": "Meinocrates",
+        "role": "Beneficiary of service",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Meinocrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Alexander",
+        "role": "Slave",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Alexander",
+        "confidence": 1.0
+      },
+      {
+        "name": "Nicias",
+        "role": "Guarantor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Nicias",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lyson",
+        "role": "Strategos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Lyson",
+        "confidence": 1.0
+      },
+      {
+        "name": "Alcidas",
+        "role": "Archon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Alcidas",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Naupactus",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/540960",
+        "confidence": 1.0
+      },
+      {
+        "name": "Boeotia",
+        "type": "Region",
+        "uri": "https://pleiades.stoa.org/places/540689",
+        "confidence": 1.0
+      },
+      {
+        "name": "Thespiae",
+        "type": "City",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Phrygia",
+        "type": "Region",
+        "uri": "https://pleiades.stoa.org/places/609502",
+        "confidence": 1.0
+      },
+      {
+        "name": "Krounoi",
+        "type": "Sanctuary site",
+        "uri": "https://pleiades.stoa.org/places/216793",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Asclepius",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Naupactus",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/540960",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Locris",
+      "type": "Region",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription from Naupactus contains several records of sacral manumission. Slaves are 'sold' to the god Asclepius at the sanctuary of Krounoi to obtain legal freedom. The records include the names of the sellers, the slaves, the prices paid in silver, guarantors (bebaioteres), and witnesses. Many of these acts include a 'paramone' clause, requiring the freed person to remain in service to a specific individual for a set duration.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " mid-2nd c. and ca. 148/7 BC",
+  "date_min": -148.0,
+  "date_max": -147.0,
+  "date_circa": true
+}

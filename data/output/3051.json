@@ -1,0 +1,316 @@
+{
+  "phi_id": 3051,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text is an official Athenian decree, identified by the mention of 'psephismata' (decrees) and the standard formula 'dedochthai tei boulei' (it was decided by the council).",
+      "confidence": 1.0,
+      "quote": "δ μου ψ[η]φ σματα ... δ[ε]δ χθα[ι] [τε βουλε το ς προ δρους]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription honors Timosthenes for his services to the city, referring to him as a benefactor (euergetes) and granting him honors such as maintenance in the Prytaneion.",
+      "confidence": 1.0,
+      "quote": "ε ε[ρ]γ [τ]α[ς] κα [συμ]βο λους γαθο ς γενομ νους τ μησ[εν σ] τ[ωι ν πρ]υτανε ωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The text contains an extensive list of the presiding officers (proedroi) from various Athenian demes who were present at the assembly.",
+      "confidence": 1.0,
+      "quote": "κκλησ α τ ν προ δρ[ω]ν πεψ φ[ι]ζεν γν θε[ος φ]ιλογ νου γρυλ θεν [κα σ]υνπρ εδροι λαμπρ[ α]ς [θ]οραιε ς ρων [ να]γυ[ρ]σ[ι]ος καλλιμ δης κυ[δαν]τ δης νικο[κ]λε [δ]ης φρε ρριος διοκλ ς προ[σπ]λτιος π[ολλ δο]τος θεν καλλ στρατος [συ]παλ [τ]τιος λεω[ν δης] κπρειος σωφ ν[ης] 0[ρικ]ο[ρ] σι[ος ------] [--- παλ]ληνε ς",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "Athenian decrees of this period were typically inscribed on stone stelae for public display.",
+      "confidence": 0.8,
+      "quote": "π λιοδ ρου ρχοντος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "Public decrees in Athens during the 3rd century BC were almost exclusively carved on marble.",
+      "confidence": 0.8,
+      "quote": "π λιοδ ρου ρχοντος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The text contains numerous lacunae and reconstructed sections, indicating the physical state of the inscription is broken.",
+      "confidence": 1.0,
+      "quote": "[--- παλ]ληνε ς [κ]η[φισ]δ[ω]ρο[ς ρισ]τοδ μου ξυπετ[αι] ν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Heliodorus",
+        "role": "Archon",
+        "uri": "https://www.wikidata.org/wiki/Q1397528",
+        "confidence": 1.0
+      },
+      {
+        "name": "Charias",
+        "role": "Secretary",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Charias",
+        "confidence": 1.0
+      },
+      {
+        "name": "Callias",
+        "role": "Father of Charias",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Callias",
+        "confidence": 1.0
+      },
+      {
+        "name": "Agnotheos",
+        "role": "Presiding officer (Proedros)",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Agnotheos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Philogenos",
+        "role": "Father of Agnotheos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Philogenos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Heron",
+        "role": "Presiding officer (Proedros)",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Heron",
+        "confidence": 1.0
+      },
+      {
+        "name": "Callimedes",
+        "role": "Presiding officer (Proedros)",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Callimedes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Nicocleides",
+        "role": "Presiding officer (Proedros)",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Nicocleides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Diocles",
+        "role": "Presiding officer (Proedros)",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Diocles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pollidotos",
+        "role": "Presiding officer (Proedros)",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Pollidotos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Callistratus",
+        "role": "Presiding officer (Proedros)",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Callistratus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Leonides",
+        "role": "Presiding officer (Proedros)",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Leonides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sophanes",
+        "role": "Presiding officer (Proedros)",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Sophanes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Cephisodorus",
+        "role": "Presiding officer (Proedros)",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Cephisodorus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristodemus",
+        "role": "Father of Cephisodorus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aristodemus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Timosthenes",
+        "role": "Honoree and grandfather of Demosthenes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Timosthenes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Demosthenes",
+        "role": "Grandson of the honoree",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Demosthenes",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Athens",
+        "type": "City-state",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      },
+      {
+        "name": "Athmonon",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579887",
+        "confidence": 1.0
+      },
+      {
+        "name": "Gryttos",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Lamptrai",
+        "type": "Deme",
+        "uri": "https://www.wikidata.org/wiki/Q18015500",
+        "confidence": 1.0
+      },
+      {
+        "name": "Thorai",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580118",
+        "confidence": 1.0
+      },
+      {
+        "name": "Anagyrous",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579863",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kydantidai",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579998",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phrearrhioi",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580077",
+        "confidence": 1.0
+      },
+      {
+        "name": "Prosspalta",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Oethen",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Sypalettos",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580112",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kypros",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/687949",
+        "confidence": 1.0
+      },
+      {
+        "name": "Thrikorythos",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Pallene",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580051",
+        "confidence": 1.0
+      },
+      {
+        "name": "Xypete",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580134",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pandionis",
+        "type": "Tribe",
+        "uri": "https://pleiades.stoa.org/places/391233695",
+        "confidence": 1.0
+      },
+      {
+        "name": "Prytaneion",
+        "type": "Building",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579885",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is an Athenian decree from 229/8 BC, the year of the archon Heliodorus (IG II² 834). It is a significant historical document that honors Timosthenes of Paiania, the grandfather of the orator Demosthenes. The text details his contributions to the 'common salvation' and 'freedom' of Athens, mentioning military trophies on land and sea. It follows the standard administrative format of the period, including a detailed list of the proedroi (presiding officers) from various demes and tribes, and grants the honoree high privileges such as maintenance in the Prytaneion and dowries for his daughters.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

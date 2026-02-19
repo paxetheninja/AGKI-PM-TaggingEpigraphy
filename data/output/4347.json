@@ -1,0 +1,476 @@
+{
+  "phi_id": 4347,
+  "themes": [
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The inscription is a detailed catalogue of Athenian ephebes and the officials responsible for their training, including the kosmetes, antikosmetes, and sophronistai.",
+      "confidence": 1.0,
+      "quote": "κοσμητὴς τῶν ἐφήβων μᾶρκος αὐρήλιος ζήνων μαραθώνιος καὶ ἀντικοσμήτης φίλλιος ἀρίστων κολλυτεύς",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Calendars and Timetables",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Calendars and Timetables",
+        "subcategory": null
+      },
+      "rationale": "The text includes a list of gymnasiarchs assigned to specific months of the Athenian calendar, such as Boedromion, Pyanopsion, and Maimakterion.",
+      "confidence": 1.0,
+      "quote": "γυμνασίαρχοι βοηδρομιῶνα αὐρήλιος εὐφράνωρ μαραθώνιος στρατηγὸς πυανοψιῶνα δημήτριος μάρκου βησαιεύς μαιμακτηριῶνα σύμμαχος ἀριστοβούλου μαραθώνιος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Commemorative Monuments",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Commemorative Monuments",
+        "subcategory": null
+      },
+      "rationale": "Ephebic lists served as public monuments to commemorate the service and training of the city's youth and their supervisors during a specific archonship.",
+      "confidence": 0.9,
+      "quote": "τοὺς τε συνάρχοντας καὶ τοὺς ἐφηβεύσαντας ἐπὶ ἄρχοντος φιλοτείμου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The format and content are characteristic of an Athenian ephebic stele, a vertical stone slab used for public records, as indicated by the verb 'anegraphan' (they inscribed).",
+      "confidence": 0.8,
+      "quote": "ἀνέγραψαν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "Athenian administrative lists of this period were almost exclusively inscribed on marble.",
+      "confidence": 0.8,
+      "quote": "ἀνέγραψαν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Marcus Aurelius Zenon",
+        "role": "Kosmetes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Marcus%20Aurelius%20Zenon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phyllios Ariston",
+        "role": "Antikosmetes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Phyllios%20Ariston",
+        "confidence": 1.0
+      },
+      {
+        "name": "Philotimos",
+        "role": "Archon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Philotimos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Epiktetos",
+        "role": "Paidotribes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Epiktetos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Straton",
+        "role": "Secretary",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Straton",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristoboulos",
+        "role": "Sophronistes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aristoboulos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Symmachos",
+        "role": "Sophronistes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Symmachos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Apogonos",
+        "role": "Sophronistes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Apogonos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Agathemeros",
+        "role": "Sophronistes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Agathemeros",
+        "confidence": 1.0
+      },
+      {
+        "name": "Menodoros",
+        "role": "Sophronistes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Menodoros",
+        "confidence": 1.0
+      },
+      {
+        "name": "Serapion",
+        "role": "Sophronistes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Serapion",
+        "confidence": 1.0
+      },
+      {
+        "name": "Euphronor",
+        "role": "Gymnasiarch and Strategos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Euphronor",
+        "confidence": 1.0
+      },
+      {
+        "name": "Demetrios",
+        "role": "Gymnasiarch",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Demetrios",
+        "confidence": 1.0
+      },
+      {
+        "name": "Artemon",
+        "role": "Gymnasiarch",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Artemon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Asklepiades",
+        "role": "Gymnasiarch",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Asklepiades",
+        "confidence": 1.0
+      },
+      {
+        "name": "Diodoros",
+        "role": "Ephebe",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Diodoros",
+        "confidence": 1.0
+      },
+      {
+        "name": "Nikomachos",
+        "role": "Ephebe",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Nikomachos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eirenaios",
+        "role": "Ephebe",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Eirenaios",
+        "confidence": 1.0
+      },
+      {
+        "name": "Asiatikos",
+        "role": "Ephebe",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Asiatikos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Philistos",
+        "role": "Ephebe",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Philistos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hilaros",
+        "role": "Ephebe",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Hilaros",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hermias",
+        "role": "Ephebe",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Hermias",
+        "confidence": 1.0
+      },
+      {
+        "name": "Isidoros",
+        "role": "Ephebe",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Isidoros",
+        "confidence": 1.0
+      },
+      {
+        "name": "Genethlios",
+        "role": "Ephebe",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Genethlios",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dionysodoros",
+        "role": "Ephebe",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Dionysodoros",
+        "confidence": 1.0
+      },
+      {
+        "name": "Nikophon",
+        "role": "Ephebe",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Nikophon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Mousaios",
+        "role": "Ephebe",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Mousaios",
+        "confidence": 1.0
+      },
+      {
+        "name": "Antilochos",
+        "role": "Ephebe",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Antilochos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Antiochos",
+        "role": "Ephebe",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Antiochos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Zosimos",
+        "role": "Ephebe",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Zosimos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eisidotos",
+        "role": "Ephebe",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Eisidotos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Athenodoros",
+        "role": "Ephebe",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Athenodoros",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hermaias",
+        "role": "Ephebe",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Hermaias",
+        "confidence": 1.0
+      },
+      {
+        "name": "Soterichos",
+        "role": "Ephebe",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Soterichos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Priamos",
+        "role": "Ephebe",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Priamos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Nikon",
+        "role": "Ephebe",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Nikon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Trophimos",
+        "role": "Ephebe",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Trophimos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Philetos",
+        "role": "Ephebe",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Philetos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Maximos",
+        "role": "Ephebe",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Maximos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Chrysos",
+        "role": "Ephebe",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Chrysos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Neon",
+        "role": "Ephebe",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Neon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Artemidoros",
+        "role": "Ephebe",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Artemidoros",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dionysios",
+        "role": "Ephebe",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Dionysios",
+        "confidence": 1.0
+      },
+      {
+        "name": "Basiledoros",
+        "role": "Ephebe",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Basiledoros",
+        "confidence": 1.0
+      },
+      {
+        "name": "Stephanos",
+        "role": "Ephebe",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Stephanos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eukarpos",
+        "role": "Ephebe",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Eukarpos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Athenaios",
+        "role": "Ephebe",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Athenaios",
+        "confidence": 1.0
+      },
+      {
+        "name": "Merismos",
+        "role": "Ephebe",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Merismos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Agathopous",
+        "role": "Ephebe",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Agathopous",
+        "confidence": 1.0
+      },
+      {
+        "name": "Gorgias",
+        "role": "Ephebe",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Gorgias",
+        "confidence": 1.0
+      },
+      {
+        "name": "Euphrosynos",
+        "role": "Ephebe",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Euphrosynos",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Marathon",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580021",
+        "confidence": 1.0
+      },
+      {
+        "name": "Collytus",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Eleusis",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579920",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sphettus",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Acharnae",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Cholargos",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579902",
+        "confidence": 1.0
+      },
+      {
+        "name": "Piraeus",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580062",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pallene",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580051",
+        "confidence": 1.0
+      },
+      {
+        "name": "Deiradiotai",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579906",
+        "confidence": 1.0
+      },
+      {
+        "name": "Gargettus",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Besae",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Phaleron",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580072",
+        "confidence": 1.0
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579885",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a catalogue of the Athenian ephebes for the year of the archon Philotimos (late 2nd century AD). It lists the primary officials of the ephebeia, including the kosmetes Marcus Aurelius Zenon of Marathon, followed by the sophronistai and a monthly schedule of gymnasiarchs. The roster of ephebes is organized by their respective tribes (Ptolemais, Akamantis, Hadrianis, Oineis, Kekropis, Hippothontis). The text is fragmentary, with several lacunae in the names and month names.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

@@ -1,0 +1,179 @@
+{
+  "phi_id": 3247,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text contains the standard formula for an Athenian decree, including the decision of the council and the people and the name of the proposer.",
+      "confidence": 1.0,
+      "quote": "ἔδοξεν τῇ βουλῇ καὶ τῷ δήμῳ",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription is dedicated to honoring an official, Callias, for his virtuous service, including a golden crown and public praise.",
+      "confidence": 1.0,
+      "quote": "ἐπαινέσαι τὸν κοσμητὴν τῶν ἐφήβων ... καὶ στεφανῶσαι αὐτὸν χρυσῷ στεφάνῳ",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The text mentions various officials including the kosmetes (supervisor of ephebes), generals (strategoi), the military treasurer, and the secretary.",
+      "confidence": 1.0,
+      "quote": "τοὺς στρατηγοὺς καὶ τὸν ταμίαν τῶν στρατιωτικῶν ... τὸν κοσμητὴν τῶν ἐφήβων",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The inscription mentions the allocation of expenses related to the honors and the administration of the ephebeia.",
+      "confidence": 1.0,
+      "quote": "γενόμενον ἀνάλωμα μερίσαι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "Athenian decrees of this period were typically inscribed on marble stelae for public display.",
+      "confidence": 0.8,
+      "quote": "τῆς δὲ ἀναγορεύσεως τοῦ στεφάνου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "The context of Attic decrees from the 2nd century BC indicate the use of marble as the primary material.",
+      "confidence": 0.8,
+      "quote": "ἔδοξεν τῇ βουλῇ",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The text contains numerous lacunae and reconstructed sections, indicating the physical state of the inscription is not complete.",
+      "confidence": 1.0,
+      "quote": "---------------- τῆς δὲ ἀναγορεύσεως",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Callias son of Sosicrates",
+        "role": "Kosmetes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Callias%20son%20of%20Sosicrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sosicrates",
+        "role": "Father of Callias",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Sosicrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phanias of Paiania",
+        "role": "Proposer",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Phanias%20of%20Paiania",
+        "confidence": 1.0
+      },
+      {
+        "name": "Demetrius",
+        "role": "Secretary",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Demetrius",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Phlya",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/580076",
+        "confidence": 1.0
+      },
+      {
+        "name": "Paiania",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Athens",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "The Gods",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "The Benefactors",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579885",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is an Athenian honorific decree from the late 2nd century BC. It honors Callias, son of Sosicrates of the deme Phlya, for his exemplary service as the kosmetes (supervisor) of the ephebes. The text details his oversight of the ephebes' education, military training, and religious obligations, including sacrifices to the gods and benefactors. It follows the standard administrative procedures of the Athenian state, mentioning the Council, the Assembly, the prytany system, and various financial and military officials.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": " fin. s. II a. ",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

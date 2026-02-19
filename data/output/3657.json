@@ -1,0 +1,173 @@
+{
+  "phi_id": 3657,
+  "themes": [
+    {
+      "label": "Inventories",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Inventories",
+        "subcategory": null
+      },
+      "rationale": "The inscription contains a detailed list of items, including crowns, phialai, and military equipment, along with their weights and storage locations.",
+      "confidence": 1.0,
+      "quote": "ντα ν τ ι χαλκοθ κηι σπ δες π χαλκοι παντοδαπα",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The text mentions the treasurers (tamiai) of the goddess and the weighing of precious metal objects, which are standard elements of Athenian financial administration.",
+      "confidence": 1.0,
+      "quote": "παραλαβ ντε]ς παρ ταμι ν τ ν τ ς θ[εο]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Votive Dedications",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Votive Dedications",
+        "subcategory": null
+      },
+      "rationale": "Several items are explicitly described as being dedicated (anetheken) by the people (demos) or individuals to the goddess Athena.",
+      "confidence": 1.0,
+      "quote": "στ φανος ν δ μος ... ν θηκεν τ[ ι θην ι -]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text refers to expenditures or actions taken according to official decrees (psephismata).",
+      "confidence": 1.0,
+      "quote": "κ τ ν κατ] ψηφ σματα ναλισκο[μ νων",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The format and content are characteristic of Athenian administrative stelae set up on the Acropolis, specifically mentioning the act of recording (anagrapsai).",
+      "confidence": 0.8,
+      "quote": "ναγ[ρ ψαι --------- τ δε ---------- παραλαβ ντε]ς",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "Athenian administrative records of this period were typically inscribed on marble stelae.",
+      "confidence": 0.8,
+      "quote": "ναγ[ρ ψαι --------- τ δε ---------- παραλαβ ντε]ς",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The text contains numerous lacunae and missing sections, requiring significant reconstruction.",
+      "confidence": 1.0,
+      "quote": "--------------------------------- ν ------ --------------------------------- οτι-----",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Pytheas",
+        "role": "Archon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Pytheas",
+        "confidence": 0.8
+      },
+      {
+        "name": "Polyzelus",
+        "role": "Archon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Polyzelus",
+        "confidence": 0.8
+      },
+      {
+        "name": "Sosonomos",
+        "role": "Dedicant",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Sosonomos",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Athens",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      },
+      {
+        "name": "Chalkotheke",
+        "type": "Building",
+        "uri": "https://pleiades.stoa.org/places/764971247",
+        "confidence": 1.0
+      },
+      {
+        "name": "Erechtheis",
+        "type": "Tribe",
+        "uri": "https://pleiades.stoa.org/places/844310646",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Athena",
+        "uri": "https://www.wikidata.org/wiki/Q37122",
+        "confidence": 1.0
+      },
+      {
+        "name": "Nike",
+        "uri": null,
+        "confidence": 0.8
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579885",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is an Athenian inventory of the mid-4th century BC, likely from the Acropolis. It records the transfer of sacred and public property between boards of treasurers. The text lists a variety of objects, including golden crowns, silver phialai, and a significant amount of bronze military equipment (shields, catapult parts, greaves) stored in the Chalkotheke (Bronze Storehouse). It mentions specific archon years (Polyzelus and likely Pytheas) to date the records and refers to the tribe Erechtheis.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}
