@@ -1,0 +1,170 @@
+{
+  "phi_id": 139310,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text is explicitly identified as a decree (psephisma) passed by the mastroi and the people of Lindos.",
+      "confidence": 1.0,
+      "quote": "ἔδοξε μαστροῖς καὶ Λινδίοις ... κυρωθέντος τοῦδε τοῦ ψαφίσματος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Sacred Laws and Rules",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Sacred Laws and Rules",
+        "subcategory": null
+      },
+      "rationale": "The inscription establishes regulations for religious honors, sacrifices, and processions for the god Dionysus during the Sminthia festival.",
+      "confidence": 1.0,
+      "quote": "τὰς τοῦ Διονύσου τειμὰς συν[τηρεῖν καλῶς καὶ] ἀγῶνας τελεῖν καὶ πονπὰς καὶ θυσίας",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The decree details the selection (hairesis) of choragoi (chorus sponsors) from among both citizens and resident foreigners.",
+      "confidence": 1.0,
+      "quote": "χοραγῶν ποιούμενοι αἵρ̣[εσιν] καὶ πολειτᾶν καὶ ξένων",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Calendars and Timetables",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Calendars and Timetables",
+        "subcategory": null
+      },
+      "rationale": "The decree is dated to the 11th day of the month Diosthuos in the Rhodian calendar.",
+      "confidence": 1.0,
+      "quote": "Διοσ[θύ]ου ἑνδεκάτᾳ",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Agonistic / Victory Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Agonistic / Victory Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription regulates the performance of contests (agones) associated with the Sminthia festival.",
+      "confidence": 0.8,
+      "quote": "ἀγῶνας τελεῖν καὶ πονπὰς καὶ θυσίας",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Registers and Catalogues",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Registers and Catalogues",
+        "subcategory": null
+      },
+      "rationale": "The decree mandates that the priests of Athena and Dionysus submit lists of names of those selected for duties to the mastroi and their secretary.",
+      "confidence": 0.8,
+      "quote": "ὁ δὲ ἱερεὺς τᾶς Ἀθάνας [φερέτω πο]τὶ τοὺς μαστροὺς τὰ ὀνόματα",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Rhodopeithes",
+        "role": "Priest of Helios",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Rhodopeithes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Stratus",
+        "role": "Priest of Athena",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Stratus",
+        "confidence": 0.8
+      }
+    ],
+    "places": [
+      {
+        "name": "Lindos",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/589913",
+        "confidence": 1.0
+      },
+      {
+        "name": "Rhodes",
+        "type": "Island",
+        "uri": "https://pleiades.stoa.org/places/590031",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sminthium",
+        "type": "Sanctuary or Theater",
+        "uri": null,
+        "confidence": 0.5
+      }
+    ],
+    "deities": [
+      {
+        "name": "Athena",
+        "uri": "https://www.wikidata.org/wiki/Q37122",
+        "confidence": 1.0
+      },
+      {
+        "name": "Helios",
+        "uri": "https://www.wikidata.org/wiki/Q134270",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dionysus",
+        "uri": "https://www.wikidata.org/wiki/Q41680",
+        "confidence": 1.0
+      },
+      {
+        "name": "Apollo Smintheus",
+        "uri": "https://www.wikidata.org/wiki/Q37340",
+        "confidence": 0.8
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Rhodes",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/590031",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Lindos",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/589913",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a decree (psephisma) from Lindos on the island of Rhodes, regulating the organization of the Sminthia festival. It outlines the selection process for choragoi (chorus sponsors) for the cult of Dionysus, specifying that both citizens and resident foreigners (including those living or farming in Lindia) are eligible. The decree involves the mastroi (local officials) and the epistatai (overseers), and mentions the religious roles of the priests of Athena and Helios. It also references the Rhodian calendar month of Diosthuos and the submission of official lists of names to the administration.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

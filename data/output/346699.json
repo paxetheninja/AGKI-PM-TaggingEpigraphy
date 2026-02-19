@@ -1,0 +1,203 @@
+{
+  "phi_id": 346699,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text is a formal Athenian decree (psephisma) passed by the council and people to regulate public standards.",
+      "confidence": 1.0,
+      "quote": "ἀναγράψαι δὲ τό̣[δε] τὸ [ψήφισμ]α [εἰ]ς στήλας λιθ[ίν]α[ς]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Laws and Regulations",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Laws and Regulations",
+        "subcategory": null
+      },
+      "rationale": "The inscription establishes comprehensive legal regulations for commercial weights and measures and defines penalties for violations.",
+      "confidence": 1.0,
+      "quote": "οἱ ἄρχοντες ἐξεταζέτωσαν πρὸς τὸ σύμβολον τὸ ἐν τῆι σκιάδι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Sacred Laws and Rules",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Sacred Laws and Rules",
+        "subcategory": null
+      },
+      "rationale": "The decree includes religious sanctions, such as fines payable to Demeter and Kore, and involves the Hierophant in enforcement at Eleusis.",
+      "confidence": 1.0,
+      "quote": "ὀ[φ]ειλέτω ἱερὰς̣ τῆι Δήμητρι [κ]αὶ τῆι Κόρηι δραχμὰς χιλίας",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Inventories",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Inventories",
+        "subcategory": null
+      },
+      "rationale": "The text mandates a formal inventory and handover process for the official weights and measures between outgoing and incoming public slaves.",
+      "confidence": 0.8,
+      "quote": "μετ ἀναγραφῆς π̣άν[τα] τὰ [μέτρα καὶ σταθμά]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The decree explicitly orders its own publication on stone stelae to be placed where the weights are kept.",
+      "confidence": 1.0,
+      "quote": "ἀναγράψαι δὲ τό̣[δε] τὸ [ψήφισμ]α [εἰ]ς στήλας λιθ[ίν]α[ς]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "As a monumental Athenian decree from the Akropolis, it was inscribed on marble, though the text simply specifies stone.",
+      "confidence": 0.8,
+      "quote": "στήλας λιθ[ίν]α[ς]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The text contains numerous lacunae and reconstructed sections, indicating the physical state of the stone is not intact.",
+      "confidence": 1.0,
+      "quote": "[τοῦ μέτρου ὡς ἐλάττονος ὄντος, οἱ ἄρχοντες ἐξεταζέτωσαν]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Diodorus son of Theophilus of Halae",
+        "role": "Official appointed for the construction of weights and measures",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Diodorus%20son%20of%20Theophilus%20of%20Halae",
+        "confidence": 1.0
+      },
+      {
+        "name": "Theophilus",
+        "role": "Father of Diodorus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Theophilus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hierophant",
+        "role": "Religious official at Eleusis responsible for enforcement",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Hierophant",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Athens",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      },
+      {
+        "name": "Piraeus",
+        "type": "Port",
+        "uri": "https://pleiades.stoa.org/places/580062",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eleusis",
+        "type": "Sanctuary and Deme",
+        "uri": "https://pleiades.stoa.org/places/579920",
+        "confidence": 1.0
+      },
+      {
+        "name": "Akropolis",
+        "type": "Citadel",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      },
+      {
+        "name": "Skias",
+        "type": "Building (Tholos) in the Agora",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Metroon",
+        "type": "Archive and Temple",
+        "uri": "https://pleiades.stoa.org/places/845017",
+        "confidence": 1.0
+      },
+      {
+        "name": "Areopagus",
+        "type": "Council and Hill",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Halae",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Demeter",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Kore",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579885",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This significant Athenian decree, dating to approximately 120 BC, provides a detailed regulatory framework for the standardization of weights and measures (metrology) in Attica. It establishes official standards to be kept in key locations (the Skias in the Agora, Piraeus, Eleusis, and the Akropolis) and defines the technical specifications for various units like the mina, talent, and choinix. The law distinguishes between commercial and silver weight systems and sets specific measures for various commodities such as nuts, olives, and figs. It also outlines a strict enforcement regime involving various magistrates, the Council of 600, and the Areopagus, with penalties ranging from corporal punishment for slaves to heavy fines for free citizens and officials.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "ca. 120 BC?",
+  "date_min": 120.0,
+  "date_max": 120.0,
+  "date_circa": true
+}

@@ -1,0 +1,154 @@
+{
+  "phi_id": 3174,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text is a formal resolution passed by the Athenian Council and Assembly, following standard decree formulas.",
+      "confidence": 1.0,
+      "quote": "[τῆς βουλῆς εἰ]ς τὸν δῆμον ὅ[τι δοκεῖ τῆι βουλῆι]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription honors Pausimachus for his services and goodwill toward the Athenian people, granting him a crown and citizenship.",
+      "confidence": 1.0,
+      "quote": "[ἐπαινέ- σαι Παυσίμαχ]ον Φιλοστ[ρ]άτου [ καὶ στεφανῶσ]- [αι θαλλοῦ στ]εφάνωι [ε]ὐνοίας ἕν[εκεν]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Citizenship",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The decree explicitly grants the honoree Athenian citizenship (politeia) and outlines the legal procedure for his enrollment into a tribe, deme, and phratry.",
+      "confidence": 1.0,
+      "quote": "[δεδόσθαι δὲ αὐ- τῶι πολιτεί]αν κατὰ τὸν νόμον",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The text explicitly commands the secretary to record the decree on a stone stele.",
+      "confidence": 1.0,
+      "quote": "[ἀναγάψ- αι τὸ ψήφισμα τόδε τὸν γραμμ- ατέα... ἐν στήλει λιθίνει]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "Public decrees in Hellenistic Athens were almost exclusively inscribed on marble stelae, though the text only specifies 'stone'.",
+      "confidence": 0.8,
+      "quote": "[ἐν στήλει λιθίνει]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The inscription is heavily damaged, with significant portions of the text reconstructed through epigraphic parallels.",
+      "confidence": 1.0,
+      "quote": "[ἐπὶ ἄρχοντος Μουνιχιῶνο]ς δευτέραι μετ ε[ἰ]-",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Timon",
+        "role": "Proposer of the decree",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Timon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pausimachus",
+        "role": "Honoree and recipient of citizenship",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Pausimachus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Philostratus",
+        "role": "Father of the honoree",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Philostratus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eumenes",
+        "role": "King, likely Eumenes II of Pergamon, whom the honoree served",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Eumenes",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Athens",
+        "type": "City-state",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      },
+      {
+        "name": "Acropolis",
+        "type": "Sanctuary and publication site",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Apollo",
+        "uri": "https://www.wikidata.org/wiki/Q37340",
+        "confidence": 0.8
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579885",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This is an Athenian honorific decree dating to the early 2nd century BC. It honors Pausimachus, son of Philostratus, who had been in the service of King Eumenes. The decree grants him Athenian citizenship (politeia) and an olive crown. It follows the standard administrative procedures of the period, including the involvement of the Council (Boule), the Assembly (Ekklesia), and the scrutiny (dokimasia) by the law-courts (thesmothetai). The mention of the oracle of 'the god' in the reconstruction likely refers to Apollo at Delphi. The publication was funded by the military treasurer and placed on the Acropolis.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "ante 159 a.",
+  "date_min": 159.0,
+  "date_max": 159.0,
+  "date_circa": false
+}

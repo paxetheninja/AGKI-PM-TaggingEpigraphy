@@ -1,0 +1,203 @@
+{
+  "phi_id": 296449,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text contains the formal enactment formula of the Larisaean assembly ('edoxe'), identifying it as a public decree.",
+      "confidence": 1.0,
+      "quote": "ἔδοξε τοῦ δάμου τοῦ Λα[σ]σαίουν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription records a formal decision to praise and honor foreign individuals for their service and conduct towards the city.",
+      "confidence": 1.0,
+      "quote": "ἐπαινείσειν Ἀσκαλαπιάδαν Θεοφίλοι Περγαμεινόν, Φιλ[ό]την Ἱππολόχοι Κυζικεινὸν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The preamble provides a comprehensive list of the city's magistrates, including tagoi, tamiai, and gymnasiarchoi, serving during the year.",
+      "confidence": 1.0,
+      "quote": "ταγευόντουν Κλεάρχοι Ἀρναι- είοι, Κλεομένεος Σιμουνδαίοι, Ἀν- τιόχοι Ἀντιγονείοι, Θεοπ̣ροπίδα Πυ- θονικείοι, Παυσανία Βαικχείοι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Clearchus",
+        "role": "Tagos",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Cleomenes",
+        "role": "Tagos and Agoranomos",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Antiochus",
+        "role": "Tagos",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Theopropidas",
+        "role": "Tagos",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Pausanias",
+        "role": "Tagos",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Antiphanes",
+        "role": "Treasurer",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Herodotus",
+        "role": "Treasurer",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Macunus",
+        "role": "Gymnasiarch",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Pyrrichus",
+        "role": "Gymnasiarch",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Dicaeus",
+        "role": "Speaker",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Ascalapiades",
+        "role": "Honoree",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Theophilus",
+        "role": "Father of Ascalapiades",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Philotes",
+        "role": "Honoree",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Hippolochus",
+        "role": "Father of Philotes",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Eumenes",
+        "role": "King of Pergamum",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Attalus",
+        "role": "Brother of the King",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Publius",
+        "role": "Roman General",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Larisa",
+        "type": "City",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Pergamum",
+        "type": "City",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Cyzicus",
+        "type": "City",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Rome",
+        "type": "City",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Larisa",
+      "type": "City",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Thessaly",
+      "type": "Region",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription from Larisa in Thessaly is a decree of the people (demos) honoring two individuals, Ascalapiades of Pergamum and Philotes of Cyzicus. It dates to approximately 170 BC and mentions significant historical figures including King Eumenes II of Pergamum, his brother Attalus, and a Roman general named Publius. The text begins with a detailed list of local officials in office at the time of the decree and praises the honorees for their virtuous conduct and goodwill toward the citizens.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "170 BC",
+  "date_min": 170.0,
+  "date_max": 170.0,
+  "date_circa": false
+}

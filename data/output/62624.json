@@ -1,0 +1,344 @@
+{
+  "phi_id": 62624,
+  "themes": [
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The text is a detailed financial account of the hieropoioi, recording income from rents, interest, and expenditures for temple maintenance and personnel.",
+      "confidence": 1.0,
+      "quote": "[λόγ]ος ἱεροποιῶν τῶ[ν ἱεροποιη]σάντων ἐπὶ ἄρχοντος Μενεκ[ράτου]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Inventories",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Inventories",
+        "subcategory": null
+      },
+      "rationale": "A significant portion of the inscription lists silver and gold vessels, jewelry, and other precious items held in the temple treasury, organized by weight and type.",
+      "confidence": 1.0,
+      "quote": "[ποτήρια] ἐν τῶι Ἀ̣ρ̣τ̣εμισίωι ἀργυρᾶ [πρῶτος ῥυμός, σταθμ]ὸν [τ(άλαντον)]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The inscription names the archons, hieropoioi, secretaries, and other officials responsible for the administration of the sanctuary and the city.",
+      "confidence": 1.0,
+      "quote": "ἐπὶ ἄρχοντος Μενεκ[ράτου, Δημόνου τοῦ Νίκωνος, Π]ί[στου] τοῦ [Ξέ]ν[ωνος]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Votive Dedications",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Votive Dedications",
+        "subcategory": null
+      },
+      "rationale": "The inventory lists numerous items dedicated to the gods by individuals, kings, and cities, explicitly using the term 'anathema'.",
+      "confidence": 1.0,
+      "quote": "Κλεινοῦς ἀνάθημα [ἀετὸς ἀργυροῦς τῶν ἀρχαίων δι]απεπτωκώς",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The text refers to previous records and debts inscribed on stelae set up by former officials.",
+      "confidence": 1.0,
+      "quote": "ἐν τῆι στήληι ἧι ἔστησαν ἱεροποιοὶ",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Gold",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Metal",
+        "subcategory": "Gold"
+      },
+      "rationale": "The inventory lists many items made of gold, including crowns, jewelry, and vessels.",
+      "confidence": 1.0,
+      "quote": "καὶ χρυσοῦς ΔΙΙ καὶ φω[καΐδα ]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Silver",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Metal",
+        "subcategory": "Silver"
+      },
+      "rationale": "The inventory lists numerous silver vessels and objects, often categorized by weight.",
+      "confidence": 1.0,
+      "quote": "[ποτήρια] ἐν τῶι Ἀ̣ρ̣τ̣εμισίωι ἀργυρᾶ",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Coins",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Portable Objects",
+        "subcategory": "Coins"
+      },
+      "rationale": "The text mentions various types of coinage, including Attic, Alexandrian, and local currencies used in financial transactions.",
+      "confidence": 1.0,
+      "quote": "ἀργυρίου ἀττικοῦ [κα]ὶ ἀλεξανδρείου δοκίμου καὶ [χαλκῶ]ν ἐπιχωρίων",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Menekrates",
+        "role": "Archon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Menekrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hypsokles",
+        "role": "Archon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Hypsokles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Antipater son of Demetrios",
+        "role": "Secretary",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Antipater%20son%20of%20Demetrios",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kleinodikos son of Kleinodikos",
+        "role": "Secretary",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Kleinodikos%20son%20of%20Kleinodikos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Apollodoros son of Xenomedes",
+        "role": "Tenant",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Apollodoros%20son%20of%20Xenomedes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Ptolemy",
+        "role": "King and Dedicant",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Ptolemy",
+        "confidence": 1.0
+      },
+      {
+        "name": "Berenice",
+        "role": "Queen and Dedicant",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Berenice",
+        "confidence": 1.0
+      },
+      {
+        "name": "Demetrios",
+        "role": "King and Dedicant",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Demetrios",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lysander of Lacedaemon",
+        "role": "Dedicant",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Lysander%20of%20Lacedaemon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Leptines",
+        "role": "Stonemason",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Leptines",
+        "confidence": 1.0
+      },
+      {
+        "name": "Bacchios",
+        "role": "Stonemason",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Bacchios",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phaneas",
+        "role": "Builder",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Phaneas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Simiche of Mykonos",
+        "role": "Dedicant",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Simiche%20of%20Mykonos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Nikokreon",
+        "role": "Dedicant",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Nikokreon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Philokles",
+        "role": "Dedicant",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Philokles",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Delos",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/599587",
+        "confidence": 1.0
+      },
+      {
+        "name": "Rhodes",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/590031",
+        "confidence": 1.0
+      },
+      {
+        "name": "Cos",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/599581",
+        "confidence": 1.0
+      },
+      {
+        "name": "Naxos",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/599821",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kyzikos",
+        "type": "City",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Hermione",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/570292",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phokaia",
+        "type": "City",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Rhenaia",
+        "type": "City",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Artemision",
+        "type": "Temple",
+        "uri": "https://pleiades.stoa.org/places/599525",
+        "confidence": 1.0
+      },
+      {
+        "name": "Asklepieion",
+        "type": "Temple",
+        "uri": "https://pleiades.stoa.org/places/570127",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aphrodision",
+        "type": "Temple",
+        "uri": "https://pleiades.stoa.org/places/570093",
+        "confidence": 1.0
+      },
+      {
+        "name": "Skitoneia",
+        "type": "Region",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Panormos",
+        "type": "Region",
+        "uri": "https://pleiades.stoa.org/places/639061",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Apollo",
+        "uri": "https://www.wikidata.org/wiki/Q37340",
+        "confidence": 1.0
+      },
+      {
+        "name": "Artemis",
+        "uri": "https://www.wikidata.org/wiki/Q39503",
+        "confidence": 1.0
+      },
+      {
+        "name": "Asklepios",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Aphrodite",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Helios",
+        "uri": "https://www.wikidata.org/wiki/Q134270",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eros",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Nike",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Delos",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/599587",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a comprehensive administrative and financial record from the sanctuary of Apollo on Delos, dated to the archonship of Menekrates (278 BC). It documents the accounts of the hieropoioi, including income from sacred lands (enerosia), rents from sacred houses, interest on loans, and a massive inventory of votive offerings (silver and gold vessels, crowns, and jewelry) stored in various temples. It also lists expenditures for public works, sanctuary personnel, and religious ceremonies, providing a detailed view of the economic life of the sanctuary.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "278 BC",
+  "date_min": 278.0,
+  "date_max": 278.0,
+  "date_circa": false
+}

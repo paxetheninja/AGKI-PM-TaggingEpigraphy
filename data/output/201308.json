@@ -1,0 +1,152 @@
+{
+  "phi_id": 201308,
+  "themes": [
+    {
+      "label": "Treaties and Agreements",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Treaties and Agreements",
+        "subcategory": null
+      },
+      "rationale": "The inscription explicitly identifies itself as a treaty between the Gortynians and the Knossians.",
+      "confidence": 1.0,
+      "quote": "συνθ̣[ή]κα̣ Γορτυνίων καὶ Κνωσί[ων]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text uses the standard decree formula 'it seemed good to the city' and mentions the voting of the three hundred.",
+      "confidence": 1.0,
+      "quote": "[τάδ ἔδοξε τᾶι πόλι] ψαφίξανσι τρι[ακ]ατίων παρ[ιόντων]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Calendars and Timetables",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Calendars and Timetables",
+        "subcategory": null
+      },
+      "rationale": "The treaty is dated by local months and specific days, and it sets deadlines for the implementation of its terms.",
+      "confidence": 1.0,
+      "quote": "μη]νὸς Ἱονιω ἠν[άτα καὶ δεκάται ... μη]-νὸς Καρνήιω ἠνάται καὶ δ[εκάται]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The inscription contains detailed provisions regarding the repayment of loans, guarantees, and the return of gold and silver property.",
+      "confidence": 1.0,
+      "quote": "δάνεια ἢ ἐνγύας ὀφήλει ἁ πόλις ἁ τῶν Κν[ωσίων ... ἢ χρυσία ἢ ἀργύρια ἢ ἄλλο [τι ἀποδιδόναι]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Religious and Dedicatory Texts",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Votive Dedications",
+        "subcategory": null
+      },
+      "rationale": "The treaty mentions the restoration of property or status to the goddess Athena.",
+      "confidence": 0.8,
+      "quote": "ἀ]ποκαταστᾶσαι τᾶι Ἀθαναίαι",
+      "is_ambiguous": true,
+      "ambiguity_note": "The specific nature of the restoration to Athena is partially lost in the lacuna."
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Archemachus",
+        "role": "Magistrate of Gortyn",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Archemachus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eurytthenias",
+        "role": "Magistrate of Knossos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Eurytthenias",
+        "confidence": 1.0
+      },
+      {
+        "name": "Ptolemy",
+        "role": "King and Mediator",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Ptolemy",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Gortyn",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/589796",
+        "confidence": 1.0
+      },
+      {
+        "name": "Knossos",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/589872",
+        "confidence": 1.0
+      },
+      {
+        "name": "Apollonia",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/638755",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Athena",
+        "uri": "https://www.wikidata.org/wiki/Q37122",
+        "confidence": 1.0
+      },
+      {
+        "name": "Tyche",
+        "uri": "https://www.wikidata.org/wiki/Q213440",
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Crete",
+      "type": "Region",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Gortyn",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/589796",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription records a peace treaty between the Cretan cities of Gortyn and Knossos, mediated by King Ptolemy. The text outlines the cessation of hostilities, the return of property (including gold and silver), the restoration of the territory of Apollonia, and the settlement of public and private debts. It is dated by the local magistrates and months of both cities.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "ca. 168 BC",
+  "date_min": 168.0,
+  "date_max": 168.0,
+  "date_circa": true
+}

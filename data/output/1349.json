@@ -1,0 +1,214 @@
+{
+  "phi_id": 1349,
+  "themes": [
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The inscription is a military roster or casualty list, organizing Athenian citizens by their respective tribes and including specific military ranks such as trierarch and phylarch.",
+      "confidence": 1.0,
+      "quote": "Λεοντίδος... Ἀκαμαντ[ίδ]ος... Οἰνεΐδος... Κεκροπίδος... Ἱπποθοντίδος... Αἰα̣ντ[ί]δος... Ἀ̣[ν]τ̣[ι]οχ̣[ί]δος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Funerary Inscriptions (Epitaphs)",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Funerary Inscriptions (Epitaphs)",
+        "subcategory": null
+      },
+      "rationale": "This text is identified as a public casualty list (polyandrion) from Athens, commemorating those who fell in battle during the Peloponnesian War.",
+      "confidence": 1.0,
+      "quote": "Λυκῖνο[ς]... Ἀρχίας... Φοκίον τριέ(ραρχος)... Θοκυδίδες... Ἄνδρον... Θεόδοτος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Commemorative Monuments",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Commemorative Monuments",
+        "subcategory": null
+      },
+      "rationale": "As a public casualty list, the inscription serves as a monumental commemoration of the collective sacrifice of the Athenian state and its allies.",
+      "confidence": 1.0,
+      "quote": "Φοκίον τριέ(ραρχος)... Λυκέας τριέ(ραρχος)... Πυθόδορος φύλαρχ(ος)",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Registers and Catalogues",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Registers and Catalogues",
+        "subcategory": null
+      },
+      "rationale": "The inscription functions as a formal register of individuals, categorized by social and political status, including citizens, foreigners (xenoi), and barbarians.",
+      "confidence": 1.0,
+      "quote": "[χ]σένοι... τοχσόται... [β]άρβ̣αροι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The stoichedon arrangement and the nature of the public casualty list indicate it was originally inscribed on a large stone stele.",
+      "confidence": 1.0,
+      "quote": "stoich. — c. 411 a.",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "Athenian public monuments of this period, especially casualty lists, were typically carved on high-quality marble.",
+      "confidence": 1.0,
+      "quote": "Att. — Ath.: H.Stauromenou",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Phokion",
+        "role": "Trierarch",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Lykeas",
+        "role": "Trierarch",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Pythodoros",
+        "role": "Phylarch",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Diokles",
+        "role": "Physician",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Thucydides",
+        "role": "Citizen",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Perikles",
+        "role": "Citizen",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Kallippos",
+        "role": "Citizen",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Archias",
+        "role": "Citizen",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Athens",
+        "type": "City",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Eretria",
+        "type": "City",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Leontis",
+        "type": "Athenian Tribe",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Acamantis",
+        "type": "Athenian Tribe",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Oineis",
+        "type": "Athenian Tribe",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Cecropis",
+        "type": "Athenian Tribe",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Hippothontis",
+        "type": "Athenian Tribe",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Aeantis",
+        "type": "Athenian Tribe",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Antiochis",
+        "type": "Athenian Tribe",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "Region",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription (IG I³ 1190) is a significant Athenian public casualty list from approximately 411 BCE. It records the names of those who died in military service, meticulously organized by the ten Cleisthenic tribes. Notably, it includes non-citizen groups such as 'xenoi' (foreigners), 'toxotai' (archers), and 'barbaroi' (barbarians), providing insight into the diverse manpower of the Athenian empire during the Peloponnesian War. The presence of specific titles like trierarch (naval commander) and phylarch (cavalry commander), as well as a physician (physikos), highlights the administrative precision of these commemorative monuments.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "c. 411 a.",
+  "date_min": 411.0,
+  "date_max": 411.0,
+  "date_circa": false
+}

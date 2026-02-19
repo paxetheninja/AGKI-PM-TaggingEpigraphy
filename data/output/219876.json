@@ -1,0 +1,120 @@
+{
+  "phi_id": 219876,
+  "themes": [
+    {
+      "label": "Edicts and Ordinances",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Edicts and Ordinances",
+        "subcategory": null
+      },
+      "rationale": "The inscription is a formal administrative decree issued by the Roman Prefect of Egypt, Lucius Aemilius Rectus, to regulate the tolls and taxes for the desert route.",
+      "confidence": 1.0,
+      "quote": "() () () ( ) ()",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The text functions as a tariff, listing specific monetary amounts in drachmae required for different categories of people and goods passing through the region.",
+      "confidence": 1.0,
+      "quote": "() () () ( ) ()",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The document categorizes various groups of people, such as sailors, artisans, and women, defining their specific legal and financial status for the purpose of taxation.",
+      "confidence": 1.0,
+      "quote": "() () () ( ) ()",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The Koptos Tariff was inscribed on a large stone slab or stele to be publicly displayed for travelers and merchants.",
+      "confidence": 1.0,
+      "quote": "() () () ( ) ()",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Augustus",
+        "role": "Emperor",
+        "uri": "https://www.wikidata.org/wiki/Q1405",
+        "confidence": 0.8
+      },
+      {
+        "name": "Lucius Aemilius Rectus",
+        "role": "Prefect of Egypt",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Lucius%20Aemilius%20Rectus",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Koptos",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/350560",
+        "confidence": 1.0
+      },
+      {
+        "name": "Berenike",
+        "type": "Port",
+        "uri": "https://pleiades.stoa.org/places/746700",
+        "confidence": 1.0
+      },
+      {
+        "name": "Myos Hormos",
+        "type": "Port",
+        "uri": "https://pleiades.stoa.org/places/786069",
+        "confidence": 1.0
+      },
+      {
+        "name": "Red Sea",
+        "type": "Region",
+        "uri": "https://pleiades.stoa.org/places/39290",
+        "confidence": 1.0
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Koptos",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/350560",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "The inscription, known as the Koptos Tariff, is a crucial administrative document from the early Roman period in Egypt. It details the fees (tolls) collected by the Roman government for the use of the road between Koptos and the Red Sea ports. The text is highly structured, listing various social and professional classes and the corresponding tax they must pay to the tax collector. The provided transcription indicates a fragmentary state of the specific copy or a placeholder representation of the structured list.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "30 BC-14 AD",
+  "date_min": 30.0,
+  "date_max": -14.0,
+  "date_circa": false
+}

@@ -1,0 +1,378 @@
+{
+  "phi_id": 146592,
+  "themes": [
+    {
+      "label": "Donor and Subscription Lists",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Donor and Subscription Lists",
+        "subcategory": null
+      },
+      "rationale": "The inscription is a formal list of individuals who contributed money (drachmas) for a specific purpose, which is the definition of a subscription list.",
+      "confidence": 1.0,
+      "quote": "οἵδε συνεβάλοντο εἰς τὸν τοῦ ἱεροῦ σηκοῦ [περίβολον]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Building Commemoration",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Building Commemoration",
+        "subcategory": null
+      },
+      "rationale": "The funds collected were specifically designated for the construction or enclosure of a sacred shrine, commemorating the collective effort to build or renovate the structure.",
+      "confidence": 1.0,
+      "quote": "εἰς τὸν τοῦ ἱεροῦ σηκοῦ [περίβολον]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The text records specific financial amounts in drachmas associated with each donor, serving as an administrative record of the total funds raised.",
+      "confidence": 1.0,
+      "quote": "δραχμὰς ρ ... δραχμὰς ν ... δραχμὰς κε",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Votive Dedications",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Votive Dedications",
+        "subcategory": null
+      },
+      "rationale": "The contributions are made to a sacred space (the shrine of Zeus Trophonios) and the text begins with a religious invocation, framing the financial act as a religious dedication.",
+      "confidence": 0.8,
+      "quote": "θεὸς τύχῃ ἀγαθῇ ... ὁ ἱερεὺς τοῦ Διὸς τοῦ Τροφωνίου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Trophonianus",
+        "role": "Priest of Zeus Trophonios",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Trophonianus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eubulus",
+        "role": "Donor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Eubulus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aulus",
+        "role": "Father of Eubulus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aulus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hestiaeus",
+        "role": "Donor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Hestiaeus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Demetrius",
+        "role": "Donor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Demetrius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Heracleitus",
+        "role": "Father of Demetrius and Leonteus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Heracleitus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lycidas",
+        "role": "Donor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Lycidas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristeas",
+        "role": "Donor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aristeas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Leon",
+        "role": "Father of Aristeas",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Leon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sosicles the Younger",
+        "role": "Donor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Sosicles%20the%20Younger",
+        "confidence": 1.0
+      },
+      {
+        "name": "Primus",
+        "role": "Donor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Primus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Leonteus",
+        "role": "Father of Primus and Donor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Leonteus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Theocles",
+        "role": "Donor and Father of Theocles",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Theocles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Zosimus",
+        "role": "Donor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Zosimus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aphrodisius",
+        "role": "Donor and Father of Soter",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aphrodisius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Paramonus",
+        "role": "Father of Aphrodisius",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Paramonus",
+        "confidence": 0.8
+      },
+      {
+        "name": "Marcianus",
+        "role": "Donor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Marcianus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Callon",
+        "role": "Father of Marcianus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Callon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Damon",
+        "role": "Father of a donor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Damon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Parmenon",
+        "role": "Donor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Parmenon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Licinius Sosicles",
+        "role": "Donor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Licinius%20Sosicles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Rhodocles",
+        "role": "Donor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Rhodocles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Ision",
+        "role": "Father of Rhodocles",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Ision",
+        "confidence": 1.0
+      },
+      {
+        "name": "Soter",
+        "role": "Donor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Soter",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eutychus",
+        "role": "Donor and Father of Eutychus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Eutychus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristocles",
+        "role": "Donor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aristocles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Agathocles",
+        "role": "Father of a donor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Agathocles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Onesimus",
+        "role": "Donor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Onesimus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Rhodon",
+        "role": "Father of Rhodocles",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Rhodon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Plato",
+        "role": "Father of Zosimus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Plato",
+        "confidence": 1.0
+      },
+      {
+        "name": "Symphorus",
+        "role": "Donor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Symphorus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Maecenas",
+        "role": "Donor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Maecenas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dionysius",
+        "role": "Donor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Dionysius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Euphrosynus",
+        "role": "Donor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Euphrosynus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Timarchus",
+        "role": "Donor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Timarchus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Onesias",
+        "role": "Donor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Onesias",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lycus",
+        "role": "Donor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Lycus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Callicrates",
+        "role": "Donor and Father of Zosimus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Callicrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sosicrates",
+        "role": "Donor and Father of Sosicrates",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Sosicrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Taurus",
+        "role": "Donor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Taurus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Zoilus",
+        "role": "Donor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Zoilus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Timoxenus",
+        "role": "Donor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Timoxenus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phidias",
+        "role": "Donor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Phidias",
+        "confidence": 0.5
+      },
+      {
+        "name": "Charicles",
+        "role": "Father of a donor",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Charicles",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Lebadeia",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/540907",
+        "confidence": 0.8
+      },
+      {
+        "name": "Boiotia",
+        "type": "Region",
+        "uri": "https://pleiades.stoa.org/places/540689",
+        "confidence": 0.8
+      }
+    ],
+    "deities": [
+      {
+        "name": "Zeus Trophonios",
+        "uri": "https://www.wikidata.org/wiki/Q34201",
+        "confidence": 1.0
+      },
+      {
+        "name": "Tyche",
+        "uri": "https://www.wikidata.org/wiki/Q213440",
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Lebadeia",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/540907",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Boiotia",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/540689",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a subscription list from Lebadeia, dating to the Roman Imperial period. It records the names of citizens and the priest of Zeus Trophonios who contributed funds for the construction of an enclosure (peribolos) for the sacred shrine (sekos). The text is highly structured, listing the donor's name, often their patronymic, and the specific amount in drachmas, frequently noting when a father contributed alongside his sons.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "mid. 1st/early 2nd c. AD",
+  "date_min": 1.0,
+  "date_max": 2.0,
+  "date_circa": false
+}

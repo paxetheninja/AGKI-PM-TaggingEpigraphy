@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PHI-346699 - AGKI</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <style>
+    /* Custom Scrollbar Styling */
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: rgba(0,0,0,0.05); }
+    ::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #aaa; }
+
+    .page-container { max-width: 1400px; margin: 0 auto; padding: 2rem; }
+    .back-link { display: inline-block; margin-bottom: 1rem; color: var(--primary); font-weight: 600; }
+    .text-viewer-original { display: grid; grid-template-columns: 40px 1fr; gap: 2rem; font-family: "New Athena Unicode", "Gentium Plus", "Times New Roman", serif; font-size: 1.25rem; line-height: 1.6; background: var(--panel); padding: 2rem; border: 1px solid var(--border); border-radius: 4px; margin-bottom: 2rem; color: var(--text); }
+    .line-numbers { text-align: right; color: var(--muted); font-size: 1.25rem; line-height: 1.6; user-select: none; opacity: 0.5; font-family: inherit; white-space: pre; padding-right: 1rem; border-right: 1px solid var(--border); }
+    .greek-content { white-space: pre-wrap; word-break: break-word; padding-left: 1rem; }
+    .highlight-evidence { background-color: var(--accent); color: white; border-radius: 2px; padding: 0 2px; }
+    .theme-card { background: var(--panel); padding: 1rem 1.5rem; border-left: 4px solid var(--primary); margin-bottom: 0.75rem; border: 1px solid var(--border); border-left-width: 4px; }
+    .ai-analysis-box { background: rgba(31, 167, 163, 0.05); padding: 2rem; border-radius: 8px; border: 1px solid var(--border); margin-top: 2rem; }
+    .evidence-box { max-width: 500px; text-align: right; }
+    .evidence-quote { font-size: 0.85rem; font-style: italic; color: var(--muted); margin: 0; }
+    .badge.green { background: #e6f4ea; color: #137333; border-color: #137333; }
+    .badge.orange { background: #fef7e0; color: #b06000; border-color: #b06000; }
+    .badge.red { background: #fce8e6; color: #c5221f; border-color: #c5221f; }
+    .entity-tag { background: rgba(217, 123, 61, 0.1); color: var(--accent-2); margin-right: 0.5rem; margin-bottom: 0.5rem; display: inline-block; padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.9rem; border: 1px solid rgba(217, 123, 61, 0.2); }
+    .split-container { display: block; }
+    .split-container.active { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+    .split-container.active .split-col-right { position: sticky; top: 20px; max-height: 90vh; overflow-y: auto; padding-right: 10px; }
+  </style>
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+
+    function toggleSplitView() {
+        const container = document.getElementById('main-content');
+        const btn = document.getElementById('splitViewBtn');
+        container.classList.toggle('active');
+        btn.textContent = container.classList.contains('active') ? 'View: Split' : 'View: Standard';
+    }
+
+    function copyCitation() {
+        const citation = "AGKI Project. (2026). Inscription PHI-346699 . Retrieved from " + window.location.href;
+        navigator.clipboard.writeText(citation);
+        alert("Citation copied to clipboard!");
+    }
+
+    function highlightQuote(quote) {
+        const container = document.querySelector('.greek-content');
+        if (!container || !quote) return;
+        if (!container.dataset.original) container.dataset.original = container.innerHTML;
+        else container.innerHTML = container.dataset.original;
+        
+        const regex = new RegExp(quote.trim().replace(/\s+/g, '\\s+'), 'g');
+        container.innerHTML = container.innerHTML.replace(regex, match => `<mark class="highlight-evidence">${match}</mark>`);
+    }
+
+    function clearHighlight() {
+        const container = document.querySelector('.greek-content');
+        if (container && container.dataset.original) container.innerHTML = container.dataset.original;
+    }
+
+    function updateFontSize(size) {
+        const v = document.getElementById('original-view');
+        if(v) v.style.fontSize = size + 'px';
+    }
+
+    function openReportModal() { document.getElementById('reportModal').style.display = 'block'; }
+    function closeReportModal() { document.getElementById('reportModal').style.display = 'none'; }
+    function sendReport() {
+        const category = document.getElementById('reportCategory').value;
+        const desc = document.getElementById('reportDesc').value;
+        const fix = document.getElementById('reportFix').value;
+        const subject = `AGKI Error Report: PHI-346699`;
+        const body = `Category: ${category}%0D%0ADescription: ${desc}%0D%0AProposed Fix: ${fix}`;
+        window.location.href = `mailto:admin@agki-project.org?subject=${encodeURIComponent(subject)}&body=${body}`;
+        closeReportModal();
+    }
+  </script>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="brand"><h1><a href="../../index.html">AGKI Tagging Tool</a></h1></div>
+    <nav class="nav-links">
+        <a href="../../index.html" class="nav-item">Home</a>
+        <a href="../search.html" class="nav-item">Search</a>
+        <a href="../explore.html" class="nav-item">Explore</a>
+        <a href="../basket.html" class="nav-item">Databasket</a>
+        <a href="../compare.html" class="nav-item">Compare</a>
+        <a href="../network.html" class="nav-item">Network</a>
+        <a href="../matrix.html" class="nav-item">Matrix</a>
+        <a href="../indices.html" class="nav-item">Indices</a>
+    </nav>
+    <div class="header-controls">
+        <button class="theme-toggle-btn" onclick="toggleTheme()" id="themeBtn">Dark Mode</button>
+    </div>
+  </header>
+
+  <script>
+    const themeBtn = document.getElementById('themeBtn');
+    function updateThemeBtn() {
+        const current = document.documentElement.getAttribute('data-theme');
+        if(themeBtn) themeBtn.textContent = current === 'light' ? 'Dark Mode' : 'Light Mode';
+    }
+    updateThemeBtn();
+    window.toggleTheme = function() {
+        const current = document.documentElement.getAttribute('data-theme');
+        const next = current === 'light' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        updateThemeBtn();
+    }
+  </script>
+
+  <main class="page-container inscription-page">
+    <div class="inscription-toolbar">
+        <a href="../search.html" class="back-link"><- Back to Dashboard</a>
+        <div class="inscription-actions">
+            <button id="splitViewBtn" onclick="toggleSplitView()" class="button secondary compact">View: Standard</button>
+            <button onclick="openReportModal()" class="button error compact">Report Error</button>
+        </div>
+    </div>
+
+    <!-- Report Modal -->
+    <div id="reportModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:1000;">
+        <div style="background:var(--panel); width:90%; max-width:500px; margin:10% auto; padding:2rem; border-radius:8px; border:1px solid var(--border);">
+            <h3>Report Error for PHI-346699</h3>
+            <label>Error Category</label>
+            <select id="reportCategory" style="width:100%; padding:0.5rem; margin-bottom:1rem;">
+                <option value="Incorrect Tag">Incorrect Tag / Theme</option>
+                <option value="Missing Entity">Missing Person / Place</option>
+                <option value="Translation Error">Translation / Text Issue</option>
+                <option value="Other">Other</option>
+            </select>
+            <label>Description</label>
+            <textarea id="reportDesc" rows="3" style="width:100%; margin-bottom:1rem;"></textarea>
+            <label>Proposed Fix</label>
+            <textarea id="reportFix" rows="2" style="width:100%; margin-bottom:1.5rem;"></textarea>
+            <div style="display:flex; justify-content:flex-end; gap:0.5rem;">
+                <button onclick="closeReportModal()" class="button secondary">Cancel</button>
+                <button onclick="sendReport()" class="button">Create Email Report</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="main-content" class="split-container">
+        <div class="split-col-left">
+            <section class="inscription-hero">
+                <div class="inscription-title-row">
+                    <h2>Inscription PHI-346699</h2>
+                    <div class="inscription-actions">
+                        <button onclick="copyCitation()" class="button secondary compact">Cite</button>
+                        <a href="https://epigraphy.packhum.org/text/346699" target="_blank" class="button secondary compact">View on PHI</a>
+                    </div>
+                </div>
+                <div class="inscription-meta">
+                    <div class="meta-item"><div class="label">Provenance</div><div class="meta-value"><a href="https://pleiades.stoa.org/places/579885" target="_blank" title="View in Pleiades">Athens</a></div></div>
+                    <div class="meta-item"><div class="label">Date</div><div class="meta-value">ca. 120 BC?</div></div>
+                    <div class="meta-item"><div class="label">Completeness</div><div class="meta-value"><span class="badge info">fragmentary</span></div></div>
+                    <div class="meta-item"><div class="label">Tagged by</div><div class="meta-value"><span class="badge" style="background:rgba(12,140,136,0.15); color:#0c8c88; border:1px solid #0c8c88;">gemini-3-flash-preview (Proposer+Judge)</span></div></div>
+                </div>
+            </section>
+            <div class="inscription-title-row">
+                <h3>Original Text</h3>
+                <div class="font-size-control">
+                    <input type="range" min="14" max="32" value="20" oninput="updateFontSize(this.value)">
+                </div>
+            </div>
+            <div id="original-view" class="text-viewer-original">
+                <div class="line-numbers">1
+
+
+
+5
+
+
+
+
+10
+
+
+
+
+15
+
+
+
+
+20
+
+
+
+
+25
+
+
+
+
+30
+
+
+
+
+35
+
+
+
+
+40
+
+
+
+
+45
+
+
+
+
+50
+
+
+
+
+55
+
+
+
+
+60
+
+
+
+
+65
+
+
+
+
+70
+</div>
+                <div class="greek-content">[ ]
+[-]
+[τοῦ μέτρου ὡς ἐλάττονος ὄντος, οἱ ἄρχοντες ἐξεταζέτωσαν πρὸς τὸ σύμβολον τὸ ἐν τῆι σκιά]-
+δι ἢ τὸ ἐμ Π̣ειραι[ε]ῖ ἢ τ̣ὸ [ἐν Ἐλ]ε[υσῖνι ἐὰν δὲ κριθῆι ἔλαττον ὑπὸ τῶν ἀρχόντων καὶ]
+ἀ̣π̣αχθῆι ὁ κεκτημένος τὸ μέτρον, ἐ[ὰν μὲν ἐλεύθερος ἦι ὁ ἀπαχθείς, ἐξέστω αὐτῶι κατὰ τοῦ]
+ἀ̣μφισβητήσαντος περὶ τοῦ μέτρου [ἐξομ]όσ̣[ασθαι εἰσαγέτωσαν οἱ]
+ἄρχοντες ἐπὶ τὴν δημοσίαν τράπεζαν τὸ μ̣έ̣τ̣ρ̣ον̣ [καὶ ἀναφερέτωσαν εἰς τὸν τῶν]
+[ἀπ]οκηρυξίμων λόγον ἐὰν δὲ οἰκέτης, μαστιγούσθω πε[ντήκοντα πληγάς, τὸ δὲ μέτρον]
+ἀφανιζέτωσαν ἐὰν δ[ὲ] οἱ ἄρχ̣οντες μὴ̣ συνεπισχύωσι τοῖς̣ ἰδιώταις, [ἐπαναγκαζέτω]
+ἡ βουλὴ οἱ ἑξακόσιοι. 2 αἱ δὲ ἀρχαὶ αἷς οἱ νόμοι προστάτ̣τουσιν πρὸς τὰ κατεσκευασ̣[μένα]
+σύμβολα σηκώματα ποι[η]σάμεναι πρός τε τὰ ὑγρὰ καὶ τὰ ξηρὰ καὶ τὰ σταθμὰ ἀν[αγκ]αζέτω[σαν]
+[τοὺ]ς πωλοῦν[τ]άς τι̣ ἐν τῆι ἀγορᾶι ἢ̣ ἐν τοῖς ἐργαστηρίοις ἢ τοῖς καπ̣ηλείοις ἢ οἰνῶσιν ἢ ἀ̣πο[θήκαις]
+[χ]ρῆσθαι τοῖς μέτροις καὶ τοῖς σταθμοῖς τούτοις μετροῦντας πά̣ντα [τ]ὰ ὑγ[ρ]ὰ τῶ̣ι αὐτῶ[ι]
+[μέτ]ρωι, καὶ μη̣[κ]έτι ἐξέστω μ̣η̣δεμιᾶι ἀρχῆι π[οι]ήσασθαι μήτε μέτρα μήτε στάθμια [μεί]-
+[ζω μ]ηδὲ ἐ̣λ[άτ]τω τούτων ἐὰ̣ν δέ τις ποιήσηι τῶν ἀρχόντων ἢ μὴ ἐπαναγκ[ά]ζη[ι τοὺς πωλοῦντας]
+[τού]τοις πω̣λεῖν, ὀ[φ]ειλέτω ἱερὰς̣ τῆι Δήμητρι [κ]αὶ τῆι Κόρηι δραχμὰς χιλίας καὶ ἐξ̣έ[στω]
+[αὐ]τοῦ ἀπογραφὴ τῆς οὐσίας πρὸς τοῦτο τὸ ἀργύριον Ἀθηναίων τῶι βουλομένωι. ὁ[μοίως δὲ]
+[αὐ]τοὺ[ς ἐπα]νισοῦν [δ]εῖ[ν] καὶ ἐξετάζειν τὰ μέτρα καὶ τὰ σταθμὰ καὶ εἰς τὸν λοιπὸν χρό[νον],
+[κ]αὶ ἐπιμελεῖσθαι τὴν βουλὴν τοὺς ἑξακοσίους τὴν ἀεὶ βουλεύουσαν ἐν τῶι Ἑκα-
+[τομ]βαιῶνι μηνί, ὅπως μηθεὶς τῶν πω̣λούντων τι ἢ ὠνουμένων ἀσυμβλήτωι μέ̣τρωι
+[μη]δὲ σταθμῶι χρῆτα̣ι, ἀλλὰ δικαίοις. 3 τοὺς δὲ πωλοῦντας Περσικὰς ξηρὰς καὶ ἀμυ[γ]-
+[δ]άλας καὶ Ἡρακλεωτικὰ [κά]ρυα καὶ κ̣ώνους καὶ καστάναια καὶ κυάμους Αἰγύπτου
+[κ]αὶ φοινικοβαλάνους καὶ εἴ τινα ἄλλα τραγήματα μετὰ τούτων πωλεῖται, καὶ θέρμους
+[κα]ὶ [ἐ]λάας καὶ πυρῆνας πωλεῖν μέτρωι χωροῦντ[ι] ἀπο[ψ]ηστὰ σιτηρὰ ἡμ̣ιχ[ο]ινίκια τρία, πωλοῦ[ν]-
+τας τῆι χοίνικι ταύτηι κορυστῆι ἐχούσηι τὸ μὲν [βά]θος̣ δακτύλων πέντε, τὸ δὲ πλάτος το[ῦ] χ[εί]-
+[λ]ους̣ δακτύλου ὁμοίω̣ς δὲ καὶ τοὺς πωλοῦντας τάς τε ἀμυγδάλας τὰς χλωρὰς κ̣αὶ̣ τὰς [ἐ]λ[άας]
+[τὰς προσ]φάτους καὶ τὰς ἰ̣σχάδας πωλεῖν χοίνικι κ[ορ]υστῆι δι̣πλασίονι τ̣ῆς πρ̣ογεγρ[αμμένης]
+[ἐχούσηι τὸ] χεῖλος τ̣ριῶν ἡμιδακτυλίων, καὶ χρῆσθαι αὐτοὺς χοίνιξι ξυλίναις ἐὰν [δέ τις]
+[ἑτέρως? πω]λῆι ἢ ἑτέρωι ἀγγείωι ἀμυγδάλας χλωρὰς ἢ̣ ἐλά̣ας προσφάτους ἢ ἰσχάδ[ας, μὴ πω]-
+[λεῖν ἔλαττ]ον ἢ μέδιμνον σιτηρόν ἐὰν δὲ ἐν ἐλάττονι π[ωλῆι] ἀγγείωι, ἡ ἀρχὴ ὑφ ἣν ἂν τ[εταγ]-
+[μένος ἦι τά] τε ἐνόντα παραχρῆμα [ἀ]ποκηρυ[τ]τέτω καὶ τὴν [τι]μὴν εἰσαγέτω ἐπὶ τὴν [δημο]-
+[σίαν τράπε]ζαν καὶ τὸ ἀγγεῖον κατακοπτέ[τ]ω. 4 ἀγέτω δὲ καὶ ἡ μνᾶ ὴ ἐμ̣πορι̣κὴ Στε[φανη]-
+[φόρου δραχ]μὰς ἑκατὸν τριάκοντα κ[αὶ] ὀκτὼ πρὸ[ς] τὰ στάθμια τὰ ἐν τῶι ἀργυροκοπί̣ω̣ι̣ [κ]αὶ
+[ῥοπ]ὴ̣ν Σ̣[τε]φανηφόρου δραχμὰς δεκαδύο, καὶ πωλε[ίτ]ωσαν πάντες τἆλλα π̣άντα ταύ-
+[τηι] τῆι μνᾶι π̣λ̣ὴν̣ ὅσα πρὸς ἀργύριον διαρρήδην εἴρηται πω̣λεῖν, ἱστάντες τὸν πῆχυν τοῦ ζυγ[οῦ]
+[ἰσόρ]ροπον ἄγοντα τὰς ἑκατὸν πεντήκοντα δρ̣αχ[μὰ]ς τοῦ Σ[τεφανηφ]όρου τὸ δὲ πεντάμνουν [τὸ]
+[ἐμπορικὸν ἐχέτω ῥοπὴν Στεφανηφόρου δραχμὰς ἑξήκοντα, ὅπως ἰσορρόπου τοῦ πήχεως γινομέ]-
+[νου ἄγηι πεντάμνουν ἐμπορικὸν καὶ ἑξήκοντα δραχμὰς τοῦ Στεφανηφόρου τὸ δὲ δωδεκάμνουν τὸ]
+[ἐμπ]ορικὸν ἐχέτω̣ [ῥο]π̣ὴν ἐμπορικὴν μνᾶν̣, ὅπ̣ως ἰσορρόπου τοῦ πήχ̣εως γινομένου ἄγηι ἐμπορ[ι]-
+[κὰς μ]νᾶς ἕξ τὸ δὲ τάλαντον τὸ ἐ[μ]πορικὸν [ἐχέτ]ω ῥοπ[ὴν μ]ν[ᾶς] ἐμπορικὰς πέντε, ὅπως καὶ τοῦ[το]
+[ἰσ]ορρόπου τοῦ π[ήχ]εως γινομένου ἄγηι ἐμ̣πο[ρικ]ὸν τά[λαντον καὶ μ]νᾶς ἐμπορικὰς πέντε [εἶναι]
+[δὲ σύ]νφ[ω]να πάντα τοῖς ἐν τῶι ἐμπορίωι μ̣[έ]τρ̣[οις κ]αὶ στ̣[α]θ[μ]ο[ῖς]. 5 [ὅπως] δὲ διαμένηι̣ εἰς τὸ[ν λοιπὸν]
+χρόνον τά τε μέτρα κ̣αὶ τὰ σταθμά, παραδο[ῦναι αὐτὰ τὸν κ]αθεσταμένον ἐπὶ [τὴν κατασκε]-
+υ̣ὴν τῶν μέτρων καὶ τῶν σταθμῶν Διόδωρο[ν] Θεο[φί]λο[υ Ἁ]λ[αιέα τ]ῶι τε ἐν τῆι σκιάδι καθ[εσταμέ]-
+νωι δημοσίωι καὶ τῶι ἐμ Πειραιε[ῖ] μετὰ τοῦ [ἐπιμελητ]οῦ? [καὶ τῶι ἐν] Ἐλευσῖν[ι] οὗτοι δὲ [αὐτὰ]
+συ[ντ]ηρείτωσαν διδόντες σηκώματα τῶν τ̣ε̣ [μέτ]ρων κ̣[αὶ τῶν στα]θ̣μ̣ῶν ταῖς τε ἀρχαῖ[ς καὶ] το[ῖς ἄλ]-
+[λ]οις πᾶσ[ι τ]οῖς δεομ[έ]νοις, μὴ ἐξουσίαν̣ ἔχοντες μήτ[ε μετ]α̣ποε[ῖ]ν? μήτε ἔξω̣ ἐ[κ]φέρε̣ι̣ν [μηθὲν ἐκ]
+[τῶ]ν [κα]τεσκευασμένων οἴκων πλὴν τῶν μολυβδῶ[ν καὶ χαλκῶν ση]κωμ̣[ά]των γε[γον]ότων [ ]
+6 ἐὰν δέ τι̣ν̣α ἀργύριον πράττωντα[----------------]ησα[.]ι[.]ωοω[...]ων[...]ομαω[-----]τηι
+[..]ιν ἐξε[...]οι τοῖς χρείαν ἔχουσιν λα[--------------------]ὸν μὲν ἐν τε[ῖ] σ[κιάδι καθεστ]αμ̣[ένον]
+[κολα]ζόντω[ν] ο[ἵ τε ἀεὶ] πρυτάνεις καὶ ὁ στρατη[γ]ὸς ὃς [ἂν ἦι] ὁ ἐπὶ [τὰ] ὅπλα μαστιγοῦντες καὶ κολ[ά]-
+[ζοντ]ες κ̣ατὰ τ̣[ὴν] ἀξίαν τοῦ ἀδική[μα]τος, τὸν [δ] ἐμ̣ Πε[ιραιεῖ] ὁ καθε̣σταμένος ἐπιμελη[τὴς τοῦ λιμέ]-
+[νο]ς, τὸν δ ἐν Ἐλευσῖνι ὅ τε̣ ἱεροφάντ̣η̣ς [καὶ οἱ κα]θ[εσ]ταμένο[ι] ἄ[ν]δ̣ρ̣ες καθ ἕκαστον [τὸν ἐνιαυτὸν]
+ἐπὶ τὴν πανή̣γυριν. 7 μετα[π]αρ[αδ]ιδότω[σαν] δ̣[ὲ] ο[ἱ δη]μόσ[ιο]ι ἀεὶ τοῖς [με]θ [ἑ]α[υ]τοὺς̣ καθ[ισταμέ]-
+νοις δημοσίοις μετ ἀναγραφῆς π̣άν[τα] τὰ [μέτρα καὶ σταθμά] ἐὰν δέ τι μὴ πα[ραδῶσι]ν, ε[ἰσπραττέ]-
+[σ]θωσαν ὑπὸ τῶν τεταγμένων ἐπ αὐτοὺς κατὰ τὸ ψήφισμα, καὶ [ἐάν τινα ἀπολέσωσιν, κατασκευα]-
+[ζέσ]θωσαν ἀντὶ τῶν ἀπολομένων [ἕ]τ[ερ]α [τοιαῦτα καταβα]λλέσθωσαν δὲ καὶ χειρόγραφον̣ [εἰ]ς τὸ [Μη]-
+[τρῶ]ιον̣ ὧν ἂν παραλάβω̣σι κα̣ὶ̣ πα[ρ]α[δῶσιν ἐὰν δὲ τοῦτο μὴ κ]αταβάλλωνται, μὴ ἐξέ[στ]ω αὐ[τ]ο[ῖς ἐ]-
+[λευθ]έραν λειτουργίαν θ̣η̣των[εῖν]. 8 [ἀνατιθέσθω δὲ εἰς ἀ]κρόπολιν σηκώματα τοῦ τ[ε] ἐμπορι[κ]οῦ [ταλάν]-
+[το]υ καὶ δεκάμνου καὶ πεντάμνου καὶ δίμ̣ν̣ου [καὶ τῆς μνᾶς καὶ τοῦ] ἡμιμναίου καὶ τα[ρ]τημ̣όρου καὶ χοὸς [καὶ χοίνικος]
+9 [ἐ]ὰν δέ τις ἁλίσκηται κακουργῶν π̣ε̣ρ̣ὶ τὰ μέτρα καὶ τὰ σταθμὰ τὰ κε[ί]με[να ἔν τε τῆι σκι]-
+[άδ]ι καὶ ἐν Ἐλευσῖνι καὶ ἐμ Π[ειραιε]ῖ καὶ ἐν ἀκροπόλει, ἐάν τε ἄρχων ἐάν τε [ἰδιώτης ἐ]-
+άν τε δ̣η̣μόσιος, [ἔ]νο[χ]ος ἔ̣στ̣ω̣ τῶι ν[όμ]ωι τῶι κε[ιμ]ένωι περὶ τῆς τ[ῶ]ν κακούργων [ζημίας]
+ἐπιμελείσθω δὲ καὶ [ἡ β]ου[λὴ ἡ] ἐξ Ἀρείου πάγου καὶ τὸν κακουργοῦντά τ̣ι̣ πε[ρὶ ταῦτα κο]-
+λαζέτω κατὰ τοὺς ἐπ̣ὶ̣ τῶ[ν] κακούργων κειμένους νόμους. ἀναγράψαι δὲ τό̣[δε] τὸ [ψή]-
+[φισμ]α [εἰ]ς στήλας λιθ[ίν]α[ς τὸν καθε]σταμένον ἄνδρα εἰς τὴν κατασκευὴν τῶν [μέτρων]
+[καὶ στ]αθμῶν καὶ στῆσαι ἐν τοῖς οἴκοις ἐν οἷς καὶ τὰ μέτρα καὶ τὰ σταθμὰ κεῖται. ἐκ τοῦ α̣ὐ̣τοῦ
+[τοὺ]ς δὲ ἄρχοντας χρῆσθ[αι] τῶι αὐτῶι μέτρωι κεχ[α]ραγ̣μ̣ένωι τῶι χαρακτῆρ[ι] μολυ[β]-
+[δίν]ωι πρὸς τὸν ἐν τῆι σκιά[δι, μ]ὴ πλ̣εῖον πραττομένους τριωβόλου χρῆσθαι δὲ κ̣α[ὶ]
+[τ]ὰ̣ς ἀρχ̣ὰς τοῖς προε̣σφραγισμένοι̣ς̣ μέτρο[ι]ς, ἐὰν μή τις τῶ[ν] πωλούντω[ν ἢ ὠνουμένων]
+σφραγιστῶι μέτρωι χρῆται.</div>
+            </div>
+        </div>
+        <div class="split-col-right">
+            <h3>Thematic Analysis</h3>
+            
+        <div class="theme-card" onmouseover="highlightQuote('ἀναγράψαι δὲ τό̣[δε] τὸ [ψήφισμ]α [εἰ]ς στήλας λιθ[ίν]α[ς]')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Content/Official and Legal Documents/Decrees" class="tag domain-tag" style="text-decoration:none;">Content</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
+                    <div class="theme-path">Content > Official and Legal Documents > Decrees</div>
+                    <div class="theme-label">Decrees</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "ἀναγράψαι δὲ τό̣[δε] τὸ [ψήφισμ]α [εἰ]ς στήλας λιθ[ίν]α[ς]"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('οἱ ἄρχοντες ἐξεταζέτωσαν πρὸς τὸ σύμβολον τὸ ἐν τῆι σκιάδι')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Content/Official and Legal Documents/Laws and Regulations" class="tag domain-tag" style="text-decoration:none;">Content</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
+                    <div class="theme-path">Content > Official and Legal Documents > Laws and Regulations</div>
+                    <div class="theme-label">Laws and Regulations</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "οἱ ἄρχοντες ἐξεταζέτωσαν πρὸς τὸ σύμβολον τὸ ἐν τῆι σκιάδι"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('ὀ[φ]ειλέτω ἱερὰς̣ τῆι Δήμητρι [κ]αὶ τῆι Κόρηι δραχμὰς χιλίας')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Content/Religious and Dedicatory Texts/Sacred Laws and Rules" class="tag domain-tag" style="text-decoration:none;">Content</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
+                    <div class="theme-path">Content > Religious and Dedicatory Texts > Sacred Laws and Rules</div>
+                    <div class="theme-label">Sacred Laws and Rules</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "ὀ[φ]ειλέτω ἱερὰς̣ τῆι Δήμητρι [κ]αὶ τῆι Κόρηι δραχμὰς χιλίας"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('μετ ἀναγραφῆς π̣άν[τα] τὰ [μέτρα καὶ σταθμά]')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Content/Administrative Records and Lists/Inventories" class="tag domain-tag" style="text-decoration:none;">Content</a>
+                    <span class="badge orange" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">80% Conf.</span>
+                    
+                    <div class="theme-path">Content > Administrative Records and Lists > Inventories</div>
+                    <div class="theme-label">Inventories</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "μετ ἀναγραφῆς π̣άν[τα] τὰ [μέτρα καὶ σταθμά]"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('ἀναγράψαι δὲ τό̣[δε] τὸ [ψήφισμ]α [εἰ]ς στήλας λιθ[ίν]α[ς]')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Type/Object Type/Monumental Stone Objects/Stele" class="tag domain-tag" style="text-decoration:none;">Type</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
+                    <div class="theme-path">Type > Object Type > Monumental Stone Objects > Stele</div>
+                    <div class="theme-label">Stele</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "ἀναγράψαι δὲ τό̣[δε] τὸ [ψήφισμ]α [εἰ]ς στήλας λιθ[ίν]α[ς]"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('στήλας λιθ[ίν]α[ς]')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Type/Material/Stone/Marble" class="tag domain-tag" style="text-decoration:none;">Type</a>
+                    <span class="badge orange" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">80% Conf.</span>
+                    
+                    <div class="theme-path">Type > Material > Stone > Marble</div>
+                    <div class="theme-label">Marble</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "στήλας λιθ[ίν]α[ς]"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('[τοῦ μέτρου ὡς ἐλάττονος ὄντος, οἱ ἄρχοντες ἐξεταζέτωσαν]')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=State/Incomplete / Fragmentary/Fragmentary" class="tag domain-tag" style="text-decoration:none;">State</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
+                    <div class="theme-path">State > Incomplete / Fragmentary > Fragmentary</div>
+                    <div class="theme-label">Fragmentary</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "[τοῦ μέτρου ὡς ἐλάττονος ὄντος, οἱ ἄρχοντες ἐξεταζέτωσαν]"</p>
+                </div>
+            </div>
+        </div>
+        
+            <div style="margin-top:2rem;"><h3>Entities</h3><div><a href="../search.html?q=Diodorus son of Theophilus of Halae" class="tag entity-tag" style="text-decoration:none;">👤 Diodorus son of Theophilus of Halae <small>(Official appointed for the construction of weights and measures)</small></a><a href="../search.html?q=Theophilus" class="tag entity-tag" style="text-decoration:none;">👤 Theophilus <small>(Father of Diodorus)</small></a><a href="../search.html?q=Hierophant" class="tag entity-tag" style="text-decoration:none;">👤 Hierophant <small>(Religious official at Eleusis responsible for enforcement)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Athens <small>(Athens)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Piraeus <small>(Piraeus)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Eleusis <small>(Eleusis)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Akropolis <small>(Akropolis)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Skias <small>(Skias)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Metroon <small>(Metroon)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Areopagus <small>(Areopagus)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Halae <small>(Halae)</small></a><a href="../index_deities.html" class="tag entity-tag" style="text-decoration:none;">⚡ Demeter</a><a href="../index_deities.html" class="tag entity-tag" style="text-decoration:none;">⚡ Kore</a></div></div>
+            <div class="ai-analysis-box"><h3>AI Analysis Summary</h3><p>This significant Athenian decree, dating to approximately 120 BC, provides a detailed regulatory framework for the standardization of weights and measures (metrology) in Attica. It establishes official standards to be kept in key locations (the Skias in the Agora, Piraeus, Eleusis, and the Akropolis) and defines the technical specifications for various units like the mina, talent, and choinix. The law distinguishes between commercial and silver weight systems and sets specific measures for various commodities such as nuts, olives, and figs. It also outlines a strict enforcement regime involving various magistrates, the Council of 600, and the Areopagus, with penalties ranging from corporal punishment for slaves to heavy fines for free citizens and officials.</p></div>
+        </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      © 2026 Florian Wachter | Private Non-Profit Research Project | 
+      <a href="https://github.com/paxetheninja/AGKI-PM-TaggingEpigraphy" target="_blank">GitHub</a>
+    </div>
+    <div class="footer-legal">
+      Impressum: Privates Forschungsprojekt. Verantwortlich: Florian Wachter, Institut für Antike, Goethestraße 19, 8010 Graz. Kontakt: florian.wachter@uni-graz.at. Keine Gewähr für die Richtigkeit der Daten.
+    </div>
+  </footer>
+</body>
+</html>
+    

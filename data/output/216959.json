@@ -1,0 +1,181 @@
+{
+  "phi_id": 216959,
+  "themes": [
+    {
+      "label": "Funerary Inscriptions (Epitaphs)",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Funerary Inscriptions (Epitaphs)",
+        "subcategory": null
+      },
+      "rationale": "The inscription is a poetic epitaph for a deceased man named Ion, describing his virtues and offering consolation to his mother.",
+      "confidence": 1.0,
+      "quote": "ΙΩΝ ἴχνος, εἰ θέλεις γ̣νῶναι, ΙϹ τῆιδε λαΐνῃ στήληι. , χρηστὸς ἐν φθιτοῖς ἀνήρ",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The text explicitly identifies the object as a stone stele.",
+      "confidence": 1.0,
+      "quote": "ΙϹ τῆιδε λαΐνῃ στήληι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Tombstone (Gravestone)",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Tombstone (Gravestone)"
+      },
+      "rationale": "The inscription serves as a marker for the grave of the deceased.",
+      "confidence": 1.0,
+      "quote": "ΙΩΝ ἴχνος, εἰ θέλεις γ̣νῶναι, ΙϹ τῆιδε λαΐνῃ στήληι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The text contains several lacunae and missing letters that have been reconstructed by scholars.",
+      "confidence": 1.0,
+      "quote": "[ ἐτ]έ̣ων μηδέπω τελειώσας",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Damaged but Legible",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Legibility",
+        "category": "Damaged but Legible",
+        "subcategory": null
+      },
+      "rationale": "While there are missing parts, the majority of the poetic text is preserved and readable.",
+      "confidence": 1.0,
+      "quote": "[ πάντας] ἀ̣ρετῆι τοὺς ὁμήλικας προὖχεν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Ion",
+        "role": "Deceased",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Ion",
+        "confidence": 1.0
+      },
+      {
+        "name": "Alexander the Great",
+        "role": "Macedonian King",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Alexander%20the%20Great",
+        "confidence": 1.0
+      },
+      {
+        "name": "Myrtilus",
+        "role": "Son of Hermes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Myrtilus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sarpedon",
+        "role": "Son of Zeus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Sarpedon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phaethon",
+        "role": "Son of Titan",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Phaethon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Achilles",
+        "role": "Son of Thetis",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Achilles",
+        "confidence": 0.9
+      }
+    ],
+    "places": [
+      {
+        "name": "Alexandria",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/29457",
+        "confidence": 0.8
+      }
+    ],
+    "deities": [
+      {
+        "name": "Hermes",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Maia",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Thetis",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Apollo",
+        "uri": "https://www.wikidata.org/wiki/Q37340",
+        "confidence": 1.0
+      },
+      {
+        "name": "Zeus",
+        "uri": "https://www.wikidata.org/wiki/Q34201",
+        "confidence": 0.9
+      },
+      {
+        "name": "Ammon",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Moirae",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Titan",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Alexandria",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/29457",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a sophisticated funerary epigram from Alexandria, likely dating to the 1st or 2nd century AD. It commemorates a young man named Ion who died at the age of eighteen. The poem is a classic example of a 'consolatio' (consolation), using mythological exempla to argue that death is inevitable for all. It lists various figures—Phaethon, Myrtilus, Achilles (son of Thetis), Sarpedon, and Alexander the Great—noting that even these sons of gods and great kings could not escape the thread of the Fates (Moirae). The text is highly literary and reflects the Hellenistic poetic tradition preserved in Roman-era Egypt.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "1st/2nd c. AD",
+  "date_min": 1.0,
+  "date_max": 2.0,
+  "date_circa": false
+}

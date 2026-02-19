@@ -1,0 +1,372 @@
+{
+  "phi_id": 62596,
+  "themes": [
+    {
+      "label": "Inventories",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Inventories",
+        "subcategory": null
+      },
+      "rationale": "The inscription is a detailed inventory of sacred vessels (cups and bowls) stored or dedicated in a sanctuary, categorized by the year and the officials in charge.",
+      "confidence": 1.0,
+      "quote": "[ἄ]λλ̣η̣ ἐ[πὶ?] [ ποτήρια βουλῆς τῆς] ἐπὶ Δημάρ[ου στησίλειον ἄρχοντος Δη]-",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The text provides a chronological list of archons, boards of hieropoioi (sacred officials), and epistatai (supervisors) who were in office when the items were recorded.",
+      "confidence": 1.0,
+      "quote": "ἱεροποιῶν δὲ Συνωνύμου καὶ] Κρίττιος φιλ̣ω̣ν̣ί[δειον ἄρχοντος Δημάρου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Votive Dedications",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Votive Dedications",
+        "subcategory": null
+      },
+      "rationale": "The objects listed, such as drinking cups (poteria) and bowls (phialai), are typical votive offerings dedicated to the gods in a sanctuary context.",
+      "confidence": 0.8,
+      "quote": "[ποτήριον φιλωνί]- [δειον φιάλην γοργίειον, ἄρχοντος Θεοδώρου]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The inscription is heavily reconstructed, as indicated by the extensive use of brackets in the transcription.",
+      "confidence": 1.0,
+      "quote": "[ἄ]λλ̣η̣ ἐ[πὶ?] [ ποτήρια βουλῆς τῆς] ἐπὶ Δημάρ[ου στησίλειον ἄρχοντος Δη]-",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Demaros",
+        "role": "Archon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Demaros",
+        "confidence": 1.0
+      },
+      {
+        "name": "Synonymos",
+        "role": "Hieropoios",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Synonymos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Krittis",
+        "role": "Hieropoios",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Krittis",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phokaieus",
+        "role": "Archon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Phokaieus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Diaktorides",
+        "role": "Epistates",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Diaktorides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Xenotimos",
+        "role": "Archon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Xenotimos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Meilichides",
+        "role": "Epistates and Hieropoios",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Meilichides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Amphoteros",
+        "role": "Hieropoios",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Amphoteros",
+        "confidence": 1.0
+      },
+      {
+        "name": "Polyxenos",
+        "role": "Archon and Hieropoios",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Polyxenos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Silenos",
+        "role": "Hieropoios",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Silenos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Philippos",
+        "role": "Hieropoios",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Philippos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Philonymos",
+        "role": "Epistates",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Philonymos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Oineus",
+        "role": "Archon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Oineus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Demetrios",
+        "role": "Hieropoios",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Demetrios",
+        "confidence": 1.0
+      },
+      {
+        "name": "Amnos",
+        "role": "Hieropoios",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Amnos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Charikleides",
+        "role": "Hieropoios",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Charikleides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Agorallos",
+        "role": "Hieropoios",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Agorallos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Charilas",
+        "role": "Hieropoios",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Charilas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Apatourios",
+        "role": "Epistates",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Apatourios",
+        "confidence": 1.0
+      },
+      {
+        "name": "Anaxandros",
+        "role": "Epistates",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Anaxandros",
+        "confidence": 1.0
+      },
+      {
+        "name": "Mnesikleides",
+        "role": "Epistates",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Mnesikleides",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lysos",
+        "role": "Hieropoios",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Lysos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristoboulos",
+        "role": "Hieropoios",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aristoboulos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Demochares",
+        "role": "Hieropoios",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Demochares",
+        "confidence": 1.0
+      },
+      {
+        "name": "Demodokos",
+        "role": "Hieropoios",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Demodokos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Euboeus",
+        "role": "Hieropoios",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Euboeus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Parmenion",
+        "role": "Archon and Hieropoios",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Parmenion",
+        "confidence": 1.0
+      },
+      {
+        "name": "Timoxenos",
+        "role": "Archon and Hieropoios",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Timoxenos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Theodoros",
+        "role": "Archon and Hieropoios",
+        "uri": "https://www.wikidata.org/wiki/Q112867544",
+        "confidence": 1.0
+      },
+      {
+        "name": "Polybos",
+        "role": "Archon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Polybos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Peisikratos",
+        "role": "Epistates",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Peisikratos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Glaukon",
+        "role": "Hieropoios",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Glaukon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Andromenes",
+        "role": "Hieropoios",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Andromenes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Empedos",
+        "role": "Epistates",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Empedos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Xenokritos",
+        "role": "Epistates",
+        "uri": "https://www.wikidata.org/wiki/Q3955338",
+        "confidence": 1.0
+      },
+      {
+        "name": "Periandros",
+        "role": "Archon",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Periandros",
+        "confidence": 1.0
+      },
+      {
+        "name": "Demokritos",
+        "role": "Epistates",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Demokritos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Timokrates",
+        "role": "Father of Demokritos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Timokrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Phokion",
+        "role": "Hieropoios",
+        "uri": "https://www.wikidata.org/wiki/Q12885913",
+        "confidence": 1.0
+      },
+      {
+        "name": "Charistios",
+        "role": "Hieropoios",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Charistios",
+        "confidence": 1.0
+      },
+      {
+        "name": "Diogenes",
+        "role": "Epistates",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Diogenes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Nicanor",
+        "role": "Father of Diogenes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Nicanor",
+        "confidence": 1.0
+      },
+      {
+        "name": "Euandros",
+        "role": "Father of Mnesikleides",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Euandros",
+        "confidence": 1.0
+      },
+      {
+        "name": "Epitrophon",
+        "role": "Hieropoios",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Epitrophon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Alexikos",
+        "role": "Hieropoios",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Alexikos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristolochos",
+        "role": "Epistates",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aristolochos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hieron",
+        "role": "Epistates",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Hieron",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Delos",
+        "type": "Island and Sanctuary",
+        "uri": "https://pleiades.stoa.org/places/599587",
+        "confidence": 0.8
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Delos",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/599587",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription from Delos is a meticulous administrative inventory of sacred vessels, likely from the sanctuary of Apollo. It records various types of cups (poteria) and bowls (phialai), often named after their donors or styles (e.g., stesileion, philonideion, mikytheion, gorgieion). The text is structured chronologically by archonship and lists the specific boards of hieropoioi and epistatai responsible for the items during those years.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "after 169 BC",
+  "date_min": 169.0,
+  "date_max": 169.0,
+  "date_circa": false
+}

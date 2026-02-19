@@ -1,0 +1,220 @@
+{
+  "phi_id": 317104,
+  "themes": [
+    {
+      "label": "Votive Dedications",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Votive Dedications",
+        "subcategory": null
+      },
+      "rationale": "The inscription begins with the standard pro-salute formula for the safety and victory of the emperors.",
+      "confidence": 1.0,
+      "quote": "ὑπὲρ σωτηρίας καὶ νείκης καὶ αἰωνίας διαμονῆς τῶν κυρίων Αὐτοκρατόρων",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The text lists the full imperial titles and honors for Septimius Severus, Caracalla, and Julia Domna.",
+      "confidence": 1.0,
+      "quote": "Λουκίου Σεπτιμίου Σευήρου Εὐσεβοῦς Περτίν[α]κος Σεβαστοῦ Ἀραβικοῦ Ἀδιαβηνικοῦ Παρθικοῦ Μεγίστου καὶ Μάρκου Αὐρηλίου Ἀντωνείνου Σεβαστοῦ",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Agonistic / Victory Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Agonistic / Victory Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription mentions several individuals with agonistic titles such as circuit victor (periodoneikos) and extraordinary performer (paradoxos).",
+      "confidence": 1.0,
+      "quote": "πυθαύλου περιοδονείκου παραδόξου... κιθαρῳδοῦ παραδόξου... τραγῳδοῦ παραδόξου... κομῳδοῦ περιοδονείκου, Καπετωλιον[ε]ίκου παραδόξου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Building Commemoration",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Building Commemoration",
+        "subcategory": null
+      },
+      "rationale": "The text commemorates the re-decoration or restoration of a statue of Dionysus by Lucius Septimius Tryphon.",
+      "confidence": 1.0,
+      "quote": "τὸν Διόνυσον ἀνακοσμήσας ἐκ τῶν ἰδίων πρῶτος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The inscription lists various civic and synod officials, including archons, secretaries, and nomodeiktes, to date the events.",
+      "confidence": 1.0,
+      "quote": "ἐπὶ ἄρχοντος Βεντιδίου Σώτ[α]... καὶ γραμματέ[ω]ς Αἰλίου Ἀγαθημέρου... καὶ νομοδίκτου Αὔλου Οἰνέ[ω]ς",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Damnatio Memoriae-like Name Erasure",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Reconstruction and Intervention",
+        "category": "Mutilated / Erased",
+        "subcategory": "Damnatio Memoriae-like Name Erasure"
+      },
+      "rationale": "The name of Geta has been intentionally erased from the inscription following his damnatio memoriae.",
+      "confidence": 1.0,
+      "quote": "[[Γέτα]] Καίσαρος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Septimius Severus",
+        "role": "Emperor",
+        "uri": "https://www.wikidata.org/wiki/Q1442",
+        "confidence": 1.0
+      },
+      {
+        "name": "Caracalla",
+        "role": "Emperor",
+        "uri": "https://www.wikidata.org/wiki/Q1446",
+        "confidence": 1.0
+      },
+      {
+        "name": "Geta",
+        "role": "Caesar",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Geta",
+        "confidence": 1.0
+      },
+      {
+        "name": "Julia Domna",
+        "role": "Empress",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Julia%20Domna",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lucius Septimius Tryphon",
+        "role": "Philosopher and Priest",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Lucius%20Septimius%20Tryphon",
+        "confidence": 1.0
+      },
+      {
+        "name": "M. Volussius Pericles",
+        "role": "Logistes",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=M.%20Volussius%20Pericles",
+        "confidence": 1.0
+      },
+      {
+        "name": "Ventidius Sotas",
+        "role": "Archon and Pythaules",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Ventidius%20Sotas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aelius Agathemerus",
+        "role": "Secretary and Citharode",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aelius%20Agathemerus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aulus Oineus",
+        "role": "Nomodeiktes and Tragode",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aulus%20Oineus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aur. Ancharenus Phaedrus",
+        "role": "Archon and Comode",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aur.%20Ancharenus%20Phaedrus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Menecrates",
+        "role": "Secretary and Comode",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Menecrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Tib. Claud. Alexander",
+        "role": "Nomodeiktes, Tragode, and Poet",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Tib.%20Claud.%20Alexander",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Pergamon",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/550812",
+        "confidence": 1.0
+      },
+      {
+        "name": "Alexandria",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/29457",
+        "confidence": 1.0
+      },
+      {
+        "name": "Ephesus",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/599612",
+        "confidence": 1.0
+      },
+      {
+        "name": "Assyria",
+        "type": "Region",
+        "uri": "https://pleiades.stoa.org/places/29492",
+        "confidence": 1.0
+      },
+      {
+        "name": "Laodicea",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/668290",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Dionysus",
+        "uri": "https://www.wikidata.org/wiki/Q41680",
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "mutilated",
+  "provenance": [
+    {
+      "name": "Pergamon",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/550812",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This complex Severan-era inscription from Pergamon serves as a votive dedication for the imperial family and records the restoration of a statue of Dionysus by a philosopher-priest. It is notable for the damnatio memoriae of Geta and the extensive list of synod officials who were also distinguished victors in various musical and theatrical competitions across the empire.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "200-209 AD",
+  "date_min": 200.0,
+  "date_max": -209.0,
+  "date_circa": false
+}

@@ -1,0 +1,335 @@
+{
+  "phi_id": 314967,
+  "themes": [
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The inscription begins by dating the record using the names of the federal archon of the Boiotian League at Onchestos and the local archon of the city, followed by a list of citizens.",
+      "confidence": 1.0,
+      "quote": "Ἀρσιφρώνδαο ἄρχοντος ἐν Ὀγχειστοῖ, ἐπὶ δὲ πόλιος Πλίστω",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Registers and Catalogues",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Registers and Catalogues",
+        "subcategory": null
+      },
+      "rationale": "The text is a military register documenting the transition of young men from the status of ephebes into the ranks of the heavy infantry (hoplites) and cavalry.",
+      "confidence": 1.0,
+      "quote": "τοιὶ ἀπεγ[ρ]άψανθο ἀπειλθειόντες ἐς τῶν ἐφείβων ἐν τὼς ὁπλίτας κὴ τὼς ἱππότας",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "This type of public military registration was traditionally inscribed on a stone stele for public display in a sanctuary or civic center.",
+      "confidence": 0.8,
+      "quote": "Ἀρσιφρώνδαο ἄρχοντος ἐν Ὀγχειστοῖ",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Arsiphronidas",
+        "role": "Federal Archon of the Boiotian League",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Arsiphronidas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Plistos",
+        "role": "Local Archon of Thespiai",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Plistos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Epaminondas",
+        "role": "Ephebe transitioning to military service",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Epaminondas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pouthon",
+        "role": "Ephebe transitioning to military service",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Pouthon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dexilaos",
+        "role": "Ephebe transitioning to military service",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Dexilaos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kallikrateis",
+        "role": "Ephebe transitioning to military service",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Kallikrateis",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aminonikos",
+        "role": "Ephebe transitioning to military service",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aminonikos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Thouelaos",
+        "role": "Ephebe transitioning to military service",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Thouelaos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Euangelos",
+        "role": "Ephebe transitioning to military service",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Euangelos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Nikon",
+        "role": "Ephebe transitioning to military service",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Nikon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dionysios",
+        "role": "Ephebe transitioning to military service",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Dionysios",
+        "confidence": 1.0
+      },
+      {
+        "name": "Xenokrateis",
+        "role": "Ephebe transitioning to military service",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Xenokrateis",
+        "confidence": 1.0
+      },
+      {
+        "name": "Archeias",
+        "role": "Ephebe transitioning to military service",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Archeias",
+        "confidence": 1.0
+      },
+      {
+        "name": "Sotelis",
+        "role": "Ephebe transitioning to military service",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Sotelis",
+        "confidence": 1.0
+      },
+      {
+        "name": "Euporion",
+        "role": "Ephebe transitioning to military service",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Euporion",
+        "confidence": 1.0
+      },
+      {
+        "name": "Diokleis",
+        "role": "Ephebe transitioning to military service",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Diokleis",
+        "confidence": 1.0
+      },
+      {
+        "name": "Ismeinias",
+        "role": "Ephebe transitioning to military service",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Ismeinias",
+        "confidence": 1.0
+      },
+      {
+        "name": "Ameinias",
+        "role": "Ephebe transitioning to military service",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Ameinias",
+        "confidence": 1.0
+      },
+      {
+        "name": "Androbios",
+        "role": "Ephebe transitioning to military service",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Androbios",
+        "confidence": 1.0
+      },
+      {
+        "name": "Gorgos",
+        "role": "Ephebe transitioning to military service",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Gorgos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Nikokrateis",
+        "role": "Ephebe transitioning to military service",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Nikokrateis",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristonikos",
+        "role": "Ephebe transitioning to military service",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Aristonikos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Nikandros",
+        "role": "Ephebe transitioning to military service",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Nikandros",
+        "confidence": 1.0
+      },
+      {
+        "name": "Theodoros",
+        "role": "Ephebe transitioning to military service",
+        "uri": "https://www.wikidata.org/wiki/Q112867544",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kerinos",
+        "role": "Ephebe transitioning to military service",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Kerinos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kallias",
+        "role": "Ephebe transitioning to military service",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Kallias",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dionysodoros",
+        "role": "Ephebe transitioning to military service",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Dionysodoros",
+        "confidence": 1.0
+      },
+      {
+        "name": "Nikanor",
+        "role": "Ephebe transitioning to military service",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Nikanor",
+        "confidence": 1.0
+      },
+      {
+        "name": "Mnasion",
+        "role": "Ephebe transitioning to military service",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Mnasion",
+        "confidence": 1.0
+      },
+      {
+        "name": "Herakon",
+        "role": "Ephebe transitioning to military service",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Herakon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Theibas",
+        "role": "Ephebe transitioning to military service",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Theibas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Agasias",
+        "role": "Ephebe transitioning to military service",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Agasias",
+        "confidence": 1.0
+      },
+      {
+        "name": "Niron",
+        "role": "Ephebe transitioning to military service",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Niron",
+        "confidence": 1.0
+      },
+      {
+        "name": "Philonidas",
+        "role": "Ephebe transitioning to military service",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Philonidas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Philodamos",
+        "role": "Ephebe transitioning to military service",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Philodamos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Euphronios",
+        "role": "Ephebe transitioning to military service",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Euphronios",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lykomeideis",
+        "role": "Ephebe transitioning to military service",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Lykomeideis",
+        "confidence": 1.0
+      },
+      {
+        "name": "Rhodon",
+        "role": "Ephebe transitioning to military service",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Rhodon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Zopyros",
+        "role": "Ephebe transitioning to military service",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Zopyros",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kaphisodoros",
+        "role": "Ephebe transitioning to military service",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Kaphisodoros",
+        "confidence": 1.0
+      },
+      {
+        "name": "Therson",
+        "role": "Ephebe transitioning to military service",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Therson",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Onchestos",
+        "type": "Sanctuary and meeting place of the Boiotian League",
+        "uri": "https://pleiades.stoa.org/places/540984",
+        "confidence": 1.0
+      },
+      {
+        "name": "Thespiai",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/541141",
+        "confidence": 0.9
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Boiotia",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/540689",
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Thespiai",
+      "type": "City",
+      "uri": "https://pleiades.stoa.org/places/541141",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a military register from Thespiai, dating to the mid-3rd century BC. It records the transition of young men (ephebes) into the ranks of the hoplites and cavalry. The text is dated by the archon of the Boiotian League at Onchestos (Arsiphronidas) and the local archon of Thespiai (Plistos). The list provides a valuable prosopographical record of the citizen body of Thespiai during the Hellenistic period. All names have been transliterated to English/Latinized forms as required.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "250-245 BC",
+  "date_min": 250.0,
+  "date_max": -245.0,
+  "date_circa": false
+}

@@ -1,0 +1,158 @@
+{
+  "phi_id": 75210,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text uses the standard formula for a public decree, including the decision of the people and the council.",
+      "confidence": 1.0,
+      "quote": "ἀγάθα τύχα δέδοχθαι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription honors Damon, son of Polyarchus, for his virtue, goodwill, and piety towards the city and the king.",
+      "confidence": 1.0,
+      "quote": "ἐπαίνεσαι Δάμωνα Πολυάρχω ἄνδρα πάντα διατελέοντα λέγοντα καὶ πράττοντα τὰ συμφέροντα τῶ δάμω",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Agonistic / Victory Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Agonistic / Victory Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The decree specifies that the honors are to be announced during various games, including the Dionysia and gymnastic contests.",
+      "confidence": 1.0,
+      "quote": "ἔν τε τοῖς Διονυσίοισι τῶ ἄγωνι τῶν τραγώδων καὶ ἐν τοῖς γυμνίκοισι ἀγώνεσσι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The text includes specific financial instructions for the treasurer and examiners regarding the cost of sacrifices and honors.",
+      "confidence": 1.0,
+      "quote": "ἀποτάσσην ἄϊ ἐκ τᾶν προσόδων καὶ εἰς ταὶς Δάμωνος τῶ Πολυάρχω θυσίαις δύο στατῆρες",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Sacred Laws and Rules",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Sacred Laws and Rules",
+        "subcategory": null
+      },
+      "rationale": "The inscription provides regulations for religious activities, including sacrifices for the safety of the city and the procession of statues.",
+      "confidence": 0.8,
+      "quote": "ἐπεί κε μέλλη ἀ τῶν ἀγαλμάτων περιφόρα γίνεσθαι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Damon",
+        "role": "Honoree and citizen of Eresos",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Polyarchus",
+        "role": "Father of Damon",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Ptolemy",
+        "role": "King, likely Ptolemy II or III, associated with the honors and games",
+        "uri": null,
+        "confidence": 0.8
+      }
+    ],
+    "places": [
+      {
+        "name": "Eresos",
+        "type": "City",
+        "uri": null,
+        "confidence": 0.9
+      },
+      {
+        "name": "Lesbos",
+        "type": "Island/Region",
+        "uri": null,
+        "confidence": 0.9
+      },
+      {
+        "name": "Prytaneion",
+        "type": "Public building",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Agora",
+        "type": "Public square",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Dionysus",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Heracles",
+        "uri": null,
+        "confidence": 0.8
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Eresos",
+      "type": "City",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    },
+    {
+      "name": "Lesbos",
+      "type": "Region",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This is a detailed honorific decree from Eresos on Lesbos, written in the Aeolic dialect. It honors Damon, son of Polyarchus, for his services to the city and the Ptolemaic king. The text is highly structured, detailing the types of honors (crowns, statues, front-row seating), the religious festivals where these honors are to be proclaimed (Dionysia, Ptolemaia), and the administrative/financial arrangements for sacrifices and the maintenance of the honors. The mention of King Ptolemy suggests a period of Ptolemaic influence or alliance in the 3rd century BCE.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

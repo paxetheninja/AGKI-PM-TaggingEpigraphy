@@ -1,0 +1,181 @@
+{
+  "phi_id": 215956,
+  "themes": [
+    {
+      "label": "Official Letters",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Official Letters",
+        "subcategory": null
+      },
+      "rationale": "The inscription contains a copy of a formal petition (enteuxis) addressed to the monarchs and the subsequent administrative instructions sent to local officials.",
+      "confidence": 1.0,
+      "quote": "τῶι ἐπιστάτηι Θεαδελφείας τῆς δεδομένης τοῖς βασιλεῦσιν ἐντεύξεως παρὰ Φιλίππου τοῦ Τιμοκράτους",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Edicts and Ordinances",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Edicts and Ordinances",
+        "subcategory": null
+      },
+      "rationale": "The text refers to royal commands (prostagmata) regarding the status of the temples and the enforcement of their rights.",
+      "confidence": 1.0,
+      "quote": "ἄσυλον κατὰ τὰ προστεταγμένα.",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Sacred Laws and Rules",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Sacred Laws and Rules",
+        "subcategory": null
+      },
+      "rationale": "The document establishes and regulates the right of asylum (asylia) for the temples of Isis and Heracles, forbidding violence or the removal of those seeking sanctuary.",
+      "confidence": 1.0,
+      "quote": "ἐπιχωρηθέντος εἶναι τὰ σημαινόμενα ἱερὰ ἄσυλα [οὐδ]ενὶ ἐφέσεως οὔσης ἐν τούτοις [βί]αιον διαπράσσεσθαι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The text explicitly orders the inscription of the royal commands on stone stelae to be placed in front of the temples.",
+      "confidence": 1.0,
+      "quote": "ἀνατεθῆναι δὲ καὶ στήλας λιθίνας πρὸ ἑκατερου ἱεροῦ κύκλῳ",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Other Stone",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Other Stone"
+      },
+      "rationale": "The inscription is carved on stone stelae, as mentioned in the text itself.",
+      "confidence": 1.0,
+      "quote": "στήλας λιθίνας",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Complete",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Complete / Intact",
+        "category": "Complete",
+        "subcategory": null
+      },
+      "rationale": "The inscription preserves the full administrative sequence, including the heading, the petition, the royal response, and the final dating formula.",
+      "confidence": 1.0,
+      "quote": "Ἀπολλωνίωι γινέσθω (ἔτους) ια, Ἐπεὶφ κγ.",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Philippus son of Timocrates",
+        "role": "Petitioner, First Friend, and Chiliarch",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Philippus%20son%20of%20Timocrates",
+        "confidence": 1.0
+      },
+      {
+        "name": "Timocrates",
+        "role": "Father of Philippus",
+        "uri": "https://www.wikidata.org/wiki/Q20102047",
+        "confidence": 1.0
+      },
+      {
+        "name": "Ptolemy XII Auletes",
+        "role": "King",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Ptolemy%20XII%20Auletes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Cleopatra VI Tryphaena",
+        "role": "Queen",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Cleopatra%20VI%20Tryphaena",
+        "confidence": 1.0
+      },
+      {
+        "name": "Apollonius",
+        "role": "Kinsman and Strategos of the nome",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Apollonius",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Theadelphia",
+        "type": "Village",
+        "uri": "https://www.wikidata.org/wiki/Q16523298",
+        "confidence": 1.0
+      },
+      {
+        "name": "Arsinoite",
+        "type": "Nome",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Corinth",
+        "type": "City of origin",
+        "uri": "https://pleiades.stoa.org/places/570182",
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Isis Eseremphis",
+        "uri": "https://www.wikidata.org/wiki/Q79876",
+        "confidence": 1.0
+      },
+      {
+        "name": "Heracles Kallinikos",
+        "uri": "https://www.wikidata.org/wiki/Q122248",
+        "confidence": 1.0
+      },
+      {
+        "name": "Ptolemy XII Auletes",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Cleopatra VI Tryphaena",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "intact",
+  "provenance": [
+    {
+      "name": "Theadelphia",
+      "type": "Village",
+      "uri": "https://www.wikidata.org/wiki/Q16523298",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription from 70 BC records a petition by Philippus, a high-ranking official and Corinthian, to King Ptolemy XII and Queen Cleopatra VI. He requests the right of asylum (asylia) for two temples in the village of Theadelphia: the temple of Isis Eseremphis and the temple of Heracles Kallinikos. The text includes the royal approval and instructions to the local strategos, Apollonius, to ensure the temples' sanctity is respected and to erect stone stelae displaying these orders.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "70 BC",
+  "date_min": 70.0,
+  "date_max": 70.0,
+  "date_circa": false
+}

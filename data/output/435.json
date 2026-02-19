@@ -1,0 +1,250 @@
+{
+  "phi_id": 435,
+  "themes": [
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The inscription contains detailed financial data, including sale prices of items and slaves, as well as calculated totals and sales taxes.",
+      "confidence": 1.0,
+      "quote": "κεφάλαιον σὺν ἐπονίο[ις]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Inventories",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Inventories",
+        "subcategory": null
+      },
+      "rationale": "The text provides an itemized list of confiscated property, including household goods, textiles, and agricultural products.",
+      "confidence": 1.0,
+      "quote": "σκεύε τάδε ἐπρά[θ]ε",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Contracts and Private Legal Acts",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Contracts and Private Legal Acts",
+        "subcategory": null
+      },
+      "rationale": "The inscription records the public auction and sale of confiscated property, which constitutes a legal transaction recorded by the state.",
+      "confidence": 1.0,
+      "quote": "σκεύε τάδε ἐπρά[θ]ε",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The Attic Stelai were large marble slabs set up in public to record the sale of confiscated property.",
+      "confidence": 1.0,
+      "quote": "6  .",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Marble",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Material",
+        "category": "Stone",
+        "subcategory": "Marble"
+      },
+      "rationale": "The Attic Stelai were typically inscribed on marble.",
+      "confidence": 1.0,
+      "quote": "6  .",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Fragmentary",
+      "hierarchy": {
+        "domain": "State",
+        "subdomain": "Incomplete / Fragmentary",
+        "category": "Fragmentary",
+        "subcategory": null
+      },
+      "rationale": "The text contains numerous lacunae and reconstructed sections, indicating it is a fragment of a larger original monument.",
+      "confidence": 1.0,
+      "quote": "[------]ς",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Alcibiades",
+        "role": "Owner of confiscated property",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Alcibiades",
+        "confidence": 1.0
+      },
+      {
+        "name": "Cleinias",
+        "role": "Father of Alcibiades",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Cleinias",
+        "confidence": 1.0
+      },
+      {
+        "name": "Peisistratus",
+        "role": "Slave or individual mentioned in the list",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Peisistratus",
+        "confidence": 0.8
+      },
+      {
+        "name": "Hephaestodorus",
+        "role": "Individual mentioned in relation to a total",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Hephaestodorus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Polystratus",
+        "role": "Owner of confiscated property",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Polystratus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Diodorus",
+        "role": "Father of Polystratus",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Diodorus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Cephisodorus",
+        "role": "Metic living in Piraeus whose property was sold",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Cephisodorus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pistos",
+        "role": "Slave",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Pistos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Thraitta",
+        "role": "Thracian female slave",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Thraitta",
+        "confidence": 1.0
+      },
+      {
+        "name": "Thraix",
+        "role": "Thracian male slave",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Thraix",
+        "confidence": 1.0
+      },
+      {
+        "name": "Syros",
+        "role": "Syrian slave",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Syros",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kar",
+        "role": "Carian slave",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Kar",
+        "confidence": 1.0
+      },
+      {
+        "name": "Skythes",
+        "role": "Scythian slave",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Skythes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kolchos",
+        "role": "Colchian slave",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Kolchos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lyde",
+        "role": "Lydian female slave",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Lyde",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Scambonidae",
+        "type": "Attic Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Thria",
+        "type": "Attic Deme",
+        "uri": "https://pleiades.stoa.org/places/580120",
+        "confidence": 1.0
+      },
+      {
+        "name": "Athmonon",
+        "type": "Attic Deme",
+        "uri": "https://pleiades.stoa.org/places/579887",
+        "confidence": 1.0
+      },
+      {
+        "name": "Ankyle",
+        "type": "Attic Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Piraeus",
+        "type": "Port of Athens",
+        "uri": "https://pleiades.stoa.org/places/580062",
+        "confidence": 1.0
+      },
+      {
+        "name": "Melite",
+        "type": "Attic Deme",
+        "uri": "https://pleiades.stoa.org/places/582863",
+        "confidence": 0.8
+      },
+      {
+        "name": "Orchomenus",
+        "type": "City in Boeotia (origin of textiles)",
+        "uri": "https://pleiades.stoa.org/places/540987",
+        "confidence": 1.0
+      },
+      {
+        "name": "Miletus",
+        "type": "City in Ionia (style of furniture)",
+        "uri": "https://pleiades.stoa.org/places/599799",
+        "confidence": 1.0
+      }
+    ],
+    "deities": []
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579885",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription is a fragment of the 'Attic Stelai' (specifically IG I³ 421), which record the public auction of property confiscated from individuals convicted of the profanation of the Eleusinian Mysteries and the mutilation of the Hermae in 415 BC. The text lists a wide variety of assets, including slaves of various ethnicities, household furniture (like Milesian beds), textiles (from Orchomenus), and agricultural produce (wheat, lentils, oil), along with their sale prices and the 'eponion' (sales tax).",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "414 a.",
+  "date_min": 414.0,
+  "date_max": 414.0,
+  "date_circa": false
+}

@@ -1,0 +1,270 @@
+{
+  "phi_id": 295080,
+  "themes": [
+    {
+      "label": "Votive Dedications",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Votive Dedications",
+        "subcategory": null
+      },
+      "rationale": "The inscription records a formal dedication to Apollo Clarios by Publius Aelius Glycon, who dedicated the names of the choir members following a religious performance.",
+      "confidence": 1.0,
+      "quote": "Κλαρίω Ἀπόλλωνι ὑμνήσας τὸν θεὸν κατὰ χρησμὸν τὰ τῶν συνυμνησάντων παίδων καὶ παρθένων ὀνόματα ἀνέθηκεν",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Oracular and Prophetic Texts",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Oracular and Prophetic Texts",
+        "subcategory": null
+      },
+      "rationale": "The dedication was made following an oracle (chresmos) and mentions several prophetic officials, including a prophet of Pythian Apollo.",
+      "confidence": 1.0,
+      "quote": "κατὰ χρησμὸν ... προφητεύοντος Ἀλεξάνδρου ... προφητεύων Ἀπόλλωνος Πυθίου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Hymns and Sacred Poetry",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Hymns and Sacred Poetry",
+        "subcategory": null
+      },
+      "rationale": "The text commemorates the performance of a hymn by a choir of boys and girls and names the hymn leader, Marcus Antonius Epaphras.",
+      "confidence": 1.0,
+      "quote": "ὑμνήσας τὸν θεὸν ... τῶν συνυμνησάντων παίδων καὶ παρθένων ... καθηγησαμένου τὸν ὕμνον",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Lists of Officials or Citizens",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Lists of Officials or Citizens",
+        "subcategory": null
+      },
+      "rationale": "The inscription lists various civic and religious officials (proconsul, prytanis, priest, prophet, paidonomos) and the names of the choir members.",
+      "confidence": 1.0,
+      "quote": "ἐπὶ ἀνθυπάτου Ἰουουεντίου Κέλσου, πρυτάνεως δὲ Ἀπόλλωνος ... ἱερατεύοντος Οὐλπίου Ἀρτεμιδώρου ... εἰσὶν δέ Πό(πλιος) Αἴλιος Γλύκων προφήτης",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Maker’s Marks and Signatures",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Identification and Ownership Marks",
+        "category": "Maker’s Marks and Signatures",
+        "subcategory": null
+      },
+      "rationale": "The text concludes with the signature of the scribe or engraver, Postuminus, who recorded the inscription.",
+      "confidence": 1.0,
+      "quote": "Ποστουμεῖνος Λαοδικεὺς ἔγραφε",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Juventius Celsus",
+        "role": "Proconsul",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Juventius%20Celsus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Ulpius Artemidorus",
+        "role": "Priest",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Ulpius%20Artemidorus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Alexander son of Menophilus",
+        "role": "Prophet",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Alexander%20son%20of%20Menophilus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Publius Aelius Glycon",
+        "role": "Prophet and Dedicator",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Publius%20Aelius%20Glycon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Publius Aelius Lycius",
+        "role": "Theoros (Envoy)",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Publius%20Aelius%20Lycius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lucius Astranius Beryllus",
+        "role": "Paidonomos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Lucius%20Astranius%20Beryllus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Orpheus III",
+        "role": "Paredros (Assistant)",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Orpheus%20III",
+        "confidence": 1.0
+      },
+      {
+        "name": "Marcus Antonius Epaphras",
+        "role": "Hymn Leader",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Marcus%20Antonius%20Epaphras",
+        "confidence": 1.0
+      },
+      {
+        "name": "Postuminus",
+        "role": "Scribe",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Postuminus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Gaius Julius Maximus",
+        "role": "Choir Member",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Gaius%20Julius%20Maximus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Menander III son of Asclepiades",
+        "role": "Choir Member",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Menander%20III%20son%20of%20Asclepiades",
+        "confidence": 1.0
+      },
+      {
+        "name": "Alexander son of Athenodorus",
+        "role": "Choir Member",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Alexander%20son%20of%20Athenodorus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Athenodorus son of Alexander",
+        "role": "Choir Member",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Athenodorus%20son%20of%20Alexander",
+        "confidence": 1.0
+      },
+      {
+        "name": "Alexander III",
+        "role": "Choir Member",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Alexander%20III",
+        "confidence": 1.0
+      },
+      {
+        "name": "Apellas son of Hermeros",
+        "role": "Choir Member",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Apellas%20son%20of%20Hermeros",
+        "confidence": 1.0
+      },
+      {
+        "name": "Orpheus IV the younger",
+        "role": "Choir Member",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Orpheus%20IV%20the%20younger",
+        "confidence": 1.0
+      },
+      {
+        "name": "Alphene daughter of Publius",
+        "role": "Choir Member",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Alphene%20daughter%20of%20Publius",
+        "confidence": 1.0
+      },
+      {
+        "name": "Apphia daughter of Attius Soterichus",
+        "role": "Choir Member",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Apphia%20daughter%20of%20Attius%20Soterichus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Attia Bassa daughter of Attius Soterichus",
+        "role": "Choir Member",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Attia%20Bassa%20daughter%20of%20Attius%20Soterichus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Alexandra Moschion daughter of Athenodorus",
+        "role": "Choir Member",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Alexandra%20Moschion%20daughter%20of%20Athenodorus",
+        "confidence": 1.0
+      },
+      {
+        "name": "Diomedilla daughter of Diomas",
+        "role": "Choir Member",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Diomedilla%20daughter%20of%20Diomas",
+        "confidence": 1.0
+      },
+      {
+        "name": "Zenonis Marciane daughter of Zenon",
+        "role": "Choir Member",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Zenonis%20Marciane%20daughter%20of%20Zenon",
+        "confidence": 1.0
+      },
+      {
+        "name": "Tatia daughter of Alexander II",
+        "role": "Choir Member",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Tatia%20daughter%20of%20Alexander%20II",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Laodicea on the Lycus",
+        "type": "City",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Claros",
+        "type": "Sanctuary",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Colophon",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/599577",
+        "confidence": 0.8
+      }
+    ],
+    "deities": [
+      {
+        "name": "Apollo Clarios",
+        "uri": "https://www.wikidata.org/wiki/Q37340",
+        "confidence": 1.0
+      },
+      {
+        "name": "Pythian Apollo",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Apollo",
+        "uri": "https://www.wikidata.org/wiki/Q37340",
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "intact",
+  "provenance": [
+    {
+      "name": "Claros",
+      "type": "Sanctuary",
+      "uri": null,
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This inscription from the sanctuary of Apollo at Claros dates to the proconsulship of Juventius Celsus (c. 129/130 AD). It records a religious delegation from Laodicea on the Lycus. The text details a dedication made by Publius Aelius Glycon, a prophet of Pythian Apollo, following an oracular command. It includes a list of civic and religious officials, the names of the boys and girls who performed a hymn to Apollo Clarios, and the signature of the scribe Postuminus.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "129/30 AD",
+  "date_min": 129.0,
+  "date_max": 30.0,
+  "date_circa": false
+}

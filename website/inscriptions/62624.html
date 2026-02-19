@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PHI-62624 - AGKI</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <style>
+    /* Custom Scrollbar Styling */
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: rgba(0,0,0,0.05); }
+    ::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #aaa; }
+
+    .page-container { max-width: 1400px; margin: 0 auto; padding: 2rem; }
+    .back-link { display: inline-block; margin-bottom: 1rem; color: var(--primary); font-weight: 600; }
+    .text-viewer-original { display: grid; grid-template-columns: 40px 1fr; gap: 2rem; font-family: "New Athena Unicode", "Gentium Plus", "Times New Roman", serif; font-size: 1.25rem; line-height: 1.6; background: var(--panel); padding: 2rem; border: 1px solid var(--border); border-radius: 4px; margin-bottom: 2rem; color: var(--text); }
+    .line-numbers { text-align: right; color: var(--muted); font-size: 1.25rem; line-height: 1.6; user-select: none; opacity: 0.5; font-family: inherit; white-space: pre; padding-right: 1rem; border-right: 1px solid var(--border); }
+    .greek-content { white-space: pre-wrap; word-break: break-word; padding-left: 1rem; }
+    .highlight-evidence { background-color: var(--accent); color: white; border-radius: 2px; padding: 0 2px; }
+    .theme-card { background: var(--panel); padding: 1rem 1.5rem; border-left: 4px solid var(--primary); margin-bottom: 0.75rem; border: 1px solid var(--border); border-left-width: 4px; }
+    .ai-analysis-box { background: rgba(31, 167, 163, 0.05); padding: 2rem; border-radius: 8px; border: 1px solid var(--border); margin-top: 2rem; }
+    .evidence-box { max-width: 500px; text-align: right; }
+    .evidence-quote { font-size: 0.85rem; font-style: italic; color: var(--muted); margin: 0; }
+    .badge.green { background: #e6f4ea; color: #137333; border-color: #137333; }
+    .badge.orange { background: #fef7e0; color: #b06000; border-color: #b06000; }
+    .badge.red { background: #fce8e6; color: #c5221f; border-color: #c5221f; }
+    .entity-tag { background: rgba(217, 123, 61, 0.1); color: var(--accent-2); margin-right: 0.5rem; margin-bottom: 0.5rem; display: inline-block; padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.9rem; border: 1px solid rgba(217, 123, 61, 0.2); }
+    .split-container { display: block; }
+    .split-container.active { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+    .split-container.active .split-col-right { position: sticky; top: 20px; max-height: 90vh; overflow-y: auto; padding-right: 10px; }
+  </style>
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+
+    function toggleSplitView() {
+        const container = document.getElementById('main-content');
+        const btn = document.getElementById('splitViewBtn');
+        container.classList.toggle('active');
+        btn.textContent = container.classList.contains('active') ? 'View: Split' : 'View: Standard';
+    }
+
+    function copyCitation() {
+        const citation = "AGKI Project. (2026). Inscription PHI-62624 . Retrieved from " + window.location.href;
+        navigator.clipboard.writeText(citation);
+        alert("Citation copied to clipboard!");
+    }
+
+    function highlightQuote(quote) {
+        const container = document.querySelector('.greek-content');
+        if (!container || !quote) return;
+        if (!container.dataset.original) container.dataset.original = container.innerHTML;
+        else container.innerHTML = container.dataset.original;
+        
+        const regex = new RegExp(quote.trim().replace(/\s+/g, '\\s+'), 'g');
+        container.innerHTML = container.innerHTML.replace(regex, match => `<mark class="highlight-evidence">${match}</mark>`);
+    }
+
+    function clearHighlight() {
+        const container = document.querySelector('.greek-content');
+        if (container && container.dataset.original) container.innerHTML = container.dataset.original;
+    }
+
+    function updateFontSize(size) {
+        const v = document.getElementById('original-view');
+        if(v) v.style.fontSize = size + 'px';
+    }
+
+    function openReportModal() { document.getElementById('reportModal').style.display = 'block'; }
+    function closeReportModal() { document.getElementById('reportModal').style.display = 'none'; }
+    function sendReport() {
+        const category = document.getElementById('reportCategory').value;
+        const desc = document.getElementById('reportDesc').value;
+        const fix = document.getElementById('reportFix').value;
+        const subject = `AGKI Error Report: PHI-62624`;
+        const body = `Category: ${category}%0D%0ADescription: ${desc}%0D%0AProposed Fix: ${fix}`;
+        window.location.href = `mailto:admin@agki-project.org?subject=${encodeURIComponent(subject)}&body=${body}`;
+        closeReportModal();
+    }
+  </script>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="brand"><h1><a href="../../index.html">AGKI Tagging Tool</a></h1></div>
+    <nav class="nav-links">
+        <a href="../../index.html" class="nav-item">Home</a>
+        <a href="../search.html" class="nav-item">Search</a>
+        <a href="../explore.html" class="nav-item">Explore</a>
+        <a href="../basket.html" class="nav-item">Databasket</a>
+        <a href="../compare.html" class="nav-item">Compare</a>
+        <a href="../network.html" class="nav-item">Network</a>
+        <a href="../matrix.html" class="nav-item">Matrix</a>
+        <a href="../indices.html" class="nav-item">Indices</a>
+    </nav>
+    <div class="header-controls">
+        <button class="theme-toggle-btn" onclick="toggleTheme()" id="themeBtn">Dark Mode</button>
+    </div>
+  </header>
+
+  <script>
+    const themeBtn = document.getElementById('themeBtn');
+    function updateThemeBtn() {
+        const current = document.documentElement.getAttribute('data-theme');
+        if(themeBtn) themeBtn.textContent = current === 'light' ? 'Dark Mode' : 'Light Mode';
+    }
+    updateThemeBtn();
+    window.toggleTheme = function() {
+        const current = document.documentElement.getAttribute('data-theme');
+        const next = current === 'light' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        updateThemeBtn();
+    }
+  </script>
+
+  <main class="page-container inscription-page">
+    <div class="inscription-toolbar">
+        <a href="../search.html" class="back-link"><- Back to Dashboard</a>
+        <div class="inscription-actions">
+            <button id="splitViewBtn" onclick="toggleSplitView()" class="button secondary compact">View: Standard</button>
+            <button onclick="openReportModal()" class="button error compact">Report Error</button>
+        </div>
+    </div>
+
+    <!-- Report Modal -->
+    <div id="reportModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:1000;">
+        <div style="background:var(--panel); width:90%; max-width:500px; margin:10% auto; padding:2rem; border-radius:8px; border:1px solid var(--border);">
+            <h3>Report Error for PHI-62624</h3>
+            <label>Error Category</label>
+            <select id="reportCategory" style="width:100%; padding:0.5rem; margin-bottom:1rem;">
+                <option value="Incorrect Tag">Incorrect Tag / Theme</option>
+                <option value="Missing Entity">Missing Person / Place</option>
+                <option value="Translation Error">Translation / Text Issue</option>
+                <option value="Other">Other</option>
+            </select>
+            <label>Description</label>
+            <textarea id="reportDesc" rows="3" style="width:100%; margin-bottom:1rem;"></textarea>
+            <label>Proposed Fix</label>
+            <textarea id="reportFix" rows="2" style="width:100%; margin-bottom:1.5rem;"></textarea>
+            <div style="display:flex; justify-content:flex-end; gap:0.5rem;">
+                <button onclick="closeReportModal()" class="button secondary">Cancel</button>
+                <button onclick="sendReport()" class="button">Create Email Report</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="main-content" class="split-container">
+        <div class="split-col-left">
+            <section class="inscription-hero">
+                <div class="inscription-title-row">
+                    <h2>Inscription PHI-62624</h2>
+                    <div class="inscription-actions">
+                        <button onclick="copyCitation()" class="button secondary compact">Cite</button>
+                        <a href="https://epigraphy.packhum.org/text/62624" target="_blank" class="button secondary compact">View on PHI</a>
+                    </div>
+                </div>
+                <div class="inscription-meta">
+                    <div class="meta-item"><div class="label">Provenance</div><div class="meta-value"><a href="https://pleiades.stoa.org/places/599587" target="_blank" title="View in Pleiades">Delos</a></div></div>
+                    <div class="meta-item"><div class="label">Date</div><div class="meta-value">278 BC</div></div>
+                    <div class="meta-item"><div class="label">Completeness</div><div class="meta-value"><span class="badge info">fragmentary</span></div></div>
+                    <div class="meta-item"><div class="label">Tagged by</div><div class="meta-value"><span class="badge" style="background:rgba(12,140,136,0.15); color:#0c8c88; border:1px solid #0c8c88;">gemini-3-flash-preview (Proposer+Judge)</span></div></div>
+                </div>
+            </section>
+            <div class="inscription-title-row">
+                <h3>Original Text</h3>
+                <div class="font-size-control">
+                    <input type="range" min="14" max="32" value="20" oninput="updateFontSize(this.value)">
+                </div>
+            </div>
+            <div id="original-view" class="text-viewer-original">
+                <div class="line-numbers">1
+
+
+
+5
+
+
+
+
+10
+
+
+
+
+15
+
+
+
+
+20
+
+
+
+
+25
+
+
+
+
+30
+
+
+
+
+35
+
+
+
+
+40
+
+
+
+
+45
+
+
+
+
+50
+
+
+
+
+55
+
+
+
+
+60
+
+
+
+
+65
+
+
+
+
+70
+
+
+
+
+75
+
+
+
+
+80
+
+
+
+
+85
+
+
+
+
+90
+
+
+
+
+95
+
+
+
+
+100
+
+
+
+
+105
+
+
+
+
+110</div>
+                <div class="greek-content">[λόγ]ος ἱεροποιῶν τῶ[ν ἱεροποιη]σάντων ἐπὶ ἄρχοντος Μενεκ[ράτου, Δημόνου τοῦ Νίκωνος, Π]ί[στου] τοῦ [Ξέ]ν[ωνος].
+[πα]ρελάβομεν παρὰ ἱεροποιῶν τῶν ἱεροποιησάντν ἐπὶ ἄρχοντο[ς Ὑψοκλέους Ξενοκλέους, Ἀριστοθέ]ου, παρ[όντων βου]λευτῶν
+καὶ γραμματέων τοῦ τῆς πόλεως Ἀντιπάτρου τοῦ Δημητρίου, τοῦ τ[ῶν ἱεροποιῶν Κλεινοδίκου τοῦ Κλεινοδίκου δρ]αχμὰς ΜΜΜΜΧΗΗΗΔΔΔΔ[]
+σὺν ταῖς [ΜΜ]ΧΧΧΧΗΔΔΔ ἃς ὁ δῆμος ἐψηφίσατο παραλαμβάνειν τοὺς ἱερο[ποιοὺς τοὺς ἐν τέλει ὄντας .....]ΛΛΟΥ[.]Π[...]ΙΟΥ[.....]
+οἵδε [ἐνηρόσια] τῶν τοῦ θεοῦ τεμενῶν τεθήκασιν ἐπὶ τῆς ἡμετέρας ἀρχῆς τῆς [γῆς τῆς ἐπὶ Πορθμῶι Ἀπολλόδωρος] Ξενομήδους δραχμὰς ΧΗΗΗΔΔ τῆς γῆς τῆς ἐμ [Πύρ]-
+γοις ὁ κληρονόμος ὁ Δόρκωνος Κλεινίας δραχμὰς ΧΗΗΔΔ [[ ]] τῆς γῆς τῆς ἐ[ν Λίμναις Ἀριστέας Ἀμφοτεροῦ δραχμὰς ΗΗΗΔΔΔΔ] τῆς γῆς τῆς ἐν Ῥάμνοις Ἀν[τί]-
+γονος Ἀνέκτου δραχμὰς Η̣Η̣Η̣ΗΔΔ[] τῆς γῆς τῆς ἐν Διονυσίωι Παρμενίων Χοιρύλου [δραχμὰς ΗΔΔ τῆς γῆς τ]ῆς ἐν Νικοῦ χώρωι Ἡγησαγόρας Ἀναξ[ι]μένου [δρα]-
+χμὰς ΗΗΔΔ τῆς γῆς τῆς ἐμ Πανόρμωι Σωτάδας Κρὴς ΗΗ τῆς γῆς τῆς Σκι[τωνείας Δίδυμος Κα]λλιδίκου δραχμὰς ΔΔΔ τῆς γῆς τῆς Χαρητείας
+Ἐμπεδοκλῆς Χαριλέοντος δραχμὰς ΧΗΗΗ τῆς γῆς τῆς Χαρωνείας Μελήσιππος Ῥηναιε[ὺς δραχμ]ὰς ΗΗΗ τοῦ Ἱπποδρόμου καὶ τῆς Ἀφέσεως Ἀριστείδης
+Ἀριστέου δραχμὰς Η τοῦ Λειμῶνος Φερεκλείδης Εὐκλείδου δραχμὰς ΗΗΗΔΔΔ τοῦ Κερα[μείου Ἱ]ερόμβροτος Ἐτεοκλείδου δραχμὰς ΗΔΔΔΔ τῆς γῆς τῆς
+[ἐ]ν Σολόηι καὶ Κορακιαῖς Τελέσων Αὐτοκλέους δραχμὰς ΗΗΗΗΔ τῆς γῆς τῆς ἐν Ἄκραι Δήλωι Ζώπυ[ρο]ς Αὐτομέδοντος δραχμὰς τῆς γῆς τῆς ἐμ Φοίνιξι Θεω-
+ρύλος Διακτορίδου δραχμὰς ΗΗΔ τῆς γῆς τῆς Ἐπισθενείας Χοιρύλος Τελέσωνος δραχμὰς ΔΔΔ[Δ] τῶν ἐμ Φυταλιᾶι Καλλισθένης Διακρίτου δραχμὰς Δ τοῦ
+Λυκωνείου Ἀριστείδης Ἀριστέου δραχμὰς Η τῶν Σωσιμαχείωγ Γέρυλλος Πιστοξένου δραχμὰς ΗΗΗΔ[Δ]ΔΔ. [] καὶ τάδε τῶν ἱερῶν οἰκιῶν ἐνοίκια εἰσήκει τῶν οἰκημά-
+των ἐν οἷς Ἔφεσος καπηλεύει παρ Ἐμπέδου δραχμὰς τῆς Χαρητείας οἰκίας τῆς ἀνδρωνίτιδος [πα]ρὰ Ἴσου δραχμαὶ Δ̣ τῆς γυναικωνίτιδος παρὰ Ἀναψυκτ[ί]-
+δου δραχμαὶ ΔΔΔΔ τῶν ἀνδρώνων τῶν πρὸς τῆι θαλάττηι παρὰ Σωτέλους τῆς Σωσιλείας οἰκ[ία]ς πρὸς ἧι ἡ κρηπὶς παρὰ Κτησικλέους ΗΔΔΔ τῶν οἰκημά-
+των τῶν πρὸς τῆι θαλάττηι καὶ τῶν ἐπὶ τούτοις Μνησίλεως ὑπὲρ Διονυσοδώρου ΔΔΔΔ τῶν ἐχο[μέ]νων τούτων οἰκημάτων παρὰ Ἀγαθάρχου Δ τῆς οἰκίας ἣ ἦ[ν]
+Ὀρθοκλέους Γέρυλλος Πύθωνος ΔΔΔΔ τῆς οἰκίας ἣ ἦν Ἀρκέοντος παρὰ Ἀρκέοντος ΔΔ τῆς οἰκίας ἣν ἐμε[μίσ]θωτο Ἀπήμαντος Λεωφῶντος παρὰ τῶν ἐγγυητῶν Πασιτίμου
+τοῦ Ὀρθοκλέους ΔΔΙΙΙ καὶ παρὰ Ἀλεξιβίου τοῦ Αὐτοσθένους ΔΔΙΙΙ τῆς οἰκίας ἣ ἦν τῶν παίδων τῶν Ἀριστ[οβούλου] παρ Αὐτοσθένους ΔΔΔΙΙ τῆς Μενιππείας οἰκίας
+παρὰ Μνησάλκου τοῦ ταμίου ΔΔΔΔ τῶν οἰκιῶν τῶμ πρὸς τῶι σιδηρείωι παρὰ Ἐλπίνου ΔΔΔΔ τῆς Χαρητε[ίας οἰκίας] τοῦ ἀνδρῶνος τοῦ πρὸς τῆι θαλάττηι παρὰ τῶν Διοφάντου
+παίδων Δ τῆς οἰκίας ἣν ἐμεμίσθωτο Τολμίδης Πάριος παρὰ τῶν ἐγγυητῶν Τεισικλέους τοῦ Λύσου [Δ? τῆς οἰκίας ἣ ἦν] Ἀντιγόνου τοῦ Τιμοκράτους ὑπὲρ Ἀρχεπόλιδος
+[δ]ρακμαὶ Δ. .
+[οἵ]δε τόκους τεθήκασιν ἐπὶ τῆς ἡμετέρας ἀρχῆς Γέρυλλος Πιστοξένου δραχμὰς Η Ἄθηνις Εὐρυμά[νθους τοῦ αὑτο]ῦ μέρους δραχμὰς Δ Μνήσαλκος Τελε-
+[σ]αρχίδου ὑπὲρ τῶγ χωρίων τῶν ἐμ Πασσίρωι ἃ ἦμ πρότερον Σωσιπόλιδος δραχμὰς Δ Ἀνδρομ[ένης Ξένωνος ΔΔΙΙΙΙΙ Ἀλεξικράτεια] ὑπὲρ Ἀριγνώτου Δ[ΔΙΙΙΙ Γοργὼ]
+[κ]αὶ ὁ κύριος Εὐκλείδης ὑπὲρ Χάρητος Δ Ἀπολλόδωρος Ἀπολλωνίου Κυζικηνὸς Δ Τε[λέσων Χοιρύλου Φίλτης καὶ Ἀν]-
+[τι]χάρης Τληπολέμου Πόλυβος Διοδότου Πύρραιθος Νησιώτου ΔΔΔ Δεξικράτης καὶ Κλεινόδ[ικος Στησίλεω ΔΔ Φαναγόρας Φαναγόρου ὑπὲρ]
+[τ]οῦ οἰκήματος Δ Ὀλυμπιάδης Θήριδος ΔΙΙΙ Τελέσων Αὐτοκλέους ὑπὲρ Ξένωνος τοῦ Ἑρμιο[νέως ΙΙ ὑπὲρ τῶν]
+[χ]ωρίων ἃ ἦμ πρότερον Δηλί[κ]ου ΔΔ ἐξ Ἑρμιόνος τόκ[[]]ον τόκον ἐνιαυτοῦ δραχμὰς ΧΧΧ ἃς ἀπήγαγεν Μνησικλε[ίδης ]
+[Ξ]ενοκράτης Ἱερομβρότου Πολύξενος Φωκαιέως Η Σωσισθένης Φιλοσόφου ΔΔΔΔΙΙΙΙ Ναυτ[έλης καὶ Ἀριστόβουλος Ἀμφιτίμου ]
+.ου Δ. ἄλλο εἰσῆλθεν ἀργύριον εἰς τὴν ἀπόδοσιν τοῦ ἀργυρίου οὗ ἡ πόλις ὤφειλεν τῶι θεῶι παρὰ βου[λευτῶν τῶν ἐπ ἄρχοντος Μενεκράτου? ἐκ τῆς πεντηκοστῆς μετὰ τοῦ]
+ἐπωνίου ΜΧΧΧΗΗΗ καὶ τοῦ ὑποτροπίου ΔΔΔΔ σίτου τῆς δεκάτης ΗΗΗΗΔΙΙΙ ἐνοικίων τῆς δε[κάτης παρὰ]
+Τελέσωνος τοῦ Αὐτοκλέους ὑπὲρ Τεισικλέους ἃς ἐγγεγραμμένοι ἦσαν ὀφείλοντες τῶι θεῶι Θε[ ἐν τῆι στήληι ἧι ἔστησαν]
+Ἡγίας καὶ Ἀνάσχετος. .
+καὶ οἵδε ἐξέτεισαν τῶν ὀφειλόντων τῶι θεῶι Ἀνακρέων Ἀνακρέοντος δραχμὰς ἃς ἐνεγέγραπτο [ὀφείλων τῶι θεῶι ἐν τῆι στήληι ἧι ἔστησαν ἱεροποιοὶ]
+Ἀνδροτέλης, Δημόλυτος Δημέας Αὐτοκλέους ὑπὲρ Τελέσωνος ὃν ἐνεγέγραπτο ὀ[φείλειν τόκον τῶι θεῶι ἐν τῆι στήληι ἧι ἔστησαν ἱεροποιοὶ ]
+[δρα]χμὰς ΗΔΔΙΙΙ Δημέας ὑπὲρ Τελέσωνος τῆς ἐγγύης ἧς ἠγγυήσατο Ξένωνα τὸν Ἑρμιονέα ΔΔ[ ἐν τῆι]
+στήληι ἣν ἔστησαν Φίλαιθος καὶ Εὐκλείδης οἱ παῖδες οἱ Ἀντικράτους Τιμησίδημος καὶ Ἀριστόδικος [ ἐν τῆι στήληι ἧι ἔστη]-
+σαν ἱεροποιοὶ ἐπ ἄρχοντος Λυσιξένου Ἐλπίνης Ἀνδρία καὶ οἱ συνιερόποιοι. . Ἀριστόδικος Εὐέλθον[τος τῆς ἐγγύης ἧς ἠγγυήσατο τὸν δεῖνα τοῦ δεῖνος]
+τὸν Ῥηναιέα τοῦ τεμένους τοῦ ἐν Σκιτωνείαι. καὶ τάδε ἄλλα εἰσήκει ἐκ θησαυρῶν τοῦ ἐν τῶι ἱερῶι [ τοῦ ἐν Ἀσκληπιείωι τοῦ ἐν Ἀφροδισίωι ]
+τῆς πορφύρας Ἐξήκεστος ΔΔ τῆς κόπρου τῶμ περιστερῶν ΔΙΙΙΙΙ χηνὸς ἀποθανόντος πραθ[έντος ἐπ ἄρχοντος]
+Χάρμου ΔΔΔ ἃς κατέβαλεν Ἀντίγονος ὁ Τιμοκράτους τὸ προσώφειλεν τοῦ ἐνοικίου ἐπ ἄρχοντος Γλ[αυκιάδου ]
+ἄλλας παρ Ἡγία ἔκτεισμα ἐξ εὐθυνῶν ΔΔΔΙΙΙ καὶ παρὰ Ἀνασχέτου ΔΔΙΙΙΙ τῶν ἰχθύων τῶν ἐν [τῆι λίμνηι ].
+καὶ τόδε ἄλλο εἰσήκει τῆς οἰκίας ἧς ἀνέθηκε Στησίλεως πεσούσης τοῦ δήμου ψηφισαμένου τ[ ἀπε]-
+δόμεθα ἐν τῆι ἀγορᾶι ὑπὸ κήρυκος δρακμῶν ΗΔΔΔ τοῦτο ἐδανείσατο Πολύβουλος Παρμενίων[ος ].
+σύμπαγ κεφάλαιον οὗ τε παρελάβομεν ἀργυρίου καὶ τοῦ ἐπὶ τῆς ἡμετέρας ἀρχῆς εἰσήκοντος δραχμα[ὶ σὺν αἷς ὁ]
+δῆμος ἐψηφίσατο παραλαμβάνειν ἀεὶ τοὺς ἱεροποιοὺς τοὺς ἐν τέλει ὄντας καὶ χρυσοῦς ΔΙΙ καὶ φω[καΐδα ].
+τούτου τάδε ἀνάλωται ἀρχιτέκτονι ΧΗΔΔ τοῖς λιθουργοῖς Λεπτίνηι καὶ Βακχίωι ΔΔ Δώρωι ὑπ[ηρέτηι ΗΔ ]
+κήρυκι Δ γραμματεῖ ΔΔΔΙΙΙΙ νεωκόρωι εἰς Ἀσκληπιεῖον ΗΔΔΔΔ νεωκόρωι εἰς Νῆσ[ον ΗΔΔΔ αὐλητρίδι τῆι αὐλούσηι τῶι χορῶι τῶγ]
+γυναικῶν ΗΔΔΔ Φανέαι τοῦ ἱεροῦ οἰκοδομήσαντι τὸμ πλίνθινον τοῖχον καὶ ἐξαλείψαντι τὸγ Κ[ερατῶνα ]
+ΔΔ[[ ]] οἰνοχόαι εἰς τὸν θεὸν καὶ κρατῆρες παρὰ Βότωνος Ι Δεξίωι τὸγ κώθωνα τὸγ χα[λκοῦν ἐπισκευάσαντι? ]
+[.] ξυλώσαντι Θεοδήμωι ΙΙΙ μισθωτοῖς ξύλα κομίσασιν εἰς τὴν Χαρητείαν ΙΙΙΙ ἄνθρακες ἐπὶ τοὺ[ς βωμοὺς ]
+τοῖς λιθουργοῖς παρὰ Ἀριστοκρίτου στομώματος μναῖ τέτταρες παρὰ Λυκίσκου, ἡ μνᾶ [ ]
+μωι Ἀριστοθάλει μισθὸς γράψαντι Σωσιμένει λεπίδες καὶ ἧλοι τῶι ἀγάλματι παρὰ Δεξίο[υ ]
+[.]ΟΙ̣ΥΠΙΩ[..] εἰς τὸ θέατρον τῶι τόρνωι ξύλον παρὰ Λυσίου κλεὶς ἐπὶ τὸν οἶκον τὸν τῆς Ψαμμ[ίτης Ψαμμ[ητίχης]? ]
+[τάδε παρελάβ]ομεμ̣ παρὰ ἱεροποιῶ[ν τῶν ἱεροποιησάντων ἐπ ἄρχοντος Ὑψοκλέους, Ἀριστοθέου] τοῦ Τιμο[θάλους, Ξενοκ[λέ]ους τοῦ Φιλαρχίδου.
+[ποτήρια] ἐν τῶι Ἀ̣ρ̣τ̣εμισίωι ἀργυρᾶ [πρῶτος ῥυμός, σταθμ]ὸν [τ(άλαντον)] ἡ̣(μιτάλαντον) ἀριθμὸς [ΗΙΙΙΙ] δεύτερος ῥυμός, σταθμὸν [τ(άλαντον) ἡ(μιτάλαντον)] ἀριθμὸς φιαλῶν [ΗΙΙΙ] τρίτ[ος ῥυμός, σταθμὸν]
+τ(άλαντον) ἡ(μιτάλαντον), ἀριθμὸς φι[αλῶ]ν ΗΙΙΙΙ τέταρτος ῥυμό[ς, σταθμὸν [τ(άλαντον) ἡ(μιτάλαντον) ἀριθμὸς φι]αλῶν ΗΙΙ πέμπτος ῥυμός, [σταθ]μὸν τ̣(άλαντον) ἡ̣(μιτάλαντον) ἀριθμὸς φιαλῶν ΗΙΙΙΙ ἕ[κτ]ος [ῥ]υμ[ός, σταθμὸν τ(άλαντον) ἡ(μιτάλαντον) ἀριθμὸς ΗΔΔΙ]
+ἕβδομος ῥυμός, σταθμὸν Τ ποτηρίων ἀ[ριθμὸς ΗΔ κυ]ά[θ]ους? καὶ ὀξ[ύβαφον καὶ τὸ συμ]πεφυσημένον ἀ̣ργύρι[ον ὄγδοος ῥυμός], στα[θμὸν Τ μναῖ Δ ἀριθμὸς]
+[]ΔΔΔΙΙΙ[Ι] ἔνατος ῥυμός, ποτηρίων παντο[δαπῶν, σταθμὸν Τ ἀριθ]μὸς Δ[ΙΙ] δέκατος ῥυμὸς ἐν κιβωτίωι ἀργυρίου π[αντοδαποῦ καὶ τῶν ἀπὸ τῆς γεράνου]
+στα[θμὸν] μναῖ ΔΔ[ΙΙ] ἐνδέκατος ῥυμός, φια[λῶν καὶ ἄλλων ἀργυρωμάτων ἃ καθηιρέθη προση]λωμένα, σταθμ[ὸν Τ μναῖ δύο, ἀριθμὸς πάντων ΔΔΔΙΙΙ]
+σὺν τ[οῖς ἀ]λαβάστροις καὶ οἰνο[χόηι τῆι παλαιᾶι δωδέκατος ῥυμός], αἱ προτομαὶ καὶ αἱ οἰνοχ[όαι καὶ] τ[ὰ] λεοντόποδα, σταθμὸν [μναῖ ΔΔΔ τρεισκαιδέκατος ῥυμός],
+οἰνοχόαι ΔΙΙ σταθμὸν πασῶν μναῖ ΔΔΙΙΙΙ. καὶ [τά]δ[ε ἄστατα ἐν τῶι Ἀρτεμισίωι θυμιατήριον ὑπόχαλ]κον λεπίδα ἀργυρᾶν ἔχον, συντετ[ριμμένον] ζώιδια ἀργυρᾶ
+Ἀπόλλωνος καὶ Ἀρτέμιδος, Κλεινοῦς ἀνάθημα [ἀετὸς ἀργυροῦς τῶν ἀρχαίων δι]απεπτωκώς φιάλαι ἓξ ἐμ πλινθείοις, Ἰκα[ρίου ἀνάθημα φι]άλη Δηλιά-
+δων, χορεῖα Βάκχωνος ἐπιδόντος φιάλη χρυσόκλυστ[ος], ἀνάθη[μα Δηλιάδων χορεία] φιάλη Δηλιάδων ἀνάθημα, χορεῖα ἐπ ἀρχεθεώρου [Ῥοδίων Θ]ρασυμάχου
+[φι]άλη Φιλώτα Σικυωνίου ἀνάθημα φιάλη Φυλάκου ἀνάθημ[α] φιάλη Λεο[ν]τ[ίνων] ἀνάθ[ημα φι]άλη Κώιων ἀνάθημα ἐπ ἀρχεθεώρου Σίμου φιά[λαι δύο ἐμ πλινθείοις],
+[Ἀ]πολλοδώρου ἀνάθημα φιάλαι δύο, Κώιων ἀνάθημα, ἐ[πὶ] ἀ[ρχε]θεώρου [Πο]λυκλείτου [φιάλη Ῥ]οδίων ἀνάθημα ἐπ ἀρχ[ε]θεώρου Ἀγησάνδρου [φιάλη Θεοτίμης ἀνάθημα]
+φιάλαι δύο, Στρατονίκης ἀνάθημα φιάλη ἔκτυπον ἔχουσα Ἡλίο[υ] πρόσωπον, ἀνάθημα Δηλιάδων, [χ]ορεῖα ἐπ ἀρχεθεώρ[ου] Φιλοδάμου κρατὴρ ἀργυροῦς, [Παρμίσκου] ἀνάθημα, ὁλ-
+κὴ δραχμαὶ ΧΧΧΧΔΔ ἀργύριον παντοδαπὸν καὶ ἀνδ[ρι]αντίσκος καὶ ἠλακάται [καὶ ἀμφιδαῖ] καὶ [δε]λφὶς καὶ προχοΐδιον καὶ ἄλλα παντοδαπά, ὁλκὴ πάντων δραχμαὶ
+ΗΗΗΗΔΔΔΔ ἄλλο ἀργύριον παντοδαπόν, ὁλκὴ δραχμαὶ [ΧΗ]ΗΔΔΔ ψίλια ἀργυρᾶ [δύο κα]ὶ ἀμφιδῆ ἀποκεκλασμένη, ὁλκὴ δραχμαὶ ΔΔ καὶ πεντόροβος
+χαλκοῦς ἐπίχρυσος ὀρχομένιοι ὀβολοὶ ΗΗΗΗΔ ἀργυρίου ἀττικοῦ [κα]ὶ ἀλεξανδρείου δοκίμου καὶ [χαλκῶ]ν ἐπιχωρίων δραχμαὶ ΔΔΙΙ αἰγιναῖοι καὶ κρητικοὶ στατῆρες ΔΙ κο-
+ρίνθιοι στατῆρες δύο μαυσσώλεια τετράδραχμα ΙΙΙΙ νάξια τε[τρά]δραχμα δύο καὶ φωκαῒς καὶ [ὀβολὸς φωκαϊκ]ός νομίσματος παντοδαποῦ ὁλκὴν ΔΔ. καὶ χρυσᾶ τάδε ὅρμος ὁ πρὸς
+τῶι κλισμῶι ἠρτημένος, οὗ οἱ πέντε γρῦπες καὶ ὁ λέων ὁ τὸν [ταῦρ]ον κατέχων, ὁλκὴ σὺν τοῖς λίνοις δραχμαὶ ΗΗΔ ὅρμος λογχωτὸς ὃν ἀνέθηκε Σιμίχη Μυκονία, ἄστατ[ος]
+ἀριθμὸς λογχίων ΔΔΔΙΙ ὅρμος λογχωτὸς ὃν ἀνέθηκε Δη[μοστρ]άτη, ἄστατος ἀριθμὸς λογχίων ΔΔΙΙΙΙ τραγίσκοι χρυσοῖ δύο, ἄστατοι δακτύλιος περίχρυσος, Στράτ[ω]-
+νος Αἰτωλοῦ ἀνάθημα, ἄστατος ἀσπιδίσκη χρυσῆ, Αἰσχυ[λίος ἀνάθη]μα, ὁλκὴ φιάλη χρυσῆ ῥαβδωτή, ὁλκὴ δραχμαὶ ΔΔ, τετρυπημένη ἐπιχύτης χρυσοῦς, ὁλ[κὴ δρα]-
+χμαὶ ΗΔ ἐνώτια θάσια χρυσᾶ, ὁλκὴ δραχμα[ὶ ΙΙΙΙΙ ψίλιον στ]ρεπτόν, ὁλκὴ δραχμαὶ ΙΙΙΙ κύλιξ χρυσῆ θηρίκλειος, Πτολεμαίου ἀνάθημα Ἀφροδίτηι, ὁλκὴ δρα-
+χμαὶ ΗΗΔΔΔ φιάλιον χρυσοῦν Δημοσῶν[τος ἀνάθημ]α, ἄστατον φιάλαι λεῖαι χρυσαῖ ἑπτά, Δηλίων ἀνάθημα, ὁλκὴ πασῶν δραχμαὶ ΗΗΗΗΔΔΔ φιάλα[ι]
+χρυσαῖ [κ]αρυωταὶ ἕξ, ὁλκὴ πασ[ῶ]ν [ΧΗΔΔΔΔ φι]άλη χρυσῆ καρυωτή, Ναξίων ἀνάθημα, ὁλκὴ δραχμαὶ ΗΔΔΔΔΙ̣ΙΙ ἄμπελος χρυσῆ ἄστατος ΕΝ
+ΚΑΙ[ ]ΟΥΣ[ ] [[ ]]
+[ ] [[ ]] φιάλιον λεῖον χρυσοῦν τετρυπημένον τὸν ὀμφαλό[ν, ἀ]νεπίγραφον, ὁλκὴ δραχμαὶ ΔΔ φιάλιον
+[χρυσοῦν ῥαβδωτόν, ὁλκὴ δραχμαὶ Δ φιάλιον χρ]υσίου λευκοῦ ῥαβδωτόν, ὁλκὴ δραχμαὶ οἰνοχόαι χρυσαῖ δύο ἐπιγραφὴν ἔχουσαι, ἡ πρώτη [Η]ΔΔ[Δ]
+[ΔΙΙ ἡ δευτέρα ΗΔΔΔ πέταλα χρυσᾶ ]ΙΙΙ καὶ ἀσπιδίσκης κλασμάτιον καὶ στλεγγίς, ὁλκὴ πάντων δραχμαὶ ΗΗΗΔ[] κανοῦν χρυσοῦν
+[λεῖον ὦτα καὶ πυθμένα ἀργυρᾶ ἔχον, ὁλκὴ τοῦ] χρυσίου δραχμαὶ ΧΗΔΔΔΔ τοῦ ἀργυρίου σταθμὸν δραχμαὶ ΗΗΗΔΔΔ κλιμάκιον ξύλινον περ[ί]-
+[χρυσον ὄφεσιν ἀργυροῖς διεζωσμένον, ἄστατον θυμιατήρι]ον μέγα ὑπόχαλκον περίχρυσον τοῦτο οὐκ ἐστάθη ἕτερον θυμιατήριον ἔλαττον ὑπόχαλκον περίχρυσο[ν]
+[ἀνεπίγραφον τοῦτο οὐκ ἐστάθη κανοῦν ὀρθηλὸν ἐπίχρυσον ἐ]πιγραφὴν ἔχον, ὁλκὴ δραχμαὶ ΧΗΗΔΔΔΙΙ χρυσίον λευκὸν καὶ ἐν τούτωι στατῆρες κυζικηνοὶ δύο καὶ φω-
+[καΐς, ὁλκὴ τούτων πάντων δραχμαὶ ΗΗΗΔΔ ὅρμος ἀμφορέων, ὁλκ]ὴ σὺν τοῖς λίνοις δραχμαὶ Δ ἀμφορεῖς ΙΙΙ στλεγγὶς καὶ στεφάνωγ κλάσματα χρυσᾶ, ὁλκὴ δρα-
+[χμαὶ ΔΔΙΙΙ πεντόροβος χρυσοῦς, ὁλκὴ στεφάνων κλάσματα καὶ ἄλλ]α χρυσία παντοδαπά, ὁλκὴ πάντων δραχμαὶ ΗΗΗΔΔΔΔ[] μηλίσκα, ἔνια πλήρη γῆς, ἀριθμὸ[ν] ΔΔΔΙΙΙ κ[αὶ]
+[ἀνθεμίου ὑπαργύρου κλάσμα, ὁλκὴ τούτων δραχμαὶ ΔΔΔΔΙΙΙ περόναι χρ]υσαῖ, ἀριθμὸν ΔΔΙΙΙ καὶ τούτων κλάσματα ἄστατα ἀσπιδίσκη καὶ φυκία δύο καὶ περιδειρίδια χρυσᾶ, ὁλκὴ σὺν
+[τοῖς λίνοις δραχμαὶ ΔΙΙΙ δακτύλιοι χρυσοῖ ἕξ, ὁλκὴ δραχμαὶ σφρ]αγίδια διάλιθα δύο ἄστατα δαρεικοὶ χρυσοῖ ὀκτώ χρυσίου ὁλκὴ ΙΙΙ ῥοαὶ χρυσαῖ καὶ μῆλα καὶ πέταλ[α]
+[χρυσᾶ ἄστατα ἄμπελος χρυσῆ ἄστατος σφραγὶς μαράγδου δεδ]εμένη σειρᾶι χρυσῆι, Ἀπολλοδώρου ἀνάθημα, ἄστατος ὅρμος ἀμφορέων ἐφ οὗ ὁ Τριπτόλεμος,
+[καὶ ἀνθέμια καὶ ἀσπιδίσκη καὶ ἐνώτια καὶ στλεγγὶς χρυσᾶ, ὁλκὴ δραχ]μαὶ ΔΔΔΔ στέφανος χρυσοῦς δάφνης ὁ παρὰ
+Ἀμεινώνδα, ἀπελθών, ὁλκὴ δραχμαὶ Δ δακτύλιος
+[χρυσοῦς Ἀρτεμίσιον ἔχων ἐπίσημον, ὁλκὴ δραχμαὶ ΙΙΙ δακτύλιος] λεῖος χρυσοῦς, ὁλκὴ δραχμαὶ Ι δακτύλιος χρυσοῦς σημεῖον ἔχων Ἔρωτα, ὁλκὴ δραχμαὶ δακτύ-
+[λιος σιδηροῦς χρυσίωι ἐνδεδεμένος, ἄστατος σφραγὶς ἐνδεδεμένη χρυσ]ίωι, σημεῖον ἔχουσα τραγέλαφον, ἄστατος κυλινδρίσκος χρυσένδετος ἄστατος σφραγὶς χρυσέν-
+[δετος ἄστατος λυγγούριον κίρκον ἔχον χρυσοῦν, ἄστατον σφραγίδιον] χρυσένδετον ἄστατον σφραγίδιον κίρκον ἔχον χρυσοῦν ἄστατον σφραγίδιον ἀργυρένδετον
+[σφραγίδιον ὑάλινον χρυσένδετον ἀνθέμια καὶ ὀφίδιον καὶ κίρκο]ν καὶ ἄλλα παντοδαπά, ὁλκὴ πάντων δραχμαὶ Δ δακτύλιος
+χρυσοῦς Καλλικρίτης ἀνάθημα
+[ἐν ταινιδίωι ξυλίνωι στεφανίσκοι χρυσοῖ δύο, ὁλκὴ δραχμαὶ στέφανος χρ]υσοῦς μυρρίνης Πτολεμαίου βασιλέως ἀνάθημα, ὁλκὴ δραχμαὶ ΗΔΔΔΔ στέφανος
+[χρυσοῦς μυρσίνης, Βερενίκης ὑπὲρ Πτολεμαίου ἀνάθημα, ὁλκὴ δραχμαὶ ΔΔ σὺ]ν τοῖς λίνοις στέφανος δάφνης χρυσοῦς Πευκέστας, ὁλκὴ δραχμαὶ Δ στέφανος χρυσοῦ[ς]
+[μυρρίνης, Δηλιάδων ἀνάθημα, χορεῖα Νικοκρέοντος ἐπιδόντος, ὁλκὴ δραχμαὶ] ΔΔΔΔ στέφανος χρυσοῦς Καλλικράτους ἀνάθημα, ὁλκὴ ΔΙΙΙ στέφανος χρυσοῦς Ἰω-
+[μίλκου ἀνάθημα, ὁλκὴ δραχμαὶ ΔΔ στέφανος δάφνης χρυσοῦς, Δηλιάδ]ων ἀνάθημα, χορεῖα Φιλοκλέους ἐπιδόντος, ὁλκὴ δραχμαὶ ΔΔΔΔΙΙΙ στέφανος κιττοῦ χρυσοῦς βα-
+[σιλέως Πτολεμαίου ἀνάθημα, ὁλκὴ δραχμαὶ ΗΔΔΔΔ στέφανος δάφνης χρ]υσοῦς Δημητρίου βασιλέως ἀνάθημα, ὁλκὴ δραχμαὶ Δ στέφανος δάφνης χρυσοῦς Δηλιά-
+[δων ἀνάθημα, χορεῖα Μήτρωνος ἐπιδόντος, ὁλκὴ δραχμαὶ ΔΔ στέφ]ανος χρυσοῦς Δηλιάδων ἀνάθημα, χορεῖα Κλείτου ἐπιδόντος, ὁλκὴ δραχμαὶ ΔΔΔ στέφανος
+[μυρρίνης χρυσοῦς, Λυσάνδρου Λακεδαιμονίου ἀνάθημα, ὁλκὴ δραχμαὶ ] . στέφανος χρυσοῦς Κρατεροῦ  ἀνάθημα, ὁλκὴ δραχμαὶ ΙΙ στέφανος δάφνης χρυσοῦς ἀν[ά]-
+[θημα Φιλοκλέους βασιλέως? ὁλκὴ δραχμαὶ ΔΔΔΔ ἀνδριαντίσκος] χρυσοῦς οὐκ ἔχων σκέλος οὐδὲ χεῖρα, ὁλκὴ δραχμαὶ ΙΙΙ χρυσίου ἀσήμου ὁλκὴ δακτύλιος χρυ-
+[σοῦς Πολυαράτου, ὁλκὴ δραχμαὶ τύ]πος μητρικὸς πρὸς ξύλωι τοῦ ὅρμου τοῦ Ἐριφύλης ἀριθμὸς χρυσίων ΗΔΔ τοῦ κόσμου τοῦ ἀγάλ-
+[ματος τοῦ τὴν ἐρειᾶν ἐσθῆτα ἔχοντος, ὁλκὴ δραχμαὶ ΔΔΔ περ]όνη ἀργυρᾶ ἐ̣π̣ί̣χρυσος δακτύλιοι καὶ ἐνώτια ἀργυρᾶ ἀνειρμένα ἡ καλουμένη γέρανος, ἄστατος
+[φιάλη ἀργυρᾶ ἐμ πλινθείωι, Χοιροιθίδος ἀνάθημα, ἄστατον φιάλη, Θυεσταδῶν κ]αὶ Ὠκυνειδῶν ἀνάθημα, ὁλκὴ δραχμαὶ Η φιάλη ἀντὶ τῆς κύλικος ἧς ἀνέθηκε Πύθεος, ὁλκὴ δρ[α]-
+[χμαὶ ΔΔΔΔ]                                         .
+[ἐν τῶι προδόμωι τοῦ νεὼ τοῦ Ἀπόλλωνος ἄστατα φιάλη ἀργυρᾶ ἐμ πλινθείω]ι τῆς πόλεως τῆ[ς Κ]ώιων ἀνάθημα ἐπ ἀρχεθεώρου Ἀράτου φιάλη ἔκτυπον ἔχουσα ἅρμα [καὶ Νί]-
+[κην καὶ ζώιδια δύο, Ἡρακλείδου ἀνάθημα, φιάλη λεία] ἐπίχρυσος ῥαβδωτὴ Τιμάνθου[ς Ῥοδίου ἀνά]-
+[θημα ][ ]</div>
+            </div>
+        </div>
+        <div class="split-col-right">
+            <h3>Thematic Analysis</h3>
+            
+        <div class="theme-card" onmouseover="highlightQuote('[λόγ]ος ἱεροποιῶν τῶ[ν ἱεροποιη]σάντων ἐπὶ ἄρχοντος Μενεκ[ράτου]')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Content/Administrative Records and Lists/Accounts and Financial Records" class="tag domain-tag" style="text-decoration:none;">Content</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
+                    <div class="theme-path">Content > Administrative Records and Lists > Accounts and Financial Records</div>
+                    <div class="theme-label">Accounts and Financial Records</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "[λόγ]ος ἱεροποιῶν τῶ[ν ἱεροποιη]σάντων ἐπὶ ἄρχοντος Μενεκ[ράτου]"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('[ποτήρια] ἐν τῶι Ἀ̣ρ̣τ̣εμισίωι ἀργυρᾶ [πρῶτος ῥυμός, σταθμ]ὸν [τ(άλαντον)]')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Content/Administrative Records and Lists/Inventories" class="tag domain-tag" style="text-decoration:none;">Content</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
+                    <div class="theme-path">Content > Administrative Records and Lists > Inventories</div>
+                    <div class="theme-label">Inventories</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "[ποτήρια] ἐν τῶι Ἀ̣ρ̣τ̣εμισίωι ἀργυρᾶ [πρῶτος ῥυμός, σταθμ]ὸν [τ(άλαντον)]"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('ἐπὶ ἄρχοντος Μενεκ[ράτου, Δημόνου τοῦ Νίκωνος, Π]ί[στου] τοῦ [Ξέ]ν[ωνος]')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Content/Administrative Records and Lists/Lists of Officials or Citizens" class="tag domain-tag" style="text-decoration:none;">Content</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
+                    <div class="theme-path">Content > Administrative Records and Lists > Lists of Officials or Citizens</div>
+                    <div class="theme-label">Lists of Officials or Citizens</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "ἐπὶ ἄρχοντος Μενεκ[ράτου, Δημόνου τοῦ Νίκωνος, Π]ί[στου] τοῦ [Ξέ]ν[ωνος]"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('Κλεινοῦς ἀνάθημα [ἀετὸς ἀργυροῦς τῶν ἀρχαίων δι]απεπτωκώς')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Content/Religious and Dedicatory Texts/Votive Dedications" class="tag domain-tag" style="text-decoration:none;">Content</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
+                    <div class="theme-path">Content > Religious and Dedicatory Texts > Votive Dedications</div>
+                    <div class="theme-label">Votive Dedications</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "Κλεινοῦς ἀνάθημα [ἀετὸς ἀργυροῦς τῶν ἀρχαίων δι]απεπτωκώς"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('ἐν τῆι στήληι ἧι ἔστησαν ἱεροποιοὶ')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Type/Object Type/Monumental Stone Objects/Stele" class="tag domain-tag" style="text-decoration:none;">Type</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
+                    <div class="theme-path">Type > Object Type > Monumental Stone Objects > Stele</div>
+                    <div class="theme-label">Stele</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "ἐν τῆι στήληι ἧι ἔστησαν ἱεροποιοὶ"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('καὶ χρυσοῦς ΔΙΙ καὶ φω[καΐδα ]')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Type/Material/Metal/Gold" class="tag domain-tag" style="text-decoration:none;">Type</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
+                    <div class="theme-path">Type > Material > Metal > Gold</div>
+                    <div class="theme-label">Gold</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "καὶ χρυσοῦς ΔΙΙ καὶ φω[καΐδα ]"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('[ποτήρια] ἐν τῶι Ἀ̣ρ̣τ̣εμισίωι ἀργυρᾶ')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Type/Material/Metal/Silver" class="tag domain-tag" style="text-decoration:none;">Type</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
+                    <div class="theme-path">Type > Material > Metal > Silver</div>
+                    <div class="theme-label">Silver</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "[ποτήρια] ἐν τῶι Ἀ̣ρ̣τ̣εμισίωι ἀργυρᾶ"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-card" onmouseover="highlightQuote('ἀργυρίου ἀττικοῦ [κα]ὶ ἀλεξανδρείου δοκίμου καὶ [χαλκῶ]ν ἐπιχωρίων')" onmouseout="clearHighlight()">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <a href="../search.html?theme=Type/Object Type/Portable Objects/Coins" class="tag domain-tag" style="text-decoration:none;">Type</a>
+                    <span class="badge green" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem;">100% Conf.</span>
+                    
+                    <div class="theme-path">Type > Object Type > Portable Objects > Coins</div>
+                    <div class="theme-label">Coins</div>
+                </div>
+                <div class="evidence-box">
+                    <p class="evidence-quote">Evidence: "ἀργυρίου ἀττικοῦ [κα]ὶ ἀλεξανδρείου δοκίμου καὶ [χαλκῶ]ν ἐπιχωρίων"</p>
+                </div>
+            </div>
+        </div>
+        
+            <div style="margin-top:2rem;"><h3>Entities</h3><div><a href="../search.html?q=Menekrates" class="tag entity-tag" style="text-decoration:none;">👤 Menekrates <small>(Archon)</small></a><a href="../search.html?q=Hypsokles" class="tag entity-tag" style="text-decoration:none;">👤 Hypsokles <small>(Archon)</small></a><a href="../search.html?q=Antipater son of Demetrios" class="tag entity-tag" style="text-decoration:none;">👤 Antipater son of Demetrios <small>(Secretary)</small></a><a href="../search.html?q=Kleinodikos son of Kleinodikos" class="tag entity-tag" style="text-decoration:none;">👤 Kleinodikos son of Kleinodikos <small>(Secretary)</small></a><a href="../search.html?q=Apollodoros son of Xenomedes" class="tag entity-tag" style="text-decoration:none;">👤 Apollodoros son of Xenomedes <small>(Tenant)</small></a><a href="../search.html?q=Ptolemy" class="tag entity-tag" style="text-decoration:none;">👤 Ptolemy <small>(King and Dedicant)</small></a><a href="../search.html?q=Berenice" class="tag entity-tag" style="text-decoration:none;">👤 Berenice <small>(Queen and Dedicant)</small></a><a href="../search.html?q=Demetrios" class="tag entity-tag" style="text-decoration:none;">👤 Demetrios <small>(King and Dedicant)</small></a><a href="../search.html?q=Lysander of Lacedaemon" class="tag entity-tag" style="text-decoration:none;">👤 Lysander of Lacedaemon <small>(Dedicant)</small></a><a href="../search.html?q=Leptines" class="tag entity-tag" style="text-decoration:none;">👤 Leptines <small>(Stonemason)</small></a><a href="../search.html?q=Bacchios" class="tag entity-tag" style="text-decoration:none;">👤 Bacchios <small>(Stonemason)</small></a><a href="../search.html?q=Phaneas" class="tag entity-tag" style="text-decoration:none;">👤 Phaneas <small>(Builder)</small></a><a href="../search.html?q=Simiche of Mykonos" class="tag entity-tag" style="text-decoration:none;">👤 Simiche of Mykonos <small>(Dedicant)</small></a><a href="../search.html?q=Nikokreon" class="tag entity-tag" style="text-decoration:none;">👤 Nikokreon <small>(Dedicant)</small></a><a href="../search.html?q=Philokles" class="tag entity-tag" style="text-decoration:none;">👤 Philokles <small>(Dedicant)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Delos <small>(Delos)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Rhodes <small>(Rhodes)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Cos <small>(Cos)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Naxos <small>(Naxos)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Kyzikos <small>(Kyzikos)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Hermione <small>(Hermione)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Phokaia <small>(Phokaia)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Rhenaia <small>(Rhenaia)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Artemision <small>(Artemision)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Asklepieion <small>(Asklepieion)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Aphrodision <small>(Aphrodision)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Skitoneia <small>(Skitoneia)</small></a><a href="../index_places.html" class="tag entity-tag" style="text-decoration:none;">📍 Panormos <small>(Panormos)</small></a><a href="../index_deities.html" class="tag entity-tag" style="text-decoration:none;">⚡ Apollo</a><a href="../index_deities.html" class="tag entity-tag" style="text-decoration:none;">⚡ Artemis</a><a href="../index_deities.html" class="tag entity-tag" style="text-decoration:none;">⚡ Asklepios</a><a href="../index_deities.html" class="tag entity-tag" style="text-decoration:none;">⚡ Aphrodite</a><a href="../index_deities.html" class="tag entity-tag" style="text-decoration:none;">⚡ Helios</a><a href="../index_deities.html" class="tag entity-tag" style="text-decoration:none;">⚡ Eros</a><a href="../index_deities.html" class="tag entity-tag" style="text-decoration:none;">⚡ Nike</a></div></div>
+            <div class="ai-analysis-box"><h3>AI Analysis Summary</h3><p>This inscription is a comprehensive administrative and financial record from the sanctuary of Apollo on Delos, dated to the archonship of Menekrates (278 BC). It documents the accounts of the hieropoioi, including income from sacred lands (enerosia), rents from sacred houses, interest on loans, and a massive inventory of votive offerings (silver and gold vessels, crowns, and jewelry) stored in various temples. It also lists expenditures for public works, sanctuary personnel, and religious ceremonies, providing a detailed view of the economic life of the sanctuary.</p></div>
+        </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      © 2026 Florian Wachter | Private Non-Profit Research Project | 
+      <a href="https://github.com/paxetheninja/AGKI-PM-TaggingEpigraphy" target="_blank">GitHub</a>
+    </div>
+    <div class="footer-legal">
+      Impressum: Privates Forschungsprojekt. Verantwortlich: Florian Wachter, Institut für Antike, Goethestraße 19, 8010 Graz. Kontakt: florian.wachter@uni-graz.at. Keine Gewähr für die Richtigkeit der Daten.
+    </div>
+  </footer>
+</body>
+</html>
+    

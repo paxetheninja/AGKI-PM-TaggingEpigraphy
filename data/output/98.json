@@ -1,0 +1,159 @@
+{
+  "phi_id": 98,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The inscription follows the standard formula for an Athenian decree, beginning with the enactment clause 'ἔδοχσεν τε͂ι βολε͂ι καὶ το͂ι δέμοι'.",
+      "confidence": 1.0,
+      "quote": "ἔδοχσεν τε͂ι βολε͂ι καὶ το͂ι δέμοι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The text explicitly praises the Samian people for their actions in overthrowing an oligarchy and supporting the Athenian cause.",
+      "confidence": 1.0,
+      "quote": "το͂ι μὲν δέμοι το͂ι Σαμίον ἐπαινέσαι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Treaties and Agreements",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Treaties and Agreements",
+        "subcategory": null
+      },
+      "rationale": "The decree regulates the political and military relationship between Athens and Samos, establishing mutual obligations and legal procedures.",
+      "confidence": 0.8,
+      "quote": "Ἀθεναίοις καὶ Σαμίοις",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The inscription contains detailed instructions regarding the management of confiscated property, specifically the leasing of land belonging to Cleomedes and the payment of proceeds.",
+      "confidence": 1.0,
+      "quote": "περὶ δὲ το͂ν χρεμάτον το͂ν φυγόντον ἀπομισθοσάντον μὲν τὸν ἀγρὸν τὸν Κλεομέδεος",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Prayers and Invocations",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Religious and Dedicatory Texts",
+        "category": "Prayers and Invocations",
+        "subcategory": null
+      },
+      "rationale": "The inscription begins with a standard religious invocation to the gods.",
+      "confidence": 1.0,
+      "quote": "θε[οί]",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The format and length of the text are characteristic of a monumental stone stele used for public display of Athenian decrees.",
+      "confidence": 0.9,
+      "quote": "ἔδοχσεν τε͂ι βολε͂ι καὶ το͂ι δέμοι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Cleomedes",
+        "role": "Exiled landowner whose property is being managed by the state",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Cleomedes",
+        "confidence": 1.0
+      },
+      {
+        "name": "Akamantis",
+        "role": "Athenian tribe serving as the prytany at the time of the decree",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Akamantis",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Samos",
+        "type": "Island and city-state",
+        "uri": "https://pleiades.stoa.org/places/599925",
+        "confidence": 1.0
+      },
+      {
+        "name": "Ionia",
+        "type": "Region",
+        "uri": "https://pleiades.stoa.org/places/550597",
+        "confidence": 1.0
+      },
+      {
+        "name": "Athens",
+        "type": "City-state",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      },
+      {
+        "name": "Klamados",
+        "type": "Locality or district",
+        "uri": null,
+        "confidence": 0.8
+      }
+    ],
+    "deities": [
+      {
+        "name": "Dionysus",
+        "uri": "https://www.wikidata.org/wiki/Q41680",
+        "confidence": 0.9
+      },
+      {
+        "name": "Gods",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "City-state",
+      "uri": "https://pleiades.stoa.org/places/579885",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This Athenian decree, dated to 412/1 BCE, is a critical document concerning the Peloponnesian War. It records the Athenian response to the democratic revolution in Samos, praising the Samians for overthrowing their oligarchy and expelling Peloponnesian forces. The text outlines complex administrative arrangements, including the management of confiscated lands (specifically that of Cleomedes), judicial authority over Samian citizens (exile, death, confiscation), and military cooperation between the two states. It reflects the strategic importance of Samos as an Athenian ally during the final phase of the war.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "412/1 a.",
+  "date_min": 412.0,
+  "date_max": 1.0,
+  "date_circa": false
+}
