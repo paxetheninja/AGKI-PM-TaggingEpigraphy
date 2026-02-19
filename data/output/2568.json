@@ -1,0 +1,200 @@
+{
+  "phi_id": 2568,
+  "themes": [
+    {
+      "label": "Decrees",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Official and Legal Documents",
+        "category": "Decrees",
+        "subcategory": null
+      },
+      "rationale": "The text is a formal decree of the Athenian assembly, using the standard enactment formula 'it seemed good to the people'.",
+      "confidence": 1.0,
+      "quote": "ἔδοξεν τῶι δήμωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Honorific Inscriptions",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Honorific Inscriptions",
+        "subcategory": null
+      },
+      "rationale": "The inscription honors Eudemos of Plataea for his material contributions, granting him an olive crown and the status of benefactor.",
+      "confidence": 1.0,
+      "quote": "ἐπαινέσαι Εὔδημον Φιλούργου Πλαταιέα καὶ στεφανῶσαι αὐτὸν θαλλοῦ στεφάνωι",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Building Commemoration",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Honorific and Commemorative Inscriptions",
+        "category": "Building Commemoration",
+        "subcategory": null
+      },
+      "rationale": "The decree explicitly mentions the construction of the Panathenaic stadium and theater as the reason for the honors.",
+      "confidence": 1.0,
+      "quote": "εἰς τὴν ποίησιν τοῦ σταδίου καὶ τοῦ θεάτρου τοῦ Παναθηναικοῦ χίλια ζεύγη",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Accounts and Financial Records",
+      "hierarchy": {
+        "domain": "Content",
+        "subdomain": "Administrative Records and Lists",
+        "category": "Accounts and Financial Records",
+        "subcategory": null
+      },
+      "rationale": "The text records a donation of 1,000 yokes of oxen and mentions previous financial promises for war, as well as the disbursement of funds for the stele's creation.",
+      "confidence": 0.9,
+      "quote": "δραχμὰς καὶ νῦν ἐπιδέδωκεν... δοῦναι τὸν ταμίαν τοῦ δήμου",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    },
+    {
+      "label": "Stele",
+      "hierarchy": {
+        "domain": "Type",
+        "subdomain": "Object Type",
+        "category": "Monumental Stone Objects",
+        "subcategory": "Stele"
+      },
+      "rationale": "The publication clause specifies that the decree be inscribed on a stone stele and set up on the Acropolis.",
+      "confidence": 1.0,
+      "quote": "ἀναγράψαι δὲ τόδε τὸ ψήφισμα τὸν γραμματέα τῆς βουλῆς καὶ στῆσαι ἐν ἀκροπόλει",
+      "is_ambiguous": false,
+      "ambiguity_note": null
+    }
+  ],
+  "entities": {
+    "persons": [
+      {
+        "name": "Aristophantos",
+        "role": "Archon",
+        "uri": "https://www.wikidata.org/wiki/Q91121866",
+        "confidence": 1.0
+      },
+      {
+        "name": "Antidoros",
+        "role": "Secretary",
+        "uri": "https://www.wikidata.org/wiki/Q575070",
+        "confidence": 1.0
+      },
+      {
+        "name": "Antinos",
+        "role": "Father of Antidoros",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Antinos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Aristophanes",
+        "role": "Proedros",
+        "uri": "https://www.wikidata.org/wiki/Q43353",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lykourgos",
+        "role": "Proposer",
+        "uri": "https://www.wikidata.org/wiki/Q645612",
+        "confidence": 1.0
+      },
+      {
+        "name": "Lykophron",
+        "role": "Father of Lykourgos",
+        "uri": "https://www.wikidata.org/wiki/Q432737",
+        "confidence": 1.0
+      },
+      {
+        "name": "Eudemos",
+        "role": "Honoree",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Eudemos",
+        "confidence": 1.0
+      },
+      {
+        "name": "Philourgos",
+        "role": "Father of Eudemos",
+        "uri": "https://search.lgpn.ox.ac.uk/browse.html?field=names&sort=nymRef&query=Philourgos",
+        "confidence": 1.0
+      }
+    ],
+    "places": [
+      {
+        "name": "Athens",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      },
+      {
+        "name": "Plataea",
+        "type": "City",
+        "uri": "https://pleiades.stoa.org/places/541063",
+        "confidence": 1.0
+      },
+      {
+        "name": "Paiania",
+        "type": "Deme",
+        "uri": null,
+        "confidence": 1.0
+      },
+      {
+        "name": "Euonymon",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579932",
+        "confidence": 1.0
+      },
+      {
+        "name": "Boutadai",
+        "type": "Deme",
+        "uri": "https://pleiades.stoa.org/places/579897",
+        "confidence": 1.0
+      },
+      {
+        "name": "Acropolis",
+        "type": "Sanctuary/Location",
+        "uri": "https://pleiades.stoa.org/places/579885",
+        "confidence": 1.0
+      },
+      {
+        "name": "Panathenaic Stadium",
+        "type": "Building",
+        "uri": "https://pleiades.stoa.org/places/6947713",
+        "confidence": 1.0
+      },
+      {
+        "name": "Panathenaic Theater",
+        "type": "Building",
+        "uri": null,
+        "confidence": 1.0
+      }
+    ],
+    "deities": [
+      {
+        "name": "Athena",
+        "uri": "https://www.wikidata.org/wiki/Q37122",
+        "confidence": 0.8
+      }
+    ]
+  },
+  "completeness": "fragmentary",
+  "provenance": [
+    {
+      "name": "Athens",
+      "type": "Region",
+      "uri": "https://pleiades.stoa.org/places/579885",
+      "role": null,
+      "confidence": 1.0
+    }
+  ],
+  "rationale": "This is a well-known Athenian honorific decree dating to the archonship of Aristophantos (330/29 BC). It honors Eudemos of Plataea for his significant contribution of 1,000 yokes of oxen for the construction of the Panathenaic Stadium and Theater under the administration of Lykourgos. The text provides a detailed look at the intersection of private liturgy/donation and public monumental construction in 4th-century Athens. The decree grants Eudemos the right to own land and a house (enktesis), which was a significant privilege for a non-citizen.",
+  "model": "gemini-3-flash-preview (Proposer+Judge)",
+  "date_str": "",
+  "date_min": null,
+  "date_max": null,
+  "date_circa": null
+}

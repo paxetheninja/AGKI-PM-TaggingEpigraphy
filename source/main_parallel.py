@@ -70,7 +70,7 @@ def process_single_inscription(inscription, llm_client, taxonomy, model, output_
 
         # Save Output
         with open(output_file, 'w', encoding='utf-8') as f:
-            f.write(tagged_result.model_dump_json(indent=2))
+            json.dump(tagged_result.model_dump(), f, indent=2, ensure_ascii=False)
 
         with counter_lock:
             counters["success"] += 1
