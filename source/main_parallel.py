@@ -105,6 +105,12 @@ def main():
         logger.warning("No input files found. Please place JSON files in data/input/")
         return
 
+    # Filter by character count
+    min_char_count = int(os.getenv("MIN_CHAR_COUNT", 1000))
+    if min_char_count > 0:
+        inscriptions = [i for i in inscriptions if len(i.text) >= min_char_count]
+        logger.info(f"Filtered to {len(inscriptions)} inscriptions with >= {min_char_count} characters.")
+
     # Shuffle for random selection if limiting
     random.shuffle(inscriptions)
 

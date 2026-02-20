@@ -153,7 +153,7 @@ def generate_detail_page(merged_data):
         
         ambiguity_html = ""
         if t.get('is_ambiguous'):
-            note = html.escape(t.get('ambiguity_note', ''))
+            note = html.escape(t.get('ambiguity_note') or '')
             ambiguity_html = f'<span class="badge orange" title="{note}" style="font-size:0.7rem; vertical-align:middle; margin-left:0.5rem; cursor:help;">⚠️ Ambiguous</span>'
 
         themes_html += """
